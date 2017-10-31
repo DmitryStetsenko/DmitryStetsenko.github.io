@@ -31,7 +31,7 @@ a {
 
 
 body {
-    font: 14px Hind, sans-serif;
+    font: 14px "Hind"/*, sans-serif*/;
     font-weight:200;
 }
 
@@ -167,9 +167,8 @@ ul {
 
 .info-block {
     float: left;
-    padding: 10px 0;
+    padding: 10px 54px 10px 0;
     margin-right: 54px;
-    padding-right: 54px;
     border-right: #e6e6e6 solid 1px;
 }
 .info-block:last-child {
