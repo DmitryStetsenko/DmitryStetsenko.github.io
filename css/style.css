@@ -244,6 +244,7 @@ nav li a:hover:before {
 .slider {
     position: relative;
     min-width: 1024px;
+    /*max-width: 1346px;*/
     background: #000;
 }
 .slider-img {
