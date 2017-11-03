@@ -1,383 +1,225 @@
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-html{
-
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-body
-{
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
 * {
     margin: 0;
     padding: 0;
 }
+
+body {
+    font: 200 14px "Hind"/*,"sans-serif"*/;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline-block;
+}
 a {
-    color: #fff;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 200;
-    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-
-
-body {
-    font: 14px "Hind"/*, sans-serif*/;
-    font-weight:200;
-}
-
 h1 {
-    font: 48px/1.1 "Hind";
-    color: #fff;
+    font-size: 36px;
+    color: #ffffff;
 }
 h2 {
-    font: 36px/1.1 "Hind";
+    font-size: 28px;
     color: #bd2631;
 }
 h3 {
-    font: 28px/1.1 "Hind";
-    color: #fff;
+    line-height:2.5em;
+    font-size: 18px;
+    font-weight: 300;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+/*----------------Clear Float----------------*/
+.clearfix:after,
+.clearfix:before {
+    display: table;
+    content: '';
 }
 
-#header {
-    height: 60px;
-    background: #ededed;
-    min-width: 1280px;
-    max-width: 1920px;
+.clearfix:after {
+    clear: both;
 }
 
 .wrapper {
-    width: 1126px;
-    height: inherit;
-    padding: 0 120px 0 120px;
-    margin: 0 auto;
-    background: inherit;
+    max-width: 1124px;
+    height:inherit;
+    padding: 0 100px;
+}
+.data-section {
+    min-width: 1024px;
+    max-width: 1366px;
+    min-height: 70px;
+    background: #ededed;
 }
 
-/*Телефон и адрес*/
-ul {
-    list-style-type: none;
-}
-#contacts {
-    display: inline-block;
-    padding: 15px 0 15px 36px;
-}
-#contacts li {
+/*----------- Town Select --------------*/
+.town-select {
     float: left;
-    margin-right: 30px;
-    color: #6a6a69;
+    width: 126px;
+    height: 31px;
+    background: #212121;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-top: 15px;
 }
-#contacts img {
-    margin-right: 5px;
-    position: relative;
-    top: 3px;
-}
-#contacts span {
-    font-weight: 400;
-}
-
-/*Выбор города*/
-.choice_town_btn p {
-    margin: 8px 0 7px 14px;
-    display: inline-block;
-}
-.choice_town_btn p::after {
+.town-select::after {
     font-family: "FontAwesome";
     font-size: 18px;
     content: '\f107';
     position: absolute;
     margin-left: 14px;
     color: #fff;
+    padding-left: 5px;
 }
-.choice_town_btn {
-    /*margin-left: 140px;*/
-    margin-top: 11px;
-    width: 127px;
-    height: 36px;
-    background: #212121 /*url(../images/bottom.png) 100px 15px no-repeat*/;
-    display: inline-block;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    color: #fff;
-    float: left;
-}
-.choice_town_btn p:hover::after {
+.town-select:hover::after {
     font-size: 18px;
     content: '\f103';
     position: absolute;
     margin-left: 14px;
     color: #fff;
     cursor: pointer;
-    background: #212121/* url(../images/bottom_select.png) 100px 15px no-repeat*/;
 }
-.choice_town_btn p:hover {
+.town-select:hover {
     cursor: pointer;
 }
 
-/*Социальные сети*/
-.social {
-     float: right;
-    /*margin-right: 140px;*/
-    margin-top: 15px;
-}
-.social ul li {
+/*--------- Contacts ---------*/
+.contact {
     display: inline-block;
-    margin-right: 18px;
-
+    margin: 22px 0 0 36px;
 }
-.social ul li:last-child {
-    margin-right: 0;
+.contact img {
+    margin-right: 9px;
+}
+.contact img:last-child {
+    margin-right: 9px;
+    margin-left: 18px;
+}
+
+/*------------ Social -----------*/
+.social {
+    float: right;
+    margin-top: 18px;
 }
 .social a {
-    display: block;
-    font-size: 18px;
-    color: #484848;
+    color: #6a6a69;
 }
-.social a:hover {
+.social ul li {
+    margin-left: 9px;
+}
+.social ul li:hover a{
     color: #bd2631;
-    position: relative;
-    top: -2px;
-    left: -2px;
-    text-shadow: 3px 3px 3px #3f3f3f;
 }
 
-/*Блок логотипа*/
-.logo-main {
-    height: 140px;
-    clear: both;
-}
+/*------------- LOGO --------------*/
 .logo {
-    float: left;
-    margin: 28px 0;
+    min-width: 1024px;
+    max-width: 1366px;
+    min-height: 140px;
 }
-.main-info {
-    float: right;
-    margin-top: 36px;
- }
+.logo-img {
+    margin: 30px 0;
+    float: left;
+}
 
-.info-block {
-    float: left;
-    padding: 10px 54px 10px 0;
-    margin-right: 54px;
-    border-right: #e6e6e6 solid 1px;
+/*----------- Static Info -------------*/
+.static-info {
+    margin: 40px 0;
+    float: right;
 }
-.info-block:last-child {
-    margin: 0;
-    padding: 10px 0;
-    border: none;
+.static-info li {
+    font-weight: 500;
+    padding: 10px 45px 10px 45px;
+    border-right: 1px #ededed solid;
 }
-.info-block::before {
+.static-info li:last-child {
+    padding-right:0;
+    border-right: none;
+}
+.static-info li::before {
     font-family: "FontAwesome";
     font-size: 18px;
     content: '\f05d';
     position: absolute;
-    margin-left: -36px;
+    margin-left: -30px;
 }
-.info-block:hover::before {
-    color: #70a04e;
-    cursor: default;
-}
-.info-block:hover{
-     cursor: default;
-}
-.black {
-    color: #2e2e2e;
-    font-weight: 500;
-
-}
-.gray {
+.static-info span {
+    font-weight: 200;
     color: #6a6a69;
-    font-weight: 200;
 }
 
-/*------------- Slider -------------*/
-
-#slider { /*положение слайдера*/
-    position: relative;
-    text-align: center;
-}
-
-#slider{ /*центровка слайдера*/
-    margin: 0 auto;
-}
-
-#slides article{ /*все изображения справа друг от доруга*/
-    width: 20%;
-    float: left;
-}
-
-#slides .image{ /*устанавливает общий размер блока с изображениями*/
-    width: 500%;
-    line-height: 0;
-}
-
-#overflow{ /*сркывает все, что находится за пределами этого блока*/
-    width: 100%;
-    overflow: hidden;
-}
-
-article img{ /*размер изображений слайдера*/
-    width: 100%;
-}
-
-#desktop:checked ~ #slider{ /*размер всего слайдера*/
-    max-width: 1366px; /*максимальнная длинна*/
-    min-width: 1366px;
-}
-
-/*настройка переключения и положения для левой стрелки*/
-/*если свич1-5 активны, то идет обращение к лейблу из блока с id контролс*/
-#switch1:checked ~ #controls label:nth-child(3),
-#switch2:checked ~ #controls label:nth-child(1),
-#switch3:checked ~ #controls label:nth-child(2) {
-    background: url(../images/left.png) no-repeat; /*заливка фона картинкой без повторений*/
-    float: left;
-    margin: 0 0 0 120px; /*сдвиг влево*/
-    display: block;
-    height: 68px;
-    width: 68px;
-}
-
-/*настройка переключения и положения для правой стрелки*/
-#switch1:checked ~ #controls label:nth-child(2),
-#switch2:checked ~ #controls label:nth-child(3),
-#switch3:checked ~ #controls label:nth-child(1) {
-    background: url(../images/right.png) no-repeat; /*заливка фона картинкой без повторений*/
-    float: right;
-    margin: 0 80px 0 0; /*сдвиг вправо*/
-    display: block;
-    height: 68px;
-    width: 68px;
-}
-
-label, a{ /*при наведении на стрелки или переключатели - курсор изменится*/
-    cursor: pointer;
-}
-
-.all input{ /*скрывает стандартные инпуты (чекбоксы) на странице*/
-    display: none;
-}
-
-/*позиция изображения при активации переключателя*/
-#switch1:checked ~ #slides .image{
-    margin-left: 0;
-}
-
-#switch2:checked ~ #slides .image{
-    margin-left: -100%;
-}
-
-#switch3:checked ~ #slides .image{
-    margin-left: -200%;
-}
-
-#controls{ /*положение блока всех управляющих элементов*/
-    margin: -25% 0 0 0;
-    width: 100%;
-    height: 50px;
-}
-
-#active label{ /*стиль отдельного переключателя*/
-    border-radius: 10px; /*скругление углов*/
-    display: inline-block; /*расположение в строку*/
-    width: 15px;
-    height: 15px;
-    background: #bbb;
-}
-
-#active{ /*расположение блока с переключателями*/
-    margin: 200px 0 0 120px;
-    text-align: left;
-}
-
-#active label:hover{ /*поведение чекбокса при наведении*/
-    background: #bd2631;
-    border-color: #777 !important; /*выполнение в любом случае*/
-}
-
-/*цвет активного лейбла при активации чекбокса*/
-#switch1:checked ~ #active label:nth-child(1),
-#switch2:checked ~ #active label:nth-child(2),
-#switch3:checked ~ #active label:nth-child(3) {
-    background: #bd2631;
-    border-color: #bd2631 !important;
-}
-
-#slides .image{ /*анимация пролистывания изображений*/
-    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-}
-
-#controls label:hover{ /*прозрачность стрелок при наведении*/
-    opacity: 0.6;
-}
-
-#controls label{ /*прозрачность стрелок при отводе курсора*/
-    transition: opacity 0.2s ease-out;
-}
-
-#text {
-    float: left;
-    text-align: left;
-    margin: -313px 174px;
-}
-
-#text h3 {
-    text-transform: uppercase;
-    font-weight:200;
-    line-height:1.5;
-}
-
+/*--------------------Menu---------------*/
 .menu {
+    max-width: 1366px;
+    min-width: 1024px;
+    position: absolute;
+    z-index: 1000;
     height: 70px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
+    right: 0;
+    left: 0;
+}
+nav {
+    padding-top: 27px;
+    display: inline-block;
+}
+
+nav li a {
+    font-size: 14px;
+    text-transform: uppercase;
     position: relative;
-    top: -573px;
-}
-.menu ul {
-    margin-left: 120px;
-
-}
-.menu li {
-    float: left;
-    margin-right: 36px;
-    margin-top: 8px;
-    padding: 20px 0 17px 0;
- }
-.menu li a {
-    display: block;
-    font-weight: 200;
-}
-/*.menu li:first-child {*/
-    /*border-bottom: 4px solid #bd2631;*/
-/*}*/
-.menu li:hover {
-    cursor: pointer;
-    border-bottom: 4px solid #bd2631;
-
+    padding: 27px 5px 22px 5px;
 }
 
+nav li {
+    /*border-bottom: 7px #bd2631 solid;*/
+    margin-right: 18px;
+}
+
+nav li a:before {
+    content: '';
+    position: absolute;
+    height: 7px;
+    width: 0;
+    bottom: 0;
+    background: #bd2631;
+    left: 0;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+nav li a:hover:before {
+    width: 100%;
+    /*border-bottom: 6px solid #bd2631;*/
+}
+
+/*-------------------Search------------------*/
 .search {
-    width: 400px;
+    float: right;
+    width: 200px;
     height: 30px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     /*background: rgba(204, 204, 204, 0);*/
     border-bottom: 1px solid rgba(204, 204, 204, 0);
-    float: right;
     color: #ffffff;
     font-size: 20px;
-    margin-right: 120px;
     margin-top: 20px;
     text-align: right;
 }
@@ -393,4 +235,58 @@ label, a{ /*при наведении на стрелки или переклю�
     -o-transition: all 0.5s;
     transition: all 0.5s;
     border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+}
+
+/*-------------------SLIDER---------------*/
+.slider {
+    position: relative;
+    min-width: 1024px;
+    max-width: 1366px;
+}
+.slider-img {
+    min-height: 642px;
+    background: url(../images/slide1.png) no-repeat right, #000;
+}
+
+
+/*-----------------TEXT-----------------*/
+.slide-text {
+    padding: 0 100px;
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+}
+.scroll {
+    position: absolute;
+    max-width: 1346px;
+    height: 41px;
+    padding: 0 10px;
+    top: 48%;
+    left: 0;
+    right: 0;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.left:hover {
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.7;
+}
+
+.right:hover {
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.7;
 }
