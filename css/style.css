@@ -52,11 +52,13 @@ h3 {
 .wrapper {
     max-width: 1124px;
     height:inherit;
-    padding: 0 100px;
+    /*padding: 0 100px;*/
+    margin: 0 auto;
 }
 .data-section {
+    position: relative;
     min-width: 1024px;
-    max-width: 1366px;
+    /*max-width: 1366px;*/
     min-height: 70px;
     background: #ededed;
 }
@@ -127,7 +129,7 @@ h3 {
 /*------------- LOGO --------------*/
 .logo {
     min-width: 1024px;
-    max-width: 1366px;
+    /*max-width: 1366px;*/
     min-height: 140px;
 }
 .logo-img {
@@ -163,7 +165,7 @@ h3 {
 
 /*--------------------Menu---------------*/
 .menu {
-    max-width: 1366px;
+    /*max-width: 1366px;*/
     min-width: 1024px;
     position: absolute;
     z-index: 1000;
@@ -173,6 +175,7 @@ h3 {
     left: 0;
 }
 nav {
+    padding-left: 18px;
     padding-top: 27px;
     display: inline-block;
 }
@@ -242,6 +245,7 @@ nav li a:hover:before {
     position: relative;
     min-width: 1024px;
     max-width: 1366px;
+    background: #000;
 }
 .slider-img {
     min-height: 642px;
@@ -251,19 +255,24 @@ nav li a:hover:before {
 
 /*-----------------TEXT-----------------*/
 .slide-text {
-    padding: 0 100px;
-    display: inline-block;
+    /*padding: 0 100px;*/
+    /*display: inline-block;*/
     position: absolute;
+    padding-left: 70px;
     top: 40%;
 }
+
+/*----------------- SCROLL ------------------*/
 .scroll {
     position: absolute;
+    min-width: 1024px;
     max-width: 1346px;
     height: 41px;
     padding: 0 10px;
     top: 48%;
     left: 0;
     right: 0;
+    margin: 0 auto ;
 }
 .left {
     float: left;
