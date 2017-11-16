@@ -51,11 +51,11 @@ h3 {
 }
 
 .wrapper {
-    max-width: 1124px;
+    max-width: 1920px;
     height:inherit;
     /*padding: 0 100px;*/
     margin: 0 auto;
-    padding-left: 3%;
+    padding-left: 18px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -114,8 +114,17 @@ h3 {
 .contact .adress {
     float: left;
 }
-.contact img {
+.contact .fa {
+    font-size: 16px;
+}
+.fone .fa {
     margin-right: 9px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.adress .fa {
+    margin-right: 9px;
+    margin-left: 18px;
 }
 .contact img:last-child {
     margin-right: 9px;
@@ -126,13 +135,13 @@ h3 {
 .social {
     float: right;
     margin-top: 18px;
-    padding-right: 3%;
+    padding-right: 36px;
 }
 .social a {
-    color: #6a6a69;
+    color: #2e2e2e;
 }
 .social ul li {
-    margin-left: 9px;
+    margin-left: 18px;
 }
 .social ul li:hover a{
     color: #bd2631;
@@ -172,6 +181,7 @@ h3 {
     margin-left: -30px;
 }
 .static-info span {
+    display: block;
     font-weight: 200;
     color: #6a6a69;
 }
@@ -186,7 +196,7 @@ h3 {
 .menu {
     /*max-width: 1366px;*/
     /*min-width: 1024px;*/
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: absolute;
     z-index: 1000;
     /*height: 70px;*/
@@ -210,7 +220,7 @@ nav li a {
     font-size: 14px;
     text-transform: uppercase;
     position: relative;
-    padding: 22px 7% 20px 7%;
+    padding: 22px 18px 20px 18px;
     /*padding: 27px 5px 22px 5px;*/
 }
 
@@ -271,30 +281,36 @@ nav li a:hover:before {
     background: #000;
 }
 .slider-img {
-    /*min-height: 642px;*/
+    float: right;
     background: #000;
-    height: 100%;
+    /*height: 100%;*/
+    max-width: 1366px;
+    text-align: right;
+
 
 }
 .slider-img img {
     width: 100%;
+
 }
 
 
 /*-----------------TEXT-----------------*/
 .slide-text {
+    /*text-align */
     /*padding: 0 100px;*/
     /*display: inline-block;*/
     position: absolute;
     /*padding-left: 5%;*/
     top: 40%;
+    padding-left: 45px;
 }
 
 /*----------------- SCROLL ------------------*/
 .scroll {
     position: absolute;
     /*min-width: 1024px;*/
-    max-width: 1346px;
+    /*max-width: 1346px;*/
     /*height: 41px;*/
     padding: 0 10px;
     top: 48%;
@@ -318,7 +334,6 @@ nav li a:hover:before {
     cursor: pointer;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
     opacity: 0.7;
@@ -333,14 +348,188 @@ nav li a:hover:before {
     transition: all 0.3s;
     opacity: 0.7;
 }
+/*------------CONTENT--------------------*/
 
-/*----------------- Media ---------------*/
-@media screen and ( max-width: 1170px ) {
-    .slide-text {
-        padding-left: 3%;
+/*-----------Get a Quote----------------*/
+.get-a-quote {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #BD2631;
+    font-size: 18px;
+    font-weight: 100;
+    color: #ffffff;
+    min-height: 128px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+}
+.quote-text {
+    margin: 10px;
+}
+.quote-text span{
+    display: block;
+    font-size: 30px;
+    /*font-weight: 300;*/
+}
+
+.quote-button {
+    flex-basis: 136px;
+    color: #000;
+    font-weight: 500;
+    padding: 10px 0;
+    text-align: center;
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+.quote-button:hover {
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    background: #2e2e2e;
+    color: #ffffff;
+}
+/*------------ Img Content --------------*/
+
+.image-content {
+    /*max-width: 1920px;*/
+    margin: 0 auto;
+
+}
+.image-content img {
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    /*flex-wrap: wrap;*/
+}
+.img-content{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background: url("../images/img-content1.jpg") no-repeat;
+    background-size: cover;
+    padding: 0 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.img-content:hover {
+    cursor: pointer;
+    border: 1px #fff solid;
+}
+.img-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.img-text {
+    color: #fff;
+    font-weight: 100;
+    z-index: 100;
+}
+
+.text-head {
+    color: #BD2631;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.text-description {
+    line-height: 2em;
+}
+.img-content-pair {
+    width: 50%;
+    display: flex;
+    align-items: stretch;
+
+}
+.img-item {
+    width: 50%;
+}
+.icon-item {
+    box-sizing: border-box;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+.one .icon-item{
+    background:url("../images/icon-item1.png") no-repeat center;
+    background-size: 50%;
+}
+.one .icon-item:hover {
+    cursor: pointer;
+    background:#BD2631 url("../images/icon-item1-hover.png") no-repeat center;
+    background-size: 55%;
+}
+
+.two .icon-item{
+    background:url("../images/icon-item2.png") no-repeat center;
+    background-size: 50%;
+}
+.two .icon-item:hover {
+    cursor: pointer;
+    background:#BD2631 url("../images/icon-item2-hover.png") no-repeat center;
+    background-size: 55%;
+}
+
+.three .icon-item{
+    background:url("../images/icon-item3.png") no-repeat center;
+    background-size: 50%;
+}
+.three .icon-item:hover {
+    cursor: pointer;
+    background:#BD2631 url("../images/icon-item3-hover.png") no-repeat center;
+    background-size: 55%;
+}
+
+/*----------------- Media --------------*/
+@media screen and ( max-width: 1920px ) {
+    .scroll {top: 44%;}
+    .text-head {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .text-description {
+        font-size: 24px;
+        line-height: 2em;
     }
 }
-@media screen and ( max-width: 900px ) {
+@media screen and ( max-width: 1440px ) {
+    .scroll {top: 48%;}
+    .text-head {font-size: 30px;}
+    .text-description {font-size: 14px;}
+}
+@media screen and ( max-width: 1170px ) {.slide-text {padding-left: 3%;}}
+@media screen and ( max-width: 930px ) {
     .social {
         float: none;
         display: table;
@@ -384,24 +573,59 @@ nav li a:hover:before {
         /*display: block;*/
     }
 }
+@media screen and ( max-width: 860px ) {
+    nav li a {
+        padding: 22px 15px 20px 15px;
+        font-size: 13px;
+    }
+}
 @media screen and ( max-width: 800px ) {
+    nav li a {
+        padding: 22px 10px 20px 10px;
+        font-size: 12px;
+    }
     h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     h2 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     h3 {
         line-height: 2;
         font-size: 12px;
     }
+    .get-a-quote {
+        font-size: 16px;
+        min-height: 110px;
+        justify-content: center;
+
+    }
+    .quote-text {
+        margin: 5px 20px;
+        flex: 1 1;
+    }
+    .quote-text span{
+        display: block;
+        font-size: 24px;
+        /*font-weight: 300;*/
+    }
+
+    .quote-button {
+        flex-basis: 120px;
+        color: #000;
+        font-size: 14px;
+        padding: 5px 0;
+        margin-right: 20px;
+    }
+    .text-head {
+        margin-bottom: 15px;
+    }
 }
 @media screen and ( max-width: 640px ) {
     nav li a {
-        font-size: 12px;
-        padding: 20px 5% 20px 5%;
+        padding: 20px 8px 20px 8px;
 
     }
      .search {
@@ -429,22 +653,39 @@ nav li a:hover:before {
     .right img {
         width: 60%;
     }
+    .get-a-quote {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    .quote-text {
+        margin: 5px 20px;
+        flex: auto;
+    }
+    .quote-button {
+        flex: auto;
+        padding: 5px 10px;
+    }
+    .row {flex-direction: column;}
+    .img-content {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 19% 10%;
+        order: 1;
+    }
+    .img-content-pair {width: 100%;}
+    .icon-item {order: 1;}
+    .img-text {padding: 0;}
 }
 @media screen and ( max-width: 540px ) {
-    nav li a {
-        padding: 15px 5% 20px 5%;
-    }
-    .contact .fone {
-        float: none;
-    }
+    nav li a { padding: 15px 5% 20px 5%; }
 
-    .contact .adress {
-        float: none;
-    }
+    .contact .fone { float: none; }
+    .contact .adress { float: none; }
+    .adress .fa { margin-left: 0; }
 
-    .static-info ul li {
-        display: block;
-    }
+    .static-info ul li { display: block; }
 
     .search {
         width: 5%;
@@ -457,10 +698,9 @@ nav li a:hover:before {
         text-align: right;
     }
 
-    h1 {
-        font-weight: 300;
+    h1 { font-weight: 300; }
 
-    }
+    .text-head { font-size: 24px; }
 }
 @media screen and ( max-width: 500px ) {
     nav ul{
@@ -483,6 +723,14 @@ nav li a:hover:before {
     .slide-text {
         padding-left: 5%;
     }
+    .img-content {padding: 18% 7%;}
+    .text-head {
+        margin-bottom: 10px;
+    }
+    .text-description {
+        line-height: 1.5em;
+    }
+
 }
 @media screen and ( max-width: 330px ) {
     .logo-img {
@@ -504,5 +752,6 @@ nav li a:hover:before {
         padding-left: 7%;
     }
 }
+
 
 
