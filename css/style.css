@@ -429,10 +429,10 @@ nav li a:hover:before {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.img-content:hover {
-    cursor: pointer;
-    border: 1px #fff solid;
-}
+/*.img-content:hover {*/
+    /*cursor: pointer;*/
+    /*border: 1px #fff solid;*/
+/*}*/
 .img-bg {
     position: absolute;
     width: 100%;
