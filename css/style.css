@@ -51,11 +51,9 @@ h3 {
 }
 
 .wrapper {
-    max-width: 1920px;
     height:inherit;
-    /*padding: 0 100px;*/
+    padding: 0 100px;
     margin: 0 auto;
-    padding-left: 18px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -108,35 +106,24 @@ h3 {
     float: left;
     margin: 22px 0 0 36px;
 }
-.contact .fone {
-    float: left;
-}
-.contact .adress {
-    float: left;
-}
-.contact .fa {
-    font-size: 16px;
-}
+.fone, .adress {float: left;}
+
+.contact .fa {font-size: 16px;}
+
 .fone .fa {
     margin-right: 9px;
     font-size: 18px;
     font-weight: bold;
 }
-.adress .fa {
-    margin-right: 9px;
-    margin-left: 18px;
-}
-.contact img:last-child {
-    margin-right: 9px;
-    margin-left: 18px;
-}
+.fone {margin-right: 18px;}
+.adress .fa {margin-right: 9px;}
 
 /*------------ Social -----------*/
 .social {
     float: right;
     margin-top: 18px;
-    padding-right: 36px;
 }
+
 .social a {
     color: #2e2e2e;
 }
@@ -162,7 +149,6 @@ h3 {
 .static-info {
     margin: 40px 0;
     float: right;
-    padding-right: 3%;
 }
 .static-info li {
     font-weight: 500;
@@ -190,24 +176,17 @@ h3 {
 .menu-icon {
     display: none;
     font-size: 16px;
-    padding-top: 2%;
+    padding: 7px 0;
     color: #ffffff;
 }
 .menu {
-    /*max-width: 1366px;*/
-    /*min-width: 1024px;*/
-    /*overflow: hidden;*/
     position: absolute;
     z-index: 1000;
-    /*height: 70px;*/
     background: rgba(0, 0, 0, 0.8);
     right: 0;
     left: 0;
 }
 nav {
-    /*padding-left: 18px;*/
-    /*padding-top: 27px;*/
-    /*padding:1.5% 0 1% 1.5%;*/
     display: inline-block;
     position: relative;
 }
@@ -246,31 +225,18 @@ nav li a:hover:before {
 /*-------------------Search------------------*/
 .search {
     float: right;
-    width: 20%;
-    /*height: 30px;*/
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    /*background: rgba(204, 204, 204, 0);*/
-    border-bottom: 1px solid rgba(204, 204, 204, 0);
     color: #ffffff;
-    font-size: 20px;
-    margin-top: 2%;
-    padding-right: 1%;
+    font-size: 18px;
+    margin-top: 20px;
+    /*padding-right: 1%;*/
     text-align: right;
 }
 
-.fa-search {
-    margin-right: 1%;
-}
 .search:hover {
     cursor: pointer;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
+    opacity: .7;
     transition: all 0.5s;
-    border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+
 }
 
 /*-------------------SLIDER---------------*/
@@ -481,34 +447,8 @@ nav li a:hover:before {
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
 }
-.one .icon-item{
-    background:url("../images/icon-item1.png") no-repeat center;
-    background-size: 50%;
-}
-.one .icon-item:hover {
-    cursor: pointer;
-    background:#BD2631 url("../images/icon-item1-hover.png") no-repeat center;
-    background-size: 55%;
-}
-
-.two .icon-item{
-    background:url("../images/icon-item2.png") no-repeat center;
-    background-size: 50%;
-}
-.two .icon-item:hover {
-    cursor: pointer;
-    background:#BD2631 url("../images/icon-item2-hover.png") no-repeat center;
-    background-size: 55%;
-}
-
 .three .icon-item{
-    background:url("../images/icon-item3.png") no-repeat center;
-    background-size: 50%;
-}
-.three .icon-item:hover {
-    cursor: pointer;
-    background:#BD2631 url("../images/icon-item3-hover.png") no-repeat center;
-    background-size: 55%;
+    background: #BD2631;
 }
 
 /*----------------- Media --------------*/
@@ -528,28 +468,12 @@ nav li a:hover:before {
     .text-head {font-size: 30px;}
     .text-description {font-size: 14px;}
 }
-@media screen and ( max-width: 1170px ) {.slide-text {padding-left: 3%;}}
-@media screen and ( max-width: 930px ) {
-    .social {
-        float: none;
-        display: table;
-        margin: 10px auto 0 auto ;
-        padding-bottom: 10px;
-    }
-    .contact {
-        float: none;
-        display: table;
-        padding-top: 10px;
-        margin: 0 auto;
-    }
+@media screen and ( max-width: 1070px ) {
+    .slide-text {padding-left: 3%;}
 
-    .contact img:last-child {
-        margin-right: 9px;
-        margin-left: 0;
-    }
-    .town-select {
+    .contact { margin: 15px 0 0 22px;    }
+    .fone, .adress {
         float: none;
-        margin: 15px auto 0 auto;
     }
 
     .logo-img {
@@ -559,30 +483,44 @@ nav li a:hover:before {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    /*.logo img {*/
-        /*width: 20%;*/
-    /*}*/
     .static-info {
         float: none;
         display: table;
         margin: 0 auto;
     }
-
-    .static-info ul li{
-        border: none;
-        /*display: block;*/
-    }
 }
-@media screen and ( max-width: 860px ) {
-    nav li a {
-        padding: 22px 15px 20px 15px;
-        font-size: 13px;
+@media screen and ( max-width: 900px ) {
+    .town-select {
+        float: none;
+        margin: 15px auto 0 auto;
     }
+    .contact {
+        float: none;
+        text-align: center;
+    }
+    .social {
+        float: none;
+        display: table;
+        margin: 10px auto 0 auto ;
+        padding-bottom: 10px;
+    }
+    .wrapper {
+        padding: 0 40px;
+    }
+
 }
 @media screen and ( max-width: 800px ) {
-    nav li a {
-        padding: 22px 10px 20px 10px;
-        font-size: 12px;
+    nav ul{
+        display: none;
+    }
+    nav ul li {
+        display: block;
+    }
+    .menu-icon {
+        display: inline-block;
+    }
+    .search {
+        margin-top: 7px;
     }
     h1 {
         font-size: 28px;
@@ -624,16 +562,6 @@ nav li a:hover:before {
     }
 }
 @media screen and ( max-width: 640px ) {
-    nav li a {
-        padding: 20px 8px 20px 8px;
-
-    }
-     .search {
-        width: 10%;
-        font-size: 12px;
-        margin-top: 3%;
-    }
-
     h1 {
         font-size: 22px;
     }
@@ -678,44 +606,23 @@ nav li a:hover:before {
     .icon-item {order: 1;}
     .img-text {padding: 0;}
 }
-@media screen and ( max-width: 540px ) {
-    nav li a { padding: 15px 5% 20px 5%; }
-
-    .contact .fone { float: none; }
-    .contact .adress { float: none; }
-    .adress .fa { margin-left: 0; }
-
-    .static-info ul li { display: block; }
-
-    .search {
-        width: 5%;
-        /*height: 30px;*/
-        /*background: rgba(204, 204, 204, 0);*/
-        border-bottom: 1px solid rgba(204, 204, 204, 0);
-        color: #ffffff;
-        font-size: 12px;
-        margin-top: 4%;
-        text-align: right;
+@media screen and ( max-width: 600px ) {
+    .static-info {
+        float: none;
+        display: table;
+        margin: 0 auto;
     }
-
+    .static-info ul li{
+        border: none;
+        display: block;
+    }
+}
+@media screen and ( max-width: 540px ) {
     h1 { font-weight: 300; }
-
     .text-head { font-size: 24px; }
 }
 @media screen and ( max-width: 500px ) {
-    nav ul{
-        display: none;
-    }
-    nav ul li {
-        display: block;
-    }
-    .search {
-        margin-top: 1.5%;
-        width: 20%;
-    }
-    .menu-icon {
-        display: inline-block;
-    }
+
     h1 {
         font-size: 14px;
         font-weight: 400;
@@ -738,15 +645,6 @@ nav li a:hover:before {
     }
     .logo img {
         width: 100%;
-    }
-    .static-info {
-        float: none;
-        display: table;
-        margin: 0 auto;
-    }
-
-    .static-info ul li{
-        border: none;
     }
     .slide-text {
         padding-left: 7%;
