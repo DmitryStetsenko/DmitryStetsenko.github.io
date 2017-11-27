@@ -242,7 +242,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3.85% 70px;
+    padding: 3.85% 0;
 }
 .item-section-wrapper {
     width: 100%;
@@ -258,7 +258,7 @@ img {
     align-content: center;
 }
 .item-section {
-    margin:20px 20px 0 20px;
+    margin:0 20px;
 }
 .text-section {
     font-size: 50px;
@@ -270,7 +270,7 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #0e1656;
-    margin-right: 70px;
+    margin-left: 70px;
 }
 /*----------- End Tech Feature ------------*/
 
@@ -364,6 +364,10 @@ img {
     justify-content: flex-start;
     align-items: center;
 }
+.video video {
+    max-width: 100%;
+    height: auto;
+}
 /*--------------- End Game Changer -------------*/
 
 /*------------- Progress Section ----------------*/
@@ -374,12 +378,12 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 20px 0;
+    padding: 20px;
 }
 .partners {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    /*flex-wrap: wrap;*/
+    justify-content: space-between;
     align-items: center;
 }
 .slider-indicator {
@@ -387,7 +391,11 @@ img {
     justify-content: center;
 }
 .partners-item {
-    margin: 00px 0 10px 45px;
+    margin: 0 20px;
+}
+.partners-item img {
+    max-width: 100%;
+    height: auto;
 }
 .slider-indicator-item {
     width: 19px;
@@ -676,6 +684,9 @@ img {
         flex-direction: column;
         justify-content: center;
      }
+    .item-section {
+        margin: 20px;
+    }
 
     .slider-text h1 {
         font: 8vw/1 "Brushstrike";
@@ -766,9 +777,9 @@ img {
     .advantages-txt {
         margin-left: 25px;
     }
-    .item-section-wrapper {
-        flex-wrap: wrap;
-    }
+    /*.item-section-wrapper {*/
+        /*flex-wrap: wrap;*/
+    /*}*/
     .text-section {
         margin: 0;
     }
@@ -839,13 +850,18 @@ img {
         align-items: center;
     }
     /*------------- Tech Features ---------------*/
-    .item-section-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        flex: 1;
+    /*.item-section-wrapper {*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        /*align-content: center;*/
+        /*flex: 1;*/
+    /*}*/
+    .item-section img {
+        max-width: 100%;
+        height: auto;
+        min-height: 20px;
     }
     /*------------ Nosweatco section --------------*/
     .nosweatco-img .column {
@@ -894,6 +910,7 @@ img {
     .slider-scroll {
     font-size: 40px;
 }
+
     .advantages-img img {
         width: 50px;
         height: auto;
@@ -1022,6 +1039,13 @@ img {
          align-content: flex-start;
         flex-direction: column;
     }
+    .item-section img {
+        width: auto;
+        height: 25px;
+    }
+    .item-section {
+        margin: 10px;
+    }
     .products {
         padding: 0 15px;
     }
@@ -1032,11 +1056,11 @@ img {
     .products img{
         max-width: 100%;
     }
-    .partners {
-        flex-direction: column;
-    }
+    /*.partners {*/
+        /*flex-direction: column;*/
+    /*}*/
     .partners-item {
-        margin-top: 15px;
+        margin: 15px 10px 0 10px;
     }
     .partners-item:first-child {
         margin-top: 0;
@@ -1046,6 +1070,9 @@ img {
     }
 }
 @media screen and ( max-width: 500px ) {
+    h2 {
+        font-size: 25px;
+    }
     .sweat-protection-header h2{
         font-size: 20px;
 
