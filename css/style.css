@@ -7,12 +7,17 @@ body {
 }
 /*Обертка для поля контактов*/
 .wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
     /*padding: 0 10px;*/
+
 }
 /*---------------*/
 /*Заглушка чтобы контакты не налазили на поле поиска*/
 .stopped {
-    width: 100%;
+    width: inherit;
     height: 50px;
     background-color: white;
 }
@@ -27,49 +32,45 @@ body {
 /*блок поиска*/
 .search-block {
     margin: 0 auto;
-    padding-top: 10px;
+    height: inherit;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .search {
     position: relative;
     width: 250px;
-    height: 20px;
+    height: 30px;
     border: 1px solid #0051ff;
-    border-radius: 10px;
     box-shadow: rgba(0, 81, 255, 0.6) 1px 1px 3px;
     margin-right: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#des-search {
+.description {
     position: absolute;
     display: inline-block;
     top: -8px;
-    left: 10px;
-}
-.description {
     font: 10px/1 Arial;
     color: #0051ff;
     background-color: white;
     padding:0 5px;
+    margin-left: 5px;
 }
 #input-search {
     font: 12px/1 Arial;
-    display: inline-block;
-    border-radius: 7px;
-    width: 210px;
-    height: 12px;
+    width: 190px;
+    height: 20px;
     /*border: none;*/
     outline: none;
     padding: 0 10px;
 }
 .clear-search {
     font: 10px Arial;
-    line-height: 20px;
+    line-height: 30px;
     width: 40px;
-    height: 20px;
+    height: 30px;
     border-radius:0 10px 10px 0;
     border-left: 1px solid #0051ff;
     color: #0051ff;
@@ -80,27 +81,25 @@ body {
 /*----------------*/
 /*Кнопка добавления контактов*/
 .button-add {
-    width: 21px;
-    height: 21px;
+    position:relative;
+    width: 40px;
+    height: 30px;
     text-align: center;
-    line-height: 22px;
-    border-radius: 50%;
+    line-height: 30px;
     box-shadow: #0051ff 1px 1px 5px;
     color: #0051ff;
-    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid #0051ff;
 }
 .button-add:active {
     box-shadow: #0051ff 1px 1px 1px;
-    font-size: 0.8em;
 }
 
 .contacts {
-    width: inherit;
     height: 30px;
     /*line-height: 30px;*/
     border-bottom: 1px solid #eee;
-    padding: 0 10px;
-    margin: 0 10px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
