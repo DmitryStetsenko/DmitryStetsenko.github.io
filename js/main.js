@@ -31,9 +31,9 @@
         editButtonId = '#edit', deleteButtonId = '#delete' ;
     var openData = false, buttonVisible = false;
     var openDataBtn;
-    var counter = 0;
     var createActiveItems;
     var activeItemIndex;
+    var delBtn, editBtn;
 
 // загружаем данные на страницу из массива abonents
     for (var i = 0; i < abonents.length; i++) {
@@ -45,7 +45,6 @@
     for (var i = 0; i < items.length; i++) {
         items[i].onclick = activeItem;
     }
-
 
 // добавляем новый элемент
 //     buttonAdd.onclick = function() {
@@ -73,7 +72,6 @@
     function activeItem(){
         previousId = '#' + activeItemsId;
         var previousItem = document.querySelector(previousId);
-        var dataName = document.querySelector('.data-name');
 
         if (previousItem.classList.contains('active')){
             previousItem.classList.remove('active');
@@ -94,7 +92,6 @@
             openDataBtn = document.getElementById('#open-data');
             openDataBtn.onclick = openDataButton;
         }
-        console.log(this);
     }
 
 // Добавляем контакту кнопки позвонить и открытие
@@ -164,10 +161,12 @@
             var button1 = document.createElement('div');
             button1.className = 'button';
             button1.id = editButtonId;
+            editBtn = button1;
 
             var button2 = document.createElement('div');
             button2.className = 'button';
             button2.id = deleteButtonId;
+            delBtn = button2;
 
             var button1Icon = document.createElement('i');
             button1Icon.className = 'fa fa-pencil';
@@ -181,6 +180,9 @@
             createActiveItems.appendChild(button2);
             button1.appendChild(button1Icon);
             button2.appendChild(button2Icon);
+
+            // обрабатываем нажатие на дел
+            delBtn.onclick = pressDelButton;
 
             openData = true;
         }
@@ -211,4 +213,56 @@
 // преобразовываем ID в число
     function idToInt(id){
         activeItemIndex = parseInt(id.substring(7));
+    }
+
+// обработка нажатия на кнопку удалить контакт.
+    function pressDelButton(){
+        createElem(document.body, 'div', 'modal', 'modal', '');
+        createElem(createActiveItems, 'div', 'confirm', 'confirm', '');
+
+        var confirmWindow = createActiveItems;
+        createElem(confirmWindow, 'div', 'confirm-text', 'confirm-text', 'Are you sure, what you want to remove this element?');
+        createElem(confirmWindow, 'span', 'close', 'close', '');
+        createActiveItems.innerHTML = '&times;';
+
+        createElem(confirmWindow, 'div', 'confirm-button', 'confirm-button', '');
+        var confirmButton = createActiveItems;
+        createElem(confirmButton, 'div', 'button-yes', 'confirm-btn', 'Yes');
+        createElem(confirmButton, 'div', 'button-no', 'confirm-btn', 'No');
+
+        var buttonNo = document.getElementById('button-no');
+        buttonNo.onclick = close;
+
+        var closeBtn = document.getElementById('close');
+        closeBtn.onclick = close;
+
+        var buttonYes = document.getElementById('button-yes');
+        buttonYes.onclick = function() {
+            close();
+            removeAbonets();
+        }
+    }
+// закрывает модальное окно
+    function close() {
+        var modal = document.getElementById('modal');
+        modal.remove();
+    }
+
+    function removeAbonets() {
+        var activeElem = document.getElementById(activeItemsId);
+        var dataField = document.getElementsByClassName('data-field')[0];
+        activeElem.remove();
+        dataField.remove();
+        abonents.splice(activeItemIndex-1, 1);
+
+        openData = false;
+        buttonVisible = false;
+
+        activeItemsId = 'abonent1';
+        items = document.querySelectorAll('.data-name');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = activeItem;
+            items[i].parentNode.setAttribute('id', 'abonent' + (i + 1));
+        }
+
     }
