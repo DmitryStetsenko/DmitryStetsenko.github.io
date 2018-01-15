@@ -46,13 +46,84 @@
         items[i].onclick = activeItem;
     }
 
-// добавляем новый элемент
-//     buttonAdd.onclick = function() {
-//         addElement(counter);
-//         counter++;
-//     };
+// обработка клика по кнопке add
+    buttonAdd.onclick = function(){
+        PressAddElementButton('add');
+    }
 
-// Функция загрузки абоннтов из массива
+//Фунция обработки нажатия на кнопку Add
+    function PressAddElementButton(param){
+        if(param = 'add') {
+            addElement();
+        }
+        else {
+            editElement();
+        }
+    }
+
+//Добавление нового элемента
+    function addElement(){
+        createElem(document.body, 'div', 'modal', 'modal', '');
+        createElem(createActiveItems, 'div', 'data-window', 'data-window', '');
+
+        var dataWindow = createActiveItems;
+        createElem(dataWindow, 'div', 'confirm-text', 'confirm-text', 'Add new element.');
+        createElem(dataWindow, 'span', 'close', 'close', '');
+        createActiveItems.innerHTML = '&times;';
+
+// создание инпутов
+        createElem(dataWindow, 'div', 'input-name1', 'search', '');
+            createElem(createActiveItems, 'p', 'description', 'description', 'input name1');
+
+        createElem(dataWindow, 'div', 'input-name2', 'search', '');
+            createElem(createActiveItems, 'p', 'description', 'description', 'input name2');
+
+        createElem(dataWindow, 'div', 'input-surname', 'search', '');
+            createElem(createActiveItems, 'p', 'description', 'description', 'input surname');
+
+        createElem(dataWindow, 'div', 'input-phone', 'search', '');
+            createElem(createActiveItems, 'p', 'description', 'description', 'input phone number ( digit only )');
+
+        createElem(dataWindow, 'div', 'input-email', 'search', '');
+            createElem(createActiveItems, 'p', 'description','description', 'input e-mail ( *****@***.*** )');
+
+// создание кнопок
+        createElem(dataWindow, 'div', 'confirm-button', 'confirm-button', '');
+        var confirmButton = createActiveItems;
+        createElem(confirmButton, 'div', 'button-yes', 'confirm-btn', 'Ok');
+        createElem(confirmButton, 'div', 'button-res', 'confirm-btn', 'Reset');
+        createElem(confirmButton, 'div', 'button-no', 'confirm-btn', 'Cancel');
+
+        var buttonNo = document.getElementById('button-no');
+        buttonNo.onclick = close;
+
+        var closeBtn = document.getElementById('close');
+        closeBtn.onclick = close;
+
+        var buttonYes = document.getElementById('button-yes');
+        buttonYes.onclick = function() {
+            close();
+            createAbonent();
+        }
+
+        var buttonRes = document.getElementById('button-res');
+        buttonRes.onclick = resetData;
+    }
+//Редактирование элемента
+    function editElement(){
+        alert('Edit element');
+    }
+//создание нового абонента
+    function createAbonent(){
+        alert('create abonent');
+    }
+
+// очистка полей ввода
+    function resetData(){
+        alert('reset data');
+    }
+
+// Функция загрузки абонентов из массива
     function loadAbonents(counter){
         var fullName = abonents[counter].surname + ' ' + abonents[counter].name1 + ' ' + abonents[counter].name2;
         var parent = document.querySelector('.wrapper');
