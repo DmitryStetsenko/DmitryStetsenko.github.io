@@ -4,27 +4,28 @@
             surname: 'Стеценко',
             name1: 'Дмитрий',
             name2: 'Владимирович',
-            phoneNumber: '066-499-64-46',
+            phoneNumber: '0664996446',
             eMail: 'work2010_1@mail.ru'
         },
         {
             surname: 'Стеценко',
             name1: 'Андрей',
             name2: 'Владимирович',
-            phoneNumber: '050-023-45-60',
+            phoneNumber: '0500234560',
             eMail: 'andrey@gmail.com'
         },
         {
             surname: 'Стеценко',
             name1: 'Вита',
             name2: 'Анатольевна',
-            phoneNumber: '095-633-35-60',
+            phoneNumber: '0956333560',
             eMail: 'vita@yandex.ru'
         }
 
     ];
 
     var buttonAdd = document.querySelector('.button-add');
+    var buttonClear = document.getElementById('clear-search');
     var previousId;
     var activeItemsId  = 'abonent1';
     var foneButtonId = '#phone', openDataButtonId = '#open-data',
@@ -45,49 +46,87 @@
     for (var i = 0; i < items.length; i++) {
         items[i].onclick = activeItem;
     }
+// обработка клика на кнопке clear
+    buttonClear.onclick = clearInput;
 
 // обработка клика по кнопке add
-    buttonAdd.onclick = function(){
-        PressAddElementButton('add');
-    }
+    buttonAdd.onclick = addElement;
 
-//Фунция обработки нажатия на кнопку Add
-    function PressAddElementButton(param){
-        if(param = 'add') {
-            addElement();
+// создание модального окна
+    function createModalWindow (param) {
+    // прверка какое окно строить new или edit
+        var surname, name1, name2, phone, email;
+        var heder;
+
+        if(param === 'new') {
+            heder = 'To add a new subscriber';
+            surname = ''; name1 = ''; name2 = ''; phone = ''; email = '';
         }
         else {
-            editElement();
+            heder = 'Edit the data of the subscriber';
+            surname = abonents[activeItemIndex-1].surname;
+            name1 = abonents[activeItemIndex-1].name1;
+            name2 = abonents[activeItemIndex-1].name2;
+            phone = abonents[activeItemIndex-1].phoneNumber;
+            email = abonents[activeItemIndex-1].eMail;
         }
-    }
 
-//Добавление нового элемента
-    function addElement(){
         createElem(document.body, 'div', 'modal', 'modal', '');
-        createElem(createActiveItems, 'div', 'data-window', 'data-window', '');
+        createElem(createActiveItems, 'div', 'data-window', 'data-window','');
 
         var dataWindow = createActiveItems;
-        createElem(dataWindow, 'div', 'confirm-text', 'confirm-text', 'Add new element.');
+        createElem(dataWindow, 'div', 'confirm-text', 'confirm-text',  heder);
         createElem(dataWindow, 'span', 'close', 'close', '');
         createActiveItems.innerHTML = '&times;';
 
-// создание инпутов
-        createElem(dataWindow, 'div', 'input-name1', 'search', '');
-            createElem(createActiveItems, 'p', 'description', 'description', 'input name1');
+    // создание инпутов
+        createElem(dataWindow, 'div', 'wrapper-surname', 'search', '');
+        var wrapperDivInput = createActiveItems;
+        createElem(createActiveItems, 'p', 'description', 'description', 'input surname');
+        createElem(wrapperDivInput, 'input', 'input-name1', 'input-area', '');
+            createActiveItems.type = 'text';
+            createActiveItems.value = surname;
+            createActiveItems.setAttribute('maxlength', '19');
+        createElem(wrapperDivInput, 'div', 'clear-surname','clear-search','clear');
 
-        createElem(dataWindow, 'div', 'input-name2', 'search', '');
-            createElem(createActiveItems, 'p', 'description', 'description', 'input name2');
+        createElem(dataWindow, 'div', 'wrapper-name1', 'search', '');
+        wrapperDivInput = createActiveItems;
+        createElem(createActiveItems, 'p', 'description', 'description', 'input name1');
+        createElem(wrapperDivInput, 'input', 'input-name1', 'input-area', '');
+            createActiveItems.type = 'text';
+            createActiveItems.value = name1;
+            createActiveItems.setAttribute('maxlength', '19');
+        createElem(wrapperDivInput, 'div', 'clear-name1','clear-search','clear');
 
-        createElem(dataWindow, 'div', 'input-surname', 'search', '');
-            createElem(createActiveItems, 'p', 'description', 'description', 'input surname');
+        createElem(dataWindow, 'div', 'wrapper-name2', 'search', '');
+        wrapperDivInput = createActiveItems;
+        createElem(createActiveItems, 'p', 'description', 'description', 'input name2');
+        createElem(wrapperDivInput, 'input', 'input-name2', 'input-area', '');
+            createActiveItems.type = 'text';
+            createActiveItems.value = name2;
+            createActiveItems.setAttribute('maxlength', '19');
+        createElem(wrapperDivInput, 'div', 'clear-name2','clear-search','clear');
 
-        createElem(dataWindow, 'div', 'input-phone', 'search', '');
-            createElem(createActiveItems, 'p', 'description', 'description', 'input phone number ( digit only )');
+        createElem(dataWindow, 'div', 'wrapper-phone', 'search', '');
+        wrapperDivInput = createActiveItems;
+        createElem(createActiveItems, 'p', 'description', 'description', 'input phone number ( digit only )');
+        createElem(wrapperDivInput, 'input', 'input-phone', 'input-area', '');
+            createActiveItems.type = 'text';
+            createActiveItems.value = phone;
+            createActiveItems.setAttribute('maxlength', '19');
+            createActiveItems.onkeypress = inputDigit;
+        createElem(wrapperDivInput, 'div', 'clear-phone','clear-search','clear');
 
-        createElem(dataWindow, 'div', 'input-email', 'search', '');
-            createElem(createActiveItems, 'p', 'description','description', 'input e-mail ( *****@***.*** )');
+        createElem(dataWindow, 'div', 'wrapper-email', 'search', '');
+        wrapperDivInput = createActiveItems;
+        createElem(createActiveItems, 'p', 'description','description', 'input e-mail ( ####@###.### )');
+        createElem(wrapperDivInput, 'input', 'input-phone', 'input-area', '');
+            createActiveItems.type = 'text';
+            createActiveItems.value = email;
+            createActiveItems.setAttribute('maxlength', '19');
+        createElem(wrapperDivInput, 'div', 'clear-email','clear-search','clear');
 
-// создание кнопок
+    // создание кнопок
         createElem(dataWindow, 'div', 'confirm-button', 'confirm-button', '');
         var confirmButton = createActiveItems;
         createElem(confirmButton, 'div', 'button-yes', 'confirm-btn', 'Ok');
@@ -101,17 +140,24 @@
         closeBtn.onclick = close;
 
         var buttonYes = document.getElementById('button-yes');
+
         buttonYes.onclick = function() {
             close();
             createAbonent();
-        }
+        };
 
         var buttonRes = document.getElementById('button-res');
         buttonRes.onclick = resetData;
     }
+
+//Добавление нового элемента
+    function addElement(){
+        createModalWindow('new');
+    }
+
 //Редактирование элемента
     function editElement(){
-        alert('Edit element');
+        createModalWindow('edit');
     }
 //создание нового абонента
     function createAbonent(){
@@ -120,7 +166,10 @@
 
 // очистка полей ввода
     function resetData(){
-        alert('reset data');
+        var inputCollection = this.parentNode.parentNode.querySelectorAll('.input-area');
+        for (var i = 0; i < inputCollection.length; i++) {
+            inputCollection[i].value = '';
+        }
     }
 
 // Функция загрузки абонентов из массива
@@ -252,6 +301,9 @@
             button1.appendChild(button1Icon);
             button2.appendChild(button2Icon);
 
+            //обрабатываем нажатие на edit
+            editBtn.onclick = editElement;
+
             // обрабатываем нажатие на дел
             delBtn.onclick = pressDelButton;
 
@@ -313,6 +365,12 @@
             removeAbonets();
         }
     }
+// очищает поле ввода
+    function clearInput(){
+        var inputArea = this.parentNode.querySelector('.input-area');
+        console.log(inputArea);
+        inputArea.value = '';
+    }
 // закрывает модальное окно
     function close() {
         var modal = document.getElementById('modal');
@@ -337,3 +395,30 @@
         }
 
     }
+
+// Функция разрешающая вводить только цифры
+    function inputDigit(e) {
+
+        e = e || event;
+        if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+        var chr = getChar(e);
+        if (chr == null) return;
+
+        if (chr < '0' || chr > '9') {
+            return false;
+         }
+    }
+    function getChar(event) {
+        if (event.which == null) {
+            if (event.keyCode < 32) return null;
+            return String.fromCharCode(event.keyCode) // IE
+        }
+
+        if (event.which != 0 && event.charCode != 0) {
+            if (event.which < 32) return null;
+            return String.fromCharCode(event.which) // остальные
+        }
+
+        return null; // специальная клавиша
+}

@@ -58,7 +58,7 @@ body {
     background-color: #eee;
     padding:0 5px;
 }
-#input-search {
+.input-area {
     font: 12px/1 Arial;
     width: 190px;
     height: 20px;
@@ -71,7 +71,7 @@ body {
     user-select: none;
     cursor: pointer;
     font: 10px Arial;
-    line-height: 30px;
+    line-height: 32px;
     width: 40px;
     height: 32px;
     border-radius:0 10px 10px 0;
