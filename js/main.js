@@ -1,5 +1,6 @@
 ;
-    var abonents = [
+    var abonents = [];
+        /*abonents = [
         {
             surname: 'Стеценко',
             name1: 'Дмитрий',
@@ -22,7 +23,7 @@
             eMail: 'vita@yandex.ru'
         }
 
-    ];
+    ];*/
 
     var buttonAdd = document.querySelector('.button-add');
     var buttonClear = document.getElementById('clear-search');
@@ -42,17 +43,29 @@
     var inputSearch = document.getElementById('input-search');
     var searchResult;
     var searchCase = 'master';
+    var firstStart = true;
 
-// загружаем данные на страницу из массива abonents
-    for (var i = 0; i < abonents.length; i++) {
-        loadAbonents(i);
+// Загружаем данніе из локал сторадж
+    console.log(readObj());
+    if (readObj() === null || readObj().length === 0) {
+        addElement();
     }
-    var items = document.querySelectorAll('.data-name');
+    else {
+        abonents = readObj();
+// загружаем данные на страницу из массива abonents
+        for (var i = 0; i < abonents.length; i++) {
+            loadAbonents(i);
+        }
+        var items = document.querySelectorAll('.data-name');
 
 // проход по списку абонентов, проверка на клик
-    for (var i = 0; i < items.length; i++) {
-        items[i].onclick = activeItem;
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = activeItem;
+        }
+        firstStart = false;
     }
+    console.log(abonents);
+
 
 // обработка поиска
     inputSearch.oninput = function() {
@@ -109,7 +122,11 @@
         }
 
         createElem(document.body, 'div', 'modal', 'modal', '');
-        createElem(createActiveItems, 'div', 'data-window', 'data-window','');
+        var modalWindow = createActiveItems;
+        if (firstStart) {
+            createElem(modalWindow, 'div', 'first-entry', 'first-entry','Your list is empty add items');
+        }
+        createElem(modalWindow, 'div', 'data-window', 'data-window','');
 
         var dataWindow = createActiveItems;
         createElem(dataWindow, 'div', 'confirm-text', 'confirm-text',  heder);
@@ -293,6 +310,7 @@
             else {
                 activeElement.innerText = inputEmail.value;
             }
+            writeObj(abonents);
             close();
         }
         else {
@@ -326,7 +344,12 @@
 
             var contacts = document.createElement('div');
             contacts.className = 'contacts';
-            contacts.id = 'abonent'+(items.length + 1);
+            if (firstStart) {
+                contacts.id = 'abonent1';
+            }
+            else {
+                contacts.id = 'abonent'+(items.length + 1);
+            }
             parent.appendChild(contacts);
 
             var dataName = document.createElement('div');
@@ -337,6 +360,8 @@
             items = document.querySelectorAll('.data-name');
             itemIndex = items.length;
             items[itemIndex-1].onclick = activeItem;
+            firstStart = false;
+            writeObj(abonents);
             close();
         }
         else {
@@ -595,6 +620,7 @@
         activeElem.remove();
         dataField.remove();
         abonents.splice(activeItemIndex-1, 1);
+        writeObj(abonents);
 
         openData = false;
         buttonVisible = false;
@@ -655,4 +681,14 @@
         }
     }
     return indexOfMatches;
-}
+    }
+
+    function writeObj(obj) {
+        var serialObj = JSON.stringify(obj); //сериализуем его
+        localStorage.setItem('myAbonents', serialObj);
+    }
+
+    function readObj() {
+        var returnObj = JSON.parse(localStorage.getItem("myAbonents"));
+        return returnObj;
+    }

@@ -323,3 +323,13 @@ body {
 .unvis {
     display: none;
 }
+.first-entry {
+    position: absolute;
+    top: 30px;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: rgba(0, 0, 0, 0.51) 10px 10px 15px;
+}
