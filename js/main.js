@@ -35,8 +35,13 @@
     var createActiveItems;
     var activeItemIndex;
     var delBtn, editBtn;
+    var parentElem;
 
     var inputSurname, inputName1, inputName2, inputPhone, inputEmail;
+
+    var inputSearch = document.getElementById('input-search');
+    var searchResult;
+    var searchCase = 'master';
 
 // загружаем данные на страницу из массива abonents
     for (var i = 0; i < abonents.length; i++) {
@@ -48,6 +53,31 @@
     for (var i = 0; i < items.length; i++) {
         items[i].onclick = activeItem;
     }
+
+// обработка поиска
+    inputSearch.oninput = function() {
+        searchResult = activeSearch(inputSearch.value.toUpperCase());
+        var temp = document.querySelectorAll('.contacts');
+        for (var i = 0; i < temp.length; i++) {
+            temp[i].classList.add('unvis');
+        }
+
+        if (inputSearch.value === '') {
+            for (var i = 0; i < temp.length; i++) {
+                temp[i].classList.remove('unvis');
+            }
+        }
+        else {
+            for (var i = 0; i < temp.length; i++) {
+                temp[i].classList.add('unvis');
+            }
+        }
+
+        for (var i = 0; i < searchResult.length; i++) {
+            temp[searchResult[i]].classList.remove('unvis');
+        }
+    }
+
 // обработка клика на кнопке clear
     buttonClear.onclick = clearInput;
 
@@ -291,7 +321,6 @@
                  'eMail' : inputEmail.value
                 }
             );
-            console.log(abonents);
             var fullName = inputSurname.value + ' ' + inputName1.value + ' ' + inputName2.value;
             var parent = document.querySelector('.wrapper');
 
@@ -346,11 +375,26 @@
             contacts.appendChild(dataName);
     }
 
+// Фунция загрузки абонентов по результату поиска
+    function searchResultLoadAbonents(counter){
+        var fullName = abonents[counter].surname + ' ' + abonents[counter].name1 + ' ' + abonents[counter].name2;
+        var parent = document.querySelector('#wrapper-searchResult');
+
+        var contacts = document.createElement('div');
+            contacts.className = 'contacts';
+            contacts.id = 'abonent'+(counter * 1 + 1);
+            parent.appendChild(contacts);
+
+         var dataName = document.createElement('div');
+            dataName.className = 'data-name';
+            dataName.innerText = fullName;
+            contacts.appendChild(dataName);
+}
+
 //Обработчик событий по клику на контакт
-    function activeItem(){
+    function activeItem() {
         previousId = '#' + activeItemsId;
         var previousItem = document.querySelector(previousId);
-
         if (previousItem.classList.contains('active')){
             previousItem.classList.remove('active');
         }
@@ -531,6 +575,12 @@
     function clearInput(){
         var inputArea = this.parentNode.querySelector('.input-area');
         inputArea.value = '';
+        if (inputArea.id === 'input-search') {
+            var temp = document.querySelectorAll('.contacts');
+            for (var i = 0; i < temp.length; i++) {
+                temp[i].classList.remove('unvis');
+            }
+        }
     }
 // закрывает модальное окно
     function close() {
@@ -541,10 +591,10 @@
     function removeAbonets() {
         var activeElem = document.getElementById(activeItemsId);
         var dataField = document.getElementsByClassName('data-field')[0];
+
         activeElem.remove();
         dataField.remove();
         abonents.splice(activeItemIndex-1, 1);
-        console.log(abonents);
 
         openData = false;
         buttonVisible = false;
@@ -590,4 +640,19 @@
         }
 
         return null; // специальная клавиша
+    }
+    function activeSearch(param) {
+        var indexOfMatches = [];
+        if (!(param === '')) {
+            for (var i = 0; i < abonents.length; i++) {
+                for (var prop in abonents[i]) {
+                    if ((abonents[i][prop].toUpperCase().indexOf(param) + 1)) {
+                        indexOfMatches.push(i);
+                        break;
+                }
+
+            }
+        }
+    }
+    return indexOfMatches;
 }
