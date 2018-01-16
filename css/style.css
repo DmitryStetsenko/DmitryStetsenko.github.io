@@ -251,10 +251,19 @@ body {
     height: 30px;
     margin: 20px 5px;
 }
+
 .confirm-btn:active {
     box-shadow: #0051ff 0 0 1px;
 }
 #button-yes:before {
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-size: 12px;
+    content: '\f00c';
+    color: #159800;
+    margin-right: 5px;
+}
+#button-yes-inform:before {
     display: inline-block;
     font-family: "FontAwesome";
     font-size: 12px;
@@ -299,4 +308,10 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.51) 10px 10px 15px;
+}
+
+.valid-icons {
+    position: absolute;
+    color: #159800;
+    right: 50px;
 }

@@ -36,6 +36,8 @@
     var activeItemIndex;
     var delBtn, editBtn;
 
+    var inputSurname, inputName1, inputName2, inputPhone, inputEmail;
+
 // загружаем данные на страницу из массива abonents
     for (var i = 0; i < abonents.length; i++) {
         loadAbonents(i);
@@ -57,10 +59,13 @@
     // прверка какое окно строить new или edit
         var surname, name1, name2, phone, email;
         var heder;
+        var validName, validContact;
 
         if(param === 'new') {
             heder = 'To add a new subscriber';
             surname = ''; name1 = ''; name2 = ''; phone = ''; email = '';
+            validName = false;
+            validContact = false;
         }
         else {
             heder = 'Edit the data of the subscriber';
@@ -69,6 +74,8 @@
             name2 = abonents[activeItemIndex-1].name2;
             phone = abonents[activeItemIndex-1].phoneNumber;
             email = abonents[activeItemIndex-1].eMail;
+            validName = true;
+            validContact = true;
         }
 
         createElem(document.body, 'div', 'modal', 'modal', '');
@@ -83,10 +90,11 @@
         createElem(dataWindow, 'div', 'wrapper-surname', 'search', '');
         var wrapperDivInput = createActiveItems;
         createElem(createActiveItems, 'p', 'description', 'description', 'input surname');
-        createElem(wrapperDivInput, 'input', 'input-name1', 'input-area', '');
+        createElem(wrapperDivInput, 'input', 'input-surname', 'input-area', '');
             createActiveItems.type = 'text';
             createActiveItems.value = surname;
-            createActiveItems.setAttribute('maxlength', '19');
+            createActiveItems.setAttribute('maxlength', '20');
+            createActiveItems.setAttribute('placeholder', 'max 20 symbols');
         createElem(wrapperDivInput, 'div', 'clear-surname','clear-search','clear');
 
         createElem(dataWindow, 'div', 'wrapper-name1', 'search', '');
@@ -95,7 +103,8 @@
         createElem(wrapperDivInput, 'input', 'input-name1', 'input-area', '');
             createActiveItems.type = 'text';
             createActiveItems.value = name1;
-            createActiveItems.setAttribute('maxlength', '19');
+            createActiveItems.setAttribute('maxlength', '20');
+            createActiveItems.setAttribute('placeholder', 'max 20 symbols');
         createElem(wrapperDivInput, 'div', 'clear-name1','clear-search','clear');
 
         createElem(dataWindow, 'div', 'wrapper-name2', 'search', '');
@@ -104,7 +113,8 @@
         createElem(wrapperDivInput, 'input', 'input-name2', 'input-area', '');
             createActiveItems.type = 'text';
             createActiveItems.value = name2;
-            createActiveItems.setAttribute('maxlength', '19');
+            createActiveItems.setAttribute('maxlength', '20');
+            createActiveItems.setAttribute('placeholder', 'max 20 symbols');
         createElem(wrapperDivInput, 'div', 'clear-name2','clear-search','clear');
 
         createElem(dataWindow, 'div', 'wrapper-phone', 'search', '');
@@ -113,18 +123,21 @@
         createElem(wrapperDivInput, 'input', 'input-phone', 'input-area', '');
             createActiveItems.type = 'text';
             createActiveItems.value = phone;
-            createActiveItems.setAttribute('maxlength', '19');
+            createActiveItems.setAttribute('maxlength', '20');
+            createActiveItems.setAttribute('placeholder', 'max 20 symbols');
             createActiveItems.onkeypress = inputDigit;
         createElem(wrapperDivInput, 'div', 'clear-phone','clear-search','clear');
 
         createElem(dataWindow, 'div', 'wrapper-email', 'search', '');
         wrapperDivInput = createActiveItems;
-        createElem(createActiveItems, 'p', 'description','description', 'input e-mail ( ####@###.### )');
-        createElem(wrapperDivInput, 'input', 'input-phone', 'input-area', '');
+        createElem(createActiveItems, 'p', 'description','description', 'input e-mail ( ####@###.##(#) )');
+        createElem(wrapperDivInput, 'input', 'input-email', 'input-area', '');
             createActiveItems.type = 'text';
             createActiveItems.value = email;
-            createActiveItems.setAttribute('maxlength', '19');
+            createActiveItems.setAttribute('maxlength', '20');
+            createActiveItems.setAttribute('placeholder', 'max 20 symbols');
         createElem(wrapperDivInput, 'div', 'clear-email','clear-search','clear');
+
 
     // создание кнопок
         createElem(dataWindow, 'div', 'confirm-button', 'confirm-button', '');
@@ -133,6 +146,11 @@
         createElem(confirmButton, 'div', 'button-res', 'confirm-btn', 'Reset');
         createElem(confirmButton, 'div', 'button-no', 'confirm-btn', 'Cancel');
 
+    // обработка событий на копках clear
+        for(var i = 0; i < dataWindow.querySelectorAll('.clear-search').length; i++) {
+            dataWindow.querySelectorAll('.clear-search')[i].onclick = clearInput;
+        }
+
         var buttonNo = document.getElementById('button-no');
         buttonNo.onclick = close;
 
@@ -140,14 +158,75 @@
         closeBtn.onclick = close;
 
         var buttonYes = document.getElementById('button-yes');
-
         buttonYes.onclick = function() {
-            close();
-            createAbonent();
+            if (param === 'new') {
+                createAbonent();
+            } else {
+                editAbonent();
+            }
         };
 
         var buttonRes = document.getElementById('button-res');
         buttonRes.onclick = resetData;
+
+        var emailInput = document.getElementById('input-email');
+        emailInput.onchange = function() {
+            var validEmail = validMail(emailInput);
+            if (!validEmail) {
+                if(emailInput.value != '') {
+                    informWindow('Incorrect Email! Example: myMail@gmail.com');
+                    emailInput.value = '';
+                }
+            }
+         };
+    }
+
+// создание информационного окна
+    function informWindow(header) {
+        createElem(document.body, 'div', 'modal-inform', 'modal', '');
+        createElem(createActiveItems, 'div', 'confirm-inform', 'confirm', '');
+
+        var confirmWindow = createActiveItems;
+        createElem(confirmWindow, 'div', 'confirm-text-inform', 'confirm-text', header);
+        createElem(confirmWindow, 'span', 'close-inform', 'close', '');
+        createActiveItems.innerHTML = '&times;';
+
+        createElem(confirmWindow, 'div', 'confirm-button-inform', 'confirm-button', '');
+        createElem(createActiveItems, 'div', 'button-yes-inform', 'confirm-btn', 'Ok');
+
+        var closeBtn = document.getElementById('close-inform');
+        closeBtn.onclick = function (){
+            var modal = document.getElementById('modal-inform');
+            modal.remove();
+        };
+
+        var buttonYes = document.getElementById('button-yes-inform');
+        buttonYes.onclick = function () {
+            var modal = document.getElementById('modal-inform');
+            modal.remove();
+        }
+    }
+
+//  проверка правильности введенных данных
+    function validForm(){
+        var valid = [false, false, false]; // 0 - общий 1-фамилия 2-телефон
+        inputSurname = document.getElementById('input-surname');
+        inputName1 = document.getElementById('input-name1');
+        inputName2 = document.getElementById('input-name2');
+        inputPhone = document.getElementById('input-phone');
+        inputEmail = document.getElementById('input-email');
+
+        if (inputSurname.value != '' || inputName1.value != '' || inputName2.value != '') {
+            valid[1] = true;
+        } else valid[1] = false;
+        if (inputPhone.value != '') {
+                valid[2] = true;
+        } else valid[2] = false;
+
+        if (valid[1] && valid[2]) {
+            valid[0] = true;
+        } else valid[0] = false;
+    return valid;
     }
 
 //Добавление нового элемента
@@ -158,10 +237,89 @@
 //Редактирование элемента
     function editElement(){
         createModalWindow('edit');
+
     }
-//создание нового абонента
+    function editAbonent() {
+        var getValid = validForm();
+        var text;
+        var itemIndex;
+
+        if (getValid[0]) {
+            abonents[activeItemIndex - 1].surname = inputSurname.value;
+            abonents[activeItemIndex - 1].name1 = inputName1.value;
+            abonents[activeItemIndex - 1].name2 = inputName2.value;
+            abonents[activeItemIndex - 1].phoneNumber = inputPhone.value;
+            abonents[activeItemIndex - 1].eMail = inputEmail.value;
+            var activeElement = document.querySelectorAll('.data-name');
+            var fullName = inputSurname.value + ' ' + inputName1.value + ' ' + inputName2.value;
+            activeElement[activeItemIndex-1].innerText = fullName;
+            activeElement = document.getElementById('telephone');
+            activeElement.innerText = inputPhone.value;
+            activeElement = document.getElementById('email');
+
+            if (inputEmail.value === '') {
+                activeElement.innerText = 'empty field'
+            }
+            else {
+                activeElement.innerText = inputEmail.value;
+            }
+            close();
+        }
+        else {
+            if (!getValid[1]) {
+                if(!getValid[2]) {
+                    text = 'Input surname and phone number';
+                } else text = 'Input surname';
+            } else if (!getValid[2]) {
+                text = 'Input phone number'
+            }
+            informWindow(text);
+        }
+    }
+//создание нового абонента (нажатие на кнопку Add)
     function createAbonent(){
-        alert('create abonent');
+        var getValid = validForm();
+        var text;
+        var itemIndex;
+
+        if(getValid[0]) {
+            abonents.push(
+                {'surname' : inputSurname.value,
+                 'name1' : inputName1.value,
+                 'name2' : inputName2.value,
+                 'phoneNumber' : inputPhone.value,
+                 'eMail' : inputEmail.value
+                }
+            );
+            console.log(abonents);
+            var fullName = inputSurname.value + ' ' + inputName1.value + ' ' + inputName2.value;
+            var parent = document.querySelector('.wrapper');
+
+            var contacts = document.createElement('div');
+            contacts.className = 'contacts';
+            contacts.id = 'abonent'+(items.length + 1);
+            parent.appendChild(contacts);
+
+            var dataName = document.createElement('div');
+            dataName.className = 'data-name';
+            dataName.innerText = fullName;
+            contacts.appendChild(dataName);
+
+            items = document.querySelectorAll('.data-name');
+            itemIndex = items.length;
+            items[itemIndex-1].onclick = activeItem;
+            close();
+        }
+        else {
+            if (!getValid[1]) {
+                if(!getValid[2]) {
+                    text = 'Input surname and phone number';
+                } else text = 'Input surname';
+            } else if (!getValid[2]) {
+                text = 'Input phone number'
+            }
+            informWindow(text);
+        }
     }
 
 // очистка полей ввода
@@ -273,8 +431,12 @@
             createActiveItems.parentNode.setAttribute('aria-hidden', 'true');
 
             createElem(dataField, 'div', 'data-contacts', 'data-contacts', '');
+            var tempEmail = abonents[activeItemIndex-1].eMail;
+            if (tempEmail === '') {
+                tempEmail = 'empty field'
+            }
             createElem(createActiveItems, 'p', 'telephone', 'telephone', abonents[activeItemIndex-1].phoneNumber);
-            createElem(createActiveItems.parentNode, 'p', 'email', 'email', abonents[activeItemIndex-1].eMail);
+            createElem(createActiveItems.parentNode, 'p', 'email', 'email', tempEmail);
 
             createElem(dataField, 'div', 'actions', 'actions', '');
 
@@ -368,7 +530,6 @@
 // очищает поле ввода
     function clearInput(){
         var inputArea = this.parentNode.querySelector('.input-area');
-        console.log(inputArea);
         inputArea.value = '';
     }
 // закрывает модальное окно
@@ -383,17 +544,25 @@
         activeElem.remove();
         dataField.remove();
         abonents.splice(activeItemIndex-1, 1);
+        console.log(abonents);
 
         openData = false;
         buttonVisible = false;
 
         activeItemsId = 'abonent1';
         items = document.querySelectorAll('.data-name');
-        for (var i = 0; i < items.length; i++) {
+        for (var i = activeItemIndex-1; i < items.length; i++) {
             items[i].onclick = activeItem;
             items[i].parentNode.setAttribute('id', 'abonent' + (i + 1));
         }
 
+    }
+// Проверка валидности email
+    function validMail(param) {
+        var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+        var myMail = param.value;
+        var valid = re.test(myMail);
+        return valid;
     }
 
 // Функция разрешающая вводить только цифры
