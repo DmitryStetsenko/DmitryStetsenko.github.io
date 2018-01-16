@@ -123,7 +123,7 @@
 
         createElem(document.body, 'div', 'modal', 'modal', '');
         var modalWindow = createActiveItems;
-        if (firstStart) {
+        if (firstStart || abonents.length === 0) {
             createElem(modalWindow, 'div', 'first-entry', 'first-entry','Your list is empty add items');
         }
         createElem(modalWindow, 'div', 'data-window', 'data-window','');
