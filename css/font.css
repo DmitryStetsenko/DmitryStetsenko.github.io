@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/opensans-regular.eot");
+    src: url("../fonts/opensans-regular.eot?iefix") format("embedded-opentype"),
+         url("../fonts/opensans-regular.woff") format("woff"),
+         url("../fonts/opensans-regular.woff2") format("woff2"),
+         url("../fonts/opensans-regular.svg") format("svg"),
+         url("../fonts/opensans-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GalanoGrotesque";
+    src: url("../fonts/galano-grotesque-alt-extra-bold.eot");
+    src: url("../fonts/galano-grotesque-alt-extra-bold.eot?iefix") format("embedded-opentype"),
+         url("../fonts/galano-grotesque-alt-extra-bold.woff") format("woff"),
+         url("../fonts/galano-grotesque-alt-extra-bold.woff2") format("woff2"),
+         url("../fonts/galano-grotesque-alt-extra-bold.svg") format("svg"),
+         url("../fonts/galano-grotesque-alt-extra-bold.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GalanoGrotesque";
+    src: url("../fonts/galano-grotesque-alt-bold.eot");
+    src: url("../fonts/galano-grotesque-alt-bold.eot?iefix") format("embedded-opentype"),
+         url("../fonts/galano-grotesque-alt-bold.woff") format("woff"),
+         url("../fonts/galano-grotesque-alt-bold.woff2") format("woff2"),
+         url("../fonts/galano-grotesque-alt-bold.svg") format("svg"),
+         url("../fonts/galano-grotesque-alt-bold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url("../fonts/lobster-regular.eot");
+    src: url("../fonts/lobster-regular.eot?iefix") format("embedded-opentype"),
+         url("../fonts/lobster-regular.woff") format("woff"),
+         url("../fonts/lobster-regular.woff2") format("woff2"),
+         url("../fonts/lobster-regular.svg") format("svg"),
+         url("../fonts/lobster-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
