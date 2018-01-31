@@ -33,6 +33,28 @@
     font-weight: 600;
     font-style: normal;
 }
+@font-face {
+    font-family: "GalanoGrotesque";
+    src: url("../fonts/galano-grotesque-semi-bold.eot");
+    src: url("../fonts/galano-grotesque-semi-bold.eot?iefix") format("embedded-opentype"),
+         url("../fonts/galano-grotesque-semi-bold.woff") format("woff"),
+         url("../fonts/galano-grotesque-semi-bold.woff2") format("woff2"),
+         url("../fonts/galano-grotesque-semi-bold.svg") format("svg"),
+         url("../fonts/galano-grotesque-semi-bold.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "GalanoGrotesque";
+    src: url("../fonts/galano-grotesque.eot");
+    src: url("../fonts/galano-grotesque.eot?iefix") format("embedded-opentype"),
+         url("../fonts/galano-grotesque.woff") format("woff"),
+         url("../fonts/galano-grotesque.woff2") format("woff2"),
+         url("../fonts/galano-grotesque.svg") format("svg"),
+         url("../fonts/galano-grotesque.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
 
 @font-face {
     font-family: "Lobster";

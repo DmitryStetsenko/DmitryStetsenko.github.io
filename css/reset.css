@@ -1,106 +1,46 @@
-@charset "utf-8";
-body, h1, h2, h3, h4, h5, h6 {
-font: 14px/18px Verdana, sans-serif;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
-code, kbd, pre, samp, tt, var {
-font: 14px/18px Consolas, "Courier New", monospace;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
 }
-body, optgroup {
-color: #000;
-background: #fff;
+body {
+    line-height: 1;
 }
-body, code, dl, dd, form, pre {
-margin: 0;
+ol, ul {
+    list-style: none;
 }
-a:link {
-color: #009;
+blockquote, q {
+    quotes: none;
 }
-a:link, a:visited, ins {
-text-decoration: none;
-}
-a:visited {
-color: #505;
-}
-a:hover {
-text-decoration: underline;
-}
-a:link img, a:visited img, object, fieldset, abbr, acronym {
-border: none;
-}
-sub, sup {
-position: relative;
-display: inline-block;
-font-size: 11px;
-line-height: 11px;
-}
-sub {
-top: 5px;
-vertical-align: middle;
-}
-sup {
-top: -2px;
-margin-top: -11px;
-}
-abbr, acronym {
-cursor: help;
-border-bottom: 1px dotted #999;
-}
-address, cite, dfn {
-font-style: normal;
-}
-code, pre {
-white-space: pre-wrap;
-}
-img {
-vertical-align: bottom;
-}
-td, th, textarea {
-vertical-align: top;
-}
-input, select, button {
-overflow: visible;
-vertical-align: middle;
-}
-legend {
-color: #000;
-margin: 0 0 -2px;
-padding: 0;
-}
-li {
-display: block;
-list-style: none;
-}
-optgroup option {
-padding-left: 22px;
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
 }
 table {
-border-collapse: collapse;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-caption, th {
-text-align: left;
-}
-td, th {
-padding: 0;
-}
-address, blockquote, h1, h2, h3, h4, h5, h6, fieldset, p, ol, ul {
-margin: 0;
-padding: 0;
-}
-th, h1, h2, h3, h4, h5, h6 {
-font-weight: normal;
-}
-q {
-quotes: "\00ab" "\00bb" "\201e" "\201c";
-}
-q:after {
-content: "\00bb";
-}
-q:before {
-content: "\00ab";
-}
-q > q:after {
-content: "\201c";
-}
-q > q:before {
-content: "\201e";
+a {
+    text-decoration: none;
 }
