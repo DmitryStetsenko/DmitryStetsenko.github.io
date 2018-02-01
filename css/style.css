@@ -197,6 +197,13 @@ nav li a:hover {
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.43);
     transition: all .2s;
 }
+.button:active {
+    cursor: pointer;
+    /*box-shadow: none;*/
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+}
 
 .slider img {
     width: 100%;
@@ -252,6 +259,12 @@ nav li a:hover {
     cursor: pointer;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.43);
     transition: all .2s;
+}
+.tabs:active {
+    cursor: pointer;
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
 }
 .tabs-icon-section {
     width: 70px;
@@ -371,6 +384,17 @@ nav li a:hover {
     background-color: #dddddd;
     color: #747474;
 }
+.button-calendar.white:active {
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+}
+.button-calendar.pink:active {
+    background-color: #f15b4f;
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+}
 .button-calendar.pink:hover {
     background-color: #bf3631;
 }
@@ -424,6 +448,12 @@ nav li a:hover {
     cursor: pointer;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.43);
     transition: all .2s;
+}
+.news-button:active {
+    cursor: pointer;
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
 }
 .news-info-section {
     box-sizing: border-box;
@@ -507,7 +537,12 @@ p.Galano-Grotesque {
     background-color: #0054a4;
     color: white;
 }
-
+.volunteer-button:active {
+    cursor: pointer;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
+}
 /*------------------- Partners Section ---------------*/
 .partners-section {
     width: 100%;
@@ -657,4 +692,10 @@ p.Galano-Grotesque {
     cursor: pointer;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.43);
     transition: all .2s;
+}
+.button-signup:active {
+    cursor: pointer;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
 }
