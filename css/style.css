@@ -509,3 +509,34 @@ p.Galano-Grotesque {
 .partners-section .wrapper .items-flex{
     align-items: center;
 }
+#slider {
+    position: relative;
+}
+.scroll {
+    position: absolute;
+    z-index: 100;
+    width: 49px;
+    height: 49px;
+    color: #a8a8a8;
+    border: 1px solid #a8a8a8;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 49px;
+    text-align: center;
+    font-size: 28px;
+}
+
+#scroll-left {
+    top: 45px;
+    left: -80px;
+}
+#scroll-right {
+    top: 45px;
+    right: -80px;
+}
+.scroll:hover {
+    cursor: pointer;
+    color: #0054a4;
+    border: 1px solid #0054a4;
+}
