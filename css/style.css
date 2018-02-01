@@ -605,12 +605,20 @@ p.Galano-Grotesque {
 .social-icon ul li a{
     color: white;
 }
+.social-icon a:hover {
+    opacity: .5;
+    transition: .3s;
+}
 
 .links a {
     color: rgba(255, 255, 255, 0.5);
+    padding: 8px 0;
 }
 .links ul li {
     margin-bottom: 16px;
+}
+.links ul li a:hover {
+    color: white;
 }
 
 .margin-r10 {
@@ -632,4 +640,17 @@ p.Galano-Grotesque {
 .phone-info {
     color: rgba(255, 255, 255, 0.51);
     margin-top: 3px;
+}
+
+.button-signup {
+    width: 219px;
+    height: 41px;
+    line-height: 39px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.button-signup:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.43);
+    transition: all .2s;
 }
