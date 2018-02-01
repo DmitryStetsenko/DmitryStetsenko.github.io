@@ -71,6 +71,7 @@ a:hover {
 }
 .text-description {
     margin: 15px 0 40px 0;
+    color: gray;
 }
 
 .main-wrapper {
@@ -205,7 +206,7 @@ nav li a:hover {
 .user-action {
     position: absolute;
     z-index: 10;
-    top: -500px;
+    top: -520px;
     width: 418px;
     display: flex;
     flex-direction: column;
@@ -256,6 +257,7 @@ nav li a:hover {
     width: 70px;
     height: 70px;
     flex-shrink: 0;
+    align-self: center;
     background-color: white;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -295,7 +297,9 @@ nav li a:hover {
 .about-section {
     align-items: stretch;
 }
-
+.wrapper-about {
+    padding: 0 40px;
+}
 .header-section {
     width: 570px;
     text-align: center;
@@ -534,11 +538,11 @@ p.Galano-Grotesque {
 
 #scroll-left {
     top: 45px;
-    left: -80px;
+    left: -70px;
 }
 #scroll-right {
     top: 45px;
-    right: -80px;
+    right: -70px;
 }
 .scroll:hover {
     cursor: pointer;
