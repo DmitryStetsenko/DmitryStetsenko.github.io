@@ -4,6 +4,10 @@
 h1 {
     font: 60px "Lobster";
     color: #0054a4;
+    -webkit-transition: font-size .3s;
+    -moz-transition: font-size .3s;
+    -o-transition: font-size .3s;
+    transition: font-size .3s;
 }
 h2 {
     font: 40px "Lobster";
@@ -93,6 +97,8 @@ a:hover {
     z-index:1;
 }
 
+/*---------------- Social ------------------*/
+
 .social {
     height: 30px;
     background-color: #0054a4;
@@ -120,12 +126,34 @@ a:hover {
     transition: .3s;
 }
 
-
+/*------------------------ Navigation ----------------------*/
 .nav-section {
     height: 93px;
     background-color: white;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
+.burger-menu {
+    display: none;
+    padding: 5px 5px;
+    margin-right: 20px;
+}
+.burger-menu i {
+    padding-top: 5px;
+}
+.burger-menu:hover {
+    cursor: pointer;
+    color: #0054a4;
+}
+.menu-descr {
+    padding-right: 5px;
+    line-height: 0.8;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+nav {
     align-items: center;
 }
 nav ul {
@@ -164,9 +192,7 @@ nav li a:hover {
     padding: 0 11px;
 }
 
-.logo {
-    width: 50px;;
-    height: 50px;
+.logo img {
 }
 
 .button {
@@ -205,23 +231,31 @@ nav li a:hover {
     box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
 }
 
-.slider img {
-    width: 100%;
-    height: auto;
+/*-------------- Slider ---------------------*/
+
+/*.slider img {*/
+    /*width: 100%;*/
+    /*height: auto;*/
+/*}*/
+
+.slider {
+    max-width: 1600px;
+    height: 43vw;
+    background: url(../img/main-img.jpg) no-repeat center;
+    background-size: cover;
+}
+.slider .wrapper {
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .user-action {
-    position: absolute;
-    z-index: 10;
-    top: -520px;
     width: 418px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    padding-bottom: 100px;
+
 }
 .action-description {
-    font: 18px/1.5 "OpenSans";
+    font: 1.125em/1.5 "OpenSans";
     color: black;
     margin: 15px 0 28px 0;
 }
@@ -254,6 +288,10 @@ nav li a:hover {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 30px 25px 40px 20px;
+    margin-right: 15px;
+}
+.tabs:last-child {
+    margin-right: 0;
 }
 .tabs:hover {
     cursor: pointer;
@@ -305,7 +343,73 @@ nav li a:hover {
     background-color: rgba(255, 255, 255, 0.35);
     margin: 10px 0;
 }
-
+/*=================Min main header========================================*/
+.main-header-min {
+    display: none;
+    margin-top: -85px;
+    align-items: flex-start;
+}
+.main-header-min .tabs {
+    height: 137px;
+    min-width: 260px;
+    justify-content: flex-start;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px 25px;
+    margin-right: 15px;
+}
+.main-header-min .tabs:last-child {
+    margin-right: 0;
+}
+.main-header-min .tabs-header-section {
+    width: 100%;
+    align-items: flex-start;
+}
+.main-header-min .tabs:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.43);
+    transition: all .2s;
+}
+.main-header-min .tabs:active {
+    cursor: pointer;
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.49);
+}
+.main-header-min .tabs-icon-section {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    align-self: center;
+    background-color: white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    -webkit-box-shadow: 3px 0 7px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 3px 0 7px rgba(0, 0, 0, 0.23);
+    box-shadow: 3px 0 7px rgba(0, 0, 0, 0.23);
+    margin-right: 15px;
+}
+.main-header-min .header-text {
+    margin-right: 15px;
+}
+.main-header-min .line {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.35);
+    margin: 5px 0 10px 0;
+}
+.main-header-min .arrow-right {
+    margin-left: auto;
+}
+/*============================================================*/
 /*------------------- About section -------------------*/
 .about-section {
     align-items: stretch;
@@ -349,6 +453,7 @@ nav li a:hover {
 }
 .calendar-items {
     width: 362px;
+    /*width: 25vw;*/
     height: 584px;
     background-color: #fff;
     align-items: center;
@@ -356,6 +461,11 @@ nav li a:hover {
     border: 1px solid #dddddd;
     border-bottom: none;
 }
+/*.img-title img {*/
+    /*width: 25vw;*/
+    /*height: auto;*/
+/*}*/
+
 .calendar-items:hover{
     cursor: pointer;
     /*border: none;*/
@@ -366,11 +476,16 @@ nav li a:hover {
     margin-top: -66px;
 }
 .items-text-description {
-    padding: 0 33px;
+    /*padding: 0 33px;*/
+    width: 90%;
+}
+
+.calendar-button-section {
+    width: 100%;
 }
 .button-calendar {
     height: 56px;
-    width: 181px;
+    width: 50%;
     text-transform: uppercase;
     line-height: 56px;
     font-weight: 500;
@@ -550,11 +665,19 @@ p.Galano-Grotesque {
     align-items: center;
     justify-content: center;
 }
-.partners-section .wrapper .items-flex{
+.partners-section .wrapper {
+    width: fit-content;
     align-items: center;
+    justify-content: space-between;
 }
 #slider {
     position: relative;
+}
+.slider-items {
+    margin-right: 25px;
+}
+.slider-items:last-child {
+    margin-right: 0;
 }
 .scroll {
     position: absolute;
@@ -603,7 +726,10 @@ p.Galano-Grotesque {
     width: 100%;
     height: 100%;
 }
-
+.logo-img img {
+    width: 100%;
+    height: auto;
+}
 .copyright {
     width: 100%;
     height: 47px;
@@ -699,3 +825,100 @@ p.Galano-Grotesque {
     -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
 }
+@media screen and ( max-width: 1365px ) {
+    #slider-items1 {
+        display: none;
+    }
+}
+
+@media screen and ( max-width: 1200px ) {
+    .wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .partners-section .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and ( max-width: 1150px ) {
+    h1 {
+        font-size: 50px;
+        line-height: 1.2;
+    }
+    /*--------------------- Menu --------------------*/
+    nav ul {
+        display: none;
+    }
+    .burger-menu {
+        display: flex;
+        justify-content: center;
+    }
+    /*--------------------- end Menu --------------------*/
+
+    /*---------------- main image section --------------------*/
+    .slider {
+        max-width: 100%;
+        height: 43vw;
+        background-position: right;
+    }
+    .user-action {
+        padding-bottom: 67px;
+    }
+    /*---------------- main image section --------------------*/
+
+    /*--------------------- Tabs section -----------------------*/
+    .main-header {
+        display: none;
+    }
+    .main-header-min {
+        display: flex;
+    }
+    /*--------------------- Tabs section End-----------------------*/
+
+    /*------------------ Calendar ------------------*/
+    .calendar-items-section {
+        align-items: stretch;
+    }
+    .calendar-items {
+        width: 30vw;
+        height: auto;
+    }
+    .img-title img {
+        width: 30vw;
+        height: auto;
+    }
+    .img-logo img {
+        width: 50px;
+        height: 50px;
+    }
+    .img-logo {
+        margin: -25px 0 5px 0;
+    }
+    .items-text-header {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .items-text-description {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    .date {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .button-calendar {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    /*------------------ End Calendar ------------------*/
+
+    /*-------------------- Partner section------------------*/
+    #slider-items2 {
+        display: none;
+    }
+    /*-------------------- End Partner section------------------*/
+}
+
