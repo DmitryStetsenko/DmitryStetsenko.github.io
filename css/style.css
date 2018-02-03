@@ -26,31 +26,31 @@ a:hover {
     text-decoration: none;
 }
 
-.up {
-    position: fixed;
-    top: 50%;
-    right: 5px;
-    font-size: 70px;
+/*.up {*/
+    /*position: fixed;*/
+    /*top: 50%;*/
+    /*right: 5px;*/
+    /*font-size: 70px;*/
 
-    opacity: .3;
-    transition: opacity .3s;
-    z-index: 100;
-}
-.up a {
-    color: #6fbd2a;
-}
-.up a:visited {
-    color: #6fbd2a;
-    opacity: .3;
-}
-.up a:active {
-    color: #6fbd2a;
-    opacity: .3;
-}
-.up:hover {
-    cursor: pointer;
-    opacity: 1;
-}
+    /*opacity: .3;*/
+    /*transition: opacity .3s;*/
+    /*z-index: 100;*/
+/*}*/
+/*.up a {*/
+    /*color: #6fbd2a;*/
+/*}*/
+/*.up a:visited {*/
+    /*color: #6fbd2a;*/
+    /*opacity: .3;*/
+/*}*/
+/*.up a:active {*/
+    /*color: #6fbd2a;*/
+    /*opacity: .3;*/
+/*}*/
+/*.up:hover {*/
+    /*cursor: pointer;*/
+    /*opacity: 1;*/
+/*}*/
 
 .open-sans { font-family: "OpenSans";}
 .fn-lobster { font-family: "Lobster";}
@@ -748,10 +748,12 @@ p.Galano-Grotesque {
     position: relative;
 }
 .slider-items {
+    user-select: none;
     margin-right: 25px;
+    opacity: 1;
     -webkit-transition: all 0.8s;
     -moz-transition: all 0.8s;
-    -ms-transition: all 0.7s;
+    -ms-transition: all 0.8s;
     -o-transition: all 0.8s;
     transition: all 0.8s;
 }
@@ -793,7 +795,7 @@ p.Galano-Grotesque {
     position: relative;
     display: flex;
     width: 1040px;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     overflow: hidden;
 }
