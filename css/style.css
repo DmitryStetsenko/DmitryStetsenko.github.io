@@ -1,6 +1,9 @@
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("reset.css");
 
+.body {
+    position: relative;
+}
 h1 {
     font: 60px "Lobster";
     color: #0054a4;
@@ -22,15 +25,27 @@ h3 {
 a:hover {
     text-decoration: none;
 }
+
 .up {
     position: fixed;
     top: 50%;
     right: 5px;
     font-size: 70px;
-    color: #6fbd2a;
+
     opacity: .3;
     transition: opacity .3s;
-    z-index: 1000;
+    z-index: 100;
+}
+.up a {
+    color: #6fbd2a;
+}
+.up a:visited {
+    color: #6fbd2a;
+    opacity: .3;
+}
+.up a:active {
+    color: #6fbd2a;
+    opacity: .3;
 }
 .up:hover {
     cursor: pointer;
@@ -142,7 +157,6 @@ a:hover {
 
 /*------------------------ Navigation ----------------------*/
 .nav-section {
-    position: relative;
     height: 93px;
     background-color: white;
     display: flex;
@@ -163,26 +177,37 @@ a:hover {
     color: #0054a4;
 }
 .burger-menu-items {
+    display: none;
     position: absolute;
-    top: 0;
-
-    background-color: rgba(255, 255, 255, 0.51);
+    top: 40px;
+    z-index: 300;
+    background-color: rgba(255, 255, 255, 0.82);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
+}
+.menu-active {
+    display: block;
 }
 .burger-menu-items ul li a {
     display: block;
     height: 38px;
-    padding: 1px 12px;
+    padding: 5px 20px;
     font-family: "OpenSans";
     letter-spacing: -0.1px;
     font-size: 15px;
     color: rgba(0, 0, 0, 0.48);
     line-height: 38px;
-    z-index: 1000;
 }
 .burger-menu-items li a:hover {
     color: #0054a4;
     background-color: white;
 }
+
 .menu-descr {
     padding-right: 5px;
     line-height: 0.8;
@@ -193,15 +218,15 @@ a:hover {
 nav {
     align-items: center;
 }
-nav>ul {
+nav ul#horizontal  {
 display: flex;
 }
-nav>li {
+nav ul#horizontal li {
     box-sizing: border-box;
     border-radius: 25px;
     line-height: 1;
 }
-nav>li:hover {
+nav ul#horizontal li:hover {
     cursor: pointer;
     border: 1px solid #0054a4;
     background-color: #eeeeee;
@@ -211,10 +236,10 @@ nav>li:hover {
     -o-transition: background-color 0.5s;
     transition: background-color 0.5s;
 }
-nav>li:last-child {
+nav ul#horizontal li:last-child {
     margin-right: 16px;
 }
-nav>ul li a {
+nav ul#horizontal li a {
     display: block;
     height: 38px;
     padding: 1px 12px;
@@ -224,7 +249,7 @@ nav>ul li a {
     color: rgba(0, 0, 0, 0.48);
     line-height: 38px;
 }
-nav>li a:hover {
+nav ul#horizontal li a:hover {
     color: #0054a4;
     padding: 0 11px;
 }
@@ -920,7 +945,7 @@ p.Galano-Grotesque {
     .logo img {
         height: 167px;
     }
-    nav ul {
+    nav ul#horizontal {
         display: none;
     }
     .burger-menu {
@@ -1423,7 +1448,7 @@ p.Galano-Grotesque {
     .button {
         width: 130px;
         height: 28px;
-        line-height: 24px;
+        line-height: 26px;
     }
     .social li {
         margin-right: 15px;
