@@ -22,6 +22,20 @@ h3 {
 a:hover {
     text-decoration: none;
 }
+.up {
+    position: fixed;
+    top: 50%;
+    right: 5px;
+    font-size: 70px;
+    color: #6fbd2a;
+    opacity: .3;
+    transition: opacity .3s;
+    z-index: 1000;
+}
+.up:hover {
+    cursor: pointer;
+    opacity: 1;
+}
 
 .open-sans { font-family: "OpenSans";}
 .fn-lobster { font-family: "Lobster";}
@@ -128,6 +142,7 @@ a:hover {
 
 /*------------------------ Navigation ----------------------*/
 .nav-section {
+    position: relative;
     height: 93px;
     background-color: white;
     display: flex;
@@ -135,6 +150,7 @@ a:hover {
     align-items: center;
 }
 .burger-menu {
+    position: relative;
     display: none;
     padding: 5px 5px;
     margin-right: 20px;
@@ -146,6 +162,27 @@ a:hover {
     cursor: pointer;
     color: #0054a4;
 }
+.burger-menu-items {
+    position: absolute;
+    top: 0;
+
+    background-color: rgba(255, 255, 255, 0.51);
+}
+.burger-menu-items ul li a {
+    display: block;
+    height: 38px;
+    padding: 1px 12px;
+    font-family: "OpenSans";
+    letter-spacing: -0.1px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.48);
+    line-height: 38px;
+    z-index: 1000;
+}
+.burger-menu-items li a:hover {
+    color: #0054a4;
+    background-color: white;
+}
 .menu-descr {
     padding-right: 5px;
     line-height: 0.8;
@@ -156,15 +193,15 @@ a:hover {
 nav {
     align-items: center;
 }
-nav ul {
+nav>ul {
 display: flex;
 }
-nav li {
+nav>li {
     box-sizing: border-box;
     border-radius: 25px;
     line-height: 1;
 }
-nav li:hover {
+nav>li:hover {
     cursor: pointer;
     border: 1px solid #0054a4;
     background-color: #eeeeee;
@@ -174,10 +211,10 @@ nav li:hover {
     -o-transition: background-color 0.5s;
     transition: background-color 0.5s;
 }
-nav li:last-child {
+nav>li:last-child {
     margin-right: 16px;
 }
-nav ul li a {
+nav>ul li a {
     display: block;
     height: 38px;
     padding: 1px 12px;
@@ -187,7 +224,7 @@ nav ul li a {
     color: rgba(0, 0, 0, 0.48);
     line-height: 38px;
 }
-nav li a:hover {
+nav>li a:hover {
     color: #0054a4;
     padding: 0 11px;
 }
@@ -477,7 +514,7 @@ nav li a:hover {
     cursor: pointer;
     /*border: none;*/
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.43);
-    /*transition: all .3s;*/
+    transition: all .2s;
 }
 .img-logo {
     margin-top: -66px;
@@ -546,6 +583,7 @@ nav li a:hover {
 .news-items:hover{
     cursor: pointer;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.43);
+    transition: all .2s;
 }
 .news-items .items-text-description {
     padding: 0;
@@ -660,6 +698,7 @@ p.Galano-Grotesque {
     cursor: pointer;
     background-color: #0054a4;
     color: white;
+    transition: all .4s;
 }
 .volunteer-button:active {
     cursor: pointer;
