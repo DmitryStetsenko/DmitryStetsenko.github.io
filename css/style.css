@@ -743,6 +743,7 @@ p.Galano-Grotesque {
     align-items: center;
     justify-content: space-between;
 }
+
 #slider {
     position: relative;
 }
@@ -779,6 +780,9 @@ p.Galano-Grotesque {
     cursor: pointer;
     color: #0054a4;
     border: 1px solid #0054a4;
+}
+.partners-hide {
+    display: none;
 }
 
 /*------------------ Footer ---------------------*/
