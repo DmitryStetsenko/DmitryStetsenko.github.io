@@ -1,0 +1,23 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("reset.css");
+@import url('style.css');
+
+.header-section {
+
+    align-items: center;: center;
+}
+.foto-main {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 4px #858585;
+}
+.foto-main img {
+    display: block;
+}
+
+#child {
+    max-width: 1600px;
+    height: 30vw;
+    background: url(../img/main-img.jpg) no-repeat center;
+    background-size: cover;
+}
