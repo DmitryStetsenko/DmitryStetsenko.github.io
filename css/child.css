@@ -14,7 +14,13 @@
 .foto-main img {
     display: block;
 }
-
+.text-description {
+    margin-bottom: 30px;
+}
+.header-section {
+    margin-bottom: 70px;
+    border-bottom: 1px solid lightgray;
+}
 #child {
     max-width: 1600px;
     height: 30vw;
