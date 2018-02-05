@@ -26,6 +26,7 @@ $(document).ready(function () {
      var marginLeft = 0;
      var numbersOfClick,numbersOfrevers;
      var slideControl = $('.scroll');
+     var check = false;
 
 
      // ---------------------Media query ----------------------
@@ -120,15 +121,18 @@ $(document).ready(function () {
             var firstItems = $('.slider-items').eq(0);
             var lastItems;
             firstItems.css('margin-left', '0px');
-            firstItems.clone().appendTo('.slider-visible');
             firstItems.css('margin-left', '-267px');
-             setTimeout(function () {
+            setTimeout(function () {
+                firstItems.clone().appendTo('.slider-visible');
                  lastItems = $('.slider-items').eq($('.slider-items').length - 1);
                  lastItems.remove();
                  firstItems.css('margin-left', '0px');
                  firstItems.appendTo('.slider-visible');
-             },1500);
+
+             },1300);
+
         }
+        return false;
     });
     scrollLeft.click(function () {
         if (!(numbersOfClick === 0)) {
@@ -137,8 +141,12 @@ $(document).ready(function () {
             lastItems.css('margin-left', '-267px');
             lastItems.prependTo('.slider-visible');
             firstItems = $('.slider-items').eq(0);
-            firstItems.animate({marginLeft: 0},00);
-        }
+            firstItems.animate({marginLeft: 0}, 100);
+            // setTimeout(function () {
+            //
+            // },1500);
+           }
+        return false;
       });
 
 
