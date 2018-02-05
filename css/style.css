@@ -589,15 +589,21 @@ nav ul#horizontal li a:hover {
 
 
 /*---------------- Video section ----------------*/
+.video-items {
+    margin-right: 15px;
+}
+.video-items:last-child {
+    margin-right: 0;
+}
 .vimeo-video {
     margin-bottom: 20px;
-    margin-right: 15px;
+    /*margin-right: 15px;*/
     width: 575px;
     height: 320px;
 }
-.vimeo-video:last-child {
-    margin-right: 0;
-}
+/*.vimeo-video:last-child {*/
+    /*margin-right: 0;*/
+/*}*/
 
 /*------------------ News Section ----------------*/
 .news-items {
@@ -764,6 +770,22 @@ p.Galano-Grotesque {
 /*.slider-items:last-child {*/
     /*margin-right: 0;*/
 /*}*/
+.margin-null {
+    margin-left: 0px;
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+}
+.margin-add {
+    margin-left: -267px;
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+}
 .scroll {
     position: absolute;
     z-index: 100;

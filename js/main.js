@@ -122,6 +122,10 @@ $(document).ready(function () {
             firstItems.appendTo('.slider-visible');
             firstItems = $('.slider-items').eq(0);
             firstItems.css('margin-left', '-267px');
+             // setTimeout(function () {
+             //     firstItems.appendTo('.slider-visible');
+             //     firstItems.css('margin-left', '0px');
+             // },1500);
         }
     });
     scrollLeft.click(function () {
@@ -131,9 +135,10 @@ $(document).ready(function () {
             lastItems.css('margin-left', '-267px');
             lastItems.prependTo('.slider-visible');
             firstItems = $('.slider-items').eq(0);
-            firstItems.css('margin-left', '0px');
+            firstItems.animate({marginLeft: 0},00);
         }
       });
+
 
     //----------------------------------------------------
      function slowScroll(id) {
