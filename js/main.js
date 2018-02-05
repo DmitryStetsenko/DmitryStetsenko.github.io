@@ -77,14 +77,10 @@ $(document).ready(function () {
          numbersOfrevers = 0;
          marginLeft = 0;
          sliderItems.eq(0).css('margin-left', marginLeft + 'px');
-         if (numbersOfClick === 0) {
-             slideControl.css('display','none');
-         } else slideControl.css('display','block');
+
      });
 
-     if (numbersOfClick === 0) {
-         slideControl.css('display','none');
-     } else slideControl.css('display','block');
+
      //---------------------------------------------------------
 
      // scrollRight.click(function () {
@@ -119,20 +115,23 @@ $(document).ready(function () {
     //
     // });
     scrollRight.click(function () {
-        var firstItems = $('.slider-items').eq(0);
+        if (!(numbersOfClick === 0)) {
+            var firstItems = $('.slider-items').eq(0);
             firstItems.css('margin-left', '0px');
             firstItems.appendTo('.slider-visible');
             firstItems = $('.slider-items').eq(0);
             firstItems.css('margin-left', '-267px');
+        }
     });
     scrollLeft.click(function () {
-        var firstItems = $('.slider-items').eq(0);
-        var lastItems = $('.slider-items').eq(sliderLength-1);
+        if (!(numbersOfClick === 0)) {
+            var firstItems = $('.slider-items').eq(0);
+            var lastItems = $('.slider-items').eq(sliderLength - 1);
             lastItems.css('margin-left', '-267px');
             lastItems.prependTo('.slider-visible');
             firstItems = $('.slider-items').eq(0);
             firstItems.css('margin-left', '0px');
-
+        }
       });
 
     //----------------------------------------------------
