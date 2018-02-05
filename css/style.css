@@ -108,7 +108,7 @@ a:hover {
 }
 
 .main-wrapper {
-    max-width: 1600px;
+    max-width: 1920px;
     height: 100%;
     margin: 0 auto;
 }
@@ -117,12 +117,14 @@ a:hover {
     max-width: 1200px;
     height: inherit;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .logo {
     position: absolute;
     top:0;
-    left:-20px;
+    left: 0;
+    /*left:-20px;*/
     z-index:1;
 }
 
@@ -208,12 +210,12 @@ a:hover {
     background-color: white;
 }
 
-.menu-descr {
-    padding-right: 5px;
-    line-height: 0.8;
-    justify-content: center;
-    align-items: flex-end;
-}
+/*.menu-descr {*/
+    /*padding-right: 5px;*/
+    /*line-height: 0.8;*/
+    /*justify-content: center;*/
+    /*align-items: flex-end;*/
+/*}*/
 
 nav {
     align-items: center;
@@ -277,7 +279,8 @@ nav ul#horizontal li a:hover {
     font-family: "FontAwesome";
     font-size: 20px;
     content: '\f105';
-    /*position: absolute;*/
+    position: relative;
+    top: 1px;
     margin-left: 15px;
 
     color: white;
@@ -303,8 +306,9 @@ nav ul#horizontal li a:hover {
 /*}*/
 
 .slider {
-    max-width: 1600px;
-    height: 43vw;
+    max-width: 100%;
+    /*height: 43vw;*/
+    height: 791px;
     background: url(../img/main-img.jpg) no-repeat center;
     background-size: cover;
 }
@@ -751,11 +755,11 @@ p.Galano-Grotesque {
     user-select: none;
     margin-right: 25px;
     opacity: 1;
-    -webkit-transition: all 0.8s;
-    -moz-transition: all 0.8s;
-    -ms-transition: all 0.8s;
-    -o-transition: all 0.8s;
-    transition: all 0.8s;
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
 }
 .slider-items:last-child {
     margin-right: 0;
@@ -794,9 +798,9 @@ p.Galano-Grotesque {
 .slider-visible {
     position: relative;
     display: flex;
-    width: 1040px;
+    width: 1044px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     overflow: hidden;
 }
 
@@ -883,6 +887,7 @@ p.Galano-Grotesque {
 
 .margin-r10 {
     margin-right: 15px;
+    margin-top: -2px;
 }
 .adress-section {
     justify-content: flex-start;
@@ -920,9 +925,17 @@ p.Galano-Grotesque {
     -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.49);
 }
+
+@media screen and ( max-width: 1600px ) {
+    .slider {
+        max-width: 1600px;
+        height: 43vw;
+    }
+}
+
 @media screen and ( max-width: 1365px ) {
     .slider-visible {
-        width: 780px;
+        width: 777px;
     }
 }
 
@@ -1082,7 +1095,7 @@ p.Galano-Grotesque {
     }
     /*---------------------------------------------*/
     .slider-visible {
-        width: 505px;
+        width: 510px;
     }
     /*--------------- footer button -----------------*/
     .button-signup {
@@ -1395,6 +1408,10 @@ p.Galano-Grotesque {
         padding-bottom: 10px;
         margin: 0 0 20px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        align-items: flex-start;
+    }
+    .block-header {
+        align-self: center;
     }
     .stay-in-touch {
         text-align: center;
@@ -1451,8 +1468,9 @@ p.Galano-Grotesque {
         line-height: 1.2;
     }
     .action-button {
-        flex-direction: column;
-        margin: 0;
+        position: absolute;
+        /*flex-direction: column;*/
+        /*margin: 0;*/
     }
     .action-button .button.pink{
         margin-bottom: 5px;
@@ -1471,7 +1489,11 @@ p.Galano-Grotesque {
     .button {
         width: 130px;
         height: 28px;
-        line-height: 26px;
+        line-height: 24px;
+        text-align: center;
+    }
+    .button.pink p::after {
+        margin-left: 6px;
     }
     .social li {
         margin-right: 15px;
@@ -1526,6 +1548,64 @@ p.Galano-Grotesque {
 }
 
 @media screen and ( max-width: 360px ) {
-.slider .wrapper {
-    justify-content: flex-end;}
+    .slider .wrapper {
+        /*justify-content: flex-end;*/
+    }
+    h1 {
+        font-size: 22px;
+    }
+    .burger-menu {
+        font-size: 20px;
+    }
+    .user-action {
+        position: relative;
+        /*margin-bottom: 28px;*/
+        width: 50%;
+    }
+    .button {
+        font-size: 11px;
+        width: 110px;
+        line-height: 25px;
+    }
+    .button.pink p::after {
+        font-size: 18px;
+        top: 2px;
+    }
+    #scroll-right {
+        right: -34px;
+    }
+    #scroll-left {
+        left: -37px;
+    }
+    .scroll {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+    }
+    .burger-menu {
+        padding: 5px 5px;
+        margin-right: 5px;
+    }
+    .news-items {
+        width: 300px;
+    }
+    .calendar-items {
+        width: 300px;
+    }
+}
+
+@media screen and ( max-width: 320px ) {
+    .wrapper {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 320px;
+    }
+
+    .main-wrapper {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 320px;
+    }
 }
