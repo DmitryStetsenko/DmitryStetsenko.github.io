@@ -1571,6 +1571,14 @@ p.Galano-Grotesque {
         font-size: 18px;
         top: 2px;
     }
+
+    .main-header .tabs {
+        width: 300px;
+        padding: 20px 20px;
+    }
+    .main-header .tabs h3 {
+        font-size: 20px;
+    }
     #scroll-right {
         right: -34px;
     }
