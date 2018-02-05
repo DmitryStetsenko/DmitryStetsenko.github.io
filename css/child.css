@@ -22,8 +22,16 @@
     border-bottom: 1px solid lightgray;
 }
 #child {
-    max-width: 1600px;
+    max-width: 1920px;
     height: 30vw;
     background: url(../img/main-img.jpg) no-repeat center;
     background-size: cover;
+}
+.user-action {
+    width: 418px;
+    padding-bottom: 30px;
+}
+
+.slider .wrapper {
+    justify-content: flex-end;
 }
