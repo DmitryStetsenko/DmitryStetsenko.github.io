@@ -87,28 +87,55 @@ $(document).ready(function () {
      } else slideControl.css('display','block');
      //---------------------------------------------------------
 
-     scrollRight.click(function () {
-         var firstItems = $('.slider-items').eq(0);
-         if (!(numbersOfClick === 0)) {
-             marginLeft -= 267;
-             sliderItems.eq(0).css('margin-left', marginLeft + 'px');
-             numbersOfClick = numbersOfClick - 1;
-             numbersOfrevers ++;
-         } else {
-             firstItems.appendTo('.slider-visible');
-         }
-     });
+     // scrollRight.click(function () {
+    //     var firstItems = $('.slider-items').eq(0);
+    //     if (!(numbersOfClick === 0)) {
+    //         marginLeft -= 267;
+    //         sliderItems.eq(0).css('margin-left', marginLeft + 'px');
+    //         numbersOfClick = numbersOfClick - 1;
+    //         numbersOfrevers ++;
+    //     } else {
+    //         firstItems.css('margin-left', '0px');
+    //         firstItems.appendTo('.slider-visible');
+    //         firstItems = $('.slider-items').eq(0);
+    //         firstItems.css('margin-left', '-267px');
+    //     }
+    // });
+    //
+    // scrollLeft.click(function () {
+    //     var firstItems = $('.slider-items').eq(0);
+    //     var lastItems = $('.slider-items').eq(sliderLength-1);
+    //     if (!(numbersOfrevers === 0)) {
+    //         marginLeft += 267;
+    //         sliderItems.eq(0).css('margin-left', marginLeft + 'px');
+    //         numbersOfrevers = numbersOfrevers -1;
+    //         numbersOfClick = numbersOfClick + 1;
+    //     } else {
+    //         lastItems.css('margin-left', '-267px');
+    //         lastItems.prependTo('.slider-visible');
+    //         firstItems = $('.slider-items').eq(0);
+    //         firstItems.css('margin-left', '-267px');
+    //     }
+    //
+    // });
+    scrollRight.click(function () {
+        var firstItems = $('.slider-items').eq(0);
+            firstItems.css('margin-left', '0px');
+            firstItems.appendTo('.slider-visible');
+            firstItems = $('.slider-items').eq(0);
+            firstItems.css('margin-left', '-267px');
+    });
+    scrollLeft.click(function () {
+        var firstItems = $('.slider-items').eq(0);
+        var lastItems = $('.slider-items').eq(sliderLength-1);
+            lastItems.css('margin-left', '-267px');
+            lastItems.prependTo('.slider-visible');
+            firstItems = $('.slider-items').eq(0);
+            firstItems.css('margin-left', '0px');
 
-     scrollLeft.click(function () {
-         if (!(numbersOfrevers === 0)) {
-             marginLeft += 267;
-             sliderItems.eq(0).css('margin-left', marginLeft + 'px');
-             numbersOfrevers = numbersOfrevers -1;
-             numbersOfClick = numbersOfClick + 1;
-         }
+      });
 
-     });
-     //----------------------------------------------------
+    //----------------------------------------------------
      function slowScroll(id) {
         $('html, body').animate({scrollTop: $(id).offset().top}, 500);
         return false;
