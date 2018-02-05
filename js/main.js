@@ -118,14 +118,16 @@ $(document).ready(function () {
     scrollRight.click(function () {
         if (!(numbersOfClick === 0)) {
             var firstItems = $('.slider-items').eq(0);
+            var lastItems;
             firstItems.css('margin-left', '0px');
-            firstItems.appendTo('.slider-visible');
-            firstItems = $('.slider-items').eq(0);
+            firstItems.clone().appendTo('.slider-visible');
             firstItems.css('margin-left', '-267px');
-             // setTimeout(function () {
-             //     firstItems.appendTo('.slider-visible');
-             //     firstItems.css('margin-left', '0px');
-             // },1500);
+             setTimeout(function () {
+                 lastItems = $('.slider-items').eq($('.slider-items').length - 1);
+                 lastItems.remove();
+                 firstItems.css('margin-left', '0px');
+                 firstItems.appendTo('.slider-visible');
+             },1500);
         }
     });
     scrollLeft.click(function () {
