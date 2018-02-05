@@ -761,9 +761,9 @@ p.Galano-Grotesque {
     -o-transition: all 1.5s;
     transition: all 1.5s;
 }
-.slider-items:last-child {
-    margin-right: 0;
-}
+/*.slider-items:last-child {*/
+    /*margin-right: 0;*/
+/*}*/
 .scroll {
     position: absolute;
     z-index: 100;
