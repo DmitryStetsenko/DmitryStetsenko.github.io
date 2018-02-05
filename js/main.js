@@ -76,7 +76,8 @@ $(document).ready(function () {
          numbersOfClick = sliderLength - numberItems;
          numbersOfrevers = 0;
          marginLeft = 0;
-         sliderItems.eq(0).css('margin-left', marginLeft + 'px');
+         sliderItems = $('.slider-items');
+         sliderItems.eq(0).css('margin-left', '0px');
 
      });
 
