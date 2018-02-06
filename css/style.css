@@ -1322,7 +1322,7 @@ p.Galano-Grotesque {
         margin-bottom: 20px;
     }
     .img-title img {
-        width: 320px;
+        width: 362px;
         height: auto;
     }
     .text-description {
@@ -1579,6 +1579,9 @@ p.Galano-Grotesque {
         width: 320px;
         height: 564px;
         margin-bottom: 15px;
+    }
+    .img-title img {
+        width: 320px;
     }
     .main-header .tabs {
         width: 320px;
