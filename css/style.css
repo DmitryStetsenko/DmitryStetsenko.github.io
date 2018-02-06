@@ -182,6 +182,7 @@ a:hover {
     display: none;
     position: absolute;
     top: 40px;
+    right: 4px;
     z-index: 300;
     background-color: rgba(255, 255, 255, 0.82);
     -webkit-user-select: none;
@@ -410,6 +411,9 @@ nav ul#horizontal li a:hover {
     display: flex;
     justify-content: space-between;
 }
+.tabs-description {
+    width: 95%;
+}
 .line {
     width: 94px;
     height: 2px;
@@ -491,7 +495,7 @@ nav ul#horizontal li a:hover {
     padding: 0 40px;
 }
 .header-section {
-    width: 570px;
+    width: 100%;
     text-align: center;
     align-self: center;
 }
@@ -612,7 +616,7 @@ nav ul#horizontal li a:hover {
     border-radius: 5px;
     overflow: hidden;
     background-color: #fff;
-    align-items: flex-start;
+    /*align-items: flex-start;*/
     border: 1px solid #dddddd;
 }
 .news-items:hover{
@@ -716,7 +720,9 @@ p.fn-lobster{
 p.Galano-Grotesque {
     font-weight: 400;
 }
-
+.volunteer-section p.fs18{
+    width: 95%;
+}
 .volunteer-button {
     margin-top: 30px;
     width: 195px;
@@ -788,7 +794,7 @@ p.Galano-Grotesque {
 }
 .scroll {
     position: absolute;
-    z-index: 100;
+    z-index: 999;
     width: 49px;
     height: 49px;
     color: #a8a8a8;
@@ -906,7 +912,9 @@ p.Galano-Grotesque {
 .links ul li a:hover {
     color: white;
 }
-
+.contact-us {
+    flex-basis: 30%;
+}
 .margin-r10 {
     margin-right: 15px;
     margin-top: -2px;
@@ -1003,7 +1011,7 @@ p.Galano-Grotesque {
         display: none;
     }
     .burger-menu {
-        display: flex;
+        display: block;
         justify-content: center;
     }
     /*--------------------- end Menu --------------------*/
@@ -1024,6 +1032,9 @@ p.Galano-Grotesque {
     }
     .main-header-min {
         display: flex;
+    }
+    .tabs-description {
+        text-align: center;
     }
     /*--------------------- Tabs section End-----------------------*/
 
@@ -1161,20 +1172,24 @@ p.Galano-Grotesque {
     h3 {
         font-size: 22px;
     }
-    .main-header-min .tabs-description {
-        display: none;
-    }
-    .main-header-min .tabs-header-section {
-        align-items: center;
-    }
+    /*.main-header-min .tabs-description {*/
+        /*display: none;*/
+    /*}*/
+    /*.main-header-min .tabs-header-section {*/
+        /*align-items: center;*/
+    /*}*/
     .main-header-min .tabs {
         width: fit-content;
         height: fit-content;
         padding: 15px 10px;
         min-width: 200px;
     }
-    .line {
-        display: none;
+    /*.line {*/
+        /*display: none;*/
+    /*}*/
+    .tabs-description {
+        text-align: left;
+        padding: 3px 5px;
     }
     /*----------------------------------------------------------*/
 
@@ -1192,6 +1207,11 @@ p.Galano-Grotesque {
         height: 18vw;
     }
     /*----------------------------------------------------------------*/
+    .logo-img img {
+        width: 30vw;
+        height: auto;
+    }
+
     .news-info-section {
         padding: 0 25px;
     }
@@ -1236,21 +1256,22 @@ p.Galano-Grotesque {
     }
     /*--------------------- main header ----------------*/
     .main-header-min {
-    display: none;
+        display: none;
     }
     .main-header {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 0;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 0;
     }
     .tabs {
-    margin: 0;
-    margin-bottom: 15px;
+        margin: 0;
+        margin-bottom: 15px;
+        padding: 20px 25px 20px 20px;
     }
     .tabs:last-child {
-    margin-bottom: 0;
+        margin-bottom: 0;
     }
     .line {
         display: block;
@@ -1301,7 +1322,7 @@ p.Galano-Grotesque {
         margin-bottom: 20px;
     }
     .img-title img {
-        width: 100%;
+        width: 320px;
         height: auto;
     }
     .text-description {
@@ -1382,6 +1403,7 @@ p.Galano-Grotesque {
         margin-bottom: 10px;
     }
     /*----------------------------------------------------------------*/
+
 }
 
 @media screen and ( max-width: 700px ) {
@@ -1391,7 +1413,9 @@ p.Galano-Grotesque {
     #slider-items3 {
         display: none;
     }
-
+    .wrapper-about {
+        padding: 0 20px;
+    }
     /*----------------------- Footer ---------------------*/
     .footer-section {
         height: auto;
@@ -1431,6 +1455,7 @@ p.Galano-Grotesque {
         margin: 0 0 20px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         align-items: flex-start;
+        flex-basis: auto;
     }
     .block-header {
         align-self: center;
@@ -1441,6 +1466,11 @@ p.Galano-Grotesque {
     /*-------------------------------------------------------*/
     .slider-visible {
         width: 245px;
+    }
+
+    .logo-img img {
+        width: 70vw;
+        height: auto;
     }
 }
 @media screen and ( max-width: 640px ) {
@@ -1497,9 +1527,9 @@ p.Galano-Grotesque {
     .action-button .button.pink{
         margin-bottom: 5px;
     }
-    .header-section {
-        width: auto;
-    }
+    /*.header-section {*/
+        /*width: auto;*/
+    /*}*/
 }
 @media screen and ( max-width: 500px ) {
     .logo img {
@@ -1620,6 +1650,9 @@ p.Galano-Grotesque {
         width: 300px;
     }
     .calendar-items {
+        width: 300px;
+    }
+    .img-title img {
         width: 300px;
     }
 }

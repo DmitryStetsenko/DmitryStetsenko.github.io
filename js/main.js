@@ -139,6 +139,8 @@ $(document).ready(function () {
             var firstItems = $('.slider-items').eq(0);
             var lastItems = $('.slider-items').eq(sliderLength - 1);
             lastItems.css('margin-left', '-267px');
+            setTimeout(function () {
+            },1300);
             lastItems.prependTo('.slider-visible');
             firstItems = $('.slider-items').eq(0);
             firstItems.animate({marginLeft: 0}, 100);
