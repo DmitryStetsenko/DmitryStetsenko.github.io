@@ -5,7 +5,6 @@ $(document).ready(function () {
         $('.burger-menu, .burger-menu-items').click(function () {
             var coord = $('.burger-menu').offset();
             var activeMenu = $('.burger-menu-items');
-            console.log(coord);
             activeMenu.toggleClass('menu-active');
         });
 
