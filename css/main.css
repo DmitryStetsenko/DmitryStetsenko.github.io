@@ -291,7 +291,7 @@ h3 {
     .slider .circle-elem:first-child {
       background-color: white; }
   .slider-dark {
-    opacity: 0.4;
+    opacity: 0.3;
     width: 100%;
     height: 100%;
     top: 0;
@@ -364,6 +364,9 @@ h3 {
   color: #272727;
   background: #f3f3f3;
   text-align: center; }
+  .progress p {
+    margin: 0;
+    padding: 0; }
   .progress__elem {
     padding: 30px; }
     .progress__elem-number {
@@ -376,7 +379,8 @@ h3 {
       line-height: 195px;
       font-size: 48px;
       font-weight: 400;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      align-self: center; }
     .progress__elem-description {
       text-transform: uppercase;
       font-weight: 400;
