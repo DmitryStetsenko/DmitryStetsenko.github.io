@@ -144,7 +144,7 @@ a {
   text-transform: capitalize;
   font-size: 48px;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
   letter-spacing: 1px; }
 
 a {
@@ -299,7 +299,7 @@ h3 {
     background-color: black; }
 
 .advantages {
-  padding: 60px 0;
+  padding: 90px 0;
   font-weight: 400;
   color: #8d8d8d; }
   .advantages h3 {
@@ -324,7 +324,7 @@ h3 {
     padding: 0; }
 
 .services {
-  padding: 60px 0;
+  padding: 90px 0;
   color: #272727; }
   .services-header {
     text-transform: capitalize;
@@ -336,7 +336,7 @@ h3 {
     line-height: 1.5rem;
     font-weight: 400;
     color: #8d8d8d;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
     text-align: right; }
   .services #align-left .services-header {
     text-align: left; }
@@ -389,11 +389,12 @@ h3 {
       padding: 0 20px; }
 
 .blog {
-  padding: 60px 0;
+  padding: 90px 0;
   color: #8d8d8d;
   font-weight: 400; }
   .blog__header {
-    color: #272727; }
+    color: #272727;
+    margin-bottom: 60px; }
   .blog__elem {
     margin-right: 15px; }
     .blog__elem:last-child {
@@ -413,7 +414,7 @@ h3 {
         transition: all .5s;
         color: #fdb714; }
     .blog__elem-description {
-      margin-bottom: 15px; }
+      margin-bottom: 30px; }
     .blog__elem .date:before {
       margin-right: 7.5px;
       color: #fdb714;
@@ -435,3 +436,84 @@ h3 {
         -o-transition: all .5s;
         transition: all .5s;
         color: #272727; }
+
+.plan {
+  padding: 90px 0;
+  background: #f3f3f3; }
+  .plan__header {
+    text-align: center;
+    color: #8d8d8d;
+    font-weight: 400;
+    margin-bottom: 90px; }
+    .plan__header .header-section {
+      margin-bottom: 30px; }
+    .plan__header p {
+      font-size: 24px;
+      margin: 0;
+      padding: 0; }
+  .plan__item {
+    color: #8d8d8d;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    background: white;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding-top: 30px;
+    overflow: hidden; }
+    .plan__item_title {
+      padding: 15px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 20.8px;
+      color: silver; }
+    .plan__item_price {
+      padding: 30px;
+      font-size: 48px;
+      color: #272727; }
+      .plan__item_price:before {
+        content: '$';
+        font-size: 24px;
+        position: relative;
+        top: -15px;
+        left: -15px; }
+      .plan__item_price:after {
+        content: '/mo';
+        font-size: 24px;
+        position: relative;
+        right: -5px;
+        text-transform: none; }
+    .plan__item_services {
+      padding: 15px; }
+    .plan__item_getstarted {
+      padding: 15px;
+      font-weight: 500;
+      background: #fdb714;
+      color: white;
+      font-size: 19.2px; }
+      .plan__item_getstarted:hover {
+        cursor: pointer;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        background: #272727; }
+  .plan .plan__item_active {
+    color: white;
+    background: #fdb714; }
+    .plan .plan__item_active .plan__item_title {
+      color: white; }
+    .plan .plan__item_active .plan__item_services {
+      border-top: 1px solid rgba(255, 255, 255, 0.29); }
+    .plan .plan__item_active .plan__item_getstarted {
+      background: white;
+      color: #272727; }
+      .plan .plan__item_active .plan__item_getstarted:hover {
+        cursor: pointer;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        background: #272727;
+        color: white; }
