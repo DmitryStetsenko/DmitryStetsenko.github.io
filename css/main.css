@@ -111,7 +111,8 @@ a {
   -moz-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
-  overflow: hidden; }
+  overflow: hidden;
+  white-space: nowrap; }
   .btn a {
     color: white;
     padding: 22.5px 37.5px;
@@ -137,6 +138,15 @@ a {
   font-weight: 500;
   text-transform: uppercase; }
 
+.header-section {
+  text-align: center;
+  color: #272727;
+  text-transform: capitalize;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  letter-spacing: 1px; }
+
 a {
   text-decoration: none;
   text-transform: uppercase;
@@ -149,6 +159,9 @@ a {
 
 a:hover {
   text-decoration: none; }
+
+img {
+  width: 100%; }
 
 h1, h2, h3 {
   text-transform: uppercase;
@@ -175,13 +188,12 @@ h3 {
 
 .top-data {
   font-size: 16px;
-  height: 55px;
   background-color: #272727; }
   .top-data p {
     position: relative;
     color: white;
     font-weight: 200;
-    text-wrap: none;
+    white-space: nowrap;
     margin-left: 25px; }
     .top-data p:before {
       position: absolute;
@@ -314,13 +326,6 @@ h3 {
 .services {
   padding: 60px 0;
   color: #272727; }
-  .services h2 {
-    text-align: center;
-    color: #272727;
-    text-transform: capitalize;
-    font-size: 48px;
-    font-weight: 400;
-    margin-bottom: 30px; }
   .services-header {
     text-transform: capitalize;
     font-size: 24px;
@@ -353,3 +358,76 @@ h3 {
     height: 100%;
     background: url(../img/mobile-phone.jpg) center no-repeat;
     background-size: contain; }
+
+.progress {
+  padding: 60px 0;
+  color: #272727;
+  background: #f3f3f3;
+  text-align: center; }
+  .progress__elem {
+    padding: 30px; }
+    .progress__elem-number {
+      width: 200px;
+      height: 200px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: solid 5px #fdb714;
+      line-height: 195px;
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 15px; }
+    .progress__elem-description {
+      text-transform: uppercase;
+      font-weight: 400;
+      color: #8d8d8d;
+      word-wrap: break-word;
+      padding: 0 20px; }
+
+.blog {
+  padding: 60px 0;
+  color: #8d8d8d;
+  font-weight: 400; }
+  .blog__header {
+    color: #272727; }
+  .blog__elem {
+    margin-right: 15px; }
+    .blog__elem:last-child {
+      margin-right: 0; }
+    .blog__elem-img {
+      margin-bottom: 30px; }
+    .blog__elem-header {
+      color: #272727;
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 15px; }
+      .blog__elem-header:hover {
+        cursor: pointer;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        color: #fdb714; }
+    .blog__elem-description {
+      margin-bottom: 15px; }
+    .blog__elem .date:before {
+      margin-right: 7.5px;
+      color: #fdb714;
+      content: '\f073';
+      font-family: 'FontAwesome'; }
+    .blog__elem .comment:before {
+      margin-right: 7.5px;
+      color: #fdb714;
+      content: '\f0e5';
+      font-family: 'FontAwesome'; }
+    .blog__elem .read-more {
+      text-align: right;
+      color: #fdb714;
+      font-weight: 500; }
+      .blog__elem .read-more:hover {
+        cursor: pointer;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        color: #272727; }
