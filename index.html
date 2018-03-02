@@ -21,7 +21,65 @@
             <header>
                 <nav class="burger-menu">
                     <div class="burger-menu__button"><i class="material-icons">menu</i></div>
+                    <div class="burger-menu__close display-none"><i class="material-icons">close</i></div>
                     <div class="search burger-menu__search"><i class="material-icons">search</i></div>
+                    <div class="burger-menu__nav">
+                        <ul><!--
+           -->                 <li><a href="#">Home</a>
+                                <ul class="dropped-menu display-none">
+                                    <li>Headers</li>
+                                    <li>Footers</li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropped-menu display-none">
+                                    <li>Static Elements</li>
+                                    <li>Dynamic Elements</li>
+                                    <li>About</li>
+                                    <li>Contacts</li>
+                                    <li>FAQs</li>
+                                    <li>Our Team</li>
+                                    <li>Person</li>
+                                    <li>Careers</li>
+                                    <li>Partners</li>
+                                    <li>Typography</li>
+                                    <li>Terms Of Use</li>
+                                    <li>Error 404</li>
+                                    <li>Documentation</li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Services</a>
+                                <ul class="dropped-menu display-none">
+                                    <li>General Contracting</li>
+                                    <li>Construction Management</li>
+                                    <li>Design-Build</li>
+                                    <li>Construction Services</li>
+                                    <li>Building Information Modeling</li>
+                                    <li>Pre-Construction Services</li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Project</a>
+                                <ul class="dropped-menu display-none">
+                                    <li>Warehouse / Logistics</li>
+                                    <li>Cultural / Lifestyle</li>
+                                    <li>Government / Military</li>
+                                    <li>Data / Technology</li>
+                                    <li>Manufacturing / Industrial</li>
+                                    <li>Commercial</li>
+                                    <li>Educational</li>
+                                    <li>Healthcare</li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Blog</a>
+                                <ul class="dropped-menu display-none">
+                                    <li>Post Formats</li>
+                                    <li>Blog Layouts</li>
+                                    <li>Sidebar</li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
                 </nav>
                 <div class="top-data-mobile">
                     <div class="container">
@@ -78,16 +136,26 @@
                             <!--phone-->
 
                             <div class="col-xl col-lg col-md-12  my-flex-row my-just-end">
-                                <div class="social-icon"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <div class="social-icon"><a href="#"><i class="fa fa-facebook"
+                                                                        aria-hidden="true"></i></a>
                                 </div>
-                                <div class="social-icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <div class="social-icon"><a href="#"><i class="fa fa-twitter"
+                                                                        aria-hidden="true"></i></a>
                                 </div>
                                 <div class="social-icon"><a href="#"><i class="fa fa-google-plus"
-                                                                    aria-hidden="true"></i></a>
+                                                                        aria-hidden="true"></i></a>
                                 </div>
-                                <div class="social-icon"><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                <div class="social-icon"><a href="#"><i class="fa fa-vimeo"
+                                                                        aria-hidden="true"></i></a>
                                 </div>
-                                <div class="social-icon"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <div class="social-icon"><a href="#"><i class="fa fa-youtube"
+                                                                        aria-hidden="true"></i></a>
+                                </div>
+                                <div class="social-icon"><a href="#"><i class="fa fa-pinterest-p"
+                                                                        aria-hidden="true"></i></a>
+                                </div>
+                                <div class="social-icon"><a href="#"><i class="fa fa-instagram"
+                                                                        aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +171,7 @@
                     <div class="slider-dark"></div> <!--затемнение фона-->
                     <div class="container">
                         <div class="row justify-content-between">
-                            <div class="col">
+                            <div class="col main-logo-wrap">
                                 <div class="main-logo my-flex-row my-just-start">
                                     <div class="main-logo-img">
                                         <img src="img/main-logo.png" alt="main-logo">
@@ -119,16 +187,71 @@
                                     <i class="material-icons">search</i>
                                 </div>
                             </div>
+                            <div class="col-12 search-active-wrap unvisible">
+                                <div class="search-active">
+                                    <input type="text" class="search-active__input" placeholder="enter keywords">
+                                    <span class="search-active__search"><i class="material-icons">search</i></span>
+                                    <div class="search-active__separ"></div>
+                                    <span class="search-active__close"><i class="material-icons">close</i></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <nav class="nav my-flex-row">
+                                <nav class="nav my-flex-row main-nav">
                                     <ul>
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Pages</a></li>
-                                        <li><a href="#">Services</a></li>
-                                        <li><a href="#">Project</a></li>
-                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Home</a>
+                                            <ul class="dropped-menu <!--display-none-->">
+                                                <li>Headers</li>
+                                                <li>Footers</li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Pages</a>
+                                            <ul class="dropped-menu <!--display-none-->">
+                                                <li>Static Elements</li>
+                                                <li>Dynamic Elements</li>
+                                                <li>About</li>
+                                                <li>Contacts</li>
+                                                <li>FAQs</li>
+                                                <li>Our Team</li>
+                                                <li>Person</li>
+                                                <li>Careers</li>
+                                                <li>Partners</li>
+                                                <li>Typography</li>
+                                                <li>Terms Of Use</li>
+                                                <li>Error 404</li>
+                                                <li>Documentation</li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Services</a>
+                                            <ul class="dropped-menu <!--display-none-->">
+                                                <li>General Contracting</li>
+                                                <li>Construction Management</li>
+                                                <li>Design-Build</li>
+                                                <li>Construction Services</li>
+                                                <li>Building Information Modeling</li>
+                                                <li>Pre-Construction Services</li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Project</a>
+                                            <ul class="dropped-menu <!--display-none-->">
+                                                <li>Warehouse / Logistics</li>
+                                                <li>Cultural / Lifestyle</li>
+                                                <li>Government / Military</li>
+                                                <li>Data / Technology</li>
+                                                <li>Manufacturing / Industrial</li>
+                                                <li>Commercial</li>
+                                                <li>Educational</li>
+                                                <li>Healthcare</li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Blog</a>
+                                            <ul class="dropped-menu <!--display-none-->">
+                                                <li>Post Formats</li>
+                                                <li>Blog Layouts</li>
+                                                <li>Sidebar</li>
+                                            </ul>
+                                        </li>
                                         <li><a href="#">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -212,7 +335,7 @@
                                 <!--advantages-item-->
                             </div>
                             <div class="col-md col-sm-12">
-                                <div class="advantages-item">
+                                <div class="advantages-item advantages-item_last-child">
                                     <div class="advantages-item-header">
                                         <h3>OUR COMMITMENT</h3>
                                     </div>
@@ -400,7 +523,7 @@
                                     <div class="services-header">
                                         Re-Construction
                                     </div>
-                                    <div class="services-descriptions">
+                                    <div class="services-descriptions services-descriptions_last-child">
                                         An impactful building process of revitalizing neighborhoods and commercial districts.
                                     </div>
                                 </div>
@@ -546,7 +669,7 @@
                         </div>
 
                         <div class="col-lg col-md-12 my-flex-col my-align-center">
-                            <div class="blog__elem my-flex-col my-just-sb">
+                            <div class="blog__elem blog__elem_last-child my-flex-col my-just-sb">
                                 <div class="blog__elem_content">
                                     <div class="blog__elem-img">
                                         <img src="img/blog-img3.jpg" alt="img3">
@@ -725,5 +848,8 @@
         </div>
     </section>
 </div>
+
+<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>
