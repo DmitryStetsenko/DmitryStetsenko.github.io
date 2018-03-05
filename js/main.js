@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    // появление хедера
+    var header = $('.main-header');
+        header.toggleClass('header-offset');
+    //---------------------
     //нажатие на поиск в десктоп версии
     $('.search').on('click',function () {
         $(this).addClass('unvisible');
@@ -46,5 +50,49 @@ $(document).ready(function () {
     // }
     );
     // -----------------выпадающее меню
+
+
+    // slider -----------------------
+    var slides = $('.slider__img');
+    var slidesCount = 1;
+    var sliderLength = slides.length;
+    var circleElem = $('.circle-elem');
+
+    console.log(slides.eq(1));
+    console.log(sliderLength);
+
+    $('.slider__scroll_right').on('click', function () {
+        if (slidesCount < sliderLength) {
+            slides.eq(slidesCount - 1).toggleClass('item-visible');
+            circleElem.eq(slidesCount - 1).toggleClass('circle-elem-active');
+            slidesCount++;
+            slides.eq(slidesCount - 1).toggleClass('item-visible');
+            circleElem.eq(slidesCount - 1).toggleClass('circle-elem-active');
+        }else {
+            slidesCount = sliderLength;
+            slides.eq(slidesCount - 1).toggleClass('item-visible');
+            circleElem.eq(slidesCount - 1).toggleClass('circle-elem-active');
+            slidesCount = 1;
+            slides.eq(slidesCount - 1).toggleClass('item-visible');
+            circleElem.eq(slidesCount - 1).toggleClass('circle-elem-active');
+        }
+    });
+    $('.slider__scroll_left').on('click', function () {
+        if (slidesCount > 1) {
+            slides.eq(slidesCount - 1).toggleClass('item-visible');
+            circleElem.eq(slidesCount - 1).toggleClass('circle-elem-active');
+            slidesCount--;
+            slides.eq(slidesCount - 1).toggleClass('item-visible');
+            circleElem.eq(slidesCount - 1).toggleClass('circle-elem-active');
+        }else {
+            slidesCount = 1;
+            slides.eq(slidesCount - 1).toggleClass('item-visible');
+            circleElem.eq(slidesCount - 1).toggleClass('circle-elem-active');
+            slidesCount = sliderLength;
+            slides.eq(slidesCount - 1).toggleClass('item-visible');
+            circleElem.eq(slidesCount - 1).toggleClass('circle-elem-active');
+        }
+    });
+    // ------------------------------
 });
 
