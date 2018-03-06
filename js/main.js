@@ -108,7 +108,7 @@ $(document).ready(function () {
     // ------------------------------
 
     // ----------------- Обработка анимации -------------------
-    var animateCount = 1;
+    var animateCount = 1, animateCount2 = 1;
     $(window).scroll(function() {
         $('.mov').each(function(){
             var windowHeight = $(window).height();
@@ -131,6 +131,18 @@ $(document).ready(function () {
                 duration: 5000
             });
             animateCount++;
+        }
+        if ($('.progress__elem-number').offset().top < $(window).scrollTop() + ($(window).height() - 30) && animateCount2 === 1){
+            $('.progress__elem-number').each(function () {
+                var val = parseInt(this.innerText);
+                var thisElem = this;
+                var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
+                $(this).animateNumber({
+                    number: val,
+                    numberStep: percent_number_step
+                }, 2000);
+            });
+            animateCount2++;
         }
 
     });
