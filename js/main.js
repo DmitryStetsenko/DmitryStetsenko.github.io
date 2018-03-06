@@ -37,10 +37,22 @@ $(document).ready(function () {
     // выпадающее меню
     $('.main-nav li').hover(
         function () {
-            $(this).children('ul .dropped-menu').slideToggle();
+            var thisMenu = $(this);
+            thisMenu.children('ul .dropped-menu').css('display', 'block');
+            thisMenu.children('ul .dropped-menu').addClass('unvisible');
+            setTimeout(function () {
+                thisMenu.children('ul .dropped-menu').addClass('visible');
+                thisMenu.children('ul .dropped-menu').removeClass('unvisible')
+            }, 50);
+
         },
         function(){
-            $(this).children('ul .dropped-menu').slideToggle();
+            var thisMenu = $(this);
+            thisMenu.children('ul .dropped-menu').addClass('unvisible');
+            thisMenu.children('ul .dropped-menu').removeClass('visible');
+            setTimeout(function () {
+                thisMenu.children('ul .dropped-menu').css('display', 'none');
+            }, 100);
         }
     // function () {
     //     $(this).children('ul .dropped-menu').removeClass('display-none')
@@ -94,5 +106,39 @@ $(document).ready(function () {
         }
     });
     // ------------------------------
+
+    // ----------------- Обработка анимации -------------------
+    var animateCount = 1;
+    $(window).scroll(function() {
+        $('.mov').each(function(){
+            var windowHeight = $(window).height();
+
+            var imagePos = $(this).offset().top;
+            var topOfWindow = $(window).scrollTop();
+            // console.log('--------------------');
+            // console.log('windowHeight : ' + windowHeight);
+            // console.log('imagePos : ' + imagePos);
+            // console.log('topOfWindow : ' + topOfWindow);
+            // console.log('--------------------');
+
+            if (imagePos < topOfWindow + ( windowHeight - 30) ) {
+                $(this).addClass('fadeInDown');
+            }
+        });
+        if ($('.numbers-header').offset().top < $(window).scrollTop() + ($(window).height() - 30) && animateCount === 1){
+            $('.numbers-header').spincrement({
+                thousandSeparator: "",
+                duration: 5000
+            });
+            animateCount++;
+        }
+
+    });
+    //---------------------------------------------------------
+
+    // ---------------- анимация чисел ------------------------
+
+
+    // --------------------------------------------------------
 });
 
