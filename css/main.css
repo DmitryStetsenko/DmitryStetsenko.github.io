@@ -65,6 +65,9 @@ input {
   font-weight: 600;
   font-style: normal; }
 
+.svg-container {
+  margin: 0; }
+
 .my-flex-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -662,6 +665,10 @@ h3 {
     background: url(../img/mobile-phone.jpg) center top no-repeat;
     background-size: contain; }
 
+.circles-text {
+  font-size: 45px !important;
+  font-weight: 400; }
+
 .progress {
   padding: 90px 0;
   color: #071c33;
@@ -673,11 +680,6 @@ h3 {
   .progress__elem-number {
     width: 180px;
     height: 180px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: solid 5px #fdb714;
-    line-height: 168px;
     font-size: 45px;
     font-weight: 400;
     margin-bottom: 15px;
@@ -1092,8 +1094,7 @@ h3 {
     line-height: 140px;
     font-size: 40px;
     width: 150px;
-    height: 150px;
-    border: solid 3px #fdb714; }
+    height: 150px; }
   .progress__elem-description {
     font-size: 14px; }
   .blog__elem {
@@ -1192,8 +1193,7 @@ h3 {
         line-height: 168px;
         font-size: 45px;
         width: 180px;
-        height: 180px;
-        border: solid 5px #fdb714; }
+        height: 180px; }
       .progress__elem-description {
         font-size: 16px; }
   .subscribe__header {

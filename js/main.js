@@ -2,6 +2,7 @@ $(document).ready(function () {
     // появление хедера
     var header = $('.main-header');
         header.toggleClass('header-offset');
+    var circleRadius = 90;
     //---------------------
     //нажатие на поиск в десктоп версии
     $('.search').on('click',function () {
@@ -70,9 +71,6 @@ $(document).ready(function () {
     var sliderLength = slides.length;
     var circleElem = $('.circle-elem');
 
-    console.log(slides.eq(1));
-    console.log(sliderLength);
-
     $('.slider__scroll_right').on('click', function () {
         if (slidesCount < sliderLength) {
             slides.eq(slidesCount - 1).toggleClass('item-visible');
@@ -132,16 +130,13 @@ $(document).ready(function () {
             });
             animateCount++;
         }
+        // анимация чисел
+        var duration = 1000;
         if ($('.progress__elem-number').offset().top < $(window).scrollTop() + ($(window).height() - 30) && animateCount2 === 1){
-            $('.progress__elem-number').each(function () {
-                var val = parseInt(this.innerText);
-                var thisElem = this;
-                var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
-                $(this).animateNumber({
-                    number: val,
-                    numberStep: percent_number_step
-                }, 2000);
-            });
+            drawCircle(75, circleRadius, 'progress__elem-number1', duration);
+            drawCircle(38, circleRadius, 'progress__elem-number2', duration);
+            drawCircle(90, circleRadius, 'progress__elem-number3', duration);
+            drawCircle(80, circleRadius, 'progress__elem-number4', duration);
             animateCount2++;
         }
 
@@ -150,6 +145,24 @@ $(document).ready(function () {
 
     // ---------------- анимация чисел ------------------------
 
+    function drawCircle(persentVal, radius, idElem, duration) {
+        var myCircle = Circles.create({
+            id:                  idElem,
+            radius:              radius,
+            value:               persentVal,
+            maxValue:            100,
+            width:               5,
+            text:                function(value){return value + '%';},
+            colors:              ['#eee', '#fdb714'],
+            duration:            duration,
+            wrpClass:            'circles-wrp',
+            textClass:           'circles-text',
+            valueStrokeClass:    'circles-valueStroke',
+            maxValueStrokeClass: 'circles-maxValueStroke',
+            styleWrapper:        true,
+            styleText:           true
+        });
+    }
 
     // --------------------------------------------------------
 });
