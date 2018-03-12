@@ -3,6 +3,7 @@ $(document).ready(function () {
     var header = $('.main-header');
         header.toggleClass('header-offset');
     var circleRadius = 90;
+    var duration = 1000;
     //---------------------
     //нажатие на поиск в десктоп версии
     $('.search').on('click',function () {
@@ -104,9 +105,35 @@ $(document).ready(function () {
         }
     });
     // ------------------------------
+    // ---------------- анимация чисел ------------------------
+    // -------- проверка разрешения экрана
+    $(window).resize(function(){
+        if (checkRes(768, 992)) {
+            circleRadius = 75;
+            drawCircle(75, circleRadius, 'progress__elem-number1', duration);
+            drawCircle(38, circleRadius, 'progress__elem-number2', duration);
+            drawCircle(90, circleRadius, 'progress__elem-number3', duration);
+            drawCircle(80, circleRadius, 'progress__elem-number4', duration);
+        }
+
+    });
+
+    //-----------------------------------
 
     // ----------------- Обработка анимации -------------------
     var animateCount = 1, animateCount2 = 1;
+
+    // анимация чисел при скроле
+    circleRadius = 90;
+    if ($('.progress__elem-number').offset().top < $(window).scrollTop() + ($(window).height() - 30) && animateCount2 === 1){
+        if (checkRes(768, 992)) { circleRadius = 75; }
+        drawCircle(75, circleRadius, 'progress__elem-number1', duration);
+        drawCircle(38, circleRadius, 'progress__elem-number2', duration);
+        drawCircle(90, circleRadius, 'progress__elem-number3', duration);
+        drawCircle(80, circleRadius, 'progress__elem-number4', duration);
+        animateCount2++;
+    }
+
     $(window).scroll(function() {
         $('.mov').each(function(){
             var windowHeight = $(window).height();
@@ -130,20 +157,32 @@ $(document).ready(function () {
             });
             animateCount++;
         }
-        // анимация чисел
-        var duration = 1000;
+
+        // анимация чисел при скроле
+        circleRadius = 90;
         if ($('.progress__elem-number').offset().top < $(window).scrollTop() + ($(window).height() - 30) && animateCount2 === 1){
-            drawCircle(75, circleRadius, 'progress__elem-number1', duration);
-            drawCircle(38, circleRadius, 'progress__elem-number2', duration);
-            drawCircle(90, circleRadius, 'progress__elem-number3', duration);
-            drawCircle(80, circleRadius, 'progress__elem-number4', duration);
-            animateCount2++;
+            if (checkRes(768, 992)) { circleRadius = 75; }
+                drawCircle(75, circleRadius, 'progress__elem-number1', duration);
+                drawCircle(38, circleRadius, 'progress__elem-number2', duration);
+                drawCircle(90, circleRadius, 'progress__elem-number3', duration);
+                drawCircle(80, circleRadius, 'progress__elem-number4', duration);
+                animateCount2++;
         }
 
     });
     //---------------------------------------------------------
 
-    // ---------------- анимация чисел ------------------------
+    //------проверка попадания разрешения браузера в диапазон bottomRes topRes
+    function checkRes(bottomRes, topRes) {
+        var maxWidth = $(window).width();
+        var res;
+        if (maxWidth >= bottomRes && maxWidth <= topRes) {
+            res = true;
+        }
+        else res = false;
+        return res;
+    }
+    //-----------------------------------------------------------------------
 
     function drawCircle(persentVal, radius, idElem, duration) {
         var myCircle = Circles.create({
