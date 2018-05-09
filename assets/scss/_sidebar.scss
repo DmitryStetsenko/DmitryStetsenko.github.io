@@ -1,0 +1,11 @@
+.mainLayout {
+  display: flex;
+  width: 100%;
+  &__sidebar {
+    width: $col-4;
+    background: $sidebarBg;
+  } // sidebar
+  &__content {
+    width: $col-4 * 3;
+  } // content
+} // mainLayout
