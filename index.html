@@ -7,6 +7,8 @@
     <title>Fenix Trading Club</title>
 
     <link href="https://fonts.googleapis.com/css?family=Scada:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/eventCalendar.css">
+    <link rel="stylesheet" href="assets/css/eventCalendar_theme_responsive.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
 </head>
@@ -22,10 +24,10 @@
 
         <nav class="mainHeader__nav">
             <ul class="mainNav">
-                <li><a href="about.html"><span class="menuItem">Об Институте</span></a><a href="#"><span class="menuItem">Обучение и практика</span></span></a></li>
-                <li><a href="#"><span class="menuItem">СМИ о нас</span></a><a href="#"><span class="menuItem">Расписание занятий</span></span></a></li>
-                <li><a href="#"><span class="menuItem">Партнеры</span></a><a href="#"><span class="menuItem">Контакты</span></span></a></li>
-                <li><a href="#"><span class="menuItem">Карта сайта</span></a><a href="#"><span class="menuItem">Аналитика</span></span></a></li>
+                <li><a href="about.html"><span class="menuItem">Об Институте</span></a><a href="education.html"><span class="menuItem">Обучение и практика</span></a></li>
+                <li><a href="#"><span class="menuItem">СМИ о нас</span></a><a href="schedule.html"><span class="menuItem">Расписание занятий</span></a></li>
+                <li><a href="#"><span class="menuItem">Партнеры</span></a><a href="#"><span class="menuItem">Контакты</span></a></li>
+                <li><a href="#"><span class="menuItem">Карта сайта</span></a><a href="#"><span class="menuItem">Аналитика</span></a></li>
             </ul>
         </nav>
         <!-- /.mainNav -->
@@ -35,6 +37,31 @@
             <span class="phoneNumber">775-98-20</span>
         </div>
         <!-- /.mainPhone -->
+
+        <div class="burgerMenu">
+            <div class="burgerMenu__title">Меню</div>
+            <!-- /.burgerMenu__title -->
+            <div class="burgerMenu__icon">
+                <span class="line1"></span>
+                <span class="line1"></span>
+                <span class="line1"></span>
+            </div>
+            <!-- /.burgerMenu__icon -->
+            <nav class="burgerMenu__menu">
+                <ul class="burgerNav">
+                    <li><a href="about.html"><span class="menuItem">Об Институте</span></a></li>
+                    <li><a href="education.html"><span class="menuItem">Обучение и практика</span></a></li>
+                    <li><a href="#"><span class="menuItem">СМИ о нас</span></a> </li>
+                    <li><a href="schedule.html"><span class="menuItem">Расписание занятий</span></a></li>
+                    <li><a href="#"><span class="menuItem">Партнеры</span></a></li>
+                    <li><a href="#"><span class="menuItem">Контакты</span></a></li>
+                    <li><a href="#"><span class="menuItem">Карта сайта</span></a></li>
+                    <li><a href="#"><span class="menuItem">Аналитика</span></a></li>
+                </ul>
+            </nav>
+            <!-- /.burgerMenu__menu -->
+        </div>
+        <!-- /.mainHeader__burgerMenu -->
 
     </div>
     <!-- /.mainWrapperContent -->
@@ -76,7 +103,7 @@
                     </div>
                 </div>
                 <!-- /.calendarBlock__shedule -->
-                <div class="calendarBlock__calendar"></div>
+                <div class="calendarBlock__calendar" id="eventCalendar"></div>
                 <!-- /.calendarBlock__calendar -->
             </div>
             <!-- /.CalendarBlock -->
@@ -169,7 +196,7 @@
         </section>
         <!-- /.dailyShedule -->
         <section class="calbackFormAndAbout">
-            <div class="aboutInstitute">
+            <div class="aboutInstituteBlock">
                 <div class="header"><h3>Об Институте</h3></div>
                 <!-- /.header -->
                 <div class="description">
@@ -260,7 +287,7 @@
             <!-- /.education -->
             <div class="club">
                 <div class="club__header">
-                    <div class="header"><h3>Клубная<br>жизнь</h3></div>
+                    <div class="header"><h3>Клубная <br>жизнь</h3></div>
                     <!-- /.header -->
                 </div>
                 <!-- /.club__header -->
@@ -384,6 +411,8 @@
 <script src="assets/js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="assets/js/jquery.fs.selecter.min.js" type="text/javascript"></script>
 <script src="assets/js/owl.carousel.js" type="text/javascript"></script>
+<script src="assets/js/moment.js" type="text/javascript"></script>
+<script src="assets/js/jquery.eventCalendar.js" type="text/javascript"></script>
 <script src="assets/js/main.js" type="text/javascript"></script>
 </body>
 </html>

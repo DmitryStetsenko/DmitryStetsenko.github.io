@@ -25,6 +25,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.startUP {
+  background: #6DBFD9; }
+
+.intensive {
+  background: #AA316B; }
+
+.focusGR {
+  background: #f7da38; }
+
+.masterGR {
+  background: #D44047; }
+
+.clubLIFE {
+  background: #EA8243; }
+
+.masterCLASS {
+  background: #a0cd3a; }
+
+.specialEVENT {
+  background: #f04776; }
+
 * {
   box-sizing: border-box; }
 
@@ -567,6 +588,16 @@ input[type=checkbox]:checked + label:before {
   height: 100%;
   width: 100%; }
 
+.mainLayout {
+  display: flex;
+  width: 100%; }
+  .mainLayout__sidebar {
+    width: 244.75px;
+    min-width: 244.75px;
+    background: #f5f5f5; }
+  .mainLayout__content {
+    width: 734.25px; }
+
 .mainWrapperContent {
   max-width: 979px;
   margin: 0 auto;
@@ -613,6 +644,49 @@ input[type=checkbox]:checked + label:before {
     color: #5e7287; }
     .mainHeader__phone .sityCod {
       color: #1abc9c; }
+  .mainHeader .burgerMenu {
+    position: absolute;
+    display: none;
+    align-items: center;
+    right: 28px; }
+    .mainHeader .burgerMenu:hover {
+      cursor: pointer; }
+    .mainHeader .burgerMenu__title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #1abc9c;
+      margin-right: 15px; }
+    .mainHeader .burgerMenu__icon span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #5e7287;
+      margin-bottom: 5px; }
+    .mainHeader .burgerMenu__menu {
+      display: none;
+      position: absolute;
+      z-index: 100;
+      top: 74px;
+      right: -28px;
+      width: 50vw;
+      background: rgba(255, 255, 255, 0.79);
+      padding: 28px;
+      text-align: right; }
+      .mainHeader .burgerMenu__menu ul li {
+        margin-bottom: 15px; }
+        .mainHeader .burgerMenu__menu ul li a {
+          display: block;
+          color: #333;
+          margin: 5px 0; }
+          .mainHeader .burgerMenu__menu ul li a span.menuItem {
+            display: inline-block;
+            border-bottom: 1px solid #acb2b7;
+            height: 18px; }
+          .mainHeader .burgerMenu__menu ul li a:hover span {
+            color: #1abc9c;
+            border-color: #1abc9c; }
+      .mainHeader .burgerMenu__menu_visible {
+        display: block; }
 
 .sliderSection {
   width: 100%;
@@ -655,7 +729,9 @@ input[type=checkbox]:checked + label:before {
     height: auto;
     background: none; }
     .sliderSection_nonSlider img {
-      display: block; }
+      display: block;
+      max-width: 100%;
+      height: auto; }
   .sliderSection_displayNone {
     display: none; }
 
@@ -702,7 +778,10 @@ input[type=checkbox]:checked + label:before {
           left: 0; }
     .sheduleAndVideo .calendarBlock__shedule .description {
       color: #a6ffed;
-      line-height: 20px; }
+      line-height: 20px;
+      margin-bottom: 28px; }
+    .sheduleAndVideo .calendarBlock__calendar {
+      max-width: 187px; }
   .sheduleAndVideo .videoBlock {
     width: 734.25px; }
     .sheduleAndVideo .videoBlock__wrap {
@@ -717,6 +796,88 @@ input[type=checkbox]:checked + label:before {
         width: 100%;
         height: 100%; }
 
+/* calendar style */
+.eventCalendar-wrap {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  color: #807E7E; }
+
+.eventCalendar-currentTitle {
+  line-height: 25px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-width: 0; }
+
+.eventCalendar-day-header {
+  text-transform: lowercase;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: none; }
+
+.eventCalendar-daysList.eventCalendar-showAsWeek li {
+  color: #a6ffed; }
+
+.eventCalendar-showAsWeek .eventCalendar-day a {
+  border: 1px solid transparent;
+  border-color: transparent;
+  line-height: 27px;
+  font-size: 11px; }
+
+.eventCalendar-day a {
+  border: none;
+  border-width: 0;
+  color: #148f77;
+  font-size: 14px; }
+
+.eventCalendar-current {
+  background: transparent; }
+
+.eventCalendar-day a:hover {
+  background-color: transparent; }
+
+.eventCalendar-day a:active {
+  background-color: transparent; }
+
+.eventCalendar-day a:focus {
+  outline: none; }
+
+.eventCalendar-daysList li.today a {
+  color: #fff;
+  background: #148f77; }
+
+.eventCalendar-dayWithEvents {
+  background: transparent; }
+
+.eventCalendar-daysList li.eventCalendar-dayWithEvents a {
+  background: transparent;
+  color: #fff; }
+
+.eventCalendar-daysList.eventCalendar-showAsWeek {
+  margin: 10px 5px;
+  width: auto;
+  border: none;
+  border-bottom-width: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-image: none; }
+
+.eventCalendar-daysList.eventCalendar-showAsWeek li.eventCalendar-empty {
+  background-color: transparent;
+  border-top: none; }
+
+.eventCalendar-list-wrap {
+  display: none; }
+
+/* -------------- */
 .dailyShedule {
   display: flex; }
   .dailyShedule__item {
@@ -750,17 +911,17 @@ input[type=checkbox]:checked + label:before {
 
 .calbackFormAndAbout {
   display: flex; }
-  .calbackFormAndAbout .aboutInstitute {
+  .calbackFormAndAbout .aboutInstituteBlock {
     width: 244.75px;
     padding: 28px;
     border: 1px solid #eee; }
-    .calbackFormAndAbout .aboutInstitute:hover {
+    .calbackFormAndAbout .aboutInstituteBlock:hover {
       cursor: pointer;
       background: #f0f7f6; }
-    .calbackFormAndAbout .aboutInstitute .header {
+    .calbackFormAndAbout .aboutInstituteBlock .header {
       margin-bottom: 13px;
       text-align: center; }
-      .calbackFormAndAbout .aboutInstitute .header h3:before {
+      .calbackFormAndAbout .aboutInstituteBlock .header h3:before {
         content: "";
         position: relative;
         display: block;
@@ -772,7 +933,7 @@ input[type=checkbox]:checked + label:before {
         overflow: hidden;
         left: 56px;
         margin-bottom: 28px; }
-    .calbackFormAndAbout .aboutInstitute .description {
+    .calbackFormAndAbout .aboutInstituteBlock .description {
       color: #7c7c7c;
       line-height: 20px; }
   .calbackFormAndAbout .callbackForm {
@@ -936,6 +1097,25 @@ input[type=checkbox]:checked + label:before {
         color: white;
         line-height: 20px; }
 
+.videoBlocks {
+  margin-bottom: 32px; }
+  .videoBlocks .videoBlock {
+    width: 100%;
+    margin-bottom: 5px; }
+    .videoBlocks .videoBlock:last-child {
+      margin-bottom: 0; }
+    .videoBlocks .videoBlock__wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden; }
+      .videoBlocks .videoBlock__wrap iframe, .videoBlocks .videoBlock__wrap object, .videoBlocks .videoBlock__wrap embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+
 .paySystem {
   padding: 14px;
   text-align: center;
@@ -1059,3 +1239,465 @@ input[type=checkbox]:checked + label:before {
     .footerCopyright p span a {
       color: inherit;
       font-size: inherit; }
+
+.aboutInstitute {
+  padding: 28px;
+  padding-bottom: 56px;
+  background: #1abc9c; }
+  .aboutInstitute .header {
+    margin-bottom: 28px; }
+    .aboutInstitute .header h3 {
+      color: white; }
+  .aboutInstitute__links ul li a {
+    color: #a6ffed;
+    display: block;
+    text-decoration: underline;
+    padding: 4px 8px 5px 0px; }
+    .aboutInstitute__links ul li a:hover {
+      color: white; }
+    .aboutInstitute__links ul li a.activeLink {
+      color: white;
+      text-decoration: none; }
+  .aboutInstitute__links ul .teachers__teacher {
+    display: none;
+    list-style-type: disc;
+    position: relative;
+    left: 15px;
+    color: #a6ffed; }
+    .aboutInstitute__links ul .teachers__teacher a {
+      text-decoration: underline;
+      color: #a6ffed; }
+    .aboutInstitute__links ul .teachers__teacher_active {
+      display: block; }
+
+.mainNews {
+  padding: 28px; }
+  .mainNews__header {
+    margin-bottom: 28px; }
+    .mainNews__header h3 {
+      color: #606060; }
+  .mainNews__links ul {
+    display: block;
+    list-style-type: disc; }
+    .mainNews__links ul li {
+      margin: 0 0 0.25em 1.5em; }
+      .mainNews__links ul li a {
+        font-family: 'Helvetica', Arial, sans-serif;
+        font-size: 14px;
+        color: #0074ce; }
+        .mainNews__links ul li a:hover {
+          text-decoration: underline; }
+
+.mainLayout__content {
+  padding: 28px 56px; }
+
+.titleBlock__header {
+  margin-bottom: 32px; }
+
+.titleBlock__content p {
+  white-space: pre-line; }
+
+.advantagesBlock {
+  margin: 32px 0; }
+  .advantagesBlock__item {
+    padding-bottom: 20px; }
+    .advantagesBlock__item p {
+      position: relative;
+      padding-left: 54px; }
+      .advantagesBlock__item p:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 77px;
+        height: 77px;
+        background-image: url(../../assets/img/icons.png);
+        background-position: 0 -624px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        left: -40px; }
+
+.videoBlocks {
+  margin-bottom: 32px; }
+
+.sertificatesBlock {
+  margin-bottom: 32px; }
+  .sertificatesBlock__item {
+    display: inline-block;
+    margin: 0 22px 22px 0; }
+
+.documentsBlocks {
+  color: #606060;
+  margin-bottom: 32px; }
+  .documentsBlocks h2, .documentsBlocks h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit; }
+  .documentsBlocks h3, .documentsBlocks .h3 {
+    font-size: 24px; }
+  .documentsBlocks h2, .documentsBlocks .h2 {
+    font-size: 30px; }
+  .documentsBlocks p {
+    margin: 0 0 10px;
+    color: inherit; }
+  .documentsBlocks ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px; }
+
+/* task-goals */
+.titleBlock__content .videoBlock {
+  width: 489.5px;
+  margin-bottom: 28px;
+  margin-top: 28px; }
+  .titleBlock__content .videoBlock__wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden; }
+    .titleBlock__content .videoBlock__wrap iframe, .titleBlock__content .videoBlock__wrap object, .titleBlock__content .videoBlock__wrap embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+
+/* Director */
+.titleBlock__content .thumbnailsBlock {
+  margin: 28px 0;
+  width: 100%; }
+  .titleBlock__content .thumbnailsBlock img {
+    width: 100%;
+    height: auto; }
+
+/* Teachers */
+.titleBlock__content .thumbnailsBlock {
+  margin: 28px 0;
+  width: 100%; }
+  .titleBlock__content .thumbnailsBlock img {
+    width: 100%;
+    height: auto; }
+
+.teachersBlock {
+  width: 100%; }
+  .teachersBlock__row {
+    display: flex;
+    justify-content: center; }
+    .teachersBlock__row a {
+      display: block;
+      width: 50%;
+      margin-right: 10px;
+      margin-bottom: 10px; }
+    .teachersBlock__row .oneTeacher {
+      display: flex;
+      justify-content: flex-start;
+      color: #000000;
+      width: 100%;
+      height: 131px;
+      background: #e7e7e7;
+      font-size: 12px;
+      padding: 22px 17px 22px 17px; }
+      .teachersBlock__row .oneTeacher:hover {
+        cursor: pointer;
+        background: #1abc9c; }
+      .teachersBlock__row .oneTeacher__photo {
+        margin-right: 17px; }
+      .teachersBlock__row .oneTeacher__name {
+        font-size: 16px;
+        font-weight: bold;
+        font-family: Arial; }
+
+/* theTeacher */
+.titleBlock__content .theTeacher__photo img {
+  width: auto;
+  height: auto;
+  margin: 0 32px 32px 0;
+  float: left; }
+
+.titleBlock__content .theTeacher__description {
+  margin-bottom: 64px; }
+
+.titleBlock__content .theTeacher__biographic {
+  margin-bottom: 32px; }
+  .titleBlock__content .theTeacher__biographic p {
+    color: #333333;
+    font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
+    font-size: 13px; }
+
+/* history */
+.titleBlock {
+  margin-bottom: 32px; }
+  .titleBlock__content h2 {
+    margin-bottom: 16px; }
+
+/* club */
+.titleBlock {
+  margin-bottom: 32px; }
+  .titleBlock__content {
+    margin-bottom: 32px; }
+  .titleBlock .imgBlock__header h2 {
+    margin-bottom: 16px; }
+  .titleBlock .imgBlock__description {
+    margin: 32px 0; }
+  .titleBlock .imgBlock__img img {
+    width: 100%;
+    height: auto; }
+
+/* knowledge */
+.titleBlock {
+  margin-bottom: 32px; }
+  .titleBlock__content {
+    margin-bottom: 32px; }
+    .titleBlock__content p {
+      margin-bottom: 32px; }
+    .titleBlock__content img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 32px; }
+
+/* vacansies */
+.titleBlock {
+  margin-bottom: 32px; }
+  .titleBlock__content {
+    margin-bottom: 32px; }
+    .titleBlock__content p {
+      margin-bottom: 32px; }
+    .titleBlock__content .vacanList {
+      line-height: 30px;
+      margin-bottom: 64px; }
+      .titleBlock__content .vacanList li {
+        position: relative;
+        list-style: none;
+        line-height: 20px;
+        padding: 5px; }
+        .titleBlock__content .vacanList li:before {
+          content: '';
+          position: relative;
+          display: inline-block;
+          width: 7px;
+          height: 7px;
+          background: #1abc9c;
+          border-radius: 50%;
+          margin-right: 9px; }
+
+/* news */
+.titleBlock {
+  margin-bottom: 32px; }
+  .titleBlock__content {
+    margin-bottom: 32px; }
+    .titleBlock__content a.wrapperLink {
+      display: block; }
+      .titleBlock__content a.wrapperLink:hover {
+        cursor: pointer; }
+        .titleBlock__content a.wrapperLink:hover .newsRow__date {
+          color: white;
+          background: #148f77; }
+        .titleBlock__content a.wrapperLink:hover .newsRow__event {
+          color: white;
+          background: #1abc9c; }
+    .titleBlock__content .newsRow {
+      margin-bottom: 20px;
+      display: flex; }
+      .titleBlock__content .newsRow__date {
+        padding: 20px;
+        background: #e7ebed;
+        color: #9C9C9C;
+        width: 244.75px; }
+      .titleBlock__content .newsRow__event {
+        padding: 20px;
+        width: 100%;
+        background: #f4f6f7;
+        color: #0074ce; }
+        .titleBlock__content .newsRow__event:hover {
+          text-decoration: underline; }
+
+.titleBlock__header {
+  margin-bottom: 32px; }
+
+.titleBlock__subHeader {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 32px; }
+
+.calendarBlock {
+  padding: 28px;
+  background: #1abc9c; }
+
+.fenixPrograms {
+  padding: 28px; }
+  .fenixPrograms .fenixProgramsItem {
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: flex-start; }
+    .fenixPrograms .fenixProgramsItem__type {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      margin-right: 10px; }
+      .fenixPrograms .fenixProgramsItem__type_startUP {
+        background: #6DBFD9; }
+      .fenixPrograms .fenixProgramsItem__type_intensive {
+        background: #AA316B; }
+      .fenixPrograms .fenixProgramsItem__type_focusGR {
+        background: #f7da38; }
+      .fenixPrograms .fenixProgramsItem__type_masterGR {
+        background: #D44047; }
+      .fenixPrograms .fenixProgramsItem__type_clubLIFE {
+        background: #EA8243; }
+      .fenixPrograms .fenixProgramsItem__type_masterCLASS {
+        background: #a0cd3a; }
+      .fenixPrograms .fenixProgramsItem__type_specialEVENT {
+        background: #f04776; }
+
+.titleBlock__header {
+  margin-bottom: 18px; }
+
+.titleBlock__content p {
+  white-space: pre-line; }
+
+.showEventBlock__filter {
+  margin-bottom: 32px;
+  display: flex;
+  width: 100%; }
+  .showEventBlock__filter .selecter {
+    width: 100%;
+    margin-right: 15px; }
+
+.showEventBlock__allEvent .dayDetail {
+  margin-bottom: 32px; }
+  .showEventBlock__allEvent .dayDetail__title {
+    font-size: 22px;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+    color: #000;
+    font-weight: bold; }
+  .showEventBlock__allEvent .dayDetail .showOneEvent {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 18px; }
+    .showEventBlock__allEvent .dayDetail .showOneEvent__time {
+      color: white;
+      margin-right: 15px;
+      padding: 0 10px;
+      align-self: flex-start; }
+    .showEventBlock__allEvent .dayDetail .showOneEvent__descr .showOneEventDescr__lessons a {
+      color: #0074ce; }
+      .showEventBlock__allEvent .dayDetail .showOneEvent__descr .showOneEventDescr__lessons a:hover {
+        text-decoration: underline; }
+      .showEventBlock__allEvent .dayDetail .showOneEvent__descr .showOneEventDescr__lessons a:visited {
+        color: #0074ce; }
+    .showEventBlock__allEvent .dayDetail .showOneEvent__descr .showOneEventDescr__teacher {
+      color: #606060; }
+      .showEventBlock__allEvent .dayDetail .showOneEvent__descr .showOneEventDescr__teacher a {
+        color: #606060; }
+        .showEventBlock__allEvent .dayDetail .showOneEvent__descr .showOneEventDescr__teacher a:hover {
+          text-decoration: underline; }
+        .showEventBlock__allEvent .dayDetail .showOneEvent__descr .showOneEventDescr__teacher a:visited {
+          color: #606060; }
+
+/* media queries */
+@media only screen and (max-width: 980px) {
+  .mainWrapperContent {
+    width: 100%;
+    max-width: 100%; }
+  .sheduleAndVideo {
+    width: 100%;
+    flex-direction: column; }
+    .sheduleAndVideo .calendarBlock {
+      order: 1;
+      display: flex;
+      width: 100%; }
+      .sheduleAndVideo .calendarBlock__shedule {
+        flex: 1;
+        width: 50%;
+        max-width: 50%;
+        margin-right: 56px; }
+        .sheduleAndVideo .calendarBlock__shedule .header {
+          margin-bottom: 13px; }
+      .sheduleAndVideo .calendarBlock__calendar {
+        width: 50%;
+        flex: 1;
+        margin: 0 auto; }
+    .sheduleAndVideo .videoBlock {
+      width: 100%; }
+  .calbackFormAndAbout {
+    display: flex;
+    flex-direction: column; }
+    .calbackFormAndAbout .aboutInstituteBlock {
+      width: 100%; }
+      .calbackFormAndAbout .aboutInstituteBlock .header h3:before {
+        left: 50%;
+        transform: translateX(-36px); }
+    .calbackFormAndAbout .callbackForm {
+      display: flex; }
+      .calbackFormAndAbout .callbackForm__descr {
+        width: 244.75px;
+        min-width: 244.75px; }
+      .calbackFormAndAbout .callbackForm__mail {
+        width: 100%; }
+  .educationAndClub .education {
+    width: 50%;
+    flex-direction: column; }
+    .educationAndClub .education__header {
+      width: 100%; }
+      .educationAndClub .education__header .header h3:after {
+        left: 50%;
+        transform: translateX(-29px); }
+    .educationAndClub .education__description {
+      width: 100%; }
+  .educationAndClub .club {
+    width: 50%;
+    flex-direction: column; }
+    .educationAndClub .club__header {
+      width: 100%; }
+      .educationAndClub .club__header br {
+        display: none; }
+      .educationAndClub .club__header .header h3:after {
+        left: 50%;
+        transform: translateX(-31px); }
+    .educationAndClub .club__description {
+      width: 100%; }
+  .mainLayout__content {
+    width: 100%; } }
+
+/* 980 */
+@media only screen and (max-width: 880px) {
+  .mainHeader__nav {
+    display: none; }
+  .mainHeader__phone {
+    right: 28px; }
+  .mainHeader .burgerMenu {
+    display: flex; }
+  .dailyShedule {
+    width: 100%; }
+    .dailyShedule__item {
+      width: 33.33333%;
+      padding: 28px;
+      border: 1px solid #eee; }
+      .dailyShedule__item:last-child {
+        display: none; } }
+
+/* 880 */
+@media only screen and (max-width: 800px) {
+  .footer {
+    flex-wrap: wrap; }
+    .footer .footerMenu {
+      width: 100%; }
+    .footer .footerContacts {
+      width: 50%; }
+    .footer .footerSocial {
+      width: 50%; } }
+
+/* 800 */
+@media screen and (max-width: 740px) {
+  .selecter {
+    max-width: 100%; } }
+
+/* 740 */
