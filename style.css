@@ -3088,11 +3088,11 @@ button {
           opacity: 1; }
   @media only screen and (max-width: 1366px) {
     .mainHeader .headerContent__logo {
-      transform: scale(0.8); }
+      transform: scale(1); }
     .mainHeader .headerContent .headerMenu {
-      transform: scale(0.8); }
+      transform: scale(1); }
     .mainHeader .headerContent .contactBlock {
-      transform: scale(0.8); } }
+      transform: scale(1); } }
 
 .headerOffsetBlock {
   height: 145px; }
