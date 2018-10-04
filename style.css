@@ -2960,7 +2960,7 @@ textarea {
     opacity: 1; }
   .btn-linkBtn {
     border-radius: 50%;
-    border: 1px solid white;
+    border: 2px solid white;
     justify-content: space-between;
     flex-direction: column;
     padding: 35px;
@@ -3016,6 +3016,12 @@ textarea {
     background: rgba(255, 0, 0, 0.6);
     width: 200px;
     height: calc( 200px / 3.3); }
+  .btn-quickOrderSubmit {
+    border-radius: 7px;
+    border: 2px solid white;
+    background: rgba(255, 0, 0, 0.6);
+    width: 100%;
+    height: 70px; }
 
 .btnClose__icon {
   height: 55px;
@@ -3174,6 +3180,85 @@ textarea {
     .mainContactForm .contactFormSubmit .mainSubmitForm .btn-formSubmit {
       margin-bottom: 30px; }
 
+.doQuickOrder {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000; }
+  .doQuickOrder__overlay {
+    background: black;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10; }
+  .doQuickOrder .doQOsubmitReport {
+    background: black;
+    border: 2px solid #006cc7;
+    opacity: 1;
+    left: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    transition: top .3s, transform .3s;
+    transform: translate(-50%, -100%);
+    width: 585px;
+    height: 185px;
+    z-index: 10; }
+    .doQuickOrder .doQOsubmitReport__content {
+      align-items: center;
+      background: url(./assets/img/window_report_bg.jpg) no-repeat top right/cover;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 26px;
+      position: relative;
+      text-transform: uppercase;
+      width: 100%;
+      height: 100%; }
+    .doQuickOrder .doQOsubmitReport-hideOnTop {
+      top: 50%;
+      transform: translate(-50% -50%); }
+  .doQuickOrder__window {
+    align-items: center;
+    background: url(./assets/img/quick_order_bg.jpg) no-repeat top right/cover;
+    display: flex;
+    border: 2px solid #006cc7;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 508.57143px;
+    margin: 150px auto 0 auto;
+    position: relative;
+    padding: 75px 50px 50px 50px;
+    transition: transform .3s;
+    transform: translateY(-200%);
+    width: 534px;
+    z-index: 10; }
+    .doQuickOrder__window-hideOnTop {
+      transform: translateY(0); }
+    .doQuickOrder__window-hideOnBottom {
+      transform: translateY(200%); }
+    .doQuickOrder__window .closeBtn-doQuickOrder {
+      top: -8px;
+      right: -60px;
+      position: absolute; }
+    .doQuickOrder__window .quickOrderFormTitle {
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      text-transform: uppercase; }
+    .doQuickOrder__window .quickOrderForm {
+      width: 70%; }
+      .doQuickOrder__window .quickOrderForm input {
+        margin-bottom: 25px; }
+        .doQuickOrder__window .quickOrderForm input:first-child {
+          margin-bottom: 10px; }
+
 .submitReport {
   display: none;
   justify-content: center;
@@ -3221,6 +3306,9 @@ textarea {
       text-transform: uppercase;
       width: 100%;
       height: 100%; }
+    .submitReport .submitReportWindow-quickOrder {
+      transition: transform .3s;
+      transform: translateY(200%); }
 
 .meansOfCommunication {
   display: flex;
@@ -3230,10 +3318,10 @@ textarea {
     align-items: center;
     display: flex;
     border-radius: 50%;
-    border: 1px solid white;
+    border: 2px solid white;
     height: 43px;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: 20px;
     opacity: 0.35;
     transition: opacity 0.3s, border-color .3s;
     width: 43px; }
@@ -3388,7 +3476,7 @@ textarea {
         align-items: center;
         display: flex;
         border-radius: 50%;
-        border: 1px solid white;
+        border: 2px solid white;
         height: 43px;
         justify-content: center;
         margin-right: 15px;
@@ -3579,6 +3667,55 @@ textarea {
             font-size: 28px; }
           .ourClientsBlock .ourClients .ourClientsSlider__item .itemDescr .followerDescr {
             font-size: 12px; } }
+
+.showVideoPresentation {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000; }
+  .showVideoPresentation__overlay {
+    background: black;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10; }
+  .showVideoPresentation__videoBlock {
+    width: 1100px;
+    height: 621.46893px;
+    position: relative;
+    z-index: 10; }
+    .showVideoPresentation__videoBlock .closeBtn-showVideoPresentation {
+      top: -8px;
+      right: -60px;
+      position: absolute; }
+    .showVideoPresentation__videoBlock .presentVideoBlock {
+      background: radial-gradient(ellipse at center, #282828 0%, black 100%);
+      border-radius: 7px;
+      border: 2px solid white;
+      transition: transform .5s;
+      transform: scale(0.1);
+      overflow: hidden; }
+      .showVideoPresentation__videoBlock .presentVideoBlock-scale {
+        transform: scale(1); }
+      .showVideoPresentation__videoBlock .presentVideoBlock__wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 */
+        height: 0; }
+        .showVideoPresentation__videoBlock .presentVideoBlock__wrapper iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; }
 
 .mainVideoBlock {
   margin-bottom: 50px;

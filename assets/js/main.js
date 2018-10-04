@@ -11,7 +11,10 @@ $(function () {
     const headerContactBtn = '#headerContactBtn',
           pageMain = '.page',
           mainActionBlock = '.mainActionBlock',
-          viewPresentation = '.viewPresentation';
+          viewPresentation = '.viewPresentation',
+          showVideoPresentation = '.showVideoPresentation',
+          presentVideoBlock = '.presentVideoBlock',
+          closeBtnShowVideoPresentation = '.closeBtn-showVideoPresentation';
     // ============================================
 
     // marketing page var -------------------------
@@ -28,6 +31,15 @@ $(function () {
         // report window -------------------
     const mainSubmitReport = '.submitReport',
           closeBtnSubmitReportWindow = '.closeBtn-submitReportWindow';
+    // ============================================
+
+    // quick orders forms -------------------------
+    const btnOrder = '.btn-order',
+          doQuickOrder = '.doQuickOrder',
+          doQuickOrderWindow = '.doQuickOrder__window',
+          closeBtnDoQuickOrder = '.closeBtn-doQuickOrder',
+          btnQquickOrderSubmit = '.btn-quickOrderSubmit',
+          doQOsubmitReport = '.doQOsubmitReport';
     // ============================================
 
     // sliders var --------------------------------
@@ -113,6 +125,32 @@ $(function () {
     );
     // ========================================================
 
+    // show video presentation --------------------------------
+        // show video presentation window
+    $(viewPresentation).click(function(){
+        myShow(showVideoPresentation, 'flex', '.3s',function(){
+            setTimeout(function(){
+                $(presentVideoBlock).addClass('presentVideoBlock-scale');
+            },200);
+        });
+    });
+        // close video presentation video
+    $(closeBtnShowVideoPresentation).click(function(){
+        let videoIframe = $(showVideoPresentation).find('iframe');
+        let vedeoSrc = videoIframe.attr('src');
+
+        myHide(showVideoPresentation, '.3s', function(){
+           setTimeout(function(){
+               $(presentVideoBlock).removeClass('presentVideoBlock-scale');
+               videoIframe.attr('src','');
+           },500);
+            setTimeout(function(){
+                $(videoIframe).attr('src', vedeoSrc);
+            },510);
+        });
+    });
+    // ========================================================
+
     // show contact info after click contact on header --------
     $(headerContactBtn).click(function(){
         $(this).addClass('activeColor');
@@ -139,6 +177,40 @@ $(function () {
         // close modal report window
     $(closeBtnSubmitReportWindow).click(function () {
         myHide(mainSubmitReport, '.3s');
+    });
+    // ========================================================
+
+    // quick orders forms -------------------------------------
+        // show --------------------
+    $(btnOrder).click(function() {
+        myShow(doQuickOrder, 'block', '.3s', function() {
+            setTimeout(function(){
+                $(doQuickOrderWindow).addClass('doQuickOrder__window-hideOnTop');
+            },300);
+        });
+    });
+        // click on close btn ------
+    $(closeBtnDoQuickOrder).click(function(){
+        myHide(doQuickOrder, '.3s', function(){
+            $(doQuickOrderWindow).removeClass('doQuickOrder__window-hideOnTop');
+        });
+    });
+        // click on order btn ------
+    $(btnQquickOrderSubmit).click(function(e){
+        e.preventDefault();
+        $(doQOsubmitReport).addClass('doQOsubmitReport-hideOnTop');
+        setTimeout(function () {
+            $(doQuickOrderWindow).addClass('doQuickOrder__window-hideOnBottom');
+        },100);
+        setTimeout(function(){
+            myHide(doQuickOrder, '.3s', function(){
+
+            });
+        }, 2000);
+        setTimeout(function(){
+            $(doQOsubmitReport).removeClass('doQOsubmitReport-hideOnTop');
+            $(doQuickOrderWindow).removeClass('doQuickOrder__window-hideOnBottom');
+        }, 2500);
     });
     // ========================================================
 
