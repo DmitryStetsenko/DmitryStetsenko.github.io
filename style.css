@@ -2924,6 +2924,8 @@ input {
     font-size: 18px;
     font-weight: 300;
     font-style: normal; }
+  input:focus {
+    background: white; }
 
 textarea {
   background: #c9c9c9;
@@ -2945,6 +2947,8 @@ textarea {
     font-size: 18px;
     font-weight: 300;
     font-style: normal; }
+  textarea:focus {
+    background: white; }
 
 .btn {
   align-items: center;
@@ -2997,7 +3001,7 @@ textarea {
     position: relative; }
     .btn-playVideo:after {
       content: '';
-      background: url(./assets/img/icon_play.png);
+      background: url(./assets/img/icon_play.svg);
       margin-left: 15px;
       width: 67px;
       height: 76px; }
@@ -3562,6 +3566,7 @@ textarea {
 
 .ourClientsBlock {
   margin-top: auto;
+  opacity: 0;
   transition: transform 0.5s; }
   .ourClientsBlock .ourClients {
     align-items: center;
@@ -3734,8 +3739,31 @@ textarea {
       min-width: 554px;
       margin-right: 35px;
       overflow: hidden;
-      height: 390px;
+      position: relative;
+      height: 312.99435px;
       width: 554px; }
+      .mainVideoBlock .mainVideo__video .btn-playVideo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .mainVideoBlock .mainVideo__video .showVideo {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s;
+        width: 100%;
+        height: 100%; }
+        .mainVideoBlock .mainVideo__video .showVideo__wrapper {
+          position: relative;
+          padding-bottom: 56.25%;
+          /* 16:9 */
+          height: 0; }
+          .mainVideoBlock .mainVideo__video .showVideo__wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; }
     .mainVideoBlock .mainVideo .mainVideoDescription {
       display: flex;
       flex-direction: column;
@@ -3894,7 +3922,6 @@ textarea {
     .categoryBlock .categoryWrap .category__item {
       align-items: center;
       display: flex;
-      background: url(./assets/img/category_item.jpg);
       border-radius: 7px;
       border: 2px solid #777778;
       justify-content: center;

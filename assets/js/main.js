@@ -17,6 +17,11 @@ $(function () {
           closeBtnShowVideoPresentation = '.closeBtn-showVideoPresentation';
     // ============================================
 
+    // instagram page var -------------------------
+    const showVideo = '.showVideo',
+          btnPlayVideo = '.btn-playVideo';
+    // ============================================
+
     // marketing page var -------------------------
     const categoryItem = '.category__item',
           actionForCategory = '.actionForCategory',
@@ -74,6 +79,12 @@ $(function () {
         centerPadding: 0,
         prevArrow: '.mySliderArrow-prev',
         nextArrow: '.mySliderArrow-next'
+    });
+    myShow(ourClientsBlock, 'block', '1s', function(){
+        setTimeout(function(){
+            $(ourClientsBlock).css('transition','opacity .3s, transform .5s');
+
+        });
     });
         // page instagram slider ------------------------------
     let instaPgeSliderParam = {
@@ -172,7 +183,28 @@ $(function () {
         // click on submit button
     $(mainBtnFormSubmit).click(function(e){
         e.preventDefault();
-        myShow(mainSubmitReport, 'flex', '.3s');
+        let contactForm = $(mainContactForm);
+        let input = contactForm.find('input');
+        let inputIsEmpty = false;
+        let textArea = contactForm.find('textArea');
+
+        for ( let i = 0; i < input.length; i++ ){
+            let currentInput = input.eq(i);
+            let inputValue = currentInput.val();
+            if (!inputValue) {
+                inputIsEmpty = true;
+                outLighting(currentInput);
+            }
+        }
+        if (!textArea.val()) {
+            inputIsEmpty = true;
+            outLighting(textArea);
+        }
+        if (inputIsEmpty) {
+            return;
+        } else {
+            myShow(mainSubmitReport, 'flex', '.3s');
+        }
     });
         // close modal report window
     $(closeBtnSubmitReportWindow).click(function () {
@@ -198,19 +230,49 @@ $(function () {
         // click on order btn ------
     $(btnQquickOrderSubmit).click(function(e){
         e.preventDefault();
-        $(doQOsubmitReport).addClass('doQOsubmitReport-hideOnTop');
-        setTimeout(function () {
-            $(doQuickOrderWindow).addClass('doQuickOrder__window-hideOnBottom');
-        },100);
-        setTimeout(function(){
-            myHide(doQuickOrder, '.3s', function(){
 
-            });
-        }, 2000);
-        setTimeout(function(){
-            $(doQOsubmitReport).removeClass('doQOsubmitReport-hideOnTop');
-            $(doQuickOrderWindow).removeClass('doQuickOrder__window-hideOnBottom');
-        }, 2500);
+        let contactForm = $(doQuickOrder);
+        let input = contactForm.find('input');
+        let inputIsEmpty = false;
+
+        for ( let i = 0; i < input.length; i++ ){
+            let currentInput = input.eq(i);
+            let inputValue = currentInput.val();
+            if (!inputValue) {
+                inputIsEmpty = true;
+                outLighting(currentInput);
+            }
+        }
+        if (inputIsEmpty) {
+            return;
+        } else {
+            $(doQOsubmitReport).addClass('doQOsubmitReport-hideOnTop');
+            setTimeout(function () {
+                $(doQuickOrderWindow).addClass('doQuickOrder__window-hideOnBottom');
+            },100);
+            setTimeout(function(){
+                myHide(doQuickOrder, '.3s', function(){
+
+                });
+            }, 2000);
+            setTimeout(function(){
+                $(doQOsubmitReport).removeClass('doQOsubmitReport-hideOnTop');
+                $(doQuickOrderWindow).removeClass('doQuickOrder__window-hideOnBottom');
+            }, 2500);
+        }
+    });
+    // ========================================================
+
+    // intagram page event ------------------------------------
+    $(btnPlayVideo).click(function(){
+        let videoFrame = $(showVideo).find('iframe');
+        let videoSrc = videoFrame.attr('src');
+        videoSrc += '?autoplay=1';
+        videoFrame.attr('src', videoSrc);
+        $(showVideo).css({
+                            'visibility': 'visible',
+                            'opacity'   : '1'
+                        });
     });
     // ========================================================
 
@@ -253,7 +315,7 @@ $(function () {
         element.css({
             'opacity': '0',
             'display': displayMode,
-            'transition': duration
+            'transition': 'opacity ' + duration
             });
         setTimeout(function(){
             element.css('opacity', '1');
@@ -284,4 +346,18 @@ $(function () {
     }
     // ========================================================
     ///////////////////////////////////////////////////////////
+    // validator form -----------------------------------------
+    function validator(){
+
+        return valid;
+    }
+    // ========================================================
+    function outLighting(inputObj){
+        inputObj.css({
+            'box-shadow': '0 0 6px 2px red'
+        });
+        setTimeout(function(){
+            inputObj.removeAttr('style');
+        },1000);
+    }
 });
