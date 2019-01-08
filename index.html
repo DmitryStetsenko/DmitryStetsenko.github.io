@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part review</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="siteHeaderSection">
+        <div class="wrapper">
+            <div class="siteHeader">
+                <div class="siteHeader__logo">
+                    <a href="#">
+                        <img src="img/logo.png" alt="PartReview logo image">
+                    </a>
+                </div>
+                <!-- /.siteHeader__logo -->
+                <div class="searchBlock">
+                    <form action="#" class="searchBlock__form">
+                        <input type="text" placeholder="Поиск" id="headerFormSearch">
+                        <button class="iconBtn iconBtn-search">
+                            <span class="cssIcon cssIcon-search">
+                                <span class="cssIcon__part cssIcon__part-circle"></span>
+                                <span class="cssIcon__part cssIcon__part-knob"></span>
+                            </span>
+                            <!-- /.cssIcon-search -->
+                        </button>
+                        <!-- /.iconBtn-search -->
+                    </form>
+                    <!-- /.searchBlock__form -->
+                </div>
+                <!-- /.searchBlock -->
+                <nav class="menuBlock">
+                    <button class="iconBtn iconBtn-toggleMenu">
+                        <span class="cssIcon cssIcon-toggleMenu">
+                            <span class="cssIcon__part cssIcon__part-line"></span>
+                            <span class="cssIcon__part cssIcon__part-line"></span>
+                            <span class="cssIcon__part cssIcon__part-line"></span>
+                        </span>
+                        <!-- /.cssIcon-toggleMenu -->
+                    </button>
+                    <!-- /.iconBtn iconBtn-toggleMenu -->
+                    <ul class="topMenu">
+                        <li class="topMenu__item"><a href="#"></a></li>
+                        <li class="topMenu__item"><a href="#"></a></li>
+                        <li class="topMenu__item"><a href="#"></a></li>
+                    </ul>
+                    <!-- /.topMenu -->
+                </nav>
+                <!-- /.menuBlock -->
+                <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                <!-- /.mainBtn-addReview -->
+                <div class="headerUserAction">
+                    <div class="headerUserAction__element headerUserAction__element-enter">
+                        <span>Вход</span>
+                    </div>
+                    <!-- /.headerUserAction__element -->
+                    <div class="headerUserAction__separate"></div>
+                    <!-- /.headerUserAction__separate -->
+                    <div class="headerUserAction__element headerUserAction__element-registered">
+                        <span>Регистрация</span>
+                    </div>
+                    <!-- /.headerUserAction__element -->
+                </div>
+                <!-- /.headerUserAction -->
+            </div>
+            <!-- /.siteHeader -->
+        </div>
+        <!-- /.wrapper -->
+    </header>
+    <!-- /.siteHeaderSection -->
+    <main class="mainContent">
+        <div class="wrapper">
+            <section class="spareParts">
+                <div class="spareParts__titleBlock">
+                    <h2 class="spareParts__title">Запчасти</h2>
+                    <!-- /.spareParts__title -->
+                    <div class="sparePartsFilter">
+                        <button class="filterBtn filterBtn-popular filterBtn-active">Популярное</button>
+                        <!-- /filterBtn-popular -->
+                        <button class="filterBtn filterBtn-forTO">Для ТО</button>
+                        <!-- /filterBtn-forTO -->
+                        <button class="filterBtn filterBtn-seasonal">Сезонное</button>
+                        <!-- /filterBtn-seasonal -->
+                    </div>
+                    <!-- /.sparePartsFilter -->
+                </div>
+                <!-- /.spareParts__titleBlock -->
+                <div class="spareParts__sliderBlock">
+                    <div class="sparePartsSlider">
+                        <div class="sparePartsSlider__sliderItem">
+                            <section class="sparePartsContent">
+                                <div class="sparePartsContentTitle">
+                                    <div class="sparePartsContentTitle__img">
+                                        <img src="img/brake_pads.png" alt="тормозные колодки">
+                                    </div>
+                                    <!-- /.sparePartsContentTitle__img -->
+                                    <h3 class="sparePartsContentTitle__text">Тормозные колодки</h3>
+                                </div>
+                                <!-- /.sparePartsContentTitle -->
+                                <ul class="sparePartsElements">
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">1</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">ATE</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="90">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>90%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">2</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Brembo</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="59">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>59%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">3</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">TRW</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="82">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>82%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">4</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Akebono</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="21">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>21%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">5</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Remsa</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="72">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>72%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                </ul>
+                                <!-- /.sparePartsElement -->
+                            </section>
+                            <!-- /.sparePartsItemContent -->
+                        </div>
+                        <!-- /.sparePartsSlider__sliderItem -->
+                        <div class="sparePartsSlider__sliderItem">
+                            <section class="sparePartsContent">
+                                <div class="sparePartsContentTitle">
+                                    <div class="sparePartsContentTitle__img">
+                                        <img src="img/spark_plug.png" alt="свечи зажигания">
+                                    </div>
+                                    <!-- /.sparePartsContentTitle__img -->
+                                    <h3 class="sparePartsContentTitle__text">Свечи зажигания</h3>
+                                </div>
+                                <!-- /.sparePartsContentTitle -->
+                                <ul class="sparePartsElements">
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">1</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">ATE</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="90">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>90%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">2</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Brembo</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="59">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>59%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">3</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">TRW</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="82">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>82%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">4</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Akebono</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="21">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>21%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">5</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Remsa</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="72">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>72%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                </ul>
+                                <!-- /.sparePartsElement -->
+                            </section>
+                            <!-- /.sparePartsItemContent -->
+                        </div>
+                        <!-- /.sparePartsSlider__sliderItem -->
+                        <div class="sparePartsSlider__sliderItem">
+                            <section class="sparePartsContent">
+                                <div class="sparePartsContentTitle">
+                                    <div class="sparePartsContentTitle__img">
+                                        <img src="img/wheel.png" alt="Шины">
+                                    </div>
+                                    <!-- /.sparePartsContentTitle__img -->
+                                    <h3 class="sparePartsContentTitle__text">Шины</h3>
+                                </div>
+                                <!-- /.sparePartsContentTitle -->
+                                <ul class="sparePartsElements">
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">1</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">ATE</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="90">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>90%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">2</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Brembo</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="59">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>59%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">3</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">TRW</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="82">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>82%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">4</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Akebono</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="21">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>21%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">5</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Remsa</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="72">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>72%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                </ul>
+                                <!-- /.sparePartsElement -->
+                            </section>
+                            <!-- /.sparePartsItemContent -->
+                        </div>
+                        <!-- /.sparePartsSlider__sliderItem -->
+                        <div class="sparePartsSlider__sliderItem">
+                            <section class="sparePartsContent">
+                                <div class="sparePartsContentTitle">
+                                    <div class="sparePartsContentTitle__img">
+                                        <img src="img/brake_disk.png" alt="тормозные диски">
+                                    </div>
+                                    <!-- /.sparePartsContentTitle__img -->
+                                    <h3 class="sparePartsContentTitle__text">Тормозные диски</h3>
+                                </div>
+                                <!-- /.sparePartsContentTitle -->
+                                <ul class="sparePartsElements">
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">1</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">ATE</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="90">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>90%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">2</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Brembo</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="59">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>59%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">3</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">TRW</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="82">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>82%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">4</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Akebono</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="21">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>21%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                    <li class="sparePartsElement">
+                                        <div class="sparePartsElement__item sparePartsElement__item-count">5</div>
+                                        <!-- /.sparePartsElement__item-count -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                            <div class="imgWrap">
+                                                <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                            </div>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-brandImg -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-brandText">Remsa</div>
+                                        <!-- /.sparePartsElement__item-brandText -->
+                                        <div class="sparePartsElement__item sparePartsElement__item-rating" data-count="72">
+                                            <div class="svgWrap">
+                                                <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                    <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                          d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                    />
+                                                </svg>
+                                            </div>
+                                            <span>72%</span>
+                                        </div>
+                                        <!-- /.sparePartsElement__item-rating -->
+                                    </li>
+                                    <!-- /.sparePartsElement -->
+                                </ul>
+                                <!-- /.sparePartsElement -->
+                            </section>
+                            <!-- /.sparePartsItemContent -->
+                        </div>
+                        <!-- /.sparePartsSlider__sliderItem -->
+                    </div>
+                    <!-- /.sparePartsSlider -->
+                </div>
+                <!-- /.spareParts__sliderBlock -->
+            </section>
+            <!-- /.spareParts -->
+        </div>
+        <!-- /.wrapper -->
+    </main>
+    <!-- /.mainContent -->
+    <footer class="siteFooter">
+        <div class="wrapper"></div>
+        <!-- /.wrapper -->
+    </footer>
+    <!-- /.siteFooter -->
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
