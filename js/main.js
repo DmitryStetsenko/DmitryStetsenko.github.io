@@ -11,6 +11,7 @@ window.onload = function () {
     function showBrandRating () {
         let sparePartsElements = document.querySelectorAll('.sparePartsElement');
         sparePartsElements = Array.prototype.slice.call(sparePartsElements);
+
         sparePartsElements.forEach(function(currentElem) {
             let currentRatingElem = currentElem.querySelector('.sparePartsElement__item-rating');
             let currentRating = parseInt( currentRatingElem.getAttribute('data-count') );
