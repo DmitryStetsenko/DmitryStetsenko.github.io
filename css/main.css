@@ -33,7 +33,7 @@ body {
   font: 400 normal 16px/1 Arial, san-serif;
   color: #2c333d; }
 
-div, section, main, header, article, aside, p, input, button, span, ul, li {
+div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, button, span, ul, li {
   box-sizing: border-box; }
 
 img {
@@ -59,7 +59,8 @@ h2 {
   font-weight: bold; }
 
 h3 {
-  font-size: 21px; }
+  font-size: 23px;
+  font-weight: bold; }
 
 .wrapper {
   margin: 0 auto;
@@ -91,6 +92,13 @@ h3 {
     .mainBtn-showFullRating:hover {
       color: white;
       background: #efb428; }
+  .mainBtn-addReviewMin {
+    color: white;
+    font-size: 21px;
+    height: 28px;
+    padding: 0;
+    min-width: 30px;
+    width: 30px; }
 
 .iconBtn {
   background: none;
@@ -151,12 +159,15 @@ h3 {
   transition: background .3s; }
   .filterBtn:first-child {
     border-radius: 3px 0 0 3px; }
+    .filterBtn:first-child:hover {
+      border-left: 1px solid #efb428; }
   .filterBtn:last-child {
     border-radius: 0 3px 3px 0;
     border-right: 1px solid #c1c7d0; }
   .filterBtn:hover {
     border-color: transparent;
     background: #efb428;
+    border-left: 1px solid white;
     color: white;
     cursor: pointer; }
   .filterBtn-active {
@@ -275,12 +286,14 @@ h3 {
     width: 100%; }
   .spareParts .sparePartsContentTitle {
     align-items: center;
+    color: #2c333d;
     display: flex;
     justify-content: flex-start;
     height: 50px;
     overflow: hidden;
     padding: 0 15px;
     position: relative;
+    text-decoration: none;
     white-space: nowrap; }
     .spareParts .sparePartsContentTitle__img {
       margin-right: 20px;
@@ -288,6 +301,20 @@ h3 {
       .spareParts .sparePartsContentTitle__img img {
         height: 100%;
         width: auto; }
+    .spareParts .sparePartsContentTitle__text {
+      transition: color .3s; }
+      .spareParts .sparePartsContentTitle__text span {
+        position: relative; }
+        .spareParts .sparePartsContentTitle__text span::after {
+          content: '';
+          background: #efb428;
+          display: block;
+          height: 1px;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          transition: width .3s;
+          width: 0; }
     .spareParts .sparePartsContentTitle:after {
       background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 20%, white 80%);
       content: '';
@@ -297,9 +324,18 @@ h3 {
       right: 0;
       top: 0;
       width: 40px; }
+    .spareParts .sparePartsContentTitle:hover {
+      cursor: pointer; }
+      .spareParts .sparePartsContentTitle:hover .sparePartsContentTitle__text {
+        color: #efb428; }
+        .spareParts .sparePartsContentTitle:hover .sparePartsContentTitle__text span::after {
+          width: 100%; }
+  .spareParts .sparePartsElements a {
+    text-decoration: none; }
   .spareParts .sparePartsElement {
     align-items: center;
     border-top: 1px solid #c1c7d0;
+    color: #2c333d;
     display: flex;
     height: 50px;
     justify-content: space-between;
@@ -417,14 +453,35 @@ h3 {
     .brands .brandsList:last-child {
       margin-right: 0; }
     .brands .brandsList__title {
-      align-items: center;
+      align-items: flex-start;
       display: flex;
       justify-content: center;
-      height: 50px;
+      height: 70px;
       overflow: hidden;
-      padding: 0 15px;
+      padding: 20px 15px 0 15px;
       position: relative;
       white-space: nowrap; }
+      .brands .brandsList__title a {
+        color: #2c333d;
+        position: relative;
+        text-decoration: none;
+        transition: color .3s; }
+        .brands .brandsList__title a::before {
+          content: '';
+          background: #efb428;
+          display: block;
+          height: 1px;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          transition: width .3s;
+          width: 0; }
+      .brands .brandsList__title:hover {
+        cursor: pointer; }
+        .brands .brandsList__title:hover a {
+          color: #efb428; }
+          .brands .brandsList__title:hover a::before {
+            width: 100%; }
   .brands .brandsListElements {
     width: 100%; }
   .brands .brandsListElement {
@@ -449,12 +506,15 @@ h3 {
       cursor: pointer; }
       .brands .brandsListElement:hover::after {
         border-color: #efb428; }
+      .brands .brandsListElement:hover .linkWrap a {
+        color: #efb428; }
     .brands .brandsListElement__item {
       align-items: center;
       border-right: 1px solid #c1c7d0;
       display: flex;
       font-size: 15px;
       justify-content: center;
+      position: relative;
       height: 100%; }
       .brands .brandsListElement__item:last-child {
         border-right: none; }
@@ -466,7 +526,6 @@ h3 {
         width: 30px; }
       .brands .brandsListElement__item-brandImg {
         background: #f6f6f6;
-        flex-direction: column;
         justify-content: center;
         overflow: hidden;
         width: 170px;
@@ -474,21 +533,45 @@ h3 {
         .brands .brandsListElement__item-brandImg .imgWrap {
           height: 17px;
           margin-bottom: 5px; }
-        .brands .brandsListElement__item-brandImg__additionalbrand {
+        .brands .brandsListElement__item-brandImg img {
+          height: 100%;
+          width: auto; }
+      .brands .brandsListElement__item-brandBlock {
+        background: #f6f6f6;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 170px;
+        width: 170px; }
+        .brands .brandsListElement__item-brandBlock .imgWrap {
+          height: 17px;
+          margin-bottom: 5px; }
+        .brands .brandsListElement__item-brandBlock__additionalbrand {
           color: #2c333d;
           font-size: 13px; }
-        .brands .brandsListElement__item-brandImg img {
+        .brands .brandsListElement__item-brandBlock img {
           height: 100%;
           width: auto; }
       .brands .brandsListElement__item-brandTop {
         align-items: flex-start;
+        background: #f6f6f6;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
         padding-left: 10px;
         min-width: initial;
         width: 100%; }
+        .brands .brandsListElement__item-brandTop .imgWrap {
+          height: 17px;
+          margin-bottom: 5px; }
+        .brands .brandsListElement__item-brandTop__additionalbrand {
+          color: #2c333d;
+          font-size: 13px; }
+        .brands .brandsListElement__item-brandTop img {
+          height: 100%;
+          width: auto; }
       .brands .brandsListElement__item-reviews {
         background: white;
         justify-content: center;
-        overflow: hidden;
         padding: 0 10px;
         width: calc((100% - 100px) / 2); }
         .brands .brandsListElement__item-reviews .reviewsQuantity {
@@ -502,6 +585,19 @@ h3 {
         position: relative;
         width: calc((100% - 100px) / 2); }
         .brands .brandsListElement__item-rating span {
+          align-items: center;
+          background: url(../img/rating_circle.svg) no-repeat center/36px 36px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          height: 40px;
+          width: 40px; }
+      .brands .brandsListElement__item-quantity {
+        font-size: 13px;
+        font-weight: bold;
+        position: relative;
+        width: calc((100% - 100px) / 2); }
+        .brands .brandsListElement__item-quantity span {
           align-items: center;
           background: url(../img/rating_circle.svg) no-repeat center/36px 36px;
           border-radius: 50%;
@@ -523,20 +619,167 @@ h3 {
       .brands .brandsListElement__item-reviewDiagram {
         padding: 0 20px; }
         .brands .brandsListElement__item-reviewDiagram .reviewDiagramBlock {
+          display: flex;
+          justify-content: center;
+          height: 30px;
           min-width: 115px;
           width: 115px; }
-      .brands .brandsListElement__item-colName {
-        border: none;
-        background: none;
-        color: #8a939f;
-        font-size: 12px;
-        font-weight: 400;
+          .brands .brandsListElement__item-reviewDiagram .reviewDiagramBlock__item {
+            align-items: center;
+            color: white;
+            display: flex;
+            font-size: 14px;
+            font-weight: 400;
+            justify-content: center;
+            min-width: 20px; }
+            .brands .brandsListElement__item-reviewDiagram .reviewDiagramBlock__item-green {
+              background: #7eae3e;
+              width: 70%; }
+            .brands .brandsListElement__item-reviewDiagram .reviewDiagramBlock__item-yellow {
+              background: #efb428;
+              width: 20%; }
+            .brands .brandsListElement__item-reviewDiagram .reviewDiagramBlock__item-red {
+              background: #e73e4e;
+              width: 10%; }
+      .brands .brandsListElement__item-country {
+        padding: 0 10px; }
+        .brands .brandsListElement__item-country .imgFlag {
+          border-radius: 3px;
+          background-image: url(../img/flags_sprite.jpg);
+          height: 17px;
+          min-width: 26px;
+          width: 26px; }
+          .brands .brandsListElement__item-country .imgFlag-germany {
+            background-position: 0 0; }
+          .brands .brandsListElement__item-country .imgFlag-england {
+            background-position: 55px 0; }
+          .brands .brandsListElement__item-country .imgFlag-italy {
+            background-position: 27px 0; }
+      .brands .brandsListElement__item-site {
+        padding: 0 10px; }
+        .brands .brandsListElement__item-site .linkWrap {
+          overflow: hidden;
+          position: relative;
+          width: 95px; }
+          .brands .brandsListElement__item-site .linkWrap::after {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 20%, white 80%);
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px; }
+          .brands .brandsListElement__item-site .linkWrap a {
+            color: #2c333d;
+            text-decoration: none;
+            transition: color .3s; }
+      .brands .brandsListElement__item-addReview {
+        padding: 0 20px; }
+      .brands .brandsListElement__item-topBlock {
+        overflow: unset; }
+        .brands .brandsListElement__item-topBlock::before {
+          content: attr(data-title);
+          color: #8a939f;
+          font-size: 12px;
+          font-weight: 400;
+          left: 50%;
+          top: -17px;
+          position: absolute;
+          transform: translateX(-50%);
+          white-space: nowrap; }
+
+.cars {
+  margin-bottom: 60px; }
+  .cars__title {
+    margin-bottom: 30px; }
+  .cars__listsBlock {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px; }
+  .cars .carItems {
+    margin-right: 32px;
+    width: calc((100% + 30px) / 3 - 30px); }
+    .cars .carItems:last-child {
+      margin-right: 0; }
+  .cars .carItem {
+    align-items: center;
+    display: flex;
+    height: 50px;
+    justify-content: space-between; }
+    .cars .carItem__elem {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start; }
+      .cars .carItem__elem-logo {
         justify-content: center;
-        text-align: center; }
-    .brands .brandsListElement-colNames {
-      border: none;
-      height: 20px; }
-      .brands .brandsListElement-colNames:hover {
-        cursor: default; }
-        .brands .brandsListElement-colNames:hover::after {
-          border-color: transparent; }
+        height: 30px;
+        min-width: 100px;
+        width: 100px; }
+        .cars .carItem__elem-logo img {
+          height: 100%;
+          width: auto; }
+      .cars .carItem__elem-name {
+        padding-right: 5px; }
+      .cars .carItem__elem-space {
+        border-bottom: 1px dashed #c1c7d0;
+        position: relative;
+        top: 5px;
+        width: 100%; }
+      .cars .carItem__elem-rating {
+        background: #c1c7d0;
+        border-radius: 3px;
+        margin-left: 5px;
+        padding: 5px 7px; }
+  .cars .showMoreCars {
+    width: 100%; }
+    .cars .showMoreCars button {
+      border-bottom: 1px dashed #2c333d;
+      color: #2c333d;
+      display: block;
+      margin: 0 auto;
+      transition: color .3s, border-color .3s; }
+      .cars .showMoreCars button:hover {
+        cursor: pointer;
+        color: #efb428;
+        border-color: #efb428; }
+
+.magazineBlock {
+  align-items: stretch;
+  display: flex;
+  justify-content: space-between; }
+
+.magazine {
+  width: 70%; }
+  .magazine__title {
+    margin-bottom: 30px; }
+  .magazine .articleTabs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+  .magazine .articleTab {
+    margin-bottom: 30px;
+    width: calc((1170px / 12 - 15px) * 2); }
+    .magazine .articleTab__thumbnail {
+      border-radius: 3px;
+      height: 127px;
+      margin-bottom: 10px;
+      overflow: hidden; }
+    .magazine .articleTab__description {
+      font-size: 16px;
+      line-height: 18px;
+      transition: color .3s; }
+    .magazine .articleTab:hover {
+      cursor: pointer; }
+      .magazine .articleTab:hover .articleTab__description {
+        color: #efb428;
+        text-decoration: underline dashed; }
+
+.activityTape {
+  background: #f6f6f6;
+  border-radius: 3px;
+  border: 1px solid #c1c7d0;
+  margin-left: 30px;
+  min-height: 440px;
+  width: calc((1170px / 12 - 15px) * 4); }
