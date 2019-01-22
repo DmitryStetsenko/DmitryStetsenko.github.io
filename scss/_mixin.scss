@@ -1,0 +1,98 @@
+@mixin fontAwesome($code) {
+  content: $code;
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+}
+
+@mixin textStroke($strokeColor) {
+  text-shadow:
+          -0   -1px 1px $strokeColor,
+}
+
+@mixin banTxtSelect () {
+  // Для эксплорера
+  -ms-user-select: none;
+  // Для мозилы
+  -moz-user-select: none;
+  // Для Сафари и Хрома
+  -webkit-user-select: none;
+} // banTxtSelect
+
+// draw triangle
+@mixin drawTriangle($pWidth, $pHeight, $tColor) {
+  width: 0;
+  height: 0;
+  $tWidth: $pWidth + px;
+  $tHeight: $pHeight / 2 + px;
+  border-style: solid;
+  border-width: $tHeight 0 $tHeight $tWidth;
+  border-color: transparent transparent transparent $tColor;
+}
+
+// position absolute center layout
+@mixin absPosCenter() {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin placeholder ($fontFamily, $fontSize, $fontWeight, $fontStyle, $fontColor) {
+  &::-webkit-input-placeholder {
+    color: $fontColor;
+    font: $fontWeight $fontStyle $fontSize $fontFamily;
+  }
+  &:-moz-placeholder {
+    color: $fontColor;
+    font: $fontWeight $fontStyle $fontSize $fontFamily;
+  }
+}
+
+@mixin posFullScreen ($position, $zIndex) {
+  position: $position;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zIndex;
+}
+
+@mixin fullScreenOverlayPosition($bgColor, $opacity, $position, $zIndex) {
+  background: $bgColor;
+  opacity: $opacity;
+  position: $position;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zIndex;
+}
+
+@mixin backgroundOptions($bgRepeat, $bgPos, $bgSize) {
+  background-repeat: $bgRepeat;
+  background-position: $bgPos;
+  background-size: $bgSize;
+}
+
+@mixin customScroll() {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

@@ -1,0 +1,284 @@
+body {
+  font: 400 normal 16px/1 Arial, san-serif;
+  color: $colorDarkGray;
+}
+
+div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, button, span, ul, li {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+} // img
+
+button, input {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+} // button, input
+
+h1 {
+  color: white;
+  font-size: 35px;
+} //h1
+
+h2,h3 {
+  color: $colorDarkGray;
+} // h2,h3
+
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+} // h2
+
+h3 {
+  font-size: 23px;
+  font-weight: bold;
+} // h3
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $wrapperMaxWidth;
+  padding: $wrapperPadding;
+} // wrapper
+
+.mainBtn {
+  align-items: center;
+  border-radius: 3px;
+  background: $colorYellow;
+  box-shadow: 0 2px 0 $colorYellowShadow;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px 25px;
+  position: relative;
+  transition: background .3s;
+  &::before {
+    background: rgba(255, 255, 255, 0.26);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transform: skewX(-20deg);
+    transition: left .5s;
+    top: 0;
+    left: -40px;
+    width: 30px;
+  } // before
+  &:hover {
+    cursor: pointer;
+    &::before {
+      left: 110%;
+    } // before
+  } // hover
+  &-addReview {
+    color: $colorDarkGray;
+  } // -addReview
+  &-showFullRating {
+    background: white;
+    border: 1px solid $colorRatingYellow;
+    box-shadow: none;
+    color: $colorDarkGray;
+    height: 30px;
+    font-size: 13px;
+    padding: 0;
+    width: 100%;
+    &::before {
+      display: none;
+    } // before
+    &:hover {
+      color: white;
+      background: $colorRatingYellow;
+    } // hover
+  } // -showFullRating
+  &-addReviewMin {
+    color: white;
+    font-size: 21px;
+    height: 28px;
+    padding: 0;
+    min-width: 30px;
+    width: 30px;
+    &::before {
+      display: none;
+    } // before
+  } // -addReviewMin
+  &-showAll {
+    border: 1px solid $colorYellow;
+    box-shadow: unset;
+    background: white;
+    &::before {
+      display: none;
+    } // before
+    &:hover {
+      color: white;
+      background: $colorRatingYellow;
+    } // hover
+  } // -showAll
+} // mainBtn
+
+.showMoreBtn {
+  border-bottom: 1px dashed $colorDarkGray;
+  color: $colorDarkGray;
+  display: block;
+  transition: color .3s, border-color .3s;
+  &:hover {
+    cursor: pointer;
+    color: $colorYellow;
+    border-color: $colorYellow;
+  } // hover
+} // showMoreBtn
+
+.iconBtn {
+  background: none;
+  background: transparent;
+  display: block;
+  &:hover {
+    cursor: pointer;
+  }  // hover
+  &-search {
+    position: absolute;
+  } // -search
+  .cssIcon {
+    display: block;
+    position: relative;
+    &-search {
+      height: 12px;
+      width: 12px;
+    } // -search
+    &-toggleMenu {
+      align-items: center;
+      border-radius: 3px;
+      border: 1px solid $colorYellow;
+      background: $colorGray;
+      display: flex;
+      flex-direction: column;
+      height: 35px;
+      justify-content: center;
+      width: 35px;
+    } // -toggleMenu
+    &__part {
+      display: block;
+      position: absolute;
+      &-circle {
+        border-radius: 50%;
+        border: 1px solid $colorYellow;
+        height: 10px;
+        top: 0;
+        left: 0;
+        width: 10px;
+      } // -circle
+      &-knob {
+        background: $colorYellow;
+        left: 8px;
+        transform: rotate(45deg);
+        top: 10px;
+        height: 1px;
+        width: 5px;
+      } // -knob
+      &-line {
+        background: white;
+        height: 2px;
+        position: unset;
+        width: 14px;
+      } // -line
+    } // __part
+  } // cssIcon
+} // iconBtn
+
+.typeActivHeaderBtn {
+  border-radius: 3px;
+  color: $colorDarkGray;
+  display: block;
+  font-size: 11px;
+  padding: 4px 5px;
+  transition: box-shadow .2s, transform .2s;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  } // hover
+  &-voting {
+    background: white;
+  } // -voting
+  &-needHelp {
+    background: $colorRatingRed;
+    color: white;
+  } // -needHelp
+  &-newEvent {
+    background: $colorRatingGreen;
+    color: white;
+  } // -newEvent
+} // typeActivHeaderBtn
+
+.shevronIcon {
+  &__icon {
+    position: relative;
+    height: 21px;
+    width: 9px;
+    span {
+      background: $colorDarkGray;
+      display: block;
+      position: absolute;
+      height: 10px;
+      width: 2px;
+      &:first-child {
+        transform-origin:left bottom;
+        transform: rotate(45deg);
+        left:0;
+        top: 0;
+      } // first-child
+      &:last-child {
+        transform-origin:left top;
+        transform: rotate(-45deg);
+        left: 0;
+        bottom: 0;
+      }
+    } // span
+  } // _icon
+  &-sliderNavNext {
+    transform: rotate(180deg);
+  } // -sliderNavNext
+  &-footerMenu {
+    transform: rotate(-90deg) scale(.7);
+    span {
+      background: $colorYellow;
+    } // span
+  } // -footerMenu
+} // shevronIcon
+
+.filterBtn {
+  align-items: center;
+  border-top: 1px solid $colorLightGray;
+  border-bottom: 1px solid $colorLightGray;
+  border-left: 1px solid $colorLightGray;
+  color: $colorLightGray;
+  display: flex;
+  height: 35px;
+  padding: 0 20px;
+  transition: background .3s;
+  &:first-child {
+    border-radius: 3px 0 0 3px;
+    &:hover {
+      border-left: 1px solid $colorYellow;
+    } // hover
+  } // first-child
+  &:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: 1px solid $colorLightGray;
+  }
+  &:hover {
+    border-color: transparent;
+    background: $colorYellow;
+    border-left: 1px solid white;
+    color: white;
+    cursor: pointer;
+  } // hover
+  &-active {
+    border-color: transparent;
+    background: $colorYellow;
+    color: white;
+  } //
+} // filterBtn
