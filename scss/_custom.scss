@@ -20,24 +20,25 @@ button, input {
   outline: none;
 } // button, input
 
-h1 {
+// Block title style ------------------------
+.h1Title {
   color: white;
   font-size: 35px;
-} //h1
-
-h2,h3 {
+} // h1Title
+.h2Title, .h3Title {
   color: $colorDarkGray;
-} // h2,h3
-
-h2 {
+} // h2Title, h3Title
+.h2Title {
   font-size: 32px;
   font-weight: bold;
-} // h2
-
-h3 {
+} // h2Title
+.h3Title {
   font-size: 23px;
   font-weight: bold;
-} // h3
+} // h3Title
+.h4Title {
+} // h4title
+// ==========================================
 
 .wrapper {
   margin: 0 auto;
@@ -101,9 +102,6 @@ h3 {
     padding: 0;
     min-width: 30px;
     width: 30px;
-    &::before {
-      display: none;
-    } // before
   } // -addReviewMin
   &-showAll {
     border: 1px solid $colorYellow;

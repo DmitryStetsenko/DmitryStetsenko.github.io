@@ -2,6 +2,7 @@
 @import "var";
 @import "custom";
 @import "mixin";
+@import "animate";
 
 // header ---------------------------------
 
@@ -345,7 +346,10 @@
               stroke-linecap:round;
               stroke-linejoin:round;
               stroke-dasharray: 114px;
-              transition: stroke-dashoffset .3s;
+              transition: stroke-dashoffset 1s;
+              &.static {
+                stroke: $colorBgLightGray;
+              } // dynamic
             } // path
           } // svgRatingCircle
         } // svgWrap
@@ -544,11 +548,6 @@
       &::after {
         border-color: $colorRatingYellow;
       } // after
-      .linkWrap {
-        a {
-          color: $colorYellow;
-        } // a
-      } // linkWrap
     } // hover
     &__item {
       align-items: center;
@@ -608,12 +607,33 @@
       &-brandTop {
         align-items: flex-start;
         background: $colorBgLightGray;
+        color: $colorDarkGray;
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
         padding-left: 10px;
+        text-decoration: none;
         min-width: initial;
         width: 100%;
+        &::after {
+          content: attr(data-brand-name);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(to left, rgba(167, 202, 82, 0.81) 0%, rgba(144, 202, 82, 0.81) 100%);
+          //background: rgba(239, 180, 40, 0.8);
+          color: white;
+          font-weight: bold;
+          font-size: 0;
+          height: 100%;
+          position: absolute;
+          text-transform: uppercase;
+          transition: width .3s, font-size .3s;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.71);
+          top: 0;
+          left: 0;
+          width: 0;
+        } // after
         .imgWrap {
           height: 17px;
           margin-bottom: 5px;
@@ -626,6 +646,13 @@
           height: 100%;
           width: auto;
         } // img
+        &:hover {
+          cursor: pointer;
+          &::after {
+            font-size: 15px;
+            width: 100%;
+          } // after
+        } // hover
       } // -brandTop
       &-reviews {
         $brandTextWidth: calc((100% - 100px) / 2);
@@ -746,6 +773,15 @@
       } // country
       &-site {
         padding: 0 10px;
+        &:hover {
+          cursor: pointer;
+          .linkWrap {
+            a {
+              color: $colorYellow;
+              transform: translateX(-100%);
+            } // a
+          }
+        } // hover
         .linkWrap {
           overflow: hidden;
           position: relative;
@@ -762,14 +798,15 @@
           } // after
           a {
             color: $colorDarkGray;
+            display: block;
             text-decoration: none;
-            transition: color .3s;
+            transition: color .3s, transform 2s;
           } // a
-
         } // linkWrap
       } // -site
       &-addReview {
         padding: 0 20px;
+        text-decoration: none;
       } // -addReview
       &-topBlock {
         overflow: unset;
@@ -786,6 +823,11 @@
         } // before
       } // topBlock
     } // __item
+    &-diffHover {
+      &::after {
+        display: none;
+      } // after
+    } // -diffHover
   } // brandsListElement
 } // brands
 // ==========================================
@@ -1173,7 +1215,7 @@
         font-size: 16px;
         line-height: 30px;
         color: $colorYellow;
-        h4 {
+        .h4Title {
           display: inline-block;
           position: relative;
           margin-right: 7px;
@@ -1187,14 +1229,14 @@
             transition: width .3s;
             width: 0;
           } // after
-        } // h4
+        } // .h4Title
         &:hover {
           cursor: pointer;
-          h4 {
+          .h4Title {
             &::after {
               width: 100%;
             } // after
-          } // h4
+          } // .h4Title
         } // hover
       } // -title
     } // __item

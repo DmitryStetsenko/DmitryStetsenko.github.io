@@ -18,9 +18,16 @@ window.onload = function () {
 
         sparePartsElements.forEach(function(currentElem) {
             let currentRatingElem = currentElem.querySelector('.sparePartsElement__item-rating');
+            let spanRatingElement = currentRatingElem.querySelector('span');
             let currentRating = parseInt( currentRatingElem.getAttribute('data-count') );
             let persentValue = parseInt( RATING_STROKE_LENGTH - RATING_STROKE_LENGTH * currentRating / 100 );
-            let svg = currentRatingElem.querySelector('path');
+            let svg = currentRatingElem.querySelector('path:last-child');
+            for ( let i = 0; i <= currentRating; i++ ) {
+               setTimeout(()=>{
+                   spanRatingElement.innerText = i;
+               }, i * 7);
+            }
+
             svg.style.strokeDashoffset = persentValue;
             switch ( true ) {
                 case ( currentRating < 34 ) : {
