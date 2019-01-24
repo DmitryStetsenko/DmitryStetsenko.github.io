@@ -12,6 +12,15 @@ window.onload = function () {
 
     showReviewDiagram();
 
+    showAllCars();
+
+    showAllComparison();
+
+    showAllSEOText();
+
+    showAllFotterMenuItems ();
+
+    // -------------------------------------------------
     function showBrandRating () {
         let sparePartsElements = document.querySelectorAll('.sparePartsElement');
         sparePartsElements = Array.prototype.slice.call(sparePartsElements);
@@ -90,6 +99,129 @@ window.onload = function () {
             redZone.style.width = redZoneValuePercent + '%';
         });
     } // showReviewDiagram
+
+    function showAllCars () {
+        const carsListBlock = document.querySelector('.cars__listsBlock');
+        const blockHeight = carsListBlock.clientHeight;
+        const carItems = carsListBlock.querySelector('.carItems');
+        const showAllBtn = document.querySelector('#carsShowAll');
+        const unvisibleItem = carsListBlock.querySelectorAll('.displayNone');
+        let openBlockHeight = 0;
+
+        carsListBlock.style.height = blockHeight + 'px';
+        carsListBlock.style.overflow = 'hidden';
+        carsListBlock.style.transition = 'height .3s';
+
+        showAllBtn.addEventListener('click', ()=>{
+            for ( let i = 0; i < unvisibleItem.length; i++) {
+                unvisibleItem[i].classList.remove('displayNone');
+            }
+            openBlockHeight = carItems.clientHeight;
+            carsListBlock.style.height = openBlockHeight + 'px';
+
+            // disabled show all btn
+            showAllBtn.style.opacity = '0';
+            showAllBtn.setAttribute('disabled', 'true');
+            showAllBtn.style.cursor = 'default';
+
+            // clear style
+            setTimeout(()=> {
+                carsListBlock.removeAttribute('style');
+            }, 1000)
+        });
+    } // showAllCars
+
+    function showAllComparison () {
+        const comparisonBlock = document.querySelector('.comparisonBlock__content');
+        const blockHeight = comparisonBlock.clientHeight;
+        const comparisonBlockItems = comparisonBlock.querySelector('.comparisonBlockItems');
+        const showAllBtn = document.querySelector('#comparisonBlockShowAll');
+        const unvisibleItem = comparisonBlockItems.querySelectorAll('.displayNone');
+        let openBlockHeight = 0;
+
+        comparisonBlock.style.height = blockHeight + 'px';
+        comparisonBlock.style.overflow = 'hidden';
+        comparisonBlock.style.transition = 'height .3s';
+
+        showAllBtn.addEventListener('click', ()=>{
+            for ( let i = 0; i < unvisibleItem.length; i++) {
+                unvisibleItem[i].classList.remove('displayNone');
+            }
+            openBlockHeight = comparisonBlockItems.clientHeight;
+            comparisonBlock.style.height = openBlockHeight + 'px';
+
+            // disabled show all btn
+
+            showAllBtn.setAttribute('disabled', 'true');
+            showAllBtn.classList.add('mainBtn-showAllDisabled');
+
+            // clear style
+            setTimeout(()=> {
+                comparisonBlock.removeAttribute('style');
+            }, 1000)
+        });
+    } // showAllComparison
+    
+    function showAllSEOText () {
+        const seoContent = document.querySelector('.seo__content');
+        const blockHeight = seoContent.clientHeight;
+        const seoTexts = seoContent.querySelector('.seoTexts');
+        const showAllBtn = document.querySelector('#seoBlockShowMore');
+        const unvisibleItem = seoContent.querySelectorAll('.displayNone');
+        let openBlockHeight = 0;
+
+        seoContent.style.height = blockHeight + 'px';
+        seoContent.style.overflow = 'hidden';
+        seoContent.style.transition = 'height .3s';
+
+        showAllBtn.addEventListener('click', ()=>{
+            for ( let i = 0; i < unvisibleItem.length; i++) {
+                unvisibleItem[i].classList.remove('displayNone');
+            }
+            openBlockHeight = seoTexts.clientHeight;
+            seoContent.style.height = openBlockHeight + 'px';
+
+            // disabled show all btn
+            showAllBtn.style.opacity = '0';
+            showAllBtn.setAttribute('disabled', 'true');
+            showAllBtn.style.cursor = 'default';
+
+            // clear style
+            setTimeout(()=> {
+                seoContent.removeAttribute('style');
+            }, 1000)
+        });
+    } // showAllSEOText
+
+    function showAllFotterMenuItems () {
+        const toggleMenuBtn = document.querySelectorAll('.shevronIcon-footerMenu');
+        for ( let currentBtn of toggleMenuBtn ) {
+            currentBtn.addEventListener('click', function() {
+                if ( this.classList.contains('shevronIcon-footerMenuRotate')) {
+                    this.classList.remove('shevronIcon-footerMenuRotate');
+                } else {
+                    this.classList.add('shevronIcon-footerMenuRotate');
+
+                }
+            });
+        } // for of
+    }
+
+
+
+    function scrollTo (idElement) {
+        const scrollElement = document.querySelector(idElement);
+        let top = 0;
+
+        let scr = setInterval(function () {
+            top += 5;
+            window.scrollTo(0, top);
+
+            if (top > 1000) {
+                clearInterval(scr);
+            }
+        }, 15);
+    }
 
     // spare parts slider --------------------------------------
 

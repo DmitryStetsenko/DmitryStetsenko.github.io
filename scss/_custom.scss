@@ -46,6 +46,10 @@ button, input {
   padding: $wrapperPadding;
 } // wrapper
 
+.displayNone {
+  display: none;
+} // displayNone
+
 .mainBtn {
   align-items: center;
   border-radius: 3px;
@@ -82,16 +86,21 @@ button, input {
     background: white;
     border: 1px solid $colorRatingYellow;
     box-shadow: none;
-    color: $colorDarkGray;
     height: 30px;
     font-size: 13px;
     padding: 0;
     width: 100%;
+    a {
+      color: $colorDarkGray;
+      text-decoration: none;
+    }
     &::before {
       display: none;
     } // before
     &:hover {
-      color: white;
+      a {
+        color: white;
+      } // a
       background: $colorRatingYellow;
     } // hover
   } // -showFullRating
@@ -114,6 +123,15 @@ button, input {
       color: white;
       background: $colorRatingYellow;
     } // hover
+    &Disabled {
+      background: $colorBgLightGray;
+      border-color: $colorBgLightGray;
+      &:hover {
+        background-color: $colorBgLightGray;
+        cursor: default;
+        color: $colorGray;
+      } // hover
+    } // Disabled
   } // -showAll
 } // mainBtn
 
@@ -240,7 +258,22 @@ button, input {
     transform: rotate(180deg);
   } // -sliderNavNext
   &-footerMenu {
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    height: 30px;
     transform: rotate(-90deg) scale(.7);
+    transition: border-color .3s, transform .3s;
+    width: 30px;
+    &Rotate {
+      transform: rotate(90deg) scale(.7);
+    } // Rotate
+    &:hover {
+      border-color: $colorYellow;
+      cursor: pointer;
+    } // hover
     span {
       background: $colorYellow;
     } // span
