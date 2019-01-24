@@ -1285,7 +1285,25 @@ button, input {
     background: white;
     border-radius: 3px;
     margin-bottom: 15px;
-    position: relative; }
+    overflow: hidden;
+    position: relative;
+    perspective: 1000px; }
+    .comparisonBlockItem__brands::before, .comparisonBlockItem__brands::after {
+      content: '';
+      position: absolute;
+      transition: transform .3s;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; }
+    .comparisonBlockItem__brands::before {
+      border-top: 1px solid #efb428;
+      border-bottom: 1px solid #efb428;
+      transform: scale(0, 1); }
+    .comparisonBlockItem__brands::after {
+      border-right: 1px solid #efb428;
+      border-left: 1px solid #efb428;
+      transform: scale(1, 0); }
     .comparisonBlockItem__brands .brandsBlock {
       align-items: center;
       display: flex;
@@ -1298,7 +1316,23 @@ button, input {
         height: 30px;
         width: 120px; }
       .comparisonBlockItem__brands .brandsBlock-top {
-        border-bottom: 1px solid #c1c7d0; }
+        position: relative; }
+        .comparisonBlockItem__brands .brandsBlock-top::before, .comparisonBlockItem__brands .brandsBlock-top::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          transition: transform .3s; }
+        .comparisonBlockItem__brands .brandsBlock-top::before {
+          background: #c1c7d0;
+          height: 1px;
+          width: 100%; }
+        .comparisonBlockItem__brands .brandsBlock-top::after {
+          background: #efb428;
+          transform: scale(0);
+          height: 1px;
+          width: 100%; }
         .comparisonBlockItem__brands .brandsBlock-top > div {
           margin-bottom: 15px; }
       .comparisonBlockItem__brands .brandsBlock-bottom > div {
@@ -1315,7 +1349,9 @@ button, input {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: rotateX(0) translate(-50%, -50%);
+      transform-origin: top;
+      transition: transform 1s;
       height: 41px;
       width: 41px; }
   .comparisonBlockItem__description {
@@ -1324,9 +1360,16 @@ button, input {
     transition: color .3s; }
   .comparisonBlockItem:hover {
     cursor: pointer; }
+    .comparisonBlockItem:hover .comparisonBlockItem__brands::before, .comparisonBlockItem:hover .comparisonBlockItem__brands::after {
+      transform: scale(1, 1); }
+    .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::before, .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::after {
+      transform: scale(0.7); }
     .comparisonBlockItem:hover .comparisonBlockItem__description {
       color: #efb428;
       text-decoration: underline; }
+    .comparisonBlockItem:hover .blockSeparator {
+      transform: rotateX(360deg) translate(-50%, -50%);
+      box-shadow: 2px 2px 5px #00000045; }
 
 .seo {
   margin-bottom: 60px; }

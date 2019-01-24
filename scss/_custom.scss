@@ -232,8 +232,8 @@ button, input {
 .shevronIcon {
   &__icon {
     position: relative;
-    height: 21px;
-    width: 9px;
+    min-height: 21px;
+    min-width: 9px;
     span {
       background: $colorDarkGray;
       display: block;
