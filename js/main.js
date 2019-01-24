@@ -18,8 +18,11 @@ window.onload = function () {
 
     showAllSEOText();
 
-    showAllFotterMenuItems ();
+    showAllFooterMenuItems ();
 
+    navigationOnPage();
+
+    
     // -------------------------------------------------
     function showBrandRating () {
         let sparePartsElements = document.querySelectorAll('.sparePartsElement');
@@ -193,35 +196,72 @@ window.onload = function () {
         });
     } // showAllSEOText
 
-    function showAllFotterMenuItems () {
+    function showAllFooterMenuItems () {
         const toggleMenuBtn = document.querySelectorAll('.shevronIcon-footerMenu');
+        let currentHiddenBlock,
+            currentFooterMenu,
+            currentHiddenElements;
+        let hiddenElementsHeight;
+
         for ( let currentBtn of toggleMenuBtn ) {
             currentBtn.addEventListener('click', function() {
-                if ( this.classList.contains('shevronIcon-footerMenuRotate')) {
-                    this.classList.remove('shevronIcon-footerMenuRotate');
-                } else {
-                    this.classList.add('shevronIcon-footerMenuRotate');
+                currentFooterMenu = this.parentNode.parentNode;
+                currentHiddenBlock = currentFooterMenu.querySelector('.footerMenu__hiddenBlock');
+                currentHiddenElements = currentHiddenBlock.querySelector('.footerMenu__hiddenElements');
 
+                console.log(currentHiddenBlock);
+                if ( this.classList.contains('shevronIcon-footerMenuRotate')) {
+                    // rotate shevron icon
+                    this.classList.remove('shevronIcon-footerMenuRotate');
+                    // hiding items
+                    currentHiddenBlock.removeAttribute('style');
+                    setTimeout(()=>{
+                        currentHiddenElements.classList.add('displayNone');
+                    }, 400);
+                } else {
+                    // rotate shevron icon
+                    this.classList.add('shevronIcon-footerMenuRotate');
+                    // show items
+                    currentHiddenElements.classList.remove('displayNone');
+                    hiddenElementsHeight = currentHiddenElements.clientHeight;
+                    currentHiddenBlock.style.height = hiddenElementsHeight + 'px';
                 }
             });
         } // for of
-    }
+    } // showAllFooterMenuItems
 
+    function navigationOnPage () {
+        const footerMenuTitle = document.querySelectorAll('.footerMenu__item-title .h4Title a');
+        let currentLinkHref;
+        for ( let currentTitle of footerMenuTitle) {
+            currentTitle.addEventListener('click', function(e){
+                e.preventDefault();
+                currentLinkHref = this.getAttribute('href');
+                scrollTo(currentLinkHref, 25);
+            });
+        }
+    } // navigationOnPage
 
-
-    function scrollTo (idElement) {
+    function scrollTo (idElement, speed) {
         const scrollElement = document.querySelector(idElement);
-        let top = 0;
+        let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
+        let currentPos = pageYOffset;
 
         let scr = setInterval(function () {
-            top += 5;
-            window.scrollTo(0, top);
+            if (currentPos > posElem) {
+                currentPos -= speed;
+            } else {
+                currentPos += speed;
+            }
+            window.scrollTo(0, currentPos);
 
-            if (top > 1000) {
+            if (currentPos < posElem) {
                 clearInterval(scr);
             }
-        }, 15);
+        }, 1);
     }
+
+
 
     // spare parts slider --------------------------------------
 

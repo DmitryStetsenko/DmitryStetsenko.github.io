@@ -1339,6 +1339,11 @@ button, input {
       line-height: 30px;
       text-decoration: none; }
 
+.siteFooter .footerMenu__hiddenBlock {
+  overflow: hidden;
+  transition: height .3s;
+  height: 0; }
+
 .siteFooter__copyrightBlock {
   padding: 20px 0; }
   .siteFooter__copyrightBlock p {

@@ -1276,6 +1276,11 @@
         } // .h4Title
       } // -title
     } // __item
+    &__hiddenBlock {
+      overflow: hidden;
+      transition: height .3s;
+      height: 0;
+    } // __hiddenBlock
   } // footerMenu
   &__copyrightBlock {
     padding: 20px 0;
