@@ -22,7 +22,7 @@ window.onload = function () {
 
     navigationOnPage();
 
-    
+
     // -------------------------------------------------
     function showBrandRating () {
         let sparePartsElements = document.querySelectorAll('.sparePartsElement');
@@ -248,11 +248,7 @@ window.onload = function () {
         let currentPos = pageYOffset;
 
         let scr = setInterval(function () {
-            if (currentPos > posElem) {
-                currentPos -= speed;
-            } else {
-                currentPos += speed;
-            }
+            currentPos -= speed;
             window.scrollTo(0, currentPos);
 
             if (currentPos < posElem) {
