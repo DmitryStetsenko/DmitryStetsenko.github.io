@@ -306,8 +306,6 @@ window.onload = function () {
     // mobile --------------------------------------------------
 
     function sparePartsToggle () {
-        const TITLE_HEIGHT = 52;
-        const BLOCK_HEIGHT = 342;
         let sparePartsTitle = document.querySelectorAll('.sparePartsContentTitle');
 
         for ( let currentTitle of sparePartsTitle ) {

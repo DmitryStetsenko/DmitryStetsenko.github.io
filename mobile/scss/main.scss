@@ -148,7 +148,7 @@
         margin-bottom: 0;
       } // last-child
       &-closed {
-        height: 52px;
+        height: 50px;
         overflow: hidden;
         margin-bottom: 5px;
       } // closed
@@ -1478,6 +1478,7 @@
     p {
       text-align: center;
       font-size: 13px;
+      line-height: 16px;
     } // p
   } // __copyrightBlock
 } // siteFooter

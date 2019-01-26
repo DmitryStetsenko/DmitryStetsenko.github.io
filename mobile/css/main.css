@@ -442,7 +442,7 @@ button, input {
       .spareParts .sparePartsSlider__sliderItem:last-child {
         margin-bottom: 0; }
       .spareParts .sparePartsSlider__sliderItem-closed {
-        height: 52px;
+        height: 50px;
         overflow: hidden;
         margin-bottom: 5px; }
   .spareParts .sparePartsContent {
@@ -1458,4 +1458,5 @@ button, input {
   padding: 20px 0; }
   .siteFooter__copyrightBlock p {
     text-align: center;
-    font-size: 13px; }
+    font-size: 13px;
+    line-height: 16px; }
