@@ -12,6 +12,8 @@ window.onload = function () {
     const COL_3_WIDTH = ( COL_WIDTH * 3 ) + ( GUTTER_X2 * 2 );
     const COL_4_WIDTH = ( COL_WIDTH * 4 ) + ( GUTTER_X2 * 3 );
 
+    menuOpened ();
+
     showBrandRating ();
 
     showStarRating ();
@@ -34,6 +36,24 @@ window.onload = function () {
 
 
     // -------------------------------------------------
+    function menuOpened () {
+        const topToggleMenu = document.querySelector('.iconBtn-toggleMenu');
+        topToggleMenu.addEventListener('click', ()=>{
+            const topMenu = document.querySelector('.topMenu');
+            if ( !topMenu.classList.contains('topMenu-open') ) {
+                topMenu.setAttribute('style', 'display:flex;');
+                setTimeout(()=>{
+                    topMenu.classList.add('topMenu-open');
+                });
+            } else {
+                topMenu.classList.remove('topMenu-open');
+                setTimeout(()=>{
+                    topMenu.setAttribute('style', 'display:none;');
+                },500);
+            }
+        });
+    }
+
     function showBrandRating () {
         let sparePartsElements = document.querySelectorAll('.sparePartsElement');
         sparePartsElements = Array.prototype.slice.call(sparePartsElements);

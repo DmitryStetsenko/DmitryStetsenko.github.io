@@ -18,6 +18,7 @@
   display: flex;
   height: 100%;
   justify-content: space-between;
+  position: relative;
   width: 100%;
   &__logo {
     width: 200px;
@@ -75,6 +76,87 @@
       } // -line
     } // __iconPart
   } // cssIcon
+  .topMenu {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    $blockPadding: 30px;
+    background: white;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    color: $colorDarkGray;
+    height: 0;
+    opacity: 0;
+    padding: $blockPadding;
+    position: absolute;
+    transition: height .5s, opacity .5s;
+    left: 0;
+    top: 54px;
+    width: 100%;
+    z-index: 10;
+    &-open {
+      align-items: stretch;
+      justify-content: space-between;
+      height: 295px;
+      opacity: 1;
+    } // -open
+    &:before {
+      @include drawTriangleTop(14, 7, white);
+      content: '';
+      position: absolute;
+      transform: translateX(3px);
+      top: -6px;
+      left: 62%;
+    } // before
+  } // topMenu
+  .headerMenu {
+    &__item {
+      a {
+        color: $colorDarkGray;
+        font-size: 16px;
+        line-height: 30px;
+        text-decoration: none;
+        &:hover {
+          color: $colorYellow;
+        } // hover
+      } // a
+      &-title {
+        display: flex;
+        align-items: center;
+        .h4Title {
+          display: inline-block;
+          position: relative;
+          margin-right: 7px;
+          &::after {
+            content: '';
+            border-bottom: 1px dashed $colorYellow;
+            bottom: 5px;
+            display: block;
+            position: absolute;
+            height: 1px;
+            transition: width .3s;
+            width: 0;
+          } // after
+          &:hover {
+            cursor: pointer;
+            &::after {
+              width: 100%;
+            } // after
+          } // hover
+          a {
+            color: $colorYellow;
+            font-size: 16px;
+            line-height: 30px;
+            text-decoration: none;
+          } // a
+        } // .h4Title
+      } // -title
+    } // __item
+    &__hiddenBlock {
+      overflow: hidden;
+      transition: height .3s;
+      height: 0;
+    } // __hiddenBlock
+  } // headerMenu
 } // menuBlock
 
 .headerUserAction {
@@ -196,7 +278,9 @@
       } // span
     } // __text
     &:after {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 20%, white 80%);
+      background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0,
+                    white 80%);
       content: '';
       display: block;
       height: 100%;
@@ -501,9 +585,11 @@
     align-items: center;
     border-top: 1px solid $colorLightGray;
     display: flex;
+    color: $colorDarkGray;
     height: 50px;
     justify-content: space-between;
     position: relative;
+    text-decoration: none;
     &::after {
       border-radius: 3px;
       border: 1px solid transparent;
@@ -521,6 +607,18 @@
       &::after {
         border-color: $colorRatingYellow;
       } // after
+      .brandsListElement__item-brandBlock {
+        &::after {
+          font-size: 15px;
+          transform: scale(1);
+        } // after
+      }
+      .brandsListElement__item-brandTop {
+        &::after {
+          font-size: 15px;
+          transform: scale(1);
+        } // after
+      }
     } // hover
     &__item {
       align-items: center;
@@ -564,6 +662,26 @@
         justify-content: center;
         min-width: $brandImgWidth;
         width: $brandImgWidth;
+        &::after {
+          content: attr(data-brand-name);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(to bottom, rgba(167, 202, 82, 0.81) 0%, rgba(144, 202, 82, 0.81) 100%);
+          //background: rgba(239, 180, 40, 0.8);
+          color: white;
+          font-weight: bold;
+          font-size: 0;
+          height: 100%;
+          position: absolute;
+          transform: scale(0);
+          text-transform: uppercase;
+          transition: font-size .3s, transform .3s;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.71);
+          top: 0;
+          left: 0;
+          width: 100%;
+        } // after
         .imgWrap {
           height: 17px;
           margin-bottom: 5px;
@@ -840,7 +958,7 @@
     padding: 0 10px;
     &:hover {
       cursor: pointer;
-      border-color: $colorYellow;
+      //border-color: $colorYellow;
       .carItem__elem-name {
         color: $colorYellow;
       } // carItem__elem-name

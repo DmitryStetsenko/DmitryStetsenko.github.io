@@ -231,10 +231,6 @@ button, input {
   font-size: 11px;
   padding: 4px 5px;
   transition: box-shadow .2s, transform .2s; }
-  .typeActivHeaderBtn:hover {
-    cursor: pointer;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px); }
   .typeActivHeaderBtn-voting {
     background: white; }
   .typeActivHeaderBtn-needHelp {
@@ -431,6 +427,7 @@ button, input {
   display: flex;
   height: 100%;
   justify-content: space-between;
+  position: relative;
   width: 100%; }
   .siteHeader__logo {
     width: 200px; }
@@ -471,6 +468,78 @@ button, input {
   transition: background .3s; }
   .menuBlock .cssIcon__part-line:last-child {
     margin-bottom: 0; }
+
+.menuBlock .topMenu {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  color: #2c333d;
+  height: 0;
+  opacity: 0;
+  padding: 30px;
+  position: absolute;
+  transition: height .5s, opacity .5s;
+  left: 0;
+  top: 54px;
+  width: 100%;
+  z-index: 10; }
+  .menuBlock .topMenu-open {
+    align-items: stretch;
+    justify-content: space-between;
+    height: 295px;
+    opacity: 1; }
+  .menuBlock .topMenu:before {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid white;
+    content: '';
+    position: absolute;
+    transform: translateX(3px);
+    top: -6px;
+    left: 62%; }
+
+.menuBlock .headerMenu__item a {
+  color: #2c333d;
+  font-size: 16px;
+  line-height: 30px;
+  text-decoration: none; }
+  .menuBlock .headerMenu__item a:hover {
+    color: #efb428; }
+
+.menuBlock .headerMenu__item-title {
+  display: flex;
+  align-items: center; }
+  .menuBlock .headerMenu__item-title .h4Title {
+    display: inline-block;
+    position: relative;
+    margin-right: 7px; }
+    .menuBlock .headerMenu__item-title .h4Title::after {
+      content: '';
+      border-bottom: 1px dashed #efb428;
+      bottom: 5px;
+      display: block;
+      position: absolute;
+      height: 1px;
+      transition: width .3s;
+      width: 0; }
+    .menuBlock .headerMenu__item-title .h4Title:hover {
+      cursor: pointer; }
+      .menuBlock .headerMenu__item-title .h4Title:hover::after {
+        width: 100%; }
+    .menuBlock .headerMenu__item-title .h4Title a {
+      color: #efb428;
+      font-size: 16px;
+      line-height: 30px;
+      text-decoration: none; }
+
+.menuBlock .headerMenu__hiddenBlock {
+  overflow: hidden;
+  transition: height .3s;
+  height: 0; }
 
 .headerUserAction {
   align-items: center;
@@ -565,7 +634,7 @@ button, input {
           transition: width .3s;
           width: 0; }
     .spareParts .sparePartsContentTitle:after {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 20%, white 80%);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 80%);
       content: '';
       display: block;
       height: 100%;
@@ -804,9 +873,11 @@ button, input {
     align-items: center;
     border-top: 1px solid #c1c7d0;
     display: flex;
+    color: #2c333d;
     height: 50px;
     justify-content: space-between;
-    position: relative; }
+    position: relative;
+    text-decoration: none; }
     .brands .brandsListElement::after {
       border-radius: 3px;
       border: 1px solid transparent;
@@ -822,6 +893,12 @@ button, input {
       cursor: pointer; }
       .brands .brandsListElement:hover::after {
         border-color: #efb428; }
+      .brands .brandsListElement:hover .brandsListElement__item-brandBlock::after {
+        font-size: 15px;
+        transform: scale(1); }
+      .brands .brandsListElement:hover .brandsListElement__item-brandTop::after {
+        font-size: 15px;
+        transform: scale(1); }
     .brands .brandsListElement__item {
       align-items: center;
       border-right: 1px solid #c1c7d0;
@@ -856,6 +933,24 @@ button, input {
         justify-content: center;
         min-width: 170px;
         width: 170px; }
+        .brands .brandsListElement__item-brandBlock::after {
+          content: attr(data-brand-name);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(to bottom, rgba(167, 202, 82, 0.81) 0%, rgba(144, 202, 82, 0.81) 100%);
+          color: white;
+          font-weight: bold;
+          font-size: 0;
+          height: 100%;
+          position: absolute;
+          transform: scale(0);
+          text-transform: uppercase;
+          transition: font-size .3s, transform .3s;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.71);
+          top: 0;
+          left: 0;
+          width: 100%; }
         .brands .brandsListElement__item-brandBlock .imgWrap {
           height: 17px;
           margin-bottom: 5px; }
@@ -1065,8 +1160,7 @@ button, input {
     text-decoration: none;
     padding: 0 10px; }
     .cars .carItem:hover {
-      cursor: pointer;
-      border-color: #efb428; }
+      cursor: pointer; }
       .cars .carItem:hover .carItem__elem-name {
         color: #efb428; }
     .cars .carItem__elem {
