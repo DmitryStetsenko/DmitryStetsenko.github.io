@@ -3,11 +3,11 @@ body {
   color: $colorDarkGray;
 }
 
-div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, button, span, ul, li {
+div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, button, span, ul, li, table, tbody, tr, th, td {
   box-sizing: border-box;
 }
 
-img {
+img, svg {
   width: 100%;
   height: auto;
 } // img
@@ -104,6 +104,33 @@ button, input {
       background: $colorRatingYellow;
     } // hover
   } // -showFullRating
+  &-showNotRated {
+    background: white;
+    border: 1px solid $colorRatingYellow;
+    box-shadow: none;
+    height: 30px;
+    font-size: 13px;
+    padding: 0;
+    width: 100%;
+    .innerText {
+      margin-right: 10px;
+    } // innerText
+    .shevronIcon__icon {
+      transform: translateY(2px) rotate(-90deg) scale(.7);
+    } // shevronIcon__icon
+    &::before {
+      display: none;
+    } // before
+    &:hover {
+      color: white;
+      background: $colorRatingYellow;
+      .shevronIcon__icon {
+        span {
+          background: white;
+        }
+      } // .shevronIcon__icon
+    } // hover
+  } // -showNotRated
   &-addReviewMin {
     color: white;
     font-size: 21px;
@@ -145,6 +172,18 @@ button, input {
     color: $colorYellow;
     border-color: $colorYellow;
   } // hover
+  &-descrBlock {
+    background: linear-gradient(to right, rgba(255,255,255,0.5) 0%,
+                                          rgba(255,255,255,1) 50%,
+                                          rgba(255,255,255,0.5) 100%);
+    border-color: $colorYellow;
+    color: $colorYellow;
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  } // descrBlock
 } // showMoreBtn
 
 .iconBtn {
@@ -238,6 +277,7 @@ button, input {
       background: $colorDarkGray;
       display: block;
       position: absolute;
+      transition: background .3s;
       height: 10px;
       width: 2px;
       &:first-child {
@@ -313,3 +353,39 @@ button, input {
     color: white;
   } //
 } // filterBtn
+
+// sliders styles
+.sliderWrap {
+  overflow: hidden;
+  position: relative;
+  max-width: $wrapperMaxWidth;
+} // sliderWrap
+.sliderNavBlock {
+  $sizeNavBtn: 45px;
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 43%;
+    transform: translateY(-50%);
+    height: $sizeNavBtn;
+    width: $sizeNavBtn;
+    z-index: 5;
+    &:hover {
+      cursor: pointer;
+    } // hover
+    &-next {
+      right: -25px;
+    } // -left
+    &-prev {
+      left: -25px;
+    } // -prev
+    &-brands {
+      top: 53%;
+    } // brands
+  } // __btn
+} // sliderNavBlock

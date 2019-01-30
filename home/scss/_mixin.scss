@@ -19,14 +19,45 @@
 } // banTxtSelect
 
 // draw triangle
-@mixin drawTriangle($pWidth, $pHeight, $tColor) {
+@mixin drawTriangleTop($pWidth, $pHeight, $tColor) {
   width: 0;
   height: 0;
-  $tWidth: $pWidth + px;
-  $tHeight: $pHeight / 2 + px;
-  border-style: solid;
-  border-width: $tHeight 0 $tHeight $tWidth;
-  border-color: transparent transparent transparent $tColor;
+  $tWidth: $pHeight + px;
+  $tHeight: $pWidth / 2 + px;
+  border-left: $tHeight solid transparent;
+  border-right: $tHeight solid transparent;
+  border-bottom: $tWidth solid $tColor;
+}
+
+@mixin drawTriangleBottom($pWidth, $pHeight, $tColor) {
+  width: 0;
+  height: 0;
+  $tWidth: $pHeight + px;
+  $tHeight: $pWidth / 2 + px;
+  border-left: $tHeight solid transparent;
+  border-right: $tHeight solid transparent;
+  border-top: $tWidth solid $tColor;
+}
+
+// display flex
+@mixin flex ($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// showSpriteBg
+@mixin showSpriteBg($pos, $width, $height){
+  background-position: $pos;
+  height: $height;
+  width: $width;
+}
+
+// background property for inline style
+@mixin bgProp ($repeat, $pos, $size) {
+  background-repeat: $repeat;
+  background-position: $pos;
+  background-size: $size;
 }
 
 // position absolute center layout
@@ -74,25 +105,24 @@
 }
 
 @mixin customScroll() {
-  /* width */
-  ::-webkit-scrollbar {
-    width: 10px;
+  &::-webkit-scrollbar {
+    width: 13px;
   }
 
   /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
+  &::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: $colorLightGray;
   }
 
   /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: red;
+  &::-webkit-scrollbar-thumb {
+    background: $colorYellow;
     border-radius: 10px;
   }
 
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+  &::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
 }
