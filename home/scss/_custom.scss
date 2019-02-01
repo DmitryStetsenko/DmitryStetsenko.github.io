@@ -85,6 +85,10 @@ button, input {
   &-addReview {
     color: $colorDarkGray;
   } // -addReview
+  &-publish {
+    color: $colorDarkGray;
+    padding: 10px 60px;
+  } // -publish
   &-showFullRating {
     background: white;
     border: 1px solid $colorRatingYellow;
@@ -163,6 +167,17 @@ button, input {
       } // hover
     } // Disabled
   } // -showAll
+  &-popUpadditionalBlock {
+    background: $colorGray;
+    box-shadow: none;
+    font-size: 15px;
+    width: 100%;
+    .shevronIcon__icon {
+      span {
+        background: white;
+      } // span
+    } // shevronIcon__icon
+  } // -popUpadditionalBlock
 } // mainBtn
 
 .showMoreBtn {
@@ -325,6 +340,7 @@ button, input {
 
 .shevronIcon {
   &__icon {
+    display: block;
     position: relative;
     min-height: 21px;
     min-width: 9px;
@@ -374,6 +390,9 @@ button, input {
     } // span
   } // -footerMenu
   &-bottom {
+    transform: rotate(-90deg);
+  } // -bottom
+  &-top {
     transform: rotate(90deg);
   } // -bottom
   &-select {
@@ -455,16 +474,23 @@ button, input {
 .popUpWindowBlock {
   .overlay {
     @include fullScreenOverlayPosition(black, .6, fixed, 1000);
+    transition: opacity .3s;
   } // overlay
   .popUpWindow {
     border-radius: $mainBorderRadius;
     background: white;
     left: 50%;
     padding: 40px;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    top: 50%;
+    position: absolute;
+    top: 50px;
+    transform: translateX(-50%);
+    transition: opacity .3s;
     z-index: 1010;
+    .formFieldsTitle {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    } // formFieldsTitle
     &__title {
       font-size: 32px;
       font-weight: bold;
@@ -473,41 +499,54 @@ button, input {
     } // __title
     &__content {
       .manufacturerBlock {
-        @include flex(center, space-between);
+        @include flex(flex-start, space-between);
+        margin-bottom: 20px;
         &__selects {
           @include widthPercent(50%);
           padding-right: 30px;
-          .blockTitle {
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 10px;
-          } // blockTitle
-          .blockSelect {
+          .selectBlock {
+            margin-bottom: 20px;
+            &:last-child {
+              margin-bottom: 0;
+            } // last-child
+            .select {
 
-          } // blockSelect
+            } // blockSelect
+          } // selectBlock
         } // __selects
         &__ratings {
           @include widthPercent(50%);
           padding-left: 30px;
           .ratingsBlock {
-            @include flex(center, flex-start);
+            $titleFontSize: 16px;
+            $titleColor: $colorColName;
+            $ratingFontSize: 18px;
+            $ratingColor: $colorDarkGray;
+            $starsIconSize: 17px;
+
+            @include flex(center, flex-end);
             margin-bottom: 20px;
             &:last-child {
               margin-bottom: 0;
             } // last-child
             &__item {
               margin-right: 15px;
+              &:last-child {
+                margin-right: 0;
+              } // last-child
               &-title {
+                color: $titleColor;
+                font-size: $titleFontSize;
                 white-space: nowrap;
               } // -title
-              &-start {
+              &-stars {
 
               } // -stars
               &-rating {
-
+                color: $titleColor;
+                font-size: $titleFontSize;
               } // rating
               .starsIconBlock {
-                $starsIconSize: 17px;
                 @include flex(center, center);
                 &__icon {
                   display: block;
@@ -528,10 +567,149 @@ button, input {
                 } // icon
               } // starsIconBlock
             } // ____item
+            &-averageRating {
+              $titleFontSize: 20px;
+              $titleColor: $colorDarkGray;
+              $ratingFontSize: 20px;
+              $ratingColor: $colorDarkGray;
+              $starsIconSize: 20px;
+              .ratingsBlock__item-title {
+                color: $titleColor;
+                font-size: $titleFontSize;
+              } // -title
+              .ratingsBlock__item-stars {
+                margin-right: 8px;
+              } // -stars
+              .starsIconBlock {
+                &__icon {
+                  height: $starsIconSize;
+                  width: $starsIconSize;
+                } // __icon
+              } // starsIconBlock
+              .ratingsBlock__item-rating {
+                color: $titleColor;
+                font-size: $titleFontSize;
+              } // rating
+            } // -averageRating
           } // ratingsBlock
         } // __ratings
       } // manufacturerBlock
+      .reviewBlock {
+        margin-bottom: 40px;
+        &__textArea {
+          margin-bottom: 15px;
+          label {
+            display: block;
+          } // label
+          textarea{
+            height: 125px;
+            font-family: Arial;
+            resize: none;
+            width: 97%;
+          } // textarea
+        } // __textArea
+        &__userAction {
+          @include flex(center, space-between);
+          .addMediaContent {
+            $iconHeight: 20px;
+            $iconWidth: 26px;
+            $plusIconSize: 11px;
+            @include flex(center, flex-start);
+            &__text {
+              color: $colorDarkGray;
+              font-size: 15px;
+            } // __text
+            &__media {
+              @include flex(center, center);
+              flex-direction: column;
+              margin: 0 10px;
+              &:hover {
+                cursor: pointer;
+                .mediaIcon {
+                  &::before {
+                    @include flex(center, center);
+                    background: $colorRatingGreen;
+                    transform: translateY(-2px) scale(1.2);
+                    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.51);
+                  } // before
+                } // mediaIcon
+              } // hover
+              .mediaIcon {
+                background-image: url(../img/media_content_icon_sprite.jpg);
+                display: block;
+                height: $iconHeight;
+                margin-bottom: 3px;
+                position: relative;
+                width: $iconWidth;
+                &::before {
+                  @include flex(center, center);
+                  background: $colorLinkAside;
+                  border-radius: 50%;
+                  bottom: -4px;
+                  color: white;
+                  content: '+';
+                  height: 11px;
+                  font-size: 8px;
+                  position: absolute;
+                  right: -5px;
+                  transition: transform .3s, background .3s;
+                  width: 11px;
+                } // before
+                &-img {
+                  @include showSpriteBg(0 0, $iconWidth, $iconHeight);
+                } // -img
+                &-video {
+                  @include showSpriteBg(-26px 0, $iconWidth, $iconHeight);
+                } // -img
+              } // mediaIcon
+              .iconDescription {
+                color: $colorLinkAside;
+                font-size: 11px;
+              } // iconDescription
+            } // __media
+          } // addMediaContent
+        } // __userAction
+      } // reviewBlock
+      .progressBarBlock {
+        margin-bottom: 20px;
+        &__progressBar {
+          background: $colorBgLightGray;
+          height: 20px;
+          position: relative;
+          width: 100%;
+          .progress {
+            @include flex(center, center);
+            background: $colorRatingGreen;
+            color: white;
+            height: 100%;
+            font-size: 13px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75%;
+          } // progress
+        } // ____progressBar
+      } // progressBarBlock
+      .aboutBlock {
+        color: $colorColName;
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 40px;
+      } // aboutBlock
+      .additionalBlock {
+        .mainBtn {
+          &-popUpadditionalBlock{
+            .innerText {
+              color: white;
+              margin-right: 10px;
+            } // innerText
+          } // -popUpadditionalBlock
+        } // mainBtn
+      } // additionalBlock
     } // __content
+    &-addReview {
+      width: 755px;
+    } // -addReview
   } // popUpWindow
 } // popUpWindowBlock
 // ===============================================
@@ -620,7 +798,7 @@ button, input {
   } // item
 } // select
 
-.input {
+.input, .text-area {
   $inputBorderRadius: $mainBorderRadius;
   $inputBorder: 1px solid $colorInputBorder;
   $inputColor: $colorDarkGray;
@@ -642,6 +820,10 @@ button, input {
   display: block;
   height: $inputHeight;
   font-size: $inputFontSize;
+  outline: none;
   padding: $inputPadding;
   width: $inputWidth;
 } // input
+
+
+

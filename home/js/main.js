@@ -16,6 +16,8 @@ window.onload = function () {
     
     headerMenuScrollTo ();
 
+    showPopAddReview ();
+
     showBrandRating ();
 
     showStarRating ();
@@ -35,6 +37,8 @@ window.onload = function () {
     sliderSpareParts ();
     
     sliderBrands ();
+
+    closePopUpWindow ();
 
 
     // -------------------------------------------------
@@ -56,6 +60,13 @@ window.onload = function () {
             });
         });
     }
+
+    function showPopAddReview () {
+        const addReviewBtn = document.querySelector('.mainBtn-addReview');
+        addReviewBtn.addEventListener('click',()=>{
+            showPopUpWindow('#popUpWindowAddReview');
+        });
+    } // showPopAddReview
 
     function showBrandRating () {
         let sparePartsElements = document.querySelectorAll('.sparePartsElement');
@@ -518,4 +529,41 @@ window.onload = function () {
             }
         });
     } // clickPastWindow
+
+    function showPopUpWindow(id) {
+        const popUpWindowBlock = document.querySelector(id);
+        const popUpWindow = popUpWindowBlock.querySelector('.popUpWindow');
+        const overlay = popUpWindowBlock.querySelector('.overlay');
+
+        popUpWindow.style.opacity = '0';
+        overlay.style.opacity = '0';
+
+        popUpWindowBlock.classList.remove('displayNone');
+
+        setTimeout(()=>{
+            popUpWindow.style.opacity = '1';
+            overlay.style.opacity = '.6';
+        }, 100);
+    } // showPopUpWindow
+
+    function closePopUpWindow() {
+        const closeBtn = document.querySelectorAll('.closeBtn-modalWindow');
+
+        for (let currentCloseBtn of closeBtn ) {
+            currentCloseBtn.addEventListener('click', function(){
+                const popUpWindowBlock = this.parentNode.parentNode;
+                const popUpWindow = popUpWindowBlock.querySelector('.popUpWindow');
+                const overlay = popUpWindowBlock.querySelector('.overlay');
+
+                popUpWindow.style.opacity = '0';
+                overlay.style.opacity = '0';
+
+                setTimeout(()=>{
+                    popUpWindowBlock.classList.add('displayNone');
+                    popUpWindow.removeAttribute('style');
+                    overlay.removeAttribute('style');
+                }, 500);
+            });
+        }
+    } // closePopUpWindow
 };

@@ -99,6 +99,9 @@ button, input {
       left: 110%; }
   .mainBtn-addReview {
     color: #2c333d; }
+  .mainBtn-publish {
+    color: #2c333d;
+    padding: 10px 60px; }
   .mainBtn-showFullRating {
     background: white;
     border: 1px solid #efb428;
@@ -158,6 +161,13 @@ button, input {
         background-color: #f6f6f6;
         cursor: default;
         color: #464f5b; }
+  .mainBtn-popUpadditionalBlock {
+    background: #464f5b;
+    box-shadow: none;
+    font-size: 15px;
+    width: 100%; }
+    .mainBtn-popUpadditionalBlock .shevronIcon__icon span {
+      background: white; }
 
 .showMoreBtn {
   border-bottom: 1px dashed #2c333d;
@@ -279,6 +289,7 @@ button, input {
     color: white; }
 
 .shevronIcon__icon {
+  display: block;
   position: relative;
   min-height: 21px;
   min-width: 9px; }
@@ -322,6 +333,9 @@ button, input {
     background: #efb428; }
 
 .shevronIcon-bottom {
+  transform: rotate(-90deg); }
+
+.shevronIcon-top {
   transform: rotate(90deg); }
 
 .shevronIcon-select {
@@ -390,17 +404,23 @@ button, input {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000; }
+  z-index: 1000;
+  transition: opacity .3s; }
 
 .popUpWindowBlock .popUpWindow {
   border-radius: 3px;
   background: white;
   left: 50%;
   padding: 40px;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  top: 50%;
+  position: absolute;
+  top: 50px;
+  transform: translateX(-50%);
+  transition: opacity .3s;
   z-index: 1010; }
+  .popUpWindowBlock .popUpWindow .formFieldsTitle {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px; }
   .popUpWindowBlock .popUpWindow__title {
     font-size: 32px;
     font-weight: bold;
@@ -408,16 +428,17 @@ button, input {
     text-align: center; }
   .popUpWindowBlock .popUpWindow__content .manufacturerBlock {
     display: flex;
-    align-items: center;
-    justify-content: space-between; }
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px; }
     .popUpWindowBlock .popUpWindow__content .manufacturerBlock__selects {
       flex-basis: auto;
       width: 50%;
       padding-right: 30px; }
-      .popUpWindowBlock .popUpWindow__content .manufacturerBlock__selects .blockTitle {
-        font-size: 15px;
-        font-weight: bold;
-        margin-bottom: 10px; }
+      .popUpWindowBlock .popUpWindow__content .manufacturerBlock__selects .selectBlock {
+        margin-bottom: 20px; }
+        .popUpWindowBlock .popUpWindow__content .manufacturerBlock__selects .selectBlock:last-child {
+          margin-bottom: 0; }
     .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings {
       flex-basis: auto;
       width: 50%;
@@ -425,14 +446,21 @@ button, input {
       .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: flex-end;
         margin-bottom: 20px; }
         .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock:last-child {
           margin-bottom: 0; }
         .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item {
           margin-right: 15px; }
+          .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item:last-child {
+            margin-right: 0; }
           .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item-title {
+            color: #8a939f;
+            font-size: 16px;
             white-space: nowrap; }
+          .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item-rating {
+            color: #8a939f;
+            font-size: 16px; }
           .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item .starsIconBlock {
             display: flex;
             align-items: center;
@@ -450,6 +478,116 @@ button, input {
                 stroke: #7eae3e; }
                 .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item .starsIconBlock__icon svg.fill {
                   fill: #7eae3e; }
+        .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock-averageRating .ratingsBlock__item-title {
+          color: #2c333d;
+          font-size: 20px; }
+        .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock-averageRating .ratingsBlock__item-stars {
+          margin-right: 8px; }
+        .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock-averageRating .starsIconBlock__icon {
+          height: 20px;
+          width: 20px; }
+        .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock-averageRating .ratingsBlock__item-rating {
+          color: #2c333d;
+          font-size: 20px; }
+  .popUpWindowBlock .popUpWindow__content .reviewBlock {
+    margin-bottom: 40px; }
+    .popUpWindowBlock .popUpWindow__content .reviewBlock__textArea {
+      margin-bottom: 15px; }
+      .popUpWindowBlock .popUpWindow__content .reviewBlock__textArea label {
+        display: block; }
+      .popUpWindowBlock .popUpWindow__content .reviewBlock__textArea textarea {
+        height: 125px;
+        font-family: Arial;
+        resize: none;
+        width: 97%; }
+    .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__text {
+          color: #2c333d;
+          font-size: 15px; }
+        .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__media {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin: 0 10px; }
+          .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__media:hover {
+            cursor: pointer; }
+            .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__media:hover .mediaIcon::before {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #7eae3e;
+              transform: translateY(-2px) scale(1.2);
+              box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.51); }
+          .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__media .mediaIcon {
+            background-image: url(../img/media_content_icon_sprite.jpg);
+            display: block;
+            height: 20px;
+            margin-bottom: 3px;
+            position: relative;
+            width: 26px; }
+            .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__media .mediaIcon::before {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #4991bf;
+              border-radius: 50%;
+              bottom: -4px;
+              color: white;
+              content: '+';
+              height: 11px;
+              font-size: 8px;
+              position: absolute;
+              right: -5px;
+              transition: transform .3s, background .3s;
+              width: 11px; }
+            .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__media .mediaIcon-img {
+              background-position: 0 0;
+              height: 20px;
+              width: 26px; }
+            .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__media .mediaIcon-video {
+              background-position: -26px 0;
+              height: 20px;
+              width: 26px; }
+          .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction .addMediaContent__media .iconDescription {
+            color: #4991bf;
+            font-size: 11px; }
+  .popUpWindowBlock .popUpWindow__content .progressBarBlock {
+    margin-bottom: 20px; }
+    .popUpWindowBlock .popUpWindow__content .progressBarBlock__progressBar {
+      background: #f6f6f6;
+      height: 20px;
+      position: relative;
+      width: 100%; }
+      .popUpWindowBlock .popUpWindow__content .progressBarBlock__progressBar .progress {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #7eae3e;
+        color: white;
+        height: 100%;
+        font-size: 13px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 75%; }
+  .popUpWindowBlock .popUpWindow__content .aboutBlock {
+    color: #8a939f;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 40px; }
+  .popUpWindowBlock .popUpWindow__content .additionalBlock .mainBtn-popUpadditionalBlock .innerText {
+    color: white;
+    margin-right: 10px; }
+  .popUpWindowBlock .popUpWindow-addReview {
+    width: 755px; }
 
 .label {
   color: #2c333d;
@@ -501,19 +639,20 @@ button, input {
     font-size: 13px;
     padding: 10px; }
 
-.input {
+.input, .text-area {
   border-radius: 3px;
   border: 1px solid #c1c7d0;
   color: #2c333d;
   display: block;
   height: 30px;
   font-size: 13px;
+  outline: none;
   padding: 10px;
   width: 100%; }
-  .input::-webkit-input-placeholder {
+  .input::-webkit-input-placeholder, .text-area::-webkit-input-placeholder {
     color: #2c333d;
     font: 400 normal 13px arial; }
-  .input:-moz-placeholder {
+  .input:-moz-placeholder, .text-area:-moz-placeholder {
     color: #2c333d;
     font: 400 normal 13px arial; }
 
