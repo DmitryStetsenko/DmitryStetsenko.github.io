@@ -1,7 +1,7 @@
 @import "reset";
 @import "var";
-@import "custom";
 @import "mixin";
+@import "custom";
 @import "animate";
 
 // header ---------------------------------
@@ -51,31 +51,40 @@
 .menuBlock {
   .iconBtn {
     &-toggleMenu {
+      position: relative;
       transition: transform .5s;
+      .cssIcon {
+        transition: box-shadow .3s;
+        &__part-line {
+          position: relative;
+          &::before {
+            background: $colorYellow;
+            content: '';
+            display: block;
+            position: absolute;
+            transition: transform .3s;
+            transform: scale(0, 1);
+            width: 100%;
+            height: 100%;
+          } // before
+        } // &__part-line
+      } // cssIcon
       &:hover {
-        transform: rotateY(180deg);
+        cursor: pointer;
+        transform: translateY(-2px);
+        .cssIcon {
+          &-toggleMenu {
+            box-shadow: 0 2px 0 #c59115;
+          } // -toggleMenu
+          &__part-line {
+            &::before {
+              transform: scale(1, 1);
+            } // before
+          } // &__part-line
+        } // cssIcon
       } // hover
     } // -toggleMenu
   } // iconBtn
-  .cssIcon {
-    &:hover {
-      cursor: pointer;
-      .cssIcon__part {
-        &-line {
-          background: $colorYellow;
-        } // -line
-      } // __part
-    } // hover
-    &__part {
-      &-line {
-        margin-bottom: 3px;
-        transition: background .3s;
-        &:last-child {
-          margin-bottom: 0;
-        } // last-child
-      } // -line
-    } // __iconPart
-  } // cssIcon
   .topMenu {
     display: flex;
     align-items: stretch;
@@ -128,7 +137,7 @@
           margin-right: 7px;
           &::after {
             content: '';
-            border-bottom: 1px dashed $colorYellow;
+            border-bottom: 1px solid $colorYellow;
             bottom: 5px;
             display: block;
             position: absolute;
@@ -1057,29 +1066,36 @@
       overflow: hidden;
       position: relative;
       &::before, &::after {
-        $beforeElemSize: 10px;
-        content: '';
         position: absolute;
-        transition: transform .3s ;
-        top: $beforeElemSize;
+        transition: transform .5s, opacity .5s;
+      } // before
+      &::before {
+        content: '';
+        background: linear-gradient(
+                        to bottom, rgba(0,0,0,0) 0%,
+                        rgba(0,0,0,0.82) 73%,
+                        rgba(0,0,0,1) 100%);
+        opacity: 0;
+        transform: translateY(20%);
+        $beforeElemSize: 0;
+        height: 50%;
         left: $beforeElemSize;
         bottom: $beforeElemSize;
         right: $beforeElemSize;
       } // before
-      &::before {
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
-        transform: scale(0, 1);
-      } // before
       &::after {
-        border-right: 1px solid white;
-        border-left: 1px solid white;
-        transform: scale(1, 0);
+        bottom: 15px;
+        content: 'читать статью...';
+        color: white;
+        font-size: 12px;
+        letter-spacing: 1px;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, 15px);
+        white-space: nowrap;
       } // before
-      img {
-        transition: transform .3s, filter .3s, opacity .3s;
-      } // img
       p {
+        display: none;
         color: white;
         font-weight: bold;
         font-size: 13px;
@@ -1102,18 +1118,14 @@
       cursor: pointer;
       .articleTab__thumbnail {
         background: black;
-        &::before, &::after {
-          transform: scale(1,1);
+        &::before {
+          opacity: 0.7;
+          transform: translateY(0);
         } // before, after
-        img {
-          opacity: .5;
-          transform: rotate(10deg) scale(1.2);
-          filter: blur(1px);
-        } // img
-        p {
-          opacity: 1;
-          transform: translate(-50%, -50%) scale(1);
-        } // p
+        &::after {
+          opacity: .7;
+          transform: translate(-50%, 0);
+        } // before, after
       } // articleTab__thumbnail
       .articleTab__description {
         color: $colorYellow;
@@ -1406,6 +1418,58 @@
 
 // footer -----------------------------------
 .siteFooter {
+  .siteVersionBtn {
+    padding: 5px 15px;
+    border-radius: 3px;
+    position: absolute;
+    transition: box-shadow .3s;
+    top: -50px;
+    right: 0;
+    a {
+      @include flex(center, flex-start);
+      color: $colorDarkGray;
+      font-size: 16px;
+      text-decoration: none;
+      transition: color .3s;
+      .btnIcon {
+        margin-right: 10px;
+        width: 25px;
+        svg {
+          fill: $colorDarkGray;
+          transition: fill .3s;
+        } // svg
+      } // btnIcon
+      .innerText {
+        position: relative;
+        &::before {
+          background: $colorYellow;
+          bottom: -2px;
+          content: '';
+          height: 1px;
+          left: 0;
+          position: absolute;
+          transition: width .3s;
+          width: 0;
+        } // before
+      } // innerText;
+    } // a
+    &:hover {
+      cursor: pointer;
+      a {
+        color: $colorYellow;
+        .btnIcon {
+          svg {
+            fill: $colorYellow;
+          } // svg
+        } // btnIcon
+        .innerText {
+          &::before {
+            width: 100%;
+          } // before
+        } // innerText;
+      } // a
+    } // hover
+  } // siteType
   &__menuBlock {
     $blockPadding: 60px;
     background: $colorDarkGray;
@@ -1477,4 +1541,8 @@
 // Rating page ------------------------------
 @import "rating-page";
 // ==========================================
+
+// Rating-all page ==========================
+@import "ratings-all-page";
+// ------------------------------------------
 

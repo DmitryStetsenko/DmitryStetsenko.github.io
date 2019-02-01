@@ -13,6 +13,8 @@ window.onload = function () {
     const COL_4_WIDTH = ( COL_WIDTH * 4 ) + ( GUTTER_X2 * 3 );
 
     menuOpened ();
+    
+    headerMenuScrollTo ();
 
     showBrandRating ();
 
@@ -38,19 +40,20 @@ window.onload = function () {
     // -------------------------------------------------
     function menuOpened () {
         const topToggleMenu = document.querySelector('.iconBtn-toggleMenu');
+        const topMenu = document.querySelector('.topMenu');
+
         topToggleMenu.addEventListener('click', ()=>{
-            const topMenu = document.querySelector('.topMenu');
             if ( !topMenu.classList.contains('topMenu-open') ) {
                 topMenu.setAttribute('style', 'display:flex;');
                 setTimeout(()=>{
                     topMenu.classList.add('topMenu-open');
                 });
             } else {
-                topMenu.classList.remove('topMenu-open');
-                setTimeout(()=>{
-                    topMenu.setAttribute('style', 'display:none;');
-                },500);
+               closeTopMenu();
             }
+            clickPastWindow('topMenu', ()=>{
+                closeTopMenu();
+            });
         });
     }
 
@@ -138,7 +141,9 @@ window.onload = function () {
         const blockHeight = carsListBlock.clientHeight;
         const carItems = carsListBlock.querySelector('.carItems');
         const showAllBtn = document.querySelector('#carsShowAll');
-        const unvisibleItem = carsListBlock.querySelectorAll('.displayNone');
+        let showAllBtnStatus;
+        const showAllBtnText = showAllBtn.innerText;
+        let unvisibleItem = carsListBlock.querySelectorAll('.displayNone');
         let openBlockHeight = 0;
 
         carsListBlock.style.height = blockHeight + 'px';
@@ -146,21 +151,38 @@ window.onload = function () {
         carsListBlock.style.transition = 'height .3s';
 
         showAllBtn.addEventListener('click', ()=>{
-            for ( let i = 0; i < unvisibleItem.length; i++) {
-                unvisibleItem[i].classList.remove('displayNone');
+            showAllBtnStatus = showAllBtn.getAttribute('data-status');
+            if ( showAllBtnStatus === 'toshow' ) {
+                for ( let i = 0; i < unvisibleItem.length; i++) {
+                    unvisibleItem[i].classList.remove('displayNone');
+                    unvisibleItem[i].classList.add('displayShow');
+                }
+                openBlockHeight = carItems.clientHeight;
+                carsListBlock.style.height = openBlockHeight + 'px';
+
+                showAllBtn.setAttribute('data-status','hide');
+
+                // change show all btn on hide content
+                showAllBtn.innerText = 'Скрыть';
+
+            } else {
+                unvisibleItem = carsListBlock.querySelectorAll('.displayShow');
+                carsListBlock.style.height = blockHeight + 'px';
+                showAllBtn.setAttribute('data-status','toshow');
+
+                // change show all btn on show more
+                showAllBtn.innerText = showAllBtnText;
+
+                // clear style
+                setTimeout(()=> {
+                    for ( let i = 0; i < unvisibleItem.length; i++) {
+                        unvisibleItem[i].classList.add('displayNone');
+                        unvisibleItem[i].classList.remove('displayShow');
+                    }
+                    // carsListBlock.removeAttribute('style');
+                }, 1000)
             }
-            openBlockHeight = carItems.clientHeight;
-            carsListBlock.style.height = openBlockHeight + 'px';
 
-            // disabled show all btn
-            showAllBtn.style.opacity = '0';
-            showAllBtn.setAttribute('disabled', 'true');
-            showAllBtn.style.cursor = 'default';
-
-            // clear style
-            setTimeout(()=> {
-                carsListBlock.removeAttribute('style');
-            }, 1000)
         });
     } // showAllCars
 
@@ -196,33 +218,50 @@ window.onload = function () {
     } // showAllComparison
     
     function showAllSEOText () {
-        const seoContent = document.querySelector('.seo__content');
-        const blockHeight = seoContent.clientHeight;
-        const seoTexts = seoContent.querySelector('.seoTexts');
+        const seoContentBlock = document.querySelector('.seoTexts');
+        const seoBlockTxt = seoContentBlock.querySelector('.seoTexts__content');
+        const blockHeight = seoContentBlock.clientHeight + 30;
         const showAllBtn = document.querySelector('#seoBlockShowMore');
-        const unvisibleItem = seoContent.querySelectorAll('.displayNone');
+        const showAllBtnText = showAllBtn.innerText;
+        let showAllBtnStatus;
+        const unvisibleItem = seoBlockTxt.querySelectorAll('.displayNone');
         let openBlockHeight = 0;
 
-        seoContent.style.height = blockHeight + 'px';
-        seoContent.style.overflow = 'hidden';
-        seoContent.style.transition = 'height .3s';
+        seoContentBlock.style.height = blockHeight + 'px';
+        seoContentBlock.style.overflow = 'hidden';
+        seoContentBlock.style.transition = 'height .3s';
 
         showAllBtn.addEventListener('click', ()=>{
-            for ( let i = 0; i < unvisibleItem.length; i++) {
-                unvisibleItem[i].classList.remove('displayNone');
+            showAllBtnStatus = showAllBtn.getAttribute('data-status');
+            if ( showAllBtnStatus === 'toshow' ) {
+                for ( let i = 0; i < unvisibleItem.length; i++) {
+                    unvisibleItem[i].classList.remove('displayNone');
+                    unvisibleItem[i].classList.add('displayShow');
+                }
+                openBlockHeight = seoBlockTxt.clientHeight + 30;
+                seoContentBlock.style.height = openBlockHeight + 'px';
+
+                showAllBtn.setAttribute('data-status','hide');
+
+                // change show all btn on hide content
+                showAllBtn.innerText = 'Скрыть';
+
+            } else {
+                seoContentBlock.style.height = blockHeight + 'px';
+                showAllBtn.setAttribute('data-status','toshow');
+
+                // change show all btn on show more
+                showAllBtn.innerText = showAllBtnText;
+
+                // clear style
+                setTimeout(()=> {
+                    for ( let i = 0; i < unvisibleItem.length; i++) {
+                        unvisibleItem[i].classList.add('displayNone');
+                        unvisibleItem[i].classList.remove('displayShow');
+                    }
+                    // carsListBlock.removeAttribute('style');
+                }, 1000)
             }
-            openBlockHeight = seoTexts.clientHeight;
-            seoContent.style.height = openBlockHeight + 'px';
-
-            // disabled show all btn
-            showAllBtn.style.opacity = '0';
-            showAllBtn.setAttribute('disabled', 'true');
-            showAllBtn.style.cursor = 'default';
-
-            // clear style
-            setTimeout(()=> {
-                seoContent.removeAttribute('style');
-            }, 1000)
         });
     } // showAllSEOText
 
@@ -259,6 +298,18 @@ window.onload = function () {
             });
         } // for of
     } // showAllFooterMenuItems
+    
+    function headerMenuScrollTo () {
+        const headerMenuTitle = document.querySelectorAll('.headerMenu__item-title .h4Title a');
+        let currentLinkHref;
+        for ( let currentTitle of headerMenuTitle) {
+            currentTitle.addEventListener('click', function(e){
+                e.preventDefault();
+                currentLinkHref = this.getAttribute('href');
+                scrollTo(currentLinkHref, 25);
+            });
+        }
+    } // headerMenuScrollTo
 
     function footerMenuScrollTo () {
         const footerMenuTitle = document.querySelectorAll('.footerMenu__item-title .h4Title a');
@@ -271,21 +322,6 @@ window.onload = function () {
             });
         }
     } // footerMenuScrollTo
-
-    function scrollTo (idElement, speed) {
-        const scrollElement = document.querySelector(idElement);
-        let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
-        let currentPos = pageYOffset;
-
-        let scr = setInterval(function () {
-            currentPos -= speed;
-            window.scrollTo(0, currentPos);
-
-            if (currentPos < posElem) {
-                clearInterval(scr);
-            }
-        }, 1);
-    }
 
 
 // sliders -------------------------------------------------------    
@@ -441,4 +477,45 @@ window.onload = function () {
         }
     } // sliderSpareParts
 
+// secondary functions -------------------------------------------
+    function scrollTo (idElement, speed) {
+        const scrollElement = document.querySelector(idElement);
+        let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
+        let currentPos = pageYOffset;
+        console.log('posElem - ' + posElem);
+        console.log('currentPos' + currentPos);
+        let scr = setInterval(function () {
+            if ( currentPos > posElem ) {
+                currentPos -= speed;
+                if (currentPos < posElem) {
+                    clearInterval(scr);
+                }
+            } else {
+                currentPos += speed;
+                if (currentPos > posElem - speed) {
+                    clearInterval(scr);
+                }
+            }
+            window.scrollTo(0, currentPos);
+        }, 1);
+    } // scrollTo
+
+    function closeTopMenu () {
+        const topMenu = document.querySelector('.topMenu');
+        topMenu.classList.remove('topMenu-open');
+        setTimeout(()=>{
+            topMenu.setAttribute('style', 'display:none;');
+        },500);
+    } // closeTopMenu
+
+    function clickPastWindow(id,callback) {
+        const targetWindow = document.querySelector('#' + id);
+        document.addEventListener('mouseup',function (e){
+            if ( !targetWindow.contains(e.target) ) {
+               if (callback) {
+                   callback();
+               }
+            }
+        });
+    } // clickPastWindow
 };

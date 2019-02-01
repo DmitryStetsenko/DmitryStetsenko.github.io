@@ -45,6 +45,10 @@
   align-items: $align;
   justify-content: $justify;
 }
+@mixin widthPercent ($percent){
+  flex-basis: auto;
+  width: $percent;
+} // widthPercent
 
 // showSpriteBg
 @mixin showSpriteBg($pos, $width, $height){
@@ -98,11 +102,11 @@
   z-index: $zIndex;
 }
 
-@mixin backgroundOptions($bgRepeat, $bgPos, $bgSize) {
-  background-repeat: $bgRepeat;
-  background-position: $bgPos;
-  background-size: $bgSize;
-}
+//@mixin backgroundOptions($bgRepeat, $bgPos, $bgSize) {
+//  background-repeat: $bgRepeat;
+//  background-position: $bgPos;
+//  background-size: $bgSize;
+//}
 
 @mixin customScroll() {
   &::-webkit-scrollbar {
@@ -125,4 +129,16 @@
   &::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+}
+
+@mixin makeUnderline ($color, $bottomPos) {
+  background: $color;
+  bottom: $bottomPos;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transition: width .3s;
+  width: 0;
 }

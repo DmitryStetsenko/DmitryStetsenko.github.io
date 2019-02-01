@@ -8,66 +8,118 @@
 </head>
 <body>
     <header class="siteHeaderSection">
-        <div class="wrapper">
-            <div class="siteHeader">
-                <div class="siteHeader__logo">
-                    <a href="#">
-                        <img src="img/logo.png" alt="PartReview logo image">
-                    </a>
-                </div>
-                <!-- /.siteHeader__logo -->
-                <div class="searchBlock">
-                    <form action="#" class="searchBlock__form">
-                        <input type="text" placeholder="Поиск" id="headerFormSearch">
-                        <button class="iconBtn iconBtn-search">
+    <div class="wrapper">
+        <div class="siteHeader">
+            <div class="siteHeader__logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="PartReview logo image">
+                </a>
+            </div>
+            <!-- /.siteHeader__logo -->
+            <div class="searchBlock">
+                <form action="#" class="searchBlock__form">
+                    <input type="text" placeholder="Поиск" id="headerFormSearch">
+                    <button class="iconBtn iconBtn-search">
                             <span class="cssIcon cssIcon-search">
                                 <span class="cssIcon__part cssIcon__part-circle"></span>
                                 <span class="cssIcon__part cssIcon__part-knob"></span>
                             </span>
-                            <!-- /.cssIcon-search -->
-                        </button>
-                        <!-- /.iconBtn-search -->
-                    </form>
-                    <!-- /.searchBlock__form -->
-                </div>
-                <!-- /.searchBlock -->
-                <nav class="menuBlock">
-                    <button class="iconBtn iconBtn-toggleMenu">
-                        <span class="cssIcon cssIcon-toggleMenu">
+                        <!-- /.cssIcon-search -->
+                    </button>
+                    <!-- /.iconBtn-search -->
+                </form>
+                <!-- /.searchBlock__form -->
+            </div>
+            <!-- /.searchBlock -->
+            <nav class="menuBlock">
+                <button class="iconBtn iconBtn-toggleMenu">
+                        <span class="cssIcon cssIcon-toggleMenu" id="topMenu">
                             <span class="cssIcon__part cssIcon__part-line"></span>
                             <span class="cssIcon__part cssIcon__part-line"></span>
                             <span class="cssIcon__part cssIcon__part-line"></span>
                         </span>
-                        <!-- /.cssIcon-toggleMenu -->
-                    </button>
-                    <!-- /.iconBtn iconBtn-toggleMenu -->
-                    <ul class="topMenu">
-                        <li class="topMenu__item"><a href="#"></a></li>
-                        <li class="topMenu__item"><a href="#"></a></li>
-                        <li class="topMenu__item"><a href="#"></a></li>
+                    <!-- /.cssIcon-toggleMenu -->
+                </button>
+                <!-- /.iconBtn iconBtn-toggleMenu -->
+                <div class="topMenu" style="display: none;">
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#magazineBlock">Рейтинг запчастей</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
                     </ul>
-                    <!-- /.topMenu -->
-                </nav>
-                <!-- /.menuBlock -->
-                <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
-                <!-- /.mainBtn-addReview -->
-                <div class="headerUserAction">
-                    <div class="headerUserAction__element headerUserAction__element-enter">
-                        <span>Вход</span>
-                    </div>
-                    <!-- /.headerUserAction__element -->
-                    <div class="headerUserAction__separate"></div>
-                    <!-- /.headerUserAction__separate -->
-                    <div class="headerUserAction__element headerUserAction__element-registered">
-                        <span>Регистрация</span>
-                    </div>
-                    <!-- /.headerUserAction__element -->
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
+                    </ul>
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#spareParts">Отзывы о запчастях</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                    </ul>
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#brands">О производителях</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Bosch</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">TRW</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Stellox</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Febest</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Masuma</a></li>
+                    </ul>
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#cars">О запчастях для авто</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Тойота</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Киа</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Форд</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Рено</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Ниссан</a></li>
+                    </ul>
                 </div>
-                <!-- /.headerUserAction -->
+                <!-- /.topMenu -->
+            </nav>
+            <!-- /.menuBlock -->
+            <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+            <!-- /.mainBtn-addReview -->
+            <div class="headerUserAction">
+                <div class="headerUserAction__element headerUserAction__element-enter">
+                    <span>Вход</span>
+                </div>
+                <!-- /.headerUserAction__element -->
+                <div class="headerUserAction__separate"></div>
+                <!-- /.headerUserAction__separate -->
+                <div class="headerUserAction__element headerUserAction__element-registered">
+                    <span>Регистрация</span>
+                </div>
+                <!-- /.headerUserAction__element -->
             </div>
-            <!-- /.siteHeader -->
+            <!-- /.headerUserAction -->
         </div>
-        <!-- /.wrapper -->
+        <!-- /.siteHeader -->
+    </div>
+    <!-- /.wrapper -->
     </header>
     <!-- /.siteHeaderSection -->
     <main class="mainContent">
@@ -4250,6 +4302,19 @@
     </main>
     <!-- /.mainContent -->
     <footer class="siteFooter">
+        <div class="wrapper wrapper-footer">
+            <button class="siteVersionBtn siteVersionBtn-mobile">
+                <a href="#">
+                            <span class="btnIcon">
+                                <svg viewBox="0 0 35 35">
+                                    <path d="M25.302 0h-15.604c-1.3 0-2.364 1.063-2.364 2.364v30.271c0 1.301 1.064 2.365 2.364 2.365h15.604c1.3 0 2.364-1.062 2.364-2.364v-30.272c0-1.301-1.064-2.364-2.364-2.364zm-10.298 1.704h4.992c.158 0 .286.128.286.287 0 .158-.128.286-.286.286h-4.992c-.158 0-.286-.128-.286-.286 0-.159.128-.287.286-.287zm2.496 32.114c-.653 0-1.182-.529-1.182-1.183s.529-1.182 1.182-1.182 1.182.528 1.182 1.182-.529 1.183-1.182 1.183zm8.521-3.193h-17.042v-26.876h17.042v26.876z"/>
+                                </svg>
+                            </span>
+                    <span class="innerText">Мобильная версия</span>
+                </a>
+            </button>
+            <!-- /.siteVersionBtn siteVersionBtn-mobile -->
+        </div>
         <div class="siteFooter__menuBlock">
             <div class="wrapper">
                 <nav class="footerMenuBlock">

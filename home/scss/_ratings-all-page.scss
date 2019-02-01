@@ -1,0 +1,237 @@
+#allRatings {
+
+  // search block ---------------------------
+  .searchBlock {
+    margin-bottom: $blockTitleMarginBottom;
+    max-width: 400px;
+  } // searchBlock
+  // ========================================
+
+  // ratings block --------------------------
+  .ratingsBlock {
+    $sellNameWidth: 340px;
+    $sellReviewWidth: 140px;
+    $sellManufacturerWidth: 140px;
+    $sellVoteWidth: 140px;
+    $allRatingsHeaderRowHeight: 65px;
+    $allRatingsRowHeight: 65px;
+    // icons
+    $iconWidth: 60px;
+    $iconHeight: 45px;
+    margin-bottom: $outerBlockMargin;
+    .header {
+      @include flex(center, flex-start);
+      &__colTitle {
+        @include flex(center, center);
+
+        color: $colorColName;
+        height: $allRatingsHeaderRowHeight;
+        font-size: 14px;
+        flex-basis: auto;
+        &-name {
+          width: $sellNameWidth + 10px;
+        } // -name
+        &-review {
+          width: $sellReviewWidth;
+        } // -review
+        &-manufacturer {
+          width: $sellManufacturerWidth;
+        } // -manufacturer
+        &-vote {
+          width: $sellVoteWidth + 10px;
+        } // -vote
+      } // __colTitle
+    } // header
+    &__content {
+      margin-bottom: 40px;
+      .showRatingBlock {
+
+      } // showRatingBlock
+      .ratingList {
+        li {
+          border: 1px solid transparent;
+          height: $allRatingsRowHeight;
+          padding: 10px;
+          transition: border-color .3s;
+          &:nth-child(odd) {
+            background: $colorBgLightGray;
+          } // nth-child(odd)
+          &:hover {
+            cursor: pointer;
+            border-color: $colorYellow;
+            .ratingList__item {
+              .itemSell {
+                &__text {
+                  color: $colorYellow;
+                  &::before {
+                    width: 100%;
+                  } // before
+                } // __text
+              } // itemSell
+            } // ratingList__item
+          } //
+        } // li
+        &__item {
+          @include flex(center, flex-start);
+          color: $colorDarkGray;
+          height: 100%;
+          text-decoration: none;
+          .itemSell {
+            @include flex(center, center);
+            border-right: 1px solid $colorLightGray;
+            height: 100%;
+            &:last-child {
+              border-right: none;
+            } // last-child
+            &__icon {
+              border-radius: $mainBorderRadius;
+              margin-right: 30px;
+              &-brakePads {
+              @include showSpriteBg(0, $iconWidth, $iconHeight);
+              } // -brakePads
+              &-sparkPlug {
+                @include showSpriteBg(-60px, $iconWidth, $iconHeight);
+              } // -sparkPlug
+              &-fuelFilter {
+                @include showSpriteBg(-120px, $iconWidth, $iconHeight);
+              } // -fuelFilter
+            } // __icon
+            &__text {
+              font-size: 16px;
+              position: relative;
+              transition: color .3s;
+              &::before {
+                @include makeUnderline($colorYellow, -1px);
+              } // before
+            } // __text
+            &__mainValue {
+              color: $colorDarkGray;
+              font-size: 20px;
+              &::after {
+                content: attr(data-growth);
+                font-size: 16px;
+                margin-left: 5px;
+              } // after
+              &-review {
+                &::after {
+                  color: $colorRatingGreen;
+                } // after
+              } // -review
+              &-manufacturer {
+                &::after {
+                  color: $colorLightGray;
+                } // after
+              } // -manufacturer
+              &-vote {
+                &::after {
+                  color: $colorRatingGreen;
+                } // after
+              } // -vote
+            } // __mainValue
+            &-name {
+              justify-content: flex-start;
+              width: $sellNameWidth;
+            } // &-name
+            &-review {
+              width: $sellReviewWidth;
+            } // -review
+            &-manufacturer {
+              width: $sellManufacturerWidth;
+            } // -manufacturer
+            &-vote {
+              width: $sellVoteWidth;
+            } // -vote
+          } // itemSell
+        } // __item
+      } // ratingList
+    } // __content
+    .showMoreBlock {
+      margin-bottom: 20px;
+      .uploadMoreBtn {
+        @include flex(center, flex-start);
+        $iconWidth: 27px;
+        margin: 0 auto;
+        &__icon {
+          display: block;
+          margin-right: 10px;
+          width: 27px;
+          svg {
+            fill: $colorRatingGreen;
+            transition: transform .3s;
+          } // svg
+        } // __icon
+        &__text {
+          color: $colorLinkAside;
+          font-size: 15px;
+          position: relative;
+          &::before {
+            background: $colorLinkAside;
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            transition: width .3s;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+          } // before
+        } // __text
+        &:hover {
+          cursor: pointer;
+          .uploadMoreBtn__text {
+            &::before {
+              width: 100%;
+            } // before
+          } // uploadMoreBtn__text
+          .uploadMoreBtn__icon {
+            svg {
+              transform: rotate(180deg);
+            } // svg
+          } // uploadMoreBtn__icon
+        } // hover
+      } // uploadMoreBtn
+    } // showMore
+    .paginationBlock {
+      $itemSize: 24px;
+      @include flex(center, center);
+      &__item {
+        @include flex(center, center);
+        border-radius: $mainBorderRadius;
+        border: 1px solid $colorLightGray;
+        background: white;
+        color: $colorDarkGray;
+        font-size: 13px;
+        margin-right: 10px;
+        transition: background .3s;
+        height: $itemSize;
+        width: $itemSize;
+        &:last-child {
+          margin-right: 0;
+        } // last-child
+        &:hover {
+          cursor: pointer;
+          color: white;
+          background: $colorYellow;
+        } // hover
+        &-gap {
+          align-items: flex-end;
+          border-color: transparent;
+          padding-bottom: 5px;
+          &:hover {
+            background: white;
+            cursor: default;
+            color: $colorDarkGray;
+          } // hover
+        } // -gap
+        &-current {
+          background: $colorYellow;
+          color: white;
+        } // -current
+
+      } // __item
+    } // paginationBlock
+  } // ratingsBlock
+  // ========================================
+
+
+} // allRatings

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Part review</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="siteHeaderSection">
+        <div class="wrapper">
+            <div class="siteHeader">
+                <div class="siteHeader__logo">
+                    <a href="#">
+                        <img src="img/logo.png" alt="PartReview logo image">
+                    </a>
+                </div>
+                <!-- /.siteHeader__logo -->
+                <div class="searchBlock">
+                    <form action="#" class="searchBlock__form">
+                        <input type="text" placeholder="Поиск" id="headerFormSearch">
+                        <button class="iconBtn iconBtn-search">
+                            <span class="cssIcon cssIcon-search">
+                                <span class="cssIcon__part cssIcon__part-circle"></span>
+                                <span class="cssIcon__part cssIcon__part-knob"></span>
+                            </span>
+                            <!-- /.cssIcon-search -->
+                        </button>
+                        <!-- /.iconBtn-search -->
+                    </form>
+                    <!-- /.searchBlock__form -->
+                </div>
+                <!-- /.searchBlock -->
+                <nav class="menuBlock">
+                    <button class="iconBtn iconBtn-toggleMenu">
+                        <span class="cssIcon cssIcon-toggleMenu" id="topMenu">
+                            <span class="cssIcon__part cssIcon__part-line"></span>
+                            <span class="cssIcon__part cssIcon__part-line"></span>
+                            <span class="cssIcon__part cssIcon__part-line"></span>
+                        </span>
+                        <!-- /.cssIcon-toggleMenu -->
+                    </button>
+                    <!-- /.iconBtn iconBtn-toggleMenu -->
+                    <div class="topMenu" style="display: none;">
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#magazineBlock">Рейтинг запчастей</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
+                        </ul>
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
+                        </ul>
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#spareParts">Отзывы о запчастях</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                        </ul>
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#brands">О производителях</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Bosch</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">TRW</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Stellox</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Febest</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Masuma</a></li>
+                        </ul>
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#cars">О запчастях для авто</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Тойота</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Киа</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Форд</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Рено</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Ниссан</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.topMenu -->
+                </nav>
+                <!-- /.menuBlock -->
+                <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                <!-- /.mainBtn-addReview -->
+                <div class="headerUserAction">
+                    <div class="headerUserAction__element headerUserAction__element-enter">
+                        <span>Вход</span>
+                    </div>
+                    <!-- /.headerUserAction__element -->
+                    <div class="headerUserAction__separate"></div>
+                    <!-- /.headerUserAction__separate -->
+                    <div class="headerUserAction__element headerUserAction__element-registered">
+                        <span>Регистрация</span>
+                    </div>
+                    <!-- /.headerUserAction__element -->
+                </div>
+                <!-- /.headerUserAction -->
+            </div>
+            <!-- /.siteHeader -->
+        </div>
+        <!-- /.wrapper -->
+    </header>
+    <!-- /.siteHeaderSection -->
+    <main class="mainContent" id="allRatings">
+        <div class="wrapper">
+            <section class="searchBlock">
+                <label class="label label-searchBlock" for="ratingsAllSearchBlock">Поиск по запчастям:</label>
+                <input type="text"
+                       class="input input-earchBlock"
+                       id="ratingsAllSearchBlock"
+                       placeholder="Ведите название производителя"
+                >
+            </section>
+            <!-- /.searchBlock -->
+            <section class="ratingsBlock">
+                <div class="header">
+                    <div class="header__colTitle header__colTitle-name">Название</div>
+                    <!-- /.header__colTitle-name -->
+                    <div class="header__colTitle header__colTitle-review">Отзывы</div>
+                    <!-- /.header__colTitle-review -->
+                    <div class="header__colTitle header__colTitle-manufacturer">Производители</div>
+                    <!-- /.header__colTitle-manufacturer -->
+                    <div class="header__colTitle header__colTitle-vote">Голоса</div>
+                    <!-- /.header__colTitle-vote -->
+                </div>
+                <!-- /.ratingsBlock__header -->
+                <div class="ratingsBlock__content">
+                    <div class="showRatingBlock">
+                        <ul class="ratingList">
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-brakePads"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие тормозные колодки</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-sparkPlug"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие свечи зажигания</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-fuelFilter"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие топливные фильтры</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-brakePads"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие тормозные колодки</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-sparkPlug"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие свечи зажигания</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-fuelFilter"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие топливные фильтры</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-brakePads"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие тормозные колодки</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-sparkPlug"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие свечи зажигания</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-fuelFilter"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие топливные фильтры</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="ratingList__item">
+                                    <div class="itemSell itemSell-name">
+                                        <div class="itemSell__icon itemSell__icon-fuelFilter"
+                                             style="background-image: url(img/best_spareparts_sprite.jpg);"
+                                        ></div>
+                                        <!-- /.itemSell__icon-brakePads -->
+                                        <div class="itemSell__text">Лучшие топливные фильтры</div>
+                                        <!-- /.itemSell__text -->
+                                    </div>
+                                    <!-- /.itemSell-name -->
+                                    <div class="itemSell itemSell-review">
+                                        <span class="itemSell__mainValue itemSell__mainValue-review"
+                                              data-growth="+5">254</span>
+                                        <!--/.itemSell__mainValue-review-->
+                                    </div>
+                                    <!-- /.itemSell-review -->
+                                    <div class="itemSell itemSell-manufacturer">
+                                        <span class="itemSell__mainValue itemSell__mainValue-manufacturer"
+                                              data-growth="/ 64">14</span>
+                                        <!--/.itemSell__mainValue-manufacturer-->
+                                    </div>
+                                    <!-- /.itemSell-manufacturer -->
+                                    <div class="itemSell itemSell-vote">
+                                        <span class="itemSell__mainValue itemSell__mainValue-vote"
+                                              data-growth="+5">76</span>
+                                        <!--/.itemSell__mainValue-vote-->
+                                    </div>
+                                    <!-- /.itemSell-vote -->
+                                </a>
+                                <!--/.ratingList__item-->
+                            </li>
+                        </ul>
+                        <!--/.ratingList-->
+                    </div>
+                    <!-- /.showRatingBlock -->
+                </div>
+                <!-- /.ratingsBlock__content -->
+
+                <div class="showMoreBlock">
+                    <button class="uploadMoreBtn">
+                            <span class="uploadMoreBtn__icon">
+                                <svg viewBox="0 0 26.5 29.25">
+                                    <path d="M910.568 957.776l-3.91 3.91a.578.578 0 0 1-.818 0l-.056-.058v-2.878a9.1 9.1 0 0 0-3.628 17.117 1.541 1.541 0 1 1-1.447 2.722 12.185 12.185 0 0 1 5.075-22.93v-2.552l.056-.057a.58.58 0 0 1 .818 0l3.91 3.909a.577.577 0 0 1 0 .817zm-2.227 24.173l-3.909-3.908a.578.578 0 0 1 0-.818l3.909-3.908a.578.578 0 0 1 .819 0l.055.057v2.877a9.1 9.1 0 0 0 3.627-17.116 1.542 1.542 0 1 1 1.45-2.722 12.186 12.186 0 0 1-5.077 22.929v2.551l-.056.058a.581.581 0 0 1-.818 0z" transform="translate(-894.25 -952.875)"/>
+                                </svg>
+                            </span>
+                        <span class="uploadMoreBtn__text">Показать еще</span>
+                    </button>
+                </div>
+                <!-- /.showMore -->
+                <div class="paginationBlock">
+                    <span class="paginationBlock__item paginationBlock__item-current">1</span>
+                    <!-- /.paginationBlock__item -->
+                    <span class="paginationBlock__item">2</span>
+                    <!-- /.paginationBlock__item -->
+                    <span class="paginationBlock__item">3</span>
+                    <!-- /.paginationBlock__item -->
+                    <span class="paginationBlock__item paginationBlock__item-gap">...</span>
+                    <!-- /.paginationBlock__item -->
+                    <span class="paginationBlock__item">30</span>
+                    <!-- /.paginationBlock__item -->
+                </div>
+                <!-- /.paginationBlock -->
+
+                <!-- load this all rating this block is not visible -->
+                <div class="allRatingList displayNone">
+                </div>
+                <!-- /.allRatingList -->
+            </section>
+            <!-- /.ratings -->
+        </div>
+        <!-- /.wrapper -->
+    </main>
+    <!-- /.mainContent -->
+    <footer class="siteFooter">
+        <div class="wrapper wrapper-footer">
+            <button class="siteVersionBtn siteVersionBtn-mobile">
+                <a href="#">
+                            <span class="btnIcon">
+                                <svg viewBox="0 0 35 35">
+                                    <path d="M25.302 0h-15.604c-1.3 0-2.364 1.063-2.364 2.364v30.271c0 1.301 1.064 2.365 2.364 2.365h15.604c1.3 0 2.364-1.062 2.364-2.364v-30.272c0-1.301-1.064-2.364-2.364-2.364zm-10.298 1.704h4.992c.158 0 .286.128.286.287 0 .158-.128.286-.286.286h-4.992c-.158 0-.286-.128-.286-.286 0-.159.128-.287.286-.287zm2.496 32.114c-.653 0-1.182-.529-1.182-1.183s.529-1.182 1.182-1.182 1.182.528 1.182 1.182-.529 1.183-1.182 1.183zm8.521-3.193h-17.042v-26.876h17.042v26.876z"/>
+                                </svg>
+                            </span>
+                    <span class="innerText">Мобильная версия</span>
+                </a>
+            </button>
+            <!-- /.siteVersionBtn siteVersionBtn-mobile -->
+        </div>
+        <div class="siteFooter__menuBlock">
+            <div class="wrapper">
+                <nav class="footerMenuBlock">
+                    <ul class="footerMenu">
+                        <li class="footerMenu__item footerMenu__item-title">
+                            <div class="h4Title"><a href="#spareParts">Отзывы о запчастях</a></div>
+                            <div class="shevronIcon shevronIcon-footerMenu">
+                                <div class="shevronIcon__icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <!-- /.shevronIcon__icon -->
+                            </div>
+                        </li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                        <!--unvisible elements-->
+                        <li class="footerMenu__hiddenBlock">
+                            <ul class="footerMenu__hiddenElements displayNone">
+                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="footerMenu">
+                        <li class="footerMenu__item footerMenu__item-title">
+                            <div class="h4Title"><a href="#brands">Отзывы о производителях</a></div>
+                            <div class="shevronIcon shevronIcon-footerMenu">
+                                <div class="shevronIcon__icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <!-- /.shevronIcon__icon -->
+                            </div>
+                        </li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Bosch</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">TRW</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Stellox</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Febest</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Masuma</a></li>
+                        <!--unvisible elements-->
+                        <li class="footerMenu__hiddenBlock">
+                            <ul class="footerMenu__hiddenElements displayNone">
+                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="footerMenu">
+                        <li class="footerMenu__item footerMenu__item-title">
+                            <div class="h4Title"><a href="#cars">Отзывы о запчастях для</a></div>
+                            <div class="shevronIcon shevronIcon-footerMenu">
+                                <div class="shevronIcon__icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <!-- /.shevronIcon__icon -->
+                            </div>
+                        </li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">авто</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Тойота</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Киа</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Форд</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Рено</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Ниссан</a></li>
+                        <!--unvisible elements-->
+                        <li class="footerMenu__hiddenBlock">
+                            <ul class="footerMenu__hiddenElements displayNone">
+                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="footerMenu">
+                        <li class="footerMenu__item footerMenu__item-title">
+                            <div class="h4Title"><a href="#magazineBlock">Рейтинг запчастей</a></div>
+                            <div class="shevronIcon shevronIcon-footerMenu">
+                                <div class="shevronIcon__icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <!-- /.shevronIcon__icon -->
+                            </div>
+                        </li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
+                        <!--unvisible elements-->
+                        <li class="footerMenu__hiddenBlock">
+                            <ul class="footerMenu__hiddenElements displayNone">
+                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="footerMenu">
+                        <li class="footerMenu__item footerMenu__item-title">
+                            <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
+                            <div class="shevronIcon shevronIcon-footerMenu">
+                                <div class="shevronIcon__icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <!-- /.shevronIcon__icon -->
+                            </div>
+                        </li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
+                        <li class="footerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
+                        <!--unvisible elements-->
+                        <li class="footerMenu__hiddenBlock">
+                            <ul class="footerMenu__hiddenElements displayNone">
+                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.footerMenu -->
+            </div>
+            <!-- /.wrapper -->
+        </div>
+        <!-- /.siteFooter__menuBlock -->
+        <div class="siteFooter__copyrightBlock">
+            <div class="wrapper">
+                <p>© 2017 - 2018. Отзывы о запчастях PartReview.ru. По всем вопросам пишите partreview@gmail.com</p>
+            </div>
+            <!-- /.wrapper -->
+        </div>
+        <!-- /.siteFooter__copyrightBlock -->
+    </footer>
+    <!-- /.siteFooter -->
+
+   <script src="js/main.js"></script>
+</body>
+</html>
+
