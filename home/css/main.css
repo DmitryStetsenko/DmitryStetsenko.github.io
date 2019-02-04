@@ -34,7 +34,7 @@ body {
   font: 400 normal 16px/1 Arial, san-serif;
   color: #2c333d; }
 
-div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, button, span, ul, li, table, tbody, tr, th, td {
+div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, textarea, button, span, ul, li, table, tbody, tr, th, td {
   box-sizing: border-box; }
 
 img, svg {
@@ -592,8 +592,7 @@ button, input {
       .popUpWindowBlock .popUpWindow__content .reviewBlock__textArea textarea {
         height: 125px;
         font-family: Arial;
-        resize: none;
-        width: 97%; }
+        resize: none; }
     .popUpWindowBlock .popUpWindow__content .reviewBlock__userAction {
       display: flex;
       align-items: center;
@@ -762,6 +761,7 @@ button, input {
   background: inherit;
   border-radius: 3px;
   border: 1px solid #c1c7d0;
+  box-sizing: border-box;
   color: #2c333d;
   display: block;
   height: 30px;
@@ -780,7 +780,7 @@ button, input {
   height: 125px;
   font-family: Arial;
   resize: none;
-  width: 97%; }
+  width: 100%; }
 
 .widget {
   background: white;

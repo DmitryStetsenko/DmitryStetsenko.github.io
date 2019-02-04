@@ -3,7 +3,7 @@ body {
   color: $colorDarkGray;
 }
 
-div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, button, span, ul, li, table, tbody, tr, th, td {
+div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, textarea, button, span, ul, li, table, tbody, tr, th, td {
   box-sizing: border-box;
 }
 
@@ -753,7 +753,6 @@ button, input {
             height: 125px;
             font-family: Arial;
             resize: none;
-            width: 97%;
           } // textarea
         } // __textArea
         &__userAction {
@@ -999,6 +998,7 @@ button, input {
   background: inherit;
   border-radius: $inputBorderRadius;
   border: $inputBorder;
+  box-sizing: border-box;
   color: $inputColor;
   display: block;
   height: $inputHeight;
@@ -1012,7 +1012,7 @@ button, input {
   height: 125px;
   font-family: Arial;
   resize: none;
-  width: 97%;
+  width: 100%;
 } // text-area
 
 // side bar widgets ------------------------------
