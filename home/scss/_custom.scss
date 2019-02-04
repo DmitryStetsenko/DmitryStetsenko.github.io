@@ -636,6 +636,9 @@ button, input {
       font-weight: bold;
       margin-bottom: 10px;
     } // formFieldsTitle
+    label {
+      display: block;
+    } // label
     &__title {
       font-size: 32px;
       font-weight: bold;
@@ -850,7 +853,40 @@ button, input {
             } // innerText
           } // -popUpadditionalBlock
         } // mainBtn
-
+        &__form {
+          background: $colorBgLightGray;
+          $outerBlocksWidth: 100%;
+          $formFieldsGutter: 5px;
+          padding: 20px;
+          .carInfo {
+            margin-bottom: 20px;
+            &:last-child {
+              margin-bottom: 0;
+            } // last-child
+            .selectsBlock {
+              @include flex(center, flex-start);
+              &__item {
+                $selectWidth: calc((#{$outerBlocksWidth} - #{$formFieldsGutter * 2}) / 3 );
+                margin-right: $formFieldsGutter;
+                width: $selectWidth;
+                &:last-child {
+                  margin-right: 0;
+                } // last-child
+              } // __item
+            } // selectsBlock
+            .sparePartsInfo {
+              $inputWidth: calc((#{$outerBlocksWidth} - #{$formFieldsGutter}) / 2 );
+              margin-right: $formFieldsGutter;
+              width: $inputWidth;
+              &:last-child {
+                margin-right: 0;
+              } // last-child
+            } // sparePartsInfo
+            &-userAction {
+              @include flex(flex-start, flex-start);
+            } // -userAction
+          } // carInfo
+        } // form
       } // additionalBlock
     } // __content
     &-addReview {
@@ -960,6 +996,7 @@ button, input {
   $phFontColor: $colorDarkGray;
 
   @include placeholder ($phFontFamily, $phFontSize, $phFontWeight, $phFontStyle, $phFontColor);
+  background: inherit;
   border-radius: $inputBorderRadius;
   border: $inputBorder;
   color: $inputColor;
@@ -970,6 +1007,13 @@ button, input {
   padding: $inputPadding;
   width: $inputWidth;
 } // input
+
+.text-area {
+  height: 125px;
+  font-family: Arial;
+  resize: none;
+  width: 97%;
+} // text-area
 
 // side bar widgets ------------------------------
 .widget {

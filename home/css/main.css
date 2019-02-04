@@ -513,6 +513,8 @@ button, input {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 10px; }
+  .popUpWindowBlock .popUpWindow label {
+    display: block; }
   .popUpWindowBlock .popUpWindow__title {
     font-size: 32px;
     font-weight: bold;
@@ -678,6 +680,31 @@ button, input {
   .popUpWindowBlock .popUpWindow__content .additionalBlock .mainBtn-popUpadditionalBlock .innerText {
     color: white;
     margin-right: 10px; }
+  .popUpWindowBlock .popUpWindow__content .additionalBlock__form {
+    background: #f6f6f6;
+    padding: 20px; }
+    .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo {
+      margin-bottom: 20px; }
+      .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo:last-child {
+        margin-bottom: 0; }
+      .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock__item {
+          margin-right: 5px;
+          width: calc((100% - 10px) / 3); }
+          .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock__item:last-child {
+            margin-right: 0; }
+      .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .sparePartsInfo {
+        margin-right: 5px;
+        width: calc((100% - 5px) / 2); }
+        .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .sparePartsInfo:last-child {
+          margin-right: 0; }
+      .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo-userAction {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start; }
   .popUpWindowBlock .popUpWindow-addReview {
     width: 755px; }
 
@@ -732,6 +759,7 @@ button, input {
     padding: 10px; }
 
 .input, .text-area {
+  background: inherit;
   border-radius: 3px;
   border: 1px solid #c1c7d0;
   color: #2c333d;
@@ -747,6 +775,12 @@ button, input {
   .input:-moz-placeholder, .text-area:-moz-placeholder {
     color: #2c333d;
     font: 400 normal 13px arial; }
+
+.text-area {
+  height: 125px;
+  font-family: Arial;
+  resize: none;
+  width: 97%; }
 
 .widget {
   background: white;
