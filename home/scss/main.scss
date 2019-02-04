@@ -415,16 +415,6 @@
             } // path
           } // svgRatingCircle
         } // svgWrap
-        span {
-          align-items: center;
-          background: url(../img/rating_circle.svg) no-repeat center/36px 36px;
-          border-radius: 50%;
-          //border: 3px solid $colorYellow;
-          display: flex;
-          justify-content: center;
-          height: 40px;
-          width: 40px;
-        } // span
       } // __rating
     } // __item
   } // sparePartsElement
@@ -1545,4 +1535,8 @@
 // Rating-all page ==========================
 @import "ratings-all-page";
 // ------------------------------------------
+
+// Spare-parts page -------------------------
+@import "spare-parts";
+// ==========================================
 

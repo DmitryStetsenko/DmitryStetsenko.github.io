@@ -5,8 +5,11 @@
   &__thumbnail {
     $imgSize: 140px;
     @include flex(center, center);
+    border-radius: $mainBorderRadius;
+    border: 1px solid $colorBorderLightGray;
     height: $imgSize;
     min-width: $imgSize;
+    padding: 10px;
     width: $imgSize;
   } // __thumbnail
   &__content {
@@ -18,7 +21,7 @@
     .headerBlockContent {
       @include flex(flex-start, space-between);
       &__item {
-        border-right: 1px solid $colorLightGray;
+        border-right: 1px solid $colorBorderLightGray;
         flex-shrink: 1;
         max-height: 87px;
         overflow: hidden;
@@ -27,34 +30,29 @@
           border-right: none;
         } // last-child
         .innerBlockTitle {
-          position: relative;
           margin-bottom: 20px;
-          &__text {
-            color: $colorColName;
-            font-size: 14px;
-            position: relative;
-            .innerText {
-            } // innerText
-            .additInfo {
-              $infoBlockSize: 14px;
-              @include flex(center, center);
+          color: $colorColName;
+          font-size: 14px;
+          position: relative;
+          .innerText {
+          } // innerText
+          .additInfo {
+            $infoBlockSize: 14px;
+            @include flex(center, center);
 
-              background: $colorColName;
-              border-radius: 50%;
-              color: white;
-              font-size: 11px;
-              position: absolute;
-              right: -15px;
-              top: -5px;
-              height: $infoBlockSize;
-              width: $infoBlockSize;
-            } // additInfo
-            &-description {
-              color: $colorDarkGray;
-              font-weight: bold;
-            } // -description
-          } // __text
+            background: $colorColName;
+            border-radius: 50%;
+            color: white;
+            font-size: 11px;
+            position: absolute;
+            right: -15px;
+            top: -5px;
+            height: $infoBlockSize;
+            width: $infoBlockSize;
+          } // additInfo
           &-description {
+            color: $colorDarkGray;
+            font-weight: bold;
             margin-bottom: 10px;
           } // -description
         } // blockTitle
@@ -62,10 +60,28 @@
           @include flex(center, center);
           &__data {
             @include flex(center, flex-start);
-            &-main {
-              color: $colorDarkGray;
-              font-size: 20px;
-            } // -main
+            color: $colorDarkGray;
+            font-size: 20px;
+            &::after {
+              content: attr(data-growth);
+              font-size: 16px;
+              margin-left: 5px;
+            } // after
+            &-manufacturer {
+              &::after {
+                color: $colorLightGray;
+              } // after
+            } // -manufacturer
+            &-review {
+              &::after {
+                color: $colorRatingGreen;
+              } // after
+            } // -review
+            &-vote {
+              &::after {
+                color: $colorRatingGreen;
+              } // after
+            } // -vote
             &-additional {
               color: $colorLightGray;
               font-size: 16px;
@@ -76,9 +92,6 @@
                 } // -plus
               } // innerSeparator
             } // -additional
-            &-growth {
-              color: $colorRatingGreen;
-            } // -growth
           } // data
           &__text {
             color: $colorDarkGray;
@@ -96,8 +109,8 @@
           &::after {
             content: '';
             background: linear-gradient(to bottom,
-                                        rgba(255,255,255,0.5) 30%,
-                                        rgba(255,255,255,1) 100%);
+                    rgba(255,255,255,0.5) 30%,
+                    rgba(255,255,255,1) 100%);
             position: absolute;
             bottom: 0;
             left: 0;

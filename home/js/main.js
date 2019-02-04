@@ -149,52 +149,54 @@ window.onload = function () {
 
     function showAllCars () {
         const carsListBlock = document.querySelector('.cars__listsBlock');
-        const blockHeight = carsListBlock.clientHeight;
-        const carItems = carsListBlock.querySelector('.carItems');
-        const showAllBtn = document.querySelector('#carsShowAll');
-        let showAllBtnStatus;
-        const showAllBtnText = showAllBtn.innerText;
-        let unvisibleItem = carsListBlock.querySelectorAll('.displayNone');
-        let openBlockHeight = 0;
+        if (carsListBlock) {
+            const blockHeight = carsListBlock.clientHeight;
+            const carItems = carsListBlock.querySelector('.carItems');
+            const showAllBtn = document.querySelector('#carsShowAll');
+            let showAllBtnStatus;
+            const showAllBtnText = showAllBtn.innerText;
+            let unvisibleItem = carsListBlock.querySelectorAll('.displayNone');
+            let openBlockHeight = 0;
 
-        carsListBlock.style.height = blockHeight + 'px';
-        carsListBlock.style.overflow = 'hidden';
-        carsListBlock.style.transition = 'height .3s';
+            carsListBlock.style.height = blockHeight + 'px';
+            carsListBlock.style.overflow = 'hidden';
+            carsListBlock.style.transition = 'height .3s';
 
-        showAllBtn.addEventListener('click', ()=>{
-            showAllBtnStatus = showAllBtn.getAttribute('data-status');
-            if ( showAllBtnStatus === 'toshow' ) {
-                for ( let i = 0; i < unvisibleItem.length; i++) {
-                    unvisibleItem[i].classList.remove('displayNone');
-                    unvisibleItem[i].classList.add('displayShow');
-                }
-                openBlockHeight = carItems.clientHeight;
-                carsListBlock.style.height = openBlockHeight + 'px';
-
-                showAllBtn.setAttribute('data-status','hide');
-
-                // change show all btn on hide content
-                showAllBtn.innerText = 'Скрыть';
-
-            } else {
-                unvisibleItem = carsListBlock.querySelectorAll('.displayShow');
-                carsListBlock.style.height = blockHeight + 'px';
-                showAllBtn.setAttribute('data-status','toshow');
-
-                // change show all btn on show more
-                showAllBtn.innerText = showAllBtnText;
-
-                // clear style
-                setTimeout(()=> {
+            showAllBtn.addEventListener('click', ()=>{
+                showAllBtnStatus = showAllBtn.getAttribute('data-status');
+                if ( showAllBtnStatus === 'toshow' ) {
                     for ( let i = 0; i < unvisibleItem.length; i++) {
-                        unvisibleItem[i].classList.add('displayNone');
-                        unvisibleItem[i].classList.remove('displayShow');
+                        unvisibleItem[i].classList.remove('displayNone');
+                        unvisibleItem[i].classList.add('displayShow');
                     }
-                    // carsListBlock.removeAttribute('style');
-                }, 1000)
-            }
+                    openBlockHeight = carItems.clientHeight;
+                    carsListBlock.style.height = openBlockHeight + 'px';
 
-        });
+                    showAllBtn.setAttribute('data-status','hide');
+
+                    // change show all btn on hide content
+                    showAllBtn.innerText = 'Скрыть';
+
+                } else {
+                    unvisibleItem = carsListBlock.querySelectorAll('.displayShow');
+                    carsListBlock.style.height = blockHeight + 'px';
+                    showAllBtn.setAttribute('data-status','toshow');
+
+                    // change show all btn on show more
+                    showAllBtn.innerText = showAllBtnText;
+
+                    // clear style
+                    setTimeout(()=> {
+                        for ( let i = 0; i < unvisibleItem.length; i++) {
+                            unvisibleItem[i].classList.add('displayNone');
+                            unvisibleItem[i].classList.remove('displayShow');
+                        }
+                        // carsListBlock.removeAttribute('style');
+                    }, 1000)
+                }
+
+            });
+        }
     } // showAllCars
 
     function showAllComparison () {
@@ -210,6 +212,7 @@ window.onload = function () {
         comparisonBlock.style.transition = 'height .3s';
 
         showAllBtn.addEventListener('click', ()=>{
+            console.log('show all');
             for ( let i = 0; i < unvisibleItem.length; i++) {
                 unvisibleItem[i].classList.remove('displayNone');
             }
@@ -230,50 +233,52 @@ window.onload = function () {
     
     function showAllSEOText () {
         const seoContentBlock = document.querySelector('.seoTexts');
-        const seoBlockTxt = seoContentBlock.querySelector('.seoTexts__content');
-        const blockHeight = seoContentBlock.clientHeight + 30;
-        const showAllBtn = document.querySelector('#seoBlockShowMore');
-        const showAllBtnText = showAllBtn.innerText;
-        let showAllBtnStatus;
-        const unvisibleItem = seoBlockTxt.querySelectorAll('.displayNone');
-        let openBlockHeight = 0;
+        if (seoContentBlock) {
+            const seoBlockTxt = seoContentBlock.querySelector('.seoTexts__content');
+            const blockHeight = seoContentBlock.clientHeight + 30;
+            const showAllBtn = document.querySelector('#seoBlockShowMore');
+            const showAllBtnText = showAllBtn.innerText;
+            let showAllBtnStatus;
+            const unvisibleItem = seoBlockTxt.querySelectorAll('.displayNone');
+            let openBlockHeight = 0;
 
-        seoContentBlock.style.height = blockHeight + 'px';
-        seoContentBlock.style.overflow = 'hidden';
-        seoContentBlock.style.transition = 'height .3s';
+            seoContentBlock.style.height = blockHeight + 'px';
+            seoContentBlock.style.overflow = 'hidden';
+            seoContentBlock.style.transition = 'height .3s';
 
-        showAllBtn.addEventListener('click', ()=>{
-            showAllBtnStatus = showAllBtn.getAttribute('data-status');
-            if ( showAllBtnStatus === 'toshow' ) {
-                for ( let i = 0; i < unvisibleItem.length; i++) {
-                    unvisibleItem[i].classList.remove('displayNone');
-                    unvisibleItem[i].classList.add('displayShow');
-                }
-                openBlockHeight = seoBlockTxt.clientHeight + 30;
-                seoContentBlock.style.height = openBlockHeight + 'px';
-
-                showAllBtn.setAttribute('data-status','hide');
-
-                // change show all btn on hide content
-                showAllBtn.innerText = 'Скрыть';
-
-            } else {
-                seoContentBlock.style.height = blockHeight + 'px';
-                showAllBtn.setAttribute('data-status','toshow');
-
-                // change show all btn on show more
-                showAllBtn.innerText = showAllBtnText;
-
-                // clear style
-                setTimeout(()=> {
+            showAllBtn.addEventListener('click', ()=>{
+                showAllBtnStatus = showAllBtn.getAttribute('data-status');
+                if ( showAllBtnStatus === 'toshow' ) {
                     for ( let i = 0; i < unvisibleItem.length; i++) {
-                        unvisibleItem[i].classList.add('displayNone');
-                        unvisibleItem[i].classList.remove('displayShow');
+                        unvisibleItem[i].classList.remove('displayNone');
+                        unvisibleItem[i].classList.add('displayShow');
                     }
-                    // carsListBlock.removeAttribute('style');
-                }, 1000)
-            }
-        });
+                    openBlockHeight = seoBlockTxt.clientHeight + 30;
+                    seoContentBlock.style.height = openBlockHeight + 'px';
+
+                    showAllBtn.setAttribute('data-status','hide');
+
+                    // change show all btn on hide content
+                    showAllBtn.innerText = 'Скрыть';
+
+                } else {
+                    seoContentBlock.style.height = blockHeight + 'px';
+                    showAllBtn.setAttribute('data-status','toshow');
+
+                    // change show all btn on show more
+                    showAllBtn.innerText = showAllBtnText;
+
+                    // clear style
+                    setTimeout(()=> {
+                        for ( let i = 0; i < unvisibleItem.length; i++) {
+                            unvisibleItem[i].classList.add('displayNone');
+                            unvisibleItem[i].classList.remove('displayShow');
+                        }
+                        // carsListBlock.removeAttribute('style');
+                    }, 1000)
+                }
+            });
+        }
     } // showAllSEOText
 
     function showAllFooterMenuItems () {
@@ -338,39 +343,44 @@ window.onload = function () {
 // sliders -------------------------------------------------------    
     function sliderSpareParts () {
         const sparePartsSliderBlock = document.querySelector('.spareParts__sliderBlock');
-        const sparePartsSlider = sparePartsSliderBlock.querySelector('.mySlider');
-        const sliderNavBlock = sparePartsSliderBlock.querySelector('.sliderNavBlock');
-        const sparePartsSliderNextBtn = sparePartsSliderBlock.querySelector('.sliderNavBlock__btn-next');
-        const sparePartsSliderPrevBtn = sparePartsSliderBlock.querySelector('.sliderNavBlock__btn-prev');
-        let sparePartsSlides = sparePartsSlider.querySelectorAll('.sparePartsSlider__sliderItem');
+        let slidePosition;
+        let slideIsShow;
+        let quantitySlides;
+        let slidesOffset;
+        if (sparePartsSliderBlock){
+            const sparePartsSlider = sparePartsSliderBlock.querySelector('.mySlider');
+            const sliderNavBlock = sparePartsSliderBlock.querySelector('.sliderNavBlock');
+            const sparePartsSliderNextBtn = sparePartsSliderBlock.querySelector('.sliderNavBlock__btn-next');
+            const sparePartsSliderPrevBtn = sparePartsSliderBlock.querySelector('.sliderNavBlock__btn-prev');
+            let sparePartsSlides = sparePartsSlider.querySelectorAll('.sparePartsSlider__sliderItem');
 
-        sparePartsSlides = Array.prototype.slice.call(sparePartsSlides);
-        const quantitySlides = sparePartsSlides.length;
-        let slidePosition = 0;
-        let slideIsShow = 4;
-        const slidesOffset = COL_3_WIDTH + GUTTER_X2;
+            sparePartsSlides = Array.prototype.slice.call(sparePartsSlides);
+            quantitySlides = sparePartsSlides.length;
+            slidePosition = 0;
+            slideIsShow = 4;
+            slidesOffset = COL_3_WIDTH + GUTTER_X2;
 
-        // initial slider
+            // initial slider
 
-        // check for navigation buttons show
-        if ( slideIsShow === quantitySlides ) {
-            sliderNavBlock.classList.add('displayNone');
+            // check for navigation buttons show
+            if ( slideIsShow === quantitySlides ) {
+                sliderNavBlock.classList.add('displayNone');
+            }
+            sparePartsSlider.style.width = quantitySlides * COL_3_WIDTH + quantitySlides * GUTTER_X2;
+            sparePartsSlides.forEach(function(currentSlide){
+                currentSlide.style.width = COL_3_WIDTH + 'px';
+                currentSlide.style.marginRight = GUTTER_X2 + 'px';
+            });
+
+            sparePartsSliderNextBtn.addEventListener('click', function(){
+                let sliderBlockNode = this.parentNode.parentNode;
+                nextSlide(sliderBlockNode);
+            });
+            sparePartsSliderPrevBtn.addEventListener('click', function(){
+                let sliderBlockNode = this.parentNode.parentNode;
+                prevSlide(sliderBlockNode);
+            });
         }
-        sparePartsSlider.style.width = quantitySlides * COL_3_WIDTH + quantitySlides * GUTTER_X2;
-        sparePartsSlides.forEach(function(currentSlide){
-            currentSlide.style.width = COL_3_WIDTH + 'px';
-            currentSlide.style.marginRight = GUTTER_X2 + 'px';
-        });
-
-        sparePartsSliderNextBtn.addEventListener('click', function(){
-            let sliderBlockNode = this.parentNode.parentNode;
-            nextSlide(sliderBlockNode);
-        });
-        sparePartsSliderPrevBtn.addEventListener('click', function(){
-            let sliderBlockNode = this.parentNode.parentNode;
-            prevSlide(sliderBlockNode);
-        });
-
         function nextSlide(sliderBlockNode) {
             const sparePartsSlider = sliderBlockNode.querySelector('.mySlider');
             console.log(sliderBlockNode);
@@ -415,40 +425,45 @@ window.onload = function () {
 
     function sliderBrands () {
         const brandsSliderBlock = document.querySelector('.brands__ratingBlock');
-        const brandsSlider = brandsSliderBlock.querySelector('.mySlider');
-        const sliderNavBlock = brandsSliderBlock.querySelector('.sliderNavBlock');
-        const brandsSliderNextBtn = brandsSliderBlock.querySelector('.sliderNavBlock__btn-next');
-        const brandsSliderPrevBtn = brandsSliderBlock.querySelector('.sliderNavBlock__btn-prev');
-        let brandsSlides = brandsSlider.querySelectorAll('.brandsList');
+        let slidePosition;
+        let slideIsShow;
+        let quantitySlides;
+        let slidesOffset;
+        if ( brandsSliderBlock ) {
+            const brandsSlider = brandsSliderBlock.querySelector('.mySlider');
+            const sliderNavBlock = brandsSliderBlock.querySelector('.sliderNavBlock');
+            const brandsSliderNextBtn = brandsSliderBlock.querySelector('.sliderNavBlock__btn-next');
+            const brandsSliderPrevBtn = brandsSliderBlock.querySelector('.sliderNavBlock__btn-prev');
+            let brandsSlides = brandsSlider.querySelectorAll('.brandsList');
 
-        brandsSlides = Array.prototype.slice.call(brandsSlides);
-        const quantitySlides = brandsSlides.length;
-        let slidePosition = 0;
-        let slideIsShow = 3;
-        const slidesOffset = COL_4_WIDTH + GUTTER_X2;
+            brandsSlides = Array.prototype.slice.call(brandsSlides);
+            const quantitySlides = brandsSlides.length;
+            let slidePosition = 0;
+            let slideIsShow = 3;
+            const slidesOffset = COL_4_WIDTH + GUTTER_X2;
 
-        // initial slider
+            // initial slider
 
-        // check for navigation buttons show
-        if ( slideIsShow === quantitySlides ) {
-            sliderNavBlock.classList.add('displayNone');
+            // check for navigation buttons show
+            if ( slideIsShow === quantitySlides ) {
+                sliderNavBlock.classList.add('displayNone');
+            }
+            brandsSlider.style.width = quantitySlides * COL_4_WIDTH + quantitySlides * GUTTER_X2;
+            brandsSlides.forEach(function(currentSlide){
+                currentSlide.style.width = COL_4_WIDTH + 'px';
+                currentSlide.style.minWidth = COL_4_WIDTH + 'px';
+                currentSlide.style.marginRight = GUTTER_X2 + 'px';
+            });
+
+            brandsSliderNextBtn.addEventListener('click', function(){
+                let sliderBlockNode = this.parentNode.parentNode;
+                nextSlide(sliderBlockNode);
+            });
+            brandsSliderPrevBtn.addEventListener('click', function(){
+                let sliderBlockNode = this.parentNode.parentNode;
+                prevSlide(sliderBlockNode);
+            });
         }
-        brandsSlider.style.width = quantitySlides * COL_4_WIDTH + quantitySlides * GUTTER_X2;
-        brandsSlides.forEach(function(currentSlide){
-            currentSlide.style.width = COL_4_WIDTH + 'px';
-            currentSlide.style.minWidth = COL_4_WIDTH + 'px';
-            currentSlide.style.marginRight = GUTTER_X2 + 'px';
-        });
-
-        brandsSliderNextBtn.addEventListener('click', function(){
-            let sliderBlockNode = this.parentNode.parentNode;
-            nextSlide(sliderBlockNode);
-        });
-        brandsSliderPrevBtn.addEventListener('click', function(){
-            let sliderBlockNode = this.parentNode.parentNode;
-            prevSlide(sliderBlockNode);
-        });
-
         function nextSlide(sliderBlockNode) {
             const brandsSlider = sliderBlockNode.querySelector('.mySlider');
             console.log(sliderBlockNode);

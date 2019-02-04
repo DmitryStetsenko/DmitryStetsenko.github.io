@@ -192,8 +192,8 @@ button, input {
   } // hover
   &-descrBlock {
     background: linear-gradient(to right, rgba(255,255,255,0.5) 0%,
-                                          rgba(255,255,255,1) 50%,
-                                          rgba(255,255,255,0.5) 100%);
+            rgba(255,255,255,1) 50%,
+            rgba(255,255,255,0.5) 100%);
     border-color: $colorYellow;
     color: $colorYellow;
     font-size: 13px;
@@ -202,6 +202,9 @@ button, input {
     right: 0;
     z-index: 10;
   } // descrBlock
+  &-center {
+    margin: 0 auto;
+  } // -center
 } // showMoreBtn
 
 .iconBtn {
@@ -264,6 +267,130 @@ button, input {
     } // __part
   } // cssIcon
 } // iconBtn
+
+.starsIcon {
+  $starIconWidth: 17px;
+  $starsIconColor: $colorRatingGreen;
+  display: block;
+  width: $starIconWidth;
+  svg {
+    fill: transparent;
+    stroke-width: 3px;
+    stroke: $starsIconColor;
+    &.fill {
+      fill: $starsIconColor;
+    } // -fill
+  } // svg
+  &-green {
+    $starsIconColor: $colorRatingGreen;
+    svg {
+      stroke: $starsIconColor;
+    } // svg
+    &Fill {
+      svg {
+        fill: $starsIconColor;
+      } // svg
+    } // -fill
+  } // green
+  &-yellow {
+    $starsIconColor: $colorRatingYellow;
+    svg {
+      stroke: $starsIconColor;
+    } // svg
+    &.Fill {
+      svg {
+        fill: $starsIconColor;
+      } // svg
+    } // -fill
+  } // yellow
+  &-red {
+    $starsIconColor: $colorRatingRed;
+    svg {
+      stroke: $starsIconColor;
+    } // svg
+    &.Fill {
+      svg {
+        fill: $starsIconColor;
+      } // svg
+    } // -fill
+  } // red
+} // startIcon
+
+.ratingCircle {
+  $svgSize: 36px;
+  $svgColor: $colorRatingGreen;
+  border-radius: 50%;
+  background: white;
+  min-height: $svgSize;
+  min-width: $svgSize;
+  position: relative;
+  height: $svgSize;
+  width: $svgSize;
+  &::before {
+    @include flex(center, center);
+    border-radius: 50%;
+    content: attr(data-value);
+    color: $colorDarkGray;
+    font-size: 13px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  } // before
+  svg {
+    height: auto;
+    width: 100%;
+    path {
+      fill: transparent;
+      stroke: $svgColor;
+      stroke-width:3;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      stroke-dasharray: 114px;
+      transition: stroke-dashoffset 1s;
+      &.static {
+        stroke: $colorBgLightGray;
+      } // dynamic
+    } // path
+  } // svg
+  &-green {
+    $svgColor: $colorRatingGreen;
+    svg {
+      path.dynamic {
+        stroke: $svgColor;
+      } // path
+    } // svg
+  } // -green
+  &-yellow {
+    $svgColor: $colorRatingYellow;
+    svg {
+      path.dynamic {
+        stroke: $svgColor;
+      } // path
+    } // svg
+  } // -yellow
+  &-red {
+    $svgColor: $colorRatingRed;
+    svg {
+      path.dynamic {
+        stroke: $svgColor;
+      } // path
+    } // svg
+  } // -red
+  &-bigger {
+    $svgSize: 50px;
+    $svgColor: $colorRatingGreen;
+    min-height: $svgSize;
+    min-width: $svgSize;
+    height: $svgSize;
+    width: $svgSize;
+    &::before {
+      font-size: 16px;
+    } // before
+  } // -bigger
+} // ratingCircle
 
 .closeBtn {
   $sizeIcon: 20px;
@@ -401,12 +528,11 @@ button, input {
 } // shevronIcon
 
 .filterBtn {
-  align-items: center;
+  @include flex(center, center);
   border-top: 1px solid $colorLightGray;
   border-bottom: 1px solid $colorLightGray;
   border-left: 1px solid $colorLightGray;
   color: $colorLightGray;
-  display: flex;
   height: 35px;
   padding: 0 20px;
   transition: background .3s;
@@ -432,6 +558,25 @@ button, input {
     background: $colorYellow;
     color: white;
   } //
+  &-new {
+    position: relative;
+    &::after {
+      $blockSize: 21px;
+      @include flex(center, center);
+      background: $colorRatingGreen;
+      border-radius: 50%;
+      content: attr(data-new);
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+      transform: translate(50%, -50%);
+      height: $blockSize;
+      width: $blockSize;
+    } // after
+  } // new
 } // filterBtn
 
 // sliders styles
@@ -705,6 +850,7 @@ button, input {
             } // innerText
           } // -popUpadditionalBlock
         } // mainBtn
+
       } // additionalBlock
     } // __content
     &-addReview {
@@ -824,6 +970,210 @@ button, input {
   padding: $inputPadding;
   width: $inputWidth;
 } // input
+
+// side bar widgets ------------------------------
+.widget {
+  // common properties
+  $widgetBackground: white;
+  $widgetHeight: 475px;
+  // header properties
+  $iconSize: 20px;
+  $iconColor: $colorDarkGray;
+  $titleColor: $colorDarkGray;
+
+  background: $widgetBackground;
+  border-radius: 3px;
+  border: 1px solid $colorLightGray;
+  min-height: $widgetHeight;
+  height: initial;
+  padding: 30px;
+  width: 100%;
+  &__header {
+    @include flex(center, flex-start);
+    margin-bottom: 30px;
+    &:hover {
+      .headerTitle {
+        &__text {
+          transform: translateX(-15%);
+        } // __text
+      } // headerTitle
+    } // hover
+    .headerIcon {
+      margin-right: 10px;
+      height: initial;
+      width: $iconSize;
+      svg {
+        width: 100%;
+        height: auto;
+        path {
+          fill: $iconColor;
+          fill-rule: evenodd;
+        } // path
+      } // svg
+      &-noFill {
+        svg {
+          path {
+            fill: transparent;
+            fill-rule: evenodd;
+            stroke: $iconColor;
+          } // path
+        } // svg
+      } // -noFill
+    } // headerIcon
+    .headerTitle {
+      max-width: 270px;
+      overflow: hidden;
+      position: relative;
+      &:after {
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 0) 0,
+                white 100%);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+      } // after
+      &__text {
+        color: $titleColor;
+        font-weight: normal;
+        transition: transform 1s;
+        white-space: nowrap;
+      } // __text
+    } // headerTitle
+  } // __header
+  .widgetContent {
+    .ratingList {
+      &__items {
+        margin-top: -30px;
+      } // __items
+      &__item {
+        $rowHeight: 90px;
+        $brandWidth: 50px;
+        $brandHeight: 20px;
+        border-bottom: 1px solid $colorLightGray;
+        &:last-child {
+          border-bottom: none;
+        } // last-child
+        a {
+          @include flex(center, space-between);
+          color: $colorDarkGray;
+          height: $rowHeight;
+          font-size: 14px;
+          position: relative;
+          text-decoration: none;
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background-size: 30px 30px;
+            background-image: linear-gradient(45deg, rgba(gray, 0.1) 25%,
+                    transparent 25%, transparent 50%,
+                    rgba(gray, 0.1) 50%, rgba(gray, 0.1) 75%,
+                    transparent 75%, transparent );
+            animation: barberpole .7s linear infinite;
+          } // before
+          &:hover {
+            &::before {
+              opacity: 1;
+            } // before
+            .infoBlock {
+              &__title {
+                span {
+                  color: $colorYellow;
+                  &::before {
+                    width: 100%;
+                  } // before
+                } // span
+              } // __title
+              &__feedBack {
+                .feedBack {
+                  svg {
+                    fill: $colorRatingGreen;
+                  } // svg
+                  &::after {
+                    content: attr(data-value);
+                    color: $colorDarkGray;
+                    font-size: 12px;
+                    margin-right: 15px;
+                  } // after
+                } // feedBack
+              } // __feedBack
+            } // infoBlock
+          } // hover
+          .count {
+            color: $colorCountTxt;
+            font-size: 16px;
+            font-weight: bold;
+            padding-right: 15px;
+          } // count
+          .brandLogo {
+            height: $brandHeight;
+            min-width: $brandWidth;
+            width: $brandWidth;
+          } // brandLogo
+          .infoBlock {
+            padding: 0 15px;
+            &__title {
+              @include flex(flex-start, flex-start);
+              flex-direction: column;
+              margin-bottom: 15px;
+              span {
+                position: relative;
+                transition: color .3s;
+                &::before {
+                  @include makeUnderline($colorYellow, -1px);
+                } // before
+                &:last-child {
+                  margin-top: 5px;
+                } // last-child
+              } // span
+            } // __title
+            &__feedBack {
+              @include flex(center, flex-start);
+              .feedBack {
+                &:last-child {
+                  &::after {
+                    margin-right: 0;
+                  } // after
+                } // last-child
+                svg {
+                  transition: fill .3s;
+                  fill: $colorCountTxt;
+                } // svg
+                &::after {
+                  content: attr(data-value);
+                  color: $colorDarkGray;
+                  font-size: 12px;
+                  margin-right: 15px;
+                } // after
+                &-users {
+                  svg {
+                    width: 12px;
+                  } // svg
+                } // -users
+                &-voted {
+                  svg {
+                    width: 8px;
+                  } // svg
+                } // -voted
+              } // feedBack
+            } // __feedBack
+          } // infoBlock
+        } // a
+      } // __item
+    } // ratingList
+  } // widgetContent
+} // widget
+// ===============================================
 
 
 
