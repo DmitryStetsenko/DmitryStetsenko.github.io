@@ -1,11 +1,13 @@
 'use strict';
 
 window.onload = function () {
+    const doc = document;
+
     const RATING_STROKE_LENGTH = 114,
           RATING_COLOR_GREEN = '#7eae3e',
           RATING_COLOR_YELLOW = '#efb428',
           RATING_COLOR_RED = '#e73e4e';
-    
+
     const SCREEN_MAX_WIDTH = document.querySelector('.wrapper').clientWidth;
     const GUTTER_X2 = 30;
     const COL_WIDTH = SCREEN_MAX_WIDTH / 12 - GUTTER_X2;
@@ -13,7 +15,7 @@ window.onload = function () {
     const COL_4_WIDTH = ( COL_WIDTH * 4 ) + ( GUTTER_X2 * 3 );
 
     menuOpened ();
-    
+
     headerMenuScrollTo ();
 
     showPopAddReview ();
@@ -35,7 +37,7 @@ window.onload = function () {
     footerMenuScrollTo ();
 
     sliderSpareParts ();
-    
+
     sliderBrands ();
 
     closePopUpWindow ();
@@ -230,7 +232,7 @@ window.onload = function () {
             }, 1000)
         });
     } // showAllComparison
-    
+
     function showAllSEOText () {
         const seoContentBlock = document.querySelector('.seoTexts');
         if (seoContentBlock) {
@@ -314,7 +316,7 @@ window.onload = function () {
             });
         } // for of
     } // showAllFooterMenuItems
-    
+
     function headerMenuScrollTo () {
         const headerMenuTitle = document.querySelectorAll('.headerMenu__item-title .h4Title a');
         let currentLinkHref;
@@ -340,86 +342,83 @@ window.onload = function () {
     } // footerMenuScrollTo
 
 
-// sliders -------------------------------------------------------    
+// sliders -------------------------------------------------------
     function sliderSpareParts () {
-        const sparePartsSliderBlock = document.querySelector('.spareParts__sliderBlock');
+        const sliderBlock = document.querySelector('.spareParts__sliderBlock');
         let slidePosition;
         let slideIsShow;
         let quantitySlides;
         let slidesOffset;
-        if (sparePartsSliderBlock){
-            const sparePartsSlider = sparePartsSliderBlock.querySelector('.mySlider');
-            const sliderNavBlock = sparePartsSliderBlock.querySelector('.sliderNavBlock');
-            const sparePartsSliderNextBtn = sparePartsSliderBlock.querySelector('.sliderNavBlock__btn-next');
-            const sparePartsSliderPrevBtn = sparePartsSliderBlock.querySelector('.sliderNavBlock__btn-prev');
-            let sparePartsSlides = sparePartsSlider.querySelectorAll('.sparePartsSlider__sliderItem');
+        let index = 1;
+        if (sliderBlock){
+            const slider = sliderBlock.querySelector('.mySlider');
+            const sliderNavBlock = sliderBlock.querySelector('.sliderNavBlock');
+            const sliderNextBtn = sliderBlock.querySelector('.sliderNavBlock__btn-next');
+            const sliderPrevBtn = sliderBlock.querySelector('.sliderNavBlock__btn-prev');
+            let slides = slider.querySelectorAll('.slides');
 
-            sparePartsSlides = Array.prototype.slice.call(sparePartsSlides);
-            quantitySlides = sparePartsSlides.length;
+            slides = Array.prototype.slice.call(slides);
+            quantitySlides = slides.length;
             slidePosition = 0;
             slideIsShow = 4;
             slidesOffset = COL_3_WIDTH + GUTTER_X2;
 
             // initial slider
 
+            // offset slider on 1 slide
+            slider.style.transform = `translateX(-${slidesOffset * index}px)`;
+
             // check for navigation buttons show
             if ( slideIsShow === quantitySlides ) {
                 sliderNavBlock.classList.add('displayNone');
             }
-            sparePartsSlider.style.width = quantitySlides * COL_3_WIDTH + quantitySlides * GUTTER_X2;
-            sparePartsSlides.forEach(function(currentSlide){
+            slider.style.width = quantitySlides * COL_3_WIDTH + quantitySlides * GUTTER_X2;
+            slides.forEach(function(currentSlide){
                 currentSlide.style.width = COL_3_WIDTH + 'px';
                 currentSlide.style.marginRight = GUTTER_X2 + 'px';
             });
 
-            sparePartsSliderNextBtn.addEventListener('click', function(){
+            sliderNextBtn.addEventListener('click', function(){
                 let sliderBlockNode = this.parentNode.parentNode;
                 nextSlide(sliderBlockNode);
             });
-            sparePartsSliderPrevBtn.addEventListener('click', function(){
+            sliderPrevBtn.addEventListener('click', function(){
                 let sliderBlockNode = this.parentNode.parentNode;
                 prevSlide(sliderBlockNode);
             });
         }
         function nextSlide(sliderBlockNode) {
-            const sparePartsSlider = sliderBlockNode.querySelector('.mySlider');
-            console.log(sliderBlockNode);
-            console.log('next slide');
-            slidePosition ++;
-            slideIsShow ++;
-            console.log('slidePosition-' + slidePosition);
-            console.log('slideIsShow-' + slideIsShow);
-            if ( !(slideIsShow > quantitySlides) ) {
-                sparePartsSlider.style.transform = `translateX(-${slidesOffset * slidePosition}px)`;
-            } else {
-                // slidePosition --;
-                // slideIsShow --;
-                sparePartsSlider.style.transform = `translateX(-${slidesOffset * slidePosition + 50}px)`;
-                setTimeout(function(){
-                    sparePartsSlider.style.transform = `translateX(-${slidesOffset * slidePosition}px)`;
-                }, 500);
-                console.log('end of slides');
-                // console.log(sparePartsSlider.firstElementChild);
-                // sparePartsSlider.appendChild(sparePartsSlider.firstElementChild);
-            }
+            const slider = sliderBlockNode.querySelector('.mySlider');
+            let slides = slider.querySelectorAll('.slides');
+            let max = slides.length;
+            let size = slidesOffset;
+
+            slider.style.transition = 'transform .3s ease-in-out';
+            ( index + slideIsShow ) >= max ? false : index++;
+            slider.style.transform = `translateX(-${slidesOffset * index}px)`;
+            jump(sliderBlockNode);
         }
         function prevSlide(sliderBlockNode) {
-            const sparePartsSlider = sliderBlockNode.querySelector('.mySlider');
-            console.log('prev slide');
-            slidePosition --;
-            slideIsShow --;
-            console.log('slidePosition-' + slidePosition);
-            console.log('slideIsShow-' + slideIsShow);
-            if ( !(slidePosition < 0) ) {
-                sparePartsSlider.style.transform = `translateX(-${slidesOffset * slidePosition}px)`;
-            } else {
-                slidePosition = 0;
-                slideIsShow ++;
-                sparePartsSlider.style.transform = `translateX(50px)`;
-                setTimeout(function(){
-                    sparePartsSlider.style.transform = `translateX(0)`;
-                }, 500);
-            }
+            const slider = sliderBlockNode.querySelector('.mySlider');
+            let slides = slider.querySelectorAll('.slides');
+            let size = slidesOffset;
+
+            slider.style.transition = 'transform .3s ease-in-out';
+            index <= 0 ? false : index--;
+            slider.style.transform = `translateX(-${slidesOffset * index}px)`;
+            jump(sliderBlockNode);
+        }
+        function jump(sliderBlockNode) {
+            const slider = sliderBlockNode.querySelector('.mySlider');
+            let slides = slider.querySelectorAll('.slides');
+            sliderBlock.addEventListener('transitionend', function(){
+                console.log(index + slideIsShow - 1);
+                console.log(slides[( index + slideIsShow ) - 1].classList.contains('firstClone'));
+                slides[( index + slideIsShow )-1].classList.contains('firstClone') ? index = 1 : index;
+                slides[index].classList.contains('lastClone') ? index = 1 : index;
+                slider.style.transition = 'none';
+                slider.style.transform = `translateX(-${slidesOffset * index}px)`;
+            });
         }
     } // sliderSpareParts
 

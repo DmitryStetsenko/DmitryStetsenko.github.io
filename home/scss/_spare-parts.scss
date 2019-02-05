@@ -1,6 +1,6 @@
 #sparePartsPage {
 
-  // pageHeaderBlock --------------------------
+  // pageHeaderBlock ---------------------------
   .pageHeaderBlock {
     @include flex(center, flex-start);
     margin-bottom: $outerBlockMargin;
@@ -202,18 +202,6 @@
   // manufacturerBlock -------------------------
   .manufacturer {
     margin-bottom: $outerBlockMargin;
-    &__titleBlock {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 30px;
-    } // __titleBlock
-    &__title {
-    } // __title
-    &Filter {
-      align-items: center;
-      display: flex;
-    } // sparePartsFilter
     &__content {
       background: $colorBgLightGray;
       border-radius: $mainBorderRadius;
@@ -296,17 +284,9 @@
   } // manufacturerBlock
   // ===========================================
 
-  // comparison block -------------------------
+  // comparisonBlock ---------------------------
   .comparisonBlock {
     margin-bottom: $outerBlockMargin;
-    &__header {
-      align-items: flex-start;
-      display: flex;
-      justify-content: space-between;
-      .blockTitle {
-        margin-bottom: 30px;
-      } // blockTitle
-    } // __header
     &__mainContent {
       @include flex(flex-start, flex-start);
     } // __mainContent
@@ -318,9 +298,6 @@
       padding: 15px;
       width: $col8Width;
     } // __content
-    &__widget {
-      width: $col4Width;
-    } // __widget
   } // comparisonBlock
   .comparisonBlockItems {
     $blockWidth: 100%;
@@ -457,6 +434,12 @@
       } // hover
     } // comparisonBlockItem
   } // comparisonBlockItems
-  // ==========================================
+  // ===========================================
+
+  // reviewsBlock ------------------------------
+  .reviewsBlock {
+    @include flex(flex-start, space-between);
+    margin-bottom: $outerBlockMargin;
+  } // reviewBlock;
 
 } // sparePartsPage

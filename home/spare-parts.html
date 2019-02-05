@@ -247,10 +247,12 @@
             </section>
             <!-- /.pageHeaderBlock -->
             <section class="manufacturer">
-                <section class="manufacturer__titleBlock">
-                    <div class="h2Title manufacturer__title">Производители</div>
-                    <!-- /.manufacturer__title -->
-                    <div class="manufacturerFilter">
+                <div class="blockHeader">
+                    <div class="h2Title blockTitle">
+                        <span class="blockTitle__text">Производители</span>
+                    </div>
+                    <!-- /.blockTitle -->
+                    <div class="blockHeader__filterBtn">
                         <button class="filterBtn filterBtn-popular filterBtn-active">Популярное</button>
                         <!-- /filterBtn-popular -->
                         <button class="filterBtn filterBtn-recommended">Рекомендуемое</button>
@@ -258,9 +260,9 @@
                         <button class="filterBtn filterBtn-new" data-new="5">Новые</button>
                         <!-- /filterBtn-seasonal -->
                     </div>
-                    <!-- /.manufacturerFilter -->
-                </section>
-                <!-- /.manufacturer__titleBlock -->
+                    <!-- /.blockHeader__filterBtn -->
+                </div>
+                <!-- /.blockHeader -->
                 <div class="manufacturer__content">
                     <div class="manufacturerList">
                         <div class="manufacturerList__items">
@@ -733,11 +735,13 @@
             </section>
             <!-- /.manufacturer -->
             <section class="comparisonBlock" id="comparisonBlock">
-                <div class="comparisonBlock__header">
-                    <div class="h2Title blockTitle">Сравнения</div>
-                    <!-- /.comparisonBlockHeader__title -->
+                <div class="blockHeader">
+                    <div class="h2Title blockTitle">
+                        <span class="blockTitle__text">Сравнения</span>
+                    </div>
+                    <!-- /.blockTitle -->
                 </div>
-                <!-- /.comparisonBlockHeader -->
+                <!-- /.blockHeader -->
                 <div class="comparisonBlock__mainContent">
                     <div class="comparisonBlock__content">
                         <div class="comparisonBlockItems">
@@ -1085,7 +1089,7 @@
                         <!-- /.showMoreBtn-center -->
                     </div>
                     <!-- /.comparisonBlock__content -->
-                    <aside class="comparisonBlock__widget">
+                    <aside class="widgetsArea">
                         <section class="widget widget-rating">
                             <div class="widget__header">
                                 <div class="headerIcon headerIcon-noFill">
@@ -1282,11 +1286,299 @@
                         </section>
                         <!-- /.widget widget-rating -->
                     </aside>
-                    <!-- /.comparisonBlock__widget -->
+                    <!-- /.widgetsArea -->
                 </div>
                 <!-- /.comparisonBlock__mainContent -->
             </section>
             <!-- /.comparisonBlock -->
+            <section class="reviewsBlock">
+                <div class="contentArea">
+                    <div class="blockHeader">
+                        <div class="h3Title blockTitle">
+                            <span class="blockTitle__icon">
+                                <svg viewBox="0 0 17 17"><path d="M390.6 1434h13.81a1.59 1.59 0 0 1 1.593 1.59v9.56a1.592 1.592 0 0 1-1.593 1.6h-2.13v4.25l-6.9-4.25h-4.78a1.592 1.592 0 0 1-1.593-1.6v-9.56a1.59 1.59 0 0 1 1.593-1.59zm.531 10.62h4.781l4.249 2.66.531-2.66h3.187v-8.49h-12.753v8.49zm4.979-3.62v-1.78h-1.784v1.78h1.784zm3.612 0v-1.78h-1.784v1.78h1.784z" transform="translate(-389 -1434)"/></svg>
+                            </span>
+                            <span class="blockTitle__text">Отзывы</span>
+                        </div>
+                        <!-- /.blockTitle -->
+                        <div class="blockHeader__filterBtn">
+                            <button class="filterBtn filterBtn-popular filterBtn-active">Новые</button>
+                            <!-- /filterBtn-popular -->
+                            <button class="filterBtn filterBtn-recommended">Полезные</button>
+                            <!-- /filterBtn-forTO -->
+                        </div>
+                        <!-- /.blockHeader__filterBtn -->
+                    </div>
+                    <!-- /.blockHeader -->
+                    <article class="review">
+                        <header class="review__header">
+                            <div class="breadCrumbs">
+                                <span class="breadCrumbs__item">Kayaba</span>
+                                <span class="breadCrumbs__separator">></span>
+                                <span class="breadCrumbs__item">Пружины</span>
+                            </div>
+                            <!-- /.breadCrumbs -->
+                        </header>
+                        <!-- /.review__header -->
+                        <main class="review__content">
+                            <div class="infoBlock infoBlock-userInfo">
+                                <figure class="userInfo">
+                                    <div class="userInfo__photo userInfo__photo-johnDoe">
+                                        <img src="img/john_doe_photo.svg" alt="user photo">
+                                    </div>
+                                    <!-- /.userInfo__photo -->
+                                    <figcaption class="userInfo__name" 
+                                                data-last-visit="вчера в 17:30"
+                                    >
+                                    NickName    
+                                    </figcaption>
+                                    <!-- /.userInfo__name -->
+                                </figure>
+                                <!-- /.userInfo -->
+                                <div class="userAssessment">
+                                    <div class="userAssessment__item">
+                                        <div class="ratingsBlock">
+                                            <div class="ratingsBlock__item ratingsBlock__item-title">Комфортность:</div>
+                                            <!-- /.ratingsBlock__item-title -->
+                                            <div class="ratingsBlock__item ratingsBlock__item-stars">
+                                                <div class="starsIconBlock">
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                </div>
+                                                <!-- /.startsIconBlock -->
+                                            </div>
+                                            <!-- /.ratingsBlock__item-start -->
+                                        </div>
+                                        <!-- /.ratingsBlock -->
+                                        <div class="ratingsBlock">
+                                            <div class="ratingsBlock__item ratingsBlock__item-title">Долговечность</div>
+                                            <!-- /.ratingsBlock__item-title -->
+                                            <div class="ratingsBlock__item ratingsBlock__item-stars">
+                                                <div class="starsIconBlock">
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                </div>
+                                                <!-- /.startsIconBlock -->
+                                            </div>
+                                            <!-- /.ratingsBlock__item-start -->
+                                        </div>
+                                        <!-- /.ratingsBlock -->
+                                        <div class="ratingsBlock">
+                                            <div class="ratingsBlock__item ratingsBlock__item-title">Качество:</div>
+                                            <!-- /.ratingsBlock__item-title -->
+                                            <div class="ratingsBlock__item ratingsBlock__item-stars">
+                                                <div class="starsIconBlock">
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                </div>
+                                                <!-- /.startsIconBlock -->
+                                            </div>
+                                            <!-- /.ratingsBlock__item-start -->
+                                        </div>
+                                        <!-- /.ratingsBlock -->
+                                    </div>
+                                    <!-- /.userAssessment__item -->
+                                    <div class="userAssessment__item userAssessment__item-average">
+                                        <div class="ratingsBlock">
+                                            <div class="ratingsBlock__item ratingsBlock__item-title" data-value="4">Оценка</div>
+                                            <!-- /.ratingsBlock__item-title -->
+                                            <div class="ratingsBlock__item ratingsBlock__item-stars">
+                                                <div class="starsIconBlock">
+                                    <span class="starsIconBlock__icon">
+                                        <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                            <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                        </svg>
+                                    </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                        <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                            <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                        </svg>
+                                    </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                        <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                            <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                        </svg>
+                                    </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                    <span class="starsIconBlock__icon">
+                                                <svg viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                                    <!--/.starsIconBlock__icon-->
+                                                </div>
+                                                <!-- /.startsIconBlock -->
+                                            </div>
+                                            <!-- /.ratingsBlock__item-start -->
+                                        </div>
+                                        <!-- /.ratingsBlock-averageRating -->
+                                    </div>
+                                    <!-- /.userAssessment__item-average -->
+                                </div>
+                                <!-- /.userAssessment -->
+                            </div>
+                            <!-- /.infoBlock infoBlock-userInfo-->
+                            <div class="infoBlock infoBlock-userDescription">
+                                <p class="userDescription">
+                                    Когда лопнул на моем авто правый салентблок, была мысль поставить оригинал, но цена
+                                    кусается, пошел в поисках замены. Знакомые которые обслуживают мою машинку порекомендовали Jikiu,
+                                    говорят ставят недавно, проблем не возникает, но качество данных...
+                                    Когда лопнул на моем авто правый салентблок, была мысль поставить оригинал, но цена
+                                    кусается, пошел в поисках замены. Знакомые которые обслуживают мою машинку порекомендовали Jikiu,
+                                    говорят ставят недавно, проблем не возникает, но качество данных...
+                                </p>
+                                <button class="showMoreBtn showMoreBtn-descrBlock">Подробнее</button>
+                            </div>
+                            <!-- /.infoBlock infoBlock-userDescription -->
+                            <div class="infoBlock infoBlock-mediaData">
+                                <a href="#" target="_blank" class="mediaItem">
+                                    <img src="img/user-media-item1.jpg" alt="">
+                                </a>
+                                <!-- /.mediaItem -->
+                                <a href="#" target="_blank" class="mediaItem">
+                                    <img src="img/user-media-item2.jpg" alt=""></a>
+                                <!-- /.mediaItem -->
+                                <a href="#" target="_blank" class="mediaItem">
+                                    <img src="img/user-media-item3.jpg" alt="">
+                                </a>
+                                <!-- /.mediaItem -->
+                                <a href="#" target="_blank" class="mediaItem">
+                                    <img src="img/user-media-item4.jpg" alt="">
+                                </a>
+                                <!-- /.mediaItem -->
+                                <a href="#" target="_blank" class="mediaItem mediaItem-video">
+                                    <img src="img/user-media-item5.jpg" alt="">
+                                    <span class="videoIcon">
+                                        <img src="img/youtube_icon.png" alt="You Tube logo image">
+                                    </span>
+                                    <!-- /.videoIcon -->
+                                </a>
+                                <!-- /.mediaItem -->
+                            </div>
+                            <!-- /.infoBlock infoBlock-mediaData -->
+                            <div class="infoBlock infoBlock-advantages">
+                                <div class="advantages advantages-positive">
+                                    <div class="advantages__title">Достоинство:</div>
+                                    <!-- /.advantages__title -->
+                                    <div class="advantages__value">От 60 и выше отлично рулится и мягко</div>
+                                    <!-- /.advantages__value -->
+                                </div>
+                                <!-- /.advantages advantages-positive -->
+                                <div class="advantages advantages-negative">
+                                    <div class="advantages__title">Недостатки:</div>
+                                    <!-- /.advantages__title -->
+                                    <div class="advantages__value">Чуть жестче на малых скоростях</div>
+                                    <!-- /.advantages__value -->
+                                </div>
+                                <!-- /.advantages-negative -->
+                            </div>
+                            <!-- /.infoBlock infoBlock-advantages -->
+                        </main>
+                        <!-- /.review__content -->
+                        <footer class="review__footer"></footer>
+                        <!-- /.review__footer -->
+                        <section class="addComment"></section>
+                        <!-- /.addComment -->
+                    </article>
+                    <!-- /.review -->
+                </div>
+                <!-- /.contentArea -->
+                <aside class="widgetsArea"></aside>
+                <!-- /.widgetsArea -->
+            </section>
+            <!-- /.reviewsBlock -->
         </div>
         <!-- /.wrapper -->
     </main>
