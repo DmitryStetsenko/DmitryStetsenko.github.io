@@ -519,7 +519,8 @@ button, input {
 
 .review {
   border-radius: 3px;
-  border: 1px solid #c1c7d0; }
+  border: 1px solid #c1c7d0;
+  margin-bottom: 30px; }
   .review__header {
     background: #f6f6f6;
     padding: 10px 15px; }
@@ -736,7 +737,7 @@ button, input {
             height: 18px;
             width: 18px; }
         .review__content .infoBlock-advantages .advantages__value {
-          color: #6f7786; }
+          color: #8a939f; }
         .review__content .infoBlock-advantages .advantages-positive .advantages__title:before {
           background: #efb428;
           content: '+'; }
@@ -745,6 +746,137 @@ button, input {
           content: '-';
           font-size: 26px;
           padding-bottom: 4px; }
+      .review__content .infoBlock-carInfo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #2c333d;
+        font-size: 15px; }
+        .review__content .infoBlock-carInfo .carInfo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 15px; }
+          .review__content .infoBlock-carInfo .carInfo:last-child {
+            margin-right: 0; }
+          .review__content .infoBlock-carInfo .carInfo__title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 7px; }
+            .review__content .infoBlock-carInfo .carInfo__title span {
+              display: block; }
+            .review__content .infoBlock-carInfo .carInfo__title .titleIcon {
+              margin-right: 7px; }
+              .review__content .infoBlock-carInfo .carInfo__title .titleIcon svg {
+                fill: #8a939f;
+                fill-rule: evenodd; }
+            .review__content .infoBlock-carInfo .carInfo__title .titleText {
+              color: #8a939f; }
+          .review__content .infoBlock-carInfo .carInfo__data {
+            color: #2c333d; }
+          .review__content .infoBlock-carInfo .carInfo-model .carInfo__title .titleIcon {
+            width: 25px; }
+          .review__content .infoBlock-carInfo .carInfo-mileage .carInfo__title .titleIcon {
+            width: 20px; }
+          .review__content .infoBlock-carInfo .carInfo-vinCode .carInfo__title .titleIcon {
+            width: 14px; }
+  .review__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #c1c7d0;
+    padding: 10px 15px; }
+    .review__footer .userAction {
+      margin-right: 25px; }
+      .review__footer .userAction:last-child {
+        margin-right: 0; }
+      .review__footer .userAction .userActionBtn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #4991bf; }
+        .review__footer .userAction .userActionBtn span {
+          display: block; }
+        .review__footer .userAction .userActionBtn__icon {
+          margin-right: 5px;
+          width: 25px; }
+          .review__footer .userAction .userActionBtn__icon svg {
+            fill: #4991bf;
+            fill-rule: evenodd; }
+        .review__footer .userAction .userActionBtn__text {
+          border-bottom: 1px dotted #4991bf;
+          font-size: 14px; }
+        .review__footer .userAction .userActionBtn-edit .userActionBtn__text {
+          border-bottom: 1px solid #4991bf; }
+      .review__footer .userAction .reviewUtility {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        .review__footer .userAction .reviewUtility__title {
+          color: #2c333d;
+          font-size: 14px;
+          margin-right: 10px;
+          white-space: nowrap; }
+        .review__footer .userAction .reviewUtility__feedBack {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .review__footer .userAction .reviewUtility__feedBack .feedBackBtn {
+            border: 2px solid transparent;
+            border-radius: 3px;
+            font-size: 11px;
+            height: 25px;
+            margin-right: 10px;
+            position: relative;
+            width: 40px; }
+            .review__footer .userAction .reviewUtility__feedBack .feedBackBtn:last-child {
+              margin-right: 0; }
+            .review__footer .userAction .reviewUtility__feedBack .feedBackBtn::after {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              color: white;
+              content: attr(data-utility);
+              font-size: 10px;
+              position: absolute;
+              transform: translate(50%, -50%);
+              top: 0;
+              right: 0;
+              height: 14px;
+              width: 14px; }
+            .review__footer .userAction .reviewUtility__feedBack .feedBackBtn-yes {
+              border-color: #efb428;
+              color: #efb428; }
+              .review__footer .userAction .reviewUtility__feedBack .feedBackBtn-yes::after {
+                background: #efb428; }
+            .review__footer .userAction .reviewUtility__feedBack .feedBackBtn-no {
+              border-color: #2c333d;
+              color: #2c333d; }
+              .review__footer .userAction .reviewUtility__feedBack .feedBackBtn-no::after {
+                background: #2c333d; }
+      .review__footer .userAction .source {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-decoration: none; }
+        .review__footer .userAction .source__title {
+          border-bottom: 1px solid #4991bf;
+          color: #4991bf;
+          font-size: 12px;
+          margin-right: 5px; }
+        .review__footer .userAction .source__logo {
+          height: 23px;
+          width: 23px; }
+      .review__footer .userAction .reviewLink {
+        height: 16px;
+        width: 16px; }
+        .review__footer .userAction .reviewLink svg {
+          fill: #8a939f;
+          fill-rule: evenodd; }
+      .review__footer .userAction .reviewStatus {
+        width: 17px; }
 
 .popUpWindowBlock .overlay {
   background: black;

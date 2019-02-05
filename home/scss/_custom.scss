@@ -660,6 +660,7 @@ button, input {
 
   border-radius: $mainBorderRadius;
   border: 1px solid $colorLightGray;
+  margin-bottom: 30px;
   &__header {
     background: $colorBgLightGray;
     padding: $paddingHeader;
@@ -927,7 +928,7 @@ button, input {
             } // before
           } // __title
           &__value {
-            color: $colorCountTxt;
+            color: $colorColName;
           } // __value
           &-positive {
             .advantages__title {
@@ -949,10 +950,176 @@ button, input {
           } // -positive
         } // advantages
       } // -advantages
+      &-carInfo {
+        @include flex(center, flex-start);
+        color: $colorDarkGray;
+        font-size: 15px;
+        .carInfo {
+          @include flex(center, center);
+          margin-right: 15px;
+          &:last-child {
+            margin-right: 0;
+          } // last-child
+          &__title {
+            @include flex(center, center);
+            margin-right: 7px;
+            span {
+              display: block;
+            } // span
+            .titleIcon {
+              margin-right: 7px;
+              svg {
+                fill: $colorColName;
+                fill-rule: evenodd;
+              } // svg
+            } // titleIcon
+            .titleText {
+              color: $colorColName;
+            } // titleText
+          } // __title
+          &__data {
+            color: $colorDarkGray;
+          } // __data
+          &-model {
+            .carInfo__title {
+              .titleIcon {
+                width: 25px;
+              } // titleIcon
+            } // carInfo__title
+          } // -model
+          &-mileage {
+            .carInfo__title {
+              .titleIcon {
+                width: 20px;
+              } // titleIcon
+            } // carInfo__title
+          } // -mileage
+          &-vinCode {
+            .carInfo__title {
+              .titleIcon {
+                width: 14px;
+              } // titleIcon
+            } // carInfo__title
+          } // -vinCode
+        } // carInfo
+      } // carInfo
     } // innerBlock
   } // __content
   &__footer {
-
+    @include flex(center, space-between);
+    border-top: 1px solid $colorLightGray;
+    padding: $paddingFooter;
+    .userAction {
+      margin-right: 25px;
+      &:last-child {
+        margin-right: 0;
+      } // last-child
+      .userActionBtn {
+        $iconSize: 25px;
+        $iconColor: $colorLinkAside;
+        @include flex(center, flex-start);
+        color: $colorLinkAside;
+        span {
+          display: block;
+        } // span
+        &__icon {
+          margin-right: 5px;
+          width: $iconSize;
+          svg {
+            fill: $iconColor;
+            fill-rule: evenodd;
+          } // svg
+        } // __icon
+        &__text {
+          border-bottom: 1px dotted $colorLinkAside;
+          font-size: 14px;
+        } // __text
+        &-edit {
+          .userActionBtn__text {
+            border-bottom: 1px solid $colorLinkAside;
+          } // userActionBtn__text
+        } // edit
+      } // userActionBtn
+      .reviewUtility {
+        @include flex(center, flex-start);
+        &__title {
+          color: $colorDarkGray;
+          font-size: 14px;
+          margin-right: 10px;
+          white-space: nowrap;
+        } // __title
+        &__feedBack {
+          @include flex(center, center);
+          .feedBackBtn {
+            border: 2px solid transparent;
+            border-radius: $mainBorderRadius;
+            font-size: 11px;
+            height: 25px;
+            margin-right: 10px;
+            position: relative;
+            width: 40px;
+            &:last-child {
+              margin-right: 0;
+            } // last-child
+            &::after {
+              @include flex(center, center);
+              border-radius: 50%;
+              color: white;
+              content: attr(data-utility);
+              font-size: 10px;
+              position: absolute;
+              transform: translate(50%, -50%);
+              top: 0;
+              right: 0;
+              height: 14px;
+              width: 14px;
+            } // after
+            &-yes {
+              border-color: $colorYellow;
+              color: $colorYellow;
+              &::after {
+                background: $colorYellow;
+              } // after
+            } // -yes
+            &-no {
+              border-color: $colorDarkGray;
+              color: $colorDarkGray;
+              &::after {
+                background: $colorDarkGray;
+              } // after
+            } // -no
+          } // feedBackBtn
+        } // __feedBack
+      } // reviewUtility
+      .source {
+        $imgSize: 23px;
+        @include flex(center, flex-start);
+        text-decoration: none;
+        &__title {
+          border-bottom: 1px solid $colorLinkAside;
+          color: $colorLinkAside;
+          font-size: 12px;
+          margin-right: 5px;
+        } // __title
+        &__logo {
+          height: 23px;
+          width: 23px;
+        } // __logo
+      } // source
+      .reviewLink {
+        $iconColor: $colorColName;
+        $iconSize: 16px;
+        height: $iconSize;
+        width: $iconSize;
+        svg {
+          fill: $iconColor;
+          fill-rule: evenodd;
+        } // svg
+      } // reviewLink
+      .reviewStatus {
+        width: 17px;
+      } // reviewStatus
+    } // userAction
   } // __footer
   .addComment {
 
