@@ -1124,116 +1124,6 @@
     } // hover
   } // articleTab
 } // magazine
-.activityTape {
-  background: $colorBgLightGray;
-  border-radius: 3px;
-  border: 1px solid $colorLightGray;
-  min-height: 440px;
-  height: 440px;
-  padding: 30px;
-  width: $col4Width;
-  .activityTapeHeader {
-    align-items: center;
-    display: flex;
-    margin-bottom: 30px;
-    &__icon {
-      margin-right: 10px;
-      height: 20px;
-      width: 20px;
-      svg {
-        width: 100%;
-        height: auto;
-        path {
-          fill: #2c333d;
-          fill-rule: evenodd;
-        } // path
-      } // svg
-    } // __icon
-    &__text {
-      font-weight: normal;
-    } // __text
-  } // activityTapeHeader
-  &__eventBlock {
-    @include customScroll();
-    overflow-y: scroll;
-    padding-right: 10px;
-    max-height: 85%;
-    .event {
-      border-bottom: 1px solid $colorLightGray;
-      margin-bottom: 20px;
-      &__header {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-bottom: 10px;
-      } // header
-      &__headerThumbnail {
-        $headerThumbnailSize: 35px;
-
-        display: flex;
-        align-items: center;
-        background: white;
-        border-radius: 3px;
-        border: 1px solid white;
-        margin-right: 10px;
-        overflow: hidden;
-        height: $headerThumbnailSize;
-        width: $headerThumbnailSize;
-      } // __headerThumbnail
-      &__headerNameDate {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin-right: 10px;
-        p {
-          display: inline-block;
-          font-size: 15px;
-          font-weight: bold;
-          color: $colorGray;
-          margin-bottom: 5px;
-          position: relative;
-          transition: color .3s;
-          &::before {
-            background: $colorYellow;
-            content: '';
-            display: block;
-            height: 1px;
-            position: absolute;
-            transition: width .3s;
-            bottom: -1px;
-            width: 0;
-          } // before
-          &:hover {
-            cursor: pointer;
-            color: $colorYellow;
-            &::before {
-              width: 100%;
-            } // before
-          } // hover
-        } // p
-        time {
-          font-size: 13px;
-          font-weight: normal;
-          color: $colorCountTxt;
-        }
-      } // __headerNameDate
-      &__content {
-        margin-bottom: 15px;
-        p {
-          font-size: 15px;
-          line-height: 1.2em;
-        } // p
-        a {
-          color: $colorLinkAside;
-        } // a
-      } // __content
-      &__addReview {
-        margin-bottom: 15px;
-      } // __addReview
-    } // events
-  } // __eventBlock
-} // activityTape
 // ==========================================
 
 // comparison block -------------------------
@@ -1408,62 +1298,92 @@
 
 // footer -----------------------------------
 .siteFooter {
-  .siteVersionBtn {
-    padding: 5px 15px;
-    border-radius: 3px;
-    position: absolute;
-    transition: box-shadow .3s;
-    top: -50px;
-    right: 0;
-    a {
-      @include flex(center, flex-start);
-      color: $colorDarkGray;
-      font-size: 16px;
-      text-decoration: none;
-      transition: color .3s;
-      .btnIcon {
-        margin-right: 10px;
-        width: 25px;
-        svg {
-          fill: $colorDarkGray;
-          transition: fill .3s;
-        } // svg
-      } // btnIcon
-      .innerText {
-        position: relative;
-        &::before {
-          background: $colorYellow;
-          bottom: -2px;
-          content: '';
-          height: 1px;
-          left: 0;
-          position: absolute;
-          transition: width .3s;
-          width: 0;
-        } // before
-      } // innerText;
-    } // a
-    &:hover {
-      cursor: pointer;
+
+  .footerTop {
+    $itemColor: $colorLinkAside;
+    @include flex(center, space-between);
+    margin-bottom: 30px;
+    .siteVersionBtn {
+      border-radius: 3px;
+      transition: box-shadow .3s;
       a {
-        color: $colorYellow;
+        @include flex(center, flex-start);
+        color: $itemColor;
+        font-size: 16px;
+        text-decoration: none;
+        transition: color .3s;
         .btnIcon {
+          margin-right: 10px;
+          width: 25px;
           svg {
-            fill: $colorYellow;
+            fill: $itemColor;
+            transition: fill .3s;
           } // svg
         } // btnIcon
         .innerText {
+          position: relative;
           &::before {
+           @include makeUnderline($itemColor, -2px);
             width: 100%;
           } // before
+          &::after {
+            @include makeUnderline($colorYellow, -2px);
+          } // after
         } // innerText;
       } // a
-    } // hover
-  } // siteType
+      &:hover {
+        cursor: pointer;
+        a {
+          color: $colorYellow;
+          .btnIcon {
+            svg {
+              fill: $colorYellow;
+            } // svg
+          } // btnIcon
+          .innerText {
+            &::after {
+              width: 100%;
+            } // before
+          } // innerText;
+        } // a
+      } // hover
+    } // siteType
+    .footerTopItems {
+      @include flex(center, flex-start);
+      margin-left: 30px;
+      &__item {
+        margin-right: 30px;
+        &:last-child {
+          margin-right: 0;
+        } // last-child
+        a {
+          color: $itemColor;
+          font-size: 16px;
+          text-decoration: none;
+          transition: color .3s;
+          position: relative;
+          &::before {
+            @include makeUnderline($itemColor, -2px);
+            width: 100%;
+          } // before
+          &::after {
+            @include makeUnderline($colorYellow, -2px);
+          } // after
+          &:hover {
+            cursor: pointer;
+            color: $colorYellow;
+            &::after {
+              width: 100%;
+            } // before
+          } // hover
+        } // a
+      } // __item
+    } // footerTopItems
+  } // footerTop
   &__menuBlock {
-    $blockPadding: 60px;
+    $blockPadding: 45px;
     background: $colorDarkGray;
-    padding: 60px 0;
+    padding: $blockPadding 0;
   } // __menuBlock
   .footerMenuBlock {
     display: flex;

@@ -350,6 +350,7 @@ window.onload = function () {
         let quantitySlides;
         let slidesOffset;
         let index = 1;
+        let box;
         if (sliderBlock){
             const slider = sliderBlock.querySelector('.mySlider');
             const sliderNavBlock = sliderBlock.querySelector('.sliderNavBlock');
@@ -364,6 +365,8 @@ window.onload = function () {
             slidesOffset = COL_3_WIDTH + GUTTER_X2;
 
             // initial slider
+            box = quantitySlides * COL_3_WIDTH + quantitySlides * GUTTER_X2;
+            slider.style.width = box + 'px';
 
             // offset slider on 1 slide
             slider.style.transform = `translateX(-${slidesOffset * index}px)`;
@@ -372,7 +375,7 @@ window.onload = function () {
             if ( slideIsShow === quantitySlides ) {
                 sliderNavBlock.classList.add('displayNone');
             }
-            slider.style.width = quantitySlides * COL_3_WIDTH + quantitySlides * GUTTER_X2;
+
             slides.forEach(function(currentSlide){
                 currentSlide.style.width = COL_3_WIDTH + 'px';
                 currentSlide.style.marginRight = GUTTER_X2 + 'px';

@@ -286,7 +286,7 @@
 
   // comparisonBlock ---------------------------
   .comparisonBlock {
-    margin-bottom: $outerBlockMargin;
+    margin-bottom: 30px;
     &__mainContent {
       @include flex(flex-start, flex-start);
     } // __mainContent
@@ -440,6 +440,33 @@
   .reviewsBlock {
     @include flex(flex-start, space-between);
     margin-bottom: $outerBlockMargin;
+    .contentArea {
+      &__reviews {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        } // last-child
+        .review {
+          margin-bottom: 30px;
+          &:last-child {
+            margin-bottom: 0;
+          } // last-child
+        } // review
+      } // reviews
+      &__pagination {
+        margin-bottom: 30px;
+      } // pagination
+      &__addReview {
+      } // __addReview
+    } // contentArea
+    .widgetsArea {
+      .widget {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        } // last-child
+      } // widget
+    } // widgetsArea
   } // reviewBlock;
 
 } // sparePartsPage

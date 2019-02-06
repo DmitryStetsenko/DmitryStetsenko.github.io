@@ -119,6 +119,7 @@ button, input {
   } // hover
   &-addReview {
     color: $colorDarkGray;
+    white-space: nowrap;
   } // -addReview
   &-publish {
     color: $colorDarkGray;
@@ -146,6 +147,21 @@ button, input {
       background: $colorRatingYellow;
     } // hover
   } // -showFullRating
+  &-addComment {
+    background: white;
+    border: 1px solid $colorRatingYellow;
+    box-shadow: none;
+    height: 30px;
+    font-size: 13px;
+    padding: 0 20px;
+    &::before {
+      display: none;
+    } // before
+    &:hover {
+      color: white;
+      background: $colorRatingYellow;
+    } // hover
+  } // -addComment
   &-showNotRated {
     background: white;
     border: 1px solid $colorRatingYellow;
@@ -213,14 +229,33 @@ button, input {
       } // span
     } // shevronIcon__icon
   } // -popUpadditionalBlock
+  &-widgetBtn {
+    background: white;
+    border: 1px solid $colorRatingYellow;
+    box-shadow: none;
+    color: $colorDarkGray;
+    height: 30px;
+    font-size: 13px;
+    padding: 0;
+    width: 100%;
+    &::before {
+      display: none;
+    } // before
+    &:hover {
+      background: $colorRatingYellow;
+      color: white;
+    } // hover
+  } // widgetBtn
 } // mainBtn
 
 .filterBtn {
+  $borderColor: $colorLightGray;
+  $textColor: $borderColor;
   @include flex(center, center);
-  border-top: 1px solid $colorLightGray;
-  border-bottom: 1px solid $colorLightGray;
-  border-left: 1px solid $colorLightGray;
-  color: $colorLightGray;
+  border-top: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
+  color: $textColor;
   height: 35px;
   padding: 0 20px;
   transition: background .3s;
@@ -232,7 +267,7 @@ button, input {
   } // first-child
   &:last-child {
     border-radius: 0 3px 3px 0;
-    border-right: 1px solid $colorLightGray;
+    border-right: 1px solid $borderColor;
   }
   &:hover {
     border-color: transparent;
@@ -268,22 +303,26 @@ button, input {
 } // filterBtn
 
 .showMoreBtn {
+  $btnColor: $colorDarkGray;
+  $btnHoverColor: $colorYellow;
   border-bottom: 1px dashed $colorDarkGray;
-  color: $colorDarkGray;
+  color: $btnColor;
   display: block;
+  font-size: 13px;
   transition: color .3s, border-color .3s;
   &:hover {
     cursor: pointer;
-    color: $colorYellow;
-    border-color: $colorYellow;
+    color: $btnHoverColor;
+    border-color: $btnHoverColor;
   } // hover
   &-descrBlock {
+    $btnColor: $colorYellow;
+    $btnHoverColor: $colorYellow;
     background: linear-gradient(to right, rgba(255,255,255,0.5) 0%,
             rgba(255,255,255,1) 50%,
             rgba(255,255,255,0.5) 100%);
-    border-color: $colorYellow;
-    color: $colorYellow;
-    font-size: 13px;
+    border-color: $btnColor;
+    color: $btnColor;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -292,6 +331,18 @@ button, input {
   &-center {
     margin: 0 auto;
   } // -center
+  &-replyReview {
+    $btnColor: $colorLinkAside;
+    $btnHoverColor: $colorLinkAside;
+
+    border-color: $btnColor;
+    color: $btnColor;
+    &:hover {
+      cursor: pointer;
+      color: $btnHoverColor;
+      border-color: $btnHoverColor;
+    } // hover
+  } // -replyReview
 } // showMoreBtn
 
 .iconBtn {
@@ -609,7 +660,10 @@ button, input {
     transform: rotate(90deg);
   } // -bottom
   &-select {
-    transform: rotate(-90deg) scale(.7);
+    transform: rotate(-90deg) scale(.5);
+  } // select
+  &-selectTop {
+    transform: rotate(90deg) scale(.5);
   } // select
 } // shevronIcon
 
@@ -649,20 +703,160 @@ button, input {
   } // __btn
 } // sliderNavBlock
 
+// pagination block ----------------------------
+.showMoreBlock {
+  margin-bottom: 20px;
+  .uploadMoreBtn {
+    @include flex(center, flex-start);
+    $iconWidth: 27px;
+    margin: 0 auto;
+    &__icon {
+      display: block;
+      margin-right: 10px;
+      width: 27px;
+      svg {
+        fill: $colorRatingGreen;
+        transition: transform .3s;
+      } // svg
+    } // __icon
+    &__text {
+      color: $colorLinkAside;
+      font-size: 15px;
+      position: relative;
+      &::before {
+        background: $colorLinkAside;
+        content: '';
+        display: block;
+        height: 1px;
+        position: absolute;
+        transition: width .3s;
+        bottom: -1px;
+        left: 0;
+        width: 0;
+      } // before
+    } // __text
+    &:hover {
+      cursor: pointer;
+      .uploadMoreBtn__text {
+        &::before {
+          width: 100%;
+        } // before
+      } // uploadMoreBtn__text
+      .uploadMoreBtn__icon {
+        svg {
+          transform: rotate(180deg);
+        } // svg
+      } // uploadMoreBtn__icon
+    } // hover
+  } // uploadMoreBtn
+} // showMore
+.paginationBlock {
+  $itemSize: 24px;
+  @include flex(center, center);
+  &__item {
+    @include flex(center, center);
+    border-radius: $mainBorderRadius;
+    border: 1px solid $colorLightGray;
+    background: white;
+    color: $colorDarkGray;
+    font-size: 13px;
+    margin-right: 10px;
+    transition: background .3s;
+    height: $itemSize;
+    width: $itemSize;
+    &:last-child {
+      margin-right: 0;
+    } // last-child
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background: $colorYellow;
+      border-color: $colorYellow;
+    } // hover
+    &-gap {
+      align-items: flex-end;
+      border-color: transparent;
+      padding-bottom: 5px;
+      &:hover {
+        background: white;
+        border-color: transparent;
+        cursor: default;
+        color: $colorDarkGray;
+      } // hover
+    } // -gap
+    &-current {
+      background: $colorYellow;
+      border-color: $colorYellow;
+      color: white;
+    } // -current
+  } // __item
+} // paginationBlock
+// =============================================
+
 // review --------------------------------------
 .review {
+  $borderColor: $colorBorderLightGray;
+  $marginBottomInfoBlock: 25px;
   $paddingHeader: 10px 15px;
   $paddingFooter: 10px 15px;
   $paddingContent: 30px;
-  $marginBottomInfoBlock: 25px;
+  // header
+  $bgColor: $colorBorderLightGray;
   // user info
   $photoSize: 45px;
 
   border-radius: $mainBorderRadius;
-  border: 1px solid $colorLightGray;
-  margin-bottom: 30px;
+  border: 1px solid $borderColor;
+  .userInfo {
+    @include flex(center, flex-start);
+    &__photo {
+      background: $colorLightGray;
+      border-radius: $mainBorderRadius;
+      height: $photoSize;
+      margin-right: 20px;
+      overflow: hidden;
+      position: relative;
+      width: $photoSize;
+      img {
+        object-fit: cover;
+        height: $photoSize;
+        width: $photoSize
+      } // img
+      &-johnDoe {
+        img {
+          bottom: 0;
+          left: 50%;
+          object-fit: initial;
+          position: absolute;
+          transform: translateX(-50%);
+          width: 90%;
+          height: auto;
+        } // img
+      } // -jonDoe
+    } // photo
+    &__name {
+      color: $colorDarkGray;
+      font-size: 15px;
+      font-weight: bold;
+      &::after {
+        content: attr(data-last-visit);
+        color: $colorColName;
+        display: block;
+        font-size: 13px;
+        font-weight: normal;
+        margin-top: 8px;
+      } // after
+    } // name
+  } // userInfo
+  .infoBlock {
+    margin-bottom: $marginBottomInfoBlock;
+    width: 100%;
+    &:last-child {
+      margin-bottom: 0;
+    } // last-child
+  } // infoBlock
   &__header {
-    background: $colorBgLightGray;
+    background: $bgColor;
     padding: $paddingHeader;
     .breadCrumbs {
       color: $colorCountTxt;
@@ -682,53 +876,9 @@ button, input {
   } // __header
   &__content {
     padding: $paddingContent;
-    .infoBlock {
-      margin-bottom: $marginBottomInfoBlock;
-      width: 100%;
-      &:last-child {
-        margin-bottom: 0;
-      } // last-child
+    &>.infoBlock {
       &-userInfo {
         @include flex(center, space-between);
-        .userInfo {
-          @include flex(center, flex-start);
-          &__photo {
-            background: $colorLightGray;
-            border-radius: $mainBorderRadius;
-            height: $photoSize;
-            margin-right: 20px;
-            overflow: hidden;
-            position: relative;
-            width: $photoSize;
-            img {
-              object-fit: cover;
-              height: $photoSize;
-              width: $photoSize
-            } // img
-            &-johnDoe {
-              img {
-                bottom: 0;
-                left: 50%;
-                object-fit: initial;
-                position: absolute;
-                transform: translateX(-50%);
-                width: 90%;
-                height: auto;
-              } // img
-            } // -jonDoe
-          } // photo
-          &__name {
-            color: $colorDarkGray;
-            font-size: 15px;
-            &::after {
-              content: attr(data-last-visit);
-              color: $colorCountTxt;
-              display: block;
-              font-size: 13px;
-              margin-top: 8px;
-            } // after
-          } // name
-        } // userInfo
         .userAssessment {
           @include flex(center, flex-start);
           &__item {
@@ -1007,7 +1157,7 @@ button, input {
   } // __content
   &__footer {
     @include flex(center, space-between);
-    border-top: 1px solid $colorLightGray;
+    border-top: 1px solid $borderColor;
     padding: $paddingFooter;
     .userAction {
       margin-right: 25px;
@@ -1121,10 +1271,140 @@ button, input {
       } // reviewStatus
     } // userAction
   } // __footer
-  .addComment {
-
-  } // addComment
+  &__comments {
+    border-top: 1px solid $borderColor;
+    padding: $paddingContent;
+    .reviewComments {
+      &__title {
+        margin-bottom: 20px;
+      } // __title
+      &__content {
+        .usersComments {
+          margin-bottom: 20px;
+          &:last-child {
+            margin-bottom: 0;
+          } // last-child
+          &__item {
+            margin-bottom: 20px;
+            &:last-child {
+              margin-bottom: 0;
+            } // last-child
+            .infoBlock {
+              &-comment {
+                .userComment {
+                  font-size: 15px;
+                  line-height: 18px;
+                  margin-bottom: 5px;
+                } // userComment
+              } // -comment
+            } // infoBlock
+          } // __item
+        } // usersComment
+        .commentsShowMore {
+          background: $colorBorderLightGray;
+          height: 1px;
+          margin: 30px 0;
+          position: relative;
+          &:hover {
+            cursor: pointer;
+            &:before {
+              color: $colorYellow;
+            } // before
+            &:after {
+              transform: scale(1);
+            } // after
+          } // hover
+          &::before {
+            @include absPosCenter();
+            background: white;
+            content: 'Показать еще';
+            color: $colorLightGray;
+            font-size: 13px;
+            padding: 10px 15px 13px;
+            position: absolute;
+            transition: color .3s;
+            z-index: 1;
+          } // before
+          &::after {
+            background: $colorYellow;
+            bottom: 0;
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            transform: scale(0);
+            transition: transform .3s;
+            width: 100%;
+          } // after
+        } // commentsShowMore
+      } // content
+    } // reviewComment
+    .addComment {
+      &__title {
+        display: block;
+        margin-bottom: 20px;
+      } // __title
+      &__textArea {
+        margin-bottom: 15px;
+      } // textArea
+      &__userAction {
+        @include flex(center, space-between);
+        .captcha {
+          border-radius: $mainBorderRadius;
+          border: 1px solid $borderColor;
+          overflow: hidden;
+        } // captcha
+      } // __userAction
+    } // addComment
+  } // __comments
+  &-noComments {
+    .review__comments {
+      display: none;
+    } // review__comments
+  }  // -noComments
 } // review
+.postYourReview {
+  $borderColor: $colorBorderLightGray;
+  $bgColor: $colorBgLightGray;
+  $padding: 25px 30px;
+  // icon
+  $iconSize: 34px;
+  $iconColor: $colorGray;
+
+  @include flex(center, space-between);
+  background: $bgColor;
+  border-radius: $mainBorderRadius;
+  border: 1px solid $borderColor;
+  padding: $padding;
+  width: 100%;
+  &__description {
+    @include flex(center, flex-start);
+    .postReviewIcon {
+      margin-right: 30px;
+      width: $iconSize;
+      svg {
+        fill: $iconColor;
+        fill-rule: evenodd;
+      }  // svg
+    } // postReviewIcon
+    .innerTextBlock {
+      &__title {
+        color: $colorDarkGray;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      } // __title
+      &__descr {
+        color: $colorCountTxt;
+        font-size: 13px;
+        font-weight: normal;
+      } // desct
+    } // innerTextBlock
+  } // __description
+  &__userAction {
+
+  } // __userAction
+} // postYourReview
 // =============================================
 
 // popUp windows -------------------------------
@@ -1428,10 +1708,12 @@ button, input {
   $selectHeight: 30px;
   $selectWidth: 100%;
   // header
+  $headerColor: $colorDarkGray;
   $headerFontSize: 13px;
   $headerHeight: 30px;
   $headerPadding: 10px;
   // items
+  $itemColor: $colorDarkGray;
   $itemFontize: 13px;
   $itemHeight: 30px;
   $itemPadding: 10px;
@@ -1447,52 +1729,40 @@ button, input {
     height: $headerHeight;
     padding: $headerPadding;
     .innerText {
+      color: $headerColor;
       font-size: $headerFontSize;
     } // innerText
     .blockIcon {
-      .shevronIcon {
-        &__icon {
-          position: relative;
-          min-height: 21px;
-          min-width: 9px;
-          span {
-            background: $colorDarkGray;
-            display: block;
-            position: absolute;
-            transition: background .3s;
-            height: 10px;
-            width: 2px;
-            &:first-child {
-              transform-origin:left bottom;
-              transform: rotate(45deg);
-              left:0;
-              top: 0;
-            } // first-child
-            &:last-child {
-              transform-origin:left top;
-              transform: rotate(-45deg);
-              left: 0;
-              bottom: 0;
-            }
-          } // span
-        } // _icon
-        &-select {
-          transform: rotate(-90deg) scale(.7);
-        } // select
-      } // shevronIcon
+
     } // blockIcon
   } // __header
   &__items {
 
   } // __items
   &__item {
+    color: $itemColor;
     height: $itemHeight;
     font-size: $itemFontize;
     padding: 10px;
   } // item
+  &-unActive {
+    $selectBorder: 1px solid $colorBorderLightGray;
+    // header
+    $headerColor: $colorColName;
+
+    border: $selectBorder;
+    .select__header {
+      .innerText {
+        color: $headerColor;
+      } // innerText
+    } // __header
+    .select__item {
+      color: $itemColor;
+    } // item
+  } // unActive
 } // select
 
-.input, .text-area {
+.input, .textArea {
   $inputBorderRadius: $mainBorderRadius;
   $inputBorder: 1px solid $colorInputBorder;
   $inputColor: $colorDarkGray;
@@ -1521,12 +1791,54 @@ button, input {
   width: $inputWidth;
 } // input
 
-.text-area {
+.textArea {
   height: 125px;
   font-family: Arial;
   resize: none;
   width: 100%;
-} // text-area
+  &-addComment {
+    $inputBorder: 1px solid $colorBorderLightGray;
+    border: $inputBorder;
+  } // -addComment
+} // textArea
+
+.checkBox {
+  $checkBoxColor: $colorYellow;
+  $checkBoxTextColor: $colorDarkGray;
+  $checkBoxSize: 15px;
+  $checkBoxBorderColor: $colorBorderLightGray;
+
+  @include flex(center, flex-start);
+  color: $checkBoxTextColor;
+  font-size: 13px;
+  input[type=checkbox] {
+    display: none;
+    &:checked + span.checkBox__input {
+      &::before {
+        opacity: 1;
+      } // after
+    } // checked + .checkBox
+  } // __input
+  &__input {
+    @include flex(center, center);
+    border-radius: $mainBorderRadius;
+    border: 1px solid $checkBoxBorderColor;
+    bottom: 1px;
+    height: $checkBoxSize;
+    position: relative;
+    width: $checkBoxSize;
+    &::before {
+      content: '\2714';
+      color: $checkBoxColor;
+      opacity: 0;
+      position: absolute;
+      transition: opacity .3s;
+    } // before
+  } // __input
+  &__label {
+    margin-left: 5px;
+  } // label
+} // checkBox
 
 // ==============================================
 
@@ -1539,6 +1851,7 @@ button, input {
 
 .widget {
   // common properties
+  $widgetBorderColor: $colorBorderLightGray;
   $widgetBackground: white;
   $widgetHeight: 475px;
   // header properties
@@ -1548,7 +1861,7 @@ button, input {
 
   background: $widgetBackground;
   border-radius: 3px;
-  border: 1px solid $colorLightGray;
+  border: 1px solid $widgetBorderColor;
   min-height: $widgetHeight;
   height: initial;
   padding: 30px;
@@ -1556,13 +1869,6 @@ button, input {
   &__header {
     @include flex(center, flex-start);
     margin-bottom: 30px;
-    &:hover {
-      .headerTitle {
-        &__text {
-          transform: translateX(-15%);
-        } // __text
-      } // headerTitle
-    } // hover
     .headerIcon {
       margin-right: 10px;
       height: initial;
@@ -1573,6 +1879,7 @@ button, input {
         path {
           fill: $iconColor;
           fill-rule: evenodd;
+          stroke: $iconColor;
         } // path
       } // svg
       &-noFill {
@@ -1584,11 +1891,21 @@ button, input {
           } // path
         } // svg
       } // -noFill
+      &-noStroke {
+        svg {
+          path {
+            fill: $iconColor;
+            fill-rule: evenodd;
+            stroke: none;
+          } // path
+        } // svg
+      } // -noStroke
     } // headerIcon
     .headerTitle {
       max-width: 270px;
       overflow: hidden;
       position: relative;
+      width: 100%;
       &:after {
         background: linear-gradient(to right,
                 rgba(255, 255, 255, 0) 0,
@@ -1618,7 +1935,7 @@ button, input {
         $rowHeight: 90px;
         $brandWidth: 50px;
         $brandHeight: 20px;
-        border-bottom: 1px solid $colorLightGray;
+        border-bottom: 1px solid $widgetBorderColor;
         &:last-child {
           border-bottom: none;
         } // last-child
@@ -1736,7 +2053,178 @@ button, input {
         } // a
       } // __item
     } // ratingList
+    .carInfoFilter {
+      &__selectBlock {
+        margin-bottom: 20px;
+      } // __selectBlock
+      &__responseNature {
+        .responseNature {
+          margin-bottom: 20px;
+          &__title {
+            @include flex(center, flex-start);
+            color: $colorDarkGray;
+            font-size: 15px;
+            .innerText {
+              margin-right: 10px;
+            } // innerText
+          } // title
+          &__checkBoxBlock {
+            @include flex(center, space-between);
+            height: 45px;
+          } // checkBoxBlock
+        } // responseNature
+      } // responseNature
+    } // carInfoFilter
+    .activityTape {
+      @include customScroll();
+      overflow-y: scroll;
+      padding-right: 10px;
+      .event {
+        border-bottom: 1px solid $colorLightGray;
+        margin-bottom: 20px;
+        &__header {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin-bottom: 10px;
+        } // header
+        &__headerThumbnail {
+          $headerThumbnailSize: 35px;
+
+          display: flex;
+          align-items: center;
+          background: white;
+          border-radius: 3px;
+          border: 1px solid white;
+          margin-right: 10px;
+          overflow: hidden;
+          height: $headerThumbnailSize;
+          width: $headerThumbnailSize;
+        } // __headerThumbnail
+        &__headerNameDate {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin-right: 10px;
+          p {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: bold;
+            color: $colorGray;
+            margin-bottom: 5px;
+            position: relative;
+            transition: color .3s;
+            &::before {
+              background: $colorYellow;
+              content: '';
+              display: block;
+              height: 1px;
+              position: absolute;
+              transition: width .3s;
+              bottom: -1px;
+              width: 0;
+            } // before
+            &:hover {
+              cursor: pointer;
+              color: $colorYellow;
+              &::before {
+                width: 100%;
+              } // before
+            } // hover
+          } // p
+          time {
+            font-size: 13px;
+            font-weight: normal;
+            color: $colorCountTxt;
+          }
+        } // __headerNameDate
+        &__content {
+          margin-bottom: 15px;
+          p {
+            font-size: 15px;
+            line-height: 1.2em;
+          } // p
+          a {
+            color: $colorLinkAside;
+          } // a
+        } // __content
+        &__addReview {
+          margin-bottom: 15px;
+        } // __addReview
+      } // events
+    } // activityTape
+    .interestingTopics {
+      @include customScroll();
+      overflow-y: scroll;
+      padding-right: 10px;
+      .topic {
+        display: block;
+        text-decoration: none;
+        color: $colorDarkGray;
+        font-size: 15px;
+        margin-bottom: 15px;
+        &__content {
+          border-radius: $mainBorderRadius;
+          margin-bottom: 10px;
+          width: 100%;
+        } // __content;
+      } // topic
+    } // interestingTopic
   } // widgetContent
+  &-rating {
+    .widget__header {
+      &:hover {
+        .headerTitle {
+          &__text {
+            transform: translateX(-15%);
+          } // __text
+        } // headerTitle
+      } // hover
+    } // __header
+  } // -rating
+  &-filter {
+    min-height: initial;
+  } // filter
+  &-activityTape {
+    $widgetBackground: $colorBgLightGray;
+    // event block
+    $maxHeight: 440px;
+    $maxHeightEventBlock: calc(#{$maxHeight} * 0.8);
+
+    background: $widgetBackground;
+    height: $maxHeight;
+    overflow: hidden;
+    .widget__header {
+      .headerTitle {
+        &:after {
+          display: none;
+        } // after
+      } // headerTitle
+    } // __header
+    .activityTape {
+      max-height: $maxHeightEventBlock;
+    } // activityTape
+  } //
+  &-interestingTopics {
+    // event block
+    $maxHeight: 600px;
+    $maxHeightEventBlock: calc(#{$maxHeight} * 0.8);
+
+    height: $maxHeight;
+    overflow: hidden;
+    .widget__header {
+      .headerTitle {
+        &:after {
+          display: none;
+        } // after
+      } // headerTitle
+    } // __header
+    .interestingTopics {
+      max-height: $maxHeightEventBlock;
+      min-height: $maxHeightEventBlock;
+    } // activityTape
+  } // -interestingTopics
 } // widget
 
 // ===============================================
