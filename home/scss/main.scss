@@ -1301,15 +1301,16 @@
 
   .footerTop {
     $itemColor: $colorLinkAside;
+    $itemFontSize: 14px;
     @include flex(center, space-between);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     .siteVersionBtn {
       border-radius: 3px;
       transition: box-shadow .3s;
       a {
         @include flex(center, flex-start);
         color: $itemColor;
-        font-size: 16px;
+        font-size: $itemFontSize;
         text-decoration: none;
         transition: color .3s;
         .btnIcon {
@@ -1358,7 +1359,7 @@
         } // last-child
         a {
           color: $itemColor;
-          font-size: 16px;
+          font-size: $itemFontSize;
           text-decoration: none;
           transition: color .3s;
           position: relative;
@@ -1381,63 +1382,66 @@
     } // footerTopItems
   } // footerTop
   &__menuBlock {
-    $blockPadding: 45px;
+    $blockPadding: 30px;
+    $titleFontSize: 14px;
+    $menuItemSize: 14px;
+    $menuItemLH: 22px;
+
     background: $colorDarkGray;
     padding: $blockPadding 0;
-  } // __menuBlock
-  .footerMenuBlock {
-    display: flex;
-    justify-content: space-between;
-  } // footerMenuBlock
-  .footerMenu {
-    &__item {
-      a {
-        color: white;
-        font-size: 16px;
-        line-height: 30px;
-        text-decoration: none;
-        &:hover {
-          color: $colorYellow;
-        } // hover
-      } // a
-      &-title {
-        display: flex;
-        align-items: center;
-        .h4Title {
-          display: inline-block;
-          position: relative;
-          margin-right: 7px;
-          &::after {
-            content: '';
-            border-bottom: 1px dashed $colorYellow;
-            bottom: 5px;
-            display: block;
-            position: absolute;
-            height: 1px;
-            transition: width .3s;
-            width: 0;
-          } // after
+    .footerMenuBlock {
+      @include flex(stretch, space-between);
+    } // footerMenuBlock
+    .footerMenu {
+      &__item {
+        a {
+          color: white;
+          font-size: $titleFontSize;
+          line-height: $menuItemLH;
+          text-decoration: none;
           &:hover {
-            cursor: pointer;
-            &::after {
-              width: 100%;
-            } // after
-          } // hover
-          a {
             color: $colorYellow;
-            font-size: 16px;
-            line-height: 30px;
-            text-decoration: none;
-          } // a
-        } // .h4Title
-      } // -title
-    } // __item
-    &__hiddenBlock {
-      overflow: hidden;
-      transition: height .3s;
-      height: 0;
-    } // __hiddenBlock
-  } // footerMenu
+          } // hover
+        } // a
+        &-title {
+          display: flex;
+          align-items: center;
+          .h4Title {
+            display: inline-block;
+            position: relative;
+            margin-right: 7px;
+            &::after {
+              content: '';
+              border-bottom: 1px dashed $colorYellow;
+              bottom: 1px;
+              display: block;
+              position: absolute;
+              height: 1px;
+              transition: width .3s;
+              width: 0;
+            } // after
+            &:hover {
+              cursor: pointer;
+              &::after {
+                width: 100%;
+              } // after
+            } // hover
+            a {
+              color: $colorYellow;
+              font-size: $titleFontSize;
+              line-height: $menuItemLH;
+              text-decoration: none;
+            } // a
+          } // .h4Title
+        } // -title
+      } // __item
+      &__hiddenBlock {
+        overflow: hidden;
+        transition: height .3s;
+        height: 0;
+      } // __hiddenBlock
+    } // footerMenu
+  } // __menuBlock
   &__copyrightBlock {
     padding: 20px 0;
     p {
