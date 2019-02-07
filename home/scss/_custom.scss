@@ -1,6 +1,7 @@
 body {
   font: 400 normal 16px/1 Arial, san-serif;
   color: $colorDarkGray;
+
 }
 
 div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, textarea, button, span, ul, li, table, tbody, tr, th, td {
@@ -51,6 +52,16 @@ button, input {
   &-footer {
     position: relative;
   } // footer
+
+  // MEDIA ---------------------------
+
+  @media screen and ( max-width: 1000px ) {
+    $wrapperPadding: 0 35px;
+    padding: $wrapperPadding;
+  } // 1000
+
+  // =================================
+
 } // wrapper
 
 .contentArea {
@@ -353,7 +364,6 @@ button, input {
     cursor: pointer;
   }  // hover
   &-search {
-    position: absolute;
   } // -search
   .cssIcon {
     display: block;
@@ -668,10 +678,23 @@ button, input {
 } // shevronIcon
 
 // sliders styles
+.sliderBox {
+  position: relative;
+  max-width: $wrapperMaxWidth;
+} // sliderBox;
 .sliderWrap {
   overflow: hidden;
   position: relative;
   max-width: $wrapperMaxWidth;
+
+  // @MEDIA --------------------------
+  @media screen and ( max-width: 1170px ) {
+    &::after {
+      @include gradientBorder();
+    } // after
+  } // 1000
+  // =================================
+
 } // sliderWrap
 .sliderNavBlock {
   $sizeNavBtn: 45px;
@@ -2205,7 +2228,7 @@ button, input {
     .activityTape {
       max-height: $maxHeightEventBlock;
     } // activityTape
-  } //
+  } // -activityTape
   &-interestingTopics {
     // event block
     $maxHeight: 600px;

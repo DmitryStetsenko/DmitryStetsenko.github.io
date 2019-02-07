@@ -70,6 +70,9 @@ button, input {
   padding: 0 15px; }
   .wrapper-footer {
     position: relative; }
+  @media screen and (max-width: 1000px) {
+    .wrapper {
+      padding: 0 35px; } }
 
 .contentArea {
   width: calc((calc((1170px / 12) - 30px) * 8) + 30px * 7); }
@@ -307,8 +310,6 @@ button, input {
   display: block; }
   .iconBtn:hover {
     cursor: pointer; }
-  .iconBtn-search {
-    position: absolute; }
   .iconBtn .cssIcon {
     display: block;
     position: relative; }
@@ -527,10 +528,24 @@ button, input {
 .shevronIcon-selectTop {
   transform: rotate(90deg) scale(0.5); }
 
+.sliderBox {
+  position: relative;
+  max-width: 1170px; }
+
 .sliderWrap {
   overflow: hidden;
   position: relative;
   max-width: 1170px; }
+  @media screen and (max-width: 1170px) {
+    .sliderWrap::after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 70%);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px; } }
 
 .sliderNavBlock__btn {
   display: flex;
@@ -1866,25 +1881,44 @@ button, input {
     width: 200px; }
 
 .searchBlock__form {
-  position: relative; }
-  .searchBlock__form input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #464f5b;
+  border-radius: 3px;
+  width: 100%; }
+  .searchBlock__form .inputSearch {
+    width: 400px; }
+    .searchBlock__form .inputSearch input {
+      background: #464f5b;
+      border-radius: 3px;
+      color: white;
+      font-size: 13px;
+      padding: 9px 45px 9px 16px;
+      width: 100%; }
+      .searchBlock__form .inputSearch input::-webkit-input-placeholder {
+        color: white;
+        font: 400 normal 13px Arial; }
+      .searchBlock__form .inputSearch input:-moz-placeholder {
+        color: white;
+        font: 400 normal 13px Arial; }
+  .searchBlock__form .iconBtn-search {
     background: #464f5b;
     border-radius: 3px;
-    color: white;
-    font-size: 13px;
-    padding: 12px 45px 12px 16px;
-    width: 400px; }
-    .searchBlock__form input::-webkit-input-placeholder {
-      color: white;
-      font: 400 normal 13px Arial; }
-    .searchBlock__form input:-moz-placeholder {
-      color: white;
-      font: 400 normal 13px Arial; }
-  .searchBlock__form .iconBtn-search {
-    padding: 11px;
-    right: 4px;
-    top: 50%;
-    transform: translateY(-50%); }
+    border: 1px solid transparent;
+    padding: 10px;
+    position: relative; }
+  .searchBlock__form .iconBtn-showMarker:before {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid white;
+    content: '';
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: -18px;
+    left: 50%; }
 
 .menuBlock .iconBtn-toggleMenu {
   position: relative;
@@ -1910,6 +1944,18 @@ button, input {
     .menuBlock .iconBtn-toggleMenu:hover .cssIcon__part-line::before {
       transform: scale(1, 1); }
 
+.menuBlock .iconBtn-showMarker:before {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid white;
+  content: '';
+  position: absolute;
+  transform: translateX(-50%);
+  bottom: -18px;
+  left: 50%; }
+
 .menuBlock .topMenu {
   display: flex;
   align-items: stretch;
@@ -1921,33 +1967,22 @@ button, input {
   opacity: 0;
   padding: 30px;
   position: absolute;
+  transform: translateX(-50%);
   transition: height .5s, opacity .5s;
-  left: 0;
-  top: 54px;
+  left: 50%;
+  top: 51px;
   width: 100%;
   z-index: 10; }
   .menuBlock .topMenu-open {
-    align-items: stretch;
-    justify-content: space-between;
     height: 295px;
     opacity: 1; }
-  .menuBlock .topMenu:before {
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid white;
-    content: '';
-    position: absolute;
-    transform: translateX(3px);
-    top: -6px;
-    left: 62%; }
 
 .menuBlock .headerMenu__item a {
   color: #2c333d;
   font-size: 16px;
   line-height: 30px;
-  text-decoration: none; }
+  text-decoration: none;
+  white-space: nowrap; }
   .menuBlock .headerMenu__item a:hover {
     color: #efb428; }
 
@@ -2015,6 +2050,46 @@ button, input {
     margin: 0 17px;
     width: 1px; }
 
+@media only screen and (max-width: 1000px) {
+  .siteHeaderSection .searchBlock__form .inputSearch {
+    width: 100%; }
+  .siteHeaderSection .menuBlock .topMenu {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 40px; }
+    .siteHeaderSection .menuBlock .topMenu-open {
+      height: 500px; }
+  .siteHeaderSection .menuBlock .headerMenu {
+    flex-basis: auto;
+    flex-grow: 1;
+    padding: 0 15px; } }
+
+@media only screen and (max-width: 850px) {
+  .siteHeaderSection .siteHeader__logo {
+    margin-right: auto; }
+  .siteHeaderSection .searchBlock {
+    margin-left: auto;
+    margin-right: 15px; }
+    .siteHeaderSection .searchBlock__form {
+      width: 35px;
+      height: 35px; }
+      .siteHeaderSection .searchBlock__form .inputSearch {
+        display: none;
+        background: white;
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        left: 0;
+        top: 51px;
+        padding: 15px;
+        transition: height .3s, opacity .5s;
+        width: 100%; }
+      .siteHeaderSection .searchBlock__form .iconBtn-search {
+        border-color: #efb428; }
+  .siteHeaderSection .menuBlock {
+    margin-right: auto; }
+  .siteHeaderSection .mainBtn-addReview {
+    margin: 0 auto; } }
+
 .spareParts {
   margin-bottom: 60px; }
   .spareParts__titleBlock {
@@ -2025,9 +2100,6 @@ button, input {
   .spareParts .sparePartsFilter {
     align-items: center;
     display: flex; }
-  .spareParts__sliderBlock {
-    position: relative;
-    max-width: 1170px; }
   .spareParts .sparePartsSlider {
     display: flex;
     align-items: flex-start;
@@ -2054,7 +2126,7 @@ button, input {
     text-decoration: none;
     white-space: nowrap; }
     .spareParts .sparePartsContentTitle__img {
-      margin-right: 20px;
+      margin-right: 10px;
       height: 34px; }
       .spareParts .sparePartsContentTitle__img img {
         height: 100%;
@@ -2177,17 +2249,18 @@ button, input {
                 stroke: #f6f6f6; }
 
 .reviewCountBlock {
+  display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 3px;
   background: linear-gradient(to bottom, #a7ca52 0%, #90ca52 100%);
-  display: flex;
-  justify-content: center;
   flex-direction: column;
   padding: 30px;
   margin-bottom: 60px; }
   .reviewCountBlock__title {
     margin-bottom: 15px;
-    text-shadow: 1px 1px 1px rgba(70, 91, 29, 0.31); }
+    text-shadow: 1px 1px 1px rgba(70, 91, 29, 0.31);
+    text-align: center; }
   .reviewCountBlock .reviewCounter {
     display: flex;
     align-items: center;
@@ -2249,14 +2322,19 @@ button, input {
           left: 50%;
           transform: translateX(-50%);
           z-index: 1; }
+  @media screen and (max-width: 1000px) {
+    .reviewCountBlock .reviewCounter {
+      flex-wrap: wrap; }
+    .reviewCountBlock .reviewNumbersBlock:last-child {
+      margin-top: 15px; } }
+  @media screen and (max-width: 850px) {
+    .reviewCountBlock {
+      padding: 20px; } }
 
 .brands {
   margin-bottom: 60px; }
   .brands__title {
     margin-bottom: 30px; }
-  .brands__ratingBlock {
-    position: relative;
-    max-width: 1170px; }
   .brands__slider {
     display: flex;
     align-items: flex-start;
@@ -2570,25 +2648,26 @@ button, input {
   .cars__title {
     margin-bottom: 30px; }
   .cars__listsBlock {
-    align-items: flex-start;
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 30px; }
   .cars .carItems {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap; }
     .cars .carItems > li {
       width: calc( 1140px / 3); }
     .cars .carItems__unvisibleItem {
       display: none; }
   .cars .carItem {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     border: 1px solid transparent;
     color: #2c333d;
-    display: flex;
     height: 50px;
-    justify-content: space-between;
     text-decoration: none;
     padding: 0 10px; }
     .cars .carItem:hover {
@@ -2596,8 +2675,8 @@ button, input {
       .cars .carItem:hover .carItem__elem-name {
         color: #efb428; }
     .cars .carItem__elem {
-      align-items: center;
       display: flex;
+      align-items: center;
       justify-content: flex-start; }
       .cars .carItem__elem-logo {
         background-repeat: no-repeat;
@@ -2639,9 +2718,13 @@ button, input {
     .cars .showMoreCars button {
       margin: 0 auto; }
 
+@media screen and (max-width: 850px) {
+  .cars .carItems > li {
+    width: calc( 100% / 2); } }
+
 .magazineBlock {
-  align-items: stretch;
   display: flex;
+  align-items: stretch;
   justify-content: space-between;
   margin-bottom: 60px; }
 
@@ -2651,6 +2734,7 @@ button, input {
     margin-bottom: 30px; }
   .magazine .articleTabs {
     display: flex;
+    align-items: stretch;
     justify-content: flex-start;
     flex-wrap: wrap; }
     .magazine .articleTabs a {
@@ -2720,6 +2804,14 @@ button, input {
         color: #efb428;
         text-decoration: underline; }
 
+@media screen and (max-width: 1000px) {
+  .magazine .articleTab-respNonShow {
+    display: none; }
+  .widgetsArea .widget-homePage {
+    height: 650px; }
+    .widgetsArea .widget-homePage .activityTape {
+      max-height: calc(650px * 0.8); } }
+
 .comparisonBlock {
   margin-bottom: 60px; }
   .comparisonBlock__header {
@@ -2741,10 +2833,9 @@ button, input {
 
 .comparisonBlockItem {
   color: #2c333d;
-  max-width: 247px;
-  min-width: 220px;
   margin: 15px;
-  text-decoration: none; }
+  text-decoration: none;
+  width: calc( 100% / 4 - 30px); }
   .comparisonBlockItem__brands {
     background: white;
     border-radius: 3px;
@@ -2835,6 +2926,10 @@ button, input {
       transform: rotateX(360deg) translate(-50%, -50%);
       box-shadow: 2px 2px 5px #00000045; }
 
+@media screen and (max-width: 1000px) {
+  .comparisonBlock .comparisonBlockItem {
+    width: calc( 100% / 3 - 30px); } }
+
 .seo {
   margin-bottom: 60px; }
   .seo__title {
@@ -2848,11 +2943,11 @@ button, input {
 .siteFooter .footerTop {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 20px; }
   .siteFooter .footerTop .siteVersionBtn {
     border-radius: 3px;
-    transition: box-shadow .3s; }
+    margin-right: 60px; }
     .siteFooter .footerTop .siteVersionBtn a {
       display: flex;
       align-items: center;
@@ -2961,7 +3056,7 @@ button, input {
       display: inline-block;
       position: relative;
       margin-right: 7px; }
-      .siteFooter__menuBlock .footerMenu__item-title .h4Title::after {
+      .siteFooter__menuBlock .footerMenu__item-title .h4Title span::after {
         content: '';
         border-bottom: 1px dashed #efb428;
         bottom: 1px;
@@ -2970,9 +3065,11 @@ button, input {
         height: 1px;
         transition: width .3s;
         width: 0; }
+      .siteFooter__menuBlock .footerMenu__item-title .h4Title .titleText-tablet {
+        display: none; }
       .siteFooter__menuBlock .footerMenu__item-title .h4Title:hover {
         cursor: pointer; }
-        .siteFooter__menuBlock .footerMenu__item-title .h4Title:hover::after {
+        .siteFooter__menuBlock .footerMenu__item-title .h4Title:hover span::after {
           width: 100%; }
       .siteFooter__menuBlock .footerMenu__item-title .h4Title a {
         color: #efb428;
@@ -2989,6 +3086,61 @@ button, input {
   .siteFooter__copyrightBlock p {
     text-align: center;
     font-size: 13px; }
+
+@media screen and (max-width: 1000px) {
+  .siteFooter__menuBlock {
+    padding: 30px 0; }
+    .siteFooter__menuBlock .footerMenu__item a {
+      color: white;
+      font-size: 13px;
+      line-height: 22px;
+      text-decoration: none; }
+      .siteFooter__menuBlock .footerMenu__item a:hover {
+        color: #efb428; }
+    .siteFooter__menuBlock .footerMenu__item-title .h4Title {
+      margin-right: 0; }
+      .siteFooter__menuBlock .footerMenu__item-title .h4Title .titleText {
+        display: none; }
+        .siteFooter__menuBlock .footerMenu__item-title .h4Title .titleText-tablet {
+          display: inline-block; }
+    .siteFooter__menuBlock .footerMenu-respNonShow {
+      display: none; } }
+
+@media screen and (max-width: 768px) {
+  .siteFooter .footerTop .siteVersionBtn {
+    margin-right: 40px; }
+    .siteFooter .footerTop .siteVersionBtn a {
+      font-size: 12px; }
+      .siteFooter .footerTop .siteVersionBtn a .btnIcon {
+        margin-right: 10px;
+        width: 22px; }
+        .siteFooter .footerTop .siteVersionBtn a .btnIcon svg {
+          fill: #4991bf;
+          transition: fill .3s; }
+  .siteFooter .footerTop .footerTopItems__item {
+    margin-right: 20px; }
+    .siteFooter .footerTop .footerTopItems__item a {
+      font-size: 12px; }
+  .siteFooter__menuBlock {
+    padding: 20px 0; }
+    .siteFooter__menuBlock .footerMenu__item a {
+      color: white;
+      font-size: 12px;
+      line-height: 22px;
+      text-decoration: none; }
+      .siteFooter__menuBlock .footerMenu__item a:hover {
+        color: #efb428; }
+    .siteFooter__menuBlock .footerMenu__item-title .h4Title {
+      margin-right: 0; }
+      .siteFooter__menuBlock .footerMenu__item-title .h4Title a {
+        font-size: 12px;
+        line-height: 22px; }
+      .siteFooter__menuBlock .footerMenu__item-title .h4Title .titleText {
+        display: none; }
+        .siteFooter__menuBlock .footerMenu__item-title .h4Title .titleText-tablet {
+          display: inline-block; }
+    .siteFooter__menuBlock .footerMenu-respNonShow {
+      display: none; } }
 
 .pageHeaderBlock {
   display: flex;

@@ -8,11 +8,14 @@ window.onload = function () {
           RATING_COLOR_YELLOW = '#efb428',
           RATING_COLOR_RED = '#e73e4e';
 
-    const SCREEN_MAX_WIDTH = document.querySelector('.wrapper').clientWidth;
+    // const SCREEN_MAX_WIDTH = document.querySelector('.wrapper').clientWidth;
+    const SCREEN_MAX_WIDTH = 1170;
     const GUTTER_X2 = 30;
     const COL_WIDTH = SCREEN_MAX_WIDTH / 12 - GUTTER_X2;
     const COL_3_WIDTH = ( COL_WIDTH * 3 ) + ( GUTTER_X2 * 2 );
     const COL_4_WIDTH = ( COL_WIDTH * 4 ) + ( GUTTER_X2 * 3 );
+
+    headerSearch ();
 
     menuOpened ();
 
@@ -42,8 +45,56 @@ window.onload = function () {
 
     closePopUpWindow ();
 
+    ////////////// function for responsive //////////////
+
+    /////////////////////////////////////////////////////
 
     // -------------------------------------------------
+    function headerSearch () {
+        const searchBtn = document.querySelector('.iconBtn-search');
+        const searchInput = document.querySelector('#headerFormSearch');
+        const searchBox = searchInput.parentNode;
+
+        searchBtn.addEventListener('click', function(){
+            const inputSatus = searchBtn.getAttribute('data-status');
+            const searchBlockParam = {
+                display: 'none',
+                opacity: '0',
+                height: '0',
+                status: 'close'
+            };
+
+            if ( inputSatus === 'close' ) {
+                searchBlockParam.display = 'block';
+                searchBlockParam.opacity = '1';
+                searchBlockParam.height = '63px';
+                searchBlockParam.status = 'open';
+
+                searchBox.style.display = searchBlockParam.display;
+                searchBtn.setAttribute('data-status', searchBlockParam.status);
+                searchBtn.classList.add('iconBtn-showMarker');
+                setTimeout(()=>{
+                    searchBox.style.opacity = searchBlockParam.opacity;
+                },500);
+
+            } else {
+                searchBlockParam.display = 'none';
+                searchBlockParam.opacity = '0';
+                searchBlockParam.height = '0';
+                searchBlockParam.status = 'close';
+
+                searchBox.style.opacity = searchBlockParam.opacity;
+                searchBtn.setAttribute('data-status', searchBlockParam.status);
+                searchBtn.classList.remove('iconBtn-showMarker');
+                setTimeout(()=>{
+                    searchBox.removeAttribute('style');
+                },500);
+            }
+
+
+        });
+    } // headerSearch
+
     function menuOpened () {
         const topToggleMenu = document.querySelector('.iconBtn-toggleMenu');
         const topMenu = document.querySelector('.topMenu');
@@ -53,6 +104,7 @@ window.onload = function () {
                 topMenu.setAttribute('style', 'display:flex;');
                 setTimeout(()=>{
                     topMenu.classList.add('topMenu-open');
+                    topToggleMenu.classList.add('iconBtn-showMarker');
                 });
             } else {
                closeTopMenu();
@@ -344,7 +396,7 @@ window.onload = function () {
 
 // sliders -------------------------------------------------------
     function sliderSpareParts () {
-        const sliderBlock = document.querySelector('.spareParts__sliderBlock');
+        const sliderBlock = document.querySelector('.sliderBox-spareParts');
         let slidePosition;
         let slideIsShow;
         let quantitySlides;
@@ -426,7 +478,7 @@ window.onload = function () {
     } // sliderSpareParts
 
     function sliderBrands () {
-        const brandsSliderBlock = document.querySelector('.brands__ratingBlock');
+        const brandsSliderBlock = document.querySelector('.sliderBox-brands');
         let slidePosition;
         let slideIsShow;
         let quantitySlides;
@@ -530,7 +582,10 @@ window.onload = function () {
 
     function closeTopMenu () {
         const topMenu = document.querySelector('.topMenu');
+        const topToggleMenu = document.querySelector('.iconBtn-toggleMenu');
+
         topMenu.classList.remove('topMenu-open');
+        topToggleMenu.classList.remove('iconBtn-showMarker');
         setTimeout(()=>{
             topMenu.setAttribute('style', 'display:none;');
         },500);
@@ -583,4 +638,13 @@ window.onload = function () {
             });
         }
     } // closePopUpWindow
+
+// function for responsive block ----------------------------------
+    // home page
+    function rMagazinBlock() {
+        const mainBlock = document.querySelector('.magazineBlock');
+
+    } //
 };
+
+

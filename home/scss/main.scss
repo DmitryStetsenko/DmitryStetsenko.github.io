@@ -27,28 +27,46 @@
 
 .searchBlock {
   &__form {
-    position: relative;
-    input {
-      background: $colorGray;
-      border-radius: 3px;
-      color: white;
-      font-size: 13px;
-      padding: 12px 45px 12px 16px;
+    @include flex(center, flex-start);
+    background: $colorGray;
+    border-radius: 3px;
+    width: 100%;
+    .inputSearch {
       width: 400px;
-      @include placeholder (Arial, 13px, 400, normal, white);
-    } // input
+      input {
+        background: $colorGray;
+        border-radius: 3px;
+        color: white;
+        font-size: 13px;
+        padding: 9px 45px 9px 16px;
+        width: 100%;
+        @include placeholder (Arial, 13px, 400, normal, white);
+      } // input
+    } // inputSearch
     .iconBtn {
       &-search {
-        padding: 11px;
-        right: 4px;
-        top: 50%;
-        transform: translateY(-50%);
+        background: $colorGray;
+        border-radius: $mainBorderRadius;
+        border: 1px solid transparent;
+        padding: 10px;
+        position: relative;
       } // -search
+      &-showMarker {
+        &:before {
+          @include drawTriangleTop(14, 7, white);
+          content: '';
+          position: absolute;
+          transform: translateX(-50%);
+          bottom: -18px;
+          left: 50%;
+        } // before
+      } // -showMarker
     } // iconBtn
   } // __form
 } // searchBlock
 
 .menuBlock {
+  //position: relative;
   .iconBtn {
     &-toggleMenu {
       position: relative;
@@ -84,12 +102,20 @@
         } // cssIcon
       } // hover
     } // -toggleMenu
+    &-showMarker {
+      &:before {
+        @include drawTriangleTop(14, 7, white);
+        content: '';
+        position: absolute;
+        transform: translateX(-50%);
+        bottom: -18px;
+        left: 50%;
+      } // before
+    } // -showMarker
   } // iconBtn
   .topMenu {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
     $blockPadding: 30px;
+    @include flex(stretch, space-between);
     background: white;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
     color: $colorDarkGray;
@@ -97,25 +123,16 @@
     opacity: 0;
     padding: $blockPadding;
     position: absolute;
+    transform: translateX(-50%);
     transition: height .5s, opacity .5s;
-    left: 0;
-    top: 54px;
+    left: 50%;
+    top: 51px;
     width: 100%;
     z-index: 10;
     &-open {
-      align-items: stretch;
-      justify-content: space-between;
       height: 295px;
       opacity: 1;
     } // -open
-    &:before {
-      @include drawTriangleTop(14, 7, white);
-      content: '';
-      position: absolute;
-      transform: translateX(3px);
-      top: -6px;
-      left: 62%;
-    } // before
   } // topMenu
   .headerMenu {
     &__item {
@@ -124,6 +141,7 @@
         font-size: 16px;
         line-height: 30px;
         text-decoration: none;
+        white-space: nowrap;
         &:hover {
           color: $colorYellow;
         } // hover
@@ -209,12 +227,84 @@
     width: 1px;
   } // __separate
 } // headerUserAction
+// MEDIA --------------------------
+@media only screen and ( max-width: 1000px ) {
+  .siteHeaderSection {
+    .searchBlock {
+      &__form {
+        .inputSearch {
+          width: 100%;
+          input {
+          } // input
+        } // inputSearch
+      } // __form
+    } // searchBlock
+    .menuBlock {
+      .topMenu {
+        $blockPadding: 40px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: $blockPadding;
+        &-open {
+          height: 500px;
+        } // -open
+      } // topMenu
+      .headerMenu {
+        flex-basis: auto;
+        flex-grow: 1;
+        padding: 0 15px;
+      } // headerMenu
+    } // menuBlock
+  } // siteHeaderSection
+} // 1000
+@media only screen and ( max-width: 850px ) {
+  .siteHeaderSection {
+    .siteHeader__logo {
+      margin-right: auto;
+    } // siteHeader__logo
 
+    .searchBlock {
+      margin-left: auto;
+      margin-right: 15px;
+      &__form {
+        width: 35px;
+        height: 35px;
+        .inputSearch {
+          display: none;
+          background: white;
+          box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+          //height: 0;
+          position: absolute;
+          left: 0;
+          top: 51px;
+          padding: 15px;
+          transition: height .3s, opacity .5s;
+          width: 100%;
+        } // inputSearch
+        .iconBtn {
+          &-search {
+            border-color: $colorYellow;
+          } // -search
+        } // iconBtn
+      } // __form
+    } // searchBlock
+
+    .menuBlock {
+      margin-right: auto;
+    } // menuBlock
+
+    .mainBtn {
+      &-addReview {
+        margin: 0 auto;
+      } // -addReview
+    } // mainBtn
+  } // siteHeaderSection
+} // 850
 // ==========================================
 
 // Spare parts ------------------------------
 .spareParts {
-  margin-bottom: 60px;
+  margin-bottom: $outerBlockMargin;
   &__titleBlock {
     align-items: center;
     display: flex;
@@ -227,10 +317,6 @@
     align-items: center;
     display: flex;
   } // sparePartsFilter
-  &__sliderBlock {
-    position: relative;
-    max-width: $wrapperMaxWidth;
-  } // sliderBlock
   .sparePartsSlider {
     display: flex;
     align-items: flex-start;
@@ -262,7 +348,7 @@
     text-decoration: none;
     white-space: nowrap;
     &__img {
-      margin-right: 20px;
+      margin-right: 10px;
       height: 34px;
       img {
         height: 100%;
@@ -423,22 +509,19 @@
 
 // review count block -----------------------
 .reviewCountBlock {
-  align-items: center;
+  @include flex(center, center);
   border-radius: 3px;
   background: linear-gradient(to bottom, rgba(167,202,82,1) 0%,rgba(144,202,82,1) 100%);
-  display: flex;
-  justify-content: center;
   flex-direction: column;
   padding: 30px;
-  margin-bottom: 60px;
+  margin-bottom: $outerBlockMargin;
   &__title {
     margin-bottom: 15px;
     text-shadow: 1px 1px 1px rgba(70, 91, 29, 0.31);
+    text-align: center;
   } // title
   .reviewCounter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
   } // reviewCounter
   .reviewNumbersBlock {
     display: flex;
@@ -513,6 +596,26 @@
     } // __numbers
   } // reviewNumbersBlock
 
+  // MEDIA -------------------------
+
+  @media screen and ( max-width: 1000px ) {
+    .reviewCounter {
+      flex-wrap: wrap;
+    } // reviewCounter
+
+    .reviewNumbersBlock {
+      &:last-child {
+        margin-top: 15px;
+      } // last-child
+    } // reviewNumbersBlock
+  } // 1000
+
+  @media screen and ( max-width: 850px ) {
+  padding: 20px;
+  } // 850
+
+  // ===============================
+
 } // reviewCountBlock
 // ==========================================
 
@@ -522,10 +625,6 @@
   &__title {
     margin-bottom: 30px;
   } // __title
-  &__ratingBlock {
-    position: relative;
-    max-width: $wrapperMaxWidth;
-  } // __ratingBlock
   &__slider {
     display: flex;
     align-items: flex-start;
@@ -930,29 +1029,25 @@
     margin-bottom: 30px;
   } // __title
   &__listsBlock {
-    align-items: flex-start;
-    display: flex;
-    justify-content: space-between;
+    @include flex(flex-start, space-between);
     margin-bottom: 30px;
   } // __listsBlock
   .carItems {
-    display: flex;
+    $itemWidth: calc( 1140px / 3 );
+    @include flex(stretch, center);
     flex-wrap: wrap;
-    justify-content: center;
     &>li {
-      width: calc( 1140px / 3 );
+      width: $itemWidth
     } // li
     &__unvisibleItem {
       display: none;
     } // __unvisibleItem
   } // carItems
   .carItem {
-    align-items: center;
+    @include flex(center, space-between);
     border: 1px solid transparent;
     color: $colorDarkGray;
-    display: flex;
     height: 50px;
-    justify-content: space-between;
     text-decoration: none;
     padding: 0 10px;
     &:hover {
@@ -963,9 +1058,7 @@
       } // carItem__elem-name
     } // hover
     &__elem {
-      align-items: center;
-      display: flex;
-      justify-content: flex-start;
+      @include flex(center, flex-start);
       &-logo {
         $carItemLogoWidth: 70px;
         background-repeat: no-repeat;
@@ -1017,14 +1110,23 @@
     } // button
   } // showMoreCars
 } // cars
+// MEDIA -----------------------------
+@media screen and ( max-width: 850px ) {
+  .cars {
+    .carItems {
+      $itemWidth: calc( 100% / 2 );
+      &>li {
+        width: $itemWidth
+      } // li
+    } // carItems
+  } // cars
+} // 850
 // ==========================================
 
 // magazine block ---------------------------
 .magazineBlock {
-  align-items: stretch;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
+  @include flex(stretch, space-between);
+  margin-bottom: $outerBlockMargin;
 } // magazineBlock
 .magazine {
   width: 70%;
@@ -1035,8 +1137,7 @@
 
   } // ____articles
   .articleTabs {
-    display: flex;
-    justify-content: flex-start;
+    @include flex(stretch, flex-start);
     flex-wrap: wrap;
     a {
       color: $colorDarkGray;
@@ -1124,6 +1225,29 @@
     } // hover
   } // articleTab
 } // magazine
+// MEDIA ------------------------------
+@media screen and ( max-width: 1000px ) {
+  .magazine {
+    .articleTab {
+      &-respNonShow {
+        display: none;
+      } // -restNonShow
+    } // articleTab
+  } // magazine
+  .widgetsArea {
+    .widget {
+      &-homePage {
+        // event block
+        $maxHeight: 650px;
+        $maxHeightEventBlock: calc(#{$maxHeight} * 0.8);
+        height: $maxHeight;
+        .activityTape {
+          max-height: $maxHeightEventBlock;
+        } // activityTape
+      } // homePage
+    } // widget
+  } // widgetsArea
+} // 1000
 // ==========================================
 
 // comparison block -------------------------
@@ -1151,10 +1275,9 @@
 } // comparisonBlockItems
 .comparisonBlockItem {
   color: $colorDarkGray;
-  max-width: 247px;
-  min-width: 220px;
   margin: 15px;
   text-decoration: none;
+  width: calc( 100% / 4 - 30px );
   &__brands {
     background: white;
     border-radius: 3px;
@@ -1275,6 +1398,14 @@
     } // blockSeparator
   } // hover
 } // comparisonBlockItem
+// MEDIA ------------------------------
+@media screen and ( max-width: 1000px) {
+  .comparisonBlock {
+    .comparisonBlockItem {
+      width: calc( 100% / 3 - 30px );
+    } // comparisonBlockItem
+  } // comparisonBlock
+} // 1000
 // ==========================================
 
 // seo text block ---------------------------
@@ -1298,15 +1429,15 @@
 
 // footer -----------------------------------
 .siteFooter {
-
   .footerTop {
     $itemColor: $colorLinkAside;
     $itemFontSize: 14px;
-    @include flex(center, space-between);
+    $itemMargin: 30px;
+    @include flex(center, flex-start);
     margin-bottom: 20px;
     .siteVersionBtn {
       border-radius: 3px;
-      transition: box-shadow .3s;
+      margin-right: $itemMargin * 2;
       a {
         @include flex(center, flex-start);
         color: $itemColor;
@@ -1353,7 +1484,7 @@
       @include flex(center, flex-start);
       margin-left: 30px;
       &__item {
-        margin-right: 30px;
+        margin-right: $itemMargin;
         &:last-child {
           margin-right: 0;
         } // last-child
@@ -1410,21 +1541,30 @@
             display: inline-block;
             position: relative;
             margin-right: 7px;
-            &::after {
-              content: '';
-              border-bottom: 1px dashed $colorYellow;
-              bottom: 1px;
-              display: block;
-              position: absolute;
-              height: 1px;
-              transition: width .3s;
-              width: 0;
-            } // after
+            span {
+              &::after {
+                content: '';
+                border-bottom: 1px dashed $colorYellow;
+                bottom: 1px;
+                display: block;
+                position: absolute;
+                height: 1px;
+                transition: width .3s;
+                width: 0;
+              } // after
+            } // span
+            .titleText {
+              &-tablet {
+                display: none;
+              } // -tablet
+            } // titleText
             &:hover {
               cursor: pointer;
-              &::after {
-                width: 100%;
-              } // after
+              span {
+                &::after {
+                  width: 100%;
+                } // after
+              } // span
             } // hover
             a {
               color: $colorYellow;
@@ -1450,6 +1590,117 @@
     } // p
   } // __copyrightBlock
 } // siteFooter
+// @MEDIA ----------------------------
+@media screen and( max-width: 1000px ) {
+  .siteFooter {
+    &__menuBlock {
+      $blockPadding: 30px;
+      $titleFontSize: 13px;
+      $menuItemSize: 13px;
+      $menuItemLH: 22px;
+
+      padding: $blockPadding 0;
+      .footerMenu {
+        &__item {
+          a {
+            color: white;
+            font-size: $titleFontSize;
+            line-height: $menuItemLH;
+            text-decoration: none;
+            &:hover {
+              color: $colorYellow;
+            } // hover
+          } // a
+          &-title {
+            .h4Title {
+              .titleText {
+                display: none;
+                &-tablet {
+                  display: inline-block;
+                } // -tablet
+              } // titleText
+              margin-right: 0;
+            } // .h4Title
+          } // -title
+        } // __item
+        &-respNonShow {
+          display: none;
+        } // -respNonShow
+      } // footerMenu
+    } // __menuBlock
+  } // siteFooter
+} // 1000
+@media screen and( max-width: 768px ) {
+  .siteFooter {
+    .footerTop {
+      $itemColor: $colorLinkAside;
+      $itemFontSize: 12px;
+      $itemMargin: 20px;
+      .siteVersionBtn {
+        margin-right: $itemMargin * 2;
+        a {
+          font-size: $itemFontSize;
+          .btnIcon {
+            margin-right: 10px;
+            width: 22px;
+            svg {
+              fill: $itemColor;
+              transition: fill .3s;
+            } // svg
+          } // btnIcon
+        } // a
+      } // siteType
+      .footerTopItems {
+        &__item {
+          margin-right: $itemMargin;
+          a {
+            font-size: $itemFontSize;
+          } // a
+        } // __item
+      } // footerTopItems
+    } // footerTop
+    &__menuBlock {
+      $blockPadding: 20px;
+      $titleFontSize: 12px;
+      $menuItemSize: 12px;
+      $menuItemLH: 22px;
+
+      padding: $blockPadding 0;
+      .footerMenu {
+        &__item {
+          a {
+            color: white;
+            font-size: $titleFontSize;
+            line-height: $menuItemLH;
+            text-decoration: none;
+            &:hover {
+              color: $colorYellow;
+            } // hover
+          } // a
+          &-title {
+            .h4Title {
+              margin-right: 0;
+              a {
+                font-size: $titleFontSize;
+                line-height: $menuItemLH;
+              } // a
+              .titleText {
+                display: none;
+                &-tablet {
+                  display: inline-block;
+                } // -tablet
+              } // titleText
+
+            } // .h4Title
+          } // -title
+        } // __item
+        &-respNonShow {
+          display: none;
+        } // -respNonShow
+      } // footerMenu
+    } // __menuBlock
+  } // siteFooter
+} // 768
 // ==========================================
 
 // Rating page ------------------------------

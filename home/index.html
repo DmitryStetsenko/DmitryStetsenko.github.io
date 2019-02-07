@@ -18,8 +18,11 @@
                 <!-- /.siteHeader__logo -->
                 <div class="searchBlock">
                     <form action="#" class="searchBlock__form">
-                        <input type="text" placeholder="Поиск" id="headerFormSearch">
-                        <button class="iconBtn iconBtn-search">
+                        <div class="inputSearch">
+                            <input type="text" placeholder="Поиск" id="headerFormSearch">
+                        </div>
+                        <!-- /.inputSearch -->
+                        <button class="iconBtn iconBtn-search" data-status="close">
                             <span class="cssIcon cssIcon-search">
                                 <span class="cssIcon__part cssIcon__part-circle"></span>
                                 <span class="cssIcon__part cssIcon__part-knob"></span>
@@ -139,7 +142,7 @@
                     <!-- /.sparePartsFilter -->
                 </section>
                 <!-- /.spareParts__titleBlock -->
-                <section class="spareParts__sliderBlock">
+                <section class="sliderBox sliderBox-spareParts">
                     <div class="sliderWrap">
                         <div class="sparePartsSlider mySlider" id="sparePartsSlider">
                             <div class="sparePartsSlider__sliderItem slides lastClone">
@@ -1309,7 +1312,7 @@
                         </div>
                         <!-- /.sliderNavBlock__btn-next -->
                     </div>
-                    <!-- /.sliderNavBlock -->
+                    <!-- /.sliderBox -->
                 </section>
                 <!-- /.spareParts__sliderBlock -->
             </article>
@@ -1319,9 +1322,7 @@
                 <!-- /.reviewCountBlock__title -->
                 <div class="reviewCounter">
                     <div class="reviewNumbersBlock">
-                        <div class="reviewNumbersBlock__title">
-                            Сейчас у нас есть
-                        </div>
+                        <p class="reviewNumbersBlock__title">Сейчас у нас есть</p>
                         <!-- /.reviewNumbersBlock__title -->
                         <div class="reviewNumbersBlock__numbers">
                             <div class="number" data-number="5">
@@ -1357,9 +1358,7 @@
                     </div>
                     <!-- /.reviewNumbersBlock -->
                     <div class="reviewNumbersBlock">
-                        <div class="reviewNumbersBlock__title">
-                            отзывов 0
-                        </div>
+                        <p class="reviewNumbersBlock__title">отзывов о</p>
                         <!-- /.reviewNumbersBlock__title -->
                         <div class="reviewNumbersBlock__numbers">
                             <div class="number" data-number="3">
@@ -1385,12 +1384,12 @@
                             <!-- /.number -->
                         </div>
                         <!-- /.reviewNumbersBlock__numbers -->
+                        <p class="reviewNumbersBlock__title">запчастях</p>
+                        <!-- /.reviewNumbersBlock__title -->
                     </div>
                     <!-- /.reviewNumbersBlock -->
                     <div class="reviewNumbersBlock">
-                        <div class="reviewNumbersBlock__title">
-                            запчастях и
-                        </div>
+                        <p class="reviewNumbersBlock__title">и</p>
                         <!-- /.reviewNumbersBlock__title -->
                         <div class="reviewNumbersBlock__numbers">
                             <div class="number" data-number="1">
@@ -1416,12 +1415,7 @@
                             <!-- /.number -->
                         </div>
                         <!-- /.reviewNumbersBlock__numbers -->
-                    </div>
-                    <!-- /.reviewNumbersBlock -->
-                    <div class="reviewNumbersBlock">
-                        <div class="reviewNumbersBlock__title">
-                            брендах !
-                        </div>
+                        <p class="reviewNumbersBlock__title">брендах</p>
                         <!-- /.reviewNumbersBlock__title -->
                     </div>
                     <!-- /.reviewNumbersBlock -->
@@ -1432,7 +1426,7 @@
             <article class="brands" id="brands">
                 <div class="h2Title brands__title">Бренды</div>
                 <!-- /.brands__title -->
-                <section class="brands__ratingBlock">
+                <section class="sliderBox sliderBox-brands">
                     <div class="sliderWrap">
                         <div class="brands__slider mySlider">
                             <div class="brandsList">
@@ -1988,7 +1982,7 @@
                     </div>
                     <!-- /.sliderNavBlock -->
                 </section>
-                <!-- /.brands__ratingBlock -->
+                <!-- /.sliderBox -->
             </article>
             <!-- /.brands -->
             <article class="cars" id="cars">
@@ -2553,7 +2547,7 @@
                             </a>
                             <!-- /.articleTab -->
                             <a href="#" target="_blank">
-                                <figure class="articleTab">
+                                <figure class="articleTab articleTab-respNonShow">
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/new_tesla_prototype.jpg" alt="Новый прототип Тесла">
                                     </div>
@@ -2566,7 +2560,7 @@
                             </a>
                             <!-- /.articleTab -->
                             <a href="#" target="_blank">
-                                <figure class="articleTab">
+                                <figure class="articleTab articleTab-respNonShow">
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/inspect_the_car.jpg"
                                              alt="Готовимся к осмотру автомобиля">
@@ -2585,7 +2579,7 @@
                 </section>
                 <!-- /.magazine -->
                 <aside class="widgetsArea">
-                    <section class="widget widget-activityTape">
+                    <section class="widget widget-activityTape widget-homePage">
                         <div class="widget__header">
                             <div class="headerIcon headerIcon-noStroke">
                                 <svg viewBox="0 0 20 20">
@@ -2601,6 +2595,122 @@
                         <!-- /.widget__header -->
                         <div class="widgetContent">
                             <div class="activityTape">
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo1.jpg" alt="photo1">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>Вячеслав</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-voting">
+                                            Голосование
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>Проголосовал на странице рейтинга за</span>
+                                            <a href="#" target="_blank">Свечи зажигания Denso</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-needHelp">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-newEvent">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-newEvent">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
                                 <div class="event">
                                     <div class="event__header">
                                         <div class="event__headerThumbnail">
@@ -3267,7 +3377,11 @@
                     </ul>
                     <ul class="footerMenu">
                         <li class="footerMenu__item footerMenu__item-title">
-                            <div class="h4Title"><a href="#cars">Отзывы о запчастях для</a></div>
+                            <div class="h4Title"><a href="#cars">
+                                <span class="titleText">Отзывы о запчастях для авто</span>
+                                <span class="titleText titleText-tablet">Отзывы для авто</span>
+                            </a>
+                            </div>
                             <div class="shevronIcon shevronIcon-footerMenu">
                                 <div class="shevronIcon__icon">
                                     <span></span>
@@ -3276,7 +3390,6 @@
                                 <!-- /.shevronIcon__icon -->
                             </div>
                         </li>
-                        <li class="footerMenu__item"><a href="#" target="_blank">авто</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">Тойота</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">Киа</a></li>
@@ -3324,7 +3437,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="footerMenu">
+                    <ul class="footerMenu footerMenu-respNonShow">
                         <li class="footerMenu__item footerMenu__item-title">
                             <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
                             <div class="shevronIcon shevronIcon-footerMenu">

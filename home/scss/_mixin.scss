@@ -108,6 +108,20 @@
 //  background-size: $bgSize;
 //}
 
+// gradientBorder
+@mixin gradientBorder() {
+  background: linear-gradient(to right,
+          rgba(255, 255, 255, 0) 0,
+          white 70%);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+} // gradientBorder
+
 @mixin customScroll() {
   &::-webkit-scrollbar {
     width: 13px;
