@@ -33,6 +33,9 @@ img {
 body {
   font: 400 normal 16px/1 Arial, san-serif;
   color: #2c333d; }
+  @media screen and (max-width: 768px) {
+    body {
+      width: 768px; } }
 
 div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, textarea, button, span, ul, li, table, tbody, tr, th, td {
   box-sizing: border-box; }
@@ -114,7 +117,8 @@ button, input {
   overflow: hidden;
   padding: 10px 25px;
   position: relative;
-  transition: background .3s; }
+  transition: background .3s;
+  text-decoration: none; }
   .mainBtn::before {
     background: rgba(255, 255, 255, 0.26);
     content: '';
@@ -194,7 +198,9 @@ button, input {
   .mainBtn-showAll {
     border: 1px solid #efb428;
     box-shadow: unset;
-    background: white; }
+    background: white;
+    color: #2c333d;
+    font-size: 13px; }
     .mainBtn-showAll::before {
       display: none; }
     .mainBtn-showAll:hover {
@@ -1409,6 +1415,7 @@ button, input {
     margin-left: 5px; }
 
 .widgetsArea {
+  min-width: calc((calc((1170px / 12) - 30px) * 4) + 30px * 3);
   width: calc((calc((1170px / 12) - 30px) * 4) + 30px * 3); }
 
 .widget {
@@ -1597,19 +1604,33 @@ button, input {
       .widget .widgetContent .activityTape .event__headerThumbnail {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         background: white;
         border-radius: 3px;
         border: 1px solid white;
         margin-right: 10px;
         overflow: hidden;
         height: 35px;
+        min-width: 35px;
         width: 35px; }
       .widget .widgetContent .activityTape .event__headerNameDate {
-        align-items: flex-start;
         display: flex;
-        flex-direction: column;
+        align-items: flex-start;
         justify-content: flex-start;
-        margin-right: 10px; }
+        flex-direction: column;
+        margin-right: auto;
+        width: 130px;
+        overflow: hidden;
+        position: relative; }
+        .widget .widgetContent .activityTape .event__headerNameDate::after {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 70%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px; }
         .widget .widgetContent .activityTape .event__headerNameDate p {
           display: inline-block;
           font-size: 15px;
@@ -1617,7 +1638,8 @@ button, input {
           color: #464f5b;
           margin-bottom: 5px;
           position: relative;
-          transition: color .3s; }
+          transition: color .3s;
+          white-space: nowrap; }
           .widget .widgetContent .activityTape .event__headerNameDate p::before {
             background: #efb428;
             content: '';
@@ -1633,9 +1655,10 @@ button, input {
             .widget .widgetContent .activityTape .event__headerNameDate p:hover::before {
               width: 100%; }
         .widget .widgetContent .activityTape .event__headerNameDate time {
+          color: #6f7786;
+          display: block;
           font-size: 13px;
-          font-weight: normal;
-          color: #6f7786; }
+          font-weight: normal; }
       .widget .widgetContent .activityTape .event__content {
         margin-bottom: 15px; }
         .widget .widgetContent .activityTape .event__content p {
@@ -2218,8 +2241,18 @@ button, input {
         min-width: 80px;
         overflow: hidden;
         padding-left: 7px;
+        position: relative;
         width: 80px;
         white-space: nowrap; }
+        .spareParts .sparePartsElement__item-brandText::after {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 80%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 20px; }
       .spareParts .sparePartsElement__item-rating {
         font-size: 13px;
         font-weight: bold;
@@ -2481,6 +2514,11 @@ button, input {
         text-decoration: none;
         min-width: initial;
         width: 100%; }
+        .brands .brandsListElement__item-brandTop:hover {
+          cursor: pointer; }
+          .brands .brandsListElement__item-brandTop:hover::after {
+            font-size: 15px;
+            transform: scale(1); }
         .brands .brandsListElement__item-brandTop::after {
           content: attr(data-brand-name);
           display: flex;
@@ -2508,11 +2546,49 @@ button, input {
         .brands .brandsListElement__item-brandTop img {
           height: 100%;
           width: auto; }
-        .brands .brandsListElement__item-brandTop:hover {
+      .brands .brandsListElement__item-brandNew {
+        align-items: flex-start;
+        background: #f6f6f6;
+        color: #2c333d;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        padding-left: 10px;
+        text-decoration: none;
+        min-width: initial;
+        width: 100%; }
+        .brands .brandsListElement__item-brandNew:hover {
           cursor: pointer; }
-          .brands .brandsListElement__item-brandTop:hover::after {
+          .brands .brandsListElement__item-brandNew:hover::after {
             font-size: 15px;
             transform: scale(1); }
+        .brands .brandsListElement__item-brandNew::after {
+          content: attr(data-brand-name);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(to bottom, rgba(167, 202, 82, 0.81) 0%, rgba(144, 202, 82, 0.81) 100%);
+          color: white;
+          font-weight: bold;
+          font-size: 0;
+          height: 100%;
+          position: absolute;
+          transform: scale(0);
+          text-transform: uppercase;
+          transition: font-size .3s, transform .3s;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.71);
+          top: 0;
+          left: 0;
+          width: 100%; }
+        .brands .brandsListElement__item-brandNew .imgWrap {
+          height: 17px;
+          margin-bottom: 5px; }
+        .brands .brandsListElement__item-brandNew__additionalbrand {
+          color: #2c333d;
+          font-size: 13px; }
+        .brands .brandsListElement__item-brandNew img {
+          height: 100%;
+          width: auto; }
       .brands .brandsListElement__item-reviews {
         background: white;
         justify-content: center;
@@ -2693,7 +2769,8 @@ button, input {
       .cars .carItem__elem-name {
         padding-right: 5px;
         position: relative;
-        transition: color .3s; }
+        transition: color .3s;
+        white-space: nowrap; }
         .cars .carItem__elem-name::after {
           content: '';
           color: #efb428;
@@ -2805,11 +2882,16 @@ button, input {
         text-decoration: underline; }
 
 @media screen and (max-width: 1000px) {
-  .magazine .articleTab-respNonShow {
-    display: none; }
-  .widgetsArea .widget-homePage {
+  .magazineBlock .magazine__articles .articleTabs .articleTab {
+    flex-basis: auto;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 140px; }
+    .magazineBlock .magazine__articles .articleTabs .articleTab-respNonShow {
+      display: none; }
+  .magazineBlock .widgetsArea .widget-homePage {
     height: 650px; }
-    .widgetsArea .widget-homePage .activityTape {
+    .magazineBlock .widgetsArea .widget-homePage .activityTape {
       max-height: calc(650px * 0.8); } }
 
 .comparisonBlock {
@@ -2928,7 +3010,9 @@ button, input {
 
 @media screen and (max-width: 1000px) {
   .comparisonBlock .comparisonBlockItem {
-    width: calc( 100% / 3 - 30px); } }
+    width: calc( 100% / 3 - 30px); }
+    .comparisonBlock .comparisonBlockItem-respNotShow {
+      display: none; } }
 
 .seo {
   margin-bottom: 60px; }
@@ -3056,7 +3140,7 @@ button, input {
       display: inline-block;
       position: relative;
       margin-right: 7px; }
-      .siteFooter__menuBlock .footerMenu__item-title .h4Title span::after {
+      .siteFooter__menuBlock .footerMenu__item-title .h4Title::after {
         content: '';
         border-bottom: 1px dashed #efb428;
         bottom: 1px;
@@ -3069,7 +3153,7 @@ button, input {
         display: none; }
       .siteFooter__menuBlock .footerMenu__item-title .h4Title:hover {
         cursor: pointer; }
-        .siteFooter__menuBlock .footerMenu__item-title .h4Title:hover span::after {
+        .siteFooter__menuBlock .footerMenu__item-title .h4Title:hover::after {
           width: 100%; }
       .siteFooter__menuBlock .footerMenu__item-title .h4Title a {
         color: #efb428;

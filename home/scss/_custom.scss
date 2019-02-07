@@ -1,7 +1,9 @@
 body {
   font: 400 normal 16px/1 Arial, san-serif;
   color: $colorDarkGray;
-
+  @media screen and ( max-width: 768px ) {
+    width: 768px;
+  } // 768
 }
 
 div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, textarea, button, span, ul, li, table, tbody, tr, th, td {
@@ -110,6 +112,7 @@ button, input {
   padding: 10px 25px;
   position: relative;
   transition: background .3s;
+  text-decoration: none;
   &::before {
     background: rgba(255, 255, 255, 0.26);
     content: '';
@@ -212,6 +215,8 @@ button, input {
     border: 1px solid $colorYellow;
     box-shadow: unset;
     background: white;
+    color: $colorDarkGray;
+    font-size: 13px;
     &::before {
       display: none;
     } // before
@@ -1869,6 +1874,7 @@ button, input {
 // side bar widgets ------------------------------
 
 .widgetsArea {
+  min-width: $col4Width;
   width: $col4Width;
 } // widgerArea
 
@@ -2106,30 +2112,32 @@ button, input {
         border-bottom: 1px solid $colorLightGray;
         margin-bottom: 20px;
         &__header {
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
+          @include flex(flex-start, flex-start);
           margin-bottom: 10px;
         } // header
         &__headerThumbnail {
           $headerThumbnailSize: 35px;
+          @include flex(center, flex-start);
 
-          display: flex;
-          align-items: center;
           background: white;
           border-radius: 3px;
           border: 1px solid white;
           margin-right: 10px;
           overflow: hidden;
           height: $headerThumbnailSize;
+          min-width: $headerThumbnailSize;
           width: $headerThumbnailSize;
         } // __headerThumbnail
         &__headerNameDate {
-          align-items: flex-start;
-          display: flex;
+          @include flex(flex-start, flex-start);
           flex-direction: column;
-          justify-content: flex-start;
-          margin-right: 10px;
+          margin-right: auto;
+          width: 130px;
+          overflow: hidden;
+          position: relative;
+          &::after {
+            @include gradientBorderColor ($colorBgLightGray, 40px, 70%);
+          } // after
           p {
             display: inline-block;
             font-size: 15px;
@@ -2138,6 +2146,7 @@ button, input {
             margin-bottom: 5px;
             position: relative;
             transition: color .3s;
+            white-space: nowrap;
             &::before {
               background: $colorYellow;
               content: '';
@@ -2157,9 +2166,10 @@ button, input {
             } // hover
           } // p
           time {
+            color: $colorCountTxt;
+            display: block;
             font-size: 13px;
             font-weight: normal;
-            color: $colorCountTxt;
           }
         } // __headerNameDate
         &__content {

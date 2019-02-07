@@ -31,7 +31,6 @@ window.onload = function () {
 
     showAllCars ();
 
-    showAllComparison ();
 
     showAllSEOText ();
 
@@ -99,17 +98,17 @@ window.onload = function () {
         const topToggleMenu = document.querySelector('.iconBtn-toggleMenu');
         const topMenu = document.querySelector('.topMenu');
 
-        topToggleMenu.addEventListener('click', ()=>{
+        topToggleMenu.addEventListener('click', function(){
             if ( !topMenu.classList.contains('topMenu-open') ) {
                 topMenu.setAttribute('style', 'display:flex;');
                 setTimeout(()=>{
                     topMenu.classList.add('topMenu-open');
                     topToggleMenu.classList.add('iconBtn-showMarker');
-                });
+                },500);
             } else {
                closeTopMenu();
             }
-            clickPastWindow('topMenu', ()=>{
+            clickPastWindow('topMenu', function(){
                 closeTopMenu();
             });
         });
@@ -253,37 +252,7 @@ window.onload = function () {
         }
     } // showAllCars
 
-    function showAllComparison () {
-        const comparisonBlock = document.querySelector('.comparisonBlock__content');
-        const blockHeight = comparisonBlock.clientHeight;
-        const comparisonBlockItems = comparisonBlock.querySelector('.comparisonBlockItems');
-        const showAllBtn = document.querySelector('#comparisonBlockShowAll');
-        const unvisibleItem = comparisonBlockItems.querySelectorAll('.displayNone');
-        let openBlockHeight = 0;
 
-        comparisonBlock.style.height = blockHeight + 'px';
-        comparisonBlock.style.overflow = 'hidden';
-        comparisonBlock.style.transition = 'height .3s';
-
-        showAllBtn.addEventListener('click', ()=>{
-            console.log('show all');
-            for ( let i = 0; i < unvisibleItem.length; i++) {
-                unvisibleItem[i].classList.remove('displayNone');
-            }
-            openBlockHeight = comparisonBlockItems.clientHeight;
-            comparisonBlock.style.height = openBlockHeight + 'px';
-
-            // disabled show all btn
-
-            showAllBtn.setAttribute('disabled', 'true');
-            showAllBtn.classList.add('mainBtn-showAllDisabled');
-
-            // clear style
-            setTimeout(()=> {
-                comparisonBlock.removeAttribute('style');
-            }, 1000)
-        });
-    } // showAllComparison
 
     function showAllSEOText () {
         const seoContentBlock = document.querySelector('.seoTexts');
@@ -648,3 +617,39 @@ window.onload = function () {
 };
 
 
+// unused function
+
+// showAllComparison ();
+
+// function showAllComparison () {
+//     const comparisonBlock = document.querySelector('.comparisonBlock__content');
+//     const blockHeight = comparisonBlock.clientHeight;
+//     const comparisonBlockItems = comparisonBlock.querySelector('.comparisonBlockItems');
+//     const showAllBtn = document.querySelector('#comparisonBlockShowAll');
+//     const unvisibleItem = comparisonBlockItems.querySelectorAll('.displayNone');
+//     let openBlockHeight = 0;
+//
+//     comparisonBlock.style.height = blockHeight + 'px';
+//     comparisonBlock.style.overflow = 'hidden';
+//     comparisonBlock.style.transition = 'height .3s';
+//
+//     showAllBtn.addEventListener('click', ()=>{
+//         console.log('show all');
+//         for ( let i = 0; i < unvisibleItem.length; i++) {
+//             unvisibleItem[i].classList.remove('displayNone');
+//         }
+//         openBlockHeight = comparisonBlockItems.clientHeight;
+//         comparisonBlock.style.height = openBlockHeight + 'px';
+//
+//         // disabled show all btn
+//
+//         showAllBtn.setAttribute('disabled', 'true');
+//         showAllBtn.classList.add('mainBtn-showAllDisabled');
+//
+//         // clear style
+//         setTimeout(()=> {
+//             comparisonBlock.removeAttribute('style');
+//         }, 1000)
+//     });
+// } // showAllComparison
+// =====================

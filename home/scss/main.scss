@@ -468,8 +468,12 @@
         min-width: $sparePartsElementBrandTextWidth;
         overflow: hidden;
         padding-left: 7px;
+        position: relative;
         width: $sparePartsElementBrandTextWidth;
         white-space: nowrap;
+        &::after {
+          @include gradientBorderColor($colorBgLightGray, 20px, 80%);
+        } // after
       } // __brandText
       &-rating {
         font-size: 13px;
@@ -804,6 +808,13 @@
         text-decoration: none;
         min-width: initial;
         width: 100%;
+        &:hover {
+          cursor: pointer;
+          &::after {
+            font-size: 15px;
+            transform: scale(1);
+          } // after
+        } // hover
         &::after {
           content: attr(data-brand-name);
           display: flex;
@@ -836,6 +847,18 @@
           height: 100%;
           width: auto;
         } // img
+      } // -brandTop
+      &-brandNew {
+        align-items: flex-start;
+        background: $colorBgLightGray;
+        color: $colorDarkGray;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        padding-left: 10px;
+        text-decoration: none;
+        min-width: initial;
+        width: 100%;
         &:hover {
           cursor: pointer;
           &::after {
@@ -843,7 +866,39 @@
             transform: scale(1);
           } // after
         } // hover
-      } // -brandTop
+        &::after {
+          content: attr(data-brand-name);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(to bottom, rgba(167, 202, 82, 0.81) 0%, rgba(144, 202, 82, 0.81) 100%);
+          //background: rgba(239, 180, 40, 0.8);
+          color: white;
+          font-weight: bold;
+          font-size: 0;
+          height: 100%;
+          position: absolute;
+          transform: scale(0);
+          text-transform: uppercase;
+          transition: font-size .3s, transform .3s;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.71);
+          top: 0;
+          left: 0;
+          width: 100%;
+        } // after
+        .imgWrap {
+          height: 17px;
+          margin-bottom: 5px;
+        } // imgWrap
+        &__additionalbrand {
+          color: $colorDarkGray;
+          font-size: 13px;
+        } // __additionalBrand
+        img {
+          height: 100%;
+          width: auto;
+        } // img
+      } // -brandNew
       &-reviews {
         $brandTextWidth: calc((100% - 100px) / 2);
         background: white;
@@ -1078,6 +1133,7 @@
         padding-right: 5px;
         position: relative;
         transition: color .3s;
+        white-space: nowrap;
         &::after {
           content: '';
           color: $colorYellow;
@@ -1129,7 +1185,9 @@
   margin-bottom: $outerBlockMargin;
 } // magazineBlock
 .magazine {
-  width: 70%;
+  $blockWidth: 70%;
+  $marginRight: 30px;
+  width: $blockWidth;
   &__title {
     margin-bottom: 30px;
   } // __title
@@ -1145,7 +1203,7 @@
     } // a
   } // articleTabs
   .articleTab {
-    margin-right: 30px;
+    margin-right: $marginRight;
     width: $col2Width;
     &:first-child {
       margin-bottom: 30px;
@@ -1227,26 +1285,38 @@
 } // magazine
 // MEDIA ------------------------------
 @media screen and ( max-width: 1000px ) {
-  .magazine {
-    .articleTab {
-      &-respNonShow {
-        display: none;
-      } // -restNonShow
-    } // articleTab
-  } // magazine
-  .widgetsArea {
-    .widget {
-      &-homePage {
-        // event block
-        $maxHeight: 650px;
-        $maxHeightEventBlock: calc(#{$maxHeight} * 0.8);
-        height: $maxHeight;
-        .activityTape {
-          max-height: $maxHeightEventBlock;
-        } // activityTape
-      } // homePage
-    } // widget
-  } // widgetsArea
+  .magazineBlock {
+    .magazine {
+      &__articles {
+        .articleTabs {
+          a {
+          } // a
+          .articleTab {
+            flex-basis: auto;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            width: 140px;
+            &-respNonShow {
+              display: none;
+            } // -restNonShow
+          } // articleTab
+        } // articleTabs
+      } // __articles
+    } // magazine
+    .widgetsArea {
+      .widget {
+        &-homePage {
+          // event block
+          $maxHeight: 650px;
+          $maxHeightEventBlock: calc(#{$maxHeight} * 0.8);
+          height: $maxHeight;
+          .activityTape {
+            max-height: $maxHeightEventBlock;
+          } // activityTape
+        } // homePage
+      } // widget
+    } // widgetsArea
+  } // magazineBlock
 } // 1000
 // ==========================================
 
@@ -1403,6 +1473,9 @@
   .comparisonBlock {
     .comparisonBlockItem {
       width: calc( 100% / 3 - 30px );
+      &-respNotShow {
+        display: none;
+      } // -respNotShow
     } // comparisonBlockItem
   } // comparisonBlock
 } // 1000
@@ -1541,18 +1614,16 @@
             display: inline-block;
             position: relative;
             margin-right: 7px;
-            span {
-              &::after {
-                content: '';
-                border-bottom: 1px dashed $colorYellow;
-                bottom: 1px;
-                display: block;
-                position: absolute;
-                height: 1px;
-                transition: width .3s;
-                width: 0;
-              } // after
-            } // span
+            &::after {
+              content: '';
+              border-bottom: 1px dashed $colorYellow;
+              bottom: 1px;
+              display: block;
+              position: absolute;
+              height: 1px;
+              transition: width .3s;
+              width: 0;
+            } // after
             .titleText {
               &-tablet {
                 display: none;
@@ -1560,11 +1631,9 @@
             } // titleText
             &:hover {
               cursor: pointer;
-              span {
-                &::after {
-                  width: 100%;
-                } // after
-              } // span
+              &::after {
+                width: 100%;
+              } // after
             } // hover
             a {
               color: $colorYellow;

@@ -121,6 +121,18 @@
   top: 0;
   width: 40px;
 } // gradientBorder
+@mixin gradientBorderColor($color, $width, $persent) {
+  background: linear-gradient(to right,
+          rgba(255,255,255, 0) 0,
+          $color $persent);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $width;
+} // gradientBorder
 
 @mixin customScroll() {
   &::-webkit-scrollbar {
