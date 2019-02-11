@@ -3023,7 +3023,7 @@ button, input {
   .comparisonBlockItem:hover {
     cursor: pointer; }
     .comparisonBlockItem:hover .comparisonBlockItem__brands::before, .comparisonBlockItem:hover .comparisonBlockItem__brands::after {
-      transform: scale(1, 1); }
+      transform: scale(0.99, 1); }
     .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::before, .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::after {
       transform: scale(0.7); }
     .comparisonBlockItem:hover .comparisonBlockItem__description {
