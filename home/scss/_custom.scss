@@ -2105,8 +2105,8 @@ button, input {
       } // responseNature
     } // carInfoFilter
     .activityTape {
-      @include customScroll();
-      overflow-y: scroll;
+      //@include customScroll();
+      //overflow-y: scroll;
       padding-right: 10px;
       .event {
         border-bottom: 1px solid $colorLightGray;
@@ -2222,8 +2222,10 @@ button, input {
   &-activityTape {
     $widgetBackground: $colorBgLightGray;
     // event block
-    $maxHeight: 440px;
-    $maxHeightEventBlock: calc(#{$maxHeight} * 0.8);
+    //$maxHeight: 440px;
+    $maxHeight: auto;
+    //$maxHeightEventBlock: calc(#{$maxHeight} * 0.8);
+    $maxHeightEventBlock: auto;
 
     background: $widgetBackground;
     height: $maxHeight;
@@ -2263,4 +2265,44 @@ button, input {
 // ===============================================
 
 
+// custom scroll style
+.scrollwrapper, .mcontentwrapper {
+  $scrollMaxHeight: 440px;
+  height: calc(#{$scrollMaxHeight} * 0.8) !important;
+}
 
+.scrollgeneric {
+  line-height: 1px;
+  font-size: 1px;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.vscrollerbase {
+  border-radius: 3px;
+  width: 10px;
+  background-color: $colorBorderLightGray;
+}
+.vscrollerbar {
+  border-radius: 3px;
+  width: 10px;
+  background-color: $colorYellow;
+}
+.hscrollerbase {
+  border-radius: 3px;
+  height: 10px;
+  background-color: $colorBorderLightGray;
+}
+.hscrollerbar {
+  border-radius: 3px;
+  height: 10px;
+  background-color: $colorYellow;
+}
+
+.scrollerjogbox {
+  width: 10px;
+  height: 10px;
+  top: auto; left: auto;
+  bottom: 0px; right: 0px;
+  background-color: gray;
+}

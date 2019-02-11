@@ -1578,21 +1578,7 @@ button, input {
       justify-content: space-between;
       height: 45px; }
   .widget .widgetContent .activityTape {
-    /* Track */
-    /* Handle */
-    /* Handle on hover */
-    overflow-y: scroll;
     padding-right: 10px; }
-    .widget .widgetContent .activityTape::-webkit-scrollbar {
-      width: 13px; }
-    .widget .widgetContent .activityTape::-webkit-scrollbar-track {
-      border-radius: 3px;
-      background: #e8e8e8; }
-    .widget .widgetContent .activityTape::-webkit-scrollbar-thumb {
-      background: #efb428;
-      border-radius: 10px; }
-    .widget .widgetContent .activityTape::-webkit-scrollbar-thumb:hover {
-      background: #555; }
     .widget .widgetContent .activityTape .event {
       border-bottom: 1px solid #c1c1c1;
       margin-bottom: 20px; }
@@ -1700,12 +1686,12 @@ button, input {
     min-height: initial; }
   .widget-activityTape {
     background: #f6f6f6;
-    height: 440px;
+    height: auto;
     overflow: hidden; }
     .widget-activityTape .widget__header .headerTitle:after {
       display: none; }
     .widget-activityTape .activityTape {
-      max-height: calc(440px * 0.8); }
+      max-height: auto; }
   .widget-interestingTopics {
     height: 600px;
     overflow: hidden; }
@@ -1714,6 +1700,45 @@ button, input {
     .widget-interestingTopics .interestingTopics {
       max-height: calc(600px * 0.8);
       min-height: calc(600px * 0.8); }
+
+.scrollwrapper, .mcontentwrapper {
+  height: calc(440px * 0.8) !important; }
+
+.scrollgeneric {
+  line-height: 1px;
+  font-size: 1px;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.vscrollerbase {
+  border-radius: 3px;
+  width: 10px;
+  background-color: #e8e8e8; }
+
+.vscrollerbar {
+  border-radius: 3px;
+  width: 10px;
+  background-color: #efb428; }
+
+.hscrollerbase {
+  border-radius: 3px;
+  height: 10px;
+  background-color: #e8e8e8; }
+
+.hscrollerbar {
+  border-radius: 3px;
+  height: 10px;
+  background-color: #efb428; }
+
+.scrollerjogbox {
+  width: 10px;
+  height: 10px;
+  top: auto;
+  left: auto;
+  bottom: 0px;
+  right: 0px;
+  background-color: gray; }
 
 @keyframes bounce {
   from,

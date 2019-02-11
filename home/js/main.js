@@ -15,6 +15,8 @@ window.onload = function () {
     const COL_3_WIDTH = ( COL_WIDTH * 3 ) + ( GUTTER_X2 * 2 );
     const COL_4_WIDTH = ( COL_WIDTH * 4 ) + ( GUTTER_X2 * 3 );
 
+    initCustomScrollBar ();
+
     headerSearch ();
 
     menuOpened ();
@@ -38,7 +40,7 @@ window.onload = function () {
 
     footerMenuScrollTo ();
 
-    sliderSpareParts ();
+    // sliderSpareParts ();
 
     sliderBrands ();
 
@@ -362,8 +364,82 @@ window.onload = function () {
         }
     } // footerMenuScrollTo
 
+    function initCustomScrollBar () {
+        const scrollContainer = document.querySelector('.activityTape');
+        fleXenv.fleXcrollMain(scrollContainer);
+    } // initCustomScrollBar
+
 
 // sliders -------------------------------------------------------
+    let index = 1;
+    let indexOffset = 3;
+    let slidesIsShow = 4;
+    let Slider = function () {
+        this.box = document.querySelector('.sliderBox-spareParts');
+        this.slidesBox = this.box.querySelector('.mySlider');
+        this.slides = this.slidesBox.querySelectorAll('.slide');
+        this.btns = this.box.querySelectorAll('.sliderNavBlock__btn');
+        this.size = ((this.slidesBox.clientWidth + 25) / slidesIsShow).toFixed();
+
+        this.slidesBox.style.width = this.size * this.slides.length + 'px';
+
+        this.position();
+        this.carousel();
+    };
+    Slider.prototype.position = function() {
+        let size = this.size;
+        this.slidesBox.style.transform = `translateX(-${size * ( index + indexOffset - 1 )}px)`;
+        console.log(index + indexOffset);
+        index += indexOffset - 1;
+    };
+    Slider.prototype.carousel = function() {
+        let i;
+        let max = this.btns.length;
+        let that = this;
+
+        for ( i = 0; i < max; i += 1 ) {
+            that.btns[i].addEventListener('click', Slider[that.btns[i].id].bind(null, that));
+        }
+    };
+
+    Slider.prev = function( box ){
+        let size = box.size;
+        index <= 0 ? false : index--;
+        box.slidesBox.style.transition = 'transform .3s ease-in-out';
+        box.slidesBox.style.transform = `translateX(-${size * ( index + indexOffset - 1)}px)`;
+    };
+
+    Slider.next = function( box ){
+        let max = box.slides.length;
+        let size = box.size;
+        (index + indexOffset) >= (max - 1) ? false : index++;
+        box.slidesBox.style.transition = 'transform .3s ease-in-out';
+        box.slidesBox.style.transform = `translateX(-${size * index}px)`;
+
+        box.jump();
+    };
+    Slider.prototype.jump = function() {
+        let that = this;
+        let size = this.size;
+        this.slidesBox.addEventListener('transitionend', function(){
+            if ( that.slides[index + indexOffset].classList.contains('lastClone') ) {
+                console.log(that.slides[index + indexOffset]);
+                console.log(`index - ${index}`);
+                console.log('last-slide:');
+                index = 0;
+                that.slidesBox.style.transition = 'none';
+                that.slidesBox.style.transform = `translateX(-${size * index}px)`;
+            } else {
+                console.log(that.slides[index + indexOffset]);
+                console.log(`index - ${index}`);
+                // that.slidesBox.style.transition = 'none';
+                // that.slidesBox.style.transform = `translateX(-${size * (index + ( indexOffset - 1 ))}px)`;
+            }
+        })
+    };
+
+    new Slider();
+
     function sliderSpareParts () {
         const sliderBlock = document.querySelector('.sliderBox-spareParts');
         let slidePosition;
@@ -371,6 +447,7 @@ window.onload = function () {
         let quantitySlides;
         let slidesOffset;
         let index = 1;
+        let realIndex;
         let box;
         if (sliderBlock){
             const slider = sliderBlock.querySelector('.mySlider');
@@ -383,14 +460,20 @@ window.onload = function () {
             quantitySlides = slides.length;
             slidePosition = 0;
             slideIsShow = 4;
+            index = 1;
             slidesOffset = COL_3_WIDTH + GUTTER_X2;
 
             // initial slider
+            console.log('slides is - ' + slides.length);
+            console.log('slide is show - ' + slideIsShow);
+            console.log('slide start - ' + index);
+
             box = quantitySlides * COL_3_WIDTH + quantitySlides * GUTTER_X2;
             slider.style.width = box + 'px';
 
-            // offset slider on 1 slide
-            slider.style.transform = `translateX(-${slidesOffset * index}px)`;
+            // offset slider on slideIsShow slide
+
+            slider.style.transform = `translateX(-${slidesOffset * ( index + 1 )}px)`;
 
             // check for navigation buttons show
             if ( slideIsShow === quantitySlides ) {
@@ -417,10 +500,19 @@ window.onload = function () {
             let max = slides.length;
             let size = slidesOffset;
 
+            // index + 1 + slideIsShow  >= max ? false : index++;
+
+            if ( index + slideIsShow - 2 >= max - 3  ) {
+                console.log('last-slide');
+                // slider.style.transition = 'none';
+            } else {
+                index++;
+            }
+
             slider.style.transition = 'transform .3s ease-in-out';
-            ( index + slideIsShow ) >= max ? false : index++;
-            slider.style.transform = `translateX(-${slidesOffset * index}px)`;
+            slider.style.transform = `translateX(-${slidesOffset * ( index + 1 )}px)`;
             jump(sliderBlockNode);
+
         }
         function prevSlide(sliderBlockNode) {
             const slider = sliderBlockNode.querySelector('.mySlider');
@@ -428,20 +520,29 @@ window.onload = function () {
             let size = slidesOffset;
 
             slider.style.transition = 'transform .3s ease-in-out';
-            index <= 0 ? false : index--;
+            index + slideIsShow <= 0 ? false : index--;
+            console.log(index+slideIsShow);
             slider.style.transform = `translateX(-${slidesOffset * index}px)`;
-            jump(sliderBlockNode);
+            // jump(sliderBlockNode);
         }
+
         function jump(sliderBlockNode) {
             const slider = sliderBlockNode.querySelector('.mySlider');
             let slides = slider.querySelectorAll('.slides');
+
             sliderBlock.addEventListener('transitionend', function(){
-                console.log(index + slideIsShow - 1);
-                console.log(slides[( index + slideIsShow ) - 1].classList.contains('firstClone'));
-                slides[( index + slideIsShow )-1].classList.contains('firstClone') ? index = 1 : index;
-                slides[index].classList.contains('lastClone') ? index = 1 : index;
-                slider.style.transition = 'none';
-                slider.style.transform = `translateX(-${slidesOffset * index}px)`;
+                if ( slides[( index + 2 ) + ( slideIsShow - 1 )].classList.contains('lastClone') ) {
+                    console.log('transition end');
+
+                    index = -2;
+                    slider.style.transform = `translateX(-${slidesOffset * index}px)`;
+                    // slider.style.transition = 'transform .3s ease-in-out';
+                }
+                // slides[index - 1].classList.contains('firstClone') ? index = slideIsShow : index;
+                // slides[index - slideIsShow].classList.contains('lastClone') ? slideIsShow = 1 : index;
+
+                // slider.style.transition = 'none';
+                // slider.style.transform = `translateX(-${slidesOffset * index}px)`;
             });
         }
     } // sliderSpareParts
