@@ -5,8 +5,7 @@
 }
 
 @mixin textStroke($strokeColor) {
-  text-shadow:
-          -0   -1px 1px $strokeColor,
+  text-shadow: -0 -1px 1px $strokeColor;
 }
 
 @mixin banTxtSelect () {
@@ -45,6 +44,7 @@
   align-items: $align;
   justify-content: $justify;
 }
+
 @mixin widthPercent ($percent){
   flex-basis: auto;
   width: $percent;
@@ -101,12 +101,6 @@
   left: 0;
   z-index: $zIndex;
 }
-
-//@mixin backgroundOptions($bgRepeat, $bgPos, $bgSize) {
-//  background-repeat: $bgRepeat;
-//  background-position: $bgPos;
-//  background-size: $bgSize;
-//}
 
 // gradientBorder
 @mixin gradientBorder() {

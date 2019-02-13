@@ -1,18 +1,19 @@
-body#ceroxMainPage {
+@charset "UTF-8";
+#ceroxMainPage {
   box-sizing: border-box;
   border: none;
   background: inherit;
   margin: 0;
   padding: 0;
   outline: none; }
-  body#ceroxMainPage article, body#ceroxMainPage section, body#ceroxMainPage div, body#ceroxMainPage p, body#ceroxMainPage ul, body#ceroxMainPage li, body#ceroxMainPage span, body#ceroxMainPage img, body#ceroxMainPage a, body#ceroxMainPage h1, body#ceroxMainPage h2, body#ceroxMainPage h3, body#ceroxMainPage h4, body#ceroxMainPage h5, body#ceroxMainPage h6, body#ceroxMainPage button, body#ceroxMainPage input, body#ceroxMainPage label, body#ceroxMainPage textarea {
+  #ceroxMainPage article, #ceroxMainPage section, #ceroxMainPage div, #ceroxMainPage p, #ceroxMainPage ul, #ceroxMainPage li, #ceroxMainPage span, #ceroxMainPage img, #ceroxMainPage a, #ceroxMainPage h1, #ceroxMainPage h2, #ceroxMainPage h3, #ceroxMainPage h4, #ceroxMainPage h5, #ceroxMainPage h6, #ceroxMainPage button, #ceroxMainPage input, #ceroxMainPage label, #ceroxMainPage textarea {
     box-sizing: border-box;
     border: none;
     background: inherit;
     margin: 0;
     padding: 0;
     outline: none; }
-  body#ceroxMainPage ul li {
+  #ceroxMainPage ul li {
     list-style-type: none; }
 
 @font-face {
@@ -39,180 +40,216 @@ body#ceroxMainPage {
   font-weight: 200;
   font-style: normal; }
 
-body#ceroxMainPage {
-  padding: 60px 0 35px 0;
-  font-family: 'proximanova', sans-serif; }
-  body#ceroxMainPage h1 {
-    font-size: 33px;
-    font-weight: 200;
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 30px;
+  width: 30px;
+  line-height: 0;
+  font-size: 0;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  top: -54px;
+  padding: 0;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  outline: none; }
+  .slick-prev:hover, .slick-prev:focus,
+  .slick-next:hover,
+  .slick-next:focus {
+    outline: none;
+    background: transparent; }
+    .slick-prev:hover:before, .slick-prev:focus:before,
+    .slick-next:hover:before,
+    .slick-next:focus:before {
+      opacity: 1; }
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
+    opacity: 0.25; }
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    font-weight: 900;
     line-height: 1;
-    text-align: center; }
-    body#ceroxMainPage h1 span {
-      display: block; }
-  body#ceroxMainPage img {
-    width: 100%;
-    height: auto; }
-  body#ceroxMainPage .videoBg {
-    background: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; }
-    body#ceroxMainPage .videoBg video {
-      background-blend-mode: color-dodge;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1; }
-    body#ceroxMainPage .videoBg__overlay {
-      background: rgba(11, 97, 113, 0.31);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2; }
-      body#ceroxMainPage .videoBg__overlay::before, body#ceroxMainPage .videoBg__overlay::after {
-        content: '';
-        display: block;
-        left: 0;
-        position: absolute;
-        height: 30%;
-        width: 100%; }
-      body#ceroxMainPage .videoBg__overlay::before {
-        top: 0;
-        background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.1) 86%, rgba(255, 255, 255, 0) 100%); }
-      body#ceroxMainPage .videoBg__overlay::after {
-        bottom: 0;
-        background: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.1) 86%, rgba(255, 255, 255, 0) 100%); }
-    body#ceroxMainPage .videoBg__whiteOverlay {
-      background: rgba(255, 255, 255, 0.3);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2; }
-  body#ceroxMainPage .workItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; }
-    body#ceroxMainPage .workItem:hover {
-      cursor: pointer; }
-      body#ceroxMainPage .workItem:hover .workItem__img {
-        border-color: #0b6170; }
-        body#ceroxMainPage .workItem:hover .workItem__img::after {
-          transform: scale(0); }
-        body#ceroxMainPage .workItem:hover .workItem__img::before {
-          transform: translateY(0); }
-      body#ceroxMainPage .workItem:hover .workItem__name {
-        transform: translateY(80px); }
-        body#ceroxMainPage .workItem:hover .workItem__name .name {
-          font-size: 18px;
-          line-height: 20px;
-          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.51); }
-    body#ceroxMainPage .workItem__img {
-      border-radius: 50%;
-      border: 2px solid white;
-      height: 260px;
-      overflow: hidden;
-      position: relative;
-      transition: border .3s;
-      width: 260px; }
-      body#ceroxMainPage .workItem__img::before, body#ceroxMainPage .workItem__img::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        transition: transform .3s;
-        width: 100%; }
-      body#ceroxMainPage .workItem__img::before {
-        background: linear-gradient(to bottom, rgba(11, 97, 112, 0) 0%, #0b6170 100%);
-        bottom: 0;
-        height: 50%;
-        transform: translateY(100%); }
-      body#ceroxMainPage .workItem__img::after {
-        background: #0b6170;
-        border-radius: 50%;
-        opacity: .7;
-        top: 0;
-        height: 100%; }
-      body#ceroxMainPage .workItem__img img {
-        object-fit: cover;
-        height: 260px;
-        width: 260px; }
-    body#ceroxMainPage .workItem__name {
-      position: absolute;
-      transition: transform .3s; }
-      body#ceroxMainPage .workItem__name .name {
-        color: white;
-        display: block;
-        font-size: 22px;
-        font-weight: 300;
-        line-height: 28px;
-        text-transform: uppercase;
-        text-align: center;
-        transition: text-shadow .1s , font-size .3s, line-height .3s; }
-    body#ceroxMainPage .workItem-current .workItem__img {
-      border-color: #0b6170; }
-      body#ceroxMainPage .workItem-current .workItem__img::after {
-        transform: scale(0); }
-      body#ceroxMainPage .workItem-current .workItem__img::before {
-        transform: translateY(0); }
-    body#ceroxMainPage .workItem-current .workItem__name {
-      transform: translateY(80px); }
-      body#ceroxMainPage .workItem-current .workItem__name .name {
-        font-size: 18px;
-        line-height: 20px;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.51); }
-  body#ceroxMainPage .sliderBox {
+    color: white;
+    opacity: 0.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+.slick-prev {
+  right: 95px; }
+  [dir="rtl"] .slick-prev {
+    left: auto;
+    right: -25px; }
+  .slick-prev:before {
+    content: ""; }
+    [dir="rtl"] .slick-prev:before {
+      content: ""; }
+
+.slick-next {
+  right: 60px; }
+  [dir="rtl"] .slick-next {
+    left: -25px;
+    right: auto; }
+  .slick-next:before {
+    content: ""; }
+    [dir="rtl"] .slick-next:before {
+      content: ""; }
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px; }
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+  .slick-dots li {
     position: relative;
-    max-width: 100%; }
-  body#ceroxMainPage .sliderWrap {
-    overflow: hidden;
-    position: relative;
-    max-width: 100%; }
-  body#ceroxMainPage .mySlider {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    body#ceroxMainPage .mySlider .slide {
-      padding: 0 17px; }
-  body#ceroxMainPage .sliderDotBlock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px; }
-    body#ceroxMainPage .sliderDotBlock .dotItem {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer; }
+    .slick-dots li button {
+      border: 0;
       background: transparent;
-      border-radius: 50%;
-      border: 1px solid white;
-      margin-right: 15px;
-      transition: background .3s, border .3s;
+      display: block;
       height: 20px;
-      min-height: 20px;
-      min-width: 20px;
-      width: 20px; }
-      body#ceroxMainPage .sliderDotBlock .dotItem:hover {
-        background: #0b6170;
-        border-color: #0b6170; }
-      body#ceroxMainPage .sliderDotBlock .dotItem:last-child {
-        margin-right: 0; }
-      body#ceroxMainPage .sliderDotBlock .dotItem-current {
-        background: #0b6170;
-        border-color: #0b6170; }
+      width: 20px;
+      outline: none;
+      line-height: 0;
+      font-size: 0;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer; }
+      .slick-dots li button:hover, .slick-dots li button:focus {
+        outline: none; }
+        .slick-dots li button:hover:before, .slick-dots li button:focus:before {
+          opacity: 1; }
+      .slick-dots li button:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "•";
+        width: 20px;
+        height: 20px;
+        font-family: "Font Awesome 5 Free";
+        font-size: 6px;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        opacity: 0.25;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+    .slick-dots li.slick-active button:before {
+      color: black;
+      opacity: 0.75; }
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
 
 #ceroxMainPage {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100vh;
-  flex-direction: column; }
+  font-family: 'proximanova', sans-serif;
+  flex-direction: column;
+  padding: 35px 0; }
+  #ceroxMainPage h1 {
+    font-size: 33px;
+    font-weight: 200;
+    line-height: 1;
+    text-align: center; }
+    #ceroxMainPage h1 span {
+      display: block; }
+  #ceroxMainPage img, #ceroxMainPage svg {
+    display: block;
+    height: auto;
+    width: 100%; }
   #ceroxMainPage .mainHeader .logoBlock {
     display: flex;
     align-items: center;
@@ -238,60 +275,158 @@ body#ceroxMainPage {
         text-transform: uppercase;
         bottom: 0;
         right: -5px; }
-  #ceroxMainPage .mainContent .sliderBox {
-    margin-bottom: 10px; }
-  #ceroxMainPage .mainContent .userActionBlock__userAction {
+  #ceroxMainPage .mainContent {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 25px; }
-    #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      border: 2px solid #0b6170;
-      height: 95px;
-      width: 95px;
-      transition: background .3s, border .3s;
+    justify-content: flex-start;
+    flex-direction: column; }
+    #ceroxMainPage .mainContent .sliderBox {
+      max-width: 100%;
+      margin-bottom: 60px;
       position: relative; }
-      #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover {
-        cursor: pointer;
-        background: #0b6170;
-        border-color: white; }
-        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover .callBtn__img {
-          opacity: 0; }
-          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover .callBtn__img-hover {
-            opacity: 1; }
-      #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img {
-        position: absolute;
-        transition: opacity .1s; }
-        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img-hover {
-          opacity: 0; }
-    #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
+      #ceroxMainPage .mainContent .sliderBox .mySlider {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider .slick-slide {
+          outline: none; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider .slick-slide > div {
+            display: flex;
+            justify-content: center; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots {
+          bottom: -45px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li {
+            margin-right: 15px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li:last-child {
+              margin-right: 0; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li button:hover::before {
+              background: #0b6170;
+              border-color: #0b6170; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li button::before {
+              content: '';
+              border-radius: 50%;
+              border: 1px solid white;
+              opacity: 1; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li.slick-active button::before {
+              background: #0b6170;
+              border-color: #0b6170; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          padding: 0 17px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover {
+            cursor: pointer; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__img {
+              border-color: #0b6170; }
+              #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__img::after {
+                opacity: 0; }
+              #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__img::before {
+                transform: translateY(0); }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name {
+              transform: translateY(80px); }
+              #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name .name {
+                font-size: 18px;
+                line-height: 20px;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.51); }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img {
+            border-radius: 50%;
+            border: 2px solid white;
+            height: 260px;
+            min-height: 260px;
+            overflow: hidden;
+            position: relative;
+            transition: border .3s;
+            min-width: 260px;
+            width: 260px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img::before, #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              transition: transform .3s, opacity .3s, border-radius 3s;
+              width: 100%; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img::before {
+              background: linear-gradient(to bottom, rgba(11, 97, 112, 0) 0%, #0b6170 100%);
+              bottom: 0;
+              height: 50%;
+              transform: translateY(100%); }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img::after {
+              background: #0b6170;
+              border-radius: 50%;
+              opacity: .7;
+              top: 0;
+              height: 100%; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img img {
+              object-fit: cover;
+              height: 260px;
+              width: 260px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__name {
+            position: absolute;
+            transition: transform .3s; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__name .name {
+              color: white;
+              display: block;
+              font-size: 22px;
+              font-weight: 300;
+              line-height: 28px;
+              text-transform: uppercase;
+              text-align: center;
+              transition: text-shadow .1s , font-size .3s, line-height .3s; }
+    #ceroxMainPage .mainContent .userActionBlock__userAction {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fc0b39;
-      border-radius: calc( 65px / 2);
-      border: 2px solid white;
-      color: white;
-      height: 65px;
-      font-size: 17px;
+      margin-bottom: 25px; }
+      #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px solid #0b6170;
+        height: 95px;
+        width: 95px;
+        text-decoration: none;
+        position: relative; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover {
+          cursor: pointer;
+          background: #0b6170;
+          border-color: white; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover .callBtn__img {
+            opacity: 0; }
+            #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover .callBtn__img-hover {
+              opacity: 1; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img {
+          position: absolute;
+          transition: opacity .1s; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img-hover {
+            opacity: 0; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-toCall {
+          display: none; }
+      #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fc0b39;
+        border-radius: calc( 65px / 2);
+        border: 2px solid white;
+        color: white;
+        height: 65px;
+        font-size: 17px;
+        font-weight: 400;
+        margin: 0 45px;
+        opacity: .65;
+        transition: opacity .3s;
+        text-transform: uppercase;
+        width: 300px; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn:hover {
+          cursor: pointer;
+          opacity: 1; }
+    #ceroxMainPage .mainContent .userActionBlock__description {
+      font-size: 22px;
       font-weight: 400;
-      margin: 0 45px;
-      opacity: .65;
-      transition: opacity .3s;
-      text-transform: uppercase;
-      width: 300px; }
-      #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn:hover {
-        cursor: pointer;
-        opacity: 1; }
-  #ceroxMainPage .mainContent .userActionBlock__description {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 28px;
-    text-align: center; }
+      line-height: 28px;
+      text-align: center; }
   #ceroxMainPage .mainFooter {
     color: #0b6170;
     font-size: 14px;
@@ -301,3 +436,317 @@ body#ceroxMainPage {
       color: #0b6170;
       font-size: 14px;
       text-decoration: none; }
+  #ceroxMainPage .videoBg {
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+    #ceroxMainPage .videoBg video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1; }
+    #ceroxMainPage .videoBg__overlay {
+      background: rgba(22, 195, 227, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2; }
+      #ceroxMainPage .videoBg__overlay::before, #ceroxMainPage .videoBg__overlay::after {
+        content: '';
+        display: block;
+        left: 0;
+        position: absolute;
+        height: 40%;
+        width: 100%; }
+      #ceroxMainPage .videoBg__overlay::before {
+        top: 0;
+        background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%); }
+      #ceroxMainPage .videoBg__overlay::after {
+        bottom: 0;
+        background: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%); }
+    #ceroxMainPage .videoBg__whiteOverlay {
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.2px, rgba(255, 255, 255, 0) 1.56px) 0 0, radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.2px, rgba(255, 255, 255, 0) 1.56px) 4.4px 4.4px;
+      background-size: 8px 8px;
+      background-color: rgba(255, 255, 255, 0.05);
+      background-repeat: repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2; }
+  #ceroxMainPage .modalWindow {
+    background: transparent;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none; }
+    #ceroxMainPage .modalWindow__overlay {
+      background: #0b6170;
+      opacity: 0.7;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1001;
+      opacity: 0;
+      transition: opacity .3s; }
+    #ceroxMainPage .modalWindow .popUpForm {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: #e0eaec;
+      border-radius: 33px;
+      border: 2px solid #0b6170;
+      flex-direction: column;
+      padding: 25px 15px 30px 15px;
+      opacity: 0;
+      transition: opacity .3s;
+      position: relative;
+      width: 580px;
+      z-index: 1002; }
+      #ceroxMainPage .modalWindow .popUpForm__logo {
+        width: 80px;
+        margin-bottom: 15px; }
+      #ceroxMainPage .modalWindow .popUpForm__title {
+        font-size: 16px;
+        margin-bottom: 30px; }
+      #ceroxMainPage .modalWindow .popUpForm__content {
+        width: 100%; }
+        #ceroxMainPage .modalWindow .popUpForm__content .userRequest {
+          width: 100%; }
+          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 10px; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__row:last-child {
+              margin-bottom: 0; }
+          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col {
+            flex-basis: auto;
+            width: 50%; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-userData {
+              padding-right: 5px; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-orderData {
+              padding-left: 5px; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-uploadFile {
+              padding-right: 5px; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-submit {
+              padding-left: 5px; }
+          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 32.5px;
+            border: 2px solid #0b6170;
+            margin-bottom: 5px;
+            height: 65px;
+            width: 100%; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field:last-child {
+              margin-bottom: 0; }
+          #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 32.5px;
+            border: 2px solid white;
+            color: white;
+            margin-bottom: 5px;
+            position: relative;
+            transition: background .3s;
+            height: 65px;
+            width: 100%; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn span {
+              display: block;
+              background: transparent; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn__icon {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 10px;
+              width: 35px; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn:hover {
+              cursor: pointer; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile {
+              background: rgba(11, 97, 112, 0.65); }
+              #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile:hover {
+                background: #0b6170; }
+              #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile label {
+                border-radius: 32.5px;
+                background: transparent;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%; }
+                #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile label:hover {
+                  cursor: pointer; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-submit {
+              background: rgba(255, 0, 48, 0.65);
+              text-transform: uppercase; }
+              #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-submit:hover {
+                background: #ff0030; }
+      #ceroxMainPage .modalWindow .popUpForm__closeBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px; }
+        #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon {
+          display: block;
+          position: relative;
+          height: 30px;
+          width: 20px; }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span {
+            background: #0b6170;
+            display: block;
+            height: 2px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition: transform .3s;
+            width: calc( 30px * 70 / 100); }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:first-child {
+              transform: translate(-50%, -50%) rotate(55deg); }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:last-child {
+              transform: translate(-50%, -50%) rotate(-55deg); }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover {
+            cursor: pointer;
+            border-color: #0b6170; }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:first-child {
+              transform: translate(-50%, -50%) rotate(-55deg); }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:last-child {
+              transform: translate(-50%, -50%) rotate(55deg); }
+  @media screen and (max-width: 1366px) {
+    #ceroxMainPage {
+      padding: 20px 0 25px 0; }
+      #ceroxMainPage h1 {
+        font-size: 28px; }
+      #ceroxMainPage .mainHeader .logoBlock {
+        margin-bottom: 0; }
+        #ceroxMainPage .mainHeader .logoBlock__img {
+          height: 100px;
+          width: 100px; }
+        #ceroxMainPage .mainHeader .logoBlock__title {
+          position: relative;
+          left: -10px; }
+          #ceroxMainPage .mainHeader .logoBlock__title .logoTitleImg {
+            width: 166px; }
+          #ceroxMainPage .mainHeader .logoBlock__title .logoSubTitle {
+            font-size: 7px;
+            letter-spacing: 4px;
+            bottom: 0;
+            right: -5px; }
+      #ceroxMainPage .mainContent .sliderBox {
+        margin-bottom: 30px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem {
+          padding: 0 17px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name {
+            transform: translateY(50px); }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name .name {
+              font-size: 15px;
+              line-height: 18px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img {
+            height: 180px;
+            min-height: 180px;
+            min-width: 180px;
+            width: 180px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img img {
+              object-fit: cover;
+              height: 180px;
+              width: 180px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__name .name {
+            font-size: 18px;
+            line-height: 21.6px; }
+      #ceroxMainPage .mainContent .userActionBlock__userAction {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          border: 2px solid #0b6170;
+          height: 80px;
+          width: 80px;
+          text-decoration: none;
+          position: relative; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover {
+            cursor: pointer;
+            background: #0b6170;
+            border-color: white; }
+            #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover .callBtn__img {
+              opacity: 0; }
+              #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover .callBtn__img-hover {
+                opacity: 1; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img {
+            position: absolute;
+            transition: opacity .1s; }
+            #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img-hover {
+              opacity: 0; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-toCall {
+            display: none; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #fc0b39;
+          border-radius: calc( 50px / 2);
+          border: 2px solid white;
+          color: white;
+          height: 50px;
+          font-size: 17px;
+          font-weight: 400;
+          margin: 0 45px;
+          opacity: .65;
+          transition: opacity .3s;
+          text-transform: uppercase;
+          width: 250px; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn:hover {
+            cursor: pointer;
+            opacity: 1; }
+      #ceroxMainPage .mainContent .userActionBlock__description {
+        font-size: 18px;
+        line-height: 21.6px; } }
+  @media screen and (max-width: 700px) {
+    #ceroxMainPage .mainContent .sliderBox {
+      margin-bottom: 60px; }
+      #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem {
+        padding: 0 17px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name {
+          transform: translateY(50px); }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name .name {
+            font-size: 21.66667px;
+            line-height: 26px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img {
+          height: 370px;
+          min-height: 370px;
+          min-width: 370px;
+          width: 370px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img img {
+            object-fit: cover;
+            height: 370px;
+            width: 370px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__name .name {
+          font-size: 26px;
+          line-height: 31.2px; } }
