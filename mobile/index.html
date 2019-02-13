@@ -21,11 +21,96 @@
                             <!-- /.cssIcon-toggleMenu -->
                         </button>
                         <!-- /.iconBtn iconBtn-toggleMenu -->
-                        <ul class="topMenu">
-                            <li class="topMenu__item"><a href="#"></a></li>
-                            <li class="topMenu__item"><a href="#"></a></li>
-                            <li class="topMenu__item"><a href="#"></a></li>
-                        </ul>
+                        <div class="topMenu" style="display: none;">
+                            <ul class="headerMenu">
+                                <li class="headerMenu__item headerMenu__item-title">
+                                    <div class="h4Title"><a href="#" target="_blank">О запчастях</a></div>
+                                    <div class="shevronIcon shevronIcon-headerMenu">
+                                        <div class="shevronIcon__icon">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <!-- /.shevronIcon__icon -->
+                                    </div>
+                                </li>
+                                <li class="headerMenu__hiddenBlock">
+                                    <ul class="headerMenu__hiddenElements displayNone">
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="headerMenu">
+                                <li class="headerMenu__item headerMenu__item-title">
+                                    <div class="h4Title"><a href="#" target="_blank">О производителях</a></div>
+                                    <div class="shevronIcon shevronIcon-headerMenu">
+                                        <div class="shevronIcon__icon">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <!-- /.shevronIcon__icon -->
+                                    </div>
+                                </li>
+                                <li class="headerMenu__hiddenBlock">
+                                    <ul class="headerMenu__hiddenElements displayNone">
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Bosch</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">TRW</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Stellox</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Febest</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Masuma</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="headerMenu">
+                                <li class="headerMenu__item headerMenu__item-title">
+                                    <div class="h4Title"><a href="#" target="_blank">Рейтинг запчастей</a></div>
+                                    <div class="shevronIcon shevronIcon-headerMenu">
+                                        <div class="shevronIcon__icon">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <!-- /.shevronIcon__icon -->
+                                    </div>
+                                </li>
+                                <li class="headerMenu__hiddenBlock">
+                                    <ul class="headerMenu__hiddenElements displayNone">
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="headerMenu">
+                                <li class="headerMenu__item headerMenu__item-title">
+                                    <div class="h4Title"><a href="#" target="_blank">Сравнения</a></div>
+                                    <div class="shevronIcon shevronIcon-headerMenu">
+                                        <div class="shevronIcon__icon">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <!-- /.shevronIcon__icon -->
+                                    </div>
+                                </li>
+                                <li class="headerMenu__hiddenBlock">
+                                    <ul class="headerMenu__hiddenElements displayNone">
+                                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
+                                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                         <!-- /.topMenu -->
                     </nav>
                     <!-- /.menuBlock -->
@@ -1813,7 +1898,7 @@
                 </section>
                 <!-- /.cars__listsBlock -->
                 <div class="showMoreCars">
-                    <button class="showMoreBtn" id="carsShowAll">Показать еще</button>
+                    <button class="showMoreBtn" id="carsShowAll" data-status="toshow">Показать еще</button>
                 </div>
                 <!-- /.showMoreCars -->
             </article>
@@ -1829,7 +1914,6 @@
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/inspect_the_car.jpg"
                                              alt="Готовимся к осмотру автомобиля">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1844,7 +1928,6 @@
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/around_the_world.jpg"
                                              alt="Путешевствие вокруг света">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1858,7 +1941,6 @@
                                 <figure class="articleTab">
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/new_tesla_prototype.jpg" alt="Новый прототип Тесла">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1873,7 +1955,6 @@
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/inspect_the_car.jpg"
                                              alt="Готовимся к осмотру автомобиля">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1888,7 +1969,6 @@
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/around_the_world.jpg"
                                              alt="Путешевствие вокруг света">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1903,7 +1983,6 @@
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/around_the_world.jpg"
                                              alt="Путешевствие вокруг света">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1919,7 +1998,6 @@
                                 <figure class="articleTab">
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/new_tesla_prototype.jpg" alt="Новый прототип Тесла">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1933,7 +2011,6 @@
                                 <figure class="articleTab">
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/new_tesla_prototype.jpg" alt="Новый прототип Тесла">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1948,7 +2025,6 @@
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/inspect_the_car.jpg"
                                              alt="Готовимся к осмотру автомобиля">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1962,7 +2038,6 @@
                                 <figure class="articleTab">
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/new_tesla_prototype.jpg" alt="Новый прототип Тесла">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1976,7 +2051,6 @@
                                 <figure class="articleTab">
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/new_tesla_prototype.jpg" alt="Новый прототип Тесла">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -1991,7 +2065,6 @@
                                     <div class="articleTab__thumbnail">
                                         <img src="img/articles_img/inspect_the_car.jpg"
                                              alt="Готовимся к осмотру автомобиля">
-                                        <p>Читать статью...</p>
                                     </div>
                                     <!-- /.articleTab__thimbnail -->
                                     <figcaption class="articleTab__description">
@@ -2011,148 +2084,270 @@
                     <!-- /.showMoreCars -->
                 </section>
                 <!-- /.magazine -->
-                <aside class="activityTape">
-                    <div class="activityTapeHeader">
-                        <div class="activityTapeHeader__icon">
-                            <svg viewBox="0 0 20 20">
-                                <path id="Forma_1" class="cls-1" d="M1222.07 1740.93a9.995 9.995 0 1 0 2.93 7.07 9.932 9.932 0 0 0-2.93-7.07zm-7.07 15.39a8.32 8.32 0 1 1 8.32-8.32 8.326 8.326 0 0 1-8.32 8.32zm-3.06-3.01a.674.674 0 1 0-.67 1.17.656.656 0 0 0 .33.09.675.675 0 0 0 .59-.34.683.683 0 0 0-.25-.92zm-.35-10.52a.692.692 0 0 0 .34-.09.681.681 0 0 0 .24-.93.672.672 0 1 0-1.16.68.66.66 0 0 0 .58.34zm-2.82 2.4a.656.656 0 0 0 .33.09.675.675 0 0 0 .59-.34.674.674 0 1 0-1.17-.67.666.666 0 0 0 .25.92zm6.22-3.32a.675.675 0 0 0 0-1.35.675.675 0 1 0 0 1.35zm-6.22 8.95a.671.671 0 0 0-.24.92.66.66 0 0 0 .58.34.692.692 0 0 0 .34-.09.671.671 0 0 0 .24-.92.678.678 0 0 0-.92-.25zm.1-2.81a.672.672 0 0 0-.67-.68.675.675 0 1 0 0 1.35.67.67 0 0 0 .67-.67zm6.13 6.12a.67.67 0 0 0-.67.67.675.675 0 1 0 .67-.67zm6.23-3.31a.672.672 0 1 0-.68 1.16.621.621 0 0 0 .34.09.7.7 0 0 0 .59-.33.681.681 0 0 0-.25-.92zm.57-3.51a.672.672 0 0 0-.67.68v.01a.67.67 0 0 0 .67.67.679.679 0 0 0 .68-.67v-.02a.679.679 0 0 0-.68-.67zm-3.75-4.62a.721.721 0 0 0 .34.09.66.66 0 0 0 .58-.34.672.672 0 1 0-1.16-.68.681.681 0 0 0 .24.93zm.02 10.62a.664.664 0 0 0-.25.92.683.683 0 0 0 .58.33.6.6 0 0 0 .34-.09.681.681 0 0 0 .25-.92.671.671 0 0 0-.92-.24zm2.82-8.05a.656.656 0 0 0 .33-.09.674.674 0 1 0-.67-1.17.666.666 0 0 0-.25.92.675.675 0 0 0 .59.34zm-1.65 3.21l-3.54-.24-.36-5.19a.339.339 0 0 0-.34-.31.346.346 0 0 0-.34.31l-.34 5.1-.57-.04a.27.27 0 0 0-.21.07.3.3 0 0 0-.08.2v.75a.257.257 0 0 0 .27.27h.02l.48-.03-.03.51a.291.291 0 0 0 .09.25.325.325 0 0 0 .25.11h.93a.337.337 0 0 0 .34-.34l-.04-.64 3.47-.23a.276.276 0 0 0 0-.55z" transform="translate(-1205 -1738)"/>
-                            </svg>
+                <aside class="widgetsArea">
+                    <section class="widget widget-activityTape widget-homePage">
+                        <div class="widget__header">
+                            <div class="headerIcon headerIcon-noStroke">
+                                <svg viewBox="0 0 20 20">
+                                    <path d="M1222.07 1740.93a9.995 9.995 0 1 0 2.93 7.07 9.932 9.932 0 0 0-2.93-7.07zm-7.07 15.39a8.32 8.32 0 1 1 8.32-8.32 8.326 8.326 0 0 1-8.32 8.32zm-3.06-3.01a.674.674 0 1 0-.67 1.17.656.656 0 0 0 .33.09.675.675 0 0 0 .59-.34.683.683 0 0 0-.25-.92zm-.35-10.52a.692.692 0 0 0 .34-.09.681.681 0 0 0 .24-.93.672.672 0 1 0-1.16.68.66.66 0 0 0 .58.34zm-2.82 2.4a.656.656 0 0 0 .33.09.675.675 0 0 0 .59-.34.674.674 0 1 0-1.17-.67.666.666 0 0 0 .25.92zm6.22-3.32a.675.675 0 0 0 0-1.35.675.675 0 1 0 0 1.35zm-6.22 8.95a.671.671 0 0 0-.24.92.66.66 0 0 0 .58.34.692.692 0 0 0 .34-.09.671.671 0 0 0 .24-.92.678.678 0 0 0-.92-.25zm.1-2.81a.672.672 0 0 0-.67-.68.675.675 0 1 0 0 1.35.67.67 0 0 0 .67-.67zm6.13 6.12a.67.67 0 0 0-.67.67.675.675 0 1 0 .67-.67zm6.23-3.31a.672.672 0 1 0-.68 1.16.621.621 0 0 0 .34.09.7.7 0 0 0 .59-.33.681.681 0 0 0-.25-.92zm.57-3.51a.672.672 0 0 0-.67.68v.01a.67.67 0 0 0 .67.67.679.679 0 0 0 .68-.67v-.02a.679.679 0 0 0-.68-.67zm-3.75-4.62a.721.721 0 0 0 .34.09.66.66 0 0 0 .58-.34.672.672 0 1 0-1.16-.68.681.681 0 0 0 .24.93zm.02 10.62a.664.664 0 0 0-.25.92.683.683 0 0 0 .58.33.6.6 0 0 0 .34-.09.681.681 0 0 0 .25-.92.671.671 0 0 0-.92-.24zm2.82-8.05a.656.656 0 0 0 .33-.09.674.674 0 1 0-.67-1.17.666.666 0 0 0-.25.92.675.675 0 0 0 .59.34zm-1.65 3.21l-3.54-.24-.36-5.19a.339.339 0 0 0-.34-.31.346.346 0 0 0-.34.31l-.34 5.1-.57-.04a.27.27 0 0 0-.21.07.3.3 0 0 0-.08.2v.75a.257.257 0 0 0 .27.27h.02l.48-.03-.03.51a.291.291 0 0 0 .09.25.325.325 0 0 0 .25.11h.93a.337.337 0 0 0 .34-.34l-.04-.64 3.47-.23a.276.276 0 0 0 0-.55z" transform="translate(-1205 -1738)"/>
+                                </svg>
+                            </div>
+                            <!-- /.headerIcon -->
+                            <div class="headerTitle">
+                                <p class="h3Title headerTitle__text">Лента активности</p>
+                            </div>
+                            <!-- /.headerTitle -->
                         </div>
-                        <!-- /.activityTapeHeader__img -->
-                        <div class="h3Title activityTapeHeader__text">
-                            Лента активности
+                        <!-- /.widget__header -->
+                        <div class="widgetContent">
+                            <div class="activityTape">
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo1.jpg" alt="photo1">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>Вячеслав Николаевич</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-voting">
+                                            Голосование
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>Проголосовал на странице рейтинга за</span>
+                                            <a href="#" target="_blank">Свечи зажигания Denso</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-needHelp">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-newEvent">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-newEvent">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo1.jpg" alt="photo1">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>Вячеслав</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-voting">
+                                            Голосование
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>Проголосовал на странице рейтинга за</span>
+                                            <a href="#" target="_blank">Свечи зажигания Denso</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-needHelp">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-newEvent">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
+                                <div class="event">
+                                    <div class="event__header">
+                                        <div class="event__headerThumbnail">
+                                            <img src="img/photo2.jpg" alt="photo2">
+                                        </div>
+                                        <!-- /.event__headerThumbnail -->
+                                        <div class="event__headerNameDate">
+                                            <p>NGK</p>
+                                            <time>Вчера 17:30</time>
+                                        </div>
+                                        <!-- /.event__nameDate -->
+                                        <button class="typeActivHeaderBtn typeActivHeaderBtn-newEvent">
+                                            Нужна помощь
+                                        </button>
+                                        <!-- /.typeActivHeaderBtn-voting -->
+                                    </div>
+                                    <!-- /.event__header -->
+                                    <div class="event__content">
+                                        <p>
+                                            <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
+                                            <a href="#" target="_blank">Свечи зажигания NGK</a>
+                                        </p>
+                                    </div>
+                                    <!-- /.event__content -->
+                                    <div class="event__addReview">
+                                        <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                                    </div>
+                                    <!-- /.event__addReview -->
+                                </div>
+                                <!-- /.event -->
+                            </div>
+                            <!-- /.activityTape -->
                         </div>
-                        <!-- /.activityTapeHeader__text -->
-                    </div>
-                    <!-- /.activityTape__title -->
-                    <div class="activityTape__eventBlock">
-                        <div class="event">
-                            <div class="event__header">
-                                <div class="event__headerThumbnail">
-                                    <img src="img/photo1.jpg" alt="photo1">
-                                </div>
-                                <!-- /.event__headerThumbnail -->
-                                <div class="event__headerNameDate">
-                                    <p>Вячеслав</p>
-                                    <time>Вчера 17:30</time>
-                                </div>
-                                <!-- /.event__nameDate -->
-                                <button class="typeActivHeaderBtn typeActivHeaderBtn-voting">
-                                    Голосование
-                                </button>
-                                <!-- /.typeActivHeaderBtn-voting -->
-                            </div>
-                            <!-- /.event__header -->
-                            <div class="event__content">
-                                <p>
-                                    <span>Проголосовал на странице рейтинга за</span>
-                                    <a href="#" target="_blank">Свечи зажигания Denso</a>
-                                </p>
-                            </div>
-                            <!-- /.event__content -->
-                        </div>
-                        <!-- /.event -->
-                        <div class="event">
-                            <div class="event__header">
-                                <div class="event__headerThumbnail">
-                                    <img src="img/photo2.jpg" alt="photo2">
-                                </div>
-                                <!-- /.event__headerThumbnail -->
-                                <div class="event__headerNameDate">
-                                    <p>NGK</p>
-                                    <time>Вчера 17:30</time>
-                                </div>
-                                <!-- /.event__nameDate -->
-                                <button class="typeActivHeaderBtn typeActivHeaderBtn-needHelp">
-                                    Нужна помощь
-                                </button>
-                                <!-- /.typeActivHeaderBtn-voting -->
-                            </div>
-                            <!-- /.event__header -->
-                            <div class="event__content">
-                                <p>
-                                    <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
-                                    <a href="#" target="_blank">Свечи зажигания NGK</a>
-                                </p>
-                            </div>
-                            <!-- /.event__content -->
-                            <div class="event__addReview">
-                                <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
-                            </div>
-                            <!-- /.event__addReview -->
-                        </div>
-                        <!-- /.event -->
-                        <div class="event">
-                            <div class="event__header">
-                                <div class="event__headerThumbnail">
-                                    <img src="img/photo2.jpg" alt="photo2">
-                                </div>
-                                <!-- /.event__headerThumbnail -->
-                                <div class="event__headerNameDate">
-                                    <p>NGK</p>
-                                    <time>Вчера 17:30</time>
-                                </div>
-                                <!-- /.event__nameDate -->
-                                <button class="typeActivHeaderBtn typeActivHeaderBtn-newEvent">
-                                    Нужна помощь
-                                </button>
-                                <!-- /.typeActivHeaderBtn-voting -->
-                            </div>
-                            <!-- /.event__header -->
-                            <div class="event__content">
-                                <p>
-                                    <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
-                                    <a href="#" target="_blank">Свечи зажигания NGK</a>
-                                </p>
-                            </div>
-                            <!-- /.event__content -->
-                            <div class="event__addReview">
-                                <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
-                            </div>
-                            <!-- /.event__addReview -->
-                        </div>
-                        <!-- /.event -->
-                        <div class="event">
-                            <div class="event__header">
-                                <div class="event__headerThumbnail">
-                                    <img src="img/photo2.jpg" alt="photo2">
-                                </div>
-                                <!-- /.event__headerThumbnail -->
-                                <div class="event__headerNameDate">
-                                    <p>NGK</p>
-                                    <time>Вчера 17:30</time>
-                                </div>
-                                <!-- /.event__nameDate -->
-                                <button class="typeActivHeaderBtn typeActivHeaderBtn-newEvent">
-                                    Нужна помощь
-                                </button>
-                                <!-- /.typeActivHeaderBtn-voting -->
-                            </div>
-                            <!-- /.event__header -->
-                            <div class="event__content">
-                                <p>
-                                    <span>У этих тормозных колодок только 3 отзыва. Возможно вы что то знаете.</span>
-                                    <a href="#" target="_blank">Свечи зажигания NGK</a>
-                                </p>
-                            </div>
-                            <!-- /.event__content -->
-                            <div class="event__addReview">
-                                <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
-                            </div>
-                            <!-- /.event__addReview -->
-                        </div>
-                        <!-- /.event -->
-                    </div>
-                    <!-- /.activityTape__eventBlock -->
+                        <!-- /.widgetContent -->
+                    </section>
+                    <!-- /.widget widget-activityType -->
                 </aside>
-                <!-- /.activityTape -->
+                <!-- /.widgetArea -->
             </article>
             <!-- /.magazineBlock -->
             <section class="comparisonBlock" id="comparisonBlock">
                 <div class="comparisonBlock__header">
                     <div class="h2Title blockTitle">Сравнения</div>
                     <!-- /.comparisonBlockHeader__title -->
-                    <button class="mainBtn mainBtn-showAll" id="comparisonBlockShowAll">Показать все</button>
+                    <a href="#" target="_blank" class="mainBtn mainBtn-showAll" id="comparisonBlockShowAll">Показать все</a>
                     <!-- /.mainBtn mainBtn-comparisonBlockShowAll -->
                 </div>
                 <!-- /.comparisonBlockHeader -->
@@ -2304,202 +2499,6 @@
                             <!-- /.comparisonBlockItem__description -->
                         </a>
                         <!-- /.comparisonBlockItem -->
-
-
-                        <!-- Unvisible elements -->
-
-                        <a href="#" target="_blank" class="displayNone comparisonBlockItem">
-                            <div class="comparisonBlockItem__brands">
-                                <div class="brandsBlock brandsBlock-top">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/ngk_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-top -->
-                                <div class="blockSeparator">VS</div>
-                                <!-- /.blockSeparatop -->
-                                <div class="brandsBlock brandsBlock-bottom">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/denso_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-bottom -->
-                            </div>
-                            <!-- /.comparisonBlockItem__brands -->
-                            <p class="comparisonBlockItem__description">
-                                Какие свечи лучше NGK или Denso?
-                            </p>
-                            <!-- /.comparisonBlockItem__description -->
-                        </a>
-                        <!-- /.comparisonBlockItem -->
-                        <a href="#" target="_blank" class="displayNone comparisonBlockItem">
-                            <div class="comparisonBlockItem__brands">
-                                <div class="brandsBlock brandsBlock-top">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/sachs_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-top -->
-                                <div class="blockSeparator">VS</div>
-                                <!-- /.blockSeparatop -->
-                                <div class="brandsBlock brandsBlock-bottom">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/kyb_logo.jpg);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-bottom -->
-                            </div>
-                            <!-- /.comparisonBlockItem__brands -->
-                            <p class="comparisonBlockItem__description">
-                                Какие свечи лучше NGK или Denso?
-                            </p>
-                            <!-- /.comparisonBlockItem__description -->
-                        </a>
-                        <!-- /.comparisonBlockItem -->
-                        <a href="#" target="_blank" class="displayNone comparisonBlockItem">
-                            <div class="comparisonBlockItem__brands">
-                                <div class="brandsBlock brandsBlock-top">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/valeo_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-top -->
-                                <div class="blockSeparator">VS</div>
-                                <!-- /.blockSeparatop -->
-                                <div class="brandsBlock brandsBlock-bottom">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/swag_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-bottom -->
-                            </div>
-                            <!-- /.comparisonBlockItem__brands -->
-                            <p class="comparisonBlockItem__description">
-                                Какие свечи лучше NGK или Denso?
-                            </p>
-                            <!-- /.comparisonBlockItem__description -->
-                        </a>
-                        <!-- /.comparisonBlockItem -->
-                        <a href="#" target="_blank" class="displayNone comparisonBlockItem">
-                            <div class="comparisonBlockItem__brands">
-                                <div class="brandsBlock brandsBlock-top">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/ngk_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-top -->
-                                <div class="blockSeparator">VS</div>
-                                <!-- /.blockSeparatop -->
-                                <div class="brandsBlock brandsBlock-bottom">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/denso_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-bottom -->
-                            </div>
-                            <!-- /.comparisonBlockItem__brands -->
-                            <p class="comparisonBlockItem__description">
-                                Какие свечи лучше NGK или Denso?
-                            </p>
-                            <!-- /.comparisonBlockItem__description -->
-                        </a>
-                        <!-- /.comparisonBlockItem -->
-                        <a href="#" target="_blank" class="displayNone comparisonBlockItem">
-                            <div class="comparisonBlockItem__brands">
-                                <div class="brandsBlock brandsBlock-top">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/ngk_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-top -->
-                                <div class="blockSeparator">VS</div>
-                                <!-- /.blockSeparatop -->
-                                <div class="brandsBlock brandsBlock-bottom">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/denso_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-bottom -->
-                            </div>
-                            <!-- /.comparisonBlockItem__brands -->
-                            <p class="comparisonBlockItem__description">
-                                Какие свечи лучше NGK или Denso?
-                            </p>
-                            <!-- /.comparisonBlockItem__description -->
-                        </a>
-                        <!-- /.comparisonBlockItem -->
-                        <a href="#" target="_blank" class="displayNone comparisonBlockItem">
-                            <div class="comparisonBlockItem__brands">
-                                <div class="brandsBlock brandsBlock-top">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/sachs_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-top -->
-                                <div class="blockSeparator">VS</div>
-                                <!-- /.blockSeparatop -->
-                                <div class="brandsBlock brandsBlock-bottom">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/kyb_logo.jpg);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-bottom -->
-                            </div>
-                            <!-- /.comparisonBlockItem__brands -->
-                            <p class="comparisonBlockItem__description">
-                                Какие свечи лучше NGK или Denso?
-                            </p>
-                            <!-- /.comparisonBlockItem__description -->
-                        </a>
-                        <!-- /.comparisonBlockItem -->
-                        <a href="#" target="_blank" class="displayNone comparisonBlockItem">
-                            <div class="comparisonBlockItem__brands">
-                                <div class="brandsBlock brandsBlock-top">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/valeo_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-top -->
-                                <div class="blockSeparator">VS</div>
-                                <!-- /.blockSeparatop -->
-                                <div class="brandsBlock brandsBlock-bottom">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/swag_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-bottom -->
-                            </div>
-                            <!-- /.comparisonBlockItem__brands -->
-                            <p class="comparisonBlockItem__description">
-                                Какие свечи лучше NGK или Denso?
-                            </p>
-                            <!-- /.comparisonBlockItem__description -->
-                        </a>
-                        <!-- /.comparisonBlockItem -->
-                        <a href="#" target="_blank" class="displayNone comparisonBlockItem">
-                            <div class="comparisonBlockItem__brands">
-                                <div class="brandsBlock brandsBlock-top">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/ngk_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-top -->
-                                <div class="blockSeparator">VS</div>
-                                <!-- /.blockSeparatop -->
-                                <div class="brandsBlock brandsBlock-bottom">
-                                    <div class="brandsBlock__img"
-                                         style="background-image: url(img/brands/denso_logo.png);"></div>
-                                    <!-- /.brandsBlock__img -->
-                                </div>
-                                <!-- /.brandsBlock-bottom -->
-                            </div>
-                            <!-- /.comparisonBlockItem__brands -->
-                            <p class="comparisonBlockItem__description">
-                                Какие свечи лучше NGK или Denso?
-                            </p>
-                            <!-- /.comparisonBlockItem__description -->
-                        </a>
-                        <!-- /.comparisonBlockItem -->
                     </div>
                     <!-- /.comparisonBlockItems -->
                 </div>
@@ -2511,22 +2510,45 @@
                 <!-- /.seo__title -->
                 <div class="seo__content">
                     <div class="seoTexts">
-                        <p>
-                            PartReview.ru - собрание отзывов об
-                            автомобильных запчастях. Рынок запчастей огромен. Кроме оригинальных запчастей есть множество аналогов. Одни качественные, другие мягко говоря, не вызывают доверия. Наш сервис призван разобраться в этом
-                            вопросе. Пользователи сами оценят какие
-                            запчасти стоит покупать, а какие нет.
-                        </p>
-                        <p>
-                            Кроме базы отзывов мы предложим сравнение запчасти по производителям, предоставим рейтинг
-                            лучших аналогов. Вы же сможете голосовать и таким
-                            образом формировать справедливую картину.
-                        </p>
-                        <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
-                        <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                        <div class="seoTexts__content">
+                            <p>
+                                PartReview.ru - собрание отзывов об автомобильных запчастях. Рынок запчастей огромен.
+                                Кроме оригинальных запчастей есть множество аналогов. Одни качественные, другие мягко
+                                говоря,
+                                не вызывают доверия. Наш сервис призван разобраться в этом вопросе. Пользователи сами оценят
+                                какие запчасти стоит покупать, а какие нет.
+                            </p>
+                            <p>
+                                Кроме базы отзывов мы предложим сравнение запчасти по производителям, предоставим
+                                рейтинг
+                                лучших аналогов. Вы же сможете голосовать и таким
+                                образом формировать справедливую картину.
+                            </p>
+                            <p>
+                                Функционал сайта дорабатывается и не все сервисы доступны, но вскоре всё будет доступно.
+                                До скорой встречи.
+                            </p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p></div>
+                        <!-- /.seoTexts__content -->
                     </div>
                     <!-- /.seoTexts -->
-                    <button class="showMoreBtn" id="seoBlockShowMore">Показать все</button>
+                    <button class="showMoreBtn"
+                            id="seoBlockShowMore"
+                            data-status="toshow"
+                    >
+                        Показать все
+                    </button>
                 </div>
                 <!-- /.seo__content -->
             </section>
@@ -2537,28 +2559,37 @@
     <!-- /.mainContent -->
     <footer class="siteFooter">
         <div class="siteFooter__menuBlock">
+            <section class="footerTop">
+                <button class="siteVersionBtn siteVersionBtn-mobile">
+                    <a href="#">
+                            <span class="btnIcon">
+                                <svg viewBox="0 0 35 35">
+                                    <path d="M25.302 0h-15.604c-1.3 0-2.364 1.063-2.364 2.364v30.271c0 1.301 1.064 2.365 2.364 2.365h15.604c1.3 0 2.364-1.062 2.364-2.364v-30.272c0-1.301-1.064-2.364-2.364-2.364zm-10.298 1.704h4.992c.158 0 .286.128.286.287 0 .158-.128.286-.286.286h-4.992c-.158 0-.286-.128-.286-.286 0-.159.128-.287.286-.287zm2.496 32.114c-.653 0-1.182-.529-1.182-1.183s.529-1.182 1.182-1.182 1.182.528 1.182 1.182-.529 1.183-1.182 1.183zm8.521-3.193h-17.042v-26.876h17.042v26.876z"/>
+                                </svg>
+                            </span>
+                        <span class="innerText">Desktop версия</span>
+                    </a>
+                </button>
+                <!-- /.siteVersionBtn siteVersionBtn-mobile -->
+                <ul class="footerTopItems">
+                    <li class="footerTopItems__item"><a href="#" target="_blank">Справка</a></li>
+                    <li class="footerTopItems__item"><a href="#" target="_blank">О нас</a></li>
+                    <li class="footerTopItems__item"><a href="#" target="_blank">Как работает рейтинг</a></li>
+                    <li class="footerTopItems__item"><a href="#" target="_blank">Реклама</a></li>
+                </ul>
+                <!-- /.footerTopItems -->
+            </section>
+            <!-- /.section footerTop -->
             <div class="wrapper wrapper-footerMenuBlock">
                 <div class="footerHeader">
                     <div class="footerHeader__title">Отзывы:</div>
                     <!-- /.footerHeader__title -->
-                    <div class="footerHeader__toggleMenu">
-                        <button class="iconBtn iconBtn-toggleMenu">
-                                        <span class="cssIcon cssIcon-toggleMenu">
-                                            <span class="cssIcon__part cssIcon__part-line"></span>
-                                            <span class="cssIcon__part cssIcon__part-line"></span>
-                                            <span class="cssIcon__part cssIcon__part-line"></span>
-                                        </span>
-                            <!-- /.cssIcon-toggleMenu -->
-                        </button>
-                        <!-- /.iconBtn iconBtn-toggleMenu -->
-                    </div>
-                    <!-- /.footerHeader__toggleMenu -->
                 </div>
                 <!-- /.footerHeader -->
                 <nav class="footerMenuBlock">
                     <ul class="footerMenu">
                         <li class="footerMenu__item footerMenu__item-title">
-                            <div class="h4Title"><a href="#spareParts">О запчастях</a></div>
+                            <div class="h4Title"><a href="#" target="_blank">О запчастях</a></div>
                             <div class="shevronIcon shevronIcon-footerMenu">
                                 <div class="shevronIcon__icon">
                                     <span></span>
@@ -2567,13 +2598,6 @@
                                 <!-- /.shevronIcon__icon -->
                             </div>
                         </li>
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>-->
-                        <!--unvisible elements-->
                         <li class="footerMenu__hiddenBlock">
                             <ul class="footerMenu__hiddenElements displayNone">
                                 <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
@@ -2587,7 +2611,7 @@
                     </ul>
                     <ul class="footerMenu">
                         <li class="footerMenu__item footerMenu__item-title">
-                            <div class="h4Title"><a href="#brands">О производителях</a></div>
+                            <div class="h4Title"><a href="#" target="_blank">О производителях</a></div>
                             <div class="shevronIcon shevronIcon-footerMenu">
                                 <div class="shevronIcon__icon">
                                     <span></span>
@@ -2596,86 +2620,20 @@
                                 <!-- /.shevronIcon__icon -->
                             </div>
                         </li>
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Bosch</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">TRW</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Stellox</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Febest</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Masuma</a></li>-->
-                        <!--unvisible elements-->
                         <li class="footerMenu__hiddenBlock">
                             <ul class="footerMenu__hiddenElements displayNone">
-                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="footerMenu displayNone">
-                        <li class="footerMenu__item footerMenu__item-title">
-                            <div class="h4Title"><a href="#cars">Отзывы о запчастях для</a></div>
-                            <div class="shevronIcon shevronIcon-footerMenu">
-                                <div class="shevronIcon__icon">
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                                <!-- /.shevronIcon__icon -->
-                            </div>
-                        </li>
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">авто</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Тойота</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Киа</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Форд</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Рено</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Ниссан</a></li>-->
-                        <!--unvisible elements-->
-                        <li class="footerMenu__hiddenBlock">
-                            <ul class="footerMenu__hiddenElements displayNone">
-                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
-                            </ul>
-                        </li>
-                    </ul> <!-- отзывы о запчастях для-->
-                    <ul class="footerMenu">
-                        <li class="footerMenu__item footerMenu__item-title">
-                            <div class="h4Title"><a href="#magazineBlock">Рейтинг запчастей</a></div>
-                            <div class="shevronIcon shevronIcon-footerMenu">
-                                <div class="shevronIcon__icon">
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                                <!-- /.shevronIcon__icon -->
-                            </div>
-                        </li>
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>-->
-                        <!--unvisible elements-->
-                        <li class="footerMenu__hiddenBlock">
-                            <ul class="footerMenu__hiddenElements displayNone">
-                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Bosch</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">TRW</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Stellox</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Febest</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Masuma</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="footerMenu">
                         <li class="footerMenu__item footerMenu__item-title">
-                            <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
+                            <div class="h4Title"><a href="#" target="_blank">Рейтинг запчастей</a></div>
                             <div class="shevronIcon shevronIcon-footerMenu">
                                 <div class="shevronIcon__icon">
                                     <span></span>
@@ -2684,21 +2642,36 @@
                                 <!-- /.shevronIcon__icon -->
                             </div>
                         </li>
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>-->
-                        <!--<li class="footerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>-->
-                        <!--unvisible elements-->
                         <li class="footerMenu__hiddenBlock">
                             <ul class="footerMenu__hiddenElements displayNone">
-                                <li class="footerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Шины</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Лампы</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Термостат</a></li>
-                                <li class="footerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="footerMenu">
+                        <li class="footerMenu__item footerMenu__item-title">
+                            <div class="h4Title"><a href="#" target="_blank">Сравнения</a></div>
+                            <div class="shevronIcon shevronIcon-footerMenu">
+                                <div class="shevronIcon__icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <!-- /.shevronIcon__icon -->
+                            </div>
+                        </li>
+                        <li class="footerMenu__hiddenBlock">
+                            <ul class="footerMenu__hiddenElements displayNone">
+                                <li class="footerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
+                                <li class="footerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -2719,6 +2692,8 @@
         <!-- /.siteFooter__copyrightBlock -->
     </footer>
     <!-- /.siteFooter -->
+
+    <script src="js/flexcroll.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
 @import "reset";
 @import "var";
-@import "custom";
 @import "mixin";
+@import "custom";
+
 
 // header ---------------------------------
 
@@ -51,22 +52,122 @@
 .menuBlock {
   .iconBtn {
     &-toggleMenu {
+      position: relative;
       transition: transform .5s;
+      .cssIcon {
+        transition: box-shadow .3s;
+        &__part-line {
+          position: relative;
+          &::before {
+            background: $colorYellow;
+            content: '';
+            display: block;
+            position: absolute;
+            transition: transform .3s;
+            transform: scale(0, 1);
+            width: 100%;
+            height: 100%;
+          } // before
+        } // &__part-line
+      } // cssIcon
       &:hover {
-        transform: rotateY(180deg);
+        cursor: pointer;
+        transform: translateY(-2px);
+        .cssIcon {
+          &-toggleMenu {
+            box-shadow: 0 2px 0 #c59115;
+          } // -toggleMenu
+          &__part-line {
+            &::before {
+              transform: scale(1, 1);
+            } // before
+          } // &__part-line
+        } // cssIcon
       } // hover
     } // -toggleMenu
+    &-showMarker {
+      &:before {
+        @include drawTriangleTop(14, 7, white);
+        content: '';
+        position: absolute;
+        transform: translateX(-50%);
+        bottom: -14px;
+        left: 50%;
+      } // before
+    } // -showMarker
   } // iconBtn
-  .cssIcon {
-    &:hover {
-      cursor: pointer;
-      .cssIcon__part {
-        &-line {
-          background: $colorYellow;
-        } // -line
-      } // __part
-    } // hover
-  } // cssIcon
+  .topMenu {
+    $blockPadding: 30px;
+    @include flex(stretch, flex-start);
+    background: white;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    color: $colorDarkGray;
+    min-height: 0;
+    flex-direction: column;
+    opacity: 0;
+    padding: $blockPadding;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: height .5s, opacity .5s;
+    left: 50%;
+    top: 51px;
+    width: 95%;
+    z-index: 10;
+    &-open {
+      min-height: 200px;
+      opacity: 1;
+    } // -open
+  } // topMenu
+  .headerMenu {
+    &__item {
+      a {
+        color: $colorDarkGray;
+        font-size: 13px;
+        text-decoration: none;
+        line-height: 20px;
+        &:hover {
+          color: $colorYellow;
+        } // hover
+      } // a
+      &-title {
+        display: flex;
+        align-items: center;
+        .h4Title {
+          display: inline-block;
+          position: relative;
+          margin-right: 7px;
+          &::after {
+            content: '';
+            border-bottom: 1px dashed $colorYellow;
+            bottom: 5px;
+            display: block;
+            position: absolute;
+            height: 1px;
+            transition: width .3s;
+            width: 0;
+          } // after
+          &:hover {
+            cursor: pointer;
+            &::after {
+              width: 100%;
+            } // after
+          } // hover
+          a {
+            color: $colorYellow;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-decoration: none;
+          } // a
+        } // .h4Title
+      } // -title
+    } // __item
+    &__hiddenBlock {
+      overflow: hidden;
+      transition: height .3s;
+      height: 0;
+    } // __hiddenBlock
+  } // headerMenu
 } // menuBlock
 
 .headerUserAction {
@@ -996,70 +1097,12 @@
       margin-bottom: 10px;
       overflow: hidden;
       position: relative;
-      &::before, &::after {
-        $beforeElemSize: 10px;
-        content: '';
-        position: absolute;
-        transition: transform .3s ;
-        top: $beforeElemSize;
-        left: $beforeElemSize;
-        bottom: $beforeElemSize;
-        right: $beforeElemSize;
-      } // before
-      &::before {
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
-        transform: scale(0, 1);
-      } // before
-      &::after {
-        border-right: 1px solid white;
-        border-left: 1px solid white;
-        transform: scale(1, 0);
-      } // before
-      img {
-        transition: transform .3s, filter .3s, opacity .3s;
-      } // img
-      p {
-        color: white;
-        font-weight: bold;
-        font-size: 13px;
-        text-transform: uppercase;
-        opacity: 0;
-        position: absolute;
-        transform: translate(-50%, -50%) scale(0);
-        transition: opacity .3s, transform .3s;
-        top: 50%;
-        left: 50%;
-        white-space: nowrap;
-      } // p
     } // __thumbnail
     &__description {
       font-size: 13px;
       line-height: 18px;
       transition: color .3s;
     } // __description
-    &:hover {
-      cursor: pointer;
-      .articleTab__thumbnail {
-        background: black;
-        &::before, &::after {
-          transform: scale(1,1);
-        } // before, after
-        img {
-          opacity: .5;
-          transform: rotate(10deg) scale(1.2);
-          filter: blur(1px);
-        } // img
-        p {
-          opacity: 1;
-          transform: translate(-50%, -50%) scale(1);
-        } // p
-      } // articleTab__thumbnail
-      .articleTab__description {
-        color: $colorYellow;
-        text-decoration: underline;
-      } // articleTab__description
-    } // hover
   } // articleTab
   &__showAll {
     button {
@@ -1067,136 +1110,6 @@
     } // button
   } // __showAll
 } // magazine
-.activityTape {
-  background: $colorBgLightGray;
-  border-radius: 3px;
-  border: 1px solid $colorLightGray;
-  min-height: 440px;
-  height: 440px;
-  padding: 30px;
-  width: 100%;
-  .activityTapeHeader {
-    align-items: center;
-    display: flex;
-    margin-bottom: 30px;
-    &__icon {
-      margin-right: 10px;
-      height: 20px;
-      width: 20px;
-      svg {
-        width: 100%;
-        height: auto;
-        path {
-          fill: #2c333d;
-          fill-rule: evenodd;
-        } // path
-      } // svg
-    } // __icon
-    &__text {
-      font-weight: normal;
-    } // __text
-  } // activityTapeHeader
-  &__eventBlock {
-    overflow-y: scroll;
-    padding-right: 10px;
-    max-height: 85%;
-    /* width */
-    &::-webkit-scrollbar {
-      width: 13px;
-    }
-
-    /* Track */
-    &::-webkit-scrollbar-track {
-      border-radius: 3px;
-      background: $colorLightGray;
-    }
-
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-      background: $colorYellow;
-      border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    &::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-    .event {
-      border-bottom: 1px solid $colorLightGray;
-      margin-bottom: 20px;
-      &__header {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-bottom: 10px;
-      } // header
-      &__headerThumbnail {
-        $headerThumbnailSize: 35px;
-
-        display: flex;
-        align-items: center;
-        background: white;
-        border-radius: 3px;
-        border: 1px solid white;
-        margin-right: 10px;
-        overflow: hidden;
-        height: $headerThumbnailSize;
-        width: $headerThumbnailSize;
-      } // __headerThumbnail
-      &__headerNameDate {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin-right: 10px;
-        p {
-          display: inline-block;
-          font-size: 15px;
-          font-weight: bold;
-          color: $colorGray;
-          margin-bottom: 5px;
-          position: relative;
-          transition: color .3s;
-          &::before {
-            background: $colorYellow;
-            content: '';
-            display: block;
-            height: 1px;
-            position: absolute;
-            transition: width .3s;
-            bottom: -1px;
-            width: 0;
-          } // before
-          &:hover {
-            cursor: pointer;
-            color: $colorYellow;
-            &::before {
-              width: 100%;
-            } // before
-          } // hover
-        } // p
-        time {
-          font-size: 13px;
-          font-weight: normal;
-          color: $colorCountTxt;
-        }
-      } // __headerNameDate
-      &__content {
-        margin-bottom: 15px;
-        p {
-          font-size: 15px;
-          line-height: 1.2em;
-        } // p
-        a {
-          color: $colorLinkAside;
-        } // a
-      } // __content
-      &__addReview {
-        margin-bottom: 15px;
-      } // __addReview
-    } // events
-  } // __eventBlock
-} // activityTape
 // ==========================================
 
 // comparison block -------------------------
@@ -1373,6 +1286,7 @@
   &__content {
   } // __content;
   .seoTexts {
+    margin-bottom: 10px;
     p {
       font-size: 13px;
       line-height: 18px;
@@ -1384,6 +1298,89 @@
 
 // footer -----------------------------------
 .siteFooter {
+  .footerTop {
+    $itemColor: $colorLinkAside;
+    $itemFontSize: 12px;
+    $itemMargin: 15px;
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+    margin-bottom: 20px;
+    .siteVersionBtn {
+      border-radius: 3px;
+      margin-bottom: 10px;
+      a {
+        @include flex(center, flex-start);
+        color: $itemColor;
+        font-size: $itemFontSize;
+        text-decoration: none;
+        transition: color .3s;
+        .btnIcon {
+          margin-right: 10px;
+          width: 25px;
+          svg {
+            fill: $itemColor;
+            transition: fill .3s;
+          } // svg
+        } // btnIcon
+        .innerText {
+          position: relative;
+          &::before {
+            @include makeUnderline($itemColor, -2px);
+            width: 100%;
+          } // before
+          &::after {
+            @include makeUnderline($colorYellow, -2px);
+          } // after
+        } // innerText;
+      } // a
+      &:hover {
+        cursor: pointer;
+        a {
+          color: $colorYellow;
+          .btnIcon {
+            svg {
+              fill: $colorYellow;
+            } // svg
+          } // btnIcon
+          .innerText {
+            &::after {
+              width: 100%;
+            } // before
+          } // innerText;
+        } // a
+      } // hover
+    } // siteType
+    .footerTopItems {
+      @include flex(center, flex-start);
+      &__item {
+        margin-right: $itemMargin;
+        &:last-child {
+          margin-right: 0;
+        } // last-child
+        a {
+          color: $itemColor;
+          font-size: $itemFontSize;
+          text-decoration: none;
+          transition: color .3s;
+          position: relative;
+          &::before {
+            @include makeUnderline($itemColor, -2px);
+            width: 100%;
+          } // before
+          &::after {
+            @include makeUnderline($colorYellow, -2px);
+          } // after
+          &:hover {
+            cursor: pointer;
+            color: $colorYellow;
+            &::after {
+              width: 100%;
+            } // before
+          } // hover
+        } // a
+      } // __item
+    } // footerTopItems
+  } // footerTop
   &__menuBlock {
     $blockPadding: 15px;
     background: $colorDarkGray;
@@ -1402,6 +1399,7 @@
     &__title {
       color: $colorYellow;
       font-size: 13px;
+      line-height: 22px;
     } // __title
     &__toggleMenu {
       .iconBtn {
@@ -1429,8 +1427,8 @@
       a {
         color: white;
         font-size: 13px;
-        margin-bottom: 20px;
         text-decoration: none;
+        line-height: 20px;
         &:hover {
           color: $colorYellow;
         } // hover
