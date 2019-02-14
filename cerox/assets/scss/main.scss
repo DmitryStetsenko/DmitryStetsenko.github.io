@@ -430,11 +430,15 @@
             border-radius: $fieldBorderRadius;
             border: 2px solid $colorAquamarine;
             margin-bottom: 5px;
+            position: relative;
             height: $fieldHeight;
             width: 100%;
             &:last-child {
               margin-bottom: 0;
             } // last-child
+            input {
+              width: $inputsWidth;
+            } // input
           } // __filed
           .formBtn {
             @include flex(center, center);
@@ -459,7 +463,7 @@
               top: 50%;
               transform: translateY(-50%);
               right: 10px;
-              width: 35px;
+              width: 34px;
             } // icon
             &:hover {
               cursor: pointer;
@@ -549,6 +553,123 @@
       } // -callBack
     } // popUpForm
   } // modalWindow
+
+  // select
+  .select {
+    $fieldHeight: 65px;
+    $fieldBorderRadius: $fieldHeight / 2;
+    $innerWidth: $inputsWidth;
+    $headerFontSize: 14px;
+    // options
+    $optionBlockMaxHeight: 140px;
+    $optionsBlockPadding: 15px;
+    $itemFontSize: 14px;
+    $itemLineHeight: $itemFontSize * 1.5;
+
+    @include flex(center, flex-start);
+    background: white;
+    border-radius: $fieldBorderRadius;
+    border: 2px solid $colorAquamarine;
+    color: gray;
+    flex-direction: column;
+    font-size: $headerFontSize;
+    min-height: $fieldHeight;
+    width: 100%;
+    padding: 20px;
+    &:hover {
+      cursor: pointer;
+    } // hover
+    &__header{
+      margin-bottom: 25px;
+      width: $innerWidth;
+      .selectHeader {
+        @include flex(center, space-between);
+        &__value {
+          max-width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+        } // __value
+        &__icon {
+          @include drawTriangleBottom(12, 9, $colorAquamarine);
+          transition: transform .3s;
+        } // __icon
+        &-selected {
+          color: $colorAquamarine;
+        } // selected
+      } // selectHeader
+    } // __header
+    &__options {
+      padding: $optionsBlockPadding 0;
+      border-top: 1px solid grey;
+      transition: height .3s;
+      .selectOptions {
+        @include customScroll();
+        max-height: $optionBlockMaxHeight - $optionsBlockPadding * 2;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: $innerWidth;
+        &__item {
+          @include flex(center, space-between);
+          font-size: $itemFontSize;
+          line-height: $itemLineHeight;
+          white-space: nowrap;
+          &:hover {
+            cursor: pointer;
+            color: white;
+            background: $colorAquamarine;
+            input {
+              @include placeholder('proximanova', 12px, 400, italic, #ababab);
+            } // input
+          } // hover
+          .optionValue {
+            display: block;
+            margin-right: 5px;
+            width: 100%;
+          } // optionsValue
+          input {
+            @include placeholder('proximanova', 12px, 400, italic, #eee);
+            background: #eee;
+            color: $colorAquamarine;
+            max-width: 150px;
+            padding: 0 10px;
+            border-radius: 50px;
+          } // input
+          &-selected {
+            background: $colorAquamarine;
+            color: white;
+          } // selected
+        } // __item
+      } // selectOptions
+    } // __options
+    &-inPopUp{
+      $fieldBorder: 2px;
+      top: -$fieldBorder;
+      left: -$fieldBorder;
+      right: -$fieldBorder;
+      position: absolute;
+      width: initial;
+      z-index: 1;
+    } // -inPopUp
+    &-close {
+      .select__header {
+        margin-bottom: 0;
+      } // select__header
+      .select__options {
+      } // select__options
+    } // -close
+    &-open {
+      .select__header {
+        margin-bottom: 25px;
+        .selectHeader {
+          &__icon {
+            transform: rotate(-180deg);
+          } // __icon
+        } // selectHeader
+      } // select__header
+      .select__options {
+      } // select__options
+    } // -open
+  } // select
 
   // @MEDIA -------------------------------------
   @media screen and ( max-width: 1366px ) {

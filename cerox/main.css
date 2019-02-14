@@ -571,10 +571,13 @@
             border-radius: 32.5px;
             border: 2px solid #0b6170;
             margin-bottom: 5px;
+            position: relative;
             height: 65px;
             width: 100%; }
             #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field:last-child {
               margin-bottom: 0; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field input {
+              width: 220px; }
           #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn {
             display: flex;
             align-items: center;
@@ -596,7 +599,7 @@
               top: 50%;
               transform: translateY(-50%);
               right: 10px;
-              width: 35px; }
+              width: 34px; }
             #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn:hover {
               cursor: pointer; }
             #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile {
@@ -652,6 +655,112 @@
         width: 580px; }
       #ceroxMainPage .modalWindow .popUpForm-callBack {
         width: 300px; }
+  #ceroxMainPage .select {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+    border-radius: 32.5px;
+    border: 2px solid #0b6170;
+    color: gray;
+    flex-direction: column;
+    font-size: 14px;
+    min-height: 65px;
+    width: 100%;
+    padding: 20px; }
+    #ceroxMainPage .select:hover {
+      cursor: pointer; }
+    #ceroxMainPage .select__header {
+      margin-bottom: 25px;
+      width: 220px; }
+      #ceroxMainPage .select__header .selectHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        #ceroxMainPage .select__header .selectHeader__value {
+          max-width: 200px;
+          overflow: hidden;
+          white-space: nowrap; }
+        #ceroxMainPage .select__header .selectHeader__icon {
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 9px solid #0b6170;
+          transition: transform .3s; }
+        #ceroxMainPage .select__header .selectHeader-selected {
+          color: #0b6170; }
+    #ceroxMainPage .select__options {
+      padding: 15px 0;
+      border-top: 1px solid grey;
+      transition: height .3s; }
+      #ceroxMainPage .select__options .selectOptions {
+        /* Track */
+        /* Handle */
+        /* Handle on hover */
+        max-height: 110px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 220px; }
+        #ceroxMainPage .select__options .selectOptions::-webkit-scrollbar {
+          width: 3px; }
+        #ceroxMainPage .select__options .selectOptions::-webkit-scrollbar-track {
+          border-radius: 3px;
+          background: #ffffff; }
+        #ceroxMainPage .select__options .selectOptions::-webkit-scrollbar-thumb {
+          background: rgba(11, 97, 112, 0.5);
+          border-radius: 10px; }
+        #ceroxMainPage .select__options .selectOptions::-webkit-scrollbar-thumb:hover {
+          background: #0b6170; }
+        #ceroxMainPage .select__options .selectOptions__item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 14px;
+          line-height: 21px;
+          white-space: nowrap; }
+          #ceroxMainPage .select__options .selectOptions__item:hover {
+            cursor: pointer;
+            color: white;
+            background: #0b6170; }
+            #ceroxMainPage .select__options .selectOptions__item:hover input::-webkit-input-placeholder {
+              color: #ababab;
+              font: 400 italic 12px "proximanova"; }
+            #ceroxMainPage .select__options .selectOptions__item:hover input:-moz-placeholder {
+              color: #ababab;
+              font: 400 italic 12px "proximanova"; }
+          #ceroxMainPage .select__options .selectOptions__item .optionValue {
+            display: block;
+            margin-right: 5px;
+            width: 100%; }
+          #ceroxMainPage .select__options .selectOptions__item input {
+            background: #eee;
+            color: #0b6170;
+            max-width: 150px;
+            padding: 0 10px;
+            border-radius: 50px; }
+            #ceroxMainPage .select__options .selectOptions__item input::-webkit-input-placeholder {
+              color: #eee;
+              font: 400 italic 12px "proximanova"; }
+            #ceroxMainPage .select__options .selectOptions__item input:-moz-placeholder {
+              color: #eee;
+              font: 400 italic 12px "proximanova"; }
+          #ceroxMainPage .select__options .selectOptions__item-selected {
+            background: #0b6170;
+            color: white; }
+    #ceroxMainPage .select-inPopUp {
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      position: absolute;
+      width: initial;
+      z-index: 1; }
+    #ceroxMainPage .select-close .select__header {
+      margin-bottom: 0; }
+    #ceroxMainPage .select-open .select__header {
+      margin-bottom: 25px; }
+      #ceroxMainPage .select-open .select__header .selectHeader__icon {
+        transform: rotate(-180deg); }
   @media screen and (max-width: 1366px) {
     #ceroxMainPage {
       padding: 15px 0; }

@@ -141,24 +141,24 @@
 
 @mixin customScroll() {
   &::-webkit-scrollbar {
-    width: 13px;
+    width: 3px;
   }
 
   /* Track */
   &::-webkit-scrollbar-track {
     border-radius: 3px;
-    background: $colorBorderLightGray;
+    background: #ffffff;
   }
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: $colorYellow;
+    background: rgba($colorAquamarine, .5);
     border-radius: 10px;
   }
 
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: $colorAquamarine;
   }
 }
 
