@@ -853,9 +853,9 @@
     .modalWindow {
       flex-direction: column;
       justify-content: flex-start;
-      overflow-y: scroll;
       padding: 50px 0;
       .popUpForm {
+        overflow-y: scroll;
         &__content {
           .userRequest {
             &__row {

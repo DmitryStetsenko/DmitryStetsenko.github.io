@@ -805,71 +805,72 @@
       #ceroxMainPage .modalWindow {
         flex-direction: column;
         justify-content: flex-start;
-        overflow-y: scroll;
         padding: 50px 0; }
-        #ceroxMainPage .modalWindow .popUpForm__content .userRequest__row {
-          display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          flex-direction: column;
-          margin-bottom: 0; }
-        #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col {
-          width: 100%; }
-          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-userData {
-            flex-basis: auto;
-            width: 100%;
-            padding-right: 0; }
-          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-orderData {
-            flex-basis: auto;
-            width: 100%;
-            padding-left: 0; }
-          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-uploadFile {
-            flex-basis: auto;
-            width: 100%;
-            padding-right: 0; }
-          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-submit {
-            flex-basis: auto;
-            width: 100%;
-            padding-left: 0; }
-        #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field {
-          margin-bottom: 5px; }
-          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field:last-child {
+        #ceroxMainPage .modalWindow .popUpForm {
+          overflow-y: scroll; }
+          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-bottom: 0; }
+          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col {
+            width: 100%; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-userData {
+              flex-basis: auto;
+              width: 100%;
+              padding-right: 0; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-orderData {
+              flex-basis: auto;
+              width: 100%;
+              padding-left: 0; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-uploadFile {
+              flex-basis: auto;
+              width: 100%;
+              padding-right: 0; }
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-submit {
+              flex-basis: auto;
+              width: 100%;
+              padding-left: 0; }
+          #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field {
             margin-bottom: 5px; }
-        #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile {
-          margin-bottom: 5px; }
-        #ceroxMainPage .modalWindow .popUpForm__closeBtn {
-          position: absolute;
-          top: 20px;
-          right: 20px; }
-          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon {
-            display: block;
-            position: relative;
-            height: 30px;
-            width: 20px; }
-            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span {
-              background: #0b6170;
+            #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field:last-child {
+              margin-bottom: 5px; }
+          #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile {
+            margin-bottom: 5px; }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 20px; }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon {
               display: block;
-              height: 2px;
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              transition: transform .3s;
-              width: calc( 30px * 70 / 100); }
-              #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:first-child {
-                transform: translate(-50%, -50%) rotate(55deg); }
-              #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:last-child {
-                transform: translate(-50%, -50%) rotate(-55deg); }
-            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover {
-              cursor: pointer;
-              border-color: #0b6170; }
-              #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:first-child {
-                transform: translate(-50%, -50%) rotate(-55deg); }
-              #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:last-child {
-                transform: translate(-50%, -50%) rotate(55deg); }
-        #ceroxMainPage .modalWindow .popUpForm-order {
-          width: 300px; }
-        #ceroxMainPage .modalWindow .popUpForm-callBack {
-          width: 300px; } }
+              position: relative;
+              height: 30px;
+              width: 20px; }
+              #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span {
+                background: #0b6170;
+                display: block;
+                height: 2px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transition: transform .3s;
+                width: calc( 30px * 70 / 100); }
+                #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:first-child {
+                  transform: translate(-50%, -50%) rotate(55deg); }
+                #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:last-child {
+                  transform: translate(-50%, -50%) rotate(-55deg); }
+              #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover {
+                cursor: pointer;
+                border-color: #0b6170; }
+                #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:first-child {
+                  transform: translate(-50%, -50%) rotate(-55deg); }
+                #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:last-child {
+                  transform: translate(-50%, -50%) rotate(55deg); }
+          #ceroxMainPage .modalWindow .popUpForm-order {
+            width: 300px; }
+          #ceroxMainPage .modalWindow .popUpForm-callBack {
+            width: 300px; } }
   @media screen and (max-width: 400px) {
     #ceroxMainPage {
       height: initial; }
