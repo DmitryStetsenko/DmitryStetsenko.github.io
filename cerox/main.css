@@ -799,12 +799,12 @@
         line-height: 19.2px; } }
   @media screen and (max-width: 600px) {
     #ceroxMainPage {
-      padding: 35px 15px;
-      flex-direction: column;
-      justify-content: flex-start; }
+      padding: 20px 15px; }
       #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
         margin: 25px 100px; }
       #ceroxMainPage .modalWindow {
+        flex-direction: column;
+        justify-content: flex-start;
         overflow-y: scroll; }
         #ceroxMainPage .modalWindow .popUpForm__content .userRequest__row {
           display: flex;
@@ -946,7 +946,7 @@
   @media screen and (max-width: 360px) {
     #ceroxMainPage {
       height: initial;
-      padding: 35px 15px; }
+      padding: 20px 10px; }
       #ceroxMainPage h1 {
         font-size: 23px;
         margin-bottom: 15px; }

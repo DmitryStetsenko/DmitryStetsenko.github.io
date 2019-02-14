@@ -835,9 +835,8 @@
 
   } // 700
   @media screen and ( max-width: 600px ) {
-    padding: 35px 15px;
-    flex-direction: column;
-    justify-content: flex-start;
+    padding: 20px 15px;
+
 
     // mainContent
     .mainContent {
@@ -852,6 +851,8 @@
 
     // modalWindow
     .modalWindow {
+      flex-direction: column;
+      justify-content: flex-start;
       overflow-y: scroll;
       .popUpForm {
         &__content {
@@ -1099,7 +1100,7 @@
   } // 400
   @media screen and ( max-width: 360px ) {
     height: initial;
-    padding: 35px 15px;
+    padding: 20px 10px;
 
     h1 {
       font-size: 23px;
