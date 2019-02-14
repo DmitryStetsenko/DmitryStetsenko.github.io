@@ -25,8 +25,9 @@
         </div>
         <!-- /.logoBlock -->
         <h1 class="mainHeader__title">
-            <span>Изготовление качественных изделий</span>
-            <span>с помощью высокотехнологического оборудования</span>
+            <!--<span>Изготовление качественных изделий</span>-->
+            <!--<span>с помощью высокотехнологического оборудования</span>-->
+            Изготовление качественных изделий с помощью высокотехнологического оборудования
         </h1>
         <!-- /.mainHeader__title -->
     </header>
@@ -195,7 +196,7 @@
     <!-- /.mainFooter -->
 
     <div class="videoBg">
-        <video width="100%" height="auto" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="">
+        <video width="100%" height="auto" preload="auto" loop="loop" muted="muted" poster="assets/img/video_bg.jpg">
             <source src="assets/img/video_bg.mp4" type="video/mp4">
         </video>
         <div class="videoBg__whiteOverlay"></div>
@@ -206,7 +207,7 @@
     <div class="modalWindow modalWindow-order">
         <div class="modalWindow__overlay"></div>
         <!-- /.modalWindow__overlay -->
-        <div class="popUpForm">
+        <div class="popUpForm popUpForm-order">
             <div class="popUpForm__logo">
                 <img src="assets/img/logo.svg" alt="Cerox logo image">
             </div>
@@ -258,6 +259,55 @@
                                 <span class="formBtn__txt">Отправить</span>
                             </button>
                             <!-- /.formBtn formBtn-submit --></div>
+                        <!-- /.userRequest__col -->
+                    </div>
+                    <!-- /.userRequest__row -->
+                </div>
+                <!-- /.userRequest -->
+            </div>
+            <!-- /.popUpForm__content -->
+            <div class="popUpForm__closeBtn">
+                <button class="closeBtn closeBtn-popUp">
+                    <span class="closeBtn__icon">
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <!-- /.closeBtn closeBtn-popUp -->
+            </div>
+            <!-- /.popUpForm__closeBtn -->
+        </div>
+        <!-- /.popUpForm -->
+    </div>
+    <!-- /.modalWindow -->
+
+    <div class="modalWindow modalWindow-callBack">
+        <div class="modalWindow__overlay"></div>
+        <!-- /.modalWindow__overlay -->
+        <div class="popUpForm popUpForm-callBack">
+            <div class="popUpForm__logo">
+                <img src="assets/img/logo.svg" alt="Cerox logo image">
+            </div>
+            <!-- /.popUpForm__logo -->
+            <p class="popUpForm__title">Заполните пожалуйста форму<br>и мы Вам перезвоним<br>в ближашее время.</p>
+            <!-- /.popUpForm__title -->
+            <div class="popUpForm__content">
+                <div class="userRequest">
+                    <div class="userRequest__row">
+                        <div class="userRequest__col">
+                            <div class="userRequest__field">
+                                <input type="text" id="callBackUserName" placeholder="Ваше имя">
+                            </div>
+                            <!-- /.userRequest__field -->
+                            <div class="userRequest__field">
+                                <input type="number" id="callBackUserPhone" placeholder="Ваш телефон">
+                            </div>
+                            <!-- /.userRequest__field -->
+                            <button class="formBtn formBtn-submit">
+                                <span class="formBtn__txt">Отправить</span>
+                            </button>
+                            <!-- /.formBtn formBtn-submit -->
+                        </div>
                         <!-- /.userRequest__col -->
                     </div>
                     <!-- /.userRequest__row -->

@@ -71,6 +71,7 @@
   transform: translate(-50%, -50%);
 }
 
+// inputs style
 @mixin placeholder ($fontFamily, $fontSize, $fontWeight, $fontStyle, $fontColor) {
   &::-webkit-input-placeholder {
     color: $fontColor;
@@ -79,6 +80,16 @@
   &:-moz-placeholder {
     color: $fontColor;
     font: $fontWeight $fontStyle $fontSize $fontFamily;
+  }
+}
+@mixin hideCountArrow () {
+  input[type='number'] {
+    -moz-appearance:textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
   }
 }
 

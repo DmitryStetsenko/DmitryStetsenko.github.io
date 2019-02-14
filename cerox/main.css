@@ -239,13 +239,17 @@
   font-family: 'proximanova', sans-serif;
   flex-direction: column;
   padding: 35px 0; }
+  #ceroxMainPage input[type='number'] {
+    -moz-appearance: textfield; }
+  #ceroxMainPage input::-webkit-outer-spin-button,
+  #ceroxMainPage input::-webkit-inner-spin-button {
+    -webkit-appearance: none; }
   #ceroxMainPage h1 {
     font-size: 33px;
     font-weight: 200;
     line-height: 1;
+    max-width: 800px;
     text-align: center; }
-    #ceroxMainPage h1 span {
-      display: block; }
   #ceroxMainPage img, #ceroxMainPage svg {
     display: block;
     height: auto;
@@ -273,7 +277,7 @@
         letter-spacing: 5px;
         position: absolute;
         text-transform: uppercase;
-        bottom: 0;
+        bottom: -5px;
         right: -5px; }
   #ceroxMainPage .mainContent {
     display: flex;
@@ -398,7 +402,8 @@
               opacity: 1; }
         #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img {
           position: absolute;
-          transition: opacity .1s; }
+          transition: opacity .1s;
+          width: 38px; }
           #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img-hover {
             opacity: 0; }
         #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-toCall {
@@ -408,11 +413,11 @@
         align-items: center;
         justify-content: center;
         background: #fc0b39;
-        border-radius: calc( 65px / 2);
+        border-radius: calc( 60px / 2);
         border: 2px solid white;
         color: white;
-        height: 65px;
-        font-size: 17px;
+        height: 60px;
+        font-size: 16.94915px;
         font-weight: 400;
         margin: 0 45px;
         opacity: .65;
@@ -426,6 +431,7 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 28px;
+      margin-bottom: 10px;
       text-align: center; }
   #ceroxMainPage .mainFooter {
     color: #0b6170;
@@ -520,14 +526,14 @@
       opacity: 0;
       transition: opacity .3s;
       position: relative;
-      width: 580px;
       z-index: 1002; }
       #ceroxMainPage .modalWindow .popUpForm__logo {
         width: 80px;
         margin-bottom: 15px; }
       #ceroxMainPage .modalWindow .popUpForm__title {
         font-size: 16px;
-        margin-bottom: 30px; }
+        margin-bottom: 30px;
+        text-align: center; }
       #ceroxMainPage .modalWindow .popUpForm__content {
         width: 100%; }
         #ceroxMainPage .modalWindow .popUpForm__content .userRequest {
@@ -540,15 +546,22 @@
             #ceroxMainPage .modalWindow .popUpForm__content .userRequest__row:last-child {
               margin-bottom: 0; }
           #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col {
-            flex-basis: auto;
-            width: 50%; }
+            width: 100%; }
             #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-userData {
+              flex-basis: auto;
+              width: 50%;
               padding-right: 5px; }
             #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-orderData {
+              flex-basis: auto;
+              width: 50%;
               padding-left: 5px; }
             #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-uploadFile {
+              flex-basis: auto;
+              width: 50%;
               padding-right: 5px; }
             #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-submit {
+              flex-basis: auto;
+              width: 50%;
               padding-left: 5px; }
           #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field {
             display: flex;
@@ -635,28 +648,41 @@
               transform: translate(-50%, -50%) rotate(-55deg); }
             #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:last-child {
               transform: translate(-50%, -50%) rotate(55deg); }
+      #ceroxMainPage .modalWindow .popUpForm-order {
+        width: 580px; }
+      #ceroxMainPage .modalWindow .popUpForm-callBack {
+        width: 300px; }
   @media screen and (max-width: 1366px) {
     #ceroxMainPage {
-      padding: 20px 0 25px 0; }
+      padding: 15px 0; }
       #ceroxMainPage h1 {
-        font-size: 28px; }
+        font-size: 26px;
+        margin-bottom: 10px; }
       #ceroxMainPage .mainHeader .logoBlock {
-        margin-bottom: 0; }
+        margin-bottom: 10px; }
         #ceroxMainPage .mainHeader .logoBlock__img {
-          height: 100px;
-          width: 100px; }
+          height: 80px;
+          width: 80px; }
         #ceroxMainPage .mainHeader .logoBlock__title {
           position: relative;
           left: -10px; }
           #ceroxMainPage .mainHeader .logoBlock__title .logoTitleImg {
-            width: 166px; }
+            width: 132.8px; }
           #ceroxMainPage .mainHeader .logoBlock__title .logoSubTitle {
             font-size: 7px;
-            letter-spacing: 4px;
-            bottom: 0;
-            right: -5px; }
+            font-weight: 700;
+            letter-spacing: 2px;
+            bottom: -3px;
+            right: -2px; }
       #ceroxMainPage .mainContent .sliderBox {
-        margin-bottom: 30px; }
+        margin-bottom: 50px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots {
+          bottom: -45px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li {
+            margin-right: 10px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li button::before {
+              height: 15px;
+              width: 15px; }
         #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem {
           padding: 0 17px; }
           #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name {
@@ -682,71 +708,371 @@
         justify-content: center;
         margin-bottom: 10px; }
         #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          border: 2px solid #0b6170;
+          height: 80px;
+          width: 80px; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img {
+            width: 32px; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
+          border-radius: calc( 50px / 2);
+          height: 50px;
+          font-size: 14.12429px;
+          margin: 0 35px;
+          width: 250px; }
+      #ceroxMainPage .mainContent .userActionBlock__description {
+        font-size: 16px;
+        line-height: 19.2px; } }
+  @media screen and (max-width: 700px) {
+    #ceroxMainPage {
+      height: initial;
+      padding: 25px 15px; }
+      #ceroxMainPage h1 {
+        font-size: 28px;
+        max-width: 100%;
+        margin-bottom: 15px; }
+      #ceroxMainPage .mainHeader .logoBlock {
+        margin-bottom: 15px; }
+        #ceroxMainPage .mainHeader .logoBlock__img {
+          height: 120px;
+          width: 120px; }
+        #ceroxMainPage .mainHeader .logoBlock__title .logoTitleImg {
+          width: 199.2px; }
+        #ceroxMainPage .mainHeader .logoBlock__title .logoSubTitle {
+          font-size: 9px;
+          font-weight: 300;
+          letter-spacing: 4px;
+          bottom: -5px;
+          right: -2px; }
+      #ceroxMainPage .mainContent .sliderBox {
+        margin-bottom: 50px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots {
+          bottom: -45px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li {
+            margin-right: 15px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li button::before {
+              height: 20px;
+              width: 20px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem {
+          padding: 0 17px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name {
+            transform: translateY(100px); }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name .name {
+              font-size: 26.66667px;
+              line-height: 32px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img {
+            height: 360px;
+            min-height: 360px;
+            min-width: 360px;
+            width: 360px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img img {
+              object-fit: cover;
+              height: 360px;
+              width: 360px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__name .name {
+            font-size: 32px;
+            line-height: 38.4px; }
+      #ceroxMainPage .mainContent .userActionBlock__userAction {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 25px; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn {
           height: 80px;
           width: 80px;
-          text-decoration: none;
-          position: relative; }
-          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover {
-            cursor: pointer;
-            background: #0b6170;
-            border-color: white; }
-            #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover .callBtn__img {
-              opacity: 0; }
-              #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn:hover .callBtn__img-hover {
-                opacity: 1; }
+          margin-right: 45px; }
           #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img {
-            position: absolute;
-            transition: opacity .1s; }
-            #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img-hover {
-              opacity: 0; }
+            width: 32px; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-call {
+            margin-right: 0; }
           #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-toCall {
-            display: none; }
+            display: flex; }
         #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #fc0b39;
-          border-radius: calc( 50px / 2);
-          border: 2px solid white;
-          color: white;
-          height: 50px;
-          font-size: 17px;
-          font-weight: 400;
-          margin: 0 45px;
-          opacity: .65;
-          transition: opacity .3s;
-          text-transform: uppercase;
-          width: 250px; }
-          #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn:hover {
-            cursor: pointer;
-            opacity: 1; }
+          border-radius: calc( 60px / 2);
+          height: 60px;
+          font-size: 16.94915px;
+          margin: 25px 150px;
+          order: -1;
+          width: 300px; }
       #ceroxMainPage .mainContent .userActionBlock__description {
-        font-size: 18px;
-        line-height: 21.6px; } }
-  @media screen and (max-width: 700px) {
-    #ceroxMainPage .mainContent .sliderBox {
-      margin-bottom: 60px; }
-      #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem {
-        padding: 0 17px; }
-        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name {
-          transform: translateY(50px); }
-          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name .name {
-            font-size: 21.66667px;
-            line-height: 26px; }
-        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img {
-          height: 370px;
-          min-height: 370px;
-          min-width: 370px;
-          width: 370px; }
-          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img img {
-            object-fit: cover;
-            height: 370px;
-            width: 370px; }
-        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__name .name {
-          font-size: 26px;
-          line-height: 31.2px; } }
+        display: none;
+        font-size: 16px;
+        line-height: 19.2px; } }
+  @media screen and (max-width: 600px) {
+    #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
+      margin: 25px 100px; }
+    #ceroxMainPage .modalWindow .popUpForm__content .userRequest__row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-bottom: 0; }
+    #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col {
+      width: 100%; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-userData {
+        flex-basis: auto;
+        width: 100%;
+        padding-right: 0; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-orderData {
+        flex-basis: auto;
+        width: 100%;
+        padding-left: 0; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-uploadFile {
+        flex-basis: auto;
+        width: 100%;
+        padding-right: 0; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-submit {
+        flex-basis: auto;
+        width: 100%;
+        padding-left: 0; }
+    #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field {
+      margin-bottom: 5px; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field:last-child {
+        margin-bottom: 5px; }
+    #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile {
+      margin-bottom: 5px; }
+    #ceroxMainPage .modalWindow .popUpForm__closeBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px; }
+      #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon {
+        display: block;
+        position: relative;
+        height: 30px;
+        width: 20px; }
+        #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span {
+          background: #0b6170;
+          display: block;
+          height: 2px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transition: transform .3s;
+          width: calc( 30px * 70 / 100); }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:first-child {
+            transform: translate(-50%, -50%) rotate(55deg); }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:last-child {
+            transform: translate(-50%, -50%) rotate(-55deg); }
+        #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover {
+          cursor: pointer;
+          border-color: #0b6170; }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:first-child {
+            transform: translate(-50%, -50%) rotate(-55deg); }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:last-child {
+            transform: translate(-50%, -50%) rotate(55deg); }
+    #ceroxMainPage .modalWindow .popUpForm-order {
+      width: 300px; }
+    #ceroxMainPage .modalWindow .popUpForm-callBack {
+      width: 300px; } }
+  @media screen and (max-width: 400px) {
+    #ceroxMainPage {
+      height: initial;
+      padding: 20px 15px; }
+      #ceroxMainPage h1 {
+        font-size: 23px;
+        margin-bottom: 15px; }
+      #ceroxMainPage .mainHeader .logoBlock {
+        margin-bottom: 15px; }
+        #ceroxMainPage .mainHeader .logoBlock__img {
+          height: 80px;
+          width: 80px; }
+        #ceroxMainPage .mainHeader .logoBlock__title .logoTitleImg {
+          width: 132.8px; }
+        #ceroxMainPage .mainHeader .logoBlock__title .logoSubTitle {
+          font-size: 7px;
+          font-weight: 400;
+          letter-spacing: 2px;
+          bottom: -3px;
+          right: -2px; }
+      #ceroxMainPage .mainContent .sliderBox {
+        margin-bottom: 50px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots {
+          bottom: -45px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li {
+            margin-right: 15px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li button::before {
+              height: 20px;
+              width: 20px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem {
+          padding: 0 17px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name {
+            transform: translateY(70px); }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name .name {
+              font-size: 18.33333px;
+              line-height: 22px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img {
+            height: 260px;
+            min-height: 260px;
+            min-width: 260px;
+            width: 260px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img img {
+              object-fit: cover;
+              height: 260px;
+              width: 260px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__name .name {
+            font-size: 22px;
+            line-height: 26.4px; }
+      #ceroxMainPage .mainContent .userActionBlock__userAction {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 25px; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn {
+          height: 80px;
+          width: 80px;
+          margin-right: 20px; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img {
+            width: 32px; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-call {
+            margin-right: 0; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-toCall {
+            display: flex; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
+          border-radius: calc( 50px / 2);
+          height: 50px;
+          font-size: 14.12429px;
+          margin: 25px 50px;
+          order: -1;
+          width: 250px; }
+      #ceroxMainPage .mainContent .userActionBlock__description {
+        display: none;
+        font-size: 16px;
+        line-height: 19.2px; } }
+  @media screen and (max-width: 360px) {
+    #ceroxMainPage {
+      height: initial;
+      padding: 20px 15px; }
+      #ceroxMainPage h1 {
+        font-size: 23px;
+        margin-bottom: 15px; }
+      #ceroxMainPage .mainHeader .logoBlock {
+        margin-bottom: 15px; }
+        #ceroxMainPage .mainHeader .logoBlock__img {
+          height: 80px;
+          width: 80px; }
+        #ceroxMainPage .mainHeader .logoBlock__title .logoTitleImg {
+          width: 132.8px; }
+        #ceroxMainPage .mainHeader .logoBlock__title .logoSubTitle {
+          font-size: 7px;
+          font-weight: 400;
+          letter-spacing: 2px;
+          bottom: -3px;
+          right: -2px; }
+      #ceroxMainPage .mainContent .sliderBox {
+        margin-bottom: 50px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots {
+          bottom: -45px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li {
+            margin-right: 15px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider .slick-dots li button::before {
+              height: 20px;
+              width: 20px; }
+        #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem {
+          padding: 0 17px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name {
+            transform: translateY(50px); }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem:hover .workItem__name .name {
+              font-size: 18.33333px;
+              line-height: 22px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img {
+            height: 250px;
+            min-height: 250px;
+            min-width: 250px;
+            width: 250px; }
+            #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__img img {
+              object-fit: cover;
+              height: 250px;
+              width: 250px; }
+          #ceroxMainPage .mainContent .sliderBox .mySlider__slide .workItem__name .name {
+            font-size: 22px;
+            line-height: 26.4px; }
+      #ceroxMainPage .mainContent .userActionBlock__userAction {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 25px; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn {
+          height: 80px;
+          width: 80px;
+          margin-right: 20px; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn__img {
+            width: 32px; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-call {
+            margin-right: 0; }
+          #ceroxMainPage .mainContent .userActionBlock__userAction .callBtn-toCall {
+            display: flex; }
+        #ceroxMainPage .mainContent .userActionBlock__userAction .orderBtn {
+          border-radius: calc( 50px / 2);
+          height: 50px;
+          font-size: 14.12429px;
+          margin: 25px 50px;
+          order: -1;
+          width: 250px; }
+      #ceroxMainPage .mainContent .userActionBlock__description {
+        display: none;
+        font-size: 16px;
+        line-height: 19.2px; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest__row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 0; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col {
+        width: 100%; }
+        #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-userData {
+          flex-basis: auto;
+          width: 100%;
+          padding-right: 0; }
+        #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-orderData {
+          flex-basis: auto;
+          width: 100%;
+          padding-left: 0; }
+        #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-uploadFile {
+          flex-basis: auto;
+          width: 100%;
+          padding-right: 0; }
+        #ceroxMainPage .modalWindow .popUpForm__content .userRequest__col-submit {
+          flex-basis: auto;
+          width: 100%;
+          padding-left: 0; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field {
+        margin-bottom: 5px; }
+        #ceroxMainPage .modalWindow .popUpForm__content .userRequest__field:last-child {
+          margin-bottom: 5px; }
+      #ceroxMainPage .modalWindow .popUpForm__content .userRequest .formBtn-uploadFile {
+        margin-bottom: 5px; }
+      #ceroxMainPage .modalWindow .popUpForm__closeBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px; }
+        #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon {
+          display: block;
+          position: relative;
+          height: 30px;
+          width: 20px; }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span {
+            background: #0b6170;
+            display: block;
+            height: 2px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition: transform .3s;
+            width: calc( 30px * 70 / 100); }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:first-child {
+              transform: translate(-50%, -50%) rotate(55deg); }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon span:last-child {
+              transform: translate(-50%, -50%) rotate(-55deg); }
+          #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover {
+            cursor: pointer;
+            border-color: #0b6170; }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:first-child {
+              transform: translate(-50%, -50%) rotate(-55deg); }
+            #ceroxMainPage .modalWindow .popUpForm__closeBtn .closeBtn__icon:hover span:last-child {
+              transform: translate(-50%, -50%) rotate(55deg); }
+      #ceroxMainPage .modalWindow .popUpForm-order {
+        width: 280px; }
+      #ceroxMainPage .modalWindow .popUpForm-callBack {
+        width: 280px; } }

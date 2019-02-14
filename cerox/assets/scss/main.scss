@@ -12,14 +12,14 @@
   flex-direction: column;
   padding: 35px 0;
 
+  @include hideCountArrow();
+
   h1 {
     font-size: 33px;
     font-weight: 200;
     line-height: 1;
+    max-width: 800px;
     text-align: center;
-    span {
-      display: block;
-    }
   } // h1
 
   img, svg {
@@ -56,7 +56,7 @@
           letter-spacing: 5px;
           position: absolute;
           text-transform: uppercase;
-          bottom: 0;
+          bottom: -5px;
           right: -5px;
         } // logoSubTitle
       } // __title
@@ -202,6 +202,8 @@
         margin-bottom: 25px;
         .callBtn {
           $btnSize: 95px;
+          $iconRatio: .4;
+          $iconSize: $btnSize * $iconRatio;
           @include flex(center, center);
           border-radius: 50%;
           border: 2px solid $colorAquamarine;
@@ -224,6 +226,7 @@
           &__img {
             position: absolute;
             transition: opacity .1s;
+            width: $iconSize;
             &-hover {
               opacity: 0;
             } // -hover
@@ -237,7 +240,8 @@
         } // callBtn
         .orderBtn {
           $width: 300px;
-          $height: 65px;
+          $height: $width / 5;
+          $btnFontSize: $width / 17.7;
           $borderRadius: calc( #{$height} / 2 );
           @include flex(center, center);
           background: #fc0b39;
@@ -245,7 +249,7 @@
           border: 2px solid white;
           color: white;
           height: $height;
-          font-size: 17px;
+          font-size: $btnFontSize;
           font-weight: 400;
           margin: 0 45px;
           opacity: .65;
@@ -262,6 +266,7 @@
         font-size: 22px;
         font-weight: 400;
         line-height: 28px;
+        margin-bottom: 10px;
         text-align: center;
       } // __description
     } // userActionBlock
@@ -356,6 +361,7 @@
     } // whiteOverlay
   }
 
+  // modalWindow
   .modalWindow {
     @include fullScreenOverlayPosition(transparent, 1, fixed, 1000);
     @include flex(center, center);
@@ -366,7 +372,6 @@
       transition: opacity .3s;
     } // __overlay
     .popUpForm {
-      $formWidth: 580px;
       @include flex(center, flex-start);
       background: $colorPopUpBgColor;
       border-radius: 33px;
@@ -376,7 +381,6 @@
       opacity: 0;
       transition: opacity .3s;
       position: relative;
-      width: $formWidth;
       z-index: 1002;
       &__logo {
         width: 80px;
@@ -385,6 +389,7 @@
       &__title {
         font-size: 16px;
         margin-bottom: 30px;
+        text-align: center;
       } // title
       &__content {
         width: 100%;
@@ -400,17 +405,22 @@
             } // last-child
           } // row
           &__col {
-            @include widthPercent(50%);
+            width: 100%;
+            $colWidth: 50%;
             &-userData {
+              @include widthPercent($colWidth);
               padding-right: 5px;
             } // -userData
             &-orderData {
+              @include widthPercent($colWidth);
               padding-left: 5px;
             } // orderData
             &-uploadFile {
+              @include widthPercent($colWidth);
               padding-right: 5px;
             } // uploadFile
             &-submit {
+              @include widthPercent($colWidth);
               padding-left: 5px;
             } // -submit
           } // __col
@@ -529,23 +539,32 @@
           } // &__icon
         } // closeBtn
       } // __closeBtn
+      &-order {
+        $formWidth: 580px;
+        width: $formWidth;
+      } // -order
+      &-callBack {
+        $formWidth: 300px;
+        width: $formWidth;
+      } // -callBack
     } // popUpForm
   } // modalWindow
 
   // @MEDIA -------------------------------------
   @media screen and ( max-width: 1366px ) {
-    padding: 20px 0 25px 0;
+    padding: 15px 0;
 
     h1 {
-      font-size: 28px;
+      font-size: 26px;
+      margin-bottom: 10px;
       }  // h1
 
     // mainHeader
     .mainHeader {
       .logoBlock {
-        $imgSize: 100px;
+        $imgSize: 80px;
         $imgTitleWidth: $imgSize * 1.66;
-        margin-bottom: 0;
+        margin-bottom: 10px;
         &__img {
           height: $imgSize;
           width: $imgSize;
@@ -558,9 +577,10 @@
           } // logoTitleImg
           .logoSubTitle {
             font-size: 7px;
-            letter-spacing: 4px;
-            bottom: 0;
-            right: -5px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            bottom: -3px;
+            right: -2px;
           } // logoSubTitle
         } // __title
       } // logoBlock
@@ -569,16 +589,30 @@
     // mainContent
     .mainContent {
       .sliderBox {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
         // slider
         .mySlider {
           $size: 180px;
+          $dotSize: 15px;
+          $dotMargin: 10px;
           $slidePadding: 17px;
           $itemFontSize: 18px;
           $itemLineHeight: $itemFontSize * 1.2;
           $itemHoverFontSize: $itemFontSize / 1.2;
           $itemHoverLineHeight: $itemHoverFontSize * 1.2;
           $itemTextHoverOffset: 50px;
+          .slick-dots {
+            bottom: -45px;
+            li {
+              margin-right: $dotMargin;
+              button {
+                &::before {
+                  height: $dotSize;
+                  width: $dotSize;
+                } // before
+              } // button
+            } // li
+          } // slick-dots
           &__slide {
             .workItem {
               padding: 0 $slidePadding;
@@ -616,67 +650,36 @@
         } // mySlider
       } // sliderBox
       .userActionBlock {
-        $descrFontSize: 18px;
+        $descrFontSize: 16px;
         $descrLineHeight: $descrFontSize * 1.2;
         &__userAction {
           @include flex(center, center);
           margin-bottom: 10px;
           .callBtn {
             $btnSize: 80px;
-            @include flex(center, center);
-            border-radius: 50%;
-            border: 2px solid $colorAquamarine;
+            $iconRatio: .4;
+            $iconSize: $btnSize * $iconRatio;
             height: $btnSize;
             width: $btnSize;
-            //transition: background .3s, border .3s;
-            text-decoration: none;
-            position: relative;
-            &:hover {
-              cursor: pointer;
-              background: $colorAquamarine;
-              border-color: white;
-              .callBtn__img {
-                opacity: 0;
-                &-hover {
-                  opacity: 1;
-                } // -hover
-              } // callBtn__img
-            } // hover
             &__img {
-              position: absolute;
-              transition: opacity .1s;
-              &-hover {
-                opacity: 0;
-              } // -hover
+              width: $iconSize;
             } // __img
             &-call {
 
             } // call
             &-toCall {
-              display: none;
             } // -toCall
           } // callBtn
           .orderBtn {
             $width: 250px;
             $height: $width / 5;
+            $btnFontSize: $width / 17.7;
             $borderRadius: calc( #{$height} / 2 );
-            @include flex(center, center);
-            background: #fc0b39;
             border-radius: $borderRadius;
-            border: 2px solid white;
-            color: white;
             height: $height;
-            font-size: 17px;
-            font-weight: 400;
-            margin: 0 45px;
-            opacity: .65;
-            transition: opacity .3s;
-            text-transform: uppercase;
+            font-size: $btnFontSize;
+            margin: 0 35px;
             width: $width;
-            &:hover {
-              cursor: pointer;
-              opacity: 1;
-            } // hover
           } // orderBtn
         } // __userAction
         &__description {
@@ -688,20 +691,67 @@
 
   } // 1366
   @media screen and ( max-width: 700px ) {
+    height: initial;
+    padding: 25px 15px;
+
+    h1 {
+      font-size: 28px;
+      max-width: 100%;
+      margin-bottom: 15px;
+    } // h1
+
+    // mainHeader
+    .mainHeader {
+      .logoBlock {
+        $imgSize: 120px;
+        $imgTitleWidth: $imgSize * 1.66;
+        margin-bottom: 15px;
+        &__img {
+          height: $imgSize;
+          width: $imgSize;
+        } // __img
+        &__title {
+          .logoTitleImg {
+            width: $imgTitleWidth;
+          } // logoTitleImg
+          .logoSubTitle {
+            font-size: 9px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            bottom: -5px;
+            right: -2px;
+          } // logoSubTitle
+        } // __title
+      } // logoBlock
+    } // mainHeader
 
     // mainContent
     .mainContent {
       .sliderBox {
-        margin-bottom: 60px;
+        margin-bottom: 50px;
         // slider
         .mySlider {
-          $size: 370px;
+          $size: 360px;
+          $dotSize: 20px;
+          $dotMargin: 15px;
           $slidePadding: 17px;
-          $itemFontSize: 26px;
+          $itemFontSize: 32px;
           $itemLineHeight: $itemFontSize * 1.2;
           $itemHoverFontSize: $itemFontSize / 1.2;
           $itemHoverLineHeight: $itemHoverFontSize * 1.2;
-          $itemTextHoverOffset: 50px;
+          $itemTextHoverOffset: 100px;
+          .slick-dots {
+            bottom: -45px;
+            li {
+              margin-right: $dotMargin;
+              button {
+                &::before {
+                  height: $dotSize;
+                  width: $dotSize;
+                } // before
+              } // button
+            } // li
+          } // slick-dots
           &__slide {
             .workItem {
               padding: 0 $slidePadding;
@@ -738,9 +788,558 @@
           } // __slide
         } // mySlider
       } // sliderBox
+      .userActionBlock {
+        $descrFontSize: 16px;
+        $descrLineHeight: $descrFontSize * 1.2;
+        &__userAction {
+          @include flex(center, center);
+          flex-wrap: wrap;
+          margin-bottom: 25px;
+          .callBtn {
+            $btnSize: 80px;
+            $iconRatio: .4;
+            $iconSize: $btnSize * $iconRatio;
+            height: $btnSize;
+            width: $btnSize;
+            margin-right: 45px;
+            &__img {
+              width: $iconSize;
+            } // __img
+            &-call {
+              margin-right: 0;
+            } // call
+            &-toCall {
+              display: flex;
+            } // -toCall
+          } // callBtn
+          .orderBtn {
+            $width: 300px;
+            $height: $width / 5;
+            $btnFontSize: $width / 17.7;
+            $borderRadius: calc( #{$height} / 2 );
+            border-radius: $borderRadius;
+            height: $height;
+            font-size: $btnFontSize;
+            margin: 25px 150px;
+            order: -1;
+            width: $width;
+          } // orderBtn
+        } // __userAction
+        &__description {
+          display: none;
+          font-size: $descrFontSize;
+          line-height: $descrLineHeight;
+        } // __description
+      } // userActionBlock
     } // mainContent
 
   } // 700
+  @media screen and ( max-width: 600px ) {
+
+    // mainContent
+    .mainContent {
+      .userActionBlock {
+        &__userAction {
+          .orderBtn {
+            margin: 25px 100px;
+          } // orderBtn
+        } // __userAction
+      } // userActionBlock
+    } // mainContent
+
+    // modalWindow
+    .modalWindow {
+      .popUpForm {
+        &__content {
+          .userRequest {
+            &__row {
+              @include flex(flex-start, space-between);
+              flex-direction: column;
+              margin-bottom: 0;
+            } // row
+            &__col {
+              width: 100%;
+              $colWidth: 100%;
+              $colPadding: 0;
+              &-userData {
+                @include widthPercent($colWidth);
+                padding-right: $colPadding;
+              } // -userData
+              &-orderData {
+                @include widthPercent($colWidth);
+                padding-left: $colPadding;
+              } // orderData
+              &-uploadFile {
+                @include widthPercent($colWidth);
+                padding-right: $colPadding;
+              } // uploadFile
+              &-submit {
+                @include widthPercent($colWidth);
+                padding-left: $colPadding;
+              } // -submit
+            } // __col
+            &__field {
+              margin-bottom: 5px;
+              &:last-child {
+                margin-bottom: 5px;
+              } // last-child
+            } // __filed
+            .formBtn {
+              &-uploadFile {
+                margin-bottom: 5px;
+              } // -uploadFile
+              &-submit {
+              } // submit
+            } // formBtn
+          } // userRequest
+        } // __content
+        &__closeBtn {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          .closeBtn {
+            $sizeIcon: 20px;
+            $sizeIconRatio: 1.5;
+            $iconStroke: 2px;
+            $iconColor: $colorAquamarine;
+            $iconLineDeg: 55deg;
+            &__icon {
+              display: block;
+              position: relative;
+              height: $sizeIcon * $sizeIconRatio;
+              width: $sizeIcon;
+              span {
+                background: $iconColor;
+                display: block;
+                height: $iconStroke;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transition: transform .3s;
+                width: calc( #{$sizeIcon * $sizeIconRatio} * 70 / 100);
+                &:first-child {
+                  transform: translate(-50%, -50%) rotate($iconLineDeg);
+                } // first-child
+                &:last-child {
+                  transform: translate(-50%, -50%) rotate(-$iconLineDeg);
+                } // first-child
+              } // span
+              &:hover {
+                cursor: pointer;
+                border-color: $iconColor;
+                span {
+                  &:first-child {
+                    transform: translate(-50%, -50%) rotate(-$iconLineDeg);
+                  } // first-child
+                  &:last-child {
+                    transform: translate(-50%, -50%) rotate($iconLineDeg);
+                  } // first-child
+                } // span
+              } // hover
+            } // &__icon
+          } // closeBtn
+        } // __closeBtn
+        &-order {
+          $formWidth: 300px;
+          width: $formWidth;
+        } // -order
+        &-callBack {
+          $formWidth: 300px;
+          width: $formWidth;
+        } // -callBack
+      } // popUpForm
+    } // modalWindow
+
+  } // 700
+  @media screen and ( max-width: 400px ) {
+    height: initial;
+    padding: 20px 15px;
+
+    h1 {
+      font-size: 23px;
+      margin-bottom: 15px;
+    } // h1
+
+    // mainHeader
+    .mainHeader {
+      .logoBlock {
+        $imgSize: 80px;
+        $imgTitleWidth: $imgSize * 1.66;
+        margin-bottom: 15px;
+        &__img {
+          height: $imgSize;
+          width: $imgSize;
+        } // __img
+        &__title {
+          .logoTitleImg {
+            width: $imgTitleWidth;
+          } // logoTitleImg
+          .logoSubTitle {
+            font-size: 7px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            bottom: -3px;
+            right: -2px;
+          } // logoSubTitle
+        } // __title
+      } // logoBlock
+    } // mainHeader
+
+    // mainContent
+    .mainContent {
+      .sliderBox {
+        margin-bottom: 50px;
+        // slider
+        .mySlider {
+          $size: 260px;
+          $dotSize: 20px;
+          $dotMargin: 15px;
+          $slidePadding: 17px;
+          $itemFontSize: 22px;
+          $itemLineHeight: $itemFontSize * 1.2;
+          $itemHoverFontSize: $itemFontSize / 1.2;
+          $itemHoverLineHeight: $itemHoverFontSize * 1.2;
+          $itemTextHoverOffset: 70px;
+          .slick-dots {
+            bottom: -45px;
+            li {
+              margin-right: $dotMargin;
+              button {
+                &::before {
+                  height: $dotSize;
+                  width: $dotSize;
+                } // before
+              } // button
+            } // li
+          } // slick-dots
+          &__slide {
+            .workItem {
+              padding: 0 $slidePadding;
+              &:hover {
+                .workItem__name {
+                  transform: translateY($itemTextHoverOffset);
+                  .name {
+                    font-size: $itemHoverFontSize;
+                    line-height: $itemHoverLineHeight;
+                  } // name
+                } // workItem__img
+              } // hover
+              &__img {
+                height: $size;
+                min-height: $size;
+                min-width: $size;
+                width: $size;
+                img {
+                  object-fit: cover;
+                  height: $size;
+                  width: $size;
+                } // img
+              } // __img
+              &__name {
+                .name {
+                  font-size: $itemFontSize;
+                  line-height: $itemLineHeight;
+                } // name
+              } // __name
+              &-current {
+              } // current
+
+            } // workItem
+          } // __slide
+        } // mySlider
+      } // sliderBox
+      .userActionBlock {
+        $descrFontSize: 16px;
+        $descrLineHeight: $descrFontSize * 1.2;
+        &__userAction {
+          @include flex(center, center);
+          flex-wrap: wrap;
+          margin-bottom: 25px;
+          .callBtn {
+            $btnSize: 80px;
+            $iconRatio: .4;
+            $iconSize: $btnSize * $iconRatio;
+            height: $btnSize;
+            width: $btnSize;
+            margin-right: 20px;
+            &__img {
+              width: $iconSize;
+            } // __img
+            &-call {
+              margin-right: 0;
+            } // call
+            &-toCall {
+              display: flex;
+            } // -toCall
+          } // callBtn
+          .orderBtn {
+            $width: 250px;
+            $height: $width / 5;
+            $btnFontSize: $width / 17.7;
+            $borderRadius: calc( #{$height} / 2 );
+            border-radius: $borderRadius;
+            height: $height;
+            font-size: $btnFontSize;
+            margin: 25px 50px;
+            order: -1;
+            width: $width;
+          } // orderBtn
+        } // __userAction
+        &__description {
+          display: none;
+          font-size: $descrFontSize;
+          line-height: $descrLineHeight;
+        } // __description
+      } // userActionBlock
+    } // mainContent
+
+  } // 400
+  @media screen and ( max-width: 360px ) {
+    height: initial;
+    padding: 20px 15px;
+
+    h1 {
+      font-size: 23px;
+      margin-bottom: 15px;
+    } // h1
+
+    // mainHeader
+    .mainHeader {
+      .logoBlock {
+        $imgSize: 80px;
+        $imgTitleWidth: $imgSize * 1.66;
+        margin-bottom: 15px;
+        &__img {
+          height: $imgSize;
+          width: $imgSize;
+        } // __img
+        &__title {
+          .logoTitleImg {
+            width: $imgTitleWidth;
+          } // logoTitleImg
+          .logoSubTitle {
+            font-size: 7px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            bottom: -3px;
+            right: -2px;
+          } // logoSubTitle
+        } // __title
+      } // logoBlock
+    } // mainHeader
+
+    // mainContent
+    .mainContent {
+      .sliderBox {
+        margin-bottom: 50px;
+        // slider
+        .mySlider {
+          $size: 250px;
+          $dotSize: 20px;
+          $dotMargin: 15px;
+          $slidePadding: 17px;
+          $itemFontSize: 22px;
+          $itemLineHeight: $itemFontSize * 1.2;
+          $itemHoverFontSize: $itemFontSize / 1.2;
+          $itemHoverLineHeight: $itemHoverFontSize * 1.2;
+          $itemTextHoverOffset: 50px;
+          .slick-dots {
+            bottom: -45px;
+            li {
+              margin-right: $dotMargin;
+              button {
+                &::before {
+                  height: $dotSize;
+                  width: $dotSize;
+                } // before
+              } // button
+            } // li
+          } // slick-dots
+          &__slide {
+            .workItem {
+              padding: 0 $slidePadding;
+              &:hover {
+                .workItem__name {
+                  transform: translateY($itemTextHoverOffset);
+                  .name {
+                    font-size: $itemHoverFontSize;
+                    line-height: $itemHoverLineHeight;
+                  } // name
+                } // workItem__img
+              } // hover
+              &__img {
+                height: $size;
+                min-height: $size;
+                min-width: $size;
+                width: $size;
+                img {
+                  object-fit: cover;
+                  height: $size;
+                  width: $size;
+                } // img
+              } // __img
+              &__name {
+                .name {
+                  font-size: $itemFontSize;
+                  line-height: $itemLineHeight;
+                } // name
+              } // __name
+              &-current {
+              } // current
+
+            } // workItem
+          } // __slide
+        } // mySlider
+      } // sliderBox
+      .userActionBlock {
+        $descrFontSize: 16px;
+        $descrLineHeight: $descrFontSize * 1.2;
+        &__userAction {
+          @include flex(center, center);
+          flex-wrap: wrap;
+          margin-bottom: 25px;
+          .callBtn {
+            $btnSize: 80px;
+            $iconRatio: .4;
+            $iconSize: $btnSize * $iconRatio;
+            height: $btnSize;
+            width: $btnSize;
+            margin-right: 20px;
+            &__img {
+              width: $iconSize;
+            } // __img
+            &-call {
+              margin-right: 0;
+            } // call
+            &-toCall {
+              display: flex;
+            } // -toCall
+          } // callBtn
+          .orderBtn {
+            $width: 250px;
+            $height: $width / 5;
+            $btnFontSize: $width / 17.7;
+            $borderRadius: calc( #{$height} / 2 );
+            border-radius: $borderRadius;
+            height: $height;
+            font-size: $btnFontSize;
+            margin: 25px 50px;
+            order: -1;
+            width: $width;
+          } // orderBtn
+        } // __userAction
+        &__description {
+          display: none;
+          font-size: $descrFontSize;
+          line-height: $descrLineHeight;
+        } // __description
+      } // userActionBlock
+    } // mainContent
+
+    // modalWindow
+    .modalWindow {
+      .popUpForm {
+        &__content {
+          .userRequest {
+            &__row {
+              @include flex(flex-start, space-between);
+              flex-direction: column;
+              margin-bottom: 0;
+            } // row
+            &__col {
+              width: 100%;
+              $colWidth: 100%;
+              $colPadding: 0;
+              &-userData {
+                @include widthPercent($colWidth);
+                padding-right: $colPadding;
+              } // -userData
+              &-orderData {
+                @include widthPercent($colWidth);
+                padding-left: $colPadding;
+              } // orderData
+              &-uploadFile {
+                @include widthPercent($colWidth);
+                padding-right: $colPadding;
+              } // uploadFile
+              &-submit {
+                @include widthPercent($colWidth);
+                padding-left: $colPadding;
+              } // -submit
+            } // __col
+            &__field {
+              margin-bottom: 5px;
+              &:last-child {
+                margin-bottom: 5px;
+              } // last-child
+            } // __filed
+            .formBtn {
+              &-uploadFile {
+                margin-bottom: 5px;
+              } // -uploadFile
+              &-submit {
+              } // submit
+            } // formBtn
+          } // userRequest
+        } // __content
+        &__closeBtn {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          .closeBtn {
+            $sizeIcon: 20px;
+            $sizeIconRatio: 1.5;
+            $iconStroke: 2px;
+            $iconColor: $colorAquamarine;
+            $iconLineDeg: 55deg;
+            &__icon {
+              display: block;
+              position: relative;
+              height: $sizeIcon * $sizeIconRatio;
+              width: $sizeIcon;
+              span {
+                background: $iconColor;
+                display: block;
+                height: $iconStroke;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transition: transform .3s;
+                width: calc( #{$sizeIcon * $sizeIconRatio} * 70 / 100);
+                &:first-child {
+                  transform: translate(-50%, -50%) rotate($iconLineDeg);
+                } // first-child
+                &:last-child {
+                  transform: translate(-50%, -50%) rotate(-$iconLineDeg);
+                } // first-child
+              } // span
+              &:hover {
+                cursor: pointer;
+                border-color: $iconColor;
+                span {
+                  &:first-child {
+                    transform: translate(-50%, -50%) rotate(-$iconLineDeg);
+                  } // first-child
+                  &:last-child {
+                    transform: translate(-50%, -50%) rotate($iconLineDeg);
+                  } // first-child
+                } // span
+              } // hover
+            } // &__icon
+          } // closeBtn
+        } // __closeBtn
+        &-order {
+          $formWidth: 280px;
+          width: $formWidth;
+        } // -order
+        &-callBack {
+          $formWidth: 280px;
+          width: $formWidth;
+        } // -callBack
+      } // popUpForm
+    } // modalWindow
+
+  } // 360
   // ============================================
 
 } // ceroxMainPage
