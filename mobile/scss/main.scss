@@ -399,8 +399,12 @@
         min-width: $sparePartsElementBrandTextWidth;
         overflow: hidden;
         padding-left: 7px;
+        position: relative;
         width: $sparePartsElementBrandTextWidth;
         white-space: nowrap;
+        &::after {
+          @include gradientBorderColor($colorBgLightGray, 20px, 80%);
+        } // after
       } // __brandText
       &-rating {
         font-size: 13px;
@@ -642,11 +646,13 @@
   .brandsListElement {
     align-items: center;
     border-top: 1px solid $colorLightGray;
+    color: $colorDarkGray;
     display: flex;
     font-size: 13px;
     height: 50px;
     justify-content: space-between;
     position: relative;
+    text-decoration: none;
     &::after {
       border-radius: 3px;
       border: 1px solid transparent;
@@ -773,6 +779,57 @@
           } // after
         } // hover
       } // -brandTop
+      &-brandNew {
+        align-items: flex-start;
+        background: $colorBgLightGray;
+        color: $colorDarkGray;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        padding-left: 10px;
+        text-decoration: none;
+        min-width: initial;
+        width: 100%;
+        &:hover {
+          cursor: pointer;
+          &::after {
+            font-size: 15px;
+            transform: scale(1);
+          } // after
+        } // hover
+        &::after {
+          content: attr(data-brand-name);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(to bottom, rgba(167, 202, 82, 0.81) 0%, rgba(144, 202, 82, 0.81) 100%);
+          //background: rgba(239, 180, 40, 0.8);
+          color: white;
+          font-weight: bold;
+          font-size: 0;
+          height: 100%;
+          position: absolute;
+          transform: scale(0);
+          text-transform: uppercase;
+          transition: font-size .3s, transform .3s;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.71);
+          top: 0;
+          left: 0;
+          width: 100%;
+        } // after
+        .imgWrap {
+          height: 17px;
+          margin-bottom: 5px;
+        } // imgWrap
+        &__additionalbrand {
+          color: $colorDarkGray;
+          font-size: 13px;
+        } // __additionalBrand
+        img {
+          height: 100%;
+          width: auto;
+        } // img
+      } // -brandNew
       &-reviews {
         $brandTextWidth: 37.5%;
         background: white;
