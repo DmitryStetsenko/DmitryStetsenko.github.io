@@ -367,7 +367,7 @@
     @include flex(center, center);
     display: none;
     &__overlay {
-      @include fullScreenOverlayPosition($colorAquamarine, .7, absolute, 1001);
+      @include fullScreenOverlayPosition($colorAquamarine, .7, fixed, 1001);
       opacity: 0;
       transition: opacity .3s;
     } // __overlay
@@ -835,6 +835,7 @@
 
   } // 700
   @media screen and ( max-width: 600px ) {
+    overflow-y: scroll;
 
     // mainContent
     .mainContent {
