@@ -2,6 +2,18 @@
 
 $(document).ready(function () {
 
+    const order = {
+        name: '',
+        phone: '',
+        material: '',
+        color: '',
+        attachment: ''
+    };
+    const callBack = {
+        name: '',
+        phone: ''
+    };
+
     if (window.matchMedia('(min-width: 700px)').matches) {
         loadVideo();
     }
@@ -13,6 +25,12 @@ $(document).ready(function () {
     openPopUpCallBack();
 
     initSelect();
+
+    fillOrder();
+
+    clickOnSubmitBtn();
+
+    closePopUp();
 
 
     function initSlider() {
@@ -55,13 +73,7 @@ $(document).ready(function () {
                 popUpForm.style.opacity = '1';
             }, 200);
         });
-        closeBtn.addEventListener('click', function () {
-            overlay.style.opacity = '0';
-            popUpForm.style.opacity = '0';
-            setTimeout(function () {
-                modalWindow.style.display = 'none';
-            }, 350);
-        });
+
 
     } // openPopUpOrder
 
@@ -81,14 +93,6 @@ $(document).ready(function () {
                 popUpForm.style.opacity = '1';
             }, 200);
         });
-        closeBtn.addEventListener('click', function () {
-            overlay.style.opacity = '0';
-            popUpForm.style.opacity = '0';
-            setTimeout(function () {
-                modalWindow.style.display = 'none';
-            }, 350);
-        });
-
     } // openPopUpOrder
 
     function initSelect() {
@@ -113,13 +117,14 @@ $(document).ready(function () {
                     const currentOptionValue = currentOption.querySelector('.optionValue');
                     currentOptionValue.addEventListener('click', function (e) {
                         e.stopPropagation();
+                        const dataTarget = currentSelect.dataset.target;
+                        console.log(dataTarget);
                         const parentOptionValue = this.parentNode;
                         const index = parentOptionValue.dataset.index;
                         const optionValue = parentOptionValue.querySelector('.optionValue');
                         const inputValue = currentOption.querySelector('input');
                         let inputValueText;
                         let headerValueText;
-
 
                         // clear selected option
                         Array.from(option).forEach(function (elem) {
@@ -133,6 +138,12 @@ $(document).ready(function () {
                             headerValueText = optionValue.innerText + ' - ' + inputValueText;
                         } else {
                             headerValueText = optionValue.innerText;
+                        }
+
+                        if (dataTarget === 'material') {
+                            order.material = headerValueText;
+                        } else {
+                            order.color = headerValueText;
                         }
 
                         headerValue.innerHTML = headerValueText;
@@ -156,10 +167,177 @@ $(document).ready(function () {
         });
     } // loadVideo
 
+    function clickOnSubmitBtn () {
+        const submitBtn = document.querySelectorAll('.formBtn-submit');
+        let typeBtn;
+        Array.from(submitBtn).forEach(function(currentBtn){
+            currentBtn.addEventListener('click', function(){
+                typeBtn = this.dataset.type;
+                submitForm(typeBtn);
+            });
+        });
+    } // clickOnSubmitBtn
+
 
     // secondary function
-    function closePopUp(modalWindow) {
+    function fillOrder(){
+        const userName = document.querySelector('#orderUserName');
+        const userPhone = document.querySelector('#orderUserPhone');
+        const attachment = document.querySelector('#uploadFileInput');
+        const callBackUserName = document.querySelector('#callBackUserName');
+        const callBackUserPhone = document.querySelector('#callBackUserPhone');
+        userName.onchange = function(){
+            order.name = this.value;
+        };
+        userPhone.onchange = function(){
+            order.phone = this.value;
+        };
+        attachment.onchange = function(){
+            order.attachment = this.file[0].name;
+        };
+        callBackUserName.onchange = function(){
+            callBack.name = this.value;
+        };
+        callBackUserPhone.onchange = function(){
+            callBack.phone = this.value;
+        };
 
+    } // fillOrder
+
+    function submitForm(formName){
+        let htmlElemForm;
+        let formResultWindow;
+        if (validForm(formName)) {
+            if (formName === 'order') {
+                htmlElemForm = document.querySelector('.popUpForm-order');
+            } else {
+                htmlElemForm = document.querySelector('.popUpForm-callBack');
+            }
+
+            // show submitFormResult window
+            formResultWindow = htmlElemForm.parentNode.querySelector('.popUpForm-submitResult');
+            console.log(formResultWindow);
+            htmlElemForm.style.transform = 'translateY(100px)';
+            htmlElemForm.style.opacity = '0';
+            formResultWindow.style.display = 'flex';
+            setTimeout(function(){
+                formResultWindow.style.transform = 'translateY(100px)';
+                formResultWindow.style.opacity = '1';
+            }, 100);
+        } else {
+            console.log('form not submit')
+        }
+    } // submitForm
+
+    function validForm(formName) {
+        let valid = true;
+        const duration = 500;
+        if (formName === 'order') {
+           for (let field in order) {
+               if (!order[field]) {
+                   if (field === 'name') {
+                       valid = false;
+                       let htmlElemName = document.querySelector('#orderUserName').parentNode;
+                       htmlElemName.style.transition = `border-color ${duration}ms`;
+                       htmlElemName.style.borderColor = 'red';
+                       setTimeout(function(){
+                           htmlElemName.style.removeProperty('border-color');
+                       }, duration);
+                       setTimeout(function(){
+                           htmlElemName.style.removeProperty('transition');
+                       }, duration * 2);
+                   }
+                   if (field === 'phone') {
+                       valid = false;
+                       let htmlElemPhone = document.querySelector('#orderUserPhone').parentNode;
+                       htmlElemPhone.style.transition = `border-color ${duration}ms`;
+                       htmlElemPhone.style.borderColor = 'red';
+                       setTimeout(function(){
+                           htmlElemPhone.style.removeProperty('border-color');
+                       }, duration);
+                       setTimeout(function(){
+                           htmlElemPhone.style.removeProperty('transition');
+                       }, duration * 2);
+                   }
+                   if (field === 'material') {
+                       valid = false;
+                       let htmlElemMaterial = document.querySelector('#selectMaterial');
+                       htmlElemMaterial.style.transition = `border-color ${duration}ms`;
+                       htmlElemMaterial.style.borderColor = 'red';
+                       setTimeout(function(){
+                           htmlElemMaterial.style.removeProperty('border-color');
+                       }, duration);
+                       setTimeout(function(){
+                           htmlElemMaterial.style.removeProperty('transition');
+                       }, duration * 2);
+                   }
+                   if (field === 'color') {
+                       valid = false;
+                       let htmlElemColor = document.querySelector('#selectColor');
+                       htmlElemColor.style.transition = `border-color ${duration}ms`;
+                       htmlElemColor.style.borderColor = 'red';
+                       setTimeout(function(){
+                           htmlElemColor.style.removeProperty('border-color');
+                       }, duration);
+                       setTimeout(function(){
+                           htmlElemColor.style.removeProperty('transition');
+                       }, duration * 2);
+                   }
+               }
+           }
+        } else {
+            for (let field in callBack) {
+                if (!callBack[field]) {
+                    if (field === 'name') {
+                        valid = false;
+                        let htmlElemName = document.querySelector('#callBackUserName').parentNode;
+                        htmlElemName.style.transition = `border-color ${duration}ms`;
+                        htmlElemName.style.borderColor = 'red';
+                        setTimeout(function(){
+                            htmlElemName.style.removeProperty('border-color');
+                        }, duration);
+                        setTimeout(function(){
+                            htmlElemName.style.removeProperty('transition');
+                        }, duration * 2);
+                    }
+                    if (field === 'phone') {
+                        valid = false;
+                        let htmlElemPhone = document.querySelector('#callBackUserPhone').parentNode;
+                        htmlElemPhone.style.transition = `border-color ${duration}ms`;
+                        htmlElemPhone.style.borderColor = 'red';
+                        setTimeout(function(){
+                            htmlElemPhone.style.removeProperty('border-color');
+                        }, duration);
+                        setTimeout(function(){
+                            htmlElemPhone.style.removeProperty('transition');
+                        }, duration * 2);
+                    }
+                }
+            }
+        }
+        return valid;
+    }
+
+    function closePopUp() {
+        const closeBtn = document.querySelectorAll('.closeBtn-popUp');
+        Array.from(closeBtn).forEach(function(currentBtn){
+            currentBtn.addEventListener('click', function () {
+                const modalWindow = this.parentNode.parentNode.parentNode;
+                const overlay = modalWindow.querySelector('.modalWindow__overlay');
+                const popUpForm = this.parentNode.parentNode;
+
+                overlay.style.opacity = '0';
+                popUpForm.style.opacity = '0';
+                setTimeout(function () {
+                    modalWindow.style.display = 'none';
+                    Array.from(modalWindow.querySelectorAll('.popUpForm')).forEach(function(elem){
+                        elem.removeAttribute('style');
+                        console.log(elem);
+                    });
+                }, 350);
+            });
+
+        });
     } // closePopUp
 
     function determSliderSize(param) {

@@ -365,6 +365,7 @@
   .modalWindow {
     @include fullScreenOverlayPosition(transparent, 1, fixed, 1000);
     @include flex(center, center);
+    flex-direction: column;
     display: none;
     &__overlay {
       @include fullScreenOverlayPosition($colorAquamarine, .7, fixed, 1001);
@@ -379,7 +380,7 @@
       flex-direction: column;
       padding: 25px 15px 30px 15px;
       opacity: 0;
-      transition: opacity .3s;
+      transition: opacity .3s, transform .3s;
       position: relative;
       z-index: 1002;
       &__logo {
@@ -551,6 +552,12 @@
         $formWidth: 300px;
         width: $formWidth;
       } // -callBack
+      &-submitResult {
+        display: none;
+        order: -1;
+        $formWidth: 300px;
+        width: $formWidth;
+      } // -submitResult
     } // popUpForm
   } // modalWindow
 
@@ -1074,6 +1081,10 @@
           $formWidth: 300px;
           width: $formWidth;
         } // -callBack
+        &-submitResult {
+          overflow-y: unset;
+          min-height: 250px;
+        } // -submitResult
       } // popUpForm
     } // modalWindow
 

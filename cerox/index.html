@@ -230,7 +230,7 @@
                         <!-- /.userRequest__col -->
                         <div class="userRequest__col userRequest__col-orderData">
                             <div class="userRequest__field">
-                                <div class="select select-inPopUp select-close" data-option="-1">
+                                <div class="select select-inPopUp select-close" id="selectMaterial" data-option="-1" data-target="material">
                                     <div class="select__header">
                                         <div class="selectHeader">
                                             <div class="selectHeader__value"
@@ -290,7 +290,7 @@
                             </div>
                             <!-- /.userRequest__field -->
                             <div class="userRequest__field">
-                                <div class="select select-inPopUp select-close" data-option="-1">
+                                <div class="select select-inPopUp select-close" id="selectColor" data-option="-1" data-target="color">
                                     <div class="select__header">
                                         <div class="selectHeader">
                                             <div class="selectHeader__value"
@@ -413,7 +413,7 @@
                             <!--/.formBtn formBtn-uploadFile--></div>
                         <!-- /.userRequest__col -->
                         <div class="userRequest__col userRequest__col-submit">
-                            <button class="formBtn formBtn-submit">
+                            <button class="formBtn formBtn-submit" data-type="order">
                                 <span class="formBtn__txt">Отправить</span>
                             </button>
                             <!-- /.formBtn formBtn-submit --></div>
@@ -436,6 +436,28 @@
             <!-- /.popUpForm__closeBtn -->
         </div>
         <!-- /.popUpForm -->
+        <div class="popUpForm popUpForm-submitResult">
+            <div class="popUpForm__logo">
+                <img src="assets/img/logo.svg" alt="Cerox logo image">
+            </div>
+            <!-- /.popUpForm__logo -->
+            <p class="popUpForm__title">
+                Спасибо за Ваш запрос!<br><br>
+                Наш менеджер свяжеться с Вами в ближайшее время
+            </p>
+            <!-- /.popUpForm__title -->
+            <div class="popUpForm__closeBtn">
+                <button class="closeBtn closeBtn-popUp">
+                    <span class="closeBtn__icon">
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <!-- /.closeBtn closeBtn-popUp -->
+            </div>
+            <!-- /.popUpForm__closeBtn -->
+        </div>
+        <!-- /.popUpForm popUpForm-submitResult -->
     </div>
     <!-- /.modalWindow -->
 
@@ -461,7 +483,7 @@
                                 <input type="number" id="callBackUserPhone" placeholder="Ваш телефон">
                             </div>
                             <!-- /.userRequest__field -->
-                            <button class="formBtn formBtn-submit">
+                            <button class="formBtn formBtn-submit" data-type="callback">
                                 <span class="formBtn__txt">Отправить</span>
                             </button>
                             <!-- /.formBtn formBtn-submit -->
@@ -485,6 +507,28 @@
             <!-- /.popUpForm__closeBtn -->
         </div>
         <!-- /.popUpForm -->
+        <div class="popUpForm popUpForm-submitResult">
+            <div class="popUpForm__logo">
+                <img src="assets/img/logo.svg" alt="Cerox logo image">
+            </div>
+            <!-- /.popUpForm__logo -->
+            <p class="popUpForm__title">
+                Спасибо за Ваш запрос!<br><br>
+                Наш менеджер свяжеться с Вами в ближайшее время
+            </p>
+            <!-- /.popUpForm__title -->
+            <div class="popUpForm__closeBtn">
+                <button class="closeBtn closeBtn-popUp">
+                    <span class="closeBtn__icon">
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <!-- /.closeBtn closeBtn-popUp -->
+            </div>
+            <!-- /.popUpForm__closeBtn -->
+        </div>
+        <!-- /.popUpForm popUpForm-submitResult -->
     </div>
     <!-- /.modalWindow -->
 

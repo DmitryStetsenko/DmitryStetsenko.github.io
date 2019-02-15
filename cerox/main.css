@@ -12,9 +12,16 @@
     background: inherit;
     margin: 0;
     padding: 0;
-    outline: none; }
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
   #ceroxMainPage ul li {
     list-style-type: none; }
+  #ceroxMainPage input:-webkit-autofill,
+  #ceroxMainPage input:-webkit-autofill:hover,
+  #ceroxMainPage input:-webkit-autofill:focus,
+  #ceroxMainPage input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 10em white inset !important;
+    -webkit-text-fill-color: black !important; }
 
 @font-face {
   /* -------- Bold ------------*/
@@ -502,6 +509,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     display: none; }
     #ceroxMainPage .modalWindow__overlay {
       background: #0b6170;
@@ -524,7 +532,7 @@
       flex-direction: column;
       padding: 25px 15px 30px 15px;
       opacity: 0;
-      transition: opacity .3s;
+      transition: opacity .3s, transform .3s;
       position: relative;
       z-index: 1002; }
       #ceroxMainPage .modalWindow .popUpForm__logo {
@@ -654,6 +662,10 @@
       #ceroxMainPage .modalWindow .popUpForm-order {
         width: 580px; }
       #ceroxMainPage .modalWindow .popUpForm-callBack {
+        width: 300px; }
+      #ceroxMainPage .modalWindow .popUpForm-submitResult {
+        display: none;
+        order: -1;
         width: 300px; }
   #ceroxMainPage .select {
     display: flex;
@@ -979,7 +991,10 @@
           #ceroxMainPage .modalWindow .popUpForm-order {
             width: 300px; }
           #ceroxMainPage .modalWindow .popUpForm-callBack {
-            width: 300px; } }
+            width: 300px; }
+          #ceroxMainPage .modalWindow .popUpForm-submitResult {
+            overflow-y: unset;
+            min-height: 250px; } }
   @media screen and (max-width: 400px) {
     #ceroxMainPage {
       height: initial; }
