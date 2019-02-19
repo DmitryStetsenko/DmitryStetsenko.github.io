@@ -2,37 +2,22 @@
 
   // page header block -------------------------
   .pageHeaderBlock {
-    @include flex(center, flex-start);
     margin-bottom: $outerBlockMargin;
-    &__thumbnail {
-      $imgSize: 140px;
-      @include flex(center, center);
-      border-radius: $mainBorderRadius;
-      border: 1px solid $colorBorderLightGray;
-      height: $imgSize;
-      min-width: $imgSize;
-      padding: 10px;
-      width: $imgSize;
-    } // __thumbnail
     &__content {
       & > .blockTitle {
         color: $colorDarkGray;
-        padding-left: 40px;
         margin-bottom: $blockTitleMarginBottom;
       } // h1Title
       .headerBlockContent {
-        @include flex(flex-start, space-between);
         &__item {
-          border-right: 1px solid $colorBorderLightGray;
-          flex-shrink: 1;
-          max-height: 87px;
+          @include flex(center, space-between);
+          border-bottom: 1px solid $colorBorderLightGray;
           overflow: hidden;
-          padding: 15px 40px;
+          padding: 20px 10px;
           &:last-child {
-            border-right: none;
+            border-bottom: none;
           } // last-child
           .innerBlockTitle {
-            margin-bottom: 20px;
             color: $colorColName;
             font-size: 14px;
             position: relative;
@@ -77,7 +62,9 @@
             } // -bestProperty
           } // blockTitle
           .innerBlockContent {
-            @include flex(center, center);
+            @include flex(center, flex-start);
+            padding-left: 15px;
+            width: 115px;
             &__data {
               @include flex(center, flex-start);
               color: $colorDarkGray;
@@ -119,74 +106,32 @@
               line-height: 17px;
             } // text
             &-description {
-              max-width: 475px;
-            } // -description
-            &-bestProperty {
-              background: $colorBgLightGray;
-              padding: 11px 0;
-              .propItem {
-                $propItemWidth: 160px;
-                @include flex(center, center);
-                border-right: 1px solid $colorBorderLightGray;
-                flex-direction: column;
-                color: $colorDarkGray;
-                width: 160px;
-                &:last-child {
-                  border-right: none;
-                } // last-child
-                &__title {
-                  font-size: 13px;
-                  margin-bottom: 3px;
-                } // title
-                &__rating {
-                  @include flex(center, center);
-                  .brandName {
-                    font-size: 16px;
-                    margin-right: 10px;
-                  } // brandName
-                  .brandRating {
-                    @include flex(center, center);
-                    &__value {
-                      font-size: 20px;
-                      margin-right: 5px;
-                    } // __value
-                    &__starIcon {
-                      width: 12px;
-                      svg {
-                        &.topRating {
-                          fill: $colorRatingGreen;
-                        } // topRating
-                        &.middleRating {
-                          fill: $colorRatingYellow;
-                        } // middleRating
-                        &.lowRating {
-                          fill: $colorRatingRed;
-                        } // lowRating
-                      } // svg
-                    } // __starIcon
-                  } // brandRating
-                } // __rating
-              } // propItem
-            } // -bestProperty
-          } // innerBlockContent
-          &-noBorder {
-            border-right: none;
-          } // -noBorder
-          &-description {
-            flex-shrink: 2;
-            position: relative;
-            padding-right: 0;
-            &::after {
-              content: '';
-              background: linear-gradient(to bottom,
-                      rgba(255,255,255,0.5) 30%,
-                      rgba(255,255,255,1) 100%);
-              position: absolute;
-              bottom: 0;
-              left: 0;
+              max-width: 100%;
+              padding-left: 0;
               width: 100%;
-              height: 15px;
-            } // after
+            } // -description
+          } // innerBlockContent
+          &-description {
+            align-items: flex-start;
+            flex-direction: column;
+            padding-right: 0;
+            .innerBlockContent {
+              &__text {
+                max-height: 70px;
+                position: relative;
+                &::after {
+                  content: '';
+                  background: linear-gradient(to bottom,
+                          rgba(255,255,255,0.5) 30%,
+                          rgba(255,255,255,1) 100%);
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 15px;
+                } // after
+              } // __text
+            } // innerBlockContent
           } // -description
         } // __item
       } // headerBlockContent
@@ -197,6 +142,15 @@
   // rating table block ------------------------
   .ratingTableBlock {
     margin-bottom: $outerBlockMargin;
+    &__content {
+      position: relative;
+      &::after {
+        @include gradientBorderColor(white, 40px, 100%);
+      } // after
+    } // __content
+    .gradientBorderWrap {
+      overflow-x: scroll;
+    } // gradientBorderWrap
     .tableRating {
       display: table;
       border-collapse: collapse;
@@ -324,16 +278,11 @@
         } // -loading
       } // __row
     } // tableRating
-    button {
-      margin: 0 auto;
-      padding: 0 30px;
-      width: initial;
-    } // button
     .tableHeaderItem {
       @include flex(center, flex-start);
       flex-direction: column;
       color: white;
-      padding: 15px 17px;
+      padding: 10px;
       text-align: center;
       &__icon {
         $iconHeight: 24px;
@@ -371,6 +320,7 @@
       } // __icon
       &__name {
         @include flex(flex-end, center);
+        white-space: nowrap;
         .innerText {
           font-size: 13px;
           margin-right: 10px;
@@ -582,6 +532,7 @@
         background: $colorCellMarked;
       } // -marked
     } // brandRatingInfo
+
   } // ratingTableBlock
   // ===========================================
 
@@ -590,16 +541,18 @@
     margin-bottom: $outerBlockMargin;
     &__title {
       margin-bottom: $blockTitleMarginBottom;
+      text-align: center;
     } // __title
     &__content {
       @include flex(stretch, flex-start);
+      flex-wrap: wrap;
       .selectBrand {
+        @include widthPercent(50%);
         border-radius: $mainBorderRadius;
         background: $colorBgLightGray;
         font-size: 18px;
-        margin-right: $gutterX2;
-        padding: 20px 30px;
-        width: $col3Width;
+        padding: 20px 10px;
+        margin-bottom: 15px;
         &__brandList {
           @include customScroll();
           overflow-y: scroll;
@@ -609,12 +562,6 @@
         &__item {
           @include flex(center, space-between);
           height: 40px;
-          .brandLogo {
-            @include bgProp(no-repeat, center, contain);
-            height: 20px;
-            margin-right: 20px;
-            width: 30px;
-          } // brandLogo
           .brandName {
             margin-right: auto;
             transition: color .3s;
@@ -647,10 +594,10 @@
         } // __item
       } // selectBrand
       .showResults {
-        margin-right: $gutterX2;
+        @include widthPercent(50%);
         font-size: 16px;
-        padding: 0 30px 30px 30px;
-        width: $col3Width;
+        padding: 0 10px 20px 10px;
+        margin-bottom: 15px;
         &__title {
           @include flex(center, flex-start);
           margin-bottom: $blockTitleMarginBottom;
@@ -699,10 +646,8 @@
           width: 100%;
         } // sparePartsContent
         .sparePartsContentTitle {
-          align-items: center;
+          @include flex(center, center);
           color: $colorDarkGray;
-          display: flex;
-          justify-content: flex-start;
           height: 50px;
           overflow: hidden;
           padding: 0 15px;
@@ -718,7 +663,8 @@
             } // img
           } // img
           &__text {
-            @include flex(center, flex-start);
+            @include flex(center, center);
+            flex-direction: column;
             transition: color .3s;
             span {
               position: relative;
@@ -770,24 +716,6 @@
           height: 50px;
           justify-content: space-between;
           position: relative;
-          &::after {
-            border-radius: 3px;
-            border: 1px solid transparent;
-            content: '';
-            display: block;
-            height: 100%;
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            width: 100%;
-            z-index:1;
-          } // after
-          &:hover {
-            cursor: pointer;
-            &::after {
-              border-color: $colorRatingYellow;
-            } // after
-          } // hover
           &__item {
             align-items: center;
             border-right: 1px solid $colorLightGray;
@@ -822,7 +750,7 @@
               } // img
             } // __brandImg
             &-brandText {
-              $sparePartsElementBrandTextWidth: 120px;
+              $sparePartsElementBrandTextWidth: 100px;
 
               background: $colorBgLightGray;
               justify-content: flex-start;
@@ -835,7 +763,7 @@
             &-rating {
               font-size: 13px;
               font-weight: bold;
-              $sparePartsElementRatingWidth: 67px;
+              $sparePartsElementRatingWidth: 55px;
               min-width: $sparePartsElementRatingWidth;
               position: relative;
               width: $sparePartsElementRatingWidth;
@@ -880,18 +808,15 @@
   } // bestSpareParts
   // ===========================================
 
-  // magazine block ----------------------------
+  // magazine block ---------------------------
   .magazineBlock {
-    .magazine {
-      &-ratingsPage {
-        .articleTab {
-          //width: $col3Width;
-          width: 230px;
-        } // articleTab
-      } // ratingPage
-    } // magazine
+    & > .widgetsArea {
+      margin-bottom: $outerBlockMargin;
+    } // widgetsArea
   } // magazineBlock
-  // ===========================================
+  .magazine {
+    margin-bottom: 0;
+  } // magazine
+  // ==========================================
 
 } // ratingsPage
-

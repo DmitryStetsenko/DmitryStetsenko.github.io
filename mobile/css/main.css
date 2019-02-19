@@ -173,14 +173,19 @@ button, input {
     background: white;
     border: 1px solid #efb428;
     box-shadow: none;
-    height: 30px;
+    height: initial;
     font-size: 13px;
-    padding: 0;
+    padding: 10px;
+    position: relative;
     width: 100%; }
     .mainBtn-showNotRated .innerText {
-      margin-right: 10px; }
+      max-width: 180px;
+      margin-right: 0; }
     .mainBtn-showNotRated .shevronIcon__icon {
-      transform: translateY(2px) rotate(-90deg) scale(0.7); }
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%) rotate(-90deg) scale(0.7); }
     .mainBtn-showNotRated::before {
       display: none; }
     .mainBtn-showNotRated:hover {
@@ -2978,3 +2983,642 @@ button, input {
     text-align: center;
     font-size: 13px;
     line-height: 16px; }
+
+#ratingsPage .pageHeaderBlock {
+  margin-bottom: 45px; }
+  #ratingsPage .pageHeaderBlock__content > .blockTitle {
+    color: #2c333d;
+    margin-bottom: 20px; }
+  #ratingsPage .pageHeaderBlock__content .headerBlockContent__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e8e8;
+    overflow: hidden;
+    padding: 20px 10px; }
+    #ratingsPage .pageHeaderBlock__content .headerBlockContent__item:last-child {
+      border-bottom: none; }
+    #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle {
+      color: #8a939f;
+      font-size: 14px;
+      position: relative; }
+      #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .additInfo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #8a939f;
+        border-radius: 50%;
+        color: white;
+        font-size: 11px;
+        position: absolute;
+        right: -15px;
+        top: -5px;
+        height: 14px;
+        width: 14px; }
+      #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-description {
+        color: #2c333d;
+        font-weight: bold;
+        margin-bottom: 10px; }
+      #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #464f5b;
+        margin-bottom: 0;
+        padding: 5px 0; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon {
+          width: 15px;
+          margin-right: 8px; }
+          #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon svg {
+            fill: #efb428; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerTxt {
+          color: white;
+          font-size: 14px; }
+    #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 15px;
+      width: 115px; }
+      #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #2c333d;
+        font-size: 20px; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data::after {
+          content: attr(data-growth);
+          font-size: 16px;
+          margin-left: 5px; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-manufacturer::after {
+          color: #c1c1c1; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-review::after {
+          color: #7eae3e; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-vote::after {
+          color: #7eae3e; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional {
+          color: #c1c1c1;
+          font-size: 16px; }
+          #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional .innerSeparator {
+            margin: 0 5px; }
+            #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional .innerSeparator-plus {
+              margin: 0 0 0 5px; }
+      #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__text {
+        color: #2c333d;
+        font-size: 13px;
+        line-height: 17px; }
+      #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-description {
+        max-width: 100%;
+        padding-left: 0;
+        width: 100%; }
+    #ratingsPage .pageHeaderBlock__content .headerBlockContent__item-description {
+      align-items: flex-start;
+      flex-direction: column;
+      padding-right: 0; }
+      #ratingsPage .pageHeaderBlock__content .headerBlockContent__item-description .innerBlockContent__text {
+        max-height: 70px;
+        position: relative; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item-description .innerBlockContent__text::after {
+          content: '';
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 30%, white 100%);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 15px; }
+
+#ratingsPage .ratingTableBlock {
+  margin-bottom: 45px; }
+  #ratingsPage .ratingTableBlock__content {
+    position: relative; }
+    #ratingsPage .ratingTableBlock__content::after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px; }
+  #ratingsPage .ratingTableBlock .gradientBorderWrap {
+    overflow-x: scroll; }
+  #ratingsPage .ratingTableBlock .tableRating {
+    display: table;
+    border-collapse: collapse;
+    margin-bottom: 25px; }
+    #ratingsPage .ratingTableBlock .tableRating tbody {
+      display: table-row-group;
+      vertical-align: middle; }
+    #ratingsPage .ratingTableBlock .tableRating tr {
+      display: table-row; }
+    #ratingsPage .ratingTableBlock .tableRating th, #ratingsPage .ratingTableBlock .tableRating td {
+      display: table-cell;
+      vertical-align: middle; }
+    #ratingsPage .ratingTableBlock .tableRating th {
+      background: #2c333d;
+      border-right: 2px solid white; }
+      #ratingsPage .ratingTableBlock .tableRating th:nth-child(even) {
+        background: #464f5b; }
+      #ratingsPage .ratingTableBlock .tableRating th:last-child {
+        border-right: none; }
+    #ratingsPage .ratingTableBlock .tableRating__row {
+      border-top: 2px solid white;
+      border-bottom: 2px solid white; }
+      #ratingsPage .ratingTableBlock .tableRating__row:nth-child(odd) {
+        background: #f6f6f6; }
+      #ratingsPage .ratingTableBlock .tableRating__row-loading {
+        background: #f6f6f6; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__index {
+          display: none; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__loading {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__manufacturer .brandIcon {
+          opacity: .5; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__manufacturer .brandName {
+          color: #6f7786; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__rating > .svgWrap .svgRatingCircle > path.static {
+          stroke: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__rating .ratingValue {
+          color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__review {
+          color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__positive {
+          color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__neutral {
+          color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__negative {
+          color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__averageRating .ratingValue {
+          color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__averageRating .ratingStarsBlock__starsIcon svg.starsIcon {
+          stroke-width: 3px;
+          stroke: #8a939f; }
+          #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__averageRating .ratingStarsBlock__starsIcon svg.starsIcon-fill {
+            fill: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteValue {
+          color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review .voteRatioValue {
+          color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-positive {
+          border-color: #8a939f; }
+          #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-positive .voteRatioIcon svg {
+            fill: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-negative {
+          border-color: #8a939f; }
+          #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-negative .voteRatioIcon svg {
+            fill: #8a939f;
+            transform: rotate(180deg); }
+  #ratingsPage .ratingTableBlock .tableHeaderItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
+    text-align: center; }
+    #ratingsPage .ratingTableBlock .tableHeaderItem__icon {
+      background-image: url(../img/rating_sprite.png);
+      background-repeat: no-repeat;
+      margin-bottom: 10px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-place {
+        background-position: 0 1px;
+        height: 24px;
+        width: 14px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-manufacturer {
+        background-position: -15px 1px;
+        height: 24px;
+        width: 24px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-ratings {
+        background-position: -37px 1px;
+        height: 24px;
+        width: 30px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-review {
+        background-position: -67px 1px;
+        height: 24px;
+        width: 24px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-positive {
+        background-position: -91px 1px;
+        height: 24px;
+        width: 24px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-neutral {
+        background-position: -115px 1px;
+        height: 24px;
+        width: 24px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-negative {
+        background-position: -140px 1px;
+        height: 24px;
+        width: 24px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-averageRating {
+        background-position: -164px 1px;
+        height: 24px;
+        width: 27px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__icon-vote {
+        background-position: -190px 1px;
+        height: 24px;
+        width: 47px; }
+    #ratingsPage .ratingTableBlock .tableHeaderItem__name {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      white-space: nowrap; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__name .innerText {
+        font-size: 13px;
+        margin-right: 10px; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem__name .ratingDirection {
+        position: relative;
+        bottom: 3px; }
+        #ratingsPage .ratingTableBlock .tableHeaderItem__name .ratingDirection-top {
+          width: 0;
+          height: 0;
+          border-left: 3.5px solid transparent;
+          border-right: 3.5px solid transparent;
+          border-bottom: 5px solid white; }
+        #ratingsPage .ratingTableBlock .tableHeaderItem__name .ratingDirection-bottom {
+          width: 0;
+          height: 0;
+          border-left: 3.5px solid transparent;
+          border-right: 3.5px solid transparent;
+          border-top: 5px solid white; }
+  #ratingsPage .ratingTableBlock .brandRatingInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2c333d;
+    font-size: 16px;
+    height: 60px; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo__index {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth {
+        display: none;
+        font-size: 11px;
+        margin-right: 5px; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth__icon {
+          width: 5px; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth__icon svg {
+            fill: transparent; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth__value {
+          font-size: 11px; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth-up .growth__icon svg {
+          fill: #7eae3e; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth-up .growth__value {
+          color: #7eae3e; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth-up .growth__value::before {
+            content: '+'; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth-down .growth__icon svg {
+          fill: #e73e4e;
+          transform: rotateX(180deg); }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth-down .growth__value {
+          color: #e73e4e; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth-down .growth__value::before {
+            content: '-'; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__index .growth-isShow {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__index .index {
+        font-size: 20px;
+        font-weight: bold; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo__loading {
+      display: none;
+      width: 15px; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__loading svg {
+        fill: #efb428; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo__manufacturer {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__manufacturer .brandIcon {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        display: block;
+        height: 15px;
+        margin-right: 15px;
+        width: 40px; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__manufacturer .brandName {
+        font-size: 14px; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo__rating {
+      font-weight: bold;
+      position: relative;
+      width: 40px; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__rating > .svgWrap {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        min-height: 40px;
+        min-width: 40px;
+        height: 40px;
+        width: 40px; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__rating > .svgWrap .svgRatingCircle {
+          height: auto;
+          width: 100%; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__rating > .svgWrap .svgRatingCircle > path {
+            fill: transparent;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 114px;
+            transition: stroke-dashoffset 1s; }
+            #ratingsPage .ratingTableBlock .brandRatingInfo__rating > .svgWrap .svgRatingCircle > path.static {
+              stroke: #f6f6f6; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__rating span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating .ratingValue {
+      margin-bottom: 3px;
+      text-align: center; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating .ratingStarsBlock {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating .ratingStarsBlock__starsIcon {
+        display: block;
+        margin-right: 1px;
+        height: 13px;
+        width: 13px; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating .ratingStarsBlock__starsIcon:last-child {
+          margin-right: 0; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating .ratingStarsBlock__starsIcon svg.starsIcon {
+          fill: transparent;
+          stroke-width: 3px;
+          stroke: #7eae3e; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating .ratingStarsBlock__starsIcon svg.starsIcon-fill {
+            fill: #7eae3e; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo__vote {
+      padding: 0 20px; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteValue {
+        text-align: center;
+        margin-bottom: 3px; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 3px;
+          border: 1px solid transparent;
+          padding: 5px 5px 5px 9px; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review .voteRatioValue {
+            margin-right: 5px; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review .voteRatioIcon {
+            width: 14px; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-positive {
+            border-color: #7eae3e;
+            margin-right: 5px; }
+            #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-positive .voteRatioIcon svg {
+              fill: #7eae3e; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-negative {
+            border-color: #e73e4e; }
+            #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-negative .voteRatioIcon svg {
+              fill: #e73e4e;
+              transform: rotate(180deg); }
+    #ratingsPage .ratingTableBlock .brandRatingInfo-marked {
+      background: #f2d58f; }
+
+#ratingsPage .bestSpareParts {
+  margin-bottom: 45px; }
+  #ratingsPage .bestSpareParts__title {
+    margin-bottom: 20px;
+    text-align: center; }
+  #ratingsPage .bestSpareParts__content {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap; }
+    #ratingsPage .bestSpareParts__content .selectBrand {
+      flex-basis: auto;
+      width: 50%;
+      border-radius: 3px;
+      background: #f6f6f6;
+      font-size: 18px;
+      padding: 20px 10px;
+      margin-bottom: 15px; }
+      #ratingsPage .bestSpareParts__content .selectBrand__brandList {
+        /* Track */
+        /* Handle */
+        /* Handle on hover */
+        overflow-y: scroll;
+        min-height: 370px;
+        height: 370px; }
+        #ratingsPage .bestSpareParts__content .selectBrand__brandList::-webkit-scrollbar {
+          width: 13px; }
+        #ratingsPage .bestSpareParts__content .selectBrand__brandList::-webkit-scrollbar-track {
+          border-radius: 3px;
+          background: #e8e8e8; }
+        #ratingsPage .bestSpareParts__content .selectBrand__brandList::-webkit-scrollbar-thumb {
+          background: #efb428;
+          border-radius: 10px; }
+        #ratingsPage .bestSpareParts__content .selectBrand__brandList::-webkit-scrollbar-thumb:hover {
+          background: #555; }
+      #ratingsPage .bestSpareParts__content .selectBrand__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 40px; }
+        #ratingsPage .bestSpareParts__content .selectBrand__item .brandName {
+          margin-right: auto;
+          transition: color .3s; }
+        #ratingsPage .bestSpareParts__content .selectBrand__item .shevronIcon__icon {
+          transform: rotate(180deg) scale(0.7);
+          margin-right: 25px; }
+        #ratingsPage .bestSpareParts__content .selectBrand__item:hover {
+          cursor: pointer; }
+          #ratingsPage .bestSpareParts__content .selectBrand__item:hover .brandName {
+            color: #efb428; }
+          #ratingsPage .bestSpareParts__content .selectBrand__item:hover .shevronIcon__icon span {
+            background: #efb428; }
+        #ratingsPage .bestSpareParts__content .selectBrand__item-active .brandName {
+          color: #efb428; }
+        #ratingsPage .bestSpareParts__content .selectBrand__item-active .shevronIcon__icon span {
+          background: #efb428; }
+    #ratingsPage .bestSpareParts__content .showResults {
+      flex-basis: auto;
+      width: 50%;
+      font-size: 16px;
+      padding: 0 10px 20px 10px;
+      margin-bottom: 15px; }
+      #ratingsPage .bestSpareParts__content .showResults__title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+        height: 50px; }
+      #ratingsPage .bestSpareParts__content .showResults .brandModelList {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%; }
+        #ratingsPage .bestSpareParts__content .showResults .brandModelList__item {
+          flex-basis: auto;
+          transition: color .3s;
+          height: 40px;
+          width: 50%; }
+          #ratingsPage .bestSpareParts__content .showResults .brandModelList__item span {
+            border-bottom: 1px solid #2c333d;
+            position: relative; }
+            #ratingsPage .bestSpareParts__content .showResults .brandModelList__item span::before {
+              background: white;
+              bottom: -1px;
+              content: '';
+              position: absolute;
+              transition: transform .3s;
+              transform: scale(0, 1);
+              height: 1px;
+              width: 100%; }
+          #ratingsPage .bestSpareParts__content .showResults .brandModelList__item:hover {
+            cursor: pointer;
+            color: #efb428; }
+            #ratingsPage .bestSpareParts__content .showResults .brandModelList__item:hover span::before {
+              transform: scale(1, 1); }
+    #ratingsPage .bestSpareParts__content .rating .sparePartsContent {
+      border-radius: 3px;
+      border: 1px solid #c1c1c1;
+      margin-bottom: 15px;
+      width: 100%; }
+    #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c333d;
+      height: 50px;
+      overflow: hidden;
+      padding: 0 15px;
+      position: relative;
+      text-decoration: none;
+      white-space: nowrap; }
+      #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__img {
+        margin-right: 20px;
+        height: 34px; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__img img {
+          height: 100%;
+          width: auto; }
+      #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: color .3s; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__text span {
+          position: relative; }
+          #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__text span::after {
+            content: '';
+            background: #efb428;
+            display: block;
+            height: 1px;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            transition: width .3s;
+            width: 0; }
+      #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle:after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 20%, white 80%);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px; }
+      #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle:hover {
+        cursor: pointer; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle:hover .sparePartsContentTitle__text {
+          color: #efb428; }
+          #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle:hover .sparePartsContentTitle__text span::after {
+            width: 100%; }
+    #ratingsPage .bestSpareParts__content .rating .sparePartsElements a {
+      text-decoration: none; }
+    #ratingsPage .bestSpareParts__content .rating .sparePartsElement {
+      align-items: center;
+      border-top: 1px solid #c1c1c1;
+      color: #2c333d;
+      display: flex;
+      height: 50px;
+      justify-content: space-between;
+      position: relative; }
+      #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item {
+        align-items: center;
+        border-right: 1px solid #c1c1c1;
+        display: flex;
+        font-size: 16px;
+        justify-content: center;
+        height: 100%; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item:last-child {
+          border-right: none; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-count {
+          background: #e9e9e9;
+          color: #6f7786;
+          font-weight: bold;
+          min-width: 30px;
+          width: 30px; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-brandImg {
+          background: #f6f6f6;
+          border-right: none;
+          justify-content: flex-start;
+          overflow: hidden;
+          padding-left: 7px;
+          width: 100%; }
+          #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-brandImg .imgWrap {
+            height: 17px; }
+          #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-brandImg img {
+            height: 100%;
+            width: auto; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-brandText {
+          background: #f6f6f6;
+          justify-content: flex-start;
+          min-width: 100px;
+          overflow: hidden;
+          padding-left: 7px;
+          width: 100px;
+          white-space: nowrap; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-rating {
+          font-size: 13px;
+          font-weight: bold;
+          min-width: 55px;
+          position: relative;
+          width: 55px; }
+          #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-rating > .svgWrap {
+            min-height: 36px;
+            min-width: 36px;
+            position: absolute;
+            height: 36px;
+            width: 36px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); }
+            #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-rating > .svgWrap .svgRatingCircle {
+              height: auto;
+              width: 100%; }
+              #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-rating > .svgWrap .svgRatingCircle > path {
+                fill: transparent;
+                stroke-width: 3;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-dasharray: 114px;
+                transition: stroke-dashoffset 1s; }
+                #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-rating > .svgWrap .svgRatingCircle > path.static {
+                  stroke: #f6f6f6; }
+          #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-rating span {
+            align-items: center;
+            background: url(../img/rating_circle.svg) no-repeat center/36px 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            height: 40px;
+            width: 40px; }
+
+#ratingsPage .magazineBlock > .widgetsArea {
+  margin-bottom: 45px; }
+
+#ratingsPage .magazine {
+  margin-bottom: 0; }

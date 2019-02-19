@@ -2270,14 +2270,12 @@ button, input {
   $scrollMaxHeight: 440px;
   height: calc(#{$scrollMaxHeight} * 0.8) !important;
 }
-
 .scrollgeneric {
   line-height: 1px;
   font-size: 1px;
   position: absolute;
   top: 0; left: 0;
 }
-
 .vscrollerbase {
   border-radius: 3px;
   width: 10px;
@@ -2298,7 +2296,6 @@ button, input {
   height: 10px;
   background-color: $colorYellow;
 }
-
 .scrollerjogbox {
   width: 10px;
   height: 10px;

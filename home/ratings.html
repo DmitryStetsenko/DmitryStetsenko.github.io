@@ -6,120 +6,123 @@
     <title>Part review</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body id="ratingsPage">
     <header class="siteHeaderSection">
-    <div class="wrapper">
-        <div class="siteHeader">
-            <div class="siteHeader__logo">
-                <a href="#">
-                    <img src="img/logo.png" alt="PartReview logo image">
-                </a>
-            </div>
-            <!-- /.siteHeader__logo -->
-            <div class="searchBlock">
-                <form action="#" class="searchBlock__form">
-                    <input type="text" placeholder="Поиск" id="headerFormSearch">
-                    <button class="iconBtn iconBtn-search">
-                            <span class="cssIcon cssIcon-search">
-                                <span class="cssIcon__part cssIcon__part-circle"></span>
-                                <span class="cssIcon__part cssIcon__part-knob"></span>
+        <div class="wrapper">
+            <div class="siteHeader">
+                <div class="siteHeader__logo">
+                    <a href="#">
+                        <img src="img/logo.png" alt="PartReview logo image">
+                    </a>
+                </div>
+                <!-- /.siteHeader__logo -->
+                <div class="searchBlock">
+                    <form action="#" class="searchBlock__form">
+                        <div class="inputSearch">
+                            <input type="text" placeholder="Поиск" id="headerFormSearch">
+                        </div>
+                        <!-- /.inputSearch -->
+                        <button class="iconBtn iconBtn-search" data-status="close">
+                                <span class="cssIcon cssIcon-search">
+                                    <span class="cssIcon__part cssIcon__part-circle"></span>
+                                    <span class="cssIcon__part cssIcon__part-knob"></span>
+                                </span>
+                            <!-- /.cssIcon-search -->
+                        </button>
+                        <!-- /.iconBtn-search -->
+                    </form>
+                    <!-- /.searchBlock__form -->
+                </div>
+                <!-- /.searchBlock -->
+                <nav class="menuBlock">
+                    <button class="iconBtn iconBtn-toggleMenu">
+                            <span class="cssIcon cssIcon-toggleMenu" id="topMenu">
+                                <span class="cssIcon__part cssIcon__part-line"></span>
+                                <span class="cssIcon__part cssIcon__part-line"></span>
+                                <span class="cssIcon__part cssIcon__part-line"></span>
                             </span>
-                        <!-- /.cssIcon-search -->
+                        <!-- /.cssIcon-toggleMenu -->
                     </button>
-                    <!-- /.iconBtn-search -->
-                </form>
-                <!-- /.searchBlock__form -->
+                    <!-- /.iconBtn iconBtn-toggleMenu -->
+                    <div class="topMenu" style="display: none;">
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#magazineBlock">Рейтинг запчастей</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
+                        </ul>
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
+                        </ul>
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#spareParts">Отзывы о запчастях</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                        </ul>
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#brands">О производителях</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Bosch</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">TRW</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Stellox</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Febest</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Masuma</a></li>
+                        </ul>
+                        <ul class="headerMenu">
+                            <li class="headerMenu__item headerMenu__item-title">
+                                <div class="h4Title"><a href="#cars">О запчастях для авто</a></div>
+                            </li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Тойота</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Киа</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Форд</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Рено</a></li>
+                            <li class="headerMenu__item"><a href="#" target="_blank">Ниссан</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.topMenu -->
+                </nav>
+                <!-- /.menuBlock -->
+                <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+                <!-- /.mainBtn-addReview -->
+                <div class="headerUserAction">
+                    <div class="headerUserAction__element headerUserAction__element-enter">
+                        <span>Вход</span>
+                    </div>
+                    <!-- /.headerUserAction__element -->
+                    <div class="headerUserAction__separate"></div>
+                    <!-- /.headerUserAction__separate -->
+                    <div class="headerUserAction__element headerUserAction__element-registered">
+                        <span>Регистрация</span>
+                    </div>
+                    <!-- /.headerUserAction__element -->
+                </div>
+                <!-- /.headerUserAction -->
             </div>
-            <!-- /.searchBlock -->
-            <nav class="menuBlock">
-                <button class="iconBtn iconBtn-toggleMenu">
-                        <span class="cssIcon cssIcon-toggleMenu" id="topMenu">
-                            <span class="cssIcon__part cssIcon__part-line"></span>
-                            <span class="cssIcon__part cssIcon__part-line"></span>
-                            <span class="cssIcon__part cssIcon__part-line"></span>
-                        </span>
-                    <!-- /.cssIcon-toggleMenu -->
-                </button>
-                <!-- /.iconBtn iconBtn-toggleMenu -->
-                <div class="topMenu" style="display: none;">
-                    <ul class="headerMenu">
-                        <li class="headerMenu__item headerMenu__item-title">
-                            <div class="h4Title"><a href="#magazineBlock">Рейтинг запчастей</a></div>
-                        </li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
-                    </ul>
-                    <ul class="headerMenu">
-                        <li class="headerMenu__item headerMenu__item-title">
-                            <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
-                        </li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
-                    </ul>
-                    <ul class="headerMenu">
-                        <li class="headerMenu__item headerMenu__item-title">
-                            <div class="h4Title"><a href="#spareParts">Отзывы о запчастях</a></div>
-                        </li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Шины</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Лампы</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Термостат</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
-                    </ul>
-                    <ul class="headerMenu">
-                        <li class="headerMenu__item headerMenu__item-title">
-                            <div class="h4Title"><a href="#brands">О производителях</a></div>
-                        </li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Bosch</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">TRW</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Stellox</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Febest</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Masuma</a></li>
-                    </ul>
-                    <ul class="headerMenu">
-                        <li class="headerMenu__item headerMenu__item-title">
-                            <div class="h4Title"><a href="#cars">О запчастях для авто</a></div>
-                        </li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Тойота</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Киа</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Форд</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Рено</a></li>
-                        <li class="headerMenu__item"><a href="#" target="_blank">Ниссан</a></li>
-                    </ul>
-                </div>
-                <!-- /.topMenu -->
-            </nav>
-            <!-- /.menuBlock -->
-            <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
-            <!-- /.mainBtn-addReview -->
-            <div class="headerUserAction">
-                <div class="headerUserAction__element headerUserAction__element-enter">
-                    <span>Вход</span>
-                </div>
-                <!-- /.headerUserAction__element -->
-                <div class="headerUserAction__separate"></div>
-                <!-- /.headerUserAction__separate -->
-                <div class="headerUserAction__element headerUserAction__element-registered">
-                    <span>Регистрация</span>
-                </div>
-                <!-- /.headerUserAction__element -->
-            </div>
-            <!-- /.headerUserAction -->
+            <!-- /.siteHeader -->
         </div>
-        <!-- /.siteHeader -->
-    </div>
-    <!-- /.wrapper -->
+        <!-- /.wrapper -->
     </header>
     <!-- /.siteHeaderSection -->
     <main class="mainContent">
@@ -164,10 +167,10 @@
                             <div class="innerBlockTitle">Голоса</div>
                             <!-- /.innerBlockTitle -->
                             <div class="innerBlockContent">
-                                <span class="innerBlockContent__data innerBlockContent__data-vote" data-growth="+64">
+                                <span class="innerBlockContent__data innerBlockContent__data-review" data-growth="+34">
                                     2243
                                 </span>
-                                <!-- /.innerBlockContent__data-vote -->
+                                <!-- /.innerBlockContent__data-review -->
                             </div>
                             <!-- /.innerBlockContent -->
                         </div>
@@ -2625,17 +2628,19 @@
                     <!-- /.sparePartsFilter -->
                 </section>
                 <!-- /.spareParts__titleBlock -->
-                <section class="spareParts__sliderBlock">
+                <section class="sliderBox sliderBox-spareParts">
                     <div class="sliderWrap">
                         <div class="sparePartsSlider mySlider" id="sparePartsSlider">
-                            <div class="sparePartsSlider__sliderItem">
-                                <div class="sparePartsContent">
+
+                            <!--//////// CLONE ////////-->
+                            <div class="sparePartsSlider__sliderItem slide clone " data-slide="3c">
+                                <section class="sparePartsContent">
                                     <a href="#" target="_blank" class="sparePartsContentTitle">
                                         <div class="sparePartsContentTitle__img">
-                                            <img src="img/brake_pads.png" alt="тормозные колодки">
+                                            <img src="img/wheel.png" alt="Шины">
                                         </div>
                                         <!-- /.sparePartsContentTitle__img -->
-                                        <div class="h3Title sparePartsContentTitle__text"><span>Тормозные колодки</span></div>
+                                        <div class="h3Title sparePartsContentTitle__text"><span>Шины</span></div>
                                     </a>
                                     <!-- /.sparePartsContentTitle -->
                                     <ul class="sparePartsElements">
@@ -2810,6 +2815,576 @@
                                         <!-- /.sparePartsElement -->
                                     </ul>
                                     <!-- /.sparePartsElement -->
+                                </section>
+                                <!-- /.sparePartsItemContent -->
+                                <button class="mainBtn mainBtn-showFullRating">
+                                    <a href="#" target="_blank">Показать полный рейтинг</a>
+                                </button>
+                                <!-- /.mainBtn-showFullRating -->
+                            </div>
+                            <div class="sparePartsSlider__sliderItem slide clone " data-slide="4c">
+                                <section class="sparePartsContent">
+                                    <a href="#" target="_blank" class="sparePartsContentTitle">
+                                        <div class="sparePartsContentTitle__img">
+                                            <img src="img/brake_disk.png" alt="тормозные диски">
+                                        </div>
+                                        <!-- /.sparePartsContentTitle__img -->
+                                        <div class="h3Title sparePartsContentTitle__text"><span>Тормозные диски</span></div>
+                                    </a>
+                                    <!-- /.sparePartsContentTitle -->
+                                    <ul class="sparePartsElements">
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">1
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    ATE
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="85">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">2
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Brembo
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="15">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">3
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    TRW
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="60">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">4
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Akebono
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="37">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">5
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Remsa
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="20">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                    </ul>
+                                    <!-- /.sparePartsElement -->
+                                </section>
+                                <!-- /.sparePartsItemContent -->
+                                <button class="mainBtn mainBtn-showFullRating">
+                                    <a href="#" target="_blank">Показать полный рейтинг</a>
+                                </button>
+                                <!-- /.mainBtn-showFullRating -->
+                            </div>
+                            <div class="sparePartsSlider__sliderItem slide clone lastClone" data-slide="5c">
+                                <section class="sparePartsContent">
+                                    <a href="#" target="_blank" class="sparePartsContentTitle">
+                                        <div class="sparePartsContentTitle__img">
+                                            <img src="img/brake_disk.png" alt="тормозные диски">
+                                        </div>
+                                        <!-- /.sparePartsContentTitle__img -->
+                                        <div class="h3Title sparePartsContentTitle__text"><span>Доп. слайд 1</span></div>
+                                    </a>
+                                    <!-- /.sparePartsContentTitle -->
+                                    <ul class="sparePartsElements">
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">1
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    ATE
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="85">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">2
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Brembo
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="15">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">3
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    TRW
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="60">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">4
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Akebono
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="37">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">5
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Remsa
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="20">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                    </ul>
+                                    <!-- /.sparePartsElement -->
+                                </section>
+                                <!-- /.sparePartsItemContent -->
+                                <button class="mainBtn mainBtn-showFullRating">
+                                    <a href="#" target="_blank">Показать полный рейтинг</a>
+                                </button>
+                                <!-- /.mainBtn-showFullRating -->
+                            </div>
+
+                            <!-- /.sparePartsSlider__sliderItem -->
+                            <!--///////////////////////-->
+                            <div class="sparePartsSlider__sliderItem slide" data-slide="1">
+                                <div class="sparePartsContent">
+                                    <a href="#" target="_blank" class="sparePartsContentTitle">
+                                        <div class="sparePartsContentTitle__img">
+                                            <img src="img/brake_pads.png" alt="тормозные колодки">
+                                        </div>
+                                        <!-- /.sparePartsContentTitle__img -->
+                                        <div class="h3Title sparePartsContentTitle__text"><span>Тормозные колодки</span></div>
+                                    </a>
+                                    <!-- /.sparePartsContentTitle -->
+                                    <ul class="sparePartsElements">
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">1
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Long brand name
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="85">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">2
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Brembo
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="15">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">3
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    TRW
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="60">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">4
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Akebono
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="37">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">5
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Remsa
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="20">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                    </ul>
+                                    <!-- /.sparePartsElement -->
                                 </div>
                                 <!-- /.sparePartsItemContent -->
                                 <button class="mainBtn mainBtn-showFullRating">
@@ -2818,7 +3393,7 @@
                                 <!-- /.mainBtn-showFullRating -->
                             </div>
                             <!-- /.sparePartsSlider__sliderItem -->
-                            <div class="sparePartsSlider__sliderItem">
+                            <div class="sparePartsSlider__sliderItem slide" data-slide="2">
                                 <section class="sparePartsContent">
                                     <a href="#" target="_blank" class="sparePartsContentTitle">
                                         <div class="sparePartsContentTitle__img">
@@ -3008,7 +3583,7 @@
                                 <!-- /.mainBtn-showFullRating -->
                             </div>
                             <!-- /.sparePartsSlider__sliderItem -->
-                            <div class="sparePartsSlider__sliderItem">
+                            <div class="sparePartsSlider__sliderItem slide" data-slide="3">
                                 <section class="sparePartsContent">
                                     <a href="#" target="_blank" class="sparePartsContentTitle">
                                         <div class="sparePartsContentTitle__img">
@@ -3198,7 +3773,7 @@
                                 <!-- /.mainBtn-showFullRating -->
                             </div>
                             <!-- /.sparePartsSlider__sliderItem -->
-                            <div class="sparePartsSlider__sliderItem">
+                            <div class="sparePartsSlider__sliderItem slide" data-slide="4">
                                 <section class="sparePartsContent">
                                     <a href="#" target="_blank" class="sparePartsContentTitle">
                                         <div class="sparePartsContentTitle__img">
@@ -3388,14 +3963,398 @@
                                 <!-- /.mainBtn-showFullRating -->
                             </div>
                             <!-- /.sparePartsSlider__sliderItem -->
-                            <div class="sparePartsSlider__sliderItem">
+
+                            <!--  ------- addit slides ----  -->
+                            <div class="sparePartsSlider__sliderItem slide" data-slide="5">
                                 <section class="sparePartsContent">
                                     <a href="#" target="_blank" class="sparePartsContentTitle">
                                         <div class="sparePartsContentTitle__img">
                                             <img src="img/brake_disk.png" alt="тормозные диски">
                                         </div>
                                         <!-- /.sparePartsContentTitle__img -->
-                                        <div class="h3Title sparePartsContentTitle__text"><span>Тормозные диски</span></div>
+                                        <div class="h3Title sparePartsContentTitle__text"><span>Доп. слайд 1</span></div>
+                                    </a>
+                                    <!-- /.sparePartsContentTitle -->
+                                    <ul class="sparePartsElements">
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">1
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    ATE
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="85">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">2
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Brembo
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="15">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">3
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    TRW
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="60">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">4
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Akebono
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="37">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">5
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Remsa
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="20">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                    </ul>
+                                    <!-- /.sparePartsElement -->
+                                </section>
+                                <!-- /.sparePartsItemContent -->
+                                <button class="mainBtn mainBtn-showFullRating">
+                                    <a href="#" target="_blank">Показать полный рейтинг</a>
+                                </button>
+                                <!-- /.mainBtn-showFullRating -->
+                            </div>
+                            <!--  ------- addit slides ----  -->
+
+                            <!--//////// CLONE ////////-->
+                            <div class="sparePartsSlider__sliderItem slide clone lastClone" data-slide="6">
+                                <div class="sparePartsContent">
+                                    <a href="#" target="_blank" class="sparePartsContentTitle">
+                                        <div class="sparePartsContentTitle__img">
+                                            <img src="img/brake_pads.png" alt="тормозные колодки">
+                                        </div>
+                                        <!-- /.sparePartsContentTitle__img -->
+                                        <div class="h3Title sparePartsContentTitle__text"><span>Тормозные колодки</span></div>
+                                    </a>
+                                    <!-- /.sparePartsContentTitle -->
+                                    <ul class="sparePartsElements">
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">1
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Long brand name
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="85">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">2
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Brembo
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="15">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">3
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    TRW
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="60">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">4
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Akebono
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="37">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">5
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Remsa
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="20">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                    </ul>
+                                    <!-- /.sparePartsElement -->
+                                </div>
+                                <!-- /.sparePartsItemContent -->
+                                <button class="mainBtn mainBtn-showFullRating">
+                                    <a href="#" target="_blank">Показать полный рейтинг</a>
+                                </button>
+                                <!-- /.mainBtn-showFullRating -->
+                            </div>
+                            <!-- /.sparePartsSlider__sliderItem -->
+                            <div class="sparePartsSlider__sliderItem slide clone" data-slide="7">
+                                <section class="sparePartsContent">
+                                    <a href="#" target="_blank" class="sparePartsContentTitle">
+                                        <div class="sparePartsContentTitle__img">
+                                            <img src="img/spark_plug.png" alt="свечи зажигания">
+                                        </div>
+                                        <!-- /.sparePartsContentTitle__img -->
+                                        <div class="h3Title sparePartsContentTitle__text"><span>Свечи зажигания</span></div>
                                     </a>
                                     <!-- /.sparePartsContentTitle -->
                                     <ul class="sparePartsElements">
@@ -3578,12 +4537,205 @@
                                 <!-- /.mainBtn-showFullRating -->
                             </div>
                             <!-- /.sparePartsSlider__sliderItem -->
+                            <div class="sparePartsSlider__sliderItem slide clone" data-slide="8">
+                                <section class="sparePartsContent">
+                                    <a href="#" target="_blank" class="sparePartsContentTitle">
+                                        <div class="sparePartsContentTitle__img">
+                                            <img src="img/wheel.png" alt="Шины">
+                                        </div>
+                                        <!-- /.sparePartsContentTitle__img -->
+                                        <div class="h3Title sparePartsContentTitle__text"><span>Шины</span></div>
+                                    </a>
+                                    <!-- /.sparePartsContentTitle -->
+                                    <ul class="sparePartsElements">
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">1
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/ate_logo.png" alt="Ate logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    ATE
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="85">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">2
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/brembo_logo.png" alt="Brembo logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Brembo
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="15">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">3
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/trw_logo.png" alt="TRW logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    TRW
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="60">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">4
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/akebono_logo.png" alt="Akebono logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Akebono
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="37">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                        <li>
+                                            <a href="#" class="sparePartsElement" target="_blank">
+                                                <div class="sparePartsElement__item sparePartsElement__item-count">5
+                                                </div>
+                                                <!-- /.sparePartsElement__item-count -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandImg">
+                                                    <div class="imgWrap">
+                                                        <img src="img/brands/remsa_logo.png" alt="Remsa logo">
+                                                    </div>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandImg -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-brandText">
+                                                    Remsa
+                                                </div>
+                                                <!-- /.sparePartsElement__item-brandText -->
+                                                <div class="sparePartsElement__item sparePartsElement__item-rating"
+                                                     data-count="20">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <span>0</span>
+                                                </div>
+                                                <!-- /.sparePartsElement__item-rating -->
+                                            </a>
+                                            <!--/.sparePartsElement-->
+                                        </li>
+                                        <!-- /.sparePartsElement -->
+                                    </ul>
+                                    <!-- /.sparePartsElement -->
+                                </section>
+                                <!-- /.sparePartsItemContent -->
+                                <button class="mainBtn mainBtn-showFullRating">
+                                    <a href="#" target="_blank">Показать полный рейтинг</a>
+                                </button>
+                                <!-- /.mainBtn-showFullRating -->
+                            </div>
+                            <!-- /.sparePartsSlider__sliderItem -->
+                            <!--///////////////////////-->
+
+
                         </div>
                         <!-- /.sparePartsSlider -->
                     </div>
                     <!-- /.sliderWrap -->
                     <div class="sliderNavBlock">
-                        <div class="sliderNavBlock__btn sliderNavBlock__btn-next">
+                        <div id="next" class="sliderNavBlock__btn sliderNavBlock__btn-next">
                             <div class="shevronIcon shevronIcon-sliderNav shevronIcon-sliderNavNext">
                                 <div class="shevronIcon__icon">
                                     <span></span>
@@ -3593,7 +4745,7 @@
                             </div>
                         </div>
                         <!-- /.sliderNavBlock__btn-next -->
-                        <div class="sliderNavBlock__btn sliderNavBlock__btn-prev">
+                        <div id="prev" class="sliderNavBlock__btn sliderNavBlock__btn-prev">
                             <div class="shevronIcon shevronIcon-sliderNav">
                                 <div class="shevronIcon__icon">
                                     <span></span>
@@ -3604,7 +4756,7 @@
                         </div>
                         <!-- /.sliderNavBlock__btn-next -->
                     </div>
-                    <!-- /.sliderNavBlock -->
+                    <!-- /.sliderBox -->
                 </section>
                 <!-- /.spareParts__sliderBlock -->
             </article>
@@ -4242,31 +5394,45 @@
                 <!-- /.seo__title -->
                 <div class="seo__content">
                     <div class="seoTexts">
-                        <p>
-                            PartReview.ru - собрание отзывов об автомобильных запчастях. Рынок запчастей огромен.
-                            Кроме оригинальных запчастей есть множество аналогов. Одни качественные, другие мягко
-                            говоря,
-                            не вызывают доверия. Наш сервис призван разобраться в этом вопросе. Пользователи сами оценят
-                            какие запчасти стоит покупать, а какие нет.
-                        </p>
-                        <p>
-                            Кроме базы отзывов мы предложим сравнение запчасти по производителям, предоставим рейтинг
-                            лучших аналогов. Вы же сможете голосовать и таким
-                            образом формировать справедливую картину.
-                        </p>
-                        <p>
-                            Функционал сайта дорабатывается и не все сервисы доступны, но вскоре всё будет доступно.
-                            До скорой встречи.
-                        </p>
-                        <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
-                        <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
-                        <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
-                        <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
-                        <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
-                        <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                        <div class="seoTexts__content">
+                            <p>
+                                PartReview.ru - собрание отзывов об автомобильных запчастях. Рынок запчастей огромен.
+                                Кроме оригинальных запчастей есть множество аналогов. Одни качественные, другие мягко
+                                говоря,
+                                не вызывают доверия. Наш сервис призван разобраться в этом вопросе. Пользователи сами оценят
+                                какие запчасти стоит покупать, а какие нет.
+                            </p>
+                            <p>
+                                Кроме базы отзывов мы предложим сравнение запчасти по производителям, предоставим
+                                рейтинг
+                                лучших аналогов. Вы же сможете голосовать и таким
+                                образом формировать справедливую картину.
+                            </p>
+                            <p>
+                                Функционал сайта дорабатывается и не все сервисы доступны, но вскоре всё будет доступно.
+                                До скорой встречи.
+                            </p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p>
+                            <p class="displayNone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                                architecto debitis ea et excepturi ipsum, omnis quas quia quidem suscipit.</p></div>
+                        <!-- /.seoTexts__content -->
                     </div>
                     <!-- /.seoTexts -->
-                    <button class="showMoreBtn" id="seoBlockShowMore">Показать все</button>
+                    <button class="showMoreBtn"
+                            id="seoBlockShowMore"
+                            data-status="toshow"
+                    >
+                        Показать все
+                    </button>
                 </div>
                 <!-- /.seo__content -->
             </section>
@@ -4360,7 +5526,11 @@
                     </ul>
                     <ul class="footerMenu">
                         <li class="footerMenu__item footerMenu__item-title">
-                            <div class="h4Title"><a href="#cars">Отзывы о запчастях для</a></div>
+                            <div class="h4Title"><a href="#cars">
+                                <span class="titleText">Отзывы о запчастях для авто</span>
+                                <span class="titleText titleText-tablet">Отзывы для авто</span>
+                            </a>
+                            </div>
                             <div class="shevronIcon shevronIcon-footerMenu">
                                 <div class="shevronIcon__icon">
                                     <span></span>
@@ -4369,7 +5539,6 @@
                                 <!-- /.shevronIcon__icon -->
                             </div>
                         </li>
-                        <li class="footerMenu__item"><a href="#" target="_blank">авто</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">Тойота</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">Киа</a></li>
@@ -4417,7 +5586,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="footerMenu">
+                    <ul class="footerMenu footerMenu-respNonShow">
                         <li class="footerMenu__item footerMenu__item-title">
                             <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
                             <div class="shevronIcon shevronIcon-footerMenu">
@@ -4462,6 +5631,467 @@
     </footer>
     <!-- /.siteFooter -->
 
+    <!-- popup windows -->
+    <div class="popUpWindowBlock popUpWindowBlock-addReview displayNone" id="popUpWindowAddReview">
+        <div class="overlay"></div>
+        <!-- /.overlay -->
+        <div class="popUpWindow popUpWindow-addReview">
+            <p class="popUpWindow__title">Добавить отзыв</p>
+            <!-- /.popUpWindow__title -->
+            <div class="popUpWindow__content">
+                <div class="manufacturerBlock">
+                    <div class="manufacturerBlock__selects">
+                        <div class="selectBlock">
+                            <div class="formFieldsTitle">Запчасть:</div>
+                            <!-- /.formFieldsTitle -->
+                            <div class="select">
+                                <div class="select__header">
+                                    <div class="innerText">Тормозные колодки</div>
+                                    <!-- /.innerText -->
+                                    <div class="blockIcon">
+                                        <div class="shevronIcon shevronIcon-select">
+                                            <div class="shevronIcon__icon">
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <!-- /.shevronIcon__icon -->
+                                        </div>
+                                    </div>
+                                    <!-- /.blockIcon -->
+                                </div>
+                                <!-- /.select__header -->
+                                <ul class="select__items">
+                                    <li class="select__item">Тормозные колодки</li>
+                                    <!--/.select__item-->
+                                </ul>
+                                <!-- /.selectItems -->
+                            </div>
+                            <!-- /.select -->
+                        </div>
+                        <!-- /.selectBlock -->
+                        <div class="selectBlock">
+                            <div class="formFieldsTitle">Запчасть:</div>
+                            <!-- /.formFieldsTitle -->
+                            <div class="select">
+                                <div class="select__header">
+                                    <div class="innerText">Тормозные колодки</div>
+                                    <!-- /.innerText -->
+                                    <div class="blockIcon">
+                                        <div class="shevronIcon shevronIcon-select">
+                                            <div class="shevronIcon__icon">
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <!-- /.shevronIcon__icon -->
+                                        </div>
+                                    </div>
+                                    <!-- /.blockIcon -->
+                                </div>
+                                <!-- /.select__header -->
+                                <ul class="select__items">
+                                    <li class="select__item">Тормозные колодки</li>
+                                    <!--/.select__item-->
+                                </ul>
+                                <!-- /.selectItems -->
+                            </div>
+                            <!-- /.select -->
+                        </div>
+                        <!-- /.selectBlock -->
+                    </div>
+                    <!-- /.manufacturerBlock__selects -->
+                    <div class="manufacturerBlock__ratings">
+                        <div class="ratingsBlock ratingsBlock-averageRating">
+                            <div class="ratingsBlock__item ratingsBlock__item-title">Общая оценка</div>
+                            <!-- /.ratingsBlock__item-title -->
+                            <div class="ratingsBlock__item ratingsBlock__item-stars">
+                                <div class="starsIconBlock">
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                </div>
+                                <!-- /.startsIconBlock -->
+                            </div>
+                            <!-- /.ratingsBlock__item-start -->
+                            <div class="ratingsBlock__item ratingsBlock__item-rating">4.5</div>
+                            <!-- /.ratingsBlock__item-rating -->
+                        </div>
+                        <!-- /.ratingsBlock-averageRating -->
+                        <div class="ratingsBlock">
+                            <div class="ratingsBlock__item ratingsBlock__item-title">Общая оценка</div>
+                            <!-- /.ratingsBlock__item-title -->
+                            <div class="ratingsBlock__item ratingsBlock__item-stars">
+                                <div class="starsIconBlock">
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                </div>
+                                <!-- /.startsIconBlock -->
+                            </div>
+                            <!-- /.ratingsBlock__item-start -->
+                            <div class="ratingsBlock__item ratingsBlock__item-rating">4.5</div>
+                            <!-- /.ratingsBlock__item-rating -->
+                        </div>
+                        <!-- /.ratingsBlock -->
+                        <div class="ratingsBlock">
+                            <div class="ratingsBlock__item ratingsBlock__item-title">Общая оценка</div>
+                            <!-- /.ratingsBlock__item-title -->
+                            <div class="ratingsBlock__item ratingsBlock__item-stars">
+                                <div class="starsIconBlock">
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                </div>
+                                <!-- /.startsIconBlock -->
+                            </div>
+                            <!-- /.ratingsBlock__item-start -->
+                            <div class="ratingsBlock__item ratingsBlock__item-rating">4.5</div>
+                            <!-- /.ratingsBlock__item-rating -->
+                        </div>
+                        <!-- /.ratingsBlock -->
+                        <div class="ratingsBlock">
+                            <div class="ratingsBlock__item ratingsBlock__item-title">Общая оценка</div>
+                            <!-- /.ratingsBlock__item-title -->
+                            <div class="ratingsBlock__item ratingsBlock__item-stars">
+                                <div class="starsIconBlock">
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                    <span class="starsIconBlock__icon">
+                                                <svg viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
+                                    <!--/.starsIconBlock__icon-->
+                                </div>
+                                <!-- /.startsIconBlock -->
+                            </div>
+                            <!-- /.ratingsBlock__item-start -->
+                            <div class="ratingsBlock__item ratingsBlock__item-rating">4.5</div>
+                            <!-- /.ratingsBlock__item-rating -->
+                        </div>
+                        <!-- /.ratingsBlock -->
+                    </div>
+                    <!-- /.manufacturerBlock__ratings -->
+                </div>
+                <!-- /.manufacturerBlock -->
+                <div class="reviewBlock">
+                    <div class="reviewBlock__textArea">
+                        <label class="formFieldsTitle" for="popUpAddReview">Отзыв:</label>
+                        <!-- /.formFieldsTitle -->
+                        <textarea id="popUpAddReview"
+                                  class="textArea"
+                                  placeholder="введите текст отзыва"
+                        ></textarea>
+                    </div>
+                    <!-- /.reviewBlock__textArea -->
+                    <div class="reviewBlock__userAction">
+                        <div class="addMediaContent">
+                            <span class="addMediaContent__text">Добавьте свои</span>
+                            <!--/.addMediaContent__text-->
+                            <button class="addMediaContent__media addMediaContent__media-image">
+                                <span class="mediaIcon mediaIcon-img"></span>
+                                <!-- /.mediaIcon-img -->
+                                <span class="iconDescription">Фото</span>
+                            </button>
+                            <!--/.addMediaContent__media-image-->
+                            <span class="addMediaContent__text">или</span>
+                            <!--/.addMediaContent__text-->
+                            <button class="addMediaContent__media addMediaContent__media-video">
+                                <span class="mediaIcon mediaIcon-video"></span>
+                                <!-- /.mediaIcon-video -->
+                                <span class="iconDescription">Видео</span>
+                            </button>
+                            <!--/.addMediaContent__media-video-->
+                            <span class="addMediaContent__text">к отзыву</span>
+                            <!--/.addMediaContent__text-->
+                        </div>
+                        <!-- /.addMediaContent -->
+                        <button class="mainBtn mainBtn-publish">Опубликовать</button>
+                    </div>
+                    <!-- /.reviewBlock__userAction -->
+                </div>
+                <!-- /.reviewBlock -->
+                <div class="progressBarBlock">
+                    <div class="progressBarBlock__title formFieldsTitle">Форма заполнена на:</div>
+                    <!-- /.progressBarBlock__title -->
+                    <div class="progressBarBlock__progressBar">
+                        <span class="progress">75/100</span>
+                        <!-- /.progress -->
+                    </div>
+                    <!-- /.progressBarBlock__progressBar -->
+                </div>
+                <!-- /.progressBar -->
+                <p class="aboutBlock">
+                    PartReview.ru - собрание отзывов об автомобильных запчастях.
+                    Рынок запчастей огромен. Кроме оригинальных запчастей есть множество
+                    аналогов. Одни качественные, другие мягко говоря, не вызывают доверия.
+                    Наш сервис призван разобраться в этом вопросе.
+                    Пользователи сами оценят какие запчасти стоит покупать, а какие нет.
+                </p>
+                <!-- /.aboutBlock -->
+                <div class="additionalBlock">
+                    <button class="mainBtn mainBtn-popUpadditionalBlock">
+                        <span class="innerText">Дополнительно</span>
+                        <!-- /.innerText -->
+                        <span class="shevronIcon shevronIcon-top">
+                             <span class="shevronIcon__icon">
+                                <span></span>
+                                <span></span>
+                             </span>
+                            <!-- /.shevronIcon__icon -->
+                        </span>
+                    </button>
+                    <div class="additionalBlock__form">
+                        <div class="carInfo">
+                            <div class="formFieldsTitle">Автомобиль:</div>
+                            <!-- /.formFieldsTitle -->
+                            <div class="selectsBlock">
+                                <div class="selectsBlock__item">
+                                    <div class="select">
+                                        <div class="select__header">
+                                            <div class="innerText">Марка авто</div>
+                                            <!-- /.innerText -->
+                                            <div class="blockIcon">
+                                                <div class="shevronIcon shevronIcon-select">
+                                                    <div class="shevronIcon__icon">
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <!-- /.shevronIcon__icon -->
+                                                </div>
+                                            </div>
+                                            <!-- /.blockIcon -->
+                                        </div>
+                                        <!-- /.select__header -->
+                                        <ul class="select__items">
+                                            <li class="select__item">Тормозные колодки</li>
+                                            <!--/.select__item-->
+                                        </ul>
+                                        <!-- /.selectItems -->
+                                    </div>
+                                    <!-- /.select -->
+                                </div>
+                                <!-- /.selectsBlock__item -->
+                                <div class="selectsBlock__item">
+                                    <div class="select">
+                                        <div class="select__header">
+                                            <div class="innerText">Модель авто</div>
+                                            <!-- /.innerText -->
+                                            <div class="blockIcon">
+                                                <div class="shevronIcon shevronIcon-select">
+                                                    <div class="shevronIcon__icon">
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <!-- /.shevronIcon__icon -->
+                                                </div>
+                                            </div>
+                                            <!-- /.blockIcon -->
+                                        </div>
+                                        <!-- /.select__header -->
+                                        <ul class="select__items">
+                                            <li class="select__item">Тормозные колодки</li>
+                                            <!--/.select__item-->
+                                        </ul>
+                                        <!-- /.selectItems -->
+                                    </div>
+                                    <!-- /.select -->
+                                </div>
+                                <!-- /.selectsBlock__item -->
+                                <div class="selectsBlock__item">
+                                    <div class="select">
+                                        <div class="select__header">
+                                            <div class="innerText">Поколение</div>
+                                            <!-- /.innerText -->
+                                            <div class="blockIcon">
+                                                <div class="shevronIcon shevronIcon-select">
+                                                    <div class="shevronIcon__icon">
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <!-- /.shevronIcon__icon -->
+                                                </div>
+                                            </div>
+                                            <!-- /.blockIcon -->
+                                        </div>
+                                        <!-- /.select__header -->
+                                        <ul class="select__items">
+                                            <li class="select__item">Тормозные колодки</li>
+                                            <!--/.select__item-->
+                                        </ul>
+                                        <!-- /.selectItems -->
+                                    </div>
+                                    <!-- /.select -->
+                                </div>
+                                <!-- /.selectsBlock__item -->
+                            </div>
+                            <!-- /.selectsBlock -->
+                        </div>
+                        <!-- /.carInfo -->
+                        <div class="carInfo carInfo-userAction">
+                            <div class="sparePartsInfo">
+                                <label class="formFieldsTitle" for="popUpInputRun">Пробег запчасти:</label>
+                                <!-- /.formFieldsTitle -->
+                                <input type="text"
+                                       class="input"
+                                       id="popUpInputRun"
+                                       name="popUpInputRun"
+                                >
+                            </div>
+                            <!-- /.sparePartsInfo -->
+                            <div class="sparePartsInfo">
+                                <label class="formFieldsTitle" for="popUpInputArticul">Артикул запчасти:</label>
+                                <!-- /.formFieldsTitle -->
+                                <input type="text"
+                                       class="input"
+                                       id="popUpInputArticul"
+                                       name="popUpInputArticul"
+                                >
+                            </div>
+                            <!-- /.sparePartsInfo -->
+                        </div>
+                        <!-- /.carInfo-userAction -->
+                        <div class="carInfo carInfo-userAction">
+                            <div class="sparePartsInfo">
+                                <label class="formFieldsTitle" for="popUpUserActionPositive">Достоинства:</label>
+                                <!-- /.formFieldsTitle -->
+                                <textarea class="textArea"
+                                          id="popUpUserActionPositive"
+                                          name="popUpUserActionPositive"
+                                ></textarea>
+                            </div>
+                            <!-- /.sparePartsInfo -->
+                            <div class="sparePartsInfo">
+                                <label class="formFieldsTitle" for="popUpUserActionNegative">Недостатки:</label>
+                                <!-- /.formFieldsTitle -->
+                                <textarea class="textArea"
+                                          id="popUpUserActionNegative"
+                                          name="popUpUserActionNegative"
+                                ></textarea>
+                            </div>
+                            <!-- /.sparePartsInfo -->
+                        </div>
+                        <!-- /.carInfo-userAction -->
+                    </div>
+                    <!-- /.additionalBlock__form -->
+                </div>
+                <!-- /.additionalBlock -->
+            </div>
+            <!-- /.popUpWindow__content -->
+            <button class="closeBtn closeBtn-addReview closeBtn-modalWindow">
+                <span class="closeBtn__icon">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+        <!-- /.contentBlock -->
+    </div>
+    <!-- /.popUpWindowBlock-addReview -->
+
+    <script src="js/flexcroll.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

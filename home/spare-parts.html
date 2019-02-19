@@ -6,123 +6,126 @@
     <title>Part review</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body id="sparePartsPage">
     <header class="siteHeaderSection">
-        <div class="wrapper">
-            <div class="siteHeader">
-                <div class="siteHeader__logo">
-                    <a href="#">
-                        <img src="img/logo.png" alt="PartReview logo image">
-                    </a>
-                </div>
-                <!-- /.siteHeader__logo -->
-                <div class="searchBlock">
-                    <form action="#" class="searchBlock__form">
+    <div class="wrapper">
+        <div class="siteHeader">
+            <div class="siteHeader__logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="PartReview logo image">
+                </a>
+            </div>
+            <!-- /.siteHeader__logo -->
+            <div class="searchBlock">
+                <form action="#" class="searchBlock__form">
+                    <div class="inputSearch">
                         <input type="text" placeholder="Поиск" id="headerFormSearch">
-                        <button class="iconBtn iconBtn-search">
+                    </div>
+                    <!-- /.inputSearch -->
+                    <button class="iconBtn iconBtn-search" data-status="close">
                             <span class="cssIcon cssIcon-search">
                                 <span class="cssIcon__part cssIcon__part-circle"></span>
                                 <span class="cssIcon__part cssIcon__part-knob"></span>
                             </span>
-                            <!-- /.cssIcon-search -->
-                        </button>
-                        <!-- /.iconBtn-search -->
-                    </form>
-                    <!-- /.searchBlock__form -->
-                </div>
-                <!-- /.searchBlock -->
-                <nav class="menuBlock">
-                    <button class="iconBtn iconBtn-toggleMenu">
+                        <!-- /.cssIcon-search -->
+                    </button>
+                    <!-- /.iconBtn-search -->
+                </form>
+                <!-- /.searchBlock__form -->
+            </div>
+            <!-- /.searchBlock -->
+            <nav class="menuBlock">
+                <button class="iconBtn iconBtn-toggleMenu">
                         <span class="cssIcon cssIcon-toggleMenu" id="topMenu">
                             <span class="cssIcon__part cssIcon__part-line"></span>
                             <span class="cssIcon__part cssIcon__part-line"></span>
                             <span class="cssIcon__part cssIcon__part-line"></span>
                         </span>
-                        <!-- /.cssIcon-toggleMenu -->
-                    </button>
-                    <!-- /.iconBtn iconBtn-toggleMenu -->
-                    <div class="topMenu" style="display: none;">
-                        <ul class="headerMenu">
-                            <li class="headerMenu__item headerMenu__item-title">
-                                <div class="h4Title"><a href="#magazineBlock">Рейтинг запчастей</a></div>
-                            </li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
-                        </ul>
-                        <ul class="headerMenu">
-                            <li class="headerMenu__item headerMenu__item-title">
-                                <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
-                            </li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
-                        </ul>
-                        <ul class="headerMenu">
-                            <li class="headerMenu__item headerMenu__item-title">
-                                <div class="h4Title"><a href="#spareParts">Отзывы о запчастях</a></div>
-                            </li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Шины</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Лампы</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Термостат</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
-                        </ul>
-                        <ul class="headerMenu">
-                            <li class="headerMenu__item headerMenu__item-title">
-                                <div class="h4Title"><a href="#brands">О производителях</a></div>
-                            </li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Bosch</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">TRW</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Stellox</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Febest</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Masuma</a></li>
-                        </ul>
-                        <ul class="headerMenu">
-                            <li class="headerMenu__item headerMenu__item-title">
-                                <div class="h4Title"><a href="#cars">О запчастях для авто</a></div>
-                            </li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Тойота</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Киа</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Форд</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Рено</a></li>
-                            <li class="headerMenu__item"><a href="#" target="_blank">Ниссан</a></li>
-                        </ul>
-                    </div>
-                    <!-- /.topMenu -->
-                </nav>
-                <!-- /.menuBlock -->
-                <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
-                <!-- /.mainBtn-addReview -->
-                <div class="headerUserAction">
-                    <div class="headerUserAction__element headerUserAction__element-enter">
-                        <span>Вход</span>
-                    </div>
-                    <!-- /.headerUserAction__element -->
-                    <div class="headerUserAction__separate"></div>
-                    <!-- /.headerUserAction__separate -->
-                    <div class="headerUserAction__element headerUserAction__element-registered">
-                        <span>Регистрация</span>
-                    </div>
-                    <!-- /.headerUserAction__element -->
+                    <!-- /.cssIcon-toggleMenu -->
+                </button>
+                <!-- /.iconBtn iconBtn-toggleMenu -->
+                <div class="topMenu" style="display: none;">
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#magazineBlock">Рейтинг запчастей</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие аккумуляторы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие шины</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие лампы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие амортизаторы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие моторные масла</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лучшие тормозные колодки</a></li>
+                    </ul>
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Denso</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Каяба или Токико</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Кама или Кордиант</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Bosch</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Мишлен или Континенталь</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">NGK или Champion</a></li>
+                    </ul>
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#spareParts">Отзывы о запчастях</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Аккумулятор</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Шины</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Лампы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Амортизаторы</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Термостат</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Антифриз</a></li>
+                    </ul>
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#brands">О производителях</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Bosch</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">TRW</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">LYNXauto</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Stellox</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Febest</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Masuma</a></li>
+                    </ul>
+                    <ul class="headerMenu">
+                        <li class="headerMenu__item headerMenu__item-title">
+                            <div class="h4Title"><a href="#cars">О запчастях для авто</a></div>
+                        </li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Тойота</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Киа</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Форд</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Рено</a></li>
+                        <li class="headerMenu__item"><a href="#" target="_blank">Ниссан</a></li>
+                    </ul>
                 </div>
-                <!-- /.headerUserAction -->
+                <!-- /.topMenu -->
+            </nav>
+            <!-- /.menuBlock -->
+            <button class="mainBtn mainBtn-addReview">Добавить отзыв</button>
+            <!-- /.mainBtn-addReview -->
+            <div class="headerUserAction">
+                <div class="headerUserAction__element headerUserAction__element-enter">
+                    <span>Вход</span>
+                </div>
+                <!-- /.headerUserAction__element -->
+                <div class="headerUserAction__separate"></div>
+                <!-- /.headerUserAction__separate -->
+                <div class="headerUserAction__element headerUserAction__element-registered">
+                    <span>Регистрация</span>
+                </div>
+                <!-- /.headerUserAction__element -->
             </div>
-            <!-- /.siteHeader -->
+            <!-- /.headerUserAction -->
         </div>
-        <!-- /.wrapper -->
-    </header>
+        <!-- /.siteHeader -->
+    </div>
+    <!-- /.wrapper -->
+</header>
     <!-- /.siteHeaderSection -->
-    <main class="mainContent" id="sparePartsPage">
+    <main class="mainContent">
         <div class="wrapper">
             <section class="pageHeaderBlock">
                 <div class="pageHeaderBlock__thumbnail">
@@ -2854,7 +2857,11 @@
                     </ul>
                     <ul class="footerMenu">
                         <li class="footerMenu__item footerMenu__item-title">
-                            <div class="h4Title"><a href="#cars">Отзывы о запчастях для</a></div>
+                            <div class="h4Title"><a href="#cars">
+                                <span class="titleText">Отзывы о запчастях для авто</span>
+                                <span class="titleText titleText-tablet">Отзывы для авто</span>
+                            </a>
+                            </div>
                             <div class="shevronIcon shevronIcon-footerMenu">
                                 <div class="shevronIcon__icon">
                                     <span></span>
@@ -2863,7 +2870,6 @@
                                 <!-- /.shevronIcon__icon -->
                             </div>
                         </li>
-                        <li class="footerMenu__item"><a href="#" target="_blank">авто</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">ВАЗ</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">Тойота</a></li>
                         <li class="footerMenu__item"><a href="#" target="_blank">Киа</a></li>
@@ -2911,7 +2917,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="footerMenu">
+                    <ul class="footerMenu footerMenu-respNonShow">
                         <li class="footerMenu__item footerMenu__item-title">
                             <div class="h4Title"><a href="#comparisonBlock">Сравнения</a></div>
                             <div class="shevronIcon shevronIcon-footerMenu">
@@ -3031,22 +3037,22 @@
                             <div class="ratingsBlock__item ratingsBlock__item-stars">
                                 <div class="starsIconBlock">
                                     <span class="starsIconBlock__icon">
-                                        <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
-                                            <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
-                                        </svg>
-                                    </span>
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
                                     <!--/.starsIconBlock__icon-->
                                     <span class="starsIconBlock__icon">
-                                        <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
-                                            <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
-                                        </svg>
-                                    </span>
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
                                     <!--/.starsIconBlock__icon-->
                                     <span class="starsIconBlock__icon">
-                                        <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
-                                            <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
-                                        </svg>
-                                    </span>
+                                                <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
+                                                    <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
+                                                </svg>
+                                            </span>
                                     <!--/.starsIconBlock__icon-->
                                     <span class="starsIconBlock__icon">
                                                 <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
@@ -3208,8 +3214,7 @@
                         <textarea id="popUpAddReview"
                                   class="textArea"
                                   placeholder="введите текст отзыва"
-                        >
-                        </textarea>
+                        ></textarea>
                     </div>
                     <!-- /.reviewBlock__textArea -->
                     <div class="reviewBlock__userAction">
@@ -3266,9 +3271,142 @@
                                 <span></span>
                                 <span></span>
                              </span>
-                             <!-- /.shevronIcon__icon -->
+                            <!-- /.shevronIcon__icon -->
                         </span>
                     </button>
+                    <div class="additionalBlock__form">
+                        <div class="carInfo">
+                            <div class="formFieldsTitle">Автомобиль:</div>
+                            <!-- /.formFieldsTitle -->
+                            <div class="selectsBlock">
+                                <div class="selectsBlock__item">
+                                    <div class="select">
+                                        <div class="select__header">
+                                            <div class="innerText">Марка авто</div>
+                                            <!-- /.innerText -->
+                                            <div class="blockIcon">
+                                                <div class="shevronIcon shevronIcon-select">
+                                                    <div class="shevronIcon__icon">
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <!-- /.shevronIcon__icon -->
+                                                </div>
+                                            </div>
+                                            <!-- /.blockIcon -->
+                                        </div>
+                                        <!-- /.select__header -->
+                                        <ul class="select__items">
+                                            <li class="select__item">Тормозные колодки</li>
+                                            <!--/.select__item-->
+                                        </ul>
+                                        <!-- /.selectItems -->
+                                    </div>
+                                    <!-- /.select -->
+                                </div>
+                                <!-- /.selectsBlock__item -->
+                                <div class="selectsBlock__item">
+                                    <div class="select">
+                                        <div class="select__header">
+                                            <div class="innerText">Модель авто</div>
+                                            <!-- /.innerText -->
+                                            <div class="blockIcon">
+                                                <div class="shevronIcon shevronIcon-select">
+                                                    <div class="shevronIcon__icon">
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <!-- /.shevronIcon__icon -->
+                                                </div>
+                                            </div>
+                                            <!-- /.blockIcon -->
+                                        </div>
+                                        <!-- /.select__header -->
+                                        <ul class="select__items">
+                                            <li class="select__item">Тормозные колодки</li>
+                                            <!--/.select__item-->
+                                        </ul>
+                                        <!-- /.selectItems -->
+                                    </div>
+                                    <!-- /.select -->
+                                </div>
+                                <!-- /.selectsBlock__item -->
+                                <div class="selectsBlock__item">
+                                    <div class="select">
+                                        <div class="select__header">
+                                            <div class="innerText">Поколение</div>
+                                            <!-- /.innerText -->
+                                            <div class="blockIcon">
+                                                <div class="shevronIcon shevronIcon-select">
+                                                    <div class="shevronIcon__icon">
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <!-- /.shevronIcon__icon -->
+                                                </div>
+                                            </div>
+                                            <!-- /.blockIcon -->
+                                        </div>
+                                        <!-- /.select__header -->
+                                        <ul class="select__items">
+                                            <li class="select__item">Тормозные колодки</li>
+                                            <!--/.select__item-->
+                                        </ul>
+                                        <!-- /.selectItems -->
+                                    </div>
+                                    <!-- /.select -->
+                                </div>
+                                <!-- /.selectsBlock__item -->
+                            </div>
+                            <!-- /.selectsBlock -->
+                        </div>
+                        <!-- /.carInfo -->
+                        <div class="carInfo carInfo-userAction">
+                            <div class="sparePartsInfo">
+                                <label class="formFieldsTitle" for="popUpInputRun">Пробег запчасти:</label>
+                                <!-- /.formFieldsTitle -->
+                                <input type="text"
+                                       class="input"
+                                       id="popUpInputRun"
+                                       name="popUpInputRun"
+                                >
+                            </div>
+                            <!-- /.sparePartsInfo -->
+                            <div class="sparePartsInfo">
+                                <label class="formFieldsTitle" for="popUpInputArticul">Артикул запчасти:</label>
+                                <!-- /.formFieldsTitle -->
+                                <input type="text"
+                                       class="input"
+                                       id="popUpInputArticul"
+                                       name="popUpInputArticul"
+                                >
+                            </div>
+                            <!-- /.sparePartsInfo -->
+                        </div>
+                        <!-- /.carInfo-userAction -->
+                        <div class="carInfo carInfo-userAction">
+                            <div class="sparePartsInfo">
+                                <label class="formFieldsTitle" for="popUpUserActionPositive">Достоинства:</label>
+                                <!-- /.formFieldsTitle -->
+                                <textarea class="textArea"
+                                          id="popUpUserActionPositive"
+                                          name="popUpUserActionPositive"
+                                ></textarea>
+                            </div>
+                            <!-- /.sparePartsInfo -->
+                            <div class="sparePartsInfo">
+                                <label class="formFieldsTitle" for="popUpUserActionNegative">Недостатки:</label>
+                                <!-- /.formFieldsTitle -->
+                                <textarea class="textArea"
+                                          id="popUpUserActionNegative"
+                                          name="popUpUserActionNegative"
+                                ></textarea>
+                            </div>
+                            <!-- /.sparePartsInfo -->
+                        </div>
+                        <!-- /.carInfo-userAction -->
+                    </div>
+                    <!-- /.additionalBlock__form -->
                 </div>
                 <!-- /.additionalBlock -->
             </div>
@@ -3284,6 +3422,7 @@
     </div>
     <!-- /.popUpWindowBlock-addReview -->
 
+    <script src="js/flexcroll.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -101,17 +101,9 @@ window.onload = function () {
         const topMenu = document.querySelector('.topMenu');
 
         topToggleMenu.addEventListener('click', function(){
-            if ( !topMenu.classList.contains('topMenu-open') ) {
-                topMenu.setAttribute('style', 'display:flex;');
-                setTimeout(()=>{
-                    topMenu.classList.add('topMenu-open');
-                    topToggleMenu.classList.add('iconBtn-showMarker');
-                },500);
-            } else {
-               closeTopMenu();
-            }
+           DOMAnimation.slideToggle(topMenu);
             clickPastWindow('topMenu', function(){
-                closeTopMenu();
+                DOMAnimation.slideUp(topMenu);
             });
         });
     }
@@ -628,6 +620,82 @@ window.onload = function () {
     } // sliderSpareParts
 
 // secondary functions -------------------------------------------
+    class DOMAnimation {
+        /**
+         * hide element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideUp (element, duration = 500) {
+            element.style.height = element.offsetHeight + 'px';
+            element.style.transitionProperty = 'height, margin, padding';
+            element.style.transitionDuration = duration + 'ms';
+            element.offsetHeight;
+            element.style.overflow = 'hidden';
+            element.style.height = 0;
+            element.style.paddingTop = 0;
+            element.style.paddingBottom = 0;
+            element.style.marginTop = 0;
+            element.style.marginBottom = 0;
+            window.setTimeout(function(){
+                element.style.display = 'none';
+                element.style.removeProperty('height');
+                element.style.removeProperty('padding-top');
+                element.style.removeProperty('padding-bottom');
+                element.style.removeProperty('margin-top');
+                element.style.removeProperty('margin-bottom');
+                element.style.removeProperty('overflow');
+                element.style.removeProperty('transition-property');
+                element.style.removeProperty('transition-duration');
+            }, duration);
+        }
+        /**
+         * show element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideDown (element, duration = 500) {
+            element.style.removeProperty('display');
+            let display = window.getComputedStyle(element).display;
+            if ( display === 'none' ) display = 'block';
+            element.style.display = display;
+            let height = element.offsetHeight;
+            element.style.overflow = 'hidden';
+            element.style.height = 0;
+            element.style.paddingTop = 0;
+            element.style.paddingBottom = 0;
+            element.style.marginTop = 0;
+            element.style.marginBottom = 0;
+            element.offsetHeight;
+            element.style.transitionProperty = 'height, margin, padding';
+            element.style.transitionDuration = duration + 'ms';
+            element.style.height = height + 'px';
+            element.style.removeProperty('padding-top');
+            element.style.removeProperty('padding-bottom');
+            element.style.removeProperty('margin-top');
+            element.style.removeProperty('margin-bottom');
+            window.setTimeout(function(){
+                element.style.removeProperty('height');
+                element.style.removeProperty('overflow');
+                element.style.removeProperty('transition-property');
+                element.style.removeProperty('transition-duration');
+            }, duration);
+        }
+        /**
+         * toggle element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideToggle (element, duration = 500) {
+            let display = getComputedStyle(element).display;
+            if (display === 'none') {
+                this.slideDown(element, duration);
+            } else {
+                this.slideUp(element, duration);
+            }
+        }
+    }
+
     function scrollTo (idElement, speed) {
         const scrollElement = document.querySelector(idElement);
         let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
@@ -651,14 +719,7 @@ window.onload = function () {
     } // scrollTo
 
     function closeTopMenu () {
-        const topMenu = document.querySelector('.topMenu');
-        const topToggleMenu = document.querySelector('.iconBtn-toggleMenu');
 
-        topMenu.classList.remove('topMenu-open');
-        topToggleMenu.classList.remove('iconBtn-showMarker');
-        setTimeout(()=>{
-            topMenu.setAttribute('style', 'display:none;');
-        },500);
     } // closeTopMenu
 
     function clickPastWindow(id,callback) {
@@ -709,12 +770,6 @@ window.onload = function () {
         }
     } // closePopUpWindow
 
-// function for responsive block ----------------------------------
-    // home page
-    function rMagazinBlock() {
-        const mainBlock = document.querySelector('.magazineBlock');
-
-    } //
 };
 
 

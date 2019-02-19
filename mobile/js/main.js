@@ -230,33 +230,35 @@ window.onload = function () {
 
     function showAllMagazineArticles () {
         const magazinArticlesBlock = document.querySelector('.magazine__articles');
-        const blockHeight = magazinArticlesBlock.clientHeight;
-        const magazinArticlesBlockItems = magazinArticlesBlock.querySelector('.articleTabs');
-        const showAllBtn = document.querySelector('#magazineShowAll');
-        const unvisibleItem = magazinArticlesBlockItems.querySelectorAll('.displayNone');
-        let openBlockHeight = 0;
+        if ( magazinArticlesBlock ) {
+            const blockHeight = magazinArticlesBlock.clientHeight;
+            const magazinArticlesBlockItems = magazinArticlesBlock.querySelector('.articleTabs');
+            const showAllBtn = document.querySelector('#magazineShowAll');
+            const unvisibleItem = magazinArticlesBlockItems.querySelectorAll('.displayNone');
+            let openBlockHeight = 0;
 
-        magazinArticlesBlock.style.height = blockHeight + 'px';
-        magazinArticlesBlock.style.overflow = 'hidden';
-        magazinArticlesBlock.style.transition = 'height .3s';
+            magazinArticlesBlock.style.height = blockHeight + 'px';
+            magazinArticlesBlock.style.overflow = 'hidden';
+            magazinArticlesBlock.style.transition = 'height .3s';
 
-        showAllBtn.addEventListener('click', ()=>{
-            for ( let i = 0; i < unvisibleItem.length; i++) {
-                unvisibleItem[i].classList.remove('displayNone');
-            }
-            openBlockHeight = magazinArticlesBlockItems.clientHeight;
-            magazinArticlesBlock.style.height = openBlockHeight + 'px';
+            showAllBtn.addEventListener('click', ()=>{
+                for ( let i = 0; i < unvisibleItem.length; i++) {
+                    unvisibleItem[i].classList.remove('displayNone');
+                }
+                openBlockHeight = magazinArticlesBlockItems.clientHeight;
+                magazinArticlesBlock.style.height = openBlockHeight + 'px';
 
-            // disabled show all btn
+                // disabled show all btn
 
-            // disabled show all btn
-            showAllBtn.style.display = 'none';
+                // disabled show all btn
+                showAllBtn.style.display = 'none';
 
-            // clear style
-            setTimeout(()=> {
-                magazinArticlesBlock.removeAttribute('style');
-            }, 1000)
-        });
+                // clear style
+                setTimeout(()=> {
+                    magazinArticlesBlock.removeAttribute('style');
+                }, 1000)
+            });
+        }
     } // showAllMagazineArticles
 
 
@@ -347,6 +349,11 @@ window.onload = function () {
     function initCustomScrollBar () {
         const scrollContainer = document.querySelector('.activityTape');
         fleXenv.fleXcrollMain(scrollContainer);
+
+        const ratingTableScroll = document.querySelector('.ratingTableBlock__content');
+        if (ratingTableScroll) {
+            // fleXenv.fleXcrollMain(ratingTableScroll);
+        }
     } // initCustomScrollBar
 
     // mobile --------------------------------------------------

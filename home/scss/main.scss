@@ -119,8 +119,6 @@
     background: white;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
     color: $colorDarkGray;
-    height: 0;
-    opacity: 0;
     padding: $blockPadding;
     position: absolute;
     transform: translateX(-50%);
@@ -129,10 +127,6 @@
     top: 51px;
     width: 100%;
     z-index: 10;
-    &-open {
-      height: 295px;
-      opacity: 1;
-    } // -open
   } // topMenu
   .headerMenu {
     &__item {
