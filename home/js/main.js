@@ -1,8 +1,6 @@
 'use strict';
 
 window.onload = function () {
-    const doc = document;
-
     const RATING_STROKE_LENGTH = 114,
           RATING_COLOR_GREEN = '#7eae3e',
           RATING_COLOR_YELLOW = '#efb428',
@@ -14,6 +12,8 @@ window.onload = function () {
     const COL_WIDTH = SCREEN_MAX_WIDTH / 12 - GUTTER_X2;
     const COL_3_WIDTH = ( COL_WIDTH * 3 ) + ( GUTTER_X2 * 2 );
     const COL_4_WIDTH = ( COL_WIDTH * 4 ) + ( GUTTER_X2 * 3 );
+
+    // common function
 
     initCustomScrollBar ();
 
@@ -246,8 +246,6 @@ window.onload = function () {
         }
     } // showAllCars
 
-
-
     function showAllSEOText () {
         const seoContentBlock = document.querySelector('.seoTexts');
         if (seoContentBlock) {
@@ -360,6 +358,154 @@ window.onload = function () {
         const scrollContainer = document.querySelector('.activityTape');
         fleXenv.fleXcrollMain(scrollContainer);
     } // initCustomScrollBar
+
+// secondary functions -------------------------------------------
+    class DOMAnimation {
+        /**
+         * hide element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideUp (element, duration = 500) {
+            element.style.height = element.offsetHeight + 'px';
+            element.style.transitionProperty = 'height, margin, padding';
+            element.style.transitionDuration = duration + 'ms';
+            element.offsetHeight;
+            element.style.overflow = 'hidden';
+            element.style.height = 0;
+            element.style.paddingTop = 0;
+            element.style.paddingBottom = 0;
+            element.style.marginTop = 0;
+            element.style.marginBottom = 0;
+            window.setTimeout(function(){
+                element.style.display = 'none';
+                element.style.removeProperty('height');
+                element.style.removeProperty('padding-top');
+                element.style.removeProperty('padding-bottom');
+                element.style.removeProperty('margin-top');
+                element.style.removeProperty('margin-bottom');
+                element.style.removeProperty('overflow');
+                element.style.removeProperty('transition-property');
+                element.style.removeProperty('transition-duration');
+            }, duration);
+        }
+        /**
+         * show element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideDown (element, duration = 500) {
+            element.style.removeProperty('display');
+            let display = window.getComputedStyle(element).display;
+            if ( display === 'none' ) display = 'block';
+            element.style.display = display;
+            let height = element.offsetHeight;
+            element.style.overflow = 'hidden';
+            element.style.height = 0;
+            element.style.paddingTop = 0;
+            element.style.paddingBottom = 0;
+            element.style.marginTop = 0;
+            element.style.marginBottom = 0;
+            element.offsetHeight;
+            element.style.transitionProperty = 'height, margin, padding';
+            element.style.transitionDuration = duration + 'ms';
+            element.style.height = height + 'px';
+            element.style.removeProperty('padding-top');
+            element.style.removeProperty('padding-bottom');
+            element.style.removeProperty('margin-top');
+            element.style.removeProperty('margin-bottom');
+            window.setTimeout(function(){
+                element.style.removeProperty('height');
+                element.style.removeProperty('overflow');
+                element.style.removeProperty('transition-property');
+                element.style.removeProperty('transition-duration');
+            }, duration);
+        }
+        /**
+         * toggle element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideToggle (element, duration = 500) {
+            let display = getComputedStyle(element).display;
+            if (display === 'none') {
+                this.slideDown(element, duration);
+            } else {
+                this.slideUp(element, duration);
+            }
+        }
+    }
+
+    function scrollTo (idElement, speed) {
+        const scrollElement = document.querySelector(idElement);
+        let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
+        let currentPos = pageYOffset;
+        console.log('posElem - ' + posElem);
+        console.log('currentPos' + currentPos);
+        let scr = setInterval(function () {
+            if ( currentPos > posElem ) {
+                currentPos -= speed;
+                if (currentPos < posElem) {
+                    clearInterval(scr);
+                }
+            } else {
+                currentPos += speed;
+                if (currentPos > posElem - speed) {
+                    clearInterval(scr);
+                }
+            }
+            window.scrollTo(0, currentPos);
+        }, 1);
+    } // scrollTo
+
+    function clickPastWindow(id,callback) {
+        const targetWindow = document.querySelector('#' + id);
+        document.addEventListener('mouseup',function (e){
+            if ( !targetWindow.contains(e.target) ) {
+               if (callback) {
+                   callback();
+               }
+            }
+        });
+    } // clickPastWindow
+
+    function showPopUpWindow(id) {
+        const popUpWindowBlock = document.querySelector(id);
+        const popUpWindow = popUpWindowBlock.querySelector('.popUpWindow');
+        const overlay = popUpWindowBlock.querySelector('.overlay');
+
+        popUpWindow.style.opacity = '0';
+        overlay.style.opacity = '0';
+
+        popUpWindowBlock.classList.remove('displayNone');
+
+        setTimeout(()=>{
+            popUpWindow.style.opacity = '1';
+            overlay.style.opacity = '.6';
+        }, 100);
+    } // showPopUpWindow
+
+    function closePopUpWindow() {
+        const closeBtn = document.querySelectorAll('.closeBtn-modalWindow');
+
+        for (let currentCloseBtn of closeBtn ) {
+            currentCloseBtn.addEventListener('click', function(){
+                const popUpWindowBlock = this.parentNode.parentNode;
+                const popUpWindow = popUpWindowBlock.querySelector('.popUpWindow');
+                const overlay = popUpWindowBlock.querySelector('.overlay');
+
+                popUpWindow.style.opacity = '0';
+                overlay.style.opacity = '0';
+
+                setTimeout(()=>{
+                    popUpWindowBlock.classList.add('displayNone');
+                    popUpWindow.removeAttribute('style');
+                    overlay.removeAttribute('style');
+                }, 500);
+            });
+        }
+    } // closePopUpWindow
+
 
 
 // sliders -------------------------------------------------------
@@ -619,193 +765,4 @@ window.onload = function () {
         }
     } // sliderSpareParts
 
-// secondary functions -------------------------------------------
-    class DOMAnimation {
-        /**
-         * hide element
-         * @param {HTMLElement} element
-         * @param {Number} duration
-         */
-        static slideUp (element, duration = 500) {
-            element.style.height = element.offsetHeight + 'px';
-            element.style.transitionProperty = 'height, margin, padding';
-            element.style.transitionDuration = duration + 'ms';
-            element.offsetHeight;
-            element.style.overflow = 'hidden';
-            element.style.height = 0;
-            element.style.paddingTop = 0;
-            element.style.paddingBottom = 0;
-            element.style.marginTop = 0;
-            element.style.marginBottom = 0;
-            window.setTimeout(function(){
-                element.style.display = 'none';
-                element.style.removeProperty('height');
-                element.style.removeProperty('padding-top');
-                element.style.removeProperty('padding-bottom');
-                element.style.removeProperty('margin-top');
-                element.style.removeProperty('margin-bottom');
-                element.style.removeProperty('overflow');
-                element.style.removeProperty('transition-property');
-                element.style.removeProperty('transition-duration');
-            }, duration);
-        }
-        /**
-         * show element
-         * @param {HTMLElement} element
-         * @param {Number} duration
-         */
-        static slideDown (element, duration = 500) {
-            element.style.removeProperty('display');
-            let display = window.getComputedStyle(element).display;
-            if ( display === 'none' ) display = 'block';
-            element.style.display = display;
-            let height = element.offsetHeight;
-            element.style.overflow = 'hidden';
-            element.style.height = 0;
-            element.style.paddingTop = 0;
-            element.style.paddingBottom = 0;
-            element.style.marginTop = 0;
-            element.style.marginBottom = 0;
-            element.offsetHeight;
-            element.style.transitionProperty = 'height, margin, padding';
-            element.style.transitionDuration = duration + 'ms';
-            element.style.height = height + 'px';
-            element.style.removeProperty('padding-top');
-            element.style.removeProperty('padding-bottom');
-            element.style.removeProperty('margin-top');
-            element.style.removeProperty('margin-bottom');
-            window.setTimeout(function(){
-                element.style.removeProperty('height');
-                element.style.removeProperty('overflow');
-                element.style.removeProperty('transition-property');
-                element.style.removeProperty('transition-duration');
-            }, duration);
-        }
-        /**
-         * toggle element
-         * @param {HTMLElement} element
-         * @param {Number} duration
-         */
-        static slideToggle (element, duration = 500) {
-            let display = getComputedStyle(element).display;
-            if (display === 'none') {
-                this.slideDown(element, duration);
-            } else {
-                this.slideUp(element, duration);
-            }
-        }
-    }
-
-    function scrollTo (idElement, speed) {
-        const scrollElement = document.querySelector(idElement);
-        let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
-        let currentPos = pageYOffset;
-        console.log('posElem - ' + posElem);
-        console.log('currentPos' + currentPos);
-        let scr = setInterval(function () {
-            if ( currentPos > posElem ) {
-                currentPos -= speed;
-                if (currentPos < posElem) {
-                    clearInterval(scr);
-                }
-            } else {
-                currentPos += speed;
-                if (currentPos > posElem - speed) {
-                    clearInterval(scr);
-                }
-            }
-            window.scrollTo(0, currentPos);
-        }, 1);
-    } // scrollTo
-
-    function closeTopMenu () {
-
-    } // closeTopMenu
-
-    function clickPastWindow(id,callback) {
-        const targetWindow = document.querySelector('#' + id);
-        document.addEventListener('mouseup',function (e){
-            if ( !targetWindow.contains(e.target) ) {
-               if (callback) {
-                   callback();
-               }
-            }
-        });
-    } // clickPastWindow
-
-    function showPopUpWindow(id) {
-        const popUpWindowBlock = document.querySelector(id);
-        const popUpWindow = popUpWindowBlock.querySelector('.popUpWindow');
-        const overlay = popUpWindowBlock.querySelector('.overlay');
-
-        popUpWindow.style.opacity = '0';
-        overlay.style.opacity = '0';
-
-        popUpWindowBlock.classList.remove('displayNone');
-
-        setTimeout(()=>{
-            popUpWindow.style.opacity = '1';
-            overlay.style.opacity = '.6';
-        }, 100);
-    } // showPopUpWindow
-
-    function closePopUpWindow() {
-        const closeBtn = document.querySelectorAll('.closeBtn-modalWindow');
-
-        for (let currentCloseBtn of closeBtn ) {
-            currentCloseBtn.addEventListener('click', function(){
-                const popUpWindowBlock = this.parentNode.parentNode;
-                const popUpWindow = popUpWindowBlock.querySelector('.popUpWindow');
-                const overlay = popUpWindowBlock.querySelector('.overlay');
-
-                popUpWindow.style.opacity = '0';
-                overlay.style.opacity = '0';
-
-                setTimeout(()=>{
-                    popUpWindowBlock.classList.add('displayNone');
-                    popUpWindow.removeAttribute('style');
-                    overlay.removeAttribute('style');
-                }, 500);
-            });
-        }
-    } // closePopUpWindow
-
 };
-
-
-// unused function
-
-// showAllComparison ();
-
-// function showAllComparison () {
-//     const comparisonBlock = document.querySelector('.comparisonBlock__content');
-//     const blockHeight = comparisonBlock.clientHeight;
-//     const comparisonBlockItems = comparisonBlock.querySelector('.comparisonBlockItems');
-//     const showAllBtn = document.querySelector('#comparisonBlockShowAll');
-//     const unvisibleItem = comparisonBlockItems.querySelectorAll('.displayNone');
-//     let openBlockHeight = 0;
-//
-//     comparisonBlock.style.height = blockHeight + 'px';
-//     comparisonBlock.style.overflow = 'hidden';
-//     comparisonBlock.style.transition = 'height .3s';
-//
-//     showAllBtn.addEventListener('click', ()=>{
-//         console.log('show all');
-//         for ( let i = 0; i < unvisibleItem.length; i++) {
-//             unvisibleItem[i].classList.remove('displayNone');
-//         }
-//         openBlockHeight = comparisonBlockItems.clientHeight;
-//         comparisonBlock.style.height = openBlockHeight + 'px';
-//
-//         // disabled show all btn
-//
-//         showAllBtn.setAttribute('disabled', 'true');
-//         showAllBtn.classList.add('mainBtn-showAllDisabled');
-//
-//         // clear style
-//         setTimeout(()=> {
-//             comparisonBlock.removeAttribute('style');
-//         }, 1000)
-//     });
-// } // showAllComparison
-// =====================

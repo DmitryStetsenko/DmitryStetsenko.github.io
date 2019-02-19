@@ -719,20 +719,25 @@
           } // img
           &__text {
             @include flex(center, flex-start);
+            position: relative;
             transition: color .3s;
+            &::after {
+              content: '';
+              background: $colorYellow;
+              display: block;
+              height: 1px;
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              transition: width .3s;
+              width: 0;
+            } // after
             span {
+              margin-right: 5px;
               position: relative;
-              &::after {
-                content: '';
-                background: $colorYellow;
-                display: block;
-                height: 1px;
-                position: absolute;
-                bottom: -1px;
-                left: 0;
-                transition: width .3s;
-                width: 0;
-              } // after
+              &:last-child {
+                margin-right: 0;
+              } // last-child
             } // span
           } // __text
           &:after {
@@ -749,11 +754,9 @@
             cursor: pointer;
             .sparePartsContentTitle__text {
               color: $colorYellow;
-              span {
-                &::after {
-                  width: 100%;
-                } // after
-              } // span
+              &::after {
+                width: 100%;
+              } // after
             } // sparePartsContentTitle__text
           } // hover
         } // sparePartsContentTitle
@@ -892,6 +895,8 @@
     } // magazine
   } // magazineBlock
   // ===========================================
+
+
 
 } // ratingsPage
 

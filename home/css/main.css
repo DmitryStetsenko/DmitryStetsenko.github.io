@@ -41,6 +41,7 @@ div, section, main, header, article, aside, h1, h2, h3, h4, h5, h6, p, input, te
   box-sizing: border-box; }
 
 img, svg {
+  display: block;
   width: 100%;
   height: auto; }
 
@@ -50,6 +51,97 @@ button, input {
   margin: 0;
   padding: 0;
   outline: none; }
+
+.label {
+  color: #2c333d;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px; }
+
+.select {
+  border-radius: 3px;
+  border: 1px solid #c1c7d0;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  width: 100%; }
+  .select__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    padding: 10px; }
+    .select__header .innerText {
+      color: #2c333d;
+      font-size: 13px; }
+  .select__item {
+    color: #2c333d;
+    height: 30px;
+    font-size: 13px;
+    padding: 10px; }
+  .select-unActive {
+    border: 1px solid #e8e8e8; }
+    .select-unActive .select__header .innerText {
+      color: #8a939f; }
+    .select-unActive .select__item {
+      color: #2c333d; }
+
+.input, .textArea {
+  background: inherit;
+  border-radius: 3px;
+  border: 1px solid #c1c7d0;
+  box-sizing: border-box;
+  color: #2c333d;
+  display: block;
+  height: 30px;
+  font-size: 13px;
+  outline: none;
+  padding: 10px;
+  width: 100%; }
+  .input::-webkit-input-placeholder, .textArea::-webkit-input-placeholder {
+    color: #2c333d;
+    font: 400 normal 13px arial; }
+  .input:-moz-placeholder, .textArea:-moz-placeholder {
+    color: #2c333d;
+    font: 400 normal 13px arial; }
+
+.textArea {
+  height: 125px;
+  font-family: Arial;
+  resize: none;
+  width: 100%; }
+  .textArea-addComment {
+    border: 1px solid #e8e8e8; }
+
+.checkBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #2c333d;
+  font-size: 13px; }
+  .checkBox input[type=checkbox] {
+    display: none; }
+    .checkBox input[type=checkbox]:checked + span.checkBox__input::before {
+      opacity: 1; }
+  .checkBox__input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    border: 1px solid #e8e8e8;
+    bottom: 1px;
+    height: 15px;
+    position: relative;
+    width: 15px; }
+    .checkBox__input::before {
+      content: '\2714';
+      color: #efb428;
+      opacity: 0;
+      position: absolute;
+      transition: opacity .3s; }
+  .checkBox__label {
+    margin-left: 5px; }
 
 .h1Title {
   color: white;
@@ -478,61 +570,61 @@ button, input {
     background: #7eae3e;
     color: white; }
 
-.shevronIcon__icon {
-  display: block;
-  position: relative;
-  min-height: 21px;
-  min-width: 9px; }
-  .shevronIcon__icon span {
-    background: #2c333d;
+.shevronIcon {
+  display: block; }
+  .shevronIcon__icon {
     display: block;
-    position: absolute;
-    transition: background .3s;
-    height: 10px;
-    width: 2px; }
-    .shevronIcon__icon span:first-child {
-      transform-origin: left bottom;
-      transform: rotate(45deg);
-      left: 0;
-      top: 0; }
-    .shevronIcon__icon span:last-child {
-      transform-origin: left top;
-      transform: rotate(-45deg);
-      left: 0;
-      bottom: 0; }
-
-.shevronIcon-sliderNavNext {
-  transform: rotate(180deg); }
-
-.shevronIcon-footerMenu {
-  align-items: center;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  display: flex;
-  justify-content: center;
-  height: 30px;
-  transform: rotate(-90deg) scale(0.7);
-  transition: border-color .3s, transform .3s;
-  width: 30px; }
-  .shevronIcon-footerMenuRotate {
-    transform: rotate(90deg) scale(0.7); }
-  .shevronIcon-footerMenu:hover {
-    border-color: #efb428;
-    cursor: pointer; }
-  .shevronIcon-footerMenu span {
-    background: #efb428; }
-
-.shevronIcon-bottom {
-  transform: rotate(-90deg); }
-
-.shevronIcon-top {
-  transform: rotate(90deg); }
-
-.shevronIcon-select {
-  transform: rotate(-90deg) scale(0.5); }
-
-.shevronIcon-selectTop {
-  transform: rotate(90deg) scale(0.5); }
+    position: relative;
+    min-height: 21px;
+    min-width: 9px; }
+    .shevronIcon__icon span {
+      background: #2c333d;
+      display: block;
+      position: absolute;
+      transition: background .3s;
+      height: 10px;
+      width: 2px; }
+      .shevronIcon__icon span:first-child {
+        transform-origin: left bottom;
+        transform: rotate(45deg);
+        left: 0;
+        top: 0; }
+      .shevronIcon__icon span:last-child {
+        transform-origin: left top;
+        transform: rotate(-45deg);
+        left: 0;
+        bottom: 0; }
+  .shevronIcon-sliderNavNext {
+    transform: rotate(180deg); }
+  .shevronIcon-footerMenu {
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    transform: rotate(-90deg) scale(0.7);
+    transition: border-color .3s, transform .3s;
+    width: 30px; }
+    .shevronIcon-footerMenuRotate {
+      transform: rotate(90deg) scale(0.7); }
+    .shevronIcon-footerMenu:hover {
+      border-color: #efb428;
+      cursor: pointer; }
+    .shevronIcon-footerMenu span {
+      background: #efb428; }
+  .shevronIcon-bottom {
+    transform: rotate(-90deg); }
+  .shevronIcon-top {
+    transform: rotate(90deg); }
+  .shevronIcon-smallTop {
+    transform: rotate(90deg) scale(0.5); }
+  .shevronIcon-smallBottom {
+    transform: rotate(-90deg) scale(0.5); }
+  .shevronIcon-select {
+    transform: rotate(-90deg) scale(0.5); }
+  .shevronIcon-selectTop {
+    transform: rotate(90deg) scale(0.5); }
 
 .sliderBox {
   position: relative;
@@ -1323,97 +1415,6 @@ button, input {
   .popUpWindowBlock .popUpWindow-addReview {
     width: 755px; }
 
-.label {
-  color: #2c333d;
-  display: block;
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 15px; }
-
-.select {
-  border-radius: 3px;
-  border: 1px solid #c1c7d0;
-  height: 30px;
-  overflow: hidden;
-  position: relative;
-  width: 100%; }
-  .select__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 30px;
-    padding: 10px; }
-    .select__header .innerText {
-      color: #2c333d;
-      font-size: 13px; }
-  .select__item {
-    color: #2c333d;
-    height: 30px;
-    font-size: 13px;
-    padding: 10px; }
-  .select-unActive {
-    border: 1px solid #e8e8e8; }
-    .select-unActive .select__header .innerText {
-      color: #8a939f; }
-    .select-unActive .select__item {
-      color: #2c333d; }
-
-.input, .textArea {
-  background: inherit;
-  border-radius: 3px;
-  border: 1px solid #c1c7d0;
-  box-sizing: border-box;
-  color: #2c333d;
-  display: block;
-  height: 30px;
-  font-size: 13px;
-  outline: none;
-  padding: 10px;
-  width: 100%; }
-  .input::-webkit-input-placeholder, .textArea::-webkit-input-placeholder {
-    color: #2c333d;
-    font: 400 normal 13px arial; }
-  .input:-moz-placeholder, .textArea:-moz-placeholder {
-    color: #2c333d;
-    font: 400 normal 13px arial; }
-
-.textArea {
-  height: 125px;
-  font-family: Arial;
-  resize: none;
-  width: 100%; }
-  .textArea-addComment {
-    border: 1px solid #e8e8e8; }
-
-.checkBox {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: #2c333d;
-  font-size: 13px; }
-  .checkBox input[type=checkbox] {
-    display: none; }
-    .checkBox input[type=checkbox]:checked + span.checkBox__input::before {
-      opacity: 1; }
-  .checkBox__input {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-    border: 1px solid #e8e8e8;
-    bottom: 1px;
-    height: 15px;
-    position: relative;
-    width: 15px; }
-    .checkBox__input::before {
-      content: '\2714';
-      color: #efb428;
-      opacity: 0;
-      position: absolute;
-      transition: opacity .3s; }
-  .checkBox__label {
-    margin-left: 5px; }
-
 .widgetsArea {
   min-width: calc((calc((1170px / 12) - 30px) * 4) + 30px * 3);
   width: calc((calc((1170px / 12) - 30px) * 4) + 30px * 3); }
@@ -1700,6 +1701,229 @@ button, input {
     .widget-interestingTopics .interestingTopics {
       max-height: calc(600px * 0.8);
       min-height: calc(600px * 0.8); }
+
+.disqusBlock {
+  margin-bottom: 90px; }
+  .disqusBlock__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 30px; }
+    .disqusBlock__header .disqusReviewResults {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 3px; }
+      .disqusBlock__header .disqusReviewResults__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid #c1c1c1;
+        border-bottom: 1px solid #c1c1c1;
+        border-left: 1px solid #c1c1c1;
+        color: #2c333d;
+        height: 35px;
+        padding: 0 20px;
+        transition: background .3s; }
+        .disqusBlock__header .disqusReviewResults__item:first-child {
+          border-radius: 3px 0 0 3px; }
+          .disqusBlock__header .disqusReviewResults__item:first-child:hover {
+            border-left: 1px solid #efb428; }
+        .disqusBlock__header .disqusReviewResults__item:last-child {
+          border-radius: 0 3px 3px 0;
+          border-right: 1px solid #c1c1c1; }
+        .disqusBlock__header .disqusReviewResults__item:hover {
+          border-color: transparent;
+          background: #efb428;
+          border-left: 1px solid white;
+          color: white;
+          cursor: pointer; }
+        .disqusBlock__header .disqusReviewResults__item span:first-child {
+          margin-right: 5px; }
+        .disqusBlock__header .disqusReviewResults__item-active {
+          border-color: transparent;
+          background: #efb428;
+          color: white; }
+    .disqusBlock__header .disqusLogin {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      .disqusBlock__header .disqusLogin:hover {
+        cursor: pointer; }
+      .disqusBlock__header .disqusLogin__icon {
+        margin-right: 8px;
+        position: relative;
+        transform: translateY(2px);
+        width: 20px; }
+        .disqusBlock__header .disqusLogin__icon::before {
+          content: attr(data-value);
+          color: #2c333d;
+          font-size: 8px;
+          font-weight: bold;
+          position: absolute;
+          top: 5px;
+          left: 50%;
+          transform: translateX(-50%); }
+      .disqusBlock__header .disqusLogin__text {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        .disqusBlock__header .disqusLogin__text .innerText {
+          margin-right: 10px; }
+  .disqusBlock__content .disqus__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0; }
+    .disqusBlock__content .disqus__header .userAction {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      .disqusBlock__content .disqus__header .userAction__item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 25px; }
+        .disqusBlock__content .disqus__header .userAction__item:first-child {
+          margin-right: 70px; }
+        .disqusBlock__content .disqus__header .userAction__item:last-child {
+          margin-right: 0; }
+        .disqusBlock__content .disqus__header .userAction__item span {
+          display: block; }
+        .disqusBlock__content .disqus__header .userAction__item .innerIcon {
+          margin-right: 5px;
+          width: 20px; }
+          .disqusBlock__content .disqus__header .userAction__item .innerIcon svg {
+            fill-rule: evenodd; }
+        .disqusBlock__content .disqus__header .userAction__item-recommended .innerIcon svg {
+          stroke: #fe434b;
+          fill: transparent; }
+        .disqusBlock__content .disqus__header .userAction__item-tweet .innerIcon svg {
+          fill: #4991bf; }
+        .disqusBlock__content .disqus__header .userAction__item-tweet .innerText {
+          color: #4991bf; }
+        .disqusBlock__content .disqus__header .userAction__item-fbook .innerIcon svg {
+          fill: #002fa6; }
+        .disqusBlock__content .disqus__header .userAction__item-fbook .innerText {
+          color: #002fa6; }
+    .disqusBlock__content .disqus__header .filter {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      .disqusBlock__content .disqus__header .filter__text {
+        margin-right: 10px; }
+  .disqusBlock__content .disqus__content .discussionBlock {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 25px; }
+    .disqusBlock__content .disqus__content .discussionBlock__avatar {
+      background: #c1c1c1;
+      border-radius: 3px;
+      height: 45px;
+      margin-right: 20px;
+      overflow: hidden;
+      position: relative;
+      width: 45px; }
+      .disqusBlock__content .disqus__content .discussionBlock__avatar img {
+        object-fit: cover;
+        height: 45px;
+        width: 45px; }
+      .disqusBlock__content .disqus__content .discussionBlock__avatar-johnDoe img {
+        bottom: 0;
+        left: 50%;
+        object-fit: initial;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 90%;
+        height: auto; }
+    .disqusBlock__content .disqus__content .discussionBlock__typeText {
+      height: 90px;
+      width: 100%; }
+      .disqusBlock__content .disqus__content .discussionBlock__typeText textarea {
+        height: 100%; }
+  .disqusBlock__content .disqus__content .loginBlock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    .disqusBlock__content .disqus__content .loginBlock__title {
+      margin-right: 15px; }
+    .disqusBlock__content .disqus__content .loginBlock__social {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: auto; }
+      .disqusBlock__content .disqus__content .loginBlock__social .innerIcon {
+        display: block;
+        margin-right: 10px;
+        width: 35px; }
+        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon:last-child {
+          margin-right: 0; }
+        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon svg {
+          fill-rule: evenodd; }
+        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon-tweet svg {
+          fill: #4991bf; }
+        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon-fbook svg {
+          fill: #002fa6; }
+        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon-g svg {
+          fill: #f65676; }
+        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon-d svg {
+          fill: #008dfc;
+          width: 37px; }
+    .disqusBlock__content .disqus__content .loginBlock__disqus {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      .disqusBlock__content .disqus__content .loginBlock__disqus > label {
+        margin-right: 15px;
+        white-space: nowrap; }
+      .disqusBlock__content .disqus__content .loginBlock__disqus > input {
+        width: 460px; }
+  .disqusBlock__content .disqus__content .separate {
+    background: #c1c1c1;
+    height: 1px;
+    margin: 60px 0;
+    position: relative;
+    width: 100%; }
+    .disqusBlock__content .disqus__content .separate::after {
+      background: white;
+      content: attr(data-text);
+      color: #c1c1c1;
+      font-size: 15px;
+      padding: 0 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -70%); }
+  .disqusBlock__content .disqus__footer .footerItems {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    .disqusBlock__content .disqus__footer .footerItems__item {
+      margin-right: 25px; }
+      .disqusBlock__content .disqus__footer .footerItems__item a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #2c333d;
+        text-decoration: none; }
+      .disqusBlock__content .disqus__footer .footerItems__item:last-child {
+        margin-right: 0;
+        margin-left: auto; }
+      .disqusBlock__content .disqus__footer .footerItems__item .innerIcon {
+        margin-right: 8px;
+        width: 15px; }
+        .disqusBlock__content .disqus__footer .footerItems__item .innerIcon svg {
+          fill: #c1c1c1; }
+      .disqusBlock__content .disqus__footer .footerItems__item-privacyPolicy .innerIcon {
+        width: 10px; }
+      .disqusBlock__content .disqus__footer .footerItems__item-disqusLogo a {
+        color: #8a939f;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        text-transform: uppercase; }
 
 .scrollwrapper, .mcontentwrapper {
   height: calc(440px * 0.8) !important; }
@@ -3813,19 +4037,23 @@ button, input {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        position: relative;
         transition: color .3s; }
+        #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__text::after {
+          content: '';
+          background: #efb428;
+          display: block;
+          height: 1px;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          transition: width .3s;
+          width: 0; }
         #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__text span {
+          margin-right: 5px;
           position: relative; }
-          #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__text span::after {
-            content: '';
-            background: #efb428;
-            display: block;
-            height: 1px;
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            transition: width .3s;
-            width: 0; }
+          #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle__text span:last-child {
+            margin-right: 0; }
       #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle:after {
         background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 20%, white 80%);
         content: '';
@@ -3839,7 +4067,7 @@ button, input {
         cursor: pointer; }
         #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle:hover .sparePartsContentTitle__text {
           color: #efb428; }
-          #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle:hover .sparePartsContentTitle__text span::after {
+          #ratingsPage .bestSpareParts__content .rating .sparePartsContentTitle:hover .sparePartsContentTitle__text::after {
             width: 100%; }
     #ratingsPage .bestSpareParts__content .rating .sparePartsElements a {
       text-decoration: none; }
