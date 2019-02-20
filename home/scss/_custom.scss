@@ -2404,6 +2404,9 @@ button, input {
                 fill: $borderColor;
               } // svg
             } // innerIcon
+            .innerText {
+              white-space: nowrap;
+            } // innerText
             &-privacyPolicy {
               .innerIcon {
                 width: 10px;
@@ -2423,6 +2426,43 @@ button, input {
       } // __footer
     } // disqus
   } // __content
+
+  // @MEDIA --------------------------------------
+  @media screen and ( max-width: 900px ) {
+    &__content {
+      .disqus {
+        &__content {
+          .loginBlock {
+            &__disqus {
+              & > input {
+                width: 200px;
+              } // input
+            } // __disqus
+          } // loginBlock
+        } // __conten
+        &__footer {
+          .footerItems {
+            @include flex(center, center);
+            flex-wrap: wrap;
+            &__item {
+              margin-right: 15px;
+              &:last-child {
+                margin-left: 0;
+              } // last-child
+              &-privacyPolicy {
+                margin-right: 0;
+              } // privacyPolice
+              &-disqusLogo {
+                margin-top: 20px;
+              } // -disqusLogo
+            } // __item
+          } // footerItems
+        } // __footer
+      } // disqus
+    } // __content
+  } // 1000
+  // =============================================
+
 } // disqusBlock
 // ===============================================
 

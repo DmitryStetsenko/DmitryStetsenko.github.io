@@ -207,6 +207,25 @@
         } // __item
       } // headerBlockContent
     } // __content
+
+    // @MEDIA ----------------------------------
+    @media screen and ( max-width: 940px ) {
+      &__thumbnail {
+        $imgSize: 120px;
+        height: $imgSize;
+        min-width: $imgSize;
+        width: $imgSize;
+      } // __thumbnail
+      &__content {
+        .headerBlockContent {
+          &__item {
+            padding: 15px 20px;
+          } // __item
+        } // headerBlockContent
+      } // __content
+    } // 940
+    // =========================================
+
   } // pageHeaderBlock
   // ===========================================
 
@@ -667,6 +686,17 @@
         width: initial;
       } // -showNotRated
     } // mainbtn
+
+    // @MEDIA ---------------------------------
+    @media screen and (max-width: 1140px) {
+      overflow: hidden;
+      position: relative;
+      &::after {
+        @include gradientBorderColor(white, 40px, 100%);
+      } // after
+    } // 1140
+    // ========================================
+
   } // ratingTableBlock
   // ===========================================
 
@@ -978,6 +1008,37 @@
         } // articleTab
       } // ratingPage
     } // magazine
+
+    // @MEDIA ----------------------------------
+    @media screen and ( max-width: 940px ) {
+      flex-direction: column;
+      .magazine {
+        width: 100%;
+        &-ratingsPage {
+          .articleTabs {
+            width: 100%;
+            a {
+              margin-right: 15px;
+              width: calc( ( 100% - 30px ) / 3 );
+              &:nth-child(3n) {
+                margin-right: 0;
+              };
+              .articleTab {
+                margin-right: 0;
+                width: 100%;
+              } // articleTab
+            } // a
+          } // a
+        } // ratingPage
+      } // magazine
+      .widgetsArea {
+        order: -1;
+        width: 100%;
+        margin-bottom: $blockTitleMarginBottom;
+      } // widgetsArea
+    } // 940px
+    // =========================================
+
   } // magazineBlock
   // ===========================================
 
