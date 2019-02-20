@@ -21,8 +21,6 @@ window.onload = function () {
 
     menuOpened ();
 
-    headerMenuScrollTo ();
-
     showPopAddReview ();
 
     showBrandRating ();
@@ -33,18 +31,22 @@ window.onload = function () {
 
     showAllCars ();
 
-
     showAllSEOText ();
 
     showAllFooterMenuItems ();
-
-    footerMenuScrollTo ();
 
     // sliderSpareParts ();
 
     sliderBrands ();
 
     closePopUpWindow ();
+
+    // rating page functions ----------------------------
+    showAdditInfo ('.additInfo', '.headerBlockContent__item');
+    tableHeaderClick ();
+    showNonRatingsBrand ();
+    scrollToSeoBlock ();
+    // ==================================================
 
     ////////////// function for responsive //////////////
 
@@ -330,34 +332,66 @@ window.onload = function () {
         } // for of
     } // showAllFooterMenuItems
 
-    function headerMenuScrollTo () {
-        const headerMenuTitle = document.querySelectorAll('.headerMenu__item-title .h4Title a');
-        let currentLinkHref;
-        for ( let currentTitle of headerMenuTitle) {
-            currentTitle.addEventListener('click', function(e){
-                e.preventDefault();
-                currentLinkHref = this.getAttribute('href');
-                scrollTo(currentLinkHref, 25);
-            });
-        }
-    } // headerMenuScrollTo
-
-    function footerMenuScrollTo () {
-        const footerMenuTitle = document.querySelectorAll('.footerMenu__item-title .h4Title a');
-        let currentLinkHref;
-        for ( let currentTitle of footerMenuTitle) {
-            currentTitle.addEventListener('click', function(e){
-                e.preventDefault();
-                currentLinkHref = this.getAttribute('href');
-                scrollTo(currentLinkHref, 25);
-            });
-        }
-    } // footerMenuScrollTo
-
     function initCustomScrollBar () {
         const scrollContainer = document.querySelector('.activityTape');
         fleXenv.fleXcrollMain(scrollContainer);
     } // initCustomScrollBar
+
+    // rating page functions ------------------------------------
+    function showAdditInfo (additInfoBtnSelector, additInfoParentBlockSelector) {
+        const additInfoBtn = document.querySelector(additInfoBtnSelector);
+        const parentBox = document.querySelector(additInfoParentBlockSelector);
+        const showAdditInfo = parentBox.querySelector('.showAdditInfo');
+        additInfoBtn.onmouseover = function() {
+            DOMAnimation.slideDown(showAdditInfo, 200);
+        };
+        additInfoBtn.onmouseout = function() {
+            DOMAnimation.slideUp(showAdditInfo, 200);
+        };
+    } // showAdditInfo
+    function tableHeaderClick () {
+        const tableHeaderItem = document.querySelectorAll('.tableHeaderItem');
+        const topDirectionClass = 'ratingDirection-top';
+        const bottomDirectionClass = 'ratingDirection-bottom';
+
+        Array.from(tableHeaderItem).forEach(function(currentHeaderItem){
+            currentHeaderItem.addEventListener('click', function(){
+                const ratingDirection = this.querySelector('.ratingDirection');
+                if (ratingDirection.classList.contains(topDirectionClass)) {
+                    ratingDirection.classList.remove(topDirectionClass);
+                    ratingDirection.classList.add(bottomDirectionClass);
+                } else {
+                    ratingDirection.classList.add(topDirectionClass);
+                    ratingDirection.classList.remove(bottomDirectionClass);
+                }
+            });
+        });
+    } // tableHeaderClick
+    function showNonRatingsBrand() {
+        const showNotRatedBtn = document.querySelector('.mainBtn-showNotRated');
+        const notShowRatingsBlock = document.querySelector('.tableRating-loading');
+        const showText = 'Показать производителей не участвующих в рейтинге';
+        const hideText = 'Скрыть производителей не участвующих в рейтинге';
+        let innerText;
+        let showStatus = false;
+
+        showNotRatedBtn.addEventListener('click', function(){
+            DOMAnimation.slideToggle(notShowRatingsBlock);
+            showStatus = !showStatus;
+            innerText = showStatus ? hideText : showText;
+            this.querySelector('.innerText').innerText = innerText;
+        });
+    } // showNonRatingsBrand
+    function scrollToSeoBlock(){
+        const showMoreBtn = document.querySelector('.showMoreBtn-descrBlock');
+        if ( showMoreBtn ) {
+            showMoreBtn.onclick = function(e) {
+                e.preventDefault();
+                scrollTo('#seo');
+            }
+        }
+    } // scrollToSeoBlock
+    // ==========================================================
 
 // secondary functions -------------------------------------------
     class DOMAnimation {
@@ -436,12 +470,10 @@ window.onload = function () {
         }
     }
 
-    function scrollTo (idElement, speed) {
+    function scrollTo (idElement, speed = 50) {
         const scrollElement = document.querySelector(idElement);
         let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
         let currentPos = pageYOffset;
-        console.log('posElem - ' + posElem);
-        console.log('currentPos' + currentPos);
         let scr = setInterval(function () {
             if ( currentPos > posElem ) {
                 currentPos -= speed;

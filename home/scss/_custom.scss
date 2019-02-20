@@ -331,6 +331,7 @@ button, input {
   display: block;
   font-size: 13px;
   transition: color .3s, border-color .3s;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
     color: $btnHoverColor;
@@ -2079,7 +2080,7 @@ button, input {
     //$maxHeight: 440px;
     $maxHeight: auto;
     //$maxHeightEventBlock: calc(#{$maxHeight} * 0.8);
-    $maxHeightEventBlock: auto;
+    $maxHeightEventBlock: initial;
 
     background: $widgetBackground;
     height: $maxHeight;

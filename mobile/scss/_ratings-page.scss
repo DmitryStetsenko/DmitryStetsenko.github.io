@@ -12,8 +12,8 @@
         &__item {
           @include flex(center, space-between);
           border-bottom: 1px solid $colorBorderLightGray;
-          overflow: hidden;
           padding: 20px 10px;
+          position: relative;
           &:last-child {
             border-bottom: none;
           } // last-child
@@ -25,17 +25,24 @@
             } // innerText
             .additInfo {
               $infoBlockSize: 14px;
+              $iconColor: $colorColName;
               @include flex(center, center);
 
-              background: $colorColName;
+              background: white;
               border-radius: 50%;
-              color: white;
-              font-size: 11px;
+              border: 1px solid $iconColor;
+              color: $iconColor;
+              font-size: 10px;
               position: absolute;
               right: -15px;
               top: -5px;
               height: $infoBlockSize;
               width: $infoBlockSize;
+              &:hover {
+                border-color: $colorYellow;
+                color: $colorYellow;
+                cursor: pointer;
+              } // hover
             } // additInfo
             &-description {
               color: $colorDarkGray;
@@ -111,6 +118,29 @@
               width: 100%;
             } // -description
           } // innerBlockContent
+          .showAdditInfo {
+            @include flex(center, flex-end);
+            color: white;
+            flex-direction: column-reverse;
+            position: absolute;
+            left: 0;
+            top: 5px;
+            transform: translateY(-100%);
+            width: 300px;
+            &::before {
+              @include drawTriangleBottom(10, 10, $colorGray);
+              content: '';
+              display: block;
+              transform: translateY(-1px);
+            } // before
+            &__innerText {
+              background: $colorGray;
+              border-radius: $mainBorderRadius;
+              font-size: 14px;
+              line-height: 1.2;
+              padding: 10px;
+            } // __innerText
+          } // showAdditInfo
           &-description {
             align-items: flex-start;
             flex-direction: column;
@@ -154,7 +184,6 @@
     .tableRating {
       display: table;
       border-collapse: collapse;
-      margin-bottom: 25px;
       tbody {
         display: table-row-group;
         vertical-align: middle;
@@ -177,7 +206,6 @@
         } // last-child
       } // th
       td {
-
       } // td
       &__header {
 
@@ -255,6 +283,17 @@
                 .voteRatioValue {
                   color: $colorGrayLoading;
                 } // voteRatioValue
+                &:hover {
+                  background: transparent;
+                  box-shadow: unset;
+                  color: white;
+                  transform: unset;
+                  .voteRatioIcon {
+                    svg {
+                      fill: $colorGrayLoading;
+                    } // svg
+                  } // voteRatioIcon
+                } // hover
                 &-positive {
                   border-color: $colorGrayLoading;
                   .voteRatioIcon {
@@ -277,13 +316,37 @@
           } // brandRatingInfo__vote
         } // -loading
       } // __row
+      &-loading {
+        display: none;
+        .tableRating__header {
+          .tableHeaderItem {
+            background: white;
+            border-top:none;
+            border-bottom:none;
+            height: 0;
+            margin: 0;
+            overflow:hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+          } // tableHeaderItem
+        } // tableRating__header
+      } // loading
     } // tableRating
     .tableHeaderItem {
       @include flex(center, flex-start);
-      flex-direction: column;
+      border: 1px solid transparent;
       color: white;
-      padding: 10px;
+      flex-direction: column;
+      padding: 10px 7px;
       text-align: center;
+      transition: border .2s;
+      &:hover {
+        border-color: $colorYellow;
+        cursor: pointer;
+        .tableHeaderItem__icon {
+          animation: rubberBand 1s;
+        } // icon
+      } // hover
       &__icon {
         $iconHeight: 24px;
         $iconPosY: 1px;
@@ -320,10 +383,10 @@
       } // __icon
       &__name {
         @include flex(flex-end, center);
-        white-space: nowrap;
         .innerText {
-          font-size: 13px;
-          margin-right: 10px;
+          font-size: 11px;
+          margin-right: 5px;
+          white-space: nowrap;
         } // innerText
         .ratingDirection {
           position:relative;
@@ -338,11 +401,19 @@
       } // __name
     } // tableHeaderItem
     .brandRatingInfo {
-      $ratingItemRowHeight: 60px;
+      $ratingItemRowHeight: 45px;
       @include flex(center, center);
       color: $colorDarkGray;
-      font-size: 16px;
+      font-size: 12px;
       height: $ratingItemRowHeight;
+      a {
+        @include flex(center, center);
+        color: inherit;
+        font-size: inherit;
+        height: 100%;
+        text-decoration: none;
+        width: 100%;
+      } // a
       &__index {
         @include flex(center, center);
         .growth {
@@ -390,7 +461,7 @@
           } // -isShow
         } // growth
         .index {
-          font-size: 20px;
+          font-size: 16px;
           font-weight: bold;
         } // index
       } // __index
@@ -403,19 +474,20 @@
       } // __loading
       &__manufacturer {
         @include flex(center, center);
+        flex-direction: column;
         .brandIcon {
           @include bgProp(no-repeat, center, contain);
           display: block;
-          height: 15px;
-          margin-right: 15px;
-          width: 40px;
+          height: 10px;
+          margin-bottom: 5px;
+          width: 30px;
         } // brandIcon
         .brandName {
-          font-size: 14px;
+          font-size: inherit;
         } // brandName
       } // __manufacturer
       &__rating {
-        $circleSize: 40px;
+        $circleSize: 32px;
         font-weight: bold;
         position: relative;
         width: $circleSize;
@@ -445,8 +517,8 @@
         } // svgWrap
         span {
           @include flex(center, center);
-          height: 40px;
-          width: 40px;
+          height: $circleSize;
+          width: $circleSize;
         } // span
       } // __rating
       &__review {
@@ -488,7 +560,7 @@
         } // ratingStarsBlock
       } // __averageRating
       &__vote {
-        padding: 0 20px;
+        padding: 0 10px;
         .voteValue {
           text-align: center;
           margin-bottom: 3px;
@@ -500,7 +572,12 @@
             @include flex(center, center);
             border-radius: $mainBorderRadius;
             border: 1px solid transparent;
-            padding: 5px 5px 5px 9px;
+            font-size: inherit;
+            padding: 3px;
+            transition: background .2s, transform .2s;
+            &:hover {
+              cursor: pointer;
+            } // hover
             .voteRatioValue {
               margin-right: 5px;
             } // voteRatioValue
@@ -515,15 +592,38 @@
                   fill: $colorRatingGreen;
                 } // svg
               } // voteRatioIcon
+              &:hover {
+                background: $colorRatingGreen;
+                box-shadow: 0 2px 0 darken($colorRatingGreen, 10);
+                color: white;
+                transform: translateY(-2px);
+                .voteRatioIcon {
+                  svg {
+                    fill: white;
+                  } // svg
+                } // voteRatioIcon
+              } // hover
             } // positive
             &-negative {
               border-color: $colorRatingRed;
               .voteRatioIcon {
+                transform: translateY(2px);
                 svg {
                   fill: $colorRatingRed;
                   transform: rotate(180deg);
                 } // svg
               } // voteRatioIcon
+              &:hover {
+                background: $colorRatingRed;
+                box-shadow: 0 2px 0 darken($colorRatingRed, 10);
+                color: white;
+                transform: translateY(-2px);
+                .voteRatioIcon {
+                  svg {
+                    fill: white;
+                  } // svg
+                } // voteRatioIcon
+              } // hover
             } // positive
           } // __review
         } // voteRatio
@@ -532,7 +632,13 @@
         background: $colorCellMarked;
       } // -marked
     } // brandRatingInfo
-
+    .mainBtn {
+      &-showNotRated {
+        margin: 30px auto 0 auto;
+        padding: 0 30px;
+        width: initial;
+      } // -showNotRated
+    } // mainbtn
   } // ratingTableBlock
   // ===========================================
 

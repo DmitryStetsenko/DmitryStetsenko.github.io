@@ -26,8 +26,9 @@
           border-right: 1px solid $colorBorderLightGray;
           flex-shrink: 1;
           max-height: 87px;
-          overflow: hidden;
+          //overflow: hidden;
           padding: 15px 40px;
+          position: relative;
           &:last-child {
             border-right: none;
           } // last-child
@@ -40,41 +41,30 @@
             } // innerText
             .additInfo {
               $infoBlockSize: 14px;
+              $iconColor: $colorColName;
               @include flex(center, center);
 
-              background: $colorColName;
+              background: white;
               border-radius: 50%;
-              color: white;
-              font-size: 11px;
+              border: 1px solid $iconColor;
+              color: $iconColor;
+              font-size: 10px;
               position: absolute;
               right: -15px;
               top: -5px;
               height: $infoBlockSize;
               width: $infoBlockSize;
+              &:hover {
+                border-color: $colorYellow;
+                color: $colorYellow;
+                cursor: pointer;
+              } // hover
             } // additInfo
             &-description {
               color: $colorDarkGray;
               font-weight: bold;
-              margin-bottom: 10px;
+              margin-bottom: 5px;
             } // -description
-            &-bestProperty {
-              $iconSize: 15px;
-              @include flex(center, center);
-              background: $colorGray;
-              margin-bottom: 0;
-              padding: 5px 0;
-              .innerIcon {
-                width: $iconSize;
-                margin-right: 8px;
-                svg {
-                  fill: $colorYellow;
-                } // svg
-              } // innerIcon
-              .innerTxt {
-                color: white;
-                font-size: 14px;
-              } // innerTxt
-            } // -bestProperty
           } // blockTitle
           .innerBlockContent {
             @include flex(center, center);
@@ -117,6 +107,8 @@
               color: $colorDarkGray;
               font-size: 13px;
               line-height: 17px;
+              max-height: 50px;
+              overflow: hidden;
             } // text
             &-description {
               max-width: 475px;
@@ -169,6 +161,29 @@
               } // propItem
             } // -bestProperty
           } // innerBlockContent
+          .showAdditInfo {
+            @include flex(center, flex-end);
+            color: white;
+            flex-direction: column-reverse;
+            position: absolute;
+            left: 0;
+            top: 5px;
+            transform: translateY(-100%);
+            width: 300px;
+            &::before {
+              @include drawTriangleBottom(10, 10, $colorGray);
+              content: '';
+              display: block;
+              transform: translateY(-1px);
+            } // before
+            &__innerText {
+              background: $colorGray;
+              border-radius: $mainBorderRadius;
+              font-size: 14px;
+              line-height: 1.2;
+              padding: 10px;
+            } // __innerText
+          } // showAdditInfo
           &-noBorder {
             border-right: none;
           } // -noBorder
@@ -176,6 +191,7 @@
             flex-shrink: 2;
             position: relative;
             padding-right: 0;
+            padding-bottom: 0;
             &::after {
               content: '';
               background: linear-gradient(to bottom,
@@ -200,7 +216,6 @@
     .tableRating {
       display: table;
       border-collapse: collapse;
-      margin-bottom: 25px;
       tbody {
         display: table-row-group;
         vertical-align: middle;
@@ -223,7 +238,6 @@
         } // last-child
       } // th
       td {
-
       } // td
       &__header {
 
@@ -301,6 +315,17 @@
                 .voteRatioValue {
                   color: $colorGrayLoading;
                 } // voteRatioValue
+                &:hover {
+                  background: transparent;
+                  box-shadow: unset;
+                  color: white;
+                  transform: unset;
+                  .voteRatioIcon {
+                    svg {
+                      fill: $colorGrayLoading;
+                    } // svg
+                  } // voteRatioIcon
+                } // hover
                 &-positive {
                   border-color: $colorGrayLoading;
                   .voteRatioIcon {
@@ -323,18 +348,37 @@
           } // brandRatingInfo__vote
         } // -loading
       } // __row
+      &-loading {
+        display: none;
+        .tableRating__header {
+          .tableHeaderItem {
+            background: white;
+            border-top:none;
+            border-bottom:none;
+            height: 0;
+            margin: 0;
+            overflow:hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+          } // tableHeaderItem
+        } // tableRating__header
+      } // loading
     } // tableRating
-    button {
-      margin: 0 auto;
-      padding: 0 30px;
-      width: initial;
-    } // button
     .tableHeaderItem {
       @include flex(center, flex-start);
-      flex-direction: column;
+      border: 1px solid transparent;
       color: white;
-      padding: 15px 17px;
+      flex-direction: column;
+      padding: 14px 16px;
       text-align: center;
+      transition: border .2s;
+      &:hover {
+        border-color: $colorYellow;
+        cursor: pointer;
+        .tableHeaderItem__icon {
+          animation: rubberBand 1s;
+        } // icon
+      } // hover
       &__icon {
         $iconHeight: 24px;
         $iconPosY: 1px;
@@ -393,6 +437,13 @@
       color: $colorDarkGray;
       font-size: 16px;
       height: $ratingItemRowHeight;
+      a {
+        @include flex(center, center);
+        color: inherit;
+        height: 100%;
+        text-decoration: none;
+        width: 100%;
+      } // a
       &__index {
         @include flex(center, center);
         .growth {
@@ -550,7 +601,12 @@
             @include flex(center, center);
             border-radius: $mainBorderRadius;
             border: 1px solid transparent;
+            font-size: inherit;
             padding: 5px 5px 5px 9px;
+            transition: background .2s, transform .2s;
+            &:hover {
+              cursor: pointer;
+            } // hover
             .voteRatioValue {
               margin-right: 5px;
             } // voteRatioValue
@@ -565,6 +621,17 @@
                   fill: $colorRatingGreen;
                 } // svg
               } // voteRatioIcon
+              &:hover {
+                background: $colorRatingGreen;
+                box-shadow: 0 2px 0 darken($colorRatingGreen, 10);
+                color: white;
+                transform: translateY(-2px);
+                .voteRatioIcon {
+                  svg {
+                    fill: white;
+                  } // svg
+                } // voteRatioIcon
+              } // hover
             } // positive
             &-negative {
               border-color: $colorRatingRed;
@@ -574,6 +641,17 @@
                   transform: rotate(180deg);
                 } // svg
               } // voteRatioIcon
+              &:hover {
+                background: $colorRatingRed;
+                box-shadow: 0 2px 0 darken($colorRatingRed, 10);
+                color: white;
+                transform: translateY(-2px);
+                .voteRatioIcon {
+                  svg {
+                    fill: white;
+                  } // svg
+                } // voteRatioIcon
+              } // hover
             } // positive
           } // __review
         } // voteRatio
@@ -582,6 +660,13 @@
         background: $colorCellMarked;
       } // -marked
     } // brandRatingInfo
+    .mainBtn {
+      &-showNotRated {
+        margin: 30px auto 0 auto;
+        padding: 0 30px;
+        width: initial;
+      } // -showNotRated
+    } // mainbtn
   } // ratingTableBlock
   // ===========================================
 

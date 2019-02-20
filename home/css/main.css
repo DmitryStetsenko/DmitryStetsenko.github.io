@@ -379,7 +379,8 @@ button, input {
   color: #2c333d;
   display: block;
   font-size: 13px;
-  transition: color .3s, border-color .3s; }
+  transition: color .3s, border-color .3s;
+  text-decoration: none; }
   .showMoreBtn:hover {
     cursor: pointer;
     color: #efb428;
@@ -1692,7 +1693,7 @@ button, input {
     .widget-activityTape .widget__header .headerTitle:after {
       display: none; }
     .widget-activityTape .activityTape {
-      max-height: auto; }
+      max-height: initial; }
   .widget-interestingTopics {
     height: 600px;
     overflow: hidden; }
@@ -3497,8 +3498,8 @@ button, input {
       border-right: 1px solid #e8e8e8;
       flex-shrink: 1;
       max-height: 87px;
-      overflow: hidden;
-      padding: 15px 40px; }
+      padding: 15px 40px;
+      position: relative; }
       #ratingsPage .pageHeaderBlock__content .headerBlockContent__item:last-child {
         border-right: none; }
       #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle {
@@ -3510,34 +3511,24 @@ button, input {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #8a939f;
+          background: white;
           border-radius: 50%;
-          color: white;
+          border: 1px solid #8a939f;
+          color: #8a939f;
           font-size: 11px;
           position: absolute;
           right: -15px;
           top: -5px;
           height: 14px;
           width: 14px; }
+          #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .additInfo:hover {
+            border-color: #efb428;
+            color: #efb428;
+            cursor: pointer; }
         #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-description {
           color: #2c333d;
           font-weight: bold;
-          margin-bottom: 10px; }
-        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #464f5b;
-          margin-bottom: 0;
-          padding: 5px 0; }
-          #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon {
-            width: 15px;
-            margin-right: 8px; }
-            #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon svg {
-              fill: #efb428; }
-          #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerTxt {
-            color: white;
-            font-size: 14px; }
+          margin-bottom: 5px; }
       #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
         display: flex;
         align-items: center;
@@ -3568,7 +3559,9 @@ button, input {
         #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__text {
           color: #2c333d;
           font-size: 13px;
-          line-height: 17px; }
+          line-height: 17px;
+          max-height: 50px;
+          overflow: hidden; }
         #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-description {
           max-width: 475px; }
         #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty {
@@ -3609,12 +3602,39 @@ button, input {
                     fill: #efb428; }
                   #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.lowRating {
                     fill: #e73e4e; }
+      #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: white;
+        flex-direction: column-reverse;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        transform: translateY(-100%);
+        width: 300px; }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo::before {
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 10px solid #464f5b;
+          content: '';
+          display: block;
+          transform: translateY(-1px); }
+        #ratingsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo__innerText {
+          background: #464f5b;
+          border-radius: 3px;
+          font-size: 14px;
+          line-height: 1.2;
+          padding: 10px; }
       #ratingsPage .pageHeaderBlock__content .headerBlockContent__item-noBorder {
         border-right: none; }
       #ratingsPage .pageHeaderBlock__content .headerBlockContent__item-description {
         flex-shrink: 2;
         position: relative;
-        padding-right: 0; }
+        padding-right: 0;
+        padding-bottom: 0; }
         #ratingsPage .pageHeaderBlock__content .headerBlockContent__item-description::after {
           content: '';
           background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 30%, white 100%);
@@ -3628,8 +3648,7 @@ button, input {
   margin-bottom: 60px; }
   #ratingsPage .ratingTableBlock .tableRating {
     display: table;
-    border-collapse: collapse;
-    margin-bottom: 25px; }
+    border-collapse: collapse; }
     #ratingsPage .ratingTableBlock .tableRating tbody {
       display: table-row-group;
       vertical-align: middle; }
@@ -3685,6 +3704,13 @@ button, input {
           color: #8a939f; }
         #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review .voteRatioValue {
           color: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review:hover {
+          background: transparent;
+          box-shadow: unset;
+          color: white;
+          transform: unset; }
+          #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review:hover .voteRatioIcon svg {
+            fill: #8a939f; }
         #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-positive {
           border-color: #8a939f; }
           #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-positive .voteRatioIcon svg {
@@ -3694,18 +3720,32 @@ button, input {
           #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-negative .voteRatioIcon svg {
             fill: #8a939f;
             transform: rotate(180deg); }
-  #ratingsPage .ratingTableBlock button {
-    margin: 0 auto;
-    padding: 0 30px;
-    width: initial; }
+    #ratingsPage .ratingTableBlock .tableRating-loading {
+      display: none; }
+      #ratingsPage .ratingTableBlock .tableRating-loading .tableRating__header .tableHeaderItem {
+        background: white;
+        border-top: none;
+        border-bottom: none;
+        height: 0;
+        margin: 0;
+        overflow: hidden;
+        padding-top: 0;
+        padding-bottom: 0; }
   #ratingsPage .ratingTableBlock .tableHeaderItem {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex-direction: column;
+    border: 1px solid transparent;
     color: white;
-    padding: 15px 17px;
-    text-align: center; }
+    flex-direction: column;
+    padding: 14px 16px;
+    text-align: center;
+    transition: border .2s; }
+    #ratingsPage .ratingTableBlock .tableHeaderItem:hover {
+      border-color: #efb428;
+      cursor: pointer; }
+      #ratingsPage .ratingTableBlock .tableHeaderItem:hover .tableHeaderItem__icon {
+        animation: rubberBand 1s; }
     #ratingsPage .ratingTableBlock .tableHeaderItem__icon {
       background-image: url(../img/rating_sprite.png);
       background-repeat: no-repeat;
@@ -3775,6 +3815,14 @@ button, input {
     color: #2c333d;
     font-size: 16px;
     height: 60px; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+      height: 100%;
+      text-decoration: none;
+      width: 100%; }
     #ratingsPage .ratingTableBlock .brandRatingInfo__index {
       display: flex;
       align-items: center;
@@ -3894,7 +3942,11 @@ button, input {
           justify-content: center;
           border-radius: 3px;
           border: 1px solid transparent;
-          padding: 5px 5px 5px 9px; }
+          font-size: inherit;
+          padding: 5px 5px 5px 9px;
+          transition: background .2s, transform .2s; }
+          #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review:hover {
+            cursor: pointer; }
           #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review .voteRatioValue {
             margin-right: 5px; }
           #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review .voteRatioIcon {
@@ -3904,13 +3956,31 @@ button, input {
             margin-right: 5px; }
             #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-positive .voteRatioIcon svg {
               fill: #7eae3e; }
+            #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-positive:hover {
+              background: #7eae3e;
+              box-shadow: 0 2px 0 #638831;
+              color: white;
+              transform: translateY(-2px); }
+              #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-positive:hover .voteRatioIcon svg {
+                fill: white; }
           #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-negative {
             border-color: #e73e4e; }
             #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-negative .voteRatioIcon svg {
               fill: #e73e4e;
               transform: rotate(180deg); }
+            #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-negative:hover {
+              background: #e73e4e;
+              box-shadow: 0 2px 0 #d71b2d;
+              color: white;
+              transform: translateY(-2px); }
+              #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-negative:hover .voteRatioIcon svg {
+                fill: white; }
     #ratingsPage .ratingTableBlock .brandRatingInfo-marked {
       background: #f2d58f; }
+  #ratingsPage .ratingTableBlock .mainBtn-showNotRated {
+    margin: 30px auto 0 auto;
+    padding: 0 30px;
+    width: initial; }
 
 #ratingsPage .bestSpareParts {
   margin-bottom: 60px; }

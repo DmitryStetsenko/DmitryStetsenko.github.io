@@ -32,12 +32,16 @@ window.onload = function () {
 
     showAllFooterMenuItems ();
 
+    // rating page functions ----------------------------
+    showAdditInfo ('.additInfo', '.headerBlockContent__item');
+    tableHeaderClick ();
+    showNonRatingsBrand ();
+    scrollToSeoBlock ();
+    // ==================================================
+
     // mobile -----------------------------------------
-
     sparePartsToggle ();
-
     brandsToggle ();
-
     // -------------------------------------------------
 
     function menuOpened () {
@@ -261,7 +265,6 @@ window.onload = function () {
         }
     } // showAllMagazineArticles
 
-
     function showAllSEOText () {
         const seoContentBlock = document.querySelector('.seoTexts');
         if (seoContentBlock) {
@@ -356,8 +359,63 @@ window.onload = function () {
         }
     } // initCustomScrollBar
 
-    // mobile --------------------------------------------------
+// rating page functions ------------------------------------
+    function showAdditInfo (additInfoBtnSelector, additInfoParentBlockSelector) {
+        const additInfoBtn = document.querySelector(additInfoBtnSelector);
+        const parentBox = document.querySelector(additInfoParentBlockSelector);
+        const showAdditInfo = parentBox.querySelector('.showAdditInfo');
+        additInfoBtn.onmouseover = function() {
+            DOMAnimation.slideDown(showAdditInfo, 200);
+        };
+        additInfoBtn.onmouseout = function() {
+            DOMAnimation.slideUp(showAdditInfo, 200);
+        };
+    } // showAdditInfo
+    function tableHeaderClick () {
+        const tableHeaderItem = document.querySelectorAll('.tableHeaderItem');
+        const topDirectionClass = 'ratingDirection-top';
+        const bottomDirectionClass = 'ratingDirection-bottom';
 
+        Array.from(tableHeaderItem).forEach(function(currentHeaderItem){
+            currentHeaderItem.addEventListener('click', function(){
+                const ratingDirection = this.querySelector('.ratingDirection');
+                if (ratingDirection.classList.contains(topDirectionClass)) {
+                    ratingDirection.classList.remove(topDirectionClass);
+                    ratingDirection.classList.add(bottomDirectionClass);
+                } else {
+                    ratingDirection.classList.add(topDirectionClass);
+                    ratingDirection.classList.remove(bottomDirectionClass);
+                }
+            });
+        });
+    } // tableHeaderClick
+    function showNonRatingsBrand() {
+        const showNotRatedBtn = document.querySelector('.mainBtn-showNotRated');
+        const notShowRatingsBlock = document.querySelector('.tableRating-loading');
+        const showText = 'Показать производителей не участвующих в рейтинге';
+        const hideText = 'Скрыть производителей не участвующих в рейтинге';
+        let innerText;
+        let showStatus = false;
+
+        showNotRatedBtn.addEventListener('click', function(){
+            DOMAnimation.slideToggle(notShowRatingsBlock);
+            showStatus = !showStatus;
+            innerText = showStatus ? hideText : showText;
+            this.querySelector('.innerText').innerText = innerText;
+        });
+    } // showNonRatingsBrand
+    function scrollToSeoBlock(){
+        const showMoreBtn = document.querySelector('.showMoreBtn-descrBlock');
+        if ( showMoreBtn ) {
+            showMoreBtn.onclick = function(e) {
+                e.preventDefault();
+                scrollTo('#seo');
+            }
+        }
+    } // scrollToSeoBlock
+    // ==========================================================
+
+    // mobile --------------------------------------------------
     function sparePartsToggle () {
         let sparePartsTitle = document.querySelectorAll('.sparePartsContentTitle');
 
@@ -380,7 +438,6 @@ window.onload = function () {
             });
         }
     } // sparePartsToggle
-
     function brandsToggle () {
         const TITLE_HEIGHT = 50;
         const BLOCK_HEIGHT = 322;
@@ -404,12 +461,86 @@ window.onload = function () {
     } // brandsToggle
 
     // secondary functions -------------------------------------------
-    function scrollTo (idElement, speed) {
+    class DOMAnimation {
+        /**
+         * hide element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideUp (element, duration = 500) {
+            element.style.height = element.offsetHeight + 'px';
+            element.style.transitionProperty = 'height, margin, padding';
+            element.style.transitionDuration = duration + 'ms';
+            element.offsetHeight;
+            element.style.overflow = 'hidden';
+            element.style.height = 0;
+            element.style.paddingTop = 0;
+            element.style.paddingBottom = 0;
+            element.style.marginTop = 0;
+            element.style.marginBottom = 0;
+            window.setTimeout(function(){
+                element.style.display = 'none';
+                element.style.removeProperty('height');
+                element.style.removeProperty('padding-top');
+                element.style.removeProperty('padding-bottom');
+                element.style.removeProperty('margin-top');
+                element.style.removeProperty('margin-bottom');
+                element.style.removeProperty('overflow');
+                element.style.removeProperty('transition-property');
+                element.style.removeProperty('transition-duration');
+            }, duration);
+        }
+        /**
+         * show element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideDown (element, duration = 500) {
+            element.style.removeProperty('display');
+            let display = window.getComputedStyle(element).display;
+            if ( display === 'none' ) display = 'block';
+            element.style.display = display;
+            let height = element.offsetHeight;
+            element.style.overflow = 'hidden';
+            element.style.height = 0;
+            element.style.paddingTop = 0;
+            element.style.paddingBottom = 0;
+            element.style.marginTop = 0;
+            element.style.marginBottom = 0;
+            element.offsetHeight;
+            element.style.transitionProperty = 'height, margin, padding';
+            element.style.transitionDuration = duration + 'ms';
+            element.style.height = height + 'px';
+            element.style.removeProperty('padding-top');
+            element.style.removeProperty('padding-bottom');
+            element.style.removeProperty('margin-top');
+            element.style.removeProperty('margin-bottom');
+            window.setTimeout(function(){
+                element.style.removeProperty('height');
+                element.style.removeProperty('overflow');
+                element.style.removeProperty('transition-property');
+                element.style.removeProperty('transition-duration');
+            }, duration);
+        }
+        /**
+         * toggle element
+         * @param {HTMLElement} element
+         * @param {Number} duration
+         */
+        static slideToggle (element, duration = 500) {
+            let display = getComputedStyle(element).display;
+            if (display === 'none') {
+                this.slideDown(element, duration);
+            } else {
+                this.slideUp(element, duration);
+            }
+        }
+    }
+
+    function scrollTo (idElement, speed = 50) {
         const scrollElement = document.querySelector(idElement);
         let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
         let currentPos = pageYOffset;
-        console.log('posElem - ' + posElem);
-        console.log('currentPos' + currentPos);
         let scr = setInterval(function () {
             if ( currentPos > posElem ) {
                 currentPos -= speed;
