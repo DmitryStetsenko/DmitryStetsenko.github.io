@@ -4107,17 +4107,17 @@ button, input {
       width: 100%;
       margin-bottom: 30px; } }
 
-#allRatings .searchBlock {
+#allRatingsPage .mainContent .searchBlock {
   margin-bottom: 30px;
   max-width: 400px; }
 
-#allRatings .ratingsBlock {
+#allRatingsPage .ratingsBlock {
   margin-bottom: 60px; }
-  #allRatings .ratingsBlock .header {
+  #allRatingsPage .ratingsBlock .header {
     display: flex;
     align-items: center;
     justify-content: flex-start; }
-    #allRatings .ratingsBlock .header__colTitle {
+    #allRatingsPage .ratingsBlock .header__colTitle {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -4125,65 +4125,65 @@ button, input {
       height: 65px;
       font-size: 14px;
       flex-basis: auto; }
-      #allRatings .ratingsBlock .header__colTitle-name {
+      #allRatingsPage .ratingsBlock .header__colTitle-name {
         width: 350px; }
-      #allRatings .ratingsBlock .header__colTitle-review {
+      #allRatingsPage .ratingsBlock .header__colTitle-review {
         width: 140px; }
-      #allRatings .ratingsBlock .header__colTitle-manufacturer {
+      #allRatingsPage .ratingsBlock .header__colTitle-manufacturer {
         width: 140px; }
-      #allRatings .ratingsBlock .header__colTitle-vote {
+      #allRatingsPage .ratingsBlock .header__colTitle-vote {
         width: 150px; }
-  #allRatings .ratingsBlock__content {
+  #allRatingsPage .ratingsBlock__content {
     margin-bottom: 40px; }
-    #allRatings .ratingsBlock__content .ratingList li {
+    #allRatingsPage .ratingsBlock__content .ratingList li {
       border: 1px solid transparent;
       height: 65px;
       padding: 10px;
       transition: border-color .3s; }
-      #allRatings .ratingsBlock__content .ratingList li:nth-child(odd) {
+      #allRatingsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
         background: #f6f6f6; }
-      #allRatings .ratingsBlock__content .ratingList li:hover {
+      #allRatingsPage .ratingsBlock__content .ratingList li:hover {
         cursor: pointer;
         border-color: #efb428; }
-        #allRatings .ratingsBlock__content .ratingList li:hover .ratingList__item .itemSell__text {
+        #allRatingsPage .ratingsBlock__content .ratingList li:hover .ratingList__item .itemSell__text {
           color: #efb428; }
-          #allRatings .ratingsBlock__content .ratingList li:hover .ratingList__item .itemSell__text::before {
+          #allRatingsPage .ratingsBlock__content .ratingList li:hover .ratingList__item .itemSell__text::before {
             width: 100%; }
-    #allRatings .ratingsBlock__content .ratingList__item {
+    #allRatingsPage .ratingsBlock__content .ratingList__item {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       color: #2c333d;
       height: 100%;
       text-decoration: none; }
-      #allRatings .ratingsBlock__content .ratingList__item .itemSell {
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell {
         display: flex;
         align-items: center;
         justify-content: center;
         border-right: 1px solid #c1c1c1;
         height: 100%; }
-        #allRatings .ratingsBlock__content .ratingList__item .itemSell:last-child {
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell:last-child {
           border-right: none; }
-        #allRatings .ratingsBlock__content .ratingList__item .itemSell__icon {
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon {
           border-radius: 3px;
           margin-right: 30px; }
-          #allRatings .ratingsBlock__content .ratingList__item .itemSell__icon-brakePads {
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-brakePads {
             background-position: 0;
             height: 45px;
             width: 60px; }
-          #allRatings .ratingsBlock__content .ratingList__item .itemSell__icon-sparkPlug {
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-sparkPlug {
             background-position: -60px;
             height: 45px;
             width: 60px; }
-          #allRatings .ratingsBlock__content .ratingList__item .itemSell__icon-fuelFilter {
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-fuelFilter {
             background-position: -120px;
             height: 45px;
             width: 60px; }
-        #allRatings .ratingsBlock__content .ratingList__item .itemSell__text {
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__text {
           font-size: 16px;
           position: relative;
           transition: color .3s; }
-          #allRatings .ratingsBlock__content .ratingList__item .itemSell__text::before {
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
             background: #efb428;
             bottom: -1px;
             content: '';
@@ -4193,27 +4193,27 @@ button, input {
             position: absolute;
             transition: width .3s;
             width: 0; }
-        #allRatings .ratingsBlock__content .ratingList__item .itemSell__mainValue {
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
           color: #2c333d;
           font-size: 20px; }
-          #allRatings .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
             content: attr(data-growth);
             font-size: 16px;
             margin-left: 5px; }
-          #allRatings .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
             color: #7eae3e; }
-          #allRatings .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
             color: #c1c1c1; }
-          #allRatings .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
             color: #7eae3e; }
-        #allRatings .ratingsBlock__content .ratingList__item .itemSell-name {
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-name {
           justify-content: flex-start;
           width: 340px; }
-        #allRatings .ratingsBlock__content .ratingList__item .itemSell-review {
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-review {
           width: 140px; }
-        #allRatings .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
           width: 140px; }
-        #allRatings .ratingsBlock__content .ratingList__item .itemSell-vote {
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-vote {
           width: 140px; }
 
 #sparePartsPage .pageHeaderBlock {

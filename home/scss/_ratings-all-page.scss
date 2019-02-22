@@ -1,10 +1,12 @@
-#allRatings {
+#allRatingsPage {
 
   // search block ---------------------------
-  .searchBlock {
-    margin-bottom: $blockTitleMarginBottom;
-    max-width: 400px;
-  } // searchBlock
+  .mainContent {
+    .searchBlock {
+      margin-bottom: $blockTitleMarginBottom;
+      max-width: 400px;
+    } // searchBlock
+  } // mainContent
   // ========================================
 
   // ratings block --------------------------
@@ -149,4 +151,4 @@
   // ========================================
 
 
-} // allRatings
+} // allRatingsPage

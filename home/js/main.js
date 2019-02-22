@@ -334,20 +334,24 @@ window.onload = function () {
 
     function initCustomScrollBar () {
         const scrollContainer = document.querySelector('.activityTape');
-        fleXenv.fleXcrollMain(scrollContainer);
+        if (scrollContainer) {
+            fleXenv.fleXcrollMain(scrollContainer);
+        }
     } // initCustomScrollBar
 
     // rating page functions ------------------------------------
     function showAdditInfo (additInfoBtnSelector, additInfoParentBlockSelector) {
         const additInfoBtn = document.querySelector(additInfoBtnSelector);
-        const parentBox = document.querySelector(additInfoParentBlockSelector);
-        const showAdditInfo = parentBox.querySelector('.showAdditInfo');
-        additInfoBtn.onmouseover = function() {
-            DOMAnimation.slideDown(showAdditInfo, 200);
-        };
-        additInfoBtn.onmouseout = function() {
-            DOMAnimation.slideUp(showAdditInfo, 200);
-        };
+        if ( additInfoBtn ) {
+            const parentBox = document.querySelector(additInfoParentBlockSelector);
+            const showAdditInfo = parentBox.querySelector('.showAdditInfo');
+            additInfoBtn.onmouseover = function() {
+                DOMAnimation.slideDown(showAdditInfo, 200);
+            };
+            additInfoBtn.onmouseout = function() {
+                DOMAnimation.slideUp(showAdditInfo, 200);
+            };
+        }
     } // showAdditInfo
     function tableHeaderClick () {
         const tableHeaderItem = document.querySelectorAll('.tableHeaderItem');
@@ -369,18 +373,20 @@ window.onload = function () {
     } // tableHeaderClick
     function showNonRatingsBrand() {
         const showNotRatedBtn = document.querySelector('.mainBtn-showNotRated');
-        const notShowRatingsBlock = document.querySelector('.tableRating-loading');
-        const showText = 'Показать производителей не участвующих в рейтинге';
-        const hideText = 'Скрыть производителей не участвующих в рейтинге';
-        let innerText;
-        let showStatus = false;
+        if ( showNotRatedBtn ) {
+            const notShowRatingsBlock = document.querySelector('.tableRating-loading');
+            const showText = 'Показать производителей не участвующих в рейтинге';
+            const hideText = 'Скрыть производителей не участвующих в рейтинге';
+            let innerText;
+            let showStatus = false;
 
-        showNotRatedBtn.addEventListener('click', function(){
-            DOMAnimation.slideToggle(notShowRatingsBlock);
-            showStatus = !showStatus;
-            innerText = showStatus ? hideText : showText;
-            this.querySelector('.innerText').innerText = innerText;
-        });
+            showNotRatedBtn.addEventListener('click', function(){
+                DOMAnimation.slideToggle(notShowRatingsBlock);
+                showStatus = !showStatus;
+                innerText = showStatus ? hideText : showText;
+                this.querySelector('.innerText').innerText = innerText;
+            });
+        }
     } // showNonRatingsBrand
     function scrollToSeoBlock(){
         const showMoreBtn = document.querySelector('.showMoreBtn-descrBlock');
@@ -544,72 +550,77 @@ window.onload = function () {
     let index = 1;
     let indexOffset = 3;
     let slidesIsShow = 4;
-    let Slider = function () {
-        this.box = document.querySelector('.sliderBox-spareParts');
-        this.slidesBox = this.box.querySelector('.mySlider');
-        this.slides = this.slidesBox.querySelectorAll('.slide');
-        this.btns = this.box.querySelectorAll('.sliderNavBlock__btn');
-        this.size = ((this.slidesBox.clientWidth + 25) / slidesIsShow).toFixed();
+    let isSlider = document.querySelector('.sliderBox-spareParts');
+    if ( isSlider ) {
+        let Slider = function () {
+            this.box = document.querySelector('.sliderBox-spareParts');
+            this.slidesBox = this.box.querySelector('.mySlider');
+            this.slides = this.slidesBox.querySelectorAll('.slide');
+            this.btns = this.box.querySelectorAll('.sliderNavBlock__btn');
+            this.size = ((this.slidesBox.clientWidth + 25) / slidesIsShow).toFixed();
 
-        this.slidesBox.style.width = this.size * this.slides.length + 'px';
+            this.slidesBox.style.width = this.size * this.slides.length + 'px';
 
-        this.position();
-        this.carousel();
-    };
-    Slider.prototype.position = function() {
-        let size = this.size;
-        this.slidesBox.style.transform = `translateX(-${size * ( index + indexOffset - 1 )}px)`;
-        console.log(index + indexOffset);
-        index += indexOffset - 1;
-    };
-    Slider.prototype.carousel = function() {
-        let i;
-        let max = this.btns.length;
-        let that = this;
+            this.position();
+            this.carousel();
+        };
 
-        for ( i = 0; i < max; i += 1 ) {
-            that.btns[i].addEventListener('click', Slider[that.btns[i].id].bind(null, that));
-        }
-    };
+        Slider.prototype.position = function() {
+            let size = this.size;
+            this.slidesBox.style.transform = `translateX(-${size * ( index + indexOffset - 1 )}px)`;
+            console.log(index + indexOffset);
+            index += indexOffset - 1;
+        };
+        Slider.prototype.carousel = function() {
+            let i;
+            let max = this.btns.length;
+            let that = this;
 
-    Slider.prev = function( box ){
-        let size = box.size;
-        index <= 0 ? false : index--;
-        box.slidesBox.style.transition = 'transform .3s ease-in-out';
-        box.slidesBox.style.transform = `translateX(-${size * ( index + indexOffset - 1)}px)`;
-    };
-
-    Slider.next = function( box ){
-        let max = box.slides.length;
-        let size = box.size;
-        (index + indexOffset) >= (max - 1) ? false : index++;
-        box.slidesBox.style.transition = 'transform .3s ease-in-out';
-        box.slidesBox.style.transform = `translateX(-${size * index}px)`;
-
-        box.jump();
-    };
-    Slider.prototype.jump = function() {
-        let that = this;
-        let size = this.size;
-        this.slidesBox.addEventListener('transitionend', function(){
-            if ( that.slides[index + indexOffset].classList.contains('lastClone') ) {
-                console.log(that.slides[index + indexOffset]);
-                console.log(`index - ${index}`);
-                console.log('last-slide:');
-                index = 0;
-                that.slidesBox.style.transition = 'none';
-                that.slidesBox.style.transform = `translateX(-${size * index}px)`;
-            } else {
-                console.log(that.slides[index + indexOffset]);
-                console.log(`index - ${index}`);
-                // that.slidesBox.style.transition = 'none';
-                // that.slidesBox.style.transform = `translateX(-${size * (index + ( indexOffset - 1 ))}px)`;
+            for ( i = 0; i < max; i += 1 ) {
+                that.btns[i].addEventListener('click', Slider[that.btns[i].id].bind(null, that));
             }
-        })
-    };
+        };
 
-    new Slider();
+        Slider.prev = function( box ){
+            let size = box.size;
+            index <= 0 ? false : index--;
+            box.slidesBox.style.transition = 'transform .3s ease-in-out';
+            box.slidesBox.style.transform = `translateX(-${size * ( index + indexOffset - 1)}px)`;
+        };
 
+        Slider.next = function( box ){
+            let max = box.slides.length;
+            let size = box.size;
+            (index + indexOffset) >= (max - 1) ? false : index++;
+            box.slidesBox.style.transition = 'transform .3s ease-in-out';
+            box.slidesBox.style.transform = `translateX(-${size * index}px)`;
+
+            box.jump();
+        };
+        Slider.prototype.jump = function() {
+            let that = this;
+            let size = this.size;
+            this.slidesBox.addEventListener('transitionend', function(){
+                if ( that.slides[index + indexOffset].classList.contains('lastClone') ) {
+                    console.log(that.slides[index + indexOffset]);
+                    console.log(`index - ${index}`);
+                    console.log('last-slide:');
+                    index = 0;
+                    that.slidesBox.style.transition = 'none';
+                    that.slidesBox.style.transform = `translateX(-${size * index}px)`;
+                } else {
+                    console.log(that.slides[index + indexOffset]);
+                    console.log(`index - ${index}`);
+                    // that.slidesBox.style.transition = 'none';
+                    // that.slidesBox.style.transform = `translateX(-${size * (index + ( indexOffset - 1 ))}px)`;
+                }
+            })
+        };
+
+        new Slider();
+
+
+    }
     function sliderSpareParts () {
         const sliderBlock = document.querySelector('.sliderBox-spareParts');
         let slidePosition;
