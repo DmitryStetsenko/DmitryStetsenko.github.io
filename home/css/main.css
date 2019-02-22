@@ -488,7 +488,10 @@ button, input {
 .starsIcon {
   display: block;
   width: 12px; }
+  .starsIcon:hover {
+    transform: scale(1.2); }
   .starsIcon svg {
+    display: block;
     fill: transparent;
     stroke-width: 3px;
     stroke: #7eae3e; }
@@ -1702,247 +1705,6 @@ button, input {
     .widget-interestingTopics .interestingTopics {
       max-height: calc(600px * 0.8);
       min-height: calc(600px * 0.8); }
-
-.disqusBlock {
-  margin-bottom: 90px; }
-  .disqusBlock__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #c1c1c1;
-    padding-bottom: 30px; }
-    .disqusBlock__header .disqusReviewResults {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      border-radius: 3px; }
-      .disqusBlock__header .disqusReviewResults__item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top: 1px solid #c1c1c1;
-        border-bottom: 1px solid #c1c1c1;
-        border-left: 1px solid #c1c1c1;
-        color: #2c333d;
-        height: 35px;
-        padding: 0 20px;
-        transition: background .3s; }
-        .disqusBlock__header .disqusReviewResults__item:first-child {
-          border-radius: 3px 0 0 3px; }
-          .disqusBlock__header .disqusReviewResults__item:first-child:hover {
-            border-left: 1px solid #efb428; }
-        .disqusBlock__header .disqusReviewResults__item:last-child {
-          border-radius: 0 3px 3px 0;
-          border-right: 1px solid #c1c1c1; }
-        .disqusBlock__header .disqusReviewResults__item:hover {
-          border-color: transparent;
-          background: #efb428;
-          border-left: 1px solid white;
-          color: white;
-          cursor: pointer; }
-        .disqusBlock__header .disqusReviewResults__item span:first-child {
-          margin-right: 5px; }
-        .disqusBlock__header .disqusReviewResults__item-active {
-          border-color: transparent;
-          background: #efb428;
-          color: white; }
-    .disqusBlock__header .disqusLogin {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; }
-      .disqusBlock__header .disqusLogin:hover {
-        cursor: pointer; }
-      .disqusBlock__header .disqusLogin__icon {
-        margin-right: 8px;
-        position: relative;
-        transform: translateY(2px);
-        width: 20px; }
-        .disqusBlock__header .disqusLogin__icon::before {
-          content: attr(data-value);
-          color: #2c333d;
-          font-size: 8px;
-          font-weight: bold;
-          position: absolute;
-          top: 5px;
-          left: 50%;
-          transform: translateX(-50%); }
-      .disqusBlock__header .disqusLogin__text {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start; }
-        .disqusBlock__header .disqusLogin__text .innerText {
-          margin-right: 10px; }
-  .disqusBlock__content .disqus__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0; }
-    .disqusBlock__content .disqus__header .userAction {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; }
-      .disqusBlock__content .disqus__header .userAction__item {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        margin-right: 25px; }
-        .disqusBlock__content .disqus__header .userAction__item:first-child {
-          margin-right: 70px; }
-        .disqusBlock__content .disqus__header .userAction__item:last-child {
-          margin-right: 0; }
-        .disqusBlock__content .disqus__header .userAction__item span {
-          display: block; }
-        .disqusBlock__content .disqus__header .userAction__item .innerIcon {
-          margin-right: 5px;
-          width: 20px; }
-          .disqusBlock__content .disqus__header .userAction__item .innerIcon svg {
-            fill-rule: evenodd; }
-        .disqusBlock__content .disqus__header .userAction__item-recommended .innerIcon svg {
-          stroke: #fe434b;
-          fill: transparent; }
-        .disqusBlock__content .disqus__header .userAction__item-tweet .innerIcon svg {
-          fill: #4991bf; }
-        .disqusBlock__content .disqus__header .userAction__item-tweet .innerText {
-          color: #4991bf; }
-        .disqusBlock__content .disqus__header .userAction__item-fbook .innerIcon svg {
-          fill: #002fa6; }
-        .disqusBlock__content .disqus__header .userAction__item-fbook .innerText {
-          color: #002fa6; }
-    .disqusBlock__content .disqus__header .filter {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; }
-      .disqusBlock__content .disqus__header .filter__text {
-        margin-right: 10px; }
-  .disqusBlock__content .disqus__content .discussionBlock {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-bottom: 25px; }
-    .disqusBlock__content .disqus__content .discussionBlock__avatar {
-      background: #c1c1c1;
-      border-radius: 3px;
-      height: 45px;
-      margin-right: 20px;
-      overflow: hidden;
-      position: relative;
-      width: 45px; }
-      .disqusBlock__content .disqus__content .discussionBlock__avatar img {
-        object-fit: cover;
-        height: 45px;
-        width: 45px; }
-      .disqusBlock__content .disqus__content .discussionBlock__avatar-johnDoe img {
-        bottom: 0;
-        left: 50%;
-        object-fit: initial;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 90%;
-        height: auto; }
-    .disqusBlock__content .disqus__content .discussionBlock__typeText {
-      height: 90px;
-      width: 100%; }
-      .disqusBlock__content .disqus__content .discussionBlock__typeText textarea {
-        height: 100%; }
-  .disqusBlock__content .disqus__content .loginBlock {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; }
-    .disqusBlock__content .disqus__content .loginBlock__title {
-      margin-right: 15px; }
-    .disqusBlock__content .disqus__content .loginBlock__social {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin-right: auto; }
-      .disqusBlock__content .disqus__content .loginBlock__social .innerIcon {
-        display: block;
-        margin-right: 10px;
-        width: 35px; }
-        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon:last-child {
-          margin-right: 0; }
-        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon svg {
-          fill-rule: evenodd; }
-        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon-tweet svg {
-          fill: #4991bf; }
-        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon-fbook svg {
-          fill: #002fa6; }
-        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon-g svg {
-          fill: #f65676; }
-        .disqusBlock__content .disqus__content .loginBlock__social .innerIcon-d svg {
-          fill: #008dfc;
-          width: 37px; }
-    .disqusBlock__content .disqus__content .loginBlock__disqus {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; }
-      .disqusBlock__content .disqus__content .loginBlock__disqus > label {
-        margin-right: 15px;
-        white-space: nowrap; }
-      .disqusBlock__content .disqus__content .loginBlock__disqus > input {
-        width: 460px; }
-  .disqusBlock__content .disqus__content .separate {
-    background: #c1c1c1;
-    height: 1px;
-    margin: 60px 0;
-    position: relative;
-    width: 100%; }
-    .disqusBlock__content .disqus__content .separate::after {
-      background: white;
-      content: attr(data-text);
-      color: #c1c1c1;
-      font-size: 15px;
-      padding: 0 15px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -70%); }
-  .disqusBlock__content .disqus__footer .footerItems {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; }
-    .disqusBlock__content .disqus__footer .footerItems__item {
-      margin-right: 25px; }
-      .disqusBlock__content .disqus__footer .footerItems__item a {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        color: #2c333d;
-        text-decoration: none; }
-      .disqusBlock__content .disqus__footer .footerItems__item:last-child {
-        margin-right: 0;
-        margin-left: auto; }
-      .disqusBlock__content .disqus__footer .footerItems__item .innerIcon {
-        margin-right: 8px;
-        width: 15px; }
-        .disqusBlock__content .disqus__footer .footerItems__item .innerIcon svg {
-          fill: #c1c1c1; }
-      .disqusBlock__content .disqus__footer .footerItems__item .innerText {
-        white-space: nowrap; }
-      .disqusBlock__content .disqus__footer .footerItems__item-privacyPolicy .innerIcon {
-        width: 10px; }
-      .disqusBlock__content .disqus__footer .footerItems__item-disqusLogo a {
-        color: #8a939f;
-        font-family: Arial, sans-serif;
-        font-size: 20px;
-        font-weight: 900;
-        text-transform: uppercase; }
-  @media screen and (max-width: 900px) {
-    .disqusBlock__content .disqus__content .loginBlock__disqus > input {
-      width: 200px; }
-    .disqusBlock__content .disqus__footer .footerItems {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap; }
-      .disqusBlock__content .disqus__footer .footerItems__item {
-        margin-right: 15px; }
-        .disqusBlock__content .disqus__footer .footerItems__item:last-child {
-          margin-left: 0; }
-        .disqusBlock__content .disqus__footer .footerItems__item-privacyPolicy {
-          margin-right: 0; }
-        .disqusBlock__content .disqus__footer .footerItems__item-disqusLogo {
-          margin-top: 20px; } }
 
 .scrollwrapper, .mcontentwrapper {
   height: calc(440px * 0.8) !important; }
@@ -3691,11 +3453,53 @@ button, input {
         border-right: none; }
     #ratingsPage .ratingTableBlock .tableRating__row {
       border-top: 2px solid white;
-      border-bottom: 2px solid white; }
+      border-bottom: 2px solid white;
+      position: relative; }
+      #ratingsPage .ratingTableBlock .tableRating__row:hover {
+        background-size: 30px 30px;
+        background-image: linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 50%, rgba(128, 128, 128, 0.1) 50%, rgba(128, 128, 128, 0.1) 75%, transparent 75%, transparent);
+        animation: barberpole .7s linear infinite; }
       #ratingsPage .ratingTableBlock .tableRating__row:nth-child(odd) {
         background: #f6f6f6; }
+        #ratingsPage .ratingTableBlock .tableRating__row:nth-child(odd):hover {
+          background-size: 30px 30px;
+          background-image: linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 50%, rgba(128, 128, 128, 0.1) 50%, rgba(128, 128, 128, 0.1) 75%, transparent 75%, transparent);
+          animation: barberpole .7s linear infinite; }
       #ratingsPage .ratingTableBlock .tableRating__row-loading {
         background: #f6f6f6; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__manufacturer .brandIcon {
+          opacity: 1; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__manufacturer .brandName {
+          color: #2c333d; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__review {
+          color: #2c333d; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__positive {
+          color: #2c333d; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__neutral {
+          color: #2c333d; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__negative {
+          color: #2c333d; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__averageRating .ratingValue {
+          color: #2c333d; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__averageRating .ratingStarsBlock__starsIcon svg.starsIcon {
+          stroke: #7eae3e; }
+          #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__averageRating .ratingStarsBlock__starsIcon svg.starsIcon-fill {
+            fill: #7eae3e; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__vote .voteValue {
+          color: #2c333d; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__vote .voteRatio__review .voteRatioValue {
+          color: #2c333d; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__vote .voteRatio__review:hover .voteRatioValue {
+          color: white; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__vote .voteRatio__review-positive {
+          border-color: #7eae3e; }
+          #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__vote .voteRatio__review-positive .voteRatioIcon svg {
+            fill: #7eae3e; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__vote .voteRatio__review-negative {
+          border-color: #e73e4e; }
+          #ratingsPage .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__vote .voteRatio__review-negative .voteRatioIcon svg {
+            fill: #e73e4e;
+            transform: rotate(180deg); }
         #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__index {
           display: none; }
         #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__loading {
@@ -3729,13 +3533,10 @@ button, input {
           color: #8a939f; }
         #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review .voteRatioValue {
           color: #8a939f; }
-        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review:hover {
-          background: transparent;
-          box-shadow: unset;
-          color: white;
-          transform: unset; }
-          #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review:hover .voteRatioIcon svg {
-            fill: #8a939f; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review:hover .voteRatioValue {
+          color: white; }
+        #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review:hover .voteRatioIcon svg {
+          fill: white; }
         #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-positive {
           border-color: #8a939f; }
           #ratingsPage .ratingTableBlock .tableRating__row-loading .brandRatingInfo__vote .voteRatio__review-positive .voteRatioIcon svg {
@@ -3763,14 +3564,17 @@ button, input {
     border: 1px solid transparent;
     color: white;
     flex-direction: column;
+    overflow: hidden;
     padding: 14px 16px;
+    position: relative;
     text-align: center;
     transition: border .2s; }
     #ratingsPage .ratingTableBlock .tableHeaderItem:hover {
+      cursor: pointer;
       border-color: #efb428;
-      cursor: pointer; }
-      #ratingsPage .ratingTableBlock .tableHeaderItem:hover .tableHeaderItem__icon {
-        animation: rubberBand 1s; }
+      background-size: 30px 30px;
+      background-image: linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 50%, rgba(128, 128, 128, 0.1) 50%, rgba(128, 128, 128, 0.1) 75%, transparent 75%, transparent);
+      animation: barberpole .7s linear infinite; }
     #ratingsPage .ratingTableBlock .tableHeaderItem__icon {
       background-image: url(../img/rating_sprite.png);
       background-repeat: no-repeat;
@@ -3932,6 +3736,15 @@ button, input {
         justify-content: center;
         height: 40px;
         width: 40px; }
+    #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating:hover {
+      cursor: pointer; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating:hover .ratingValue {
+        text-shadow: 0 -1px 0 #2c333d;
+        color: #2c333d; }
+      #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating:hover .ratingStarsBlock__starsIcon svg.starsIcon {
+        stroke: #7eae3e; }
+        #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating:hover .ratingStarsBlock__starsIcon svg.starsIcon-fill {
+          fill: #7eae3e; }
     #ratingsPage .ratingTableBlock .brandRatingInfo__averageRating .ratingValue {
       margin-bottom: 3px;
       text-align: center; }
@@ -3983,6 +3796,7 @@ button, input {
               fill: #7eae3e; }
             #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-positive:hover {
               background: #7eae3e;
+              border-color: #7eae3e;
               box-shadow: 0 2px 0 #638831;
               color: white;
               transform: translateY(-2px); }
@@ -3995,6 +3809,7 @@ button, input {
               transform: rotate(180deg); }
             #ratingsPage .ratingTableBlock .brandRatingInfo__vote .voteRatio__review-negative:hover {
               background: #e73e4e;
+              border-color: #e73e4e;
               box-shadow: 0 2px 0 #d71b2d;
               color: white;
               transform: translateY(-2px); }

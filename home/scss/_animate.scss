@@ -277,3 +277,54 @@
   from { background-position: 0 0; }
   to   { background-position: 60px 30px; }
 }
+
+//// 1 variant
+//@keyframes forTableTh {
+//  from {
+//    left: -30px;
+//    width: 0;
+//  }
+//  50% {
+//    width: 150%;
+//    left: -30px;
+//  }
+//  to {
+//    left: 120%;
+//  }
+//} // forTableTh
+
+// 2 variant
+//@keyframes forTableTh {
+//  from {
+//    width: 0;
+//  }
+//  50% {
+//    width: 100%;
+//  }
+//  to {
+//    width: 0;
+//  }
+//} // forTableTh
+
+//// 3 variant
+//@keyframes forTableTh {
+//  from {
+//    left: 0;
+//    width: 0;
+//  }
+//  25% {
+//    left: 0;
+//    width: 100%;
+//  }
+//  50% {
+//    left: 100%;
+//    width: 100%;
+//  }
+//  75% {
+//    left: 0;
+//    width: 100%;
+//  }
+//  to {
+//    width: 0;
+//  }
+//} // forTableTh

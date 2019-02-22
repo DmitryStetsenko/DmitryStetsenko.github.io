@@ -264,11 +264,93 @@
       &__row {
         border-top: 2px solid white;
         border-bottom: 2px solid white;
+        position: relative;
+        &:hover {
+          background-size: 30px 30px;
+          background-image: linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 50%, rgba(128, 128, 128, 0.1) 50%, rgba(128, 128, 128, 0.1) 75%, transparent 75%, transparent);
+          animation: barberpole .7s linear infinite;
+        } // hover
         &:nth-child(odd) {
           background: $colorBgLightGray;
+          &:hover {
+            background-size: 30px 30px;
+            background-image: linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 50%, rgba(128, 128, 128, 0.1) 50%, rgba(128, 128, 128, 0.1) 75%, transparent 75%, transparent);
+            animation: barberpole .7s linear infinite;
+          }
         } // nth-child(odd)
         &-loading {
           background: $colorBgLightGray;
+          &:hover {
+            .brandRatingInfo__manufacturer {
+              .brandIcon {
+                opacity: 1;
+              } // brandIcon
+              .brandName {
+                color: $colorDarkGray;
+              } // brandName
+            } // brandRatingInfo__manufacturer
+            .brandRatingInfo__review {
+              color: $colorDarkGray;
+            } // brandRatingInfo__review
+            .brandRatingInfo__positive {
+              color: $colorDarkGray;
+            } // brandRatingInfo__positive
+            .brandRatingInfo__neutral {
+              color: $colorDarkGray;
+            } // brandRatingInfo__neutral
+            .brandRatingInfo__negative {
+              color: $colorDarkGray;
+            } // brandRatingInfo__negative
+            .brandRatingInfo__averageRating {
+              .ratingValue {
+                color: $colorDarkGray;
+              } // ratingValue
+              .ratingStarsBlock {
+                &__starsIcon {
+                  svg.starsIcon {
+                    stroke: $colorRatingGreen;
+                    &-fill {
+                      fill: $colorRatingGreen;
+                    } // -fill
+                  } // starsIcon
+                } // starsIcon
+              } // ratingStarsBlock
+            } // brandRatingInfo__averageRating
+            .brandRatingInfo__vote {
+              .voteValue {
+                color: $colorDarkGray;
+              }
+              .voteRatio {
+                &__review {
+                  .voteRatioValue {
+                    color: $colorDarkGray;
+                  } // voteRatioValue
+                  &:hover {
+                    .voteRatioValue {
+                      color: white;
+                    } // voteRatioValue
+                  } // hover
+                  &-positive {
+                    border-color: $colorRatingGreen;
+                    .voteRatioIcon {
+                      svg {
+                        fill: $colorRatingGreen;
+                      } // svg
+                    } // voteRatioIcon
+                  } // positive
+                  &-negative {
+                    border-color: $colorRatingRed;
+                    .voteRatioIcon {
+                      svg {
+                        fill: $colorRatingRed;
+                        transform: rotate(180deg);
+                      } // svg
+                    } // voteRatioIcon
+                  } // positive
+                } // __review
+              } // voteRatio
+            } // brandRatingInfo__vote
+          } // hover
           .brandRatingInfo__index {
             display: none;
           } // brandRatingInfo__index
@@ -335,13 +417,12 @@
                   color: $colorGrayLoading;
                 } // voteRatioValue
                 &:hover {
-                  background: transparent;
-                  box-shadow: unset;
-                  color: white;
-                  transform: unset;
+                  .voteRatioValue {
+                    color: white;
+                  } // voteRatioValue
                   .voteRatioIcon {
                     svg {
-                      fill: $colorGrayLoading;
+                      fill: white;
                     } // svg
                   } // voteRatioIcon
                 } // hover
@@ -388,15 +469,17 @@
       border: 1px solid transparent;
       color: white;
       flex-direction: column;
+      overflow: hidden;
       padding: 14px 16px;
+      position: relative;
       text-align: center;
       transition: border .2s;
       &:hover {
-        border-color: $colorYellow;
         cursor: pointer;
-        .tableHeaderItem__icon {
-          animation: rubberBand 1s;
-        } // icon
+        border-color: $colorYellow;
+        background-size: 30px 30px;
+        background-image: linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 50%, rgba(128, 128, 128, 0.1) 50%, rgba(128, 128, 128, 0.1) 75%, transparent 75%, transparent);
+        animation: barberpole .7s linear infinite;
       } // hover
       &__icon {
         $iconHeight: 24px;
@@ -578,6 +661,23 @@
       &__neutral {} // __neutral
       &__negative {} // __negative
       &__averageRating {
+        &:hover {
+          cursor: pointer;
+          .ratingValue {
+            text-shadow: 0 -1px 0 #2c333d;
+            color: $colorDarkGray;
+          } // ratingValue
+          .ratingStarsBlock {
+            &__starsIcon {
+              svg.starsIcon {
+                stroke: $colorRatingGreen;
+                &-fill {
+                  fill: $colorRatingGreen;
+                } // -fill
+              } // starsIcon
+            } // starsIcon
+          } // ratingStarsBlock
+        } // hover
         .ratingValue {
           margin-bottom: 3px;
           text-align: center;
@@ -642,6 +742,7 @@
               } // voteRatioIcon
               &:hover {
                 background: $colorRatingGreen;
+                border-color: $colorRatingGreen;
                 box-shadow: 0 2px 0 darken($colorRatingGreen, 10);
                 color: white;
                 transform: translateY(-2px);
@@ -662,6 +763,7 @@
               } // voteRatioIcon
               &:hover {
                 background: $colorRatingRed;
+                border-color: $colorRatingRed;
                 box-shadow: 0 2px 0 darken($colorRatingRed, 10);
                 color: white;
                 transform: translateY(-2px);
@@ -1041,8 +1143,6 @@
 
   } // magazineBlock
   // ===========================================
-
-
 
 } // ratingsPage
 
