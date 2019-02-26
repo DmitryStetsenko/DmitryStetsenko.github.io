@@ -326,6 +326,59 @@ button, input {
     .mainBtn-widgetBtn:hover {
       background: #efb428;
       color: white; }
+  .mainBtn-search {
+    background: white;
+    box-shadow: unset;
+    border: 1px solid #efb428;
+    color: #efb428;
+    height: 30px;
+    padding: 0 25px; }
+    .mainBtn-search .cssIcon {
+      display: block;
+      height: 12px;
+      margin-right: 10px;
+      position: relative;
+      width: 12px; }
+      .mainBtn-search .cssIcon-search {
+        height: 12px;
+        width: 12px; }
+      .mainBtn-search .cssIcon__part {
+        display: block;
+        position: absolute; }
+        .mainBtn-search .cssIcon__part-circle {
+          border-radius: 50%;
+          border: 1px solid #efb428;
+          height: 10px;
+          top: 0;
+          left: 0;
+          width: 10px; }
+        .mainBtn-search .cssIcon__part-knob {
+          background: #efb428;
+          left: 8px;
+          transform: rotate(45deg);
+          top: 10px;
+          height: 1px;
+          width: 5px; }
+    .mainBtn-search:hover {
+      background: #efb428;
+      color: white; }
+      .mainBtn-search:hover::before {
+        display: none; }
+      .mainBtn-search:hover .cssIcon__part-circle {
+        border: 1px solid white; }
+      .mainBtn-search:hover .cssIcon__part-knob {
+        background: white; }
+  .mainBtn-darkStyle {
+    background: #464f5b;
+    box-shadow: unset;
+    color: white;
+    height: 30px; }
+    .mainBtn-darkStyle .innerIcon {
+      display: block;
+      margin-right: 10px;
+      width: 15px; }
+      .mainBtn-darkStyle .innerIcon svg {
+        fill: #efb428; }
 
 .filterBtn {
   display: flex;
@@ -1666,7 +1719,8 @@ button, input {
     overflow-y: scroll;
     padding-right: 10px; }
     .widget .widgetContent .interestingTopics::-webkit-scrollbar {
-      width: 13px; }
+      width: 13px;
+      height: 13px; }
     .widget .widgetContent .interestingTopics::-webkit-scrollbar-track {
       border-radius: 3px;
       background: #e8e8e8; }
@@ -1919,7 +1973,7 @@ button, input {
 
 .siteHeaderSection {
   background: #2c333d;
-  margin-bottom: 48px;
+  margin-bottom: 15px;
   padding: 15px 0;
   width: 100%; }
 
@@ -2137,6 +2191,25 @@ button, input {
     margin-right: auto; }
   .siteHeaderSection .mainBtn-addReview {
     margin: 0 auto; } }
+
+.breadCrumbsSection {
+  margin-bottom: 30px; }
+
+.breadCrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .breadCrumbs__item {
+    color: #c1c1c1;
+    font-size: 13px;
+    text-decoration: none; }
+    .breadCrumbs__item[href]::after {
+      content: '\2192';
+      font-size: 18px;
+      margin: 0 10px;
+      transform: translateY(-1px); }
+    .breadCrumbs__item[href]:hover {
+      color: #464f5b; }
 
 .spareParts {
   margin-bottom: 60px; }
@@ -3854,7 +3927,8 @@ button, input {
         min-height: 370px;
         height: 370px; }
         #ratingsPage .bestSpareParts__content .selectBrand__brandList::-webkit-scrollbar {
-          width: 13px; }
+          width: 13px;
+          height: 13px; }
         #ratingsPage .bestSpareParts__content .selectBrand__brandList::-webkit-scrollbar-track {
           border-radius: 3px;
           background: #e8e8e8; }
@@ -4108,11 +4182,21 @@ button, input {
       margin-bottom: 30px; } }
 
 #allRatingsPage .mainContent .searchBlock {
-  margin-bottom: 30px;
-  max-width: 400px; }
+  margin-bottom: 30px; }
+  #allRatingsPage .mainContent .searchBlock__input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    #allRatingsPage .mainContent .searchBlock__input > input {
+      margin-right: 20px;
+      max-width: 400px; }
 
 #allRatingsPage .ratingsBlock {
   margin-bottom: 60px; }
+  #allRatingsPage .ratingsBlock__contentScrollBox {
+    margin-bottom: 40px; }
+  #allRatingsPage .ratingsBlock__mainContent {
+    width: 1140px; }
   #allRatingsPage .ratingsBlock .header {
     display: flex;
     align-items: center;
@@ -4123,98 +4207,146 @@ button, input {
       justify-content: center;
       color: #8a939f;
       height: 65px;
-      font-size: 14px;
+      font-size: 13px;
       flex-basis: auto; }
       #allRatingsPage .ratingsBlock .header__colTitle-name {
-        width: 350px; }
+        width: 330px; }
       #allRatingsPage .ratingsBlock .header__colTitle-review {
-        width: 140px; }
+        width: 100px; }
       #allRatingsPage .ratingsBlock .header__colTitle-manufacturer {
-        width: 140px; }
+        width: 100px; }
       #allRatingsPage .ratingsBlock .header__colTitle-vote {
-        width: 150px; }
-  #allRatingsPage .ratingsBlock__content {
-    margin-bottom: 40px; }
-    #allRatingsPage .ratingsBlock__content .ratingList li {
-      border: 1px solid transparent;
-      height: 65px;
-      padding: 10px;
-      transition: border-color .3s; }
-      #allRatingsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
-        background: #f6f6f6; }
-      #allRatingsPage .ratingsBlock__content .ratingList li:hover {
-        cursor: pointer;
-        border-color: #efb428; }
-        #allRatingsPage .ratingsBlock__content .ratingList li:hover .ratingList__item .itemSell__text {
-          color: #efb428; }
-          #allRatingsPage .ratingsBlock__content .ratingList li:hover .ratingList__item .itemSell__text::before {
-            width: 100%; }
-    #allRatingsPage .ratingsBlock__content .ratingList__item {
+        width: 100px; }
+      #allRatingsPage .ratingsBlock .header__colTitle-page {
+        width: 250px; }
+      #allRatingsPage .ratingsBlock .header__colTitle-addReview {
+        width: 250px; }
+  #allRatingsPage .ratingsBlock__content .ratingList li {
+    border: 1px solid transparent;
+    height: 65px;
+    padding: 10px;
+    transition: border-color .3s; }
+    #allRatingsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
+      background: #f6f6f6; }
+    #allRatingsPage .ratingsBlock__content .ratingList li:hover {
+      cursor: pointer;
+      border-color: #efb428; }
+  #allRatingsPage .ratingsBlock__content .ratingList__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #2c333d;
+    height: 100%;
+    text-decoration: none; }
+    #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      color: #2c333d;
-      height: 100%;
-      text-decoration: none; }
-      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-right: 1px solid #c1c1c1;
-        height: 100%; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell:last-child {
-          border-right: none; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon {
-          border-radius: 3px;
-          margin-right: 30px; }
-          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-brakePads {
-            background-position: 0;
-            height: 45px;
-            width: 60px; }
-          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-sparkPlug {
-            background-position: -60px;
-            height: 45px;
-            width: 60px; }
-          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-fuelFilter {
-            background-position: -120px;
-            height: 45px;
-            width: 60px; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__text {
+      justify-content: center;
+      border-right: 1px solid #c1c1c1;
+      flex-basis: auto;
+      height: 100%; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell:last-child {
+        border-right: none; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon {
+        border-radius: 3px;
+        margin-right: 15px; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-brakePads {
+          background-position: 0;
+          height: 45px;
+          width: 60px; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-sparkPlug {
+          background-position: -60px;
+          height: 45px;
+          width: 60px; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__icon-fuelFilter {
+          background-position: -120px;
+          height: 45px;
+          width: 60px; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__text {
+        font-size: 16px;
+        position: relative;
+        transition: color .3s; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
+          background: #efb428;
+          bottom: -1px;
+          content: '';
+          display: block;
+          height: 1px;
+          left: 0;
+          position: absolute;
+          transition: width .3s;
+          width: 0; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
+        color: #2c333d;
+        font-size: 20px; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
+          content: attr(data-growth);
           font-size: 16px;
-          position: relative;
-          transition: color .3s; }
-          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
-            background: #efb428;
-            bottom: -1px;
-            content: '';
-            display: block;
-            height: 1px;
-            left: 0;
-            position: absolute;
-            transition: width .3s;
-            width: 0; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
-          color: #2c333d;
-          font-size: 20px; }
-          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
-            content: attr(data-growth);
-            font-size: 16px;
-            margin-left: 5px; }
-          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
-            color: #7eae3e; }
-          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
-            color: #c1c1c1; }
-          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
-            color: #7eae3e; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-name {
-          justify-content: flex-start;
-          width: 340px; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-review {
-          width: 140px; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
-          width: 140px; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-vote {
-          width: 140px; }
+          margin-left: 5px; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
+          color: #7eae3e; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
+          color: #c1c1c1; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
+          color: #7eae3e; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        color: #2c333d;
+        justify-content: flex-start;
+        text-decoration: none;
+        min-width: 320px;
+        width: 320px; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 100px;
+        width: 100px; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 100px;
+        width: 100px; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-vote {
+        min-width: 100px;
+        width: 100px; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-page {
+        padding: 0 20px;
+        min-width: 250px;
+        width: 250px; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-page a {
+          font-size: 14px;
+          min-width: 210px;
+          text-decoration: none;
+          width: 210px;
+          white-space: nowrap; }
+      #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        padding: 0 20px;
+        min-width: 250px;
+        width: 250px; }
+        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          font-size: 14px;
+          min-width: 210px;
+          text-decoration: none;
+          width: 210px;
+          white-space: nowrap; }
+  @media screen and (max-width: 1140px) {
+    #allRatingsPage .ratingsBlock__contentScrollBox {
+      overflow-x: scroll;
+      /* Track */
+      /* Handle */
+      /* Handle on hover */ }
+      #allRatingsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar {
+        width: 13px;
+        height: 13px; }
+      #allRatingsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-track {
+        border-radius: 3px;
+        background: #e8e8e8; }
+      #allRatingsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-thumb {
+        background: #efb428;
+        border-radius: 10px; }
+      #allRatingsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-thumb:hover {
+        background: #555; }
+    #allRatingsPage .ratingsBlock__mainContent {
+      margin-bottom: 10px; } }
 
 #sparePartsPage .pageHeaderBlock {
   display: flex;

@@ -267,6 +267,81 @@ button, input {
       color: white;
     } // hover
   } // widgetBtn
+  &-search {
+    $btnHeight: 30px;
+    $iconSize: 12px;
+    $iconColor: $colorYellow;
+    background: white;
+    box-shadow: unset;
+    border: 1px solid $colorYellow;
+    color: $colorYellow;
+    height: 30px;
+    padding: 0 25px;
+    .cssIcon {
+      display: block;
+      height: $iconSize;
+      margin-right: 10px;
+      position: relative;
+      width: $iconSize;
+      &-search {
+        height: $iconSize;
+        width: $iconSize;
+      } // -search
+      &__part {
+        display: block;
+        position: absolute;
+        &-circle {
+          border-radius: 50%;
+          border: 1px solid $iconColor;
+          height: 10px;
+          top: 0;
+          left: 0;
+          width: 10px;
+        } // -circle
+        &-knob {
+          background: $iconColor;
+          left: 8px;
+          transform: rotate(45deg);
+          top: 10px;
+          height: 1px;
+          width: 5px;
+        } // -knob
+      } // __part
+    } // cssIcon
+    &:hover {
+      &::before {
+        display: none;
+      } // before
+      background: $colorYellow;
+      color: white;
+      $iconColor: white;
+      .cssIcon {
+        &__part {
+          &-circle {
+            border: 1px solid $iconColor;
+          } // -circle
+          &-knob {
+            background: $iconColor;
+          } // -knob
+        } // __part
+      } // cssIcon
+    } // hover
+  } // search
+  &-darkStyle {
+    $iconSize: 15px;
+    background: $colorGray;
+    box-shadow: unset;
+    color: white;
+    height: 30px;
+    .innerIcon {
+      display: block;
+      margin-right: 10px;
+      width: $iconSize;
+      svg {
+        fill: $colorYellow;
+      } // svg
+    } // innerIcon
+  } // -darkStyle
 } // mainBtn
 
 .filterBtn {

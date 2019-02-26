@@ -8,7 +8,7 @@
 
 .siteHeaderSection {
   background: $colorDarkGray;
-  margin-bottom: 48px;
+  margin-bottom: $mainHeaderMarginBottom;
   padding: $headerPadding;
   width: 100%;
 } // siteHeader
@@ -294,6 +294,29 @@
     } // mainBtn
   } // siteHeaderSection
 } // 850
+// ==========================================
+
+// breadCrumbs ------------------------------
+.breadCrumbsSection {
+  margin-bottom: $breadCrumbsMarginBottom;
+} // breadCrumbsSection
+.breadCrumbs {
+  @include flex(center, flex-start);
+  &__item {
+    color: $colorLightGray;
+    font-size: 13px;
+    text-decoration: none;
+    &[href]::after{
+      content: '\2192';
+      font-size: 18px;
+      margin: 0 10px;
+      transform: translateY(-1px);
+    } // &[href]
+    &[href]:hover {
+      color: $colorGray;
+    } // &[href]:hover
+  } // __item
+} // breadCrumbs
 // ==========================================
 
 // Spare parts ------------------------------
