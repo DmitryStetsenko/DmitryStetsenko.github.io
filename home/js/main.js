@@ -48,6 +48,13 @@ window.onload = function () {
     scrollToSeoBlock ();
     // ==================================================
 
+    // spare-parts function -------------------------------------
+    scrollToReviewBlock ();
+    showRatingSpareParts ();
+    showMoreManufacturer ();
+    // ==========================================================
+
+
     ////////////// function for responsive //////////////
 
     /////////////////////////////////////////////////////
@@ -397,6 +404,71 @@ window.onload = function () {
             }
         }
     } // scrollToSeoBlock
+    // ==========================================================
+
+    // spare-parts function -------------------------------------
+    function scrollToReviewBlock() {
+        const link = document.querySelector('#scrollToReviewBlock');
+        if (link) {
+            link.onclick = function(e) {
+                e.preventDefault();
+                scrollTo ('#reviewBlock');
+            };
+        }
+    } // scrollToReviewBlock
+    function showRatingSpareParts () {
+        let sparePartsElements = document.querySelectorAll('.ratingListElement');
+        if ( sparePartsElements ) {
+            sparePartsElements = Array.prototype.slice.call(sparePartsElements);
+
+            sparePartsElements.forEach(function(currentElem) {
+                let currentRatingElem = currentElem.querySelector('.ratingListElement__item-rating');
+                let spanRatingElement = currentRatingElem.querySelector('span');
+                let currentRating = parseInt( currentRatingElem.getAttribute('data-count') );
+                let persentValue = parseInt( RATING_STROKE_LENGTH - RATING_STROKE_LENGTH * currentRating / 100 );
+                let svg = currentRatingElem.querySelector('path:last-child');
+                for ( let i = 0; i <= currentRating; i++ ) {
+                    setTimeout(()=>{
+                        spanRatingElement.innerText = i;
+                    }, i * 7);
+                }
+
+                svg.style.strokeDashoffset = persentValue;
+                switch ( true ) {
+                    case ( currentRating < 34 ) : {
+                        svg.style.stroke = RATING_COLOR_RED;
+                        break;
+                    }
+                    case ( currentRating >= 34 && currentRating < 67 ) : {
+                        svg.style.stroke = RATING_COLOR_YELLOW;
+                        break;
+                    }
+
+                    case ( currentRating >= 67 && currentRating <= 100 ) : {
+                        svg.style.stroke = RATING_COLOR_GREEN;
+                        break;
+                    }
+                }
+            });
+        }
+    } // showRatingSpareParts
+    function showMoreManufacturer () {
+        const showMoreBtn = document.querySelector('#showMoreManufacturer');
+        let isShow = false;
+        const btnText = showMoreBtn.innerText;
+
+        if ( showMoreBtn ) {
+            showMoreBtn.onclick = function(){
+                const showMoreBox = this.parentNode.querySelector('.showThisBlock');
+                isShow = !isShow;
+                DOMAnimation.slideToggle(showMoreBox);
+                this.innerText = btnText;
+                if (isShow) {
+                    this.innerText = 'Скрыть';
+                }
+            };
+        }
+    } // showMoreManufacturer
     // ==========================================================
 
 // secondary functions -------------------------------------------

@@ -1891,130 +1891,187 @@ button, input {
   } // __header
   .widgetContent {
     .ratingList {
-      &__items {
-        margin-top: -30px;
-      } // __items
-      &__item {
-        $rowHeight: 90px;
-        $brandWidth: 50px;
-        $brandHeight: 20px;
-        border-bottom: 1px solid $widgetBorderColor;
-        &:last-child {
-          border-bottom: none;
-        } // last-child
+      .ratingListContent {
+        border-radius: $mainBorderRadius;
+        border: 1px solid $colorLightGray;
+        margin-bottom: 30px;
+        width: 100%;
+      } // ratingListContent
+      .ratingListContentTitle {
+        align-items: center;
+        color: $colorDarkGray;
+        display: flex;
+        justify-content: flex-start;
+        height: 50px;
+        overflow: hidden;
+        padding: 0 15px;
+        position: relative;
+        text-decoration: none;
+        white-space: nowrap;
+        &__img {
+          margin-right: 10px;
+          width: 25px;
+          svg {
+            path {
+              fill: transparent;
+              fill-rule: evenodd;
+              stroke: $colorDarkGray;
+            } // path
+          } // img
+        } // img
+        &__text {
+          transition: color .3s;
+          span {
+            position: relative;
+            &::after {
+              content: '';
+              background: $colorYellow;
+              display: block;
+              height: 1px;
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              transition: width .3s;
+              width: 0;
+            } // after
+          } // span
+        } // __text
+        &:after {
+          background: linear-gradient(to right,
+                  rgba(255, 255, 255, 0) 0,
+                  white 80%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px;
+        } // after
+        &:hover {
+          cursor: pointer;
+          .ratingListContentTitle__text {
+            color: $colorYellow;
+            span {
+              &::after {
+                width: 100%;
+              } // after
+            } // span
+          } // ratingListContentTitle__text
+        } // hover
+      } // ratingListContentTitle
+      .ratingListElements {
         a {
-          @include flex(center, space-between);
-          color: $colorDarkGray;
-          height: $rowHeight;
-          font-size: 14px;
-          position: relative;
           text-decoration: none;
-          &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            background-size: 30px 30px;
-            background-image: linear-gradient(45deg, rgba(gray, 0.1) 25%,
-                    transparent 25%, transparent 50%,
-                    rgba(gray, 0.1) 50%, rgba(gray, 0.1) 75%,
-                    transparent 75%, transparent );
-            animation: barberpole .7s linear infinite;
-          } // before
-          &:hover {
-            &::before {
-              opacity: 1;
-            } // before
-            .infoBlock {
-              &__title {
-                span {
-                  color: $colorYellow;
-                  &::before {
-                    width: 100%;
-                  } // before
-                } // span
-              } // __title
-              &__feedBack {
-                .feedBack {
-                  svg {
-                    fill: $colorRatingGreen;
-                  } // svg
-                  &::after {
-                    content: attr(data-value);
-                    color: $colorDarkGray;
-                    font-size: 12px;
-                    margin-right: 15px;
-                  } // after
-                } // feedBack
-              } // __feedBack
-            } // infoBlock
-          } // hover
-          .count {
-            color: $colorCountTxt;
-            font-size: 16px;
-            font-weight: bold;
-            padding-right: 15px;
-          } // count
-          .brandLogo {
-            height: $brandHeight;
-            min-width: $brandWidth;
-            width: $brandWidth;
-          } // brandLogo
-          .infoBlock {
-            padding: 0 15px;
-            &__title {
-              @include flex(flex-start, flex-start);
-              flex-direction: column;
-              margin-bottom: 15px;
-              span {
-                position: relative;
-                transition: color .3s;
-                &::before {
-                  @include makeUnderline($colorYellow, -1px);
-                } // before
-                &:last-child {
-                  margin-top: 5px;
-                } // last-child
-              } // span
-            } // __title
-            &__feedBack {
-              @include flex(center, flex-start);
-              .feedBack {
-                &:last-child {
-                  &::after {
-                    margin-right: 0;
-                  } // after
-                } // last-child
-                svg {
-                  transition: fill .3s;
-                  fill: $colorCountTxt;
-                } // svg
-                &::after {
-                  content: attr(data-value);
-                  color: $colorDarkGray;
-                  font-size: 12px;
-                  margin-right: 15px;
-                } // after
-                &-users {
-                  svg {
-                    width: 12px;
-                  } // svg
-                } // -users
-                &-voted {
-                  svg {
-                    width: 8px;
-                  } // svg
-                } // -voted
-              } // feedBack
-            } // __feedBack
-          } // infoBlock
         } // a
-      } // __item
+      } // ratingListElements
+      .ratingListElement {
+        align-items: center;
+        border-top: 1px solid $colorLightGray;
+        color: $colorDarkGray;
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+        position: relative;
+        &::after {
+          border-radius: 3px;
+          border: 1px solid transparent;
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          top: -1px;
+          left: -1px;
+          width: 100%;
+          z-index:1;
+        } // after
+        &:hover {
+          cursor: pointer;
+          &::after {
+            border-color: $colorRatingYellow;
+          } // after
+        } // hover
+        &__item {
+          align-items: center;
+          border-right: 1px solid $colorLightGray;
+          display: flex;
+          font-size: 16px;
+          justify-content: center;
+          height: 100%;
+          &:last-child {
+            border-right: none;
+          } // last-child
+          &-count {
+            $ratingListElementCountWidth: 30px;
+            background: $colorCountBg;
+            color: $colorCountTxt;
+            font-weight: bold;
+            min-width: $ratingListElementCountWidth;
+            width: $ratingListElementCountWidth;
+          } // __count
+          &-brandImg {
+            background: $colorBgLightGray;
+            border-right: none;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding-left: 7px;
+            width: 100%;
+            .imgWrap {
+              height: 17px;
+            } // imgWrap
+            img {
+              height: 100%;
+              width: auto;
+            } // img
+          } // __brandImg
+          &-brandText {
+            $ratingListElementBrandTextWidth: 80px;
+
+            background: $colorBgLightGray;
+            justify-content: flex-start;
+            min-width: $ratingListElementBrandTextWidth;
+            overflow: hidden;
+            padding-left: 7px;
+            position: relative;
+            width: $ratingListElementBrandTextWidth;
+            white-space: nowrap;
+            &::after {
+              @include gradientBorderColor($colorBgLightGray, 20px, 80%);
+            } // after
+          } // __brandText
+          &-rating {
+            font-size: 13px;
+            font-weight: bold;
+            $ratingListElementRatingWidth: 67px;
+            min-width: $ratingListElementRatingWidth;
+            position: relative;
+            width: $ratingListElementRatingWidth;
+            &>.svgWrap {
+              min-height: 36px;
+              min-width: 36px;
+              position: absolute;
+              height: 36px;
+              width: 36px;
+              @include absPosCenter();
+              .svgRatingCircle {
+                height: auto;
+                width: 100%;
+                &>path {
+                  fill: transparent;
+                  stroke-width:3;
+                  stroke-linecap:round;
+                  stroke-linejoin:round;
+                  stroke-dasharray: 114px;
+                  transition: stroke-dashoffset 1s;
+                  &.static {
+                    stroke: $colorBgLightGray;
+                  } // dynamic
+                } // path
+              } // svgRatingCircle
+            } // svgWrap
+          } // __rating
+        } // __item
+      } // ratingListElement
     } // ratingList
     .carInfoFilter {
       &__selectBlock {

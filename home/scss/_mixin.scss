@@ -5,8 +5,7 @@
 }
 
 @mixin textStroke($strokeColor) {
-  text-shadow:
-          -0   -1px 1px $strokeColor,
+  text-shadow: 1px 1px 0 $strokeColor, -1px -1px 0 $strokeColor;
 }
 
 @mixin banTxtSelect () {
@@ -164,6 +163,18 @@
   content: '';
   display: block;
   height: 1px;
+  left: 0;
+  position: absolute;
+  transition: width .3s;
+  width: 0;
+}
+
+@mixin makeUnderlineHeight ($color, $height, $bottomPos) {
+  background: $color;
+  bottom: $bottomPos;
+  content: '';
+  display: block;
+  height: $height;
   left: 0;
   position: absolute;
   transition: width .3s;

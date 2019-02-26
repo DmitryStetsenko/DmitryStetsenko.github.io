@@ -26,7 +26,7 @@
           border-right: 1px solid $colorBorderLightGray;
           flex-shrink: 1;
           max-height: 87px;
-          overflow: hidden;
+          position: relative;
           padding: 15px 40px;
           &:last-child {
             border-right: none;
@@ -36,21 +36,43 @@
             color: $colorColName;
             font-size: 14px;
             position: relative;
+            text-align: center;
             .innerText {
+              position: relative;
+              &-link {
+                color: $colorColName;
+                text-decoration: none;
+                &::before {
+                  @include makeUnderline($colorYellow, -1px);
+                } // before
+                &:hover {
+                  color: $colorYellow;
+                  &::before {
+                    width: 100%;
+                  } // before
+                } // hover
+              } // link
             } // innerText
             .additInfo {
               $infoBlockSize: 14px;
+              $iconColor: $colorColName;
               @include flex(center, center);
 
-              background: $colorColName;
+              background: white;
               border-radius: 50%;
-              color: white;
-              font-size: 11px;
+              border: 1px solid $iconColor;
+              color: $iconColor;
+              font-size: 10px;
               position: absolute;
               right: -15px;
               top: -5px;
               height: $infoBlockSize;
               width: $infoBlockSize;
+              &:hover {
+                border-color: $colorYellow;
+                color: $colorYellow;
+                cursor: pointer;
+              } // hover
             } // additInfo
             &-description {
               color: $colorDarkGray;
@@ -123,7 +145,38 @@
             } // -description
             &-bestProperty {
               background: $colorBgLightGray;
-              padding: 11px 0;
+              a {
+                display: block;
+                padding: 11px 0;
+                position: relative;
+                text-decoration: none;
+                &:before {
+                  @include makeUnderlineHeight(rgba($colorDarkGray, .1), 4px, 0);
+                } // before
+                &:last-child {
+                  .propItem {
+                    border-right: none;
+                  } // propitem
+                } // last-child
+                &:hover {
+                  &::before {
+                    width: 100%;
+                  } // before
+                  .propItem {
+                    &__rating {
+                      .brandName {
+                      } // brandName
+                      .brandRating {
+                        &__value {
+                        } // __value
+                        &__starIcon {
+                          transform: rotateY(180deg) scale(1.2) translateY(-1px);
+                        } // __starIcon
+                      } // brandRating
+                    } // __rating
+                  } // propItem;
+                } // hover
+              } // a
               .propItem {
                 $propItemWidth: 160px;
                 @include flex(center, center);
@@ -131,9 +184,6 @@
                 flex-direction: column;
                 color: $colorDarkGray;
                 width: 160px;
-                &:last-child {
-                  border-right: none;
-                } // last-child
                 &__title {
                   font-size: 13px;
                   margin-bottom: 3px;
@@ -151,6 +201,7 @@
                       margin-right: 5px;
                     } // __value
                     &__starIcon {
+                      transition: transform .3s;
                       width: 12px;
                       svg {
                         &.topRating {
@@ -169,6 +220,29 @@
               } // propItem
             } // -bestProperty
           } // innerBlockContent
+          .showAdditInfo {
+            @include flex(center, flex-end);
+            color: white;
+            flex-direction: column-reverse;
+            position: absolute;
+            left: 0;
+            top: 5px;
+            transform: translateY(-100%);
+            width: 300px;
+            &::before {
+              @include drawTriangleBottom(10, 10, $colorGray);
+              content: '';
+              display: block;
+              transform: translateY(-1px);
+            } // before
+            &__innerText {
+              background: $colorGray;
+              border-radius: $mainBorderRadius;
+              font-size: 14px;
+              line-height: 1.2;
+              padding: 10px;
+            } // __innerText
+          } // showAdditInfo
           &-noBorder {
             border-right: none;
           } // -noBorder
@@ -219,9 +293,24 @@
         $contentWidth: 100%;
         $gutterBlock: 15px;
         $itemWidth: calc( ( #{$contentWidth} - ( #{$gutterBlock * 3} ) ) / 4 );
+        display: block;
         margin-bottom: $gutterBlock;
         margin-right: $gutterBlock;
+        text-decoration: none;
         width: $itemWidth;
+        &:hover {
+          cursor: pointer;
+          .brandData {
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+            transform: translateY(-4px);
+            &__title {
+              color: $colorYellow;
+              &::before {
+                width: 100%;
+              } // before
+            } // __title
+          } // brandData
+        } // hover
         &:nth-child(4n) {
           margin-right: 0;
         } // nth-child(4n)
@@ -230,11 +319,18 @@
           border-radius: $mainBorderRadius;
           color: $colorDarkGray;
           padding: 25px 20px;
+          transition: transform .5s, box-shadow .5s;
           width: 100%;
           &__title {
+            display: inline-block;
             font-size: 18px;
             text-align: center;
             margin-bottom: $blockTitleMarginBottom;
+            position: relative;
+            transition: color .3s;
+            &::before {
+              @include makeUnderline($colorYellow, -1px);
+            } // before
           } // __title
           &__content {
             @include flex(center, space-between);
