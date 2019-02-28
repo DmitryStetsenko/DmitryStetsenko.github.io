@@ -2,9 +2,9 @@
 
 window.onload = function () {
     const RATING_STROKE_LENGTH = 114,
-          RATING_COLOR_GREEN = '#7eae3e',
-          RATING_COLOR_YELLOW = '#efb428',
-          RATING_COLOR_RED = '#e73e4e';
+        RATING_COLOR_GREEN = '#7eae3e',
+        RATING_COLOR_YELLOW = '#efb428',
+        RATING_COLOR_RED = '#e73e4e';
 
     // const SCREEN_MAX_WIDTH = document.querySelector('.wrapper').clientWidth;
     const SCREEN_MAX_WIDTH = 1170;
@@ -15,43 +15,45 @@ window.onload = function () {
 
     // common function
 
-    initCustomScrollBar ();
+    initCustomScrollBar();
 
-    headerSearch ();
+    headerSearch();
 
-    menuOpened ();
+    menuOpened();
 
-    showPopAddReview ();
+    showPopAddReview();
 
-    showBrandRating ();
+    showBrandRating();
 
-    showStarRating ();
+    showStarRating();
 
-    showReviewDiagram ();
+    showReviewDiagram();
 
-    showAllCars ();
+    showAllCars();
 
-    showAllSEOText ();
+    showAllSEOText();
 
-    showAllFooterMenuItems ();
+    showAllFooterMenuItems();
 
     // sliderSpareParts ();
 
-    sliderBrands ();
+    sliderBrands();
 
-    closePopUpWindow ();
+    closePopUpWindow();
 
     // rating page functions ----------------------------
-    showAdditInfo ('.additInfo', '.headerBlockContent__item');
-    tableHeaderClick ();
-    showNonRatingsBrand ();
-    scrollToSeoBlock ();
+    showAdditInfo('.additInfo', '.headerBlockContent__item');
+    tableHeaderClick();
+    showNonRatingsBrand();
+    scrollToSeoBlock();
     // ==================================================
 
     // spare-parts function -------------------------------------
-    scrollToReviewBlock ();
-    showRatingSpareParts ();
-    showMoreManufacturer ();
+    scrollToReviewBlock();
+    showRatingSpareParts();
+    showMoreManufacturer();
+    replacePageHeaderBlockImgOfResponsive();
+    manufacturerBlockResponsive();
     // ==========================================================
 
 
@@ -60,12 +62,12 @@ window.onload = function () {
     /////////////////////////////////////////////////////
 
     // -------------------------------------------------
-    function headerSearch () {
+    function headerSearch() {
         const searchBtn = document.querySelector('.iconBtn-search');
         const searchInput = document.querySelector('#headerFormSearch');
         const searchBox = searchInput.parentNode;
 
-        searchBtn.addEventListener('click', function(){
+        searchBtn.addEventListener('click', function () {
             const inputSatus = searchBtn.getAttribute('data-status');
             const searchBlockParam = {
                 display: 'none',
@@ -74,7 +76,7 @@ window.onload = function () {
                 status: 'close'
             };
 
-            if ( inputSatus === 'close' ) {
+            if (inputSatus === 'close') {
                 searchBlockParam.display = 'block';
                 searchBlockParam.opacity = '1';
                 searchBlockParam.height = '63px';
@@ -83,9 +85,9 @@ window.onload = function () {
                 searchBox.style.display = searchBlockParam.display;
                 searchBtn.setAttribute('data-status', searchBlockParam.status);
                 searchBtn.classList.add('iconBtn-showMarker');
-                setTimeout(()=>{
+                setTimeout(() => {
                     searchBox.style.opacity = searchBlockParam.opacity;
-                },500);
+                }, 500);
 
             } else {
                 searchBlockParam.display = 'none';
@@ -96,52 +98,52 @@ window.onload = function () {
                 searchBox.style.opacity = searchBlockParam.opacity;
                 searchBtn.setAttribute('data-status', searchBlockParam.status);
                 searchBtn.classList.remove('iconBtn-showMarker');
-                setTimeout(()=>{
+                setTimeout(() => {
                     searchBox.removeAttribute('style');
-                },500);
+                }, 500);
             }
 
 
         });
     } // headerSearch
 
-    function menuOpened () {
+    function menuOpened() {
         const topToggleMenu = document.querySelector('.iconBtn-toggleMenu');
         const topMenu = document.querySelector('.topMenu');
 
-        topToggleMenu.addEventListener('click', function(){
-           DOMAnimation.slideToggle(topMenu);
-            clickPastWindow('topMenu', function(){
+        topToggleMenu.addEventListener('click', function () {
+            DOMAnimation.slideToggle(topMenu);
+            clickPastWindow('topMenu', function () {
                 DOMAnimation.slideUp(topMenu);
             });
         });
     }
 
-    function showPopAddReview () {
+    function showPopAddReview() {
         const addReviewBtn = document.querySelector('.mainBtn-addReview');
-        addReviewBtn.addEventListener('click',()=>{
+        addReviewBtn.addEventListener('click', () => {
             showPopUpWindow('#popUpWindowAddReview');
         });
     } // showPopAddReview
 
-    function showBrandRating () {
+    function showBrandRating() {
         let sparePartsElements = document.querySelectorAll('.sparePartsElement');
         sparePartsElements = Array.prototype.slice.call(sparePartsElements);
 
-        sparePartsElements.forEach(function(currentElem) {
+        sparePartsElements.forEach(function (currentElem) {
             let currentRatingElem = currentElem.querySelector('.sparePartsElement__item-rating');
             let spanRatingElement = currentRatingElem.querySelector('span');
-            let currentRating = parseInt( currentRatingElem.getAttribute('data-count') );
-            let persentValue = parseInt( RATING_STROKE_LENGTH - RATING_STROKE_LENGTH * currentRating / 100 );
+            let currentRating = parseInt(currentRatingElem.getAttribute('data-count'));
+            let persentValue = parseInt(RATING_STROKE_LENGTH - RATING_STROKE_LENGTH * currentRating / 100);
             let svg = currentRatingElem.querySelector('path:last-child');
-            for ( let i = 0; i <= currentRating; i++ ) {
-               setTimeout(()=>{
-                   spanRatingElement.innerText = i;
-               }, i * 7);
+            for (let i = 0; i <= currentRating; i++) {
+                setTimeout(() => {
+                    spanRatingElement.innerText = i;
+                }, i * 7);
             }
 
             svg.style.strokeDashoffset = persentValue;
-            switch ( true ) {
+            switch (true) {
                 case ( currentRating < 34 ) : {
                     svg.style.stroke = RATING_COLOR_RED;
                     break;
@@ -159,13 +161,13 @@ window.onload = function () {
         });
     } // showBrandRating
 
-    function showStarRating () {
+    function showStarRating() {
         let averageRatingNumber = document.querySelectorAll('.averageRatingNumber');
         averageRatingNumber = Array.prototype.slice.call(averageRatingNumber);
-        averageRatingNumber.forEach(function(currentElem) {
-            let currentRating = parseFloat( currentElem.innerText );
+        averageRatingNumber.forEach(function (currentElem) {
+            let currentRating = parseFloat(currentElem.innerText);
             let svg = currentElem.parentNode.querySelector('path');
-            switch ( true ) {
+            switch (true) {
                 case ( currentRating <= 3 ) : {
                     svg.style.fill = RATING_COLOR_RED;
                     break;
@@ -183,10 +185,10 @@ window.onload = function () {
         });
     } // showStarRating
 
-    function showReviewDiagram () {
+    function showReviewDiagram() {
         let reviewDiagramBlock = document.querySelectorAll('.reviewDiagramBlock');
         reviewDiagramBlock = Array.prototype.slice.call(reviewDiagramBlock);
-        reviewDiagramBlock.forEach(function(currentElem) {
+        reviewDiagramBlock.forEach(function (currentElem) {
             let greenZone = currentElem.querySelector('.reviewDiagramBlock__item-green'),
                 yellowZone = currentElem.querySelector('.reviewDiagramBlock__item-yellow'),
                 redZone = currentElem.querySelector('.reviewDiagramBlock__item-red');
@@ -194,16 +196,16 @@ window.onload = function () {
                 yellowZoneValue = parseInt(yellowZone.innerText),
                 redZoneValue = parseInt(redZone.innerText);
             let summValue = greenZoneValue + yellowZoneValue + redZoneValue;
-            let greenZoneValuePercent = parseInt( 100 * greenZoneValue / summValue),
-                yellowZoneValuePercent = parseInt( 100 * yellowZoneValue / summValue ),
-                redZoneValuePercent = parseInt( 100 * redZoneValue / summValue );
+            let greenZoneValuePercent = parseInt(100 * greenZoneValue / summValue),
+                yellowZoneValuePercent = parseInt(100 * yellowZoneValue / summValue),
+                redZoneValuePercent = parseInt(100 * redZoneValue / summValue);
             greenZone.style.width = greenZoneValuePercent + '%';
             yellowZone.style.width = yellowZoneValuePercent + '%';
             redZone.style.width = redZoneValuePercent + '%';
         });
     } // showReviewDiagram
 
-    function showAllCars () {
+    function showAllCars() {
         const carsListBlock = document.querySelector('.cars__listsBlock');
         if (carsListBlock) {
             const blockHeight = carsListBlock.clientHeight;
@@ -218,17 +220,17 @@ window.onload = function () {
             carsListBlock.style.overflow = 'hidden';
             carsListBlock.style.transition = 'height .3s';
 
-            showAllBtn.addEventListener('click', ()=>{
+            showAllBtn.addEventListener('click', () => {
                 showAllBtnStatus = showAllBtn.getAttribute('data-status');
-                if ( showAllBtnStatus === 'toshow' ) {
-                    for ( let i = 0; i < unvisibleItem.length; i++) {
+                if (showAllBtnStatus === 'toshow') {
+                    for (let i = 0; i < unvisibleItem.length; i++) {
                         unvisibleItem[i].classList.remove('displayNone');
                         unvisibleItem[i].classList.add('displayShow');
                     }
                     openBlockHeight = carItems.clientHeight;
                     carsListBlock.style.height = openBlockHeight + 'px';
 
-                    showAllBtn.setAttribute('data-status','hide');
+                    showAllBtn.setAttribute('data-status', 'hide');
 
                     // change show all btn on hide content
                     showAllBtn.innerText = 'Скрыть';
@@ -236,14 +238,14 @@ window.onload = function () {
                 } else {
                     unvisibleItem = carsListBlock.querySelectorAll('.displayShow');
                     carsListBlock.style.height = blockHeight + 'px';
-                    showAllBtn.setAttribute('data-status','toshow');
+                    showAllBtn.setAttribute('data-status', 'toshow');
 
                     // change show all btn on show more
                     showAllBtn.innerText = showAllBtnText;
 
                     // clear style
-                    setTimeout(()=> {
-                        for ( let i = 0; i < unvisibleItem.length; i++) {
+                    setTimeout(() => {
+                        for (let i = 0; i < unvisibleItem.length; i++) {
                             unvisibleItem[i].classList.add('displayNone');
                             unvisibleItem[i].classList.remove('displayShow');
                         }
@@ -255,7 +257,7 @@ window.onload = function () {
         }
     } // showAllCars
 
-    function showAllSEOText () {
+    function showAllSEOText() {
         const seoContentBlock = document.querySelector('.seoTexts');
         if (seoContentBlock) {
             const seoBlockTxt = seoContentBlock.querySelector('.seoTexts__content');
@@ -270,31 +272,31 @@ window.onload = function () {
             seoContentBlock.style.overflow = 'hidden';
             seoContentBlock.style.transition = 'height .3s';
 
-            showAllBtn.addEventListener('click', ()=>{
+            showAllBtn.addEventListener('click', () => {
                 showAllBtnStatus = showAllBtn.getAttribute('data-status');
-                if ( showAllBtnStatus === 'toshow' ) {
-                    for ( let i = 0; i < unvisibleItem.length; i++) {
+                if (showAllBtnStatus === 'toshow') {
+                    for (let i = 0; i < unvisibleItem.length; i++) {
                         unvisibleItem[i].classList.remove('displayNone');
                         unvisibleItem[i].classList.add('displayShow');
                     }
                     openBlockHeight = seoBlockTxt.clientHeight + 30;
                     seoContentBlock.style.height = openBlockHeight + 'px';
 
-                    showAllBtn.setAttribute('data-status','hide');
+                    showAllBtn.setAttribute('data-status', 'hide');
 
                     // change show all btn on hide content
                     showAllBtn.innerText = 'Скрыть';
 
                 } else {
                     seoContentBlock.style.height = blockHeight + 'px';
-                    showAllBtn.setAttribute('data-status','toshow');
+                    showAllBtn.setAttribute('data-status', 'toshow');
 
                     // change show all btn on show more
                     showAllBtn.innerText = showAllBtnText;
 
                     // clear style
-                    setTimeout(()=> {
-                        for ( let i = 0; i < unvisibleItem.length; i++) {
+                    setTimeout(() => {
+                        for (let i = 0; i < unvisibleItem.length; i++) {
                             unvisibleItem[i].classList.add('displayNone');
                             unvisibleItem[i].classList.remove('displayShow');
                         }
@@ -305,26 +307,26 @@ window.onload = function () {
         }
     } // showAllSEOText
 
-    function showAllFooterMenuItems () {
+    function showAllFooterMenuItems() {
         const toggleMenuBtn = document.querySelectorAll('.shevronIcon-footerMenu');
         let currentHiddenBlock,
             currentFooterMenu,
             currentHiddenElements;
         let hiddenElementsHeight;
 
-        for ( let currentBtn of toggleMenuBtn ) {
-            currentBtn.addEventListener('click', function() {
+        for (let currentBtn of toggleMenuBtn) {
+            currentBtn.addEventListener('click', function () {
                 currentFooterMenu = this.parentNode.parentNode;
                 currentHiddenBlock = currentFooterMenu.querySelector('.footerMenu__hiddenBlock');
                 currentHiddenElements = currentHiddenBlock.querySelector('.footerMenu__hiddenElements');
 
                 console.log(currentHiddenBlock);
-                if ( this.classList.contains('shevronIcon-footerMenuRotate')) {
+                if (this.classList.contains('shevronIcon-footerMenuRotate')) {
                     // rotate shevron icon
                     this.classList.remove('shevronIcon-footerMenuRotate');
                     // hiding items
                     currentHiddenBlock.removeAttribute('style');
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         currentHiddenElements.classList.add('displayNone');
                     }, 400);
                 } else {
@@ -339,7 +341,7 @@ window.onload = function () {
         } // for of
     } // showAllFooterMenuItems
 
-    function initCustomScrollBar () {
+    function initCustomScrollBar() {
         const scrollContainer = document.querySelector('.activityTape');
         if (scrollContainer) {
             fleXenv.fleXcrollMain(scrollContainer);
@@ -347,26 +349,26 @@ window.onload = function () {
     } // initCustomScrollBar
 
     // rating page functions ------------------------------------
-    function showAdditInfo (additInfoBtnSelector, additInfoParentBlockSelector) {
+    function showAdditInfo(additInfoBtnSelector, additInfoParentBlockSelector) {
         const additInfoBtn = document.querySelector(additInfoBtnSelector);
-        if ( additInfoBtn ) {
+        if (additInfoBtn) {
             const parentBox = document.querySelector(additInfoParentBlockSelector);
             const showAdditInfo = parentBox.querySelector('.showAdditInfo');
-            additInfoBtn.onmouseover = function() {
+            additInfoBtn.onmouseover = function () {
                 DOMAnimation.slideDown(showAdditInfo, 200);
             };
-            additInfoBtn.onmouseout = function() {
+            additInfoBtn.onmouseout = function () {
                 DOMAnimation.slideUp(showAdditInfo, 200);
             };
         }
     } // showAdditInfo
-    function tableHeaderClick () {
+    function tableHeaderClick() {
         const tableHeaderItem = document.querySelectorAll('.tableHeaderItem');
         const topDirectionClass = 'ratingDirection-top';
         const bottomDirectionClass = 'ratingDirection-bottom';
 
-        Array.from(tableHeaderItem).forEach(function(currentHeaderItem){
-            currentHeaderItem.addEventListener('click', function(){
+        Array.from(tableHeaderItem).forEach(function (currentHeaderItem) {
+            currentHeaderItem.addEventListener('click', function () {
                 const ratingDirection = this.querySelector('.ratingDirection');
                 if (ratingDirection.classList.contains(topDirectionClass)) {
                     ratingDirection.classList.remove(topDirectionClass);
@@ -380,14 +382,14 @@ window.onload = function () {
     } // tableHeaderClick
     function showNonRatingsBrand() {
         const showNotRatedBtn = document.querySelector('.mainBtn-showNotRated');
-        if ( showNotRatedBtn ) {
+        if (showNotRatedBtn) {
             const notShowRatingsBlock = document.querySelector('.tableRating-loading');
             const showText = 'Показать производителей не участвующих в рейтинге';
             const hideText = 'Скрыть производителей не участвующих в рейтинге';
             let innerText;
             let showStatus = false;
 
-            showNotRatedBtn.addEventListener('click', function(){
+            showNotRatedBtn.addEventListener('click', function () {
                 DOMAnimation.slideToggle(notShowRatingsBlock);
                 showStatus = !showStatus;
                 innerText = showStatus ? hideText : showText;
@@ -395,10 +397,10 @@ window.onload = function () {
             });
         }
     } // showNonRatingsBrand
-    function scrollToSeoBlock(){
-        const showMoreBtn = document.querySelector('.showMoreBtn-descrBlock');
-        if ( showMoreBtn ) {
-            showMoreBtn.onclick = function(e) {
+    function scrollToSeoBlock() {
+        const showMoreBtn = document.querySelector('#scrollToSeoBlock');
+        if (showMoreBtn) {
+            showMoreBtn.onclick = function (e) {
                 e.preventDefault();
                 scrollTo('#seo');
             }
@@ -410,31 +412,31 @@ window.onload = function () {
     function scrollToReviewBlock() {
         const link = document.querySelector('#scrollToReviewBlock');
         if (link) {
-            link.onclick = function(e) {
+            link.onclick = function (e) {
                 e.preventDefault();
-                scrollTo ('#reviewBlock');
+                scrollTo('#reviewBlock');
             };
         }
     } // scrollToReviewBlock
-    function showRatingSpareParts () {
+    function showRatingSpareParts() {
         let sparePartsElements = document.querySelectorAll('.ratingListElement');
-        if ( sparePartsElements ) {
+        if (sparePartsElements) {
             sparePartsElements = Array.prototype.slice.call(sparePartsElements);
 
-            sparePartsElements.forEach(function(currentElem) {
+            sparePartsElements.forEach(function (currentElem) {
                 let currentRatingElem = currentElem.querySelector('.ratingListElement__item-rating');
                 let spanRatingElement = currentRatingElem.querySelector('span');
-                let currentRating = parseInt( currentRatingElem.getAttribute('data-count') );
-                let persentValue = parseInt( RATING_STROKE_LENGTH - RATING_STROKE_LENGTH * currentRating / 100 );
+                let currentRating = parseInt(currentRatingElem.getAttribute('data-count'));
+                let persentValue = parseInt(RATING_STROKE_LENGTH - RATING_STROKE_LENGTH * currentRating / 100);
                 let svg = currentRatingElem.querySelector('path:last-child');
-                for ( let i = 0; i <= currentRating; i++ ) {
-                    setTimeout(()=>{
+                for (let i = 0; i <= currentRating; i++) {
+                    setTimeout(() => {
                         spanRatingElement.innerText = i;
                     }, i * 7);
                 }
 
                 svg.style.strokeDashoffset = persentValue;
-                switch ( true ) {
+                switch (true) {
                     case ( currentRating < 34 ) : {
                         svg.style.stroke = RATING_COLOR_RED;
                         break;
@@ -452,13 +454,13 @@ window.onload = function () {
             });
         }
     } // showRatingSpareParts
-    function showMoreManufacturer () {
+    function showMoreManufacturer() {
         const showMoreBtn = document.querySelector('#showMoreManufacturer');
         let isShow = false;
-        const btnText = showMoreBtn.innerText;
 
-        if ( showMoreBtn ) {
-            showMoreBtn.onclick = function(){
+        if (showMoreBtn) {
+            const btnText = showMoreBtn.innerText;
+            showMoreBtn.onclick = function () {
                 const showMoreBox = this.parentNode.querySelector('.showThisBlock');
                 isShow = !isShow;
                 DOMAnimation.slideToggle(showMoreBox);
@@ -469,6 +471,56 @@ window.onload = function () {
             };
         }
     } // showMoreManufacturer
+    function replacePageHeaderBlockImgOfResponsive() {
+        const thumbnail = $('#sparePartsPageHeaderImg');
+        if (thumbnail.length) {
+            const content = $('.pageHeaderBlock__content');
+            const blockTitle = $('.h1Title.blockTitle');
+
+            if (window.matchMedia('(max-width: 1000px)').matches) {
+                thumbnail.append(blockTitle);
+            }
+            window.onresize = function () {
+                if (window.matchMedia('(max-width: 1000px)').matches) {
+                    thumbnail.append(blockTitle);
+                } else {
+                    content.prepend(blockTitle);
+                }
+            }
+        }
+    } // replacePageHeaderBlockImgOfResponsive JQ
+    function manufacturerBlockResponsive() {
+        // replace two lasts block from main block to hidden block
+        // delete two last block from hidden block
+        const manufacturer = $('#sparePartsPageManufacturerBlock');
+        if (manufacturer.length) {
+            const mainBlock = manufacturer.find('.manufacturerList__items').eq(0);
+            const hiddenBlock = manufacturer.find('.manufacturerList__items').eq(1);
+            const showItems = mainBlock.find('.manufacturerList__item');
+            let hiddenItems = hiddenBlock.find('.manufacturerList__item');
+            let isReplace = false;
+            $(window).resize(function () {
+                if (!isReplace) {
+                    if (window.matchMedia('(max-width: 1170px)').matches) {
+                        isReplace = true;
+                        hiddenBlock.prepend(showItems.eq(showItems.length - 1));
+                        hiddenBlock.prepend(showItems.eq(showItems.length - 2));
+                        for (let i = 1; i <= 4; i++) {
+                            hiddenItems.eq(hiddenItems.length - i).addClass('manufacturerList__item-hidden');
+                        }
+                    }
+                } else if ( window.matchMedia('(min-width: 1170px)').matches ) {
+                    isReplace = false;
+                    hiddenItems = hiddenBlock.find('.manufacturerList__item');
+                    mainBlock.append(hiddenItems.eq(0));
+                    mainBlock.append(hiddenItems.eq(1));
+                    for (let i = 1; i <= 4; i++) {
+                        hiddenItems.eq(hiddenItems.length - i).removeClass('manufacturerList__item-hidden');
+                    }
+                }
+            });
+        }
+    } // manufacturerBlockResponsive JQ
     // ==========================================================
 
 // secondary functions -------------------------------------------
@@ -478,7 +530,7 @@ window.onload = function () {
          * @param {HTMLElement} element
          * @param {Number} duration
          */
-        static slideUp (element, duration = 500) {
+        static slideUp(element, duration = 500) {
             element.style.height = element.offsetHeight + 'px';
             element.style.transitionProperty = 'height, margin, padding';
             element.style.transitionDuration = duration + 'ms';
@@ -489,7 +541,7 @@ window.onload = function () {
             element.style.paddingBottom = 0;
             element.style.marginTop = 0;
             element.style.marginBottom = 0;
-            window.setTimeout(function(){
+            window.setTimeout(function () {
                 element.style.display = 'none';
                 element.style.removeProperty('height');
                 element.style.removeProperty('padding-top');
@@ -501,15 +553,16 @@ window.onload = function () {
                 element.style.removeProperty('transition-duration');
             }, duration);
         }
+
         /**
          * show element
          * @param {HTMLElement} element
          * @param {Number} duration
          */
-        static slideDown (element, duration = 500) {
+        static slideDown(element, duration = 500) {
             element.style.removeProperty('display');
             let display = window.getComputedStyle(element).display;
-            if ( display === 'none' ) display = 'block';
+            if (display === 'none') display = 'block';
             element.style.display = display;
             let height = element.offsetHeight;
             element.style.overflow = 'hidden';
@@ -526,19 +579,20 @@ window.onload = function () {
             element.style.removeProperty('padding-bottom');
             element.style.removeProperty('margin-top');
             element.style.removeProperty('margin-bottom');
-            window.setTimeout(function(){
+            window.setTimeout(function () {
                 element.style.removeProperty('height');
                 element.style.removeProperty('overflow');
                 element.style.removeProperty('transition-property');
                 element.style.removeProperty('transition-duration');
             }, duration);
         }
+
         /**
          * toggle element
          * @param {HTMLElement} element
          * @param {Number} duration
          */
-        static slideToggle (element, duration = 500) {
+        static slideToggle(element, duration = 500) {
             let display = getComputedStyle(element).display;
             if (display === 'none') {
                 this.slideDown(element, duration);
@@ -548,12 +602,12 @@ window.onload = function () {
         }
     }
 
-    function scrollTo (idElement, speed = 50) {
+    function scrollTo(idElement, speed = 50) {
         const scrollElement = document.querySelector(idElement);
         let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
         let currentPos = pageYOffset;
         let scr = setInterval(function () {
-            if ( currentPos > posElem ) {
+            if (currentPos > posElem) {
                 currentPos -= speed;
                 if (currentPos < posElem) {
                     clearInterval(scr);
@@ -568,13 +622,13 @@ window.onload = function () {
         }, 1);
     } // scrollTo
 
-    function clickPastWindow(id,callback) {
+    function clickPastWindow(id, callback) {
         const targetWindow = document.querySelector('#' + id);
-        document.addEventListener('mouseup',function (e){
-            if ( !targetWindow.contains(e.target) ) {
-               if (callback) {
-                   callback();
-               }
+        document.addEventListener('mouseup', function (e) {
+            if (!targetWindow.contains(e.target)) {
+                if (callback) {
+                    callback();
+                }
             }
         });
     } // clickPastWindow
@@ -589,7 +643,7 @@ window.onload = function () {
 
         popUpWindowBlock.classList.remove('displayNone');
 
-        setTimeout(()=>{
+        setTimeout(() => {
             popUpWindow.style.opacity = '1';
             overlay.style.opacity = '.6';
         }, 100);
@@ -598,8 +652,8 @@ window.onload = function () {
     function closePopUpWindow() {
         const closeBtn = document.querySelectorAll('.closeBtn-modalWindow');
 
-        for (let currentCloseBtn of closeBtn ) {
-            currentCloseBtn.addEventListener('click', function(){
+        for (let currentCloseBtn of closeBtn) {
+            currentCloseBtn.addEventListener('click', function () {
                 const popUpWindowBlock = this.parentNode.parentNode;
                 const popUpWindow = popUpWindowBlock.querySelector('.popUpWindow');
                 const overlay = popUpWindowBlock.querySelector('.overlay');
@@ -607,7 +661,7 @@ window.onload = function () {
                 popUpWindow.style.opacity = '0';
                 overlay.style.opacity = '0';
 
-                setTimeout(()=>{
+                setTimeout(() => {
                     popUpWindowBlock.classList.add('displayNone');
                     popUpWindow.removeAttribute('style');
                     overlay.removeAttribute('style');
@@ -617,13 +671,12 @@ window.onload = function () {
     } // closePopUpWindow
 
 
-
 // sliders -------------------------------------------------------
     let index = 1;
     let indexOffset = 3;
     let slidesIsShow = 4;
     let isSlider = document.querySelector('.sliderBox-spareParts');
-    if ( isSlider ) {
+    if (isSlider) {
         let Slider = function () {
             this.box = document.querySelector('.sliderBox-spareParts');
             this.slidesBox = this.box.querySelector('.mySlider');
@@ -637,30 +690,30 @@ window.onload = function () {
             this.carousel();
         };
 
-        Slider.prototype.position = function() {
+        Slider.prototype.position = function () {
             let size = this.size;
             this.slidesBox.style.transform = `translateX(-${size * ( index + indexOffset - 1 )}px)`;
             console.log(index + indexOffset);
             index += indexOffset - 1;
         };
-        Slider.prototype.carousel = function() {
+        Slider.prototype.carousel = function () {
             let i;
             let max = this.btns.length;
             let that = this;
 
-            for ( i = 0; i < max; i += 1 ) {
+            for (i = 0; i < max; i += 1) {
                 that.btns[i].addEventListener('click', Slider[that.btns[i].id].bind(null, that));
             }
         };
 
-        Slider.prev = function( box ){
+        Slider.prev = function (box) {
             let size = box.size;
             index <= 0 ? false : index--;
             box.slidesBox.style.transition = 'transform .3s ease-in-out';
             box.slidesBox.style.transform = `translateX(-${size * ( index + indexOffset - 1)}px)`;
         };
 
-        Slider.next = function( box ){
+        Slider.next = function (box) {
             let max = box.slides.length;
             let size = box.size;
             (index + indexOffset) >= (max - 1) ? false : index++;
@@ -669,11 +722,11 @@ window.onload = function () {
 
             box.jump();
         };
-        Slider.prototype.jump = function() {
+        Slider.prototype.jump = function () {
             let that = this;
             let size = this.size;
-            this.slidesBox.addEventListener('transitionend', function(){
-                if ( that.slides[index + indexOffset].classList.contains('lastClone') ) {
+            this.slidesBox.addEventListener('transitionend', function () {
+                if (that.slides[index + indexOffset].classList.contains('lastClone')) {
                     console.log(that.slides[index + indexOffset]);
                     console.log(`index - ${index}`);
                     console.log('last-slide:');
@@ -693,7 +746,8 @@ window.onload = function () {
 
 
     }
-    function sliderSpareParts () {
+
+    function sliderSpareParts() {
         const sliderBlock = document.querySelector('.sliderBox-spareParts');
         let slidePosition;
         let slideIsShow;
@@ -702,7 +756,7 @@ window.onload = function () {
         let index = 1;
         let realIndex;
         let box;
-        if (sliderBlock){
+        if (sliderBlock) {
             const slider = sliderBlock.querySelector('.mySlider');
             const sliderNavBlock = sliderBlock.querySelector('.sliderNavBlock');
             const sliderNextBtn = sliderBlock.querySelector('.sliderNavBlock__btn-next');
@@ -729,24 +783,25 @@ window.onload = function () {
             slider.style.transform = `translateX(-${slidesOffset * ( index + 1 )}px)`;
 
             // check for navigation buttons show
-            if ( slideIsShow === quantitySlides ) {
+            if (slideIsShow === quantitySlides) {
                 sliderNavBlock.classList.add('displayNone');
             }
 
-            slides.forEach(function(currentSlide){
+            slides.forEach(function (currentSlide) {
                 currentSlide.style.width = COL_3_WIDTH + 'px';
                 currentSlide.style.marginRight = GUTTER_X2 + 'px';
             });
 
-            sliderNextBtn.addEventListener('click', function(){
+            sliderNextBtn.addEventListener('click', function () {
                 let sliderBlockNode = this.parentNode.parentNode;
                 nextSlide(sliderBlockNode);
             });
-            sliderPrevBtn.addEventListener('click', function(){
+            sliderPrevBtn.addEventListener('click', function () {
                 let sliderBlockNode = this.parentNode.parentNode;
                 prevSlide(sliderBlockNode);
             });
         }
+
         function nextSlide(sliderBlockNode) {
             const slider = sliderBlockNode.querySelector('.mySlider');
             let slides = slider.querySelectorAll('.slides');
@@ -755,7 +810,7 @@ window.onload = function () {
 
             // index + 1 + slideIsShow  >= max ? false : index++;
 
-            if ( index + slideIsShow - 2 >= max - 3  ) {
+            if (index + slideIsShow - 2 >= max - 3) {
                 console.log('last-slide');
                 // slider.style.transition = 'none';
             } else {
@@ -767,6 +822,7 @@ window.onload = function () {
             jump(sliderBlockNode);
 
         }
+
         function prevSlide(sliderBlockNode) {
             const slider = sliderBlockNode.querySelector('.mySlider');
             let slides = slider.querySelectorAll('.slides');
@@ -774,7 +830,7 @@ window.onload = function () {
 
             slider.style.transition = 'transform .3s ease-in-out';
             index + slideIsShow <= 0 ? false : index--;
-            console.log(index+slideIsShow);
+            console.log(index + slideIsShow);
             slider.style.transform = `translateX(-${slidesOffset * index}px)`;
             // jump(sliderBlockNode);
         }
@@ -783,8 +839,8 @@ window.onload = function () {
             const slider = sliderBlockNode.querySelector('.mySlider');
             let slides = slider.querySelectorAll('.slides');
 
-            sliderBlock.addEventListener('transitionend', function(){
-                if ( slides[( index + 2 ) + ( slideIsShow - 1 )].classList.contains('lastClone') ) {
+            sliderBlock.addEventListener('transitionend', function () {
+                if (slides[( index + 2 ) + ( slideIsShow - 1 )].classList.contains('lastClone')) {
                     console.log('transition end');
 
                     index = -2;
@@ -800,13 +856,13 @@ window.onload = function () {
         }
     } // sliderSpareParts
 
-    function sliderBrands () {
+    function sliderBrands() {
         const brandsSliderBlock = document.querySelector('.sliderBox-brands');
         let slidePosition;
         let slideIsShow;
         let quantitySlides;
         let slidesOffset;
-        if ( brandsSliderBlock ) {
+        if (brandsSliderBlock) {
             const brandsSlider = brandsSliderBlock.querySelector('.mySlider');
             const sliderNavBlock = brandsSliderBlock.querySelector('.sliderNavBlock');
             const brandsSliderNextBtn = brandsSliderBlock.querySelector('.sliderNavBlock__btn-next');
@@ -822,58 +878,60 @@ window.onload = function () {
             // initial slider
 
             // check for navigation buttons show
-            if ( slideIsShow === quantitySlides ) {
+            if (slideIsShow === quantitySlides) {
                 sliderNavBlock.classList.add('displayNone');
             }
             brandsSlider.style.width = quantitySlides * COL_4_WIDTH + quantitySlides * GUTTER_X2;
-            brandsSlides.forEach(function(currentSlide){
+            brandsSlides.forEach(function (currentSlide) {
                 currentSlide.style.width = COL_4_WIDTH + 'px';
                 currentSlide.style.minWidth = COL_4_WIDTH + 'px';
                 currentSlide.style.marginRight = GUTTER_X2 + 'px';
             });
 
-            brandsSliderNextBtn.addEventListener('click', function(){
+            brandsSliderNextBtn.addEventListener('click', function () {
                 let sliderBlockNode = this.parentNode.parentNode;
                 nextSlide(sliderBlockNode);
             });
-            brandsSliderPrevBtn.addEventListener('click', function(){
+            brandsSliderPrevBtn.addEventListener('click', function () {
                 let sliderBlockNode = this.parentNode.parentNode;
                 prevSlide(sliderBlockNode);
             });
         }
+
         function nextSlide(sliderBlockNode) {
             const brandsSlider = sliderBlockNode.querySelector('.mySlider');
             console.log(sliderBlockNode);
             console.log('next slide');
-            slidePosition ++;
-            slideIsShow ++;
+            slidePosition++;
+            slideIsShow++;
             console.log('slidePosition-' + slidePosition);
             console.log('slideIsShow-' + slideIsShow);
-            if ( !(slideIsShow > quantitySlides) ) {
+            if (!(slideIsShow > quantitySlides)) {
                 brandsSlider.style.transform = `translateX(-${slidesOffset * slidePosition}px)`;
             } else {
-                slidePosition --;
-                slideIsShow --;
+                slidePosition--;
+                slideIsShow--;
                 brandsSlider.style.transform = `translateX(-${slidesOffset * slidePosition + 50}px)`;
-                setTimeout(function(){
+                setTimeout(function () {
                     brandsSlider.style.transform = `translateX(-${slidesOffset * slidePosition}px)`;
                 }, 500);
             }
         }
+
         function prevSlide(sliderBlockNode) {
             const brandsSlider = sliderBlockNode.querySelector('.mySlider');
             console.log('prev slide');
-            slidePosition --;
-            slideIsShow --;
+            slidePosition--;
+            slideIsShow--;
             console.log('slidePosition-' + slidePosition);
             console.log('slideIsShow-' + slideIsShow);
-            if ( !(slidePosition < 0) ) {
+            if (!(slidePosition < 0)) {
                 brandsSlider.style.transform = `translateX(-${slidesOffset * slidePosition}px)`;
             } else {
                 slidePosition = 0;
-                slideIsShow ++;
+                slideIsShow++;
                 brandsSlider.style.transform = `translateX(50px)`;
-                setTimeout(function(){
+                setTimeout(function () {
                     brandsSlider.style.transform = `translateX(0)`;
                 }, 500);
             }

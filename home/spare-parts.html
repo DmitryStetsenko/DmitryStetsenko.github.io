@@ -145,8 +145,11 @@
     <main class="mainContent">
         <div class="wrapper">
             <section class="pageHeaderBlock">
-                <div class="pageHeaderBlock__thumbnail">
-                    <img src="img/best_brake_pads.png" alt="the best brake pads">
+                <div class="pageHeaderBlock__thumbnail" id="sparePartsPageHeaderImg">
+                    <div class="innerImage">
+                        <img src="img/best_brake_pads.png" alt="the best brake pads">
+                    </div>
+                    <!-- /.innerImage -->
                 </div>
                 <!-- /.pageHeaderBlock__thumbnail -->
                 <div class="pageHeaderBlock__content">
@@ -283,7 +286,7 @@
                 <!-- /.pageHeaderBlock__content -->
             </section>
             <!-- /.pageHeaderBlock -->
-            <section class="manufacturer">
+            <section class="manufacturer" id="sparePartsPageManufacturerBlock">
                 <div class="blockHeader">
                     <div class="h2Title blockTitle">
                         <span class="blockTitle__text">Производители</span>
@@ -645,7 +648,7 @@
                                 <!-- /.brandData -->
                             </a>
                             <!-- /.manufacturerList__item -->
-                            <a href="#" target="_blank" class="manufacturerList__item">
+                            <a href="#" target="_blank" class="manufacturerList__item lastItem">
                                 <div class="brandData">
                                     <div class="brandData__title">Тормозные колодки Denso</div>
                                     <!-- /.brandData__title -->
@@ -702,7 +705,7 @@
                                 <!-- /.brandData -->
                             </a>
                             <!-- /.manufacturerList__item -->
-                            <a href="#" target="_blank" class="manufacturerList__item">
+                            <a href="#" target="_blank" class="manufacturerList__item lastItem">
                                 <div class="brandData">
                                     <div class="brandData__title">Тормозные колодки NGK</div>
                                     <!-- /.brandData__title -->
@@ -3951,6 +3954,7 @@
     </div>
     <!-- /.popUpWindowBlock-addReview -->
 
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/flexcroll.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -77,6 +77,13 @@
           transition: border-color .3s;
           &:nth-child(odd) {
             background: $colorBgLightGray;
+            .itemSell {
+              &__text {
+                &::after {
+                  @include gradientBorderColor($colorBgLightGray, 30px, 100%);
+                } // after
+              } // __text
+            } // itemSell
           } // nth-child(odd)
           &:hover {
             cursor: pointer;
@@ -99,23 +106,26 @@
             &__icon {
               border-radius: $mainBorderRadius;
               margin-right: 15px;
-              &-brakePads {
-              @include showSpriteBg(0, $iconWidth, $iconHeight);
-              } // -brakePads
-              &-sparkPlug {
-                @include showSpriteBg(-60px, $iconWidth, $iconHeight);
-              } // -sparkPlug
-              &-fuelFilter {
-                @include showSpriteBg(-120px, $iconWidth, $iconHeight);
-              } // -fuelFilter
+              width: 60px;
+              img {
+                width: 60px;
+                object-fit: cover;
+                object-position: center;
+              } // img
             } // __icon
             &__text {
               font-size: 16px;
               position: relative;
               transition: color .3s;
+              width: 230px;
+              overflow: hidden;
+              white-space: nowrap;
               &::before {
                 @include makeUnderline($colorYellow, -1px);
               } // before
+              &::after {
+                @include gradientBorderColor(white, 30px, 100%);
+              } // after
             } // __text
             &__mainValue {
               color: $colorDarkGray;

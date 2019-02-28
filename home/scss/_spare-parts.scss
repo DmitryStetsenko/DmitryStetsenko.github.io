@@ -4,22 +4,24 @@
   .pageHeaderBlock {
     @include flex(center, flex-start);
     margin-bottom: $outerBlockMargin;
+    & .blockTitle {
+      color: $colorDarkGray;
+      padding-left: 40px;
+      margin-bottom: $blockTitleMarginBottom;
+    } // blockTitle
     &__thumbnail {
-      $imgSize: 140px;
-      @include flex(center, center);
-      border-radius: $mainBorderRadius;
-      border: 1px solid $colorBorderLightGray;
-      height: $imgSize;
-      min-width: $imgSize;
-      padding: 10px;
-      width: $imgSize;
+      .innerImage {
+        $imgSize: 140px;
+        @include flex(center, center);
+        border-radius: $mainBorderRadius;
+        border: 1px solid $colorBorderLightGray;
+        height: $imgSize;
+        min-width: $imgSize;
+        padding: 10px;
+        width: $imgSize;
+      } // innerImage
     } // __thumbnail
     &__content {
-      & > .blockTitle {
-        color: $colorDarkGray;
-        padding-left: 40px;
-        margin-bottom: $blockTitleMarginBottom;
-      } // h1Title
       .headerBlockContent {
         @include flex(flex-start, space-between);
         &__item {
@@ -270,6 +272,37 @@
         } // __item
       } // headerBlockContent
     } // __content
+
+    // @MEDIA -----------------------------
+    @media screen and ( max-width: 1000px ) {
+      align-items: flex-start;
+      flex-direction: column;
+      & .blockTitle {
+        padding-left: 20px;
+        margin-bottom: 0;
+      } // blockTitle
+      &__thumbnail {
+        @include flex(center, flex-start);
+        margin-bottom: $blockTitleMarginBottom;
+        .innerImage {
+          $imgSize: 85px;
+          height: $imgSize;
+          min-width: $imgSize;
+          width: $imgSize;
+        } // innerImage
+      } // __thumbnail
+      &__content {
+        .headerBlockContent {
+          &__item {
+            &:first-child {
+              padding-left: 0;
+            } // first-child
+          } // __item
+        } // headerBlockContent
+      } // __content
+    } // 1000
+    // ====================================
+
   } // pageHeaderBlock
   // ===========================================
 
@@ -297,6 +330,7 @@
         margin-bottom: $gutterBlock;
         margin-right: $gutterBlock;
         text-decoration: none;
+        white-space: nowrap;
         width: $itemWidth;
         &:hover {
           cursor: pointer;
@@ -375,8 +409,95 @@
             } // brandInfo
           } // __content
         } // brandData
+        &-hidden {
+          display: none;
+        } // hidden
       } // __item
     } // manufacturerList
+
+    // @MEDIA ---------------------------
+    @media screen and ( max-width: 1170px ) {
+      .manufacturerList {
+        &__item {
+          $contentWidth: 100%;
+          $gutterBlock: 15px;
+          $collCount: 3;
+          $itemWidth: calc( ( #{$contentWidth} - ( #{$gutterBlock} * (#{$collCount} - 1) ) ) / #{$collCount} );
+          margin-bottom: $gutterBlock;
+          margin-right: $gutterBlock;
+          width: $itemWidth;
+          &:nth-child(#{$collCount + 1}n) {
+            margin-right: $gutterBlock;
+          } // nth-child(4n)
+          &:nth-child(#{$collCount}n) {
+            margin-right: 0;
+          } // nth-child(4n)
+          .brandData {
+            background: white;
+            border-radius: $mainBorderRadius;
+            color: $colorDarkGray;
+            padding: 25px 20px;
+            transition: transform .5s, box-shadow .5s;
+            width: 100%;
+            &__title {
+              display: inline-block;
+              font-size: 18px;
+              text-align: center;
+              margin-bottom: $blockTitleMarginBottom;
+              position: relative;
+              transition: color .3s;
+              &::before {
+                @include makeUnderline($colorYellow, -1px);
+              } // before
+            } // __title
+            &__content {
+              @include flex(center, space-between);
+              .brandLogo {
+                padding-right: 10px;
+                min-width: 75px;
+                width: 80px;
+              } // brandLogo
+              .brandInfo {
+                @include flex(stretch, space-between);
+                .rating {
+                  padding: 0 5px;
+                  &__title {
+                    color: $colorColName;
+                    font-size: 13px;
+                    margin-bottom: 15px;
+                  } // __title
+                  .ratingCircle {
+                  } // ratingCircle
+                  &__averageInfo {
+                    @include flex(center, center);
+                    flex-direction: column;
+                    .assessment {
+                      @include flex(center, center);
+                      margin-bottom: 10px;
+                      &__value {
+                        font-size: 18px;
+                        font-weight: bold;
+                        margin-right: 5px;
+                      } // __value
+                    } // assessment
+                    .amountReview {
+                      @include flex(flex-end, center);
+                      font-size: 14px;
+                      &__value {
+                        font-weight: bold;
+                        margin-right: 5px;
+                      } // __value
+                    } // amoutnReview
+                  } // __averageInfo
+                } // rating
+              } // brandInfo
+            } // __content
+          } // brandData
+        } // __item
+      } // manufacturerList
+    } // 1170
+    // ==================================
+
   } // manufacturerBlock
   // ===========================================
 
