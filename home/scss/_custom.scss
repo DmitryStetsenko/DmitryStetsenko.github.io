@@ -978,18 +978,33 @@ button, input {
   &__header {
     background: $bgColor;
     padding: $paddingHeader;
-    .breadCrumbs {
+    .breadCrumbsReview {
       color: $colorCountTxt;
       font-size: 14px;
       &__item {
+        color: $colorCountTxt;
+        font-size: 13px;
         position: relative;
+        text-decoration: none;
+        &:hover {
+          color: $colorLinkAside;
+          &::after {
+            width: 100%;
+          } // before
+        } // hover
         &::before {
-          @include makeUnderline($colorCountTxt, -2px);
+          @include makeUnderline($colorLightGray, -2px);
           width: 100%;
+        } // before
+        &::after {
+          @include makeUnderline($colorLinkAside, -2px);
+          width: 0;
         } // before
       } // __item
       &__separator {
+        color: $colorLightGray;
         font-family: "Segoe Print", Arial, sans-serif;
+        font-size: 13px;
         margin: 0 10px;
       } // separator
     } // breadCrumbs

@@ -182,7 +182,7 @@
                         <!-- /.headerBlockContent__item -->
                         <div class="headerBlockContent__item headerBlockContent__item-noBorder">
                             <div class="innerBlockTitle">
-                                <a href="#reviewBlock" id="scrollToReviewBlock" class="innerText innerText-link">Отзывы</a>
+                                <a href="#sparePartsPageReviewBlock" id="scrollToReviewBlock" class="innerText innerText-link">Отзывы</a>
                             </div>
                             <!-- /.innerBlockTitle -->
                             <div class="innerBlockContent">
@@ -1227,11 +1227,13 @@
                     <!-- /.manufacturerList -->
                     <button class="showMoreBtn showMoreBtn-center" id="showMoreManufacturer">Показать eщe</button>
                     <!-- /.showMoreBtn -->
+                    <button class="showMoreBtn showMoreBtn-center" id="showAllManufacturer" style="display: none;">Показать все</button>
+                    <!-- /.showMoreBtn -->
                 </div>
                 <!-- /.manufacturer__content -->
             </section>
             <!-- /.manufacturer -->
-            <section class="comparisonBlock" id="comparisonBlock">
+            <section class="comparisonBlock" id="sparePartsPageComparisonBlock">
                 <div class="blockHeader">
                     <div class="h2Title blockTitle">
                         <span class="blockTitle__text">Сравнения</span>
@@ -1826,7 +1828,7 @@
                 <!-- /.comparisonBlock__mainContent -->
             </section>
             <!-- /.comparisonBlock -->
-            <section class="reviewsBlock" id="reviewBlock">
+            <section class="reviewsBlock" id="sparePartsPageReviewBlock">
                 <div class="contentArea">
                     <div class="blockHeader">
                         <div class="h3Title blockTitle">
@@ -1848,12 +1850,12 @@
                     <div class="contentArea__reviews">
                         <article class="review review-noComments">
                             <header class="review__header">
-                                <div class="breadCrumbs">
-                                    <span class="breadCrumbs__item">Kayaba</span>
-                                    <span class="breadCrumbs__separator">></span>
-                                    <span class="breadCrumbs__item">Пружины</span>
+                                <div class="breadCrumbsReview">
+                                    <a href="#" target="_blank" class="breadCrumbsReview__item">Kayaba</a>
+                                    <span class="breadCrumbsReview__separator">></span>
+                                    <a href="#" target="_blank" class="breadCrumbsReview__item">Пружины</a>
                                 </div>
-                                <!-- /.breadCrumbs -->
+                                <!-- /.breadCrumbsReview -->
                             </header>
                             <!-- /.review__header -->
                             <main class="review__content">
@@ -2377,9 +2379,9 @@
                         <article class="review">
                             <header class="review__header">
                                 <div class="breadCrumbs">
-                                    <span class="breadCrumbs__item">Kayaba</span>
-                                    <span class="breadCrumbs__separator">></span>
-                                    <span class="breadCrumbs__item">Пружины</span>
+                                    <a href="#" target="_blank" class="breadCrumbsReview__item">Kayaba</a>
+                                    <span class="breadCrumbsReview__separator">></span>
+                                    <a href="#" target="_blank" class="breadCrumbsReview__item">Пружины</a>
                                 </div>
                                 <!-- /.breadCrumbs -->
                             </header>
@@ -3955,6 +3957,7 @@
     <!-- /.popUpWindowBlock-addReview -->
 
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.fs.selecter.min.js"></script>
     <script src="js/flexcroll.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -54,6 +54,7 @@ window.onload = function () {
     showMoreManufacturer();
     replacePageHeaderBlockImgOfResponsive();
     manufacturerBlockResponsive();
+    comparisonBlockResponsive();
     // ==========================================================
 
 
@@ -414,7 +415,7 @@ window.onload = function () {
         if (link) {
             link.onclick = function (e) {
                 e.preventDefault();
-                scrollTo('#reviewBlock');
+                scrollTo('#sparePartsPageReviewBlock');
             };
         }
     } // scrollToReviewBlock
@@ -455,22 +456,26 @@ window.onload = function () {
         }
     } // showRatingSpareParts
     function showMoreManufacturer() {
-        const showMoreBtn = document.querySelector('#showMoreManufacturer');
+        const showMoreBtn = $('#showMoreManufacturer');
+        const showAllBtn = $('#showAllManufacturer');
         let isShow = false;
 
         if (showMoreBtn) {
-            const btnText = showMoreBtn.innerText;
-            showMoreBtn.onclick = function () {
-                const showMoreBox = this.parentNode.querySelector('.showThisBlock');
+            const btnText = showMoreBtn.text();
+            showMoreBtn.click(function() {
+                const showMoreBox = $(this).parent().find('.showThisBlock');
                 isShow = !isShow;
-                DOMAnimation.slideToggle(showMoreBox);
-                this.innerText = btnText;
+                showMoreBox.slideToggle();
+                showAllBtn.hide();
+                $(this).text(btnText);
                 if (isShow) {
-                    this.innerText = 'Скрыть';
+                    $(this).text('Скрыть');
+                    showAllBtn.css('margin-top', '15px');
+                    showAllBtn.show();
                 }
-            };
+            });
         }
-    } // showMoreManufacturer
+    } // showMoreManufacturer JQ
     function replacePageHeaderBlockImgOfResponsive() {
         const thumbnail = $('#sparePartsPageHeaderImg');
         if (thumbnail.length) {
@@ -499,6 +504,25 @@ window.onload = function () {
             const showItems = mainBlock.find('.manufacturerList__item');
             let hiddenItems = hiddenBlock.find('.manufacturerList__item');
             let isReplace = false;
+            if (!isReplace) {
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    isReplace = true;
+                    hiddenBlock.prepend(showItems.eq(showItems.length - 1));
+                    hiddenBlock.prepend(showItems.eq(showItems.length - 2));
+                    for (let i = 1; i <= 4; i++) {
+                        hiddenItems.eq(hiddenItems.length - i).addClass('manufacturerList__item-hidden');
+                    }
+                }
+            } else if ( window.matchMedia('(min-width: 1170px)').matches ) {
+                isReplace = false;
+                hiddenItems = hiddenBlock.find('.manufacturerList__item');
+                mainBlock.append(hiddenItems.eq(0));
+                mainBlock.append(hiddenItems.eq(1));
+                for (let i = 1; i <= 4; i++) {
+                    hiddenItems.eq(hiddenItems.length - i).removeClass('manufacturerList__item-hidden');
+                }
+            }
+
             $(window).resize(function () {
                 if (!isReplace) {
                     if (window.matchMedia('(max-width: 1170px)').matches) {
@@ -517,6 +541,40 @@ window.onload = function () {
                     for (let i = 1; i <= 4; i++) {
                         hiddenItems.eq(hiddenItems.length - i).removeClass('manufacturerList__item-hidden');
                     }
+                }
+            });
+        }
+    } // manufacturerBlockResponsive JQ
+    function comparisonBlockResponsive() {
+        // replace widget filter from review block
+        const comparisonBlock = $('#sparePartsPageComparisonBlock');
+        if (comparisonBlock.length) {
+            const reviewBlock = $('#sparePartsPageReviewBlock');
+            const widgetsAreaComparisonBlock = comparisonBlock.find('.widgetsArea');
+            const widgetsAreaReviewBlock = reviewBlock.find('.widgetsArea');
+            let widgetFilter = widgetsAreaReviewBlock.find('.widget-filter');
+
+            let isReplace = false;
+            if (!isReplace) {
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    isReplace = true;
+                    widgetsAreaComparisonBlock.append(widgetFilter);
+                }
+            } else if ( window.matchMedia('(min-width: 1170px)').matches ) {
+                isReplace = false;
+                widgetFilter = widgetsAreaComparisonBlock.find('.widget-filter');
+                widgetsAreaReviewBlock.prepend(widgetFilter);
+            }
+            $(window).resize(function () {
+                if (!isReplace) {
+                    if (window.matchMedia('(max-width: 1170px)').matches) {
+                        isReplace = true;
+                        widgetsAreaComparisonBlock.append(widgetFilter);
+                    }
+                } else if ( window.matchMedia('(min-width: 1170px)').matches ) {
+                    isReplace = false;
+                    widgetFilter = widgetsAreaComparisonBlock.find('.widget-filter');
+                    widgetsAreaReviewBlock.prepend(widgetFilter);
                 }
             });
         }

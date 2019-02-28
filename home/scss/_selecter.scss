@@ -257,8 +257,8 @@
     &-selected {
       position: relative;
       background: white;
-      border: 1px solid $sea;
-      color: $sea;
+      border: 1px solid $mainColor;
+      color: $mainColor;
       cursor: pointer;
       display: block;
       font-size: 16px;
@@ -278,7 +278,7 @@
         bottom: 0;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-top: 5px solid $sea;
+        border-top: 5px solid $mainColor;
         content: '';
         display: block;
         margin: auto 0;
@@ -290,7 +290,7 @@
       position: absolute;
       top: 100%;
       left: 0;
-      border: 1px solid $sea;
+      border: 1px solid $mainColor;
       border-top: 1px solid transparent;
       background-color: white;
       display: none;
@@ -303,7 +303,7 @@
     &-item {
       width: 100%;
       background: white;
-      color: $sea;
+      color: $mainColor;
       cursor: pointer;
       display: block;
       font-size: 16px;
@@ -314,11 +314,11 @@
       text-overflow: ellipsis;
       &:hover, &.selected:hover {
         color: white;
-        background-color: $sea;
+        background-color: $mainColor;
       } // &:hover, &.selected:hover
       &.selected {
         color: white;
-        background-color: $sea;
+        background-color: $mainColor;
       } // selected
     } // item
   } // selecter
