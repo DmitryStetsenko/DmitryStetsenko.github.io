@@ -116,8 +116,8 @@ button, input {
       overflow-Y: scroll;
       width: 100%; }
       .userFilter__content .filterOptions::-webkit-scrollbar {
-        width: 13px;
-        height: 13px; }
+        width: 10px;
+        height: 10px; }
       .userFilter__content .filterOptions::-webkit-scrollbar-track {
         border-radius: 3px;
         background: #e8e8e8; }
@@ -127,7 +127,8 @@ button, input {
       .userFilter__content .filterOptions::-webkit-scrollbar-thumb:hover {
         background: #555; }
       .userFilter__content .filterOptions__item {
-        padding: 10px 0; }
+        padding: 10px 0;
+        font-size: 13px; }
         .userFilter__content .filterOptions__item:hover {
           cursor: default;
           background: #f6f6f6; }
@@ -1773,8 +1774,8 @@ button, input {
     overflow-y: scroll;
     padding-right: 10px; }
     .widget .widgetContent .activityTape::-webkit-scrollbar {
-      width: 13px;
-      height: 13px; }
+      width: 10px;
+      height: 10px; }
     .widget .widgetContent .activityTape::-webkit-scrollbar-track {
       border-radius: 3px;
       background: #e8e8e8; }
@@ -4419,8 +4420,8 @@ button, input {
         min-height: 370px;
         height: 370px; }
         #ratingsPage .bestSpareParts__content .selectBrand__brandList::-webkit-scrollbar {
-          width: 13px;
-          height: 13px; }
+          width: 10px;
+          height: 10px; }
         #ratingsPage .bestSpareParts__content .selectBrand__brandList::-webkit-scrollbar-track {
           border-radius: 3px;
           background: #e8e8e8; }
@@ -4841,8 +4842,8 @@ button, input {
       /* Handle */
       /* Handle on hover */ }
       #allRatingsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar {
-        width: 13px;
-        height: 13px; }
+        width: 10px;
+        height: 10px; }
       #allRatingsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-track {
         border-radius: 3px;
         background: #e8e8e8; }

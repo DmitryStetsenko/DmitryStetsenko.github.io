@@ -87,7 +87,7 @@
   $contentPadding: 10px;
   // items
   $itemColor: $colorDarkGray;
-  $itemFontize: 13px;
+  $itemFontSize: 13px;
   $itemHeight: 30px;
   $itemPadding: 10px;
 
@@ -123,6 +123,7 @@
       width: 100%;
       &__item {
         padding: $itemPadding 0;
+        font-size: $itemFontSize;
         &:hover {
           cursor: default;
           background: $colorBgLightGray;
