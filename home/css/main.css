@@ -4762,8 +4762,7 @@ button, input {
         position: relative;
         transition: color .3s;
         width: 230px;
-        overflow: hidden;
-        white-space: nowrap; }
+        overflow: hidden; }
         #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
           background: #efb428;
           bottom: -1px;
@@ -4774,15 +4773,6 @@ button, input {
           position: absolute;
           transition: width .3s;
           width: 0; }
-        #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__text::after {
-          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
-          content: '';
-          display: block;
-          height: 100%;
-          position: absolute;
-          right: 0;
-          top: 0;
-          width: 30px; }
       #allRatingsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
         color: #2c333d;
         font-size: 20px; }

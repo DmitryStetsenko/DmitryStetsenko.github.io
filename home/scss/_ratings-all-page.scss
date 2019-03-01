@@ -119,13 +119,9 @@
               transition: color .3s;
               width: 230px;
               overflow: hidden;
-              white-space: nowrap;
               &::before {
                 @include makeUnderline($colorYellow, -1px);
               } // before
-              &::after {
-                @include gradientBorderColor(white, 30px, 100%);
-              } // after
             } // __text
             &__mainValue {
               color: $colorDarkGray;
