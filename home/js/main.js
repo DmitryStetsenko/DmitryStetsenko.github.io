@@ -15,6 +15,8 @@ window.onload = function () {
 
     // common function
 
+    stylesSelect();
+
     initCustomScrollBar();
 
     headerSearch();
@@ -55,6 +57,13 @@ window.onload = function () {
     replacePageHeaderBlockImgOfResponsive();
     manufacturerBlockResponsive();
     comparisonBlockResponsive();
+    const widgetFilterCarBrand = new UserFilter('userFilterCarBrand');
+    widgetFilterCarBrand.init();
+    const widgetFilterCarModel = new UserFilter('userFilterCarModel');
+    widgetFilterCarModel.init();
+    const widgetFilterCarGeneration = new UserFilter('userFilterCarGeneration');
+    widgetFilterCarGeneration.init();
+
     // ==========================================================
 
 
@@ -63,6 +72,17 @@ window.onload = function () {
     /////////////////////////////////////////////////////
 
     // -------------------------------------------------
+    // common funtion ----------------
+    function stylesSelect() {
+        $('select').selecter({
+            // callback    : function ( value, index ) {
+            //     filterEvent1 = value;
+            //     show_event(weekEventsData, filterEvent1, filterEvent2);
+            // },
+            customClass : 'mySelecter'
+        });
+    } //
+    // ===============================
     function headerSearch() {
         const searchBtn = document.querySelector('.iconBtn-search');
         const searchInput = document.querySelector('#headerFormSearch');
@@ -343,10 +363,10 @@ window.onload = function () {
     } // showAllFooterMenuItems
 
     function initCustomScrollBar() {
-        const scrollContainer = document.querySelector('.activityTape');
-        if (scrollContainer) {
-            fleXenv.fleXcrollMain(scrollContainer);
-        }
+        // const scrollContainer = document.querySelector('.activityTape');
+        // if (scrollContainer) {
+        //     fleXenv.fleXcrollMain(scrollContainer);
+        // }
     } // initCustomScrollBar
 
     // rating page functions ------------------------------------
@@ -582,6 +602,70 @@ window.onload = function () {
     // ==========================================================
 
 // secondary functions -------------------------------------------
+
+    // class Userfilter
+    function UserFilter (filterId) {
+        this.filterId = filterId;
+        this.selectedValue = '';
+        this.filter = $('#' + this.filterId);
+        this.filterHeader = this.filter.find('.userFilter__header');
+        this.filterIsOpen = false;
+        this.filterInput = this.filter.find('.inputFilter input');
+
+        this.init = function () {
+            this.filterHeader.click(()=>{
+                if (!this.filterIsOpen) {
+                    this.open();
+                } else {
+                    this.close();
+                }
+            });
+            this.filtration();
+            this.selectedValue = this.selected();
+        };
+
+        this.open = function () {
+            this.filter.find('.userFilter__content').slideDown();
+            this.filterIsOpen = true;
+        };
+        this.close = function () {
+            this.filter.find('.userFilter__content').slideUp();
+            this.filterIsOpen = false;
+        };
+        this.filtration = function () {
+            let filterOptions = this.filter.find('.filterOptions');
+            let itemList = this.filter.find('.filterOptions__item');
+            this.filterInput.on('input', function(){
+                itemList.hide();
+                let inputValue = $(this).val().toUpperCase();
+                if ( !inputValue ) {
+                    itemList.show();
+                } else {
+                    itemList.each(function(index){
+                        let currentItemName = $(this).text().toUpperCase();
+                        if (currentItemName.indexOf(inputValue) !== -1) {
+                            $(this).show();
+                        }
+                    });
+                }
+            });
+        };
+        this.selected = function () {
+            let filterOptionItem = this.filter.find('.filterOptions__item');
+            filterOptionItem.click(function(){
+                filterOptionItem.removeClass('filterOptions__item-selected');
+                filterOptionItem.removeAttr('selected');
+                let itemValue = $(this).text();
+                $(this).addClass('filterOptions__item-selected');
+                $(this).attr('selected','selected');
+                $(this).parent().parent().parent().find('.userFilter__header .innerText').text(itemValue);
+                $(this).parent().parent().parent().addClass('userFilter-selected');
+                $(this).parent().parent().parent().attr('selected', 'selected');
+                return itemValue;
+            });
+        }
+    }
+
     class DOMAnimation {
         /**
          * hide element
