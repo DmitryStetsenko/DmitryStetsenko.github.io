@@ -239,6 +239,34 @@ button, input {
       } // hover
     } // Disabled
   } // -showAll
+  &-showAllNoFullWidth {
+    display: block;
+    border: 1px solid $colorYellow;
+    box-shadow: unset;
+    background: transparent;
+    color: $colorDarkGray;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 8px 25px;
+    text-align: center;
+    width: 300px;
+    &::before {
+      display: none;
+    } // before
+    &:hover {
+      color: white;
+      background: $colorRatingYellow;
+    } // hover
+    &Disabled {
+      background: $colorBgLightGray;
+      border-color: $colorBgLightGray;
+      &:hover {
+        background-color: $colorBgLightGray;
+        cursor: default;
+        color: $colorGray;
+      } // hover
+    } // Disabled
+  } // -showAll
   &-popUpadditionalBlock {
     background: $colorGray;
     box-shadow: none;
@@ -783,7 +811,6 @@ button, input {
   overflow: hidden;
   position: relative;
   max-width: $wrapperMaxWidth;
-
   // @MEDIA --------------------------
   @media screen and ( max-width: 1170px ) {
     &::after {
@@ -927,6 +954,24 @@ button, input {
 
   border-radius: $mainBorderRadius;
   border: 1px solid $borderColor;
+  .userProfileLink {
+    text-decoration: none;
+    &:hover {
+      .userInfo {
+        &__photo {
+          box-shadow: 0 0 0 1px $colorYellow;
+        } // photo
+        &__name {
+          .innerText {
+            color: $colorYellow;
+            &::before {
+              width: 100%;
+            } // before
+          } // innerText
+        } // name
+      } // userInfo
+    } // hover
+  } // userProfileLink
   .userInfo {
     @include flex(center, flex-start);
     &__photo {
@@ -936,6 +981,7 @@ button, input {
       margin-right: 20px;
       overflow: hidden;
       position: relative;
+      transition: box-shadow .3s;
       width: $photoSize;
       img {
         object-fit: cover;
@@ -955,17 +1001,23 @@ button, input {
       } // -jonDoe
     } // photo
     &__name {
-      color: $colorDarkGray;
-      font-size: 15px;
-      font-weight: bold;
-      &::after {
-        content: attr(data-last-visit);
+      .innerText {
+        color: $colorDarkGray;
+        font-size: 15px;
+        font-weight: bold;
+        position: relative;
+        transition: color .3s;
+        &::before {
+          @include makeUnderlineHeight($colorYellow, 1px, 0);
+        } // before
+      } // innerText
+      time {
         color: $colorColName;
         display: block;
         font-size: 13px;
         font-weight: normal;
         margin-top: 8px;
-      } // after
+      } // time
     } // name
   } // userInfo
   .infoBlock {
@@ -1118,6 +1170,7 @@ button, input {
         max-height: 55px;
         overflow: hidden;
         padding-right: 0;
+        transition: height .3s, max-height .3s;
         &::after {
           content: '';
           background: linear-gradient(to bottom,
@@ -1264,6 +1317,20 @@ button, input {
           } // __title
           &__data {
             color: $colorDarkGray;
+            position: relative;
+            text-decoration: none;
+            transition: color .3s;
+            &-carName {
+              &:hover {
+                color: $colorYellow;
+                &::before {
+                  width: 100%;
+                } // before
+              } // hover
+              &::before {
+                @include makeUnderlineHeight($colorYellow, 1px, -2px);
+              } // before
+            } // -carName
           } // __data
           &-model {
             .carInfo__title {
@@ -1304,6 +1371,9 @@ button, input {
         $iconColor: $colorLinkAside;
         @include flex(center, flex-start);
         color: $colorLinkAside;
+        &:hover {
+          cursor: pointer;
+        } // hover
         span {
           display: block;
         } // span
@@ -1342,7 +1412,16 @@ button, input {
             height: 25px;
             margin-right: 10px;
             position: relative;
+            transition: transform .3s, box-shadow .3s;
             width: 40px;
+            &:hover {
+              color: white;
+              cursor: pointer;
+              transform: translateY(-2px);
+              &::after {
+                box-shadow: 0 0 0 1px white;
+              } // after
+            } // hover
             &:last-child {
               margin-right: 0;
             } // last-child
@@ -1362,6 +1441,10 @@ button, input {
             &-yes {
               border-color: $colorYellow;
               color: $colorYellow;
+              &:hover {
+                background: $colorYellow;
+                box-shadow: 0 2px 0 0 darken($colorYellow, 10%);
+              } // hover
               &::after {
                 background: $colorYellow;
               } // after
@@ -1369,6 +1452,10 @@ button, input {
             &-no {
               border-color: $colorDarkGray;
               color: $colorDarkGray;
+              &:hover {
+                background: black;
+                box-shadow: 0 2px 0 0 lighten(black, 70%);
+              } // hover
               &::after {
                 background: $colorDarkGray;
               } // after
@@ -1396,6 +1483,9 @@ button, input {
         $iconSize: 16px;
         height: $iconSize;
         width: $iconSize;
+        &:hover {
+          cursor: pointer;
+        } // hover
         svg {
           fill: $iconColor;
           fill-rule: evenodd;
@@ -1403,6 +1493,9 @@ button, input {
       } // reviewLink
       .reviewStatus {
         width: 17px;
+        &:hover {
+          cursor: pointer;
+        } // hover
       } // reviewStatus
     } // userAction
   } // __footer
@@ -1544,6 +1637,7 @@ button, input {
 
 // popUp windows -------------------------------
 .popUpWindowBlock {
+  display: none;
   .overlay {
     @include fullScreenOverlayPosition(black, .6, fixed, 1000);
     transition: opacity .3s;
@@ -2091,6 +2185,9 @@ button, input {
     .carInfoFilter {
       &__selectBlock {
         margin-bottom: 20px;
+        &-dependedElem {
+          display: none;
+        } // dependedElem
       } // __selectBlock
       &__responseNature {
         .responseNature {
