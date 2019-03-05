@@ -111,6 +111,7 @@ button, input {
   border-radius: 3px;
   background: $colorYellow;
   box-shadow: 0 2px 0 $colorYellowShadow;
+  color: inherit;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -148,21 +149,17 @@ button, input {
     background: white;
     border: 1px solid $colorRatingYellow;
     box-shadow: none;
+    color: $colorDarkGray;
+    text-decoration: none;
     height: 30px;
     font-size: 13px;
     padding: 0;
     width: 100%;
-    a {
-      color: $colorDarkGray;
-      text-decoration: none;
-    }
     &::before {
       display: none;
     } // before
     &:hover {
-      a {
-        color: white;
-      } // a
+      color: white;
       background: $colorRatingYellow;
     } // hover
   } // -showFullRating
@@ -249,7 +246,7 @@ button, input {
     margin: 0 auto;
     padding: 8px 25px;
     text-align: center;
-    width: 300px;
+    width: 200px;
     &::before {
       display: none;
     } // before

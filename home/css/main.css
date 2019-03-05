@@ -258,6 +258,7 @@ button, input {
   border-radius: 3px;
   background: #efb428;
   box-shadow: 0 2px 0 #c59115;
+  color: inherit;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -290,19 +291,17 @@ button, input {
     background: white;
     border: 1px solid #efb428;
     box-shadow: none;
+    color: #2c333d;
+    text-decoration: none;
     height: 30px;
     font-size: 13px;
     padding: 0;
     width: 100%; }
-    .mainBtn-showFullRating a {
-      color: #2c333d;
-      text-decoration: none; }
     .mainBtn-showFullRating::before {
       display: none; }
     .mainBtn-showFullRating:hover {
+      color: white;
       background: #efb428; }
-      .mainBtn-showFullRating:hover a {
-        color: white; }
   .mainBtn-addComment {
     background: white;
     border: 1px solid #efb428;
@@ -369,7 +368,7 @@ button, input {
     margin: 0 auto;
     padding: 8px 25px;
     text-align: center;
-    width: 300px; }
+    width: 200px; }
     .mainBtn-showAllNoFullWidth::before {
       display: none; }
     .mainBtn-showAllNoFullWidth:hover {
