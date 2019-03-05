@@ -946,7 +946,7 @@ button, input {
   $marginBottomInfoBlock: 25px;
   $paddingHeader: 10px 15px;
   $paddingFooter: 10px 15px;
-  $paddingContent: 30px;
+  $paddingContent: 20px 30px 30px 30px;
   // header
   $bgColor: $colorBorderLightGray;
   // user info
@@ -1066,6 +1066,7 @@ button, input {
     &>.infoBlock {
       &-userInfo {
         @include flex(center, space-between);
+        margin-bottom: 15px;
         .userAssessment {
           @include flex(center, flex-start);
           &__item {
@@ -1323,11 +1324,15 @@ button, input {
             &-carName {
               &:hover {
                 color: $colorYellow;
-                &::before {
+                &::after {
                   width: 100%;
                 } // before
               } // hover
               &::before {
+                @include makeUnderlineHeight($colorGray, 1px, -2px);
+                width: 100%;
+              } // before
+              &::after {
                 @include makeUnderlineHeight($colorYellow, 1px, -2px);
               } // before
             } // -carName
@@ -2302,13 +2307,7 @@ button, input {
         transition: color .3s;
         &:hover {
           color: $colorLinkAside;
-          &::before {
-            width: 100%;
-          } // before
         } // hover
-        &::before {
-          @include makeUnderlineHeight($colorLinkAside, 3px, 0);
-        } // before
         &:first-child {
           padding-top: 0;
         } // first-child
