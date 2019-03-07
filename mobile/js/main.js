@@ -32,6 +32,13 @@ window.onload = function () {
 
     showAllFooterMenuItems ();
 
+    // spare-parts function -------------------------------------
+    scrollToReviewBlock();
+    showRatingSpareParts();
+    initFilter(); // JQ
+    reviewShowMoreBtn(); // JQ
+    // ==========================================================
+
     // rating page functions ----------------------------
     showAdditInfo ('.additInfo', '.headerBlockContent__item');
     tableHeaderClick ();
@@ -359,17 +366,110 @@ window.onload = function () {
         }
     } // initCustomScrollBar
 
-// rating page functions ------------------------------------
+    // spare-parts function -------------------------------------
+    function scrollToReviewBlock() {
+        const link = document.querySelector('#scrollToReviewBlock');
+        if (link) {
+            link.onclick = function (e) {
+                e.preventDefault();
+                scrollTo('#sparePartsPageReviewBlock');
+            };
+        }
+    } // scrollToReviewBlock
+    function showRatingSpareParts() {
+        let sparePartsElements = document.querySelectorAll('.ratingListElement');
+        if (sparePartsElements) {
+            sparePartsElements = Array.prototype.slice.call(sparePartsElements);
+
+            sparePartsElements.forEach(function (currentElem) {
+                let currentRatingElem = currentElem.querySelector('.ratingListElement__item-rating');
+                let spanRatingElement = currentRatingElem.querySelector('span');
+                let currentRating = parseInt(currentRatingElem.getAttribute('data-count'));
+                let persentValue = parseInt(RATING_STROKE_LENGTH - RATING_STROKE_LENGTH * currentRating / 100);
+                let svg = currentRatingElem.querySelector('path:last-child');
+                for (let i = 0; i <= currentRating; i++) {
+                    setTimeout(() => {
+                        spanRatingElement.innerText = i;
+                    }, i * 7);
+                }
+
+                svg.style.strokeDashoffset = persentValue;
+                switch (true) {
+                    case ( currentRating < 34 ) : {
+                        svg.style.stroke = RATING_COLOR_RED;
+                        break;
+                    }
+                    case ( currentRating >= 34 && currentRating < 67 ) : {
+                        svg.style.stroke = RATING_COLOR_YELLOW;
+                        break;
+                    }
+
+                    case ( currentRating >= 67 && currentRating <= 100 ) : {
+                        svg.style.stroke = RATING_COLOR_GREEN;
+                        break;
+                    }
+                }
+            });
+        }
+    } // showRatingSpareParts
+    function reviewShowMoreBtn() {
+        const reviewBlock = $('.review');
+        if (reviewBlock.length) {
+            const userDescriptionBlock = reviewBlock.find('.infoBlock-userDescription');
+            const showMoreBtn = userDescriptionBlock.find('.showMoreBtn-descrBlock');
+            let currentDescrBlockHeight;
+            let descriptionIsShow = false;
+
+            showMoreBtn.click(function(){
+                const currentReviewBlock = $(this).parent();
+                const descriptionHeight = currentReviewBlock.find('.userDescription').height();
+
+                if (descriptionIsShow) {
+                    currentReviewBlock.css('height', currentDescrBlockHeight);
+                    $(this).text('Подробнее');
+                    setTimeout(function(){
+                        currentReviewBlock.css('max-height','');
+                        currentReviewBlock.css('height','');
+                    }, 300);
+                } else {
+                    currentDescrBlockHeight = currentReviewBlock.height();
+                    currentReviewBlock.height(currentDescrBlockHeight);
+                    currentReviewBlock.height(descriptionHeight + 20);
+                    currentReviewBlock.css('max-height','initial');
+                    $(this).text('скрыть');
+                }
+                console.log(currentDescrBlockHeight);
+                descriptionIsShow = !descriptionIsShow;
+            });
+        }
+    } // reviewShowMoreBtn JQ
+    function initFilter() {
+        const widgetFilterSpareParts = new UserFilter('userFilterSpareParts', 'Все');
+        widgetFilterSpareParts.init();
+        const widgetFilterManufacturer = new UserFilter('userFilterManufacturer', 'Все');
+        widgetFilterManufacturer.init();
+        const widgetFilterCarBrandName = new UserFilter('userFilterCarBrandName', 'Выберите марку авто', 'userFilterCarModel');
+        widgetFilterCarBrandName.init();
+        const widgetFilterCarModel = new UserFilter('userFilterCarModel', 'Выберите модель авто', 'userFilterCarGeneration');
+        widgetFilterCarModel.init();
+        const widgetFilterCarGeneration = new UserFilter('userFilterCarGeneration', 'Выберите поколение авто');
+        widgetFilterCarGeneration.init();
+    } // initFilter JQ
+    // ==========================================================
+
+    // rating page functions ------------------------------------
     function showAdditInfo (additInfoBtnSelector, additInfoParentBlockSelector) {
         const additInfoBtn = document.querySelector(additInfoBtnSelector);
-        const parentBox = document.querySelector(additInfoParentBlockSelector);
-        const showAdditInfo = parentBox.querySelector('.showAdditInfo');
-        additInfoBtn.onmouseover = function() {
-            DOMAnimation.slideDown(showAdditInfo, 200);
-        };
-        additInfoBtn.onmouseout = function() {
-            DOMAnimation.slideUp(showAdditInfo, 200);
-        };
+        if (additInfoBtn) {
+            const parentBox = document.querySelector(additInfoParentBlockSelector);
+            const showAdditInfo = parentBox.querySelector('.showAdditInfo');
+            additInfoBtn.onmouseover = function() {
+                DOMAnimation.slideDown(showAdditInfo, 200);
+            };
+            additInfoBtn.onmouseout = function() {
+                DOMAnimation.slideUp(showAdditInfo, 200);
+            };
+        }
     } // showAdditInfo
     function tableHeaderClick () {
         const tableHeaderItem = document.querySelectorAll('.tableHeaderItem');
@@ -389,20 +489,22 @@ window.onload = function () {
             });
         });
     } // tableHeaderClick
-    function showNonRatingsBrand() {
+    function showNonRatingsBrand () {
         const showNotRatedBtn = document.querySelector('.mainBtn-showNotRated');
         const notShowRatingsBlock = document.querySelector('.tableRating-loading');
-        const showText = 'Показать производителей не участвующих в рейтинге';
-        const hideText = 'Скрыть производителей не участвующих в рейтинге';
-        let innerText;
-        let showStatus = false;
+        if (notShowRatingsBlock) {
+            const showText = 'Показать производителей не участвующих в рейтинге';
+            const hideText = 'Скрыть производителей не участвующих в рейтинге';
+            let innerText;
+            let showStatus = false;
 
-        showNotRatedBtn.addEventListener('click', function(){
-            DOMAnimation.slideToggle(notShowRatingsBlock);
-            showStatus = !showStatus;
-            innerText = showStatus ? hideText : showText;
-            this.querySelector('.innerText').innerText = innerText;
-        });
+            showNotRatedBtn.addEventListener('click', function(){
+                DOMAnimation.slideToggle(notShowRatingsBlock);
+                showStatus = !showStatus;
+                innerText = showStatus ? hideText : showText;
+                this.querySelector('.innerText').innerText = innerText;
+            });
+        }
     } // showNonRatingsBrand
     function scrollToSeoBlock(){
         const showMoreBtn = document.querySelector('.showMoreBtn-descrBlock');
@@ -415,7 +517,7 @@ window.onload = function () {
     } // scrollToSeoBlock
     // ==========================================================
 
-    // mobile --------------------------------------------------
+    // mobile ---------------------------------------------------
     function sparePartsToggle () {
         let sparePartsTitle = document.querySelectorAll('.sparePartsContentTitle');
 
@@ -460,7 +562,81 @@ window.onload = function () {
         }
     } // brandsToggle
 
-    // secondary functions -------------------------------------------
+    // secondary functions --------------------------------------
+    // class UserFilter
+    // To get the value of the selected field
+    // You need to refer to the field - selectedValue
+    // example: let myFilter = new UserFilter('carBrand');
+    // myFilter.selectedValue;
+    function UserFilter(filterId, defaultValue = '', dependenceElemId = '') {
+        let that = this;
+        this.filterId = filterId;
+        this.selectedValue = defaultValue;
+        this.dependeceElemId = dependenceElemId;
+        this.filter = $('#' + this.filterId);
+        this.filterHeader = this.filter.find('.userFilter__header');
+        this.filterIsOpen = false;
+        this.filterInput = this.filter.find('.inputFilter input');
+
+        this.init = function () {
+            this.filterHeader.find('.innerText').text(this.selectedValue);
+            this.filterHeader.click(() => {
+                if (!this.filterIsOpen) {
+                    this.open();
+                } else {
+                    this.close();
+                }
+            });
+            this.filtration();
+            this.selected();
+        };
+
+        this.open = function () {
+            this.filter.find('.userFilter__content').slideDown();
+            this.filterIsOpen = true;
+        };
+        this.close = function () {
+            this.filter.find('.userFilter__content').slideUp();
+            this.filterIsOpen = false;
+        };
+        this.filtration = function () {
+            let filterOptions = this.filter.find('.filterOptions');
+            let itemList = this.filter.find('.filterOptions__item');
+            this.filterInput.on('input', function () {
+                itemList.hide();
+                let inputValue = $(this).val().toUpperCase();
+                if (!inputValue) {
+                    itemList.show();
+                } else {
+                    itemList.each(function (index) {
+                        let currentItemName = $(this).text().toUpperCase();
+                        if (currentItemName.indexOf(inputValue) !== -1) {
+                            $(this).show();
+                        }
+                    });
+                }
+            });
+        };
+        this.selected = function () {
+            let filterOptionItem = this.filter.find('.filterOptions__item');
+            filterOptionItem.click(function () {
+                filterOptionItem.removeClass('filterOptions__item-selected');
+                filterOptionItem.removeAttr('selected');
+                let itemValue = $(this).text();
+                $(this).addClass('filterOptions__item-selected');
+                $(this).attr('selected', 'selected');
+                $(this).parent().parent().parent().find('.userFilter__header .innerText').text(itemValue);
+                $(this).parent().parent().parent().addClass('userFilter-selected');
+                $(this).parent().parent().parent().attr('selected', 'selected');
+                that.selectedValue = itemValue;
+                if (that.dependeceElemId) {
+                    $('#' + that.dependeceElemId).parent().show();
+                }
+                that.close();
+            });
+        }
+    } // UserFilter JQ
+
     class DOMAnimation {
         /**
          * hide element

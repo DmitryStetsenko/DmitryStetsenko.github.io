@@ -54,13 +54,12 @@ $(function () {
     // spare-parts function -------------------------------------
     scrollToReviewBlock();
     showRatingSpareParts();
-    showMoreManufacturer();
-    replacePageHeaderBlockImgOfResponsive();
-    manufacturerBlockResponsive();
-    comparisonBlockResponsive();
-    initFilter();
+    showMoreManufacturer(); // JQ
+    replacePageHeaderBlockImgOfResponsive(); // JQ
+    manufacturerBlockResponsive(); // JQ
+    comparisonBlockResponsive(); // JQ
+    initFilter(); // JQ
     reviewShowMoreBtn(); // JQ
-
     // ==========================================================
 
 

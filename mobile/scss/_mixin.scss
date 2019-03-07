@@ -5,7 +5,8 @@
 }
 
 @mixin textStroke($strokeColor) {
-  text-shadow: 1px 1px 0 $strokeColor, -1px -1px 0 $strokeColor;
+  text-shadow:
+          -0   -1px 1px $strokeColor,
 }
 
 @mixin banTxtSelect () {
@@ -135,8 +136,7 @@
 
 @mixin customScroll() {
   &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 13px;
   }
 
   /* Track */
