@@ -182,7 +182,14 @@
                   .brandName {
                     font-size: 16px;
                     margin-right: 10px;
+                    max-width: 80px;
+                    overflow: hidden;
+                    position: relative;
                     white-space: nowrap;
+                    width: 85px;
+                    &::after {
+                      @include gradientBorderColor($colorBgLightGray, 20px, 100%);
+                    } // after
                   } // brandName
                   .brandRating {
                     @include flex(center, center);

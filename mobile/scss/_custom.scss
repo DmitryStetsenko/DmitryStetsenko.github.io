@@ -295,11 +295,11 @@ button, input {
     border: 1px solid $colorYellow;
     color: $colorDarkGray;
     height: 30px;
-    padding: 0 25px;
+    padding: 0 8px;
     .cssIcon {
       display: block;
       height: $iconSize;
-      margin-right: 10px;
+      margin-right: 3px;
       position: relative;
       width: $iconSize;
       &-search {
@@ -1368,13 +1368,15 @@ button, input {
             .carInfo__title {
               .titleIcon {
                 width: 20px;
+                margin-right: 12px;
               } // titleIcon
             } // carInfo__title
           } // -mileage
           &-vinCode {
             .carInfo__title {
               .titleIcon {
-                width: 14px;
+                width: 16px;
+                margin-right: 16px;
               } // titleIcon
             } // carInfo__title
           } // -vinCode
