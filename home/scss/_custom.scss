@@ -302,6 +302,7 @@ button, input {
     color: $colorDarkGray;
     height: 30px;
     padding: 0 25px;
+    white-space: nowrap;
     .cssIcon {
       display: block;
       height: $iconSize;

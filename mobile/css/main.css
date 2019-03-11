@@ -1249,13 +1249,13 @@ button, input {
     .review__content > .infoBlock-userDescription {
       flex-shrink: 2;
       position: relative;
-      max-height: 55px;
+      max-height: 60px;
       overflow: hidden;
       padding-right: 0;
       transition: height .3s, max-height .3s; }
       .review__content > .infoBlock-userDescription::after {
         content: '';
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 30%, white 100%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, white 100%);
         position: absolute;
         bottom: 0;
         left: 0;
@@ -4278,13 +4278,13 @@ button, input {
 #ratingsPage .magazine {
   margin-bottom: 0; }
 
-#ratingsAll .searchBlock {
+#ratingsAll .mainContent .searchBlock {
   margin-bottom: 20px; }
-  #ratingsAll .searchBlock__input {
+  #ratingsAll .mainContent .searchBlock__input {
     display: flex;
     align-items: center;
     justify-content: flex-start; }
-    #ratingsAll .searchBlock__input > input {
+    #ratingsAll .mainContent .searchBlock__input > input {
       margin-right: 10px;
       max-width: 400px; }
 
@@ -4328,6 +4328,7 @@ button, input {
       flex-direction: column;
       color: #2c333d;
       height: 100%;
+      margin-bottom: 20px;
       text-decoration: none; }
       #ratingsAll .ratingsBlock__content .ratingList__item .itemSell {
         display: flex;
@@ -4815,3 +4816,154 @@ button, input {
           margin-bottom: 0; }
     #sparePartsPage .reviewsBlock .contentArea__pagination {
       margin-bottom: 45px; }
+
+#allSparePartsPage .mainContent .searchBlock {
+  margin-bottom: 20px; }
+  #allSparePartsPage .mainContent .searchBlock .label-searchBlock {
+    margin-bottom: 20px; }
+  #allSparePartsPage .mainContent .searchBlock__title {
+    display: block;
+    margin-bottom: 10px; }
+  #allSparePartsPage .mainContent .searchBlock__input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    #allSparePartsPage .mainContent .searchBlock__input > input {
+      margin-right: 10px;
+      max-width: 400px; }
+  #allSparePartsPage .mainContent .searchBlock .sparePartsFilter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+    #allSparePartsPage .mainContent .searchBlock .sparePartsFilter .filterBtn {
+      flex-basis: auto;
+      width: calc( 100% / 3); }
+
+#allSparePartsPage .ratingsBlock {
+  font-size: 14px;
+  margin-bottom: 45px; }
+  #allSparePartsPage .ratingsBlock__content {
+    margin-bottom: 40px; }
+    #allSparePartsPage .ratingsBlock__content .ratingList li {
+      border: 1px solid transparent;
+      height: initial;
+      padding: 0 10px;
+      transition: border-color .3s; }
+      #allSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
+        background: #f6f6f6; }
+        #allSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) .itemSell__text::after {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 30px; }
+      #allSparePartsPage .ratingsBlock__content .ratingList li:nth-child(even) .itemSell__text::after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30px; }
+      #allSparePartsPage .ratingsBlock__content .ratingList li:hover {
+        cursor: pointer;
+        border-color: #efb428; }
+    #allSparePartsPage .ratingsBlock__content .ratingList__item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      color: #2c333d;
+      height: 100%;
+      margin-bottom: 20px;
+      text-decoration: none; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid #c1c1c1;
+        flex-basis: auto;
+        height: 50px; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell:last-child {
+          border-right: none; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__title {
+          color: #8a939f;
+          min-width: 120px;
+          width: 120px; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__text {
+          font-size: 14px;
+          position: relative;
+          transition: color .3s;
+          width: 230px;
+          overflow: hidden; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
+            background: #efb428;
+            bottom: -1px;
+            content: '';
+            display: block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transition: width .3s;
+            width: 0; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
+          color: #2c333d;
+          font-size: 20px; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
+            content: attr(data-growth);
+            font-size: 16px;
+            margin-left: 5px; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
+            color: #7eae3e; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
+            color: #c1c1c1; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
+            color: #7eae3e; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+          color: #2c333d;
+          justify-content: flex-start;
+          text-decoration: none;
+          min-width: 100%;
+          width: 100%;
+          white-space: nowrap; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+            color: #efb428; }
+            #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+              width: 100%; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+          min-width: 100%;
+          width: 100%; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+          min-width: 100%;
+          width: 100%; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+          height: initial;
+          border-bottom: none;
+          margin: 10px 0;
+          padding: 0 20px;
+          min-width: 100%;
+          width: 100%; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+            font-size: 14px;
+            min-width: 100%;
+            text-decoration: none;
+            width: 100%;
+            white-space: nowrap; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+          height: initial;
+          border-bottom: none;
+          margin-bottom: 10px;
+          padding: 0 20px;
+          min-width: 100%;
+          width: 100%; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+            font-size: 14px;
+            min-width: 100%;
+            text-decoration: none;
+            width: 100%;
+            white-space: nowrap; }

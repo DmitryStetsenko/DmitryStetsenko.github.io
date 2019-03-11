@@ -408,7 +408,8 @@ button, input {
     border: 1px solid #efb428;
     color: #2c333d;
     height: 30px;
-    padding: 0 25px; }
+    padding: 0 25px;
+    white-space: nowrap; }
     .mainBtn-search .cssIcon {
       display: block;
       height: 12px;
@@ -5680,4 +5681,958 @@ button, input {
           width: 50%;
           margin-right: 15px; }
           #sparePartsPage .reviewsBlock .widgetsArea .widget:last-child {
+            margin-right: 0; } }
+
+#allSparePartsPage .mainContent .searchBlock {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px; }
+  #allSparePartsPage .mainContent .searchBlock .label-searchBlock {
+    margin-bottom: 0; }
+  #allSparePartsPage .mainContent .searchBlock__title {
+    display: block;
+    margin-bottom: 15px; }
+  #allSparePartsPage .mainContent .searchBlock__input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    #allSparePartsPage .mainContent .searchBlock__input > input {
+      margin-right: 20px;
+      width: 400px; }
+  #allSparePartsPage .mainContent .searchBlock .sparePartsFilter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto; }
+    #allSparePartsPage .mainContent .searchBlock .sparePartsFilter .filterBtn {
+      height: 30px; }
+  @media screen and (max-width: 1000px) {
+    #allSparePartsPage .mainContent .searchBlock__input > input {
+      margin-right: 10px; }
+    #allSparePartsPage .mainContent .searchBlock__input .mainBtn-search {
+      margin-right: 10px;
+      padding: 0 8px; }
+      #allSparePartsPage .mainContent .searchBlock__input .mainBtn-search .innerText {
+        display: none; }
+      #allSparePartsPage .mainContent .searchBlock__input .mainBtn-search .cssIcon {
+        margin-right: 3px; } }
+
+#allSparePartsPage .ratingsBlock {
+  margin-bottom: 60px; }
+  #allSparePartsPage .ratingsBlock__contentScrollBox {
+    margin-bottom: 40px; }
+  #allSparePartsPage .ratingsBlock__mainContent {
+    width: 1140px; }
+  #allSparePartsPage .ratingsBlock .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    #allSparePartsPage .ratingsBlock .header__colTitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a939f;
+      height: 65px;
+      font-size: 13px;
+      flex-basis: auto; }
+      #allSparePartsPage .ratingsBlock .header__colTitle-name {
+        min-width: 330px;
+        width: 330px; }
+      #allSparePartsPage .ratingsBlock .header__colTitle-review {
+        min-width: 150px;
+        width: 150px; }
+      #allSparePartsPage .ratingsBlock .header__colTitle-manufacturer {
+        min-width: 150px;
+        width: 150px; }
+      #allSparePartsPage .ratingsBlock .header__colTitle-rating {
+        width: 50%; }
+      #allSparePartsPage .ratingsBlock .header__colTitle-addReview {
+        width: 50%; }
+  #allSparePartsPage .ratingsBlock__content .ratingList li {
+    border: 1px solid transparent;
+    height: 65px;
+    padding: 10px;
+    transition: border-color .3s; }
+    #allSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
+      background: #f6f6f6; }
+      #allSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) .itemSell__text::after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30px; }
+    #allSparePartsPage .ratingsBlock__content .ratingList li:hover {
+      cursor: pointer;
+      border-color: #efb428; }
+  #allSparePartsPage .ratingsBlock__content .ratingList__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #2c333d;
+    height: 100%;
+    text-decoration: none; }
+    #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #c1c1c1;
+      flex-basis: auto;
+      height: 100%; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell:last-child {
+        border-right: none; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__icon {
+        border-radius: 3px;
+        overflow: hidden;
+        margin-right: 15px;
+        width: 60px; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__icon img {
+          width: 60px;
+          object-fit: cover;
+          object-position: center; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__text {
+        font-size: 16px;
+        position: relative;
+        transition: color .3s;
+        width: 230px;
+        overflow: hidden; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
+          background: #efb428;
+          bottom: -1px;
+          content: '';
+          display: block;
+          height: 1px;
+          left: 0;
+          position: absolute;
+          transition: width .3s;
+          width: 0; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
+        color: #2c333d;
+        font-size: 20px; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
+          content: attr(data-growth);
+          font-size: 16px;
+          margin-left: 5px; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
+          color: #7eae3e; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
+          color: #c1c1c1; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
+          color: #7eae3e; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        color: #2c333d;
+        justify-content: flex-start;
+        text-decoration: none;
+        min-width: 320px;
+        width: 320px; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 150px;
+        width: 150px; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 150px;
+        width: 150px; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+        flex-basis: auto;
+        padding: 0 20px;
+        min-width: initial;
+        width: 50%; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+          font-size: 14px;
+          min-width: 50%;
+          text-decoration: none;
+          width: 100%;
+          white-space: nowrap; }
+      #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        flex-basis: auto;
+        padding: 0 20px;
+        min-width: initial;
+        width: 50%; }
+        #allSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          font-size: 14px;
+          min-width: 50%;
+          text-decoration: none;
+          width: 100%;
+          white-space: nowrap; }
+  @media screen and (max-width: 1140px) {
+    #allSparePartsPage .ratingsBlock__contentScrollBox {
+      overflow-x: scroll;
+      /* Track */
+      /* Handle */
+      /* Handle on hover */ }
+      #allSparePartsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar {
+        width: 10px;
+        height: 10px; }
+      #allSparePartsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-track {
+        border-radius: 3px;
+        background: #e8e8e8; }
+      #allSparePartsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-thumb {
+        background: #efb428;
+        border-radius: 10px; }
+      #allSparePartsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-thumb:hover {
+        background: #555; }
+    #allSparePartsPage .ratingsBlock__mainContent {
+      margin-bottom: 10px; } }
+
+#brandsPage .pageHeaderBlock {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 60px; }
+  #brandsPage .pageHeaderBlock .blockTitle {
+    color: #2c333d;
+    padding-left: 40px;
+    margin-bottom: 30px; }
+  #brandsPage .pageHeaderBlock__thumbnail .innerImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    border: 1px solid #e8e8e8;
+    height: 140px;
+    min-width: 140px;
+    padding: 10px;
+    width: 140px; }
+  #brandsPage .pageHeaderBlock__content .headerBlockContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; }
+    #brandsPage .pageHeaderBlock__content .headerBlockContent__item {
+      border-right: 1px solid #e8e8e8;
+      flex-shrink: 1;
+      max-height: 87px;
+      position: relative;
+      padding: 15px 40px; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item:last-child {
+        border-right: none; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle {
+        margin-bottom: 20px;
+        color: #8a939f;
+        font-size: 14px;
+        position: relative;
+        text-align: center; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText {
+          position: relative; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText-link {
+            color: #8a939f;
+            text-decoration: none; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText-link::before {
+              background: #efb428;
+              bottom: -1px;
+              content: '';
+              display: block;
+              height: 1px;
+              left: 0;
+              position: absolute;
+              transition: width .3s;
+              width: 0; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText-link:hover {
+              color: #efb428; }
+              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText-link:hover::before {
+                width: 100%; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .additInfo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: white;
+          border-radius: 50%;
+          border: 1px solid #8a939f;
+          color: #8a939f;
+          font-size: 10px;
+          position: absolute;
+          right: -15px;
+          top: -5px;
+          height: 14px;
+          width: 14px; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .additInfo:hover {
+            border-color: #efb428;
+            color: #efb428;
+            cursor: pointer; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-description {
+          color: #2c333d;
+          font-weight: bold;
+          margin-bottom: 10px; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #464f5b;
+          margin-bottom: 0;
+          padding: 5px 0; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon {
+            width: 15px;
+            margin-right: 8px; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon svg {
+              fill: #efb428; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerTxt {
+            color: white;
+            font-size: 14px; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          color: #2c333d;
+          font-size: 20px; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data::after {
+            content: attr(data-growth);
+            font-size: 16px;
+            margin-left: 5px; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-manufacturer::after {
+            color: #c1c1c1; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-review::after {
+            color: #7eae3e; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-vote::after {
+            color: #7eae3e; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional {
+            color: #c1c1c1;
+            font-size: 16px; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional .innerSeparator {
+              margin: 0 5px; }
+              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional .innerSeparator-plus {
+                margin: 0 0 0 5px; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__text {
+          color: #2c333d;
+          font-size: 13px;
+          line-height: 17px; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-description {
+          max-width: 475px; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty {
+          background: #f6f6f6; }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a {
+            display: block;
+            padding: 11px 0;
+            position: relative;
+            text-decoration: none; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a:before {
+              background: rgba(44, 51, 61, 0.1);
+              bottom: 0;
+              content: '';
+              display: block;
+              height: 4px;
+              left: 0;
+              position: absolute;
+              transition: width .3s;
+              width: 0; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a:last-child .propItem {
+              border-right: none; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a:hover::before {
+              width: 100%; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a:hover .propItem__rating .brandRating__starIcon {
+              transform: rotateY(180deg) scale(1.2) translateY(-1px); }
+          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #e8e8e8;
+            color: #2c333d;
+            flex-direction: column;
+            padding: 0 30px;
+            width: auto; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__title {
+              font-size: 13px;
+              margin-bottom: 3px; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating {
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandName {
+                font-size: 16px;
+                margin-right: 10px;
+                white-space: nowrap; }
+              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating {
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__value {
+                  font-size: 20px;
+                  margin-right: 5px; }
+                #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon {
+                  transition: transform .3s;
+                  width: 12px; }
+                  #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.topRating {
+                    fill: #7eae3e; }
+                  #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.middleRating {
+                    fill: #efb428; }
+                  #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.lowRating {
+                    fill: #e73e4e; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: white;
+        flex-direction: column-reverse;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        transform: translateY(-100%);
+        width: 300px; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo::before {
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 10px solid #464f5b;
+          content: '';
+          display: block;
+          transform: translateY(-1px); }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo__innerText {
+          background: #464f5b;
+          border-radius: 3px;
+          font-size: 14px;
+          line-height: 1.2;
+          padding: 10px; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item-noBorder {
+        border-right: none; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item-description {
+        flex-shrink: 2;
+        position: relative;
+        padding-right: 0; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item-description::after {
+          content: '';
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 30%, white 100%);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 15px; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item-bestProperty {
+        border-radius: 3px 3px 0 0;
+        flex-shrink: 1;
+        padding: 0; }
+  @media screen and (max-width: 1000px) {
+    #brandsPage .pageHeaderBlock {
+      align-items: flex-start;
+      flex-direction: column; }
+      #brandsPage .pageHeaderBlock .blockTitle {
+        padding-left: 20px;
+        margin-bottom: 0; }
+      #brandsPage .pageHeaderBlock__thumbnail {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 30px; }
+        #brandsPage .pageHeaderBlock__thumbnail .innerImage {
+          height: 85px;
+          min-width: 85px;
+          width: 85px; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item:first-child {
+        padding-left: 0; }
+      #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem {
+          padding: 0 15px; } }
+
+#brandsPage .manufacturer {
+  margin-bottom: 60px; }
+  #brandsPage .manufacturer__content {
+    background: #f6f6f6;
+    border-radius: 3px;
+    padding: 20px 20px 25px 20px;
+    width: 100%; }
+  #brandsPage .manufacturer .manufacturerList {
+    width: 100%; }
+    #brandsPage .manufacturer .manufacturerList__items {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%; }
+    #brandsPage .manufacturer .manufacturerList__item {
+      display: block;
+      margin-bottom: 15px;
+      margin-right: 15px;
+      position: relative;
+      text-decoration: none;
+      transition: transform .3s;
+      white-space: nowrap;
+      width: calc( ( 100% - ( 45px ) ) / 4); }
+      #brandsPage .manufacturer .manufacturerList__item:hover {
+        cursor: pointer; }
+        #brandsPage .manufacturer .manufacturerList__item:hover::before, #brandsPage .manufacturer .manufacturerList__item:hover::after {
+          transform: scale(1, 1); }
+        #brandsPage .manufacturer .manufacturerList__item:hover .brandData__title {
+          color: #efb428; }
+          #brandsPage .manufacturer .manufacturerList__item:hover .brandData__title::before {
+            width: 100%; }
+      #brandsPage .manufacturer .manufacturerList__item:nth-child(4n) {
+        margin-right: 0; }
+      #brandsPage .manufacturer .manufacturerList__item::before, #brandsPage .manufacturer .manufacturerList__item::after {
+        content: '';
+        position: absolute;
+        transition: transform .3s;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px; }
+      #brandsPage .manufacturer .manufacturerList__item::before {
+        border-top: 1px solid #efb428;
+        border-bottom: 1px solid #efb428;
+        transform: scale(0, 1); }
+      #brandsPage .manufacturer .manufacturerList__item::after {
+        border-right: 1px solid #efb428;
+        border-left: 1px solid #efb428;
+        transform: scale(1, 0); }
+      #brandsPage .manufacturer .manufacturerList__item .brandData {
+        background: white;
+        border-radius: 3px;
+        color: #2c333d;
+        overflow: hidden;
+        padding: 25px 20px;
+        position: relative;
+        width: 100%; }
+        #brandsPage .manufacturer .manufacturerList__item .brandData::before {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 0);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 20px;
+          z-index: 1; }
+        #brandsPage .manufacturer .manufacturerList__item .brandData::after {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px;
+          height: 30%;
+          right: 20px;
+          z-index: 1; }
+        #brandsPage .manufacturer .manufacturerList__item .brandData__title {
+          display: inline-block;
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 30px;
+          max-width: 100%;
+          position: relative;
+          transition: color .3s;
+          white-space: nowrap; }
+          #brandsPage .manufacturer .manufacturerList__item .brandData__title::before {
+            background: #efb428;
+            bottom: -1px;
+            content: '';
+            display: block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transition: width .3s;
+            width: 0; }
+        #brandsPage .manufacturer .manufacturerList__item .brandData__content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandLogo {
+            padding-right: 10px;
+            min-width: 75px;
+            width: 80px; }
+          #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between; }
+            #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating {
+              padding: 0 5px; }
+              #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__title {
+                color: #8a939f;
+                font-size: 13px;
+                margin-bottom: 15px; }
+              #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column; }
+                #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .assessment {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 10px; }
+                  #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .assessment__value {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-right: 5px; }
+                #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .amountReview {
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: center;
+                  font-size: 14px; }
+                  #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .amountReview__value {
+                    font-weight: bold;
+                    margin-right: 5px; }
+      #brandsPage .manufacturer .manufacturerList__item-hidden {
+        display: none; }
+  @media screen and (max-width: 1170px) {
+    #brandsPage .manufacturer .manufacturerList__item {
+      margin-bottom: 15px;
+      margin-right: 15px;
+      width: calc( ( 100% - ( 15px * (3 - 1) ) ) / 3); }
+      #brandsPage .manufacturer .manufacturerList__item:nth-child(4n) {
+        margin-right: 15px; }
+      #brandsPage .manufacturer .manufacturerList__item:nth-child(3n) {
+        margin-right: 0; }
+      #brandsPage .manufacturer .manufacturerList__item .brandData {
+        background: white;
+        border-radius: 3px;
+        color: #2c333d;
+        padding: 25px 20px;
+        transition: transform .5s, box-shadow .5s;
+        width: 100%; }
+        #brandsPage .manufacturer .manufacturerList__item .brandData__title {
+          display: inline-block;
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 30px;
+          position: relative;
+          transition: color .3s; }
+          #brandsPage .manufacturer .manufacturerList__item .brandData__title::before {
+            background: #efb428;
+            bottom: -1px;
+            content: '';
+            display: block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transition: width .3s;
+            width: 0; }
+        #brandsPage .manufacturer .manufacturerList__item .brandData__content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandLogo {
+            padding-right: 10px;
+            min-width: 75px;
+            width: 80px; }
+          #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between; }
+            #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating {
+              padding: 0 5px; }
+              #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__title {
+                color: #8a939f;
+                font-size: 13px;
+                margin-bottom: 15px; }
+              #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column; }
+                #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .assessment {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 10px; }
+                  #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .assessment__value {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-right: 5px; }
+                #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .amountReview {
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: center;
+                  font-size: 14px; }
+                  #brandsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .amountReview__value {
+                    font-weight: bold;
+                    margin-right: 5px; } }
+  @media screen and (max-width: 1000px) {
+    #brandsPage .manufacturer .manufacturerList__item {
+      margin-bottom: 15px;
+      margin-right: 15px;
+      width: calc( ( 100% - ( 15px * (2 - 1) ) ) / 2); }
+      #brandsPage .manufacturer .manufacturerList__item:nth-child(3n) {
+        margin-right: 15px; }
+      #brandsPage .manufacturer .manufacturerList__item:nth-child(2n) {
+        margin-right: 0; } }
+
+#brandsPage .comparisonBlock {
+  margin-bottom: 30px; }
+  #brandsPage .comparisonBlock__mainContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; }
+  #brandsPage .comparisonBlock__content {
+    border-radius: 3px;
+    background: #f6f6f6;
+    margin-right: 30px;
+    overflow: hidden;
+    padding: 15px;
+    width: calc((calc((1170px / 12) - 30px) * 8) + 30px * 7); }
+
+#brandsPage .comparisonBlockItems {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  width: 100%; }
+  #brandsPage .comparisonBlockItems .comparisonBlockItem {
+    color: #2c333d;
+    max-width: calc( 100% / 3 - 7.5px * 2);
+    min-width: calc( 100% / 3 - 7.5px * 2);
+    margin: 7.5px;
+    text-decoration: none; }
+    #brandsPage .comparisonBlockItems .comparisonBlockItem__brands {
+      background: white;
+      border-radius: 3px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      position: relative;
+      perspective: 1000px; }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem__brands::before, #brandsPage .comparisonBlockItems .comparisonBlockItem__brands::after {
+        content: '';
+        position: absolute;
+        transition: transform .3s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem__brands::before {
+        border-top: 1px solid #efb428;
+        border-bottom: 1px solid #efb428;
+        transform: scale(0, 1); }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem__brands::after {
+        border-right: 1px solid #efb428;
+        border-left: 1px solid #efb428;
+        transform: scale(1, 0); }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 70px; }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock__img {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 30px;
+          width: 120px; }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top {
+          position: relative; }
+          #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::before, #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            transition: transform .3s; }
+          #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::before {
+            background: #c1c1c1;
+            height: 1px;
+            width: 100%; }
+          #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::after {
+            background: #efb428;
+            transform: scale(0);
+            height: 1px;
+            width: 100%; }
+          #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top > div {
+            margin-bottom: 15px; }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-bottom > div {
+          margin-top: 15px; }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .blockSeparator {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background: #efb428;
+        border-radius: 50%;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: rotateX(0) translate(-50%, -50%);
+        transform-origin: top;
+        transition: transform 1s;
+        height: 41px;
+        width: 41px; }
+    #brandsPage .comparisonBlockItems .comparisonBlockItem__description {
+      font-size: 16px;
+      line-height: 18px;
+      transition: color .3s; }
+    #brandsPage .comparisonBlockItems .comparisonBlockItem:hover {
+      cursor: pointer; }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands::before, #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands::after {
+        transform: scale(1, 1); }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::before, #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::after {
+        transform: scale(0.7); }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__description {
+        color: #efb428;
+        text-decoration: underline; }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .blockSeparator {
+        transform: rotateX(360deg) translate(-50%, -50%);
+        box-shadow: 2px 2px 5px #00000045; }
+
+@media screen and (max-width: 1170px) {
+  #brandsPage .comparisonBlock {
+    margin-bottom: 30px; }
+    #brandsPage .comparisonBlock__mainContent {
+      flex-direction: column; }
+    #brandsPage .comparisonBlock__content {
+      margin-right: 0;
+      margin-bottom: 30px;
+      overflow: hidden;
+      padding: 15px;
+      width: 100%; }
+    #brandsPage .comparisonBlock .widgetsArea {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%; }
+      #brandsPage .comparisonBlock .widgetsArea .widget {
+        flex-basis: auto;
+        width: 50%;
+        margin-right: 15px; }
+        #brandsPage .comparisonBlock .widgetsArea .widget:last-child {
+          margin-right: 0; }
+  #brandsPage .comparisonBlockItems {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 100%; }
+    #brandsPage .comparisonBlockItems .comparisonBlockItem {
+      color: #2c333d;
+      max-width: calc( 100% / 3 - 7.5px * 2);
+      min-width: calc( 100% / 3 - 7.5px * 2);
+      margin: 7.5px;
+      text-decoration: none; }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem__brands {
+        background: white;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        position: relative;
+        perspective: 1000px; }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem__brands::before, #brandsPage .comparisonBlockItems .comparisonBlockItem__brands::after {
+          content: '';
+          position: absolute;
+          transition: transform .3s;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0; }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem__brands::before {
+          border-top: 1px solid #efb428;
+          border-bottom: 1px solid #efb428;
+          transform: scale(0, 1); }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem__brands::after {
+          border-right: 1px solid #efb428;
+          border-left: 1px solid #efb428;
+          transform: scale(1, 0); }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          height: 70px; }
+          #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock__img {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 30px;
+            width: 120px; }
+          #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top {
+            position: relative; }
+            #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::before, #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::after {
+              content: '';
+              display: block;
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              transition: transform .3s; }
+            #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::before {
+              background: #c1c1c1;
+              height: 1px;
+              width: 100%; }
+            #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::after {
+              background: #efb428;
+              transform: scale(0);
+              height: 1px;
+              width: 100%; }
+            #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top > div {
+              margin-bottom: 15px; }
+          #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-bottom > div {
+            margin-top: 15px; }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem__brands .blockSeparator {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          background: #efb428;
+          border-radius: 50%;
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: rotateX(0) translate(-50%, -50%);
+          transform-origin: top;
+          transition: transform 1s;
+          height: 41px;
+          width: 41px; }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem__description {
+        font-size: 16px;
+        line-height: 18px;
+        transition: color .3s; }
+      #brandsPage .comparisonBlockItems .comparisonBlockItem:hover {
+        cursor: pointer; }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands::before, #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands::after {
+          transform: scale(1, 1); }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::before, #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::after {
+          transform: scale(0.7); }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__description {
+          color: #efb428;
+          text-decoration: underline; }
+        #brandsPage .comparisonBlockItems .comparisonBlockItem:hover .blockSeparator {
+          transform: rotateX(360deg) translate(-50%, -50%);
+          box-shadow: 2px 2px 5px #00000045; } }
+
+#brandsPage .reviewsBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 60px; }
+  #brandsPage .reviewsBlock .contentArea__reviews {
+    margin-bottom: 30px; }
+    #brandsPage .reviewsBlock .contentArea__reviews:last-child {
+      margin-bottom: 0; }
+    #brandsPage .reviewsBlock .contentArea__reviews .review {
+      margin-bottom: 30px; }
+      #brandsPage .reviewsBlock .contentArea__reviews .review:last-child {
+        margin-bottom: 0; }
+  #brandsPage .reviewsBlock .contentArea__pagination {
+    margin-bottom: 30px; }
+  #brandsPage .reviewsBlock .widgetsArea .widget {
+    margin-bottom: 30px; }
+    #brandsPage .reviewsBlock .widgetsArea .widget:last-child {
+      margin-bottom: 0; }
+  @media screen and (max-width: 1170px) {
+    #brandsPage .reviewsBlock {
+      flex-direction: column; }
+      #brandsPage .reviewsBlock .contentArea {
+        margin-bottom: 30px;
+        width: 100%; }
+      #brandsPage .reviewsBlock .widgetsArea {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%; }
+        #brandsPage .reviewsBlock .widgetsArea .widget {
+          flex-basis: auto;
+          width: 50%;
+          margin-right: 15px; }
+          #brandsPage .reviewsBlock .widgetsArea .widget:last-child {
             margin-right: 0; } }

@@ -1,9 +1,18 @@
-#ratingsAll {
+#allSparePartsPage {
 
   // search block ---------------------------
   .mainContent {
     .searchBlock {
       margin-bottom: $blockTitleMarginBottom;
+      .label {
+        &-searchBlock {
+          margin-bottom: 20px;
+        } // serachBlock
+      } // label
+      &__title {
+        display: block;
+        margin-bottom: 10px;
+      } // __title
       &__input {
         @include flex(center, flex-start);
         & > input {
@@ -11,6 +20,14 @@
           max-width: 400px;
         } // input
       } // __input
+      .sparePartsFilter {
+        @include flex(center, center);
+        width: 100%;
+        .filterBtn {
+          flex-basis: auto;
+          width: calc( 100% / 3 );
+        } // filterBtn
+      } // sparePartsFilter
     } // searchBlock
   } // mainContent
   // ========================================
@@ -146,11 +163,7 @@
               min-width: $sellWidth;
               width: $sellManufacturerWidth;
             } // -manufacturer
-            &-vote {
-              min-width: $sellWidth;
-              width: $sellVoteWidth;
-            } // -vote
-            &-page {
+            &-rating {
               height: initial;
               border-bottom: none;
               margin: 10px 0;
@@ -188,4 +201,4 @@
   } // ratingsBlock
   // ========================================
 
-} // ratingsAll
+} // allSparePartsPage

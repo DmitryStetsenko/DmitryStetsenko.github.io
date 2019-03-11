@@ -1,38 +1,111 @@
-#ratingsAll {
+#allSparePartsPage {
 
   // search block ---------------------------
   .mainContent {
     .searchBlock {
+      @include flex(flex-end, space-between);
       margin-bottom: $blockTitleMarginBottom;
+      .label {
+        &-searchBlock {
+          margin-bottom: 0;
+        } // serachBlock
+      } // label
+      &__title {
+        display: block;
+        margin-bottom: 15px;
+      } // title
       &__input {
         @include flex(center, flex-start);
         & > input {
-          margin-right: 10px;
-          max-width: 400px;
+          margin-right: 20px;
+          width: 400px;
         } // input
       } // __input
+      .sparePartsFilter {
+        @include flex(center, flex-start);
+        margin-left: auto;
+        .filterBtn {
+          height: 30px;
+        } // filterBtn
+      } // sparePartsFilter
+
+      // @MEDIA -----------------------
+      @media screen and ( max-width: 1000px ) {
+        &__input {
+          & > input {
+            margin-right: 10px;
+          } // input
+          .mainBtn {
+            &-search {
+              margin-right: 10px;
+              padding: 0 8px;
+              .innerText {
+                display: none;
+              } // innerText
+              .cssIcon {
+                margin-right: 3px;
+              } // cssIcon
+            } // -search
+          } // mainBtn
+        } // __input
+      } // 1000
+      // ==============================
+
     } // searchBlock
   } // mainContent
   // ========================================
 
   // ratings block --------------------------
   .ratingsBlock {
-    $sellWidth: 100%;
+    $sellWidth: 150px;
     $sellPadding: 20px;
-    $sellNameWidth: $sellWidth;
+    $sellNameWidth: 320px;
     $sellReviewWidth: $sellWidth;
     $sellManufacturerWidth: $sellWidth;
     $sellVoteWidth: $sellWidth;
     $allRatingsHeaderRowHeight: 65px;
-    $allRatingsRowHeight: initial;
-    $sellBtnWidth: $sellWidth;
+    $allRatingsRowHeight: 65px;
+    $sellBtnWidth: 50%;
     // icons
     $iconWidth: 60px;
     $iconHeight: 45px;
-    font-size: 14px;
     margin-bottom: $outerBlockMargin;
-    &__content {
+    &__contentScrollBox {
       margin-bottom: 40px;
+    } // ratingBlock__contentScrollBox
+    &__mainContent {
+      width: 1140px;
+    } // __mainContent
+    .header {
+      @include flex(center, flex-start);
+      &__colTitle {
+        @include flex(center, center);
+
+        color: $colorColName;
+        height: $allRatingsHeaderRowHeight;
+        font-size: 13px;
+        flex-basis: auto;
+        &-name {
+          min-width: $sellNameWidth + 10px;
+          width: $sellNameWidth + 10px;
+        } // -name
+        &-review {
+          min-width: $sellReviewWidth;
+          width: $sellReviewWidth;
+        } // -review
+        &-manufacturer {
+          min-width: $sellManufacturerWidth;
+          width: $sellManufacturerWidth;
+        } // -manufacturer
+        &-rating {
+           width: $sellBtnWidth;
+        } // rating
+        &-addReview {
+          width: $sellBtnWidth;
+        } // page
+      } // __colTitle
+    } // header
+    &__content {
       .showRatingBlock {
 
       } // showRatingBlock
@@ -40,7 +113,7 @@
         li {
           border: 1px solid transparent;
           height: $allRatingsRowHeight;
-          padding: 0 10px;
+          padding: 10px;
           transition: border-color .3s;
           &:nth-child(odd) {
             background: $colorBgLightGray;
@@ -52,15 +125,6 @@
               } // __text
             } // itemSell
           } // nth-child(odd)
-          &:nth-child(even) {
-            .itemSell {
-              &__text {
-                &::after {
-                  @include gradientBorderColor(white, 30px, 100%);
-                } // after
-              } // __text
-            } // itemSell
-          } // nth-child(even)
           &:hover {
             cursor: pointer;
             border-color: $colorYellow;
@@ -68,26 +132,30 @@
         } // li
         &__item {
           @include flex(center, flex-start);
-          flex-direction: column;
           color: $colorDarkGray;
           height: 100%;
-          margin-bottom: $blockTitleMarginBottom;
           text-decoration: none;
           .itemSell {
-            @include flex(center, flex-start);
-            border-bottom: 1px solid $colorLightGray;
+            @include flex(center, center);
+            border-right: 1px solid $colorLightGray;
             flex-basis: auto;
-            height: 50px;
+            height: 100%;
             &:last-child {
               border-right: none;
             } // last-child
-            &__title {
-              color: $colorColName;
-              min-width: 120px;
-              width: 120px;
-            } // title
+            &__icon {
+              border-radius: $mainBorderRadius;
+              overflow: hidden;
+              margin-right: 15px;
+              width: 60px;
+              img {
+                width: 60px;
+                object-fit: cover;
+                object-position: center;
+              } // img
+            } // __icon
             &__text {
-              font-size: 14px;
+              font-size: 16px;
               position: relative;
               transition: color .3s;
               width: 230px;
@@ -126,7 +194,6 @@
               text-decoration: none;
               min-width: $sellNameWidth;
               width: $sellNameWidth;
-              white-space: nowrap;
               &:hover {
                 .itemSell {
                   &__text {
@@ -146,37 +213,29 @@
               min-width: $sellWidth;
               width: $sellManufacturerWidth;
             } // -manufacturer
-            &-vote {
-              min-width: $sellWidth;
-              width: $sellVoteWidth;
-            } // -vote
-            &-page {
-              height: initial;
-              border-bottom: none;
-              margin: 10px 0;
+            &-rating {
+              flex-basis: auto;
               padding: 0 $sellPadding;
-              min-width: $sellBtnWidth;
+              min-width: initial;
               width: $sellBtnWidth;
               a {
                 font-size: 14px;
                 min-width: $sellBtnWidth;
                 text-decoration: none;
-                width: $sellBtnWidth;
+                width: 100%;
                 white-space: nowrap;
               } // a
-            } // -page
+            } // -rating
             &-addReview {
-              height: initial;
-              border-bottom: none;
-              margin-bottom: 10px;
+              flex-basis: auto;
               padding: 0 $sellPadding;
-              min-width: $sellBtnWidth;
+              min-width: initial;
               width: $sellBtnWidth;
               a {
                 font-size: 14px;
                 min-width: $sellBtnWidth;
                 text-decoration: none;
-                width: $sellBtnWidth;
+                width: 100%;
                 white-space: nowrap;
               } // a
             } // -addReview
@@ -185,7 +244,20 @@
       } // ratingList
     } // __content
 
+    // @MEDIA -----------------------------------
+    @media screen and ( max-width: 1140px ) {
+      &__contentScrollBox {
+        overflow-x: scroll;
+        @include customScroll();
+      } // ratingBlock__contentScrollBox
+      &__mainContent {
+        margin-bottom: 10px;
+      } // __mainContent
+    } // 1140
+    // ==========================================
+
   } // ratingsBlock
   // ========================================
 
-} // ratingsAll
+
+} // allRatingsPage
