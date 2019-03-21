@@ -7,6 +7,9 @@
       color: $colorDarkGray;
       padding-left: 40px;
       margin-bottom: $blockTitleMarginBottom;
+      &-progress {
+        margin-top: 10px;
+      } // -progress
     } // blockTitle
     &__thumbnail {
       .innerImage {
@@ -21,6 +24,8 @@
       } // innerImage
     } // __thumbnail
     &__content {
+      position: relative;
+      width: 100%;
       .headerBlockContent {
         @include flex(flex-start, space-between);
         &__item {
@@ -40,8 +45,10 @@
             text-align: center;
             .innerText {
               position: relative;
+              color: $colorColName;
+              white-space: nowrap;
               &-link {
-                color: $colorColName;
+                color: inherit;
                 text-decoration: none;
                 &::before {
                   @include makeUnderline($colorYellow, -1px);
@@ -101,20 +108,62 @@
           } // blockTitle
           .innerBlockContent {
             @include flex(center, center);
+            .assessment {
+              @include flex(center, center);
+              margin-right: 10px;
+              &__value {
+                font-size: 20px;
+                margin-right: 5px;
+              } // __value
+            } // assessment
+            .imgFlag {
+              margin-right: 5px;
+            } // imgFlag
             &__data {
               @include flex(center, flex-start);
               color: $colorDarkGray;
               font-size: 20px;
+              white-space: nowrap;
               &::after {
                 content: attr(data-growth);
                 font-size: 16px;
                 margin-left: 5px;
               } // after
+              &-country {
+                font-size: 14px;
+              } // -country
               &-manufacturer {
                 &::after {
                   color: $colorLightGray;
                 } // after
               } // -manufacturer
+              &-positiveGrowth {
+                $elemColor: $colorRatingGreen;
+                &::after {
+                  content: attr(data-growth);
+                  color: $elemColor;
+                  font-size: 14px;
+                  margin-left: 5px;
+                } // after
+                svg {
+                  width: 20px;
+                  fill: $elemColor;
+                } // svg
+              } // -positiveGrowth
+              &-negativeGrowth {
+                $elemColor: $colorRatingRed;
+                &::after {
+                  content: attr(data-growth);
+                  color: $elemColor;
+                  font-size: 14px;
+                  margin-left: 5px;
+                } // after
+                svg {
+                  @include flip(vert);
+                  width: 20px;
+                  fill: $elemColor;
+                } // svg
+              } // -positiveGrowth
               &-review {
                 &::after {
                   color: $colorRatingGreen;
@@ -247,6 +296,160 @@
               padding: 10px;
             } // __innerText
           } // showAdditInfo
+          &-site {
+            flex-grow: 1;
+            text-decoration: none;
+            &:hover {
+              cursor: pointer;
+              .innerBlockTitle {
+                .innerText {
+                  color: $colorYellow;
+                  &::before {
+                    width: 100%;
+                  } // before
+                } // innerText
+                .additInfo {
+                  $infoBlockSize: 14px;
+                  $iconColor: $colorColName;
+                  @include flex(center, center);
+
+                  background: white;
+                  border-radius: 50%;
+                  border: 1px solid $iconColor;
+                  color: $iconColor;
+                  font-size: 10px;
+                  position: absolute;
+                  right: -15px;
+                  top: -5px;
+                  height: $infoBlockSize;
+                  width: $infoBlockSize;
+                  &:hover {
+                    border-color: $colorYellow;
+                    color: $colorYellow;
+                    cursor: pointer;
+                  } // hover
+                } // additInfo
+                &-description {
+                  color: $colorDarkGray;
+                  font-weight: bold;
+                  margin-bottom: 10px;
+                } // -description
+                &-bestProperty {
+                  $iconSize: 15px;
+                  @include flex(center, center);
+                  background: $colorGray;
+                  margin-bottom: 0;
+                  padding: 5px 0;
+                  .innerIcon {
+                    width: $iconSize;
+                    margin-right: 8px;
+                    svg {
+                      fill: $colorYellow;
+                    } // svg
+                  } // innerIcon
+                  .innerTxt {
+                    color: white;
+                    font-size: 14px;
+                  } // innerTxt
+                } // -bestProperty
+              } // blockTitle
+              .innerText {
+                color: $colorYellow !important;
+              } // innerText
+            } // hover
+            .innerBlockTitle {
+              margin-bottom: 20px;
+              color: $colorColName;
+              font-size: 14px;
+              position: relative;
+              text-align: center;
+              .innerText {
+                position: relative;
+                color: $colorColName;
+                white-space: nowrap;
+                &::before {
+                  @include makeUnderline($colorYellow, -1px);
+                } // before
+              } // innerText
+              .additInfo {
+                $infoBlockSize: 14px;
+                $iconColor: $colorColName;
+                @include flex(center, center);
+
+                background: white;
+                border-radius: 50%;
+                border: 1px solid $iconColor;
+                color: $iconColor;
+                font-size: 10px;
+                position: absolute;
+                right: -15px;
+                top: -5px;
+                height: $infoBlockSize;
+                width: $infoBlockSize;
+                &:hover {
+                  border-color: $colorYellow;
+                  color: $colorYellow;
+                  cursor: pointer;
+                } // hover
+              } // additInfo
+              &-description {
+                color: $colorDarkGray;
+                font-weight: bold;
+                margin-bottom: 10px;
+              } // -description
+              &-bestProperty {
+                $iconSize: 15px;
+                @include flex(center, center);
+                background: $colorGray;
+                margin-bottom: 0;
+                padding: 5px 0;
+                .innerIcon {
+                  width: $iconSize;
+                  margin-right: 8px;
+                  svg {
+                    fill: $colorYellow;
+                  } // svg
+                } // innerIcon
+                .innerTxt {
+                  color: white;
+                  font-size: 14px;
+                } // innerTxt
+              } // -bestProperty
+            } // blockTitle
+            .innerBlockContent {
+              &__data {
+                .innerText {
+                  color: $colorDarkGray;
+                  font-size: 16px;
+                  max-width: 150px;
+                  overflow: hidden;
+                  position: relative;
+                  text-decoration: none;
+                  &::before {
+                    @include gradientBorderColor(white, 40px, 100%);
+                  } // before
+                } // innerText
+                .innerIcon {
+                  $iconSize: 12px;
+                  background: $colorYellow;
+                  border-radius: 3px;
+                  color: white;
+                  font-size: 12px;
+                  height: $iconSize;
+                  margin-left: 5px;
+                  position: relative;
+                  width: $iconSize;
+                  &::before {
+                    content: '\27A0';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                  } // before
+                } // innerIcon
+              } // __data
+            } // innerBlockContent
+          } // site
           &-noBorder {
             border-right: none;
           } // -noBorder
@@ -272,6 +475,11 @@
             padding: 0;
           } // -bestProperty
         } // __item
+        &-brands {
+          .headerBlockContent__item {
+            padding: 15px 30px;
+          } // headerBlockContent__item
+        } // brands
       } // headerBlockContent
     } // __content
 
@@ -416,9 +624,17 @@
           &__content {
             @include flex(center, space-between);
             .brandLogo {
+              $imgSize: 80px;
               padding-right: 10px;
-              min-width: 75px;
-              width: 80px;
+              height: $imgSize;
+              min-width: $imgSize;
+              width: $imgSize;
+              img {
+                object-fit: contain;
+                object-position: center;
+                height: $imgSize;
+                width: $imgSize;
+              } // img
             } // brandLogo
             .brandInfo {
               @include flex(stretch, space-between);

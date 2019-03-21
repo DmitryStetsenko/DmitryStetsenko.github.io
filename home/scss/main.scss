@@ -1017,22 +1017,6 @@
       } // reviewDiagram
       &-country {
         padding: 0 10px;
-        .imgFlag {
-          border-radius: 3px;
-          background-image: url(../img/flags_sprite.jpg);
-          height: 17px;
-          min-width: 26px;
-          width: 26px;
-          &-germany {
-            background-position: 0 0;
-          } // -germany
-          &-england {
-            background-position: 55px 0;
-          } // -england
-          &-italy {
-            background-position: 27px 0;
-          } // -italy
-        } // imgFlag
       } // country
       &-site {
         padding: 0 10px;

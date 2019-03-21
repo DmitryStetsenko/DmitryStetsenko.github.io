@@ -3,9 +3,9 @@
 $(function () {
 
     const RATING_STROKE_LENGTH = 114,
-        RATING_COLOR_GREEN = '#7eae3e',
-        RATING_COLOR_YELLOW = '#efb428',
-        RATING_COLOR_RED = '#e73e4e';
+          RATING_COLOR_GREEN = '#7eae3e',
+          RATING_COLOR_YELLOW = '#efb428',
+          RATING_COLOR_RED = '#e73e4e';
 
     // const SCREEN_MAX_WIDTH = document.querySelector('.wrapper').clientWidth;
     const SCREEN_MAX_WIDTH = 1170;
