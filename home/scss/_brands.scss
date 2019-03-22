@@ -7,9 +7,6 @@
       color: $colorDarkGray;
       padding-left: 40px;
       margin-bottom: $blockTitleMarginBottom;
-      &-progress {
-        margin-top: 10px;
-      } // -progress
     } // blockTitle
     &__thumbnail {
       .innerImage {
@@ -112,9 +109,17 @@
               @include flex(center, center);
               margin-right: 10px;
               &__value {
+                color: $colorDarkGray;
                 font-size: 20px;
                 margin-right: 5px;
+                text-decoration: none;
               } // __value
+              &__icon {
+                width: 15px;
+                svg {
+                  fill: $colorRatingYellow;
+                } // svg
+              } // icon
             } // assessment
             .imgFlag {
               margin-right: 5px;

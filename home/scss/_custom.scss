@@ -822,50 +822,6 @@ button, input {
   } // select
 } // shevronIcon
 
-.progressBlockWrap {
-  background: $colorRatingGreen;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  .progressBlock {
-    @include flex(center, center);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    padding: 10px 15px;
-    &__title {
-      $iconWidth: 15px;
-      @include flex(center, center);
-      color: white;
-      font-size: 18px;
-      margin-right: 20px;
-      .innerIcon {
-        margin-right: 10px;
-        width: $iconWidth;
-        svg {
-          fill: white;
-        } // svg
-      } // innerIcon
-      .innerText {
-
-      } // innerText
-    } // &__title
-    &__value {
-      $itemSize: 27px;
-      @include flex(center, center);
-      .progressItem {
-        border-radius: 50%;
-        background: white;
-        margin-right: 10px;
-        height: 27px;
-        width: 27px;
-        &:last-child {
-          margin-right: 0;
-        } // last-child
-      } // progressItem
-    } // __value
-  } // progressBlock
-} // progressBlockWrap
-
 // sliders styles
 .sliderBox {
   position: relative;
@@ -2367,6 +2323,9 @@ button, input {
             color: $colorDarkGray;
             &__item {
               margin-right: 20px;
+              &:hover {
+                cursor: default;
+              } // hover
               &:last-child {
                 margin-right: 0;
               } // last-child

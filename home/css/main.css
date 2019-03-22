@@ -777,43 +777,6 @@ button, input {
   .shevronIcon-selectTop {
     transform: rotate(90deg) scale(0.5); }
 
-.progressBlockWrap {
-  background: #7eae3e;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  right: 0; }
-  .progressBlockWrap .progressBlock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    padding: 10px 15px; }
-    .progressBlockWrap .progressBlock__title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 18px;
-      margin-right: 20px; }
-      .progressBlockWrap .progressBlock__title .innerIcon {
-        margin-right: 10px;
-        width: 15px; }
-        .progressBlockWrap .progressBlock__title .innerIcon svg {
-          fill: white; }
-    .progressBlockWrap .progressBlock__value {
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      .progressBlockWrap .progressBlock__value .progressItem {
-        border-radius: 50%;
-        background: white;
-        margin-right: 10px;
-        height: 27px;
-        width: 27px; }
-        .progressBlockWrap .progressBlock__value .progressItem:last-child {
-          margin-right: 0; }
-
 .sliderBox {
   position: relative;
   max-width: 1170px; }
@@ -2000,6 +1963,8 @@ button, input {
         color: #2c333d; }
         .widget .widgetContent .ratingSpareParts .ratingSparePartsElem__content .infoBlock__item {
           margin-right: 20px; }
+          .widget .widgetContent .ratingSpareParts .ratingSparePartsElem__content .infoBlock__item:hover {
+            cursor: default; }
           .widget .widgetContent .ratingSpareParts .ratingSparePartsElem__content .infoBlock__item:last-child {
             margin-right: 0; }
           .widget .widgetContent .ratingSpareParts .ratingSparePartsElem__content .infoBlock__item span {
@@ -6072,8 +6037,6 @@ button, input {
     color: #2c333d;
     padding-left: 40px;
     margin-bottom: 30px; }
-    #brandsPage .pageHeaderBlock .blockTitle-progress {
-      margin-top: 10px; }
   #brandsPage .pageHeaderBlock__thumbnail .innerImage {
     display: flex;
     align-items: center;
@@ -6173,8 +6136,14 @@ button, input {
             justify-content: center;
             margin-right: 10px; }
             #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__value {
+              color: #2c333d;
               font-size: 20px;
-              margin-right: 5px; }
+              margin-right: 5px;
+              text-decoration: none; }
+            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__icon {
+              width: 15px; }
+              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__icon svg {
+                fill: #efb428; }
           #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .imgFlag {
             margin-right: 5px; }
           #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data {
