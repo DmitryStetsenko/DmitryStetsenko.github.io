@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-sefif;
+  font-size: 1em; }
+
+li {
+  list-style-type: none; }
+
+img, svg {
+  display: block;
+  height: auto;
+  width: 100%; }
+
+section {
+  margin-bottom: 30px; }
+
+.wrapper {
+  max-width: 320px;
+  margin: 0 auto; }
+
+.blockTitle {
+  border-bottom: 1px solid #cecece;
+  color: #7d7e85;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 30px; }
+
+.mainTitle {
+  font-size: 20px;
+  color: #7d7e85;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #cecece;
+  margin-bottom: 30px; }
+
+.userInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+  .userInfo__photo {
+    border-radius: 50%;
+    margin-bottom: 60px;
+    overflow: hidden;
+    height: 150px;
+    width: 150px; }
+  .userInfo__data .innerTitle {
+    color: #202636;
+    font-size: 20px;
+    margin-bottom: 15px; }
+  .userInfo__data .innerContent__item {
+    margin-bottom: 10px; }
+  .userInfo__data .innerContent .userContactData {
+    margin-top: 30px; }
+    .userInfo__data .innerContent .userContactData__title {
+      color: #7d7e85;
+      font-size: 1em;
+      font-weight: normal;
+      margin-bottom: 10px; }
+    .userInfo__data .innerContent .userContactData ul {
+      display: block; }
+    .userInfo__data .innerContent .userContactData .userContactData__item {
+      margin-bottom: 10px; }
+      .userInfo__data .innerContent .userContactData .userContactData__item:last-child {
+        margin-right: 0; }
+      .userInfo__data .innerContent .userContactData .userContactData__item a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #202636;
+        text-decoration: none; }
+        .userInfo__data .innerContent .userContactData .userContactData__item a:hover .innerText {
+          color: #0073b1; }
+          .userInfo__data .innerContent .userContactData .userContactData__item a:hover .innerText::before {
+            width: 100%; }
+      .userInfo__data .innerContent .userContactData .userContactData__item span {
+        display: block; }
+      .userInfo__data .innerContent .userContactData .userContactData__item .innerIcon {
+        margin-right: 10px;
+        width: 20px; }
+      .userInfo__data .innerContent .userContactData .userContactData__item .innerText {
+        font-size: .8em;
+        position: relative;
+        transition: color .3s; }
+        .userInfo__data .innerContent .userContactData .userContactData__item .innerText::before {
+          background: #0073b1;
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          height: 1px;
+          transition: width .3s;
+          width: 0; }
+      .userInfo__data .innerContent .userContactData .userContactData__item-email .innerIcon svg {
+        fill: #ebebeb; }
+
+.mySkillsBlock .mySkils__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 1px solid #cecece; }
+  .mySkillsBlock .mySkils__item:last-child {
+    border-bottom: none; }
+  .mySkillsBlock .mySkils__item .skilsBlockName {
+    font-size: 14px;
+    text-align: left;
+    min-width: 150px;
+    padding: 10px; }
+  .mySkillsBlock .mySkils__item .skilsList {
+    padding: 10px;
+    width: 100%; }
+    .mySkillsBlock .mySkils__item .skilsList__item {
+      padding: 10px 0;
+      font-size: 12px; }
+      .mySkillsBlock .mySkils__item .skilsList__item:first-child {
+        padding-top: 0; }
+
+.myWorkBlock .myWorks {
+  margin: 0 auto;
+  width: 250px; }
+  .myWorkBlock .myWorks__item {
+    margin-bottom: 5px; }
+    .myWorkBlock .myWorks__item a {
+      color: #7d7e85;
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #cccdd6;
+      text-align: center;
+      transition: color .3s, backgound .3s;
+      position: relative; }
+      .myWorkBlock .myWorks__item a:hover {
+        color: #0073b1;
+        background: #cccdd6; }
+        .myWorkBlock .myWorks__item a:hover::before {
+          width: 100%; }
+      .myWorkBlock .myWorks__item a::before {
+        background: #0073b1;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        transition: width .3s;
+        width: 0; }
+
+.mainFooter .copyright {
+  text-align: center;
+  padding: 15px 0;
+  background: #cccdd6; }
