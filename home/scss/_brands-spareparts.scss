@@ -1,4 +1,4 @@
-#brandsPage {
+#brandsSparePartsPage {
   // pageHeaderBlock ---------------------------
   .pageHeaderBlock {
     @include flex(center, flex-start);
@@ -489,19 +489,6 @@
     } // __content
 
     // @MEDIA -----------------------------
-    @media screen and ( max-width: 1200px ) {
-      &__content {
-        .headerBlockContent {
-          $asidePadding: 15px;
-          &-brands {
-            .headerBlockContent__item {
-              padding-left: $asidePadding;
-              padding-right: $asidePadding;
-            } // headerBlockContent__item
-          } // brands
-        } // headerBlockContent
-      } // __content
-    } // 1200
     @media screen and ( max-width: 1000px ) {
       align-items: flex-start;
       flex-direction: column;
@@ -538,47 +525,6 @@
         } // headerBlockContent
       } // __content
     } // 1000
-    @media screen and ( max-width: 860px ) {
-      &__content {
-        .headerBlockContent {
-          &__item {
-            &-site {
-              .innerBlockContent {
-                &__data {
-                  .innerText {
-                    max-width: 100px;
-                  } // innerText
-                } // __data
-              } // innerBlockContent
-            } // site
-          } // __item
-        } // headerBlockContent
-      } // __content
-    } // 860
-    @media screen and ( max-width: 800px ) {
-      &__content {
-        .headerBlockContent {
-          $asidePadding: 10px;
-          &__item {
-            &-site {
-              .innerBlockContent {
-                &__data {
-                  .innerText {
-                    max-width: 80px;
-                  } // innerText
-                } // __data
-              } // innerBlockContent
-            } // site
-          } // __item
-          &-brands {
-            .headerBlockContent__item {
-              padding-left: $asidePadding;
-              padding-right: $asidePadding;
-            } // headerBlockContent__item
-          } // brands
-        } // headerBlockContent
-      } // __content
-    } // 800
     // ====================================
 
   } // pageHeaderBlock
@@ -1218,4 +1164,263 @@
 
   } // reviewBlock;
   // ===========================================
-} // brandsPage
+
+  // manufacturerBlock -------------------------
+  .popularSpareParts {
+    margin-bottom: $outerBlockMargin;
+    &__content {
+      background: $colorBgLightGray;
+      border-radius: $mainBorderRadius;
+      padding: 20px 20px 25px 20px;
+      width: 100%;
+    } // __content
+    .popularSparePartsList {
+      width: 100%;
+      &__items {
+        @include flex(center, flex-start);
+        flex-wrap: wrap;
+        width: 100%;
+      } // __items
+      &__item {
+        $borderColor: $colorYellow;
+        $contentWidth: 100%;
+        $gutterBlock: 15px;
+        $itemWidth: calc( ( #{$contentWidth} - ( #{$gutterBlock * 3} ) ) / 4 );
+        display: block;
+        margin-bottom: $gutterBlock;
+        margin-right: $gutterBlock;
+        position: relative;
+        text-decoration: none;
+        transition: transform .3s;
+        white-space: nowrap;
+        width: $itemWidth;
+        &:hover {
+          cursor: pointer;
+          &::before, &::after {
+            transform: scale(1, 1);
+          } // before
+          .brandData {
+            &__title {
+              color: $colorYellow;
+              &::before {
+                width: 100%;
+              } // before
+            } // __title
+          } // brandData
+        } // hover
+        &:nth-child(4n) {
+          margin-right: 0;
+        } // nth-child(4n)
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          transition: transform .3s;
+          top: -1px;
+          left: -1px;
+          right: -1px;
+          bottom: -1px;
+        } // before
+        &::before {
+          border-top: 1px solid $borderColor;
+          border-bottom: 1px solid $borderColor;
+          transform: scale(0, 1);
+        } // before
+        &::after {
+          border-right: 1px solid $borderColor;
+          border-left: 1px solid $borderColor;
+          transform: scale(1, 0);
+        } // before
+        .brandData {
+          background: white;
+          border-radius: $mainBorderRadius;
+          color: $colorDarkGray;
+          overflow: hidden;
+          padding: 25px 20px;
+          position: relative;
+          width: 100%;
+          &::before {
+            @include gradientBorderColor(white, 20px, 0);
+            z-index: 1;
+          } // before
+          &::after {
+            @include gradientBorderColor(white, 40px, 100%);
+            height: 30%;
+            right: 20px;
+            z-index: 1;
+          } // after
+          &__title {
+            display: inline-block;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: $blockTitleMarginBottom;
+            max-width: 100%;
+            position: relative;
+            transition: color .3s;
+            white-space: nowrap;
+            &::before {
+              @include makeUnderline($colorYellow, -1px);
+            } // before
+          } // __title
+          &__content {
+            @include flex(center, space-between);
+            .brandLogo {
+              $imgSize: 80px;
+              padding-right: 10px;
+              height: $imgSize;
+              min-width: $imgSize;
+              width: $imgSize;
+              img {
+                object-fit: contain;
+                object-position: center;
+                height: $imgSize;
+                width: $imgSize;
+              } // img
+            } // brandLogo
+            .brandInfo {
+              @include flex(stretch, space-between);
+              .rating {
+                padding: 0 5px;
+                &__title {
+                  color: $colorColName;
+                  font-size: 13px;
+                  margin-bottom: 15px;
+                } // __title
+                .ratingCircle {
+                } // ratingCircle
+                &__averageInfo {
+                  @include flex(center, center);
+                  flex-direction: column;
+                  .assessment {
+                    @include flex(center, center);
+                    margin-bottom: 10px;
+                    &__value {
+                      font-size: 18px;
+                      font-weight: bold;
+                      margin-right: 5px;
+                    } // __value
+                  } // assessment
+                  .amountReview {
+                    @include flex(flex-end, center);
+                    font-size: 14px;
+                    &__value {
+                      font-weight: bold;
+                      margin-right: 5px;
+                    } // __value
+                  } // amoutnReview
+                } // __averageInfo
+              } // rating
+            } // brandInfo
+          } // __content
+        } // brandData
+        &-hidden {
+          display: none;
+        } // hidden
+      } // __item
+    } // popularSparePartsList
+
+    // @MEDIA ---------------------------
+    @media screen and ( max-width: 1170px ) {
+      .popularSparePartsList {
+        &__item {
+          $contentWidth: 100%;
+          $gutterBlock: 15px;
+          $collCount: 3;
+          $itemWidth: calc( ( #{$contentWidth} - ( #{$gutterBlock} * (#{$collCount} - 1) ) ) / #{$collCount} );
+          margin-bottom: $gutterBlock;
+          margin-right: $gutterBlock;
+          width: $itemWidth;
+          &:nth-child(#{$collCount + 1}n) {
+            margin-right: $gutterBlock;
+          } // nth-child(4n)
+          &:nth-child(#{$collCount}n) {
+            margin-right: 0;
+          } // nth-child(4n)
+          .brandData {
+            background: white;
+            border-radius: $mainBorderRadius;
+            color: $colorDarkGray;
+            padding: 25px 20px;
+            transition: transform .5s, box-shadow .5s;
+            width: 100%;
+            &__title {
+              display: inline-block;
+              font-size: 18px;
+              text-align: center;
+              margin-bottom: $blockTitleMarginBottom;
+              position: relative;
+              transition: color .3s;
+              &::before {
+                @include makeUnderline($colorYellow, -1px);
+              } // before
+            } // __title
+            &__content {
+              @include flex(center, space-between);
+              .brandLogo {
+                padding-right: 10px;
+                min-width: 75px;
+                width: 80px;
+              } // brandLogo
+              .brandInfo {
+                @include flex(stretch, space-between);
+                .rating {
+                  padding: 0 5px;
+                  &__title {
+                    color: $colorColName;
+                    font-size: 13px;
+                    margin-bottom: 15px;
+                  } // __title
+                  .ratingCircle {
+                  } // ratingCircle
+                  &__averageInfo {
+                    @include flex(center, center);
+                    flex-direction: column;
+                    .assessment {
+                      @include flex(center, center);
+                      margin-bottom: 10px;
+                      &__value {
+                        font-size: 18px;
+                        font-weight: bold;
+                        margin-right: 5px;
+                      } // __value
+                    } // assessment
+                    .amountReview {
+                      @include flex(flex-end, center);
+                      font-size: 14px;
+                      &__value {
+                        font-weight: bold;
+                        margin-right: 5px;
+                      } // __value
+                    } // amoutnReview
+                  } // __averageInfo
+                } // rating
+              } // brandInfo
+            } // __content
+          } // brandData
+        } // __item
+      } // popularSparePartsList
+    } // 1170
+    @media screen and ( max-width: 1000px ) {
+      .popularSparePartsList {
+        &__item {
+          $contentWidth: 100%;
+          $gutterBlock: 15px;
+          $collCount: 2;
+          $itemWidth: calc( ( #{$contentWidth} - ( #{$gutterBlock} * (#{$collCount} - 1) ) ) / #{$collCount} );
+          margin-bottom: $gutterBlock;
+          margin-right: $gutterBlock;
+          width: $itemWidth;
+          &:nth-child(#{$collCount + 1}n) {
+            margin-right: $gutterBlock;
+          } // nth-child(2n)
+          &:nth-child(#{$collCount}n) {
+            margin-right: 0;
+          } // nth-child(3n)
+        } // __item
+      } // popularSparePartsList
+    } // 1000
+    // ==================================
+
+  } // popularSparePartsBlock
+  // ===========================================
+  
+} // brandsSparePartsPage
