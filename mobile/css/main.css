@@ -417,6 +417,10 @@ button, input {
     display: flex;
     align-items: center;
     justify-content: flex-start; }
+  .blockHeader-center .blockTitle {
+    justify-content: center !important;
+    text-align: center;
+    width: 100%; }
 
 .mainBtn {
   display: flex;
@@ -627,6 +631,8 @@ button, input {
       width: 15px; }
       .mainBtn-darkStyle .innerIcon svg {
         fill: #efb428; }
+  .mainBtn-link {
+    box-shadow: unset; }
 
 .filterBtn {
   display: flex;
@@ -870,6 +876,26 @@ button, input {
     width: 50px; }
     .ratingCircle-bigger::before {
       font-size: 16px; }
+  .ratingCircle-biggest {
+    min-height: 75px;
+    min-width: 75px;
+    height: 75px;
+    width: 75px; }
+    .ratingCircle-biggest::before {
+      font-size: 24px;
+      font-weight: bold; }
+  .ratingCircle-positiveGrowth::after {
+    background: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    color: #7eae3e;
+    content: "⬆" attr(data-growth);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 7px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 25%); }
 
 .typeActivHeaderBtn {
   border-radius: 3px;
@@ -886,6 +912,21 @@ button, input {
   .typeActivHeaderBtn-newEvent {
     background: #7eae3e;
     color: white; }
+
+.imgFlag {
+  border-radius: 3px;
+  background-image: url(../img/flags_sprite.jpg);
+  height: 17px;
+  min-width: 26px;
+  width: 26px; }
+  .imgFlag-germany {
+    background-position: 0 0; }
+  .imgFlag-england {
+    background-position: -29px 0; }
+  .imgFlag-italy {
+    background-position: -57px 0; }
+  .imgFlag-usa {
+    background-position: -84px 0; }
 
 .shevronIcon__icon {
   display: block;
@@ -966,6 +1007,38 @@ button, input {
 
 .shevronIcon-selectTop {
   transform: rotate(90deg) scale(0.5); }
+
+.reviewDiagramBlock {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  min-width: 115px;
+  width: 115px; }
+  .reviewDiagramBlock__item {
+    align-items: center;
+    color: white;
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    justify-content: center;
+    min-width: 20px;
+    transition: width .5s; }
+    .reviewDiagramBlock__item-green {
+      background: #7eae3e;
+      width: 70%; }
+    .reviewDiagramBlock__item-yellow {
+      background: #efb428;
+      width: 20%; }
+    .reviewDiagramBlock__item-red {
+      background: #e73e4e;
+      width: 10%; }
+  .reviewDiagramBlock-brandsSparePartsPage {
+    height: 30px;
+    min-width: 100%;
+    width: 100%; }
+    .reviewDiagramBlock-brandsSparePartsPage .reviewDiagramBlock__item {
+      min-width: 40px;
+      transition: transform .2s; }
 
 .sliderBox {
   position: relative;
@@ -2062,6 +2135,7 @@ button, input {
     white-space: nowrap; }
     .widget .widgetContent .ratingSpareParts .ratingSparePartsContentTitle__img {
       margin-right: 10px;
+      min-width: 25px;
       width: 25px; }
       .widget .widgetContent .ratingSpareParts .ratingSparePartsContentTitle__img svg path {
         fill: transparent;
@@ -2176,6 +2250,7 @@ button, input {
       font-size: 11px;
       height: 32px;
       width: 41px;
+      margin-left: auto;
       min-width: 41px; }
       .widget .widgetContent .ratingSpareParts .ratingSparePartsElem__place::after {
         content: 'Место';
@@ -2187,6 +2262,19 @@ button, input {
         background-position: -40px, 0; }
       .widget .widgetContent .ratingSpareParts .ratingSparePartsElem__place-third {
         background-position: -81px, 0; }
+  .widget .widgetContent .ratingSpareParts-auto .ratingSparePartsElem:first-child {
+    padding-top: 30px; }
+  .widget .widgetContent .ratingSpareParts-auto .ratingSparePartsElem__icon {
+    height: 40px;
+    margin-right: 20px;
+    width: 70px; }
+    .widget .widgetContent .ratingSpareParts-auto .ratingSparePartsElem__icon img {
+      object-fit: contain;
+      object-position: center;
+      height: 40px;
+      width: 70px; }
+  .widget .widgetContent .ratingSpareParts-auto .ratingSparePartsElem__content .innerTitle {
+    font-size: 16px; }
   .widget .widgetContent .carInfoFilter__selectBlock {
     margin-bottom: 20px; }
     .widget .widgetContent .carInfoFilter__selectBlock-dependedElem {
@@ -5680,3 +5768,1020 @@ button, input {
           margin-bottom: 0; }
     #brandsPage .reviewsBlock .contentArea__pagination {
       margin-bottom: 45px; }
+
+#brandsSparePartsPage .pageHeaderBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 45px; }
+  #brandsSparePartsPage .pageHeaderBlock .blockTitle {
+    color: #2c333d; }
+  #brandsSparePartsPage .pageHeaderBlock__thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px; }
+    #brandsSparePartsPage .pageHeaderBlock__thumbnail .innerImage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      border: 1px solid #e8e8e8;
+      height: 70px;
+      min-width: 70px;
+      margin-right: 15px;
+      padding: 10px;
+      width: 70px; }
+  #brandsSparePartsPage .pageHeaderBlock__content {
+    width: 100%; }
+    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column; }
+      #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e8e8e8;
+        flex-shrink: 1;
+        max-height: 87px;
+        position: relative;
+        padding: 15px 0;
+        width: 100%; }
+        #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item:last-child {
+          border-bottom: none; }
+        #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle {
+          color: #8a939f;
+          font-size: 14px;
+          position: relative;
+          text-align: center; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText {
+            position: relative; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText-link {
+              color: #8a939f;
+              text-decoration: none; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText-link::before {
+                background: #c1c1c1;
+                bottom: -1px;
+                content: '';
+                display: block;
+                height: 1px;
+                left: 0;
+                position: absolute;
+                transition: width .3s;
+                width: 0;
+                width: 100%; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .additInfo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid #8a939f;
+            color: #8a939f;
+            font-size: 10px;
+            position: absolute;
+            right: -15px;
+            top: -5px;
+            height: 14px;
+            width: 14px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .additInfo:hover {
+              border-color: #efb428;
+              color: #efb428;
+              cursor: pointer; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-description {
+            color: #2c333d;
+            font-weight: bold;
+            margin-bottom: 10px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #464f5b;
+            border-radius: 3px 3px 0 0;
+            margin-bottom: 0;
+            padding: 5px 0;
+            width: 100%; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon {
+              width: 15px;
+              margin-right: 8px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon svg {
+                fill: #efb428; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerTxt {
+              color: white;
+              font-size: 14px; }
+        #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-basis: auto;
+          width: 50%;
+          padding-left: 15px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__value {
+              color: #2c333d;
+              font-size: 20px;
+              margin-right: 5px;
+              text-decoration: none; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__icon {
+              width: 15px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__icon svg {
+                fill: #efb428; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .imgFlag {
+            margin-right: 5px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo {
+            color: #2c333d;
+            font-size: 16px;
+            width: 100%; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio {
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-basis: auto;
+                width: 50%;
+                border-radius: 3px;
+                border: 1px solid transparent;
+                font-size: inherit;
+                padding: 5px 5px 5px 9px;
+                transition: background .2s, transform .2s;
+                max-width: 90px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review:hover {
+                  cursor: pointer; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review .voteRatioIcon {
+                  width: 14px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-positive {
+                  border-color: #7eae3e;
+                  margin-right: 5px; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-positive .voteRatioValue {
+                    margin-left: 10px; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-positive .voteRatioIcon svg {
+                    fill: #7eae3e; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-positive:hover {
+                    background: #7eae3e;
+                    border-color: #7eae3e;
+                    box-shadow: 0 2px 0 #638831;
+                    color: white;
+                    transform: translateY(-2px); }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-positive:hover .voteRatioIcon svg {
+                      fill: white; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-negative {
+                  border-color: #e73e4e; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-negative .voteRatioValue {
+                    margin-right: 10px; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-negative .voteRatioIcon svg {
+                    fill: #e73e4e;
+                    transform: rotate(180deg); }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-negative:hover {
+                    background: #e73e4e;
+                    border-color: #e73e4e;
+                    box-shadow: 0 2px 0 #d71b2d;
+                    color: white;
+                    transform: translateY(-2px); }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandRatingInfo__vote .voteRatio__review-negative:hover .voteRatioIcon svg {
+                      fill: white; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .ratingCircle {
+            margin-bottom: 20px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .ratingDescription {
+            line-height: 18px;
+            margin-bottom: 15px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .ratingDescription__item {
+              text-align: center;
+              white-space: nowrap; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .ratingDescription__item span {
+                font-weight: bold; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .totalRespondents {
+            color: #8a939f;
+            margin-top: 10px;
+            text-align: center; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .totalRespondents span {
+              font-weight: bold; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              margin-bottom: 5px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock:last-child {
+                margin-bottom: 0; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item {
+                margin-right: 5px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item:last-child {
+                  margin-right: 0; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-title {
+                  color: #2c333d;
+                  font-size: 14px;
+                  white-space: nowrap; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon {
+                    display: block;
+                    margin-right: 1px;
+                    height: 12px;
+                    width: 12px; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon:last-child {
+                      margin-right: 0; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon svg {
+                      fill: transparent;
+                      stroke-width: 3px;
+                      stroke: #7eae3e; }
+                      #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon svg.fill {
+                        fill: #7eae3e; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillGreen svg {
+                      fill: #7eae3e !important;
+                      stroke: #7eae3e !important; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillYellow svg {
+                      fill: #efb428 !important;
+                      stroke: #efb428 !important; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillRed svg {
+                      fill: #e73e4e !important;
+                      stroke: #e73e4e !important; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeGreen svg {
+                      fill: transparent !important;
+                      stroke: #7eae3e !important; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeYellow svg {
+                      fill: transparent !important;
+                      stroke: #efb428 !important; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeRed svg {
+                      fill: transparent !important;
+                      stroke: #e73e4e !important; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__value {
+                    margin-left: 10px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-rating {
+                  color: #2c333d;
+                  font-size: 14px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average {
+              margin: 25px 0; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock {
+                align-items: flex-start;
+                justify-content: center; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-title {
+                  color: #2c333d;
+                  font-size: 20px;
+                  margin-bottom: 5px; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-title::after {
+                    content: attr(data-value);
+                    margin-left: 6px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-stars {
+                  margin-right: 8px; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-stars .starsIconBlock__icon {
+                    height: 20px;
+                    width: 20px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-rating {
+                  color: #2c333d;
+                  font-size: 20px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .diagramBlock {
+            margin-top: 20px;
+            width: 100%; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 15px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockThumbnail {
+              border: 1px solid #e8e8e8;
+              border-radius: 3px;
+              margin-right: 15px;
+              padding: 5px;
+              height: 50px;
+              width: 60px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockThumbnail img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                object-position: center; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item {
+              margin-bottom: 3px;
+              white-space: nowrap; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item:last-child {
+                margin-bottom: 0; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-brandName {
+                color: #2c333d;
+                font-size: 16px;
+                font-weight: bold; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-country {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-country .imgFlag {
+                  transform: scale(0.8); }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-country .innerText {
+                  color: #8a939f;
+                  font-size: 13px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-link {
+                color: #4991bf;
+                font-size: 14px;
+                position: relative;
+                text-decoration: none;
+                transition: color .3s; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-link:hover {
+                  color: #efb428; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-link:hover::after {
+                    width: 100%; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-link::before {
+                  background: #4991bf;
+                  bottom: -1px;
+                  content: '';
+                  display: block;
+                  height: 1px;
+                  left: 0;
+                  position: absolute;
+                  transition: width .3s;
+                  width: 0;
+                  width: 100%; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__header .blockInfo__item-link::after {
+                  background: #efb428;
+                  bottom: -1px;
+                  content: '';
+                  display: block;
+                  height: 1px;
+                  left: 0;
+                  position: absolute;
+                  transition: width .3s;
+                  width: 0; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__description {
+            margin-bottom: 15px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__description .infoBlock-userDescription {
+              flex-shrink: 2;
+              position: relative;
+              max-height: 65px;
+              overflow: hidden;
+              padding-right: 0;
+              transition: height .3s, max-height .3s; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__description .infoBlock-userDescription::after {
+                content: '';
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, white 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 15px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__description .infoBlock-userDescription .userDescription {
+                color: #2c333d;
+                font-size: 13px;
+                line-height: 16.9px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__ratingTotal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #464f5b;
+            border-radius: 3px;
+            color: white;
+            font-size: 15px;
+            margin-bottom: 15px;
+            padding: 7px;
+            text-decoration: none;
+            white-space: nowrap; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__ratingTotal .innerIcon {
+              display: block;
+              height: 15px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__ratingTotal .innerIcon svg {
+                height: 100%;
+                width: auto; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__ratingTotal .innerIcon-rating svg {
+                fill: #efb428; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__ratingTotal .innerIcon-lighting svg {
+                fill: #7eae3e; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__ratingTotal .innerText {
+              margin: 0 15px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: #2c333d;
+            font-size: 20px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data::after {
+              content: attr(data-growth);
+              font-size: 16px;
+              margin-left: 5px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-country {
+              font-size: 14px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-positiveGrowth::after {
+              content: attr(data-growth);
+              color: #7eae3e;
+              font-size: 14px;
+              margin-left: 5px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-positiveGrowth svg {
+              width: 20px;
+              fill: #7eae3e; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-negativeGrowth::after {
+              content: attr(data-growth);
+              color: #e73e4e;
+              font-size: 14px;
+              margin-left: 5px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-negativeGrowth svg {
+              transform: scale(1, -1);
+              width: 20px;
+              fill: #e73e4e; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-manufacturer::after {
+              color: #c1c1c1; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-review::after {
+              color: #7eae3e; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-vote::after {
+              color: #7eae3e; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional {
+              color: #c1c1c1;
+              font-size: 16px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional .innerSeparator {
+                margin: 0 5px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional .innerSeparator-plus {
+                  margin: 0 0 0 5px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__text {
+            color: #2c333d;
+            font-size: 13px;
+            line-height: 17px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-description {
+            max-width: 475px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty {
+            background: #f6f6f6;
+            flex-direction: column;
+            padding-left: 0;
+            width: 100%; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a {
+              border-bottom: 1px solid #e8e8e8;
+              display: block;
+              padding: 11px 0;
+              position: relative;
+              text-decoration: none;
+              width: 100%; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a:last-child {
+                border-bottom: none; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              color: #2c333d;
+              width: auto; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__title {
+                flex-basis: auto;
+                width: 50%;
+                font-size: 13px;
+                padding: 0 15px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-basis: auto;
+                width: 50%; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandName {
+                  font-size: 16px;
+                  margin-right: 10px;
+                  max-width: 80px;
+                  overflow: hidden;
+                  position: relative;
+                  white-space: nowrap;
+                  width: 85px; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandName::after {
+                    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 20px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__value {
+                    font-size: 20px;
+                    margin-right: 5px; }
+                  #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon {
+                    transition: transform .3s;
+                    width: 12px; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.topRating {
+                      fill: #7eae3e; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.middleRating {
+                      fill: #efb428; }
+                    #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.lowRating {
+                      fill: #e73e4e; }
+        #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          color: white;
+          flex-direction: column-reverse;
+          position: absolute;
+          left: 0;
+          top: 5px;
+          transform: translateY(-100%);
+          width: 300px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo::before {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid #464f5b;
+            content: '';
+            display: block;
+            transform: translateY(-1px); }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo__innerText {
+            background: #464f5b;
+            border-radius: 3px;
+            font-size: 14px;
+            line-height: 1.2;
+            padding: 10px; }
+        #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site {
+          flex-grow: 1;
+          text-decoration: none; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover {
+            cursor: pointer; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle .innerText {
+              color: #efb428; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle .innerText::before {
+                width: 100%; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle .additInfo {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: white;
+              border-radius: 50%;
+              border: 1px solid #8a939f;
+              color: #8a939f;
+              font-size: 10px;
+              position: absolute;
+              right: -15px;
+              top: -5px;
+              height: 14px;
+              width: 14px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle .additInfo:hover {
+                border-color: #efb428;
+                color: #efb428;
+                cursor: pointer; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-description {
+              color: #2c333d;
+              font-weight: bold;
+              margin-bottom: 10px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-bestProperty {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #464f5b;
+              margin-bottom: 0;
+              padding: 5px 0; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-bestProperty .innerIcon {
+                width: 15px;
+                margin-right: 8px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-bestProperty .innerIcon svg {
+                  fill: #efb428; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-bestProperty .innerTxt {
+                color: white;
+                font-size: 14px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerText {
+              color: #efb428 !important; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle {
+            margin-bottom: 20px;
+            color: #8a939f;
+            font-size: 14px;
+            position: relative;
+            text-align: center; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle .innerText {
+              position: relative;
+              color: #8a939f;
+              white-space: nowrap; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle .innerText::before {
+                background: #efb428;
+                bottom: -1px;
+                content: '';
+                display: block;
+                height: 1px;
+                left: 0;
+                position: absolute;
+                transition: width .3s;
+                width: 0; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle .additInfo {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: white;
+              border-radius: 50%;
+              border: 1px solid #8a939f;
+              color: #8a939f;
+              font-size: 10px;
+              position: absolute;
+              right: -15px;
+              top: -5px;
+              height: 14px;
+              width: 14px; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle .additInfo:hover {
+                border-color: #efb428;
+                color: #efb428;
+                cursor: pointer; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-description {
+              color: #2c333d;
+              font-weight: bold;
+              margin-bottom: 10px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-bestProperty {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #464f5b;
+              margin-bottom: 0;
+              padding: 5px 0; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-bestProperty .innerIcon {
+                width: 15px;
+                margin-right: 8px; }
+                #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-bestProperty .innerIcon svg {
+                  fill: #efb428; }
+              #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-bestProperty .innerTxt {
+                color: white;
+                font-size: 14px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockContent__data .innerText {
+            color: #2c333d;
+            font-size: 16px;
+            max-width: 120px;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockContent__data .innerText::before {
+              background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
+              content: '';
+              display: block;
+              height: 100%;
+              position: absolute;
+              right: 0;
+              top: 0;
+              width: 40px; }
+          #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockContent__data .innerIcon {
+            background: #efb428;
+            border-radius: 3px;
+            color: white;
+            font-size: 12px;
+            height: 12px;
+            margin-left: 5px;
+            position: relative;
+            width: 12px; }
+            #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockContent__data .innerIcon::before {
+              content: '\27A0';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotate(-45deg); }
+        #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-noBorder {
+          border-bottom: none; }
+        #brandsSparePartsPage .pageHeaderBlock__content .headerBlockContent__item-bestProperty {
+          flex-direction: column;
+          justify-content: center;
+          border-radius: 3px 3px 0 0;
+          flex-shrink: 1;
+          max-height: initial;
+          padding: 0; }
+  #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands {
+    align-items: flex-start; }
+    #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__thumbnail .innerImage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      height: 280px;
+      min-width: 320px;
+      overflow: hidden;
+      padding: 0;
+      width: 320px; }
+      #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__thumbnail .innerImage img {
+        object-fit: cover;
+        object-position: center;
+        height: 280px;
+        width: 320px; }
+    #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent {
+      align-items: flex-start;
+      justify-content: flex-start; }
+      #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item {
+        flex-direction: column;
+        max-height: initial;
+        padding: 20px 0; }
+        #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item:last-child {
+          padding-right: 0; }
+        #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle {
+          margin-bottom: 10px; }
+        #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
+          align-items: center;
+          justify-content: flex-start;
+          flex-direction: column;
+          width: 100%; }
+        #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo {
+          top: 10px;
+          left: 50%;
+          transform: translate(-50%, -100%); }
+    @media screen and (max-width: 1100px) {
+      #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands {
+        align-items: flex-start;
+        flex-direction: column; }
+        #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .blockTitle {
+          padding-left: 20px;
+          margin-bottom: 0; }
+        #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__thumbnail {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 20px; }
+          #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__thumbnail .innerImage {
+            height: 85px;
+            min-width: 85px;
+            width: 85px; }
+        #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item:first-child {
+          padding-left: 0; }
+        #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #brandsSparePartsPage .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem {
+            padding: 0 15px; } }
+
+#brandsSparePartsPage .manufacturer {
+  margin-bottom: 45px; }
+  #brandsSparePartsPage .manufacturer .blockHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column; }
+    #brandsSparePartsPage .manufacturer .blockHeader .blockTitle {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 15px; }
+      #brandsSparePartsPage .manufacturer .blockHeader .blockTitle span {
+        display: block;
+        margin-right: 10px; }
+        #brandsSparePartsPage .manufacturer .blockHeader .blockTitle span:last-child {
+          margin-right: 0; }
+      #brandsSparePartsPage .manufacturer .blockHeader .blockTitle__text {
+        color: inherit;
+        font-size: inherit; }
+    #brandsSparePartsPage .manufacturer .blockHeader__filterBtn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+  #brandsSparePartsPage .manufacturer__content {
+    background: #f6f6f6;
+    border-radius: 3px;
+    padding: 15px;
+    width: 100%; }
+  #brandsSparePartsPage .manufacturer .manufacturerList {
+    width: 100%; }
+    #brandsSparePartsPage .manufacturer .manufacturerList__items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%; }
+    #brandsSparePartsPage .manufacturer .manufacturerList__item {
+      display: block;
+      margin-bottom: 15px;
+      position: relative;
+      text-decoration: none;
+      transition: transform .3s;
+      white-space: nowrap;
+      width: 100%; }
+      #brandsSparePartsPage .manufacturer .manufacturerList__item:last-child {
+        margin-bottom: 0; }
+      #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData {
+        background: white;
+        border-radius: 3px;
+        color: #2c333d;
+        overflow: hidden;
+        padding: 25px 20px;
+        position: relative;
+        width: 100%; }
+        #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData::before {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 0);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 20px;
+          z-index: 1; }
+        #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData::after {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px;
+          height: 30%;
+          right: 20px;
+          z-index: 1; }
+        #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__title {
+          display: inline-block;
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 20px;
+          max-width: 100%;
+          position: relative;
+          transition: color .3s;
+          white-space: nowrap; }
+          #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__title::before {
+            background: #efb428;
+            bottom: -1px;
+            content: '';
+            display: block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transition: width .3s;
+            width: 0; }
+        #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandLogo {
+            padding-right: 10px;
+            min-width: 75px;
+            width: 80px; }
+          #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between; }
+            #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating {
+              padding: 0 5px; }
+              #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__title {
+                color: #8a939f;
+                font-size: 13px;
+                margin-bottom: 15px; }
+              #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column; }
+                #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .assessment {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 10px; }
+                  #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .assessment__value {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-right: 5px; }
+                #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .amountReview {
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: center;
+                  font-size: 14px; }
+                  #brandsSparePartsPage .manufacturer .manufacturerList__item .brandData__content .brandInfo .rating__averageInfo .amountReview__value {
+                    font-weight: bold;
+                    margin-right: 5px; }
+      #brandsSparePartsPage .manufacturer .manufacturerList__item-hidden {
+        display: none; }
+  #brandsSparePartsPage .manufacturer .mainBtn-showAllNoFullWidth {
+    margin-top: 20px; }
+
+#brandsSparePartsPage .reviewsBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 45px; }
+  #brandsSparePartsPage .reviewsBlock .contentArea {
+    width: 100%; }
+    #brandsSparePartsPage .reviewsBlock .contentArea__reviews {
+      margin-bottom: 30px; }
+      #brandsSparePartsPage .reviewsBlock .contentArea__reviews:last-child {
+        margin-bottom: 0; }
+      #brandsSparePartsPage .reviewsBlock .contentArea__reviews .review {
+        margin-bottom: 45px; }
+        #brandsSparePartsPage .reviewsBlock .contentArea__reviews .review:last-child {
+          margin-bottom: 0; }
+    #brandsSparePartsPage .reviewsBlock .contentArea__pagination {
+      margin-bottom: 45px; }
+
+#brandsSparePartsPage .popularSpareParts {
+  margin-bottom: 45px; }
+  #brandsSparePartsPage .popularSpareParts__content {
+    background: #f6f6f6;
+    border-radius: 3px;
+    padding: 20px 20px 25px 20px;
+    width: 100%; }
+  #brandsSparePartsPage .popularSpareParts .popularSparePartsList {
+    width: 100%; }
+    #brandsSparePartsPage .popularSpareParts .popularSparePartsList__items {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%; }
+    #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item {
+      display: block;
+      margin-bottom: 15px;
+      position: relative;
+      text-decoration: none;
+      transition: transform .3s;
+      white-space: nowrap;
+      width: 100%; }
+      #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item:nth-child(4n) {
+        margin-right: 0; }
+      #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData {
+        background: white;
+        border-radius: 3px;
+        color: #2c333d;
+        overflow: hidden;
+        padding: 25px 20px;
+        position: relative;
+        width: 100%; }
+        #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData::before {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 0);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 20px;
+          z-index: 1; }
+        #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData::after {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px;
+          height: 30%;
+          right: 20px;
+          z-index: 1; }
+        #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__title {
+          display: inline-block;
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 20px;
+          max-width: 100%;
+          position: relative;
+          transition: color .3s;
+          white-space: nowrap; }
+          #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__title::before {
+            background: #efb428;
+            bottom: -1px;
+            content: '';
+            display: block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transition: width .3s;
+            width: 0; }
+        #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandLogo {
+            padding-right: 10px;
+            height: 80px;
+            min-width: 80px;
+            width: 80px; }
+            #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandLogo img {
+              object-fit: contain;
+              object-position: center;
+              height: 80px;
+              width: 80px; }
+          #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandInfo {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between; }
+            #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandInfo .rating {
+              padding: 0 5px; }
+              #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandInfo .rating__title {
+                color: #8a939f;
+                font-size: 13px;
+                margin-bottom: 15px; }
+              #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandInfo .rating__averageInfo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column; }
+                #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandInfo .rating__averageInfo .assessment {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 10px; }
+                  #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandInfo .rating__averageInfo .assessment__value {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-right: 5px; }
+                #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandInfo .rating__averageInfo .amountReview {
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: center;
+                  font-size: 14px; }
+                  #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item .brandData__content .brandInfo .rating__averageInfo .amountReview__value {
+                    font-weight: bold;
+                    margin-right: 5px; }
+      #brandsSparePartsPage .popularSpareParts .popularSparePartsList__item-hidden {
+        display: none; }
