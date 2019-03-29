@@ -985,34 +985,6 @@
       &-reviewDiagram {
         padding: 0 20px;
         .reviewDiagramBlock {
-          display: flex;
-          justify-content: center;
-          $reviewDiagramWidth: 115px;
-          height: 30px;
-          min-width: $reviewDiagramWidth;
-          width: $reviewDiagramWidth;
-          &__item {
-            align-items: center;
-            color: white;
-            display: flex;
-            font-size: 14px;
-            font-weight: 400;
-            justify-content: center;
-            min-width: 20px;
-            transition: width .5s;
-            &-green {
-              background: $colorRatingGreen;
-              width: 70%;
-            } // -green
-            &-yellow {
-              background: $colorRatingYellow;
-              width: 20%;
-            } // &-yellow
-            &-red {
-              background: $colorRatingRed;
-              width: 10%;
-            } // -red
-          } // __item
         } // reviewDiagramBlock
       } // reviewDiagram
       &-country {

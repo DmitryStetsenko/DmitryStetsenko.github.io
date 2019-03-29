@@ -26,6 +26,8 @@
       .headerBlockContent {
         @include flex(flex-start, space-between);
         &__item {
+          @include flex(center, space-between);
+          flex-direction: column;
           border-right: 1px solid $colorBorderLightGray;
           flex-shrink: 1;
           max-height: 87px;
@@ -35,9 +37,10 @@
             border-right: none;
           } // last-child
           .innerBlockTitle {
-            margin-bottom: 20px;
             color: $colorColName;
+            display: inline-block;
             font-size: 14px;
+            margin: 0 auto 20px auto;
             position: relative;
             text-align: center;
             .innerText {
@@ -105,6 +108,7 @@
           } // blockTitle
           .innerBlockContent {
             @include flex(center, center);
+            font-size: 14px;
             .assessment {
               @include flex(center, center);
               margin-right: 10px;
@@ -124,6 +128,366 @@
             .imgFlag {
               margin-right: 5px;
             } // imgFlag
+            .brandRatingInfo {
+              color: $colorDarkGray;
+              font-size: 16px;
+              width: 100%;
+              &__vote {
+                .voteRatio {
+                  @include flex(center, center);
+                  &__review {
+                    $voteRatioIconSize: 14px;
+                    @include flex(center, center);
+                    @include widthPercent(50%);
+                    border-radius: $mainBorderRadius;
+                    border: 1px solid transparent;
+                    font-size: inherit;
+                    padding: 5px 5px 5px 9px;
+                    transition: background .2s, transform .2s;
+                    &:hover {
+                      cursor: pointer;
+                    } // hover
+                    .voteRatioIcon {
+                      width: 14px;
+                    } // voteRatioIcon
+                    &-positive {
+                      border-color: $colorRatingGreen;
+                      margin-right: 5px;
+                      .voteRatioValue {
+                        margin-left: 10px;
+                      } // voteRatioValue
+                      .voteRatioIcon {
+                        svg {
+                          fill: $colorRatingGreen;
+                        } // svg
+                      } // voteRatioIcon
+                      &:hover {
+                        background: $colorRatingGreen;
+                        border-color: $colorRatingGreen;
+                        box-shadow: 0 2px 0 darken($colorRatingGreen, 10);
+                        color: white;
+                        transform: translateY(-2px);
+                        .voteRatioIcon {
+                          svg {
+                            fill: white;
+                          } // svg
+                        } // voteRatioIcon
+                      } // hover
+                    } // positive
+                    &-negative {
+                      border-color: $colorRatingRed;
+                      .voteRatioValue {
+                        margin-right: 10px;
+                      } // voteRatioValue
+                      .voteRatioIcon {
+                        svg {
+                          fill: $colorRatingRed;
+                          transform: rotate(180deg);
+                        } // svg
+                      } // voteRatioIcon
+                      &:hover {
+                        background: $colorRatingRed;
+                        border-color: $colorRatingRed;
+                        box-shadow: 0 2px 0 darken($colorRatingRed, 10);
+                        color: white;
+                        transform: translateY(-2px);
+                        .voteRatioIcon {
+                          svg {
+                            fill: white;
+                          } // svg
+                        } // voteRatioIcon
+                      } // hover
+                    } // positive
+                  } // __review
+                } // voteRatio
+              } // __vote
+            } // brandRatingInfo
+            .ratingCircle {
+              margin-bottom: 20px;
+            } // ratingCircle
+            .ratingDescription {
+              line-height: 18px;
+              margin-bottom: 15px;
+              &__item {
+                text-align: center;
+                white-space: nowrap;
+                span {
+                  font-weight: bold;
+                } // span
+              } // item
+            } // ratingDescription
+            .totalRespondents {
+              color: $colorColName;
+              margin-top: 10px;
+              text-align: center;
+              span {
+                font-weight: bold;
+              } // span
+            } // totalRespondents
+            .userAssessment {
+              @include flex(center, flex-start);
+              flex-direction: column;
+              &__item {
+                .ratingsBlock {
+                  $titleFontSize: 14px;
+                  $titleColor: $colorDarkGray;
+                  $ratingFontSize: 12px;
+                  $ratingColor: $colorDarkGray;
+                  $starsIconSize: 12px;
+
+                  @include flex(center, flex-end);
+                  margin-bottom: 5px;
+                  &:last-child {
+                    margin-bottom: 0;
+                  } // last-child
+                  &__item {
+                    margin-right: 5px;
+                    &:last-child {
+                      margin-right: 0;
+                    } // last-child
+                    &-title {
+                      color: $titleColor;
+                      font-size: $titleFontSize;
+                      white-space: nowrap;
+                    } // -title
+                    &-stars {
+                      .starsIconBlock {
+                        @include flex(center, center);
+                        &__icon {
+                          display: block;
+                          margin-right: 1px;
+                          height: $starsIconSize;
+                          width: $starsIconSize;
+                          &:last-child {
+                            margin-right: 0;
+                          } // last-child
+                          svg {
+                            fill: transparent;
+                            stroke-width: 3px;
+                            stroke: $colorRatingGreen;
+                            &.fill {
+                              fill: $colorRatingGreen;
+                            } // -fill
+                          } // starsIcon
+                          &-fillGreen {
+                            svg {
+                              fill: $colorRatingGreen !important;
+                              stroke: $colorRatingGreen !important;
+                            } // svg
+                          } // -fillGreen
+                          &-fillYellow {
+                            svg {
+                              fill: $colorRatingYellow !important;
+                              stroke: $colorRatingYellow !important;
+                            } // svg
+                          } // -fillYellow
+                          &-fillRed {
+                            svg {
+                              fill: $colorRatingRed !important;
+                              stroke: $colorRatingRed !important;
+                            } // svg
+                          } // -fillRed
+                          &-strokeGreen {
+                            svg {
+                              fill: transparent !important;
+                              stroke: $colorRatingGreen !important;
+                            } // svg
+                          } // -strokeGreen
+                          &-strokeYellow {
+                            svg {
+                              fill: transparent !important;
+                              stroke: $colorRatingYellow !important;
+                            } // svg
+                          } // -strokeYellow
+                          &-strokeRed {
+                            svg {
+                              fill: transparent !important;
+                              stroke: $colorRatingRed !important;
+                            } // svg
+                          } // -strokeRed
+                        } // icon
+                        &__value {
+                          margin-left: 10px;
+                        } // __value
+                      } // starsIconBlock
+                    } // -stars
+                    &-rating {
+                      color: $titleColor;
+                      font-size: $titleFontSize;
+                    } // rating
+                  } // ____item
+                } // ratingsBlock
+                &-average {
+                  margin: 25px 0;
+                  .ratingsBlock {
+                    $titleFontSize: 20px;
+                    $titleColor: $colorDarkGray;
+                    $ratingFontSize: 20px;
+                    $ratingColor: $colorDarkGray;
+                    $starsIconSize: 20px;
+
+                    align-items: flex-start;
+                    justify-content: center;
+                    &__item{
+                      &-title {
+                        color: $titleColor;
+                        font-size: $titleFontSize;
+                        margin-bottom: 5px;
+                        &::after {
+                          content: attr(data-value);
+                          margin-left: 6px;
+                        } // after
+                      } // -title
+                      &-stars {
+                        margin-right: 8px;
+                        .starsIconBlock {
+                          &__icon {
+                            height: $starsIconSize;
+                            width: $starsIconSize;
+                          } // __icon
+                        } // starsIconBlock
+                      } // stars
+                      &-rating {
+                        color: $titleColor;
+                        font-size: $titleFontSize;
+                      } // -rating
+                    } // __item
+                  } // ratingBlock
+                } // -average
+              } // __ratings
+            } // userAssessment
+            .diagramBlock {
+              margin-top: 20px;
+              width: 100%;
+            } // diagramBlock
+            .brandSparePartsInfoBlock {
+              $blockInnerMargin: 15px;
+              &__header {
+                $thumbWidth: 60px;
+                $thumbHeight: 50px;
+                @include flex(center, flex-start);
+                margin-bottom: $blockInnerMargin;
+                .blockThumbnail {
+                  border: 1px solid $colorBorderLightGray;
+                  border-radius: $mainBorderRadius;
+                  margin-right: 15px;
+                  padding: 5px;
+                  height: $thumbHeight;
+                  width: $thumbWidth;
+                  img {
+                    @include imgFit(contain, center);
+                  } // img
+                } // blockThumbnail
+                .blockInfo {
+                  &__item {
+                    margin-bottom: 3px;
+                    white-space: nowrap;
+                    .innerText {
+                    } // innerText
+                    &:last-child {
+                      margin-bottom: 0;
+                    } // last-child
+                    &-brandName {
+                      color: $colorDarkGray;
+                      font-size: 16px;
+                      font-weight: bold;
+                    } // -brandName
+                    &-country {
+                      @include flex(center, flex-start);
+                      .imgFlag {
+                        transform: scale(.8);
+                      } // imgFlag
+                      .innerText {
+                        color: $colorColName;
+                        font-size: 13px;
+                      } // innerText
+                    } // country
+                    &-link {
+                      color: $colorLinkAside;
+                      font-size: 14px;
+                      position: relative;
+                      text-decoration: none;
+                      transition: color .3s;
+                      &:hover {
+                        color: $colorYellow;
+                        &::after {
+                          width: 100%;
+                        } // before
+                      } // hover
+                      &::before {
+                        @include makeUnderline($colorLinkAside, -1px);
+                        width: 100%;
+                      } // before
+                      &::after {
+                        @include makeUnderline($colorYellow, -1px);
+                      } //after
+                    } // link
+                  } // __item
+                } // blockInfo
+              } // __header
+              &__description {
+                $mainFontSize: 13px;
+                margin-bottom: $blockInnerMargin;
+                .infoBlock {
+                  &-userDescription {
+                    flex-shrink: 2;
+                    position: relative;
+                    max-height: 65px;
+                    overflow: hidden;
+                    padding-right: 0;
+                    transition: height .3s, max-height .3s;
+                    &::after {
+                      content: '';
+                      background: linear-gradient(to bottom,
+                              rgba(255,255,255,0.8) 0%,
+                              rgba(255,255,255,1) 100%);
+                      position: absolute;
+                      bottom: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 15px;
+                    } // after
+                    .userDescription {
+                      color: $colorDarkGray;
+                      font-size: $mainFontSize;
+                      line-height: $mainFontSize * 1.3;
+                    } // text
+                  } // userDescription
+                } // infoBlock
+              } // __description
+              &__ratingTotal {
+                @include flex(center, center);
+                background: $colorGray;
+                border-radius: $mainBorderRadius;
+                color: white;
+                font-size: 15px;
+                margin-bottom: $blockInnerMargin;
+                padding: 7px;
+                text-decoration: none;
+                white-space: nowrap;;
+                .innerIcon {
+                  display: block;
+                  height: 15px;
+                  svg {
+                    height: 100%;
+                    width: auto;
+                  } // svg
+                  &-rating {
+                    svg {
+                      fill: $colorYellow;
+                    } // svg
+                  } // rating
+                  &-lighting {
+                    svg {
+                      fill: $colorRatingGreen;
+                    } // svg
+                  } // lighting
+                } // innerIcon
+                .innerText {
+                  margin: 0 15px;
+                } // innerText
+              } // __ratingTotal
+            } // brandSparePartsInfoBlock
             &__data {
               @include flex(center, flex-start);
               color: $colorDarkGray;
@@ -487,6 +851,92 @@
         } // brands
       } // headerBlockContent
     } // __content
+    &-sparePartsBrands {
+      align-items: flex-start;
+      .pageHeaderBlock__thumbnail {
+        .innerImage {
+          $imgWidth: 320px;
+          $imgHeight: 280px;
+          @include flex(center, center);
+          border: none;
+          height: $imgHeight;
+          min-width: $imgWidth;
+          overflow: hidden;
+          padding: 0;
+          width: $imgWidth;
+          img {
+            object-fit: cover;
+            object-position: center;
+            height: $imgHeight;
+            width: $imgWidth;
+          } // img
+        } // innerImage
+      } // pageHeaderBlock__thumbnail
+      .pageHeaderBlock__content {
+        .headerBlockContent {
+          align-items: stretch;
+          justify-content: flex-start;
+          &__item {
+            max-height: initial;
+            padding: 0 30px;
+            &:last-child {
+              padding-right: 0;
+            } // last-child
+            .innerBlockTitle {
+              margin-bottom: 10px;
+            } // blockTitle
+            .innerBlockContent {
+              align-items: center;
+              justify-content: flex-start;
+              flex-direction: column;
+            } // innerBlockContent
+            .showAdditInfo {
+              top: -5px;
+            } // showAdditInfo
+          } // __item
+        } // headerBlockContent
+      } // pageHeaderBlock__content
+
+      // @MEDIA -----------------------------
+      @media screen and ( max-width: 1100px ) {
+        align-items: flex-start;
+        flex-direction: column;
+        & .blockTitle {
+          padding-left: 20px;
+          margin-bottom: 0;
+        } // blockTitle
+        .pageHeaderBlock__thumbnail {
+          @include flex(center, flex-start);
+          margin-bottom: $blockTitleMarginBottom;
+          .innerImage {
+            $imgSize: 85px;
+            height: $imgSize;
+            min-width: $imgSize;
+            width: $imgSize;
+          } // innerImage
+        } // pageHeaderBlock__thumbnail
+        .pageHeaderBlock__content {
+          .headerBlockContent {
+            &__item {
+              &:first-child {
+                padding-left: 0;
+              } // first-child
+              .innerBlockContent {
+                @include flex(center, center);
+                &-bestProperty {
+                  .propItem {
+                    $propItemPadding: 0 15px;
+                    padding: $propItemPadding;
+                  } // propItem
+                } // -bestProperty
+              } // innerBlockContent
+            } // __item
+          } // headerBlockContent
+        } // pageHeaderBlock__content
+      } // 1000
+      // ====================================
+
+    } // -sparePartsBrands
 
     // @MEDIA -----------------------------
     @media screen and ( max-width: 1000px ) {

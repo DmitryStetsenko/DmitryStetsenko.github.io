@@ -62,6 +62,10 @@ $(function () {
     reviewShowMoreBtn(); // JQ
     // ==========================================================
 
+    // rating & spareParts page function ------------------------
+    responsiveHeaderBlock(); // JQ
+    // ==========================================================
+
 
     ////////////// function for responsive //////////////
 
@@ -605,6 +609,28 @@ $(function () {
         const widgetFilterCarGeneration = new UserFilter('userFilterCarGeneration', 'Выберите поколение авто');
         widgetFilterCarGeneration.init();
     } // initFilter JQ
+    // ==========================================================
+
+    // rating & spareParts page function ------------------------
+    function responsiveHeaderBlock() {
+        const pageHeaderBlock = $('.pageHeaderBlock-sparePartsBrands');
+        if (pageHeaderBlock.length) {
+            const thumbnail = $('#sparePartsPageHeaderImg');
+            const content = $('.pageHeaderBlock__content');
+            const blockTitle = $('.h1Title.blockTitle');
+
+            if (window.matchMedia('(max-width: 1100px)').matches) {
+                thumbnail.append(blockTitle);
+            }
+            window.onresize = function () {
+                if (window.matchMedia('(max-width: 1100px)').matches) {
+                    thumbnail.append(blockTitle);
+                } else {
+                    content.prepend(blockTitle);
+                }
+            }
+        }
+    } // replacePageHeaderBlockImgOfResponsive JQ
     // ==========================================================
 
 // secondary functions -------------------------------------------

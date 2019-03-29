@@ -1118,7 +1118,7 @@
             width: 100%;
             a {
               margin-right: 15px;
-              width: calc( ( 100% - 30px ) / 3 );
+              width: calc(( 100% - #{30px} ) / 3);
               &:nth-child(3n) {
                 margin-right: 0;
               };
