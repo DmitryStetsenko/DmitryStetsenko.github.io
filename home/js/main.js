@@ -66,6 +66,12 @@ $(function () {
     responsiveHeaderBlock(); // JQ
     // ==========================================================
 
+    // model-spareParts page function ----------------------------
+    otherSparePartsToggle(); // otherSparePartsToggle JQ
+    responceReplaceWidgetInterestingTheme(); // responceReplaceWidgetInterestingTheme JQ
+    // ===========================================================
+
+
 
     ////////////// function for responsive //////////////
 
@@ -632,6 +638,43 @@ $(function () {
         }
     } // replacePageHeaderBlockImgOfResponsive JQ
     // ==========================================================
+
+    // model-spareParts page function ----------------------------
+    function otherSparePartsToggle() {
+        let showMoreBtn = $('#otherSparePartsToggle');
+        if ( showMoreBtn.length ) {
+            const listWrap = showMoreBtn.parent().find('.listWrap');
+            const listBlock = showMoreBtn.parent().find('.otherSpareParts__items');
+            const listWrapHeight = listWrap.innerHeight();
+            const listBlockHeight = listBlock.innerHeight();
+            let isOpen = false;
+            showMoreBtn.click(function () {
+                if ( !isOpen ) {
+                    isOpen = !isOpen;
+                    listWrap.innerHeight(listBlockHeight);
+                    $(this).text('Скрыть');
+                } else {
+                    isOpen = !isOpen;
+                    listWrap.innerHeight(listWrapHeight);
+                    $(this).text('Показать еще');
+                }
+            });
+        }
+    } // otherSparePartsToggle JQ
+    function responceReplaceWidgetInterestingTheme() {
+        const reviewBlock = $('#modelPartsPageReviewBlock');
+        if (reviewBlock.length) {
+            const otherSparePartsBlock = $('#otherSparePartsBlock');
+            const reviewBlockWidgetsArea = reviewBlock.find('.widgetsArea');
+            const widgetInterestingTopics = reviewBlockWidgetsArea.find('.widget-interestingTopics');
+            const otherSparePartsBlockWidgetsArea = otherSparePartsBlock.find('.widgetsArea');
+
+            if (window.matchMedia('(max-width: 1000px)').matches) {
+                otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
+            }
+        }
+    } // responceReplaceWidgetInterestingTheme JQ
+    // ===========================================================
 
 // secondary functions -------------------------------------------
 
