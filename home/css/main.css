@@ -2768,12 +2768,17 @@ button, input {
           padding-right: 0; }
           .pageHeaderBlock__content .headerBlockContent__item-description::after {
             content: '';
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 30%, white 100%);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0, white 100%);
             position: absolute;
-            bottom: 0;
+            bottom: -2px;
             left: 0;
             width: 100%;
             height: 15px; }
+          .pageHeaderBlock__content .headerBlockContent__item-description .innerBlockContent {
+            max-width: 475px; }
+            .pageHeaderBlock__content .headerBlockContent__item-description .innerBlockContent__text {
+              max-height: 50px;
+              overflow: hidden; }
         .pageHeaderBlock__content .headerBlockContent__item-bestProperty {
           border-radius: 3px 3px 0 0;
           flex-shrink: 1;
