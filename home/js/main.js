@@ -669,8 +669,15 @@ $(function () {
             const widgetInterestingTopics = reviewBlockWidgetsArea.find('.widget-interestingTopics');
             const otherSparePartsBlockWidgetsArea = otherSparePartsBlock.find('.widgetsArea');
 
-            if (window.matchMedia('(max-width: 1000px)').matches) {
+            if ( window.matchMedia('(max-width: 1000px)').matches ) {
                 otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
+            }
+            window.onresize = function() {
+                if (window.matchMedia('(max-width: 1000px)').matches) {
+                    otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
+                } else {
+                    reviewBlockWidgetsArea.append(widgetInterestingTopics);
+                }
             }
         }
     } // responceReplaceWidgetInterestingTheme JQ
