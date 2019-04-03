@@ -478,13 +478,13 @@ $(function () {
             if (window.matchMedia('(max-width: 1000px)').matches) {
                 thumbnail.append(blockTitle);
             }
-            window.onresize = function () {
+            window.addEventListener('resize', function() {
                 if (window.matchMedia('(max-width: 1000px)').matches) {
                     thumbnail.append(blockTitle);
                 } else {
                     content.prepend(blockTitle);
                 }
-            }
+            });
         }
     } // replacePageHeaderBlockImgOfResponsive JQ
     function manufacturerBlockResponsive() {
@@ -628,13 +628,14 @@ $(function () {
             if (window.matchMedia('(max-width: 1100px)').matches) {
                 thumbnail.append(blockTitle);
             }
-            window.onresize = function () {
+
+            window.addEventListener('resize', function(){
                 if (window.matchMedia('(max-width: 1100px)').matches) {
                     thumbnail.append(blockTitle);
                 } else {
                     content.prepend(blockTitle);
                 }
-            }
+            });
         }
     } // replacePageHeaderBlockImgOfResponsive JQ
     // ==========================================================
@@ -672,13 +673,13 @@ $(function () {
             if ( window.matchMedia('(max-width: 1000px)').matches ) {
                 otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
             }
-            window.onresize = function() {
+            window.addEventListener('resize', function(){
                 if (window.matchMedia('(max-width: 1000px)').matches) {
                     otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
                 } else {
                     reviewBlockWidgetsArea.append(widgetInterestingTopics);
                 }
-            }
+            });
         }
     } // responceReplaceWidgetInterestingTheme JQ
     // ===========================================================
