@@ -32,6 +32,8 @@ window.onload = function () {
 
     showAllFooterMenuItems ();
 
+    toggleWidgetFilter ();
+
     // spare-parts function -------------------------------------
     scrollToReviewBlock();
     showRatingSpareParts();
@@ -45,6 +47,11 @@ window.onload = function () {
     showNonRatingsBrand ();
     scrollToSeoBlock ();
     // ==================================================
+
+    // model-spareParts page function ----------------------------
+    otherSparePartsToggle(); // otherSparePartsToggle JQ
+    responceReplaceWidgetInterestingTheme(); // responceReplaceWidgetInterestingTheme JQ
+    // ===========================================================
 
     // mobile -----------------------------------------
     sparePartsToggle ();
@@ -366,6 +373,38 @@ window.onload = function () {
         }
     } // initCustomScrollBar
 
+    function toggleWidgetFilter () {
+        let widgetFilter = $('.widget-filter');
+        let isOpen = false;
+        const ADDIT_HEIGHT = 114;
+        const HEIGHT_BTN = 60;
+        if ( widgetFilter.length ) {
+            let filterHeader = widgetFilter.find('.widget__header');
+            let shevronIcon = widgetFilter.find('.shevronIcon');
+            let widgetContent = widgetFilter.find('.widgetContent');
+            let widgetContentHeight = widgetContent.innerHeight();
+
+            filterHeader.click(function(){
+                if ( !isOpen ) {
+                    widgetFilter.removeClass('widget-filterClosed');
+                    shevronIcon.addClass('shevronIcon-top');
+                    widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                    setTimeout(function(){
+                        widgetFilter.innerHeight( 'initial');
+                    }, 100);
+                    isOpen = !isOpen;
+                } else {
+                    widgetFilter.addClass('widget-filterClosed');
+                    shevronIcon.removeClass('shevronIcon-top');
+                    widgetContentHeight = widgetContent.innerHeight();
+                    widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                    widgetFilter.innerHeight( HEIGHT_BTN );
+                    isOpen = !isOpen;
+                }
+            });
+        }
+    } // toggleWidgetFilter JQ
+
     // spare-parts function -------------------------------------
     function scrollToReviewBlock() {
         const link = document.querySelector('#scrollToReviewBlock');
@@ -516,6 +555,50 @@ window.onload = function () {
         }
     } // scrollToSeoBlock
     // ==========================================================
+
+    // model-spareParts page function ----------------------------
+    function otherSparePartsToggle() {
+        let showMoreBtn = $('#otherSparePartsToggle');
+        if ( showMoreBtn.length ) {
+            const listWrap = showMoreBtn.parent().find('.listWrap');
+            const listBlock = showMoreBtn.parent().find('.otherSpareParts__items');
+            const listWrapHeight = listWrap.innerHeight();
+            const listBlockHeight = listBlock.innerHeight();
+            let isOpen = false;
+            showMoreBtn.click(function () {
+                if ( !isOpen ) {
+                    isOpen = !isOpen;
+                    listWrap.innerHeight(listBlockHeight);
+                    $(this).text('Скрыть');
+                } else {
+                    isOpen = !isOpen;
+                    listWrap.innerHeight(listWrapHeight);
+                    $(this).text('Показать еще');
+                }
+            });
+        }
+    } // otherSparePartsToggle JQ
+    function responceReplaceWidgetInterestingTheme() {
+        const reviewBlock = $('#modelPartsPageReviewBlock');
+        if (reviewBlock.length) {
+            const otherSparePartsBlock = $('#otherSparePartsBlock');
+            const reviewBlockWidgetsArea = reviewBlock.find('.widgetsArea');
+            const widgetInterestingTopics = reviewBlockWidgetsArea.find('.widget-interestingTopics');
+            const otherSparePartsBlockWidgetsArea = otherSparePartsBlock.find('.widgetsArea');
+
+            if ( window.matchMedia('(max-width: 1000px)').matches ) {
+                otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1000px)').matches) {
+                    otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
+                } else {
+                    reviewBlockWidgetsArea.append(widgetInterestingTopics);
+                }
+            });
+        }
+    } // responceReplaceWidgetInterestingTheme JQ
+    // ===========================================================
 
     // mobile ---------------------------------------------------
     function sparePartsToggle () {
