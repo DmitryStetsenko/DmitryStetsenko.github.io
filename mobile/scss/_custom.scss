@@ -2533,6 +2533,120 @@ button, input {
         } // ratingSparePartsElements
       } // -auto
     } // ratingSrapreParts
+    .favoriteManufacture {
+      .favoriteManufactureContent {
+
+      } // favoriteManufactureContent
+      .favoriteManufactureContentTitle {
+        align-items: center;
+        color: $colorDarkGray;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        overflow: hidden;
+        padding: 0 15px 0 0;
+        position: relative;
+        text-decoration: none;
+        white-space: nowrap;
+        &__img {
+          $iconWidth: 15px;
+          margin-right: 10px;
+          min-width: $iconWidth;
+          width: $iconWidth;
+          svg {
+            path {
+              fill: transparent;
+              fill-rule: evenodd;
+              stroke: $colorDarkGray;
+              stroke-width: 4px;
+            } // path
+          } // img
+        } // img
+        &__text {
+          transition: color .3s;
+          span {
+            position: relative;
+            &::after {
+              content: '';
+              background: $colorYellow;
+              display: block;
+              height: 1px;
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              transition: width .3s;
+              width: 0;
+            } // after
+          } // span
+        } // __text
+        &:after {
+          background: linear-gradient(to right,
+                  rgba(255, 255, 255, 0) 0,
+                  white 80%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px;
+        } // after
+        &:hover {
+          cursor: pointer;
+          .favoriteManufactureContentTitle__text {
+            color: $colorYellow;
+            span {
+              &::after {
+                width: 100%;
+              } // after
+            } // span
+          } // ratingListContentTitle__text
+        } // hover
+      } // favoriteManufactureContentTitle
+      .favoriteManufactureElements {
+        @include customScroll();
+        overflow-y: scroll;
+        padding-right: 15px;
+        $maxHeight: 410px;
+        max-height: $maxHeight * 0.8;
+      } // favoriteManufactureElements
+      .favoriteManufactureElem {
+        border-bottom: 1px solid $colorBorderLightGray;
+        padding: 15px 0;
+        &:last-child {
+          border: none;
+        } // last-child
+        &>a {
+          @include flex(center, flex-start);
+          text-decoration: none;
+        } // a
+        &__icon {
+          $iconSize: 40px;
+          height: $iconSize;
+          margin-right: 10px;
+          width: $iconSize;
+          img {
+            object-fit: contain;
+            object-position: center;
+            height: $iconSize;
+            width: $iconSize;
+          } // img
+        } // icon
+        &__content {
+          margin-right: 20px;
+          .innerText {
+            display: block;
+            color: $colorColName;
+            font-size: 18px;
+            margin-bottom: 3px;
+            &:last-child {
+              color: $colorDarkGray;
+              text-transform: uppercase;
+            } // last-child
+          } // innerText
+        } // content
+      } // favoriteManufactureElements
+    } // favoriteManufacture
     .carInfoFilter {
       &__selectBlock {
         margin-bottom: 20px;
@@ -2698,6 +2812,14 @@ button, input {
     padding-right: 10px;
     padding-top: 20px;
   } // -ratingSpareParts
+  &-favoriteManufacture {
+    $maxHeight: 410px;
+
+    height: $maxHeight;
+    min-height: initial;
+    overflow: hidden;
+    padding-right: 10px;
+  } // -favoriteManufacture
   &-filter {
     min-height: initial;
     overflow: hidden;

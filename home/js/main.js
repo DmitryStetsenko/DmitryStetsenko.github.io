@@ -71,6 +71,9 @@ $(function () {
     responceReplaceWidgetInterestingTheme(); // responceReplaceWidgetInterestingTheme JQ
     // ===========================================================
 
+    // model page function ---------------------------------------
+    responceReplaceWidget(); // responceReplaceWidget JQ
+    // ===========================================================
 
 
     ////////////// function for responsive //////////////
@@ -682,6 +685,29 @@ $(function () {
             });
         }
     } // responceReplaceWidgetInterestingTheme JQ
+    // ===========================================================
+
+    // model page function ---------------------------------------
+    function responceReplaceWidget() {
+        const reviewBlock = $('#modelPageReviewBlock');
+        if (reviewBlock.length) {
+            const otherSparePartsBlock = $('#otherSparePartsBlock');
+            const reviewBlockWidgetsArea = reviewBlock.find('.widgetsArea');
+            const widgetInterestingTopics = reviewBlockWidgetsArea.find('.widget-filter');
+            const otherSparePartsBlockWidgetsArea = otherSparePartsBlock.find('.widgetsArea');
+
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
+                } else {
+                    reviewBlockWidgetsArea.append(widgetInterestingTopics);
+                }
+            });
+        }
+    } // responceReplaceWidget JQ
     // ===========================================================
 
 // secondary functions -------------------------------------------

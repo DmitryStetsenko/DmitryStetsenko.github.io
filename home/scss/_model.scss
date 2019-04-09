@@ -1,4 +1,4 @@
-#modelSpareParts {
+#model {
 
   // pageHeaderBlock ---------------------------
   // in _custom.scss
@@ -86,7 +86,8 @@
       background: $colorBgLightGray;
       border-radius: $mainBorderRadius;
       padding: 30px 30px 20px 30px;
-      width: $blockWidth;
+      margin-right: $gutterX2;
+      max-width: $blockWidth;
       .listWrap {
         height: $maxHeight;
         margin-bottom: $blockTitleMarginBottom;
@@ -156,11 +157,7 @@
     } // otherSpareParts
     .widgetsArea {
       .widget {
-        border: none;
         margin-top: 58px;
-        min-height: initial;
-        padding-top: 0;
-        padding-bottom: 0;
       } // widget
     } // widgetsArea
 
@@ -170,12 +167,31 @@
       &__contentArea {
         margin-bottom: $blockTitleMarginBottom;
       } // &__contentArea
+      .otherSpareParts {
+        margin-right: 0;
+      } // otherSpareParts
       .widgetsArea {
         @include flex(flex-start, flex-start);
         width: 100%;
         .widget {
           @include widthPercent(50%);
           margin-top: 0;
+          margin-right: $gutterX2;
+          &:last-child {
+            margin-right: 0;
+          } // last-child
+          .widgetContent {
+            .favoriteManufacture {
+              .favoriteManufactureElements {
+                $maxHeight: 470px;
+                max-height: $maxHeight * 0.8;
+              } // favoriteManufactureElements
+            } // favoriteManufacture
+          } // widgetContent
+          &-favoriteManufacture {
+            $maxHeight: 470px;
+            height: $maxHeight;
+          } // -favoriteManufacture
         } // widget
       } // widgetsArea
     } // 1170

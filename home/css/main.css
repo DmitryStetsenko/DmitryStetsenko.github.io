@@ -2096,6 +2096,102 @@ button, input {
     font-size: 16px; }
   .widget .widgetContent .ratingSpareParts-auto .ratingSparePartsContentTitle {
     padding-left: 0; }
+  .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle {
+    align-items: center;
+    color: #2c333d;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 0 15px 0 0;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle__img {
+      margin-right: 10px;
+      min-width: 15px;
+      width: 15px; }
+      .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle__img svg path {
+        fill: transparent;
+        fill-rule: evenodd;
+        stroke: #2c333d;
+        stroke-width: 4px; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle__text {
+      transition: color .3s; }
+      .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle__text span {
+        position: relative; }
+        .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle__text span::after {
+          content: '';
+          background: #efb428;
+          display: block;
+          height: 1px;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          transition: width .3s;
+          width: 0; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle:after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 80%);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle:hover {
+      cursor: pointer; }
+      .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle:hover .favoriteManufactureContentTitle__text {
+        color: #efb428; }
+        .widget .widgetContent .favoriteManufacture .favoriteManufactureContentTitle:hover .favoriteManufactureContentTitle__text span::after {
+          width: 100%; }
+  .widget .widgetContent .favoriteManufacture .favoriteManufactureElements {
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+    overflow-y: scroll;
+    padding-right: 15px;
+    max-height: 328px; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureElements::-webkit-scrollbar {
+      width: 10px;
+      height: 10px; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureElements::-webkit-scrollbar-track {
+      border-radius: 3px;
+      background: #e8e8e8; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureElements::-webkit-scrollbar-thumb {
+      background: #efb428;
+      border-radius: 10px; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureElements::-webkit-scrollbar-thumb:hover {
+      background: #555; }
+  .widget .widgetContent .favoriteManufacture .favoriteManufactureElem {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 15px 0; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureElem:last-child {
+      border: none; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureElem > a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-decoration: none; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureElem__icon {
+      height: 40px;
+      margin-right: 10px;
+      width: 40px; }
+      .widget .widgetContent .favoriteManufacture .favoriteManufactureElem__icon img {
+        object-fit: contain;
+        object-position: center;
+        height: 40px;
+        width: 40px; }
+    .widget .widgetContent .favoriteManufacture .favoriteManufactureElem__content {
+      margin-right: 20px; }
+      .widget .widgetContent .favoriteManufacture .favoriteManufactureElem__content .innerText {
+        display: block;
+        color: #8a939f;
+        font-size: 18px;
+        margin-bottom: 3px; }
+        .widget .widgetContent .favoriteManufacture .favoriteManufactureElem__content .innerText:last-child {
+          color: #2c333d;
+          text-transform: uppercase; }
   .widget .widgetContent .carInfoFilter__selectBlock {
     margin-bottom: 20px; }
     .widget .widgetContent .carInfoFilter__selectBlock-dependedElem {
@@ -2238,8 +2334,9 @@ button, input {
       font-size: 18px; }
   .widget-rating .widget__header:hover .headerTitle__text {
     transform: translateX(-15%); }
-  .widget-ratingSpareParts {
-    height: 493px;
+  .widget-favoriteManufacture {
+    height: 410px;
+    min-height: initial;
     overflow: hidden;
     padding-right: 10px; }
   .widget-filter {
@@ -8467,18 +8564,8 @@ button, input {
   justify-content: flex-start;
   margin-bottom: 60px; }
   #modelSpareParts .otherSparePartsBlock__contentArea {
-    margin-right: 30px;
     overflow: hidden;
-    width: calc((calc((1170px / 12) - 30px) * 8) + 30px * 7); }
-  #modelSpareParts .otherSparePartsBlock .widget {
-    padding: 0;
     width: 100%; }
-    #modelSpareParts .otherSparePartsBlock .widget-rating {
-      border: none;
-      margin-top: 58px;
-      min-height: initial; }
-      #modelSpareParts .otherSparePartsBlock .widget-rating .widget__header:hover .headerTitle__text {
-        transform: translateX(-15%); }
   #modelSpareParts .otherSparePartsBlock .otherSpareParts {
     background: #f6f6f6;
     border-radius: 3px;
@@ -8498,13 +8585,7 @@ button, input {
       margin-right: 20px;
       overflow: hidden;
       position: relative;
-      width: calc((100% - 20px * 2) / 3); }
-      #modelSpareParts .otherSparePartsBlock .otherSpareParts__item:hover {
-        cursor: pointer; }
-        #modelSpareParts .otherSparePartsBlock .otherSpareParts__item:hover .innerText {
-          color: #efb428; }
-          #modelSpareParts .otherSparePartsBlock .otherSpareParts__item:hover .innerText::before {
-            width: 100%; }
+      width: calc((100% - 20px * (3 - 1)) / 3); }
       #modelSpareParts .otherSparePartsBlock .otherSpareParts__item:nth-child(3n) {
         margin-right: 0; }
       #modelSpareParts .otherSparePartsBlock .otherSpareParts__item::after {
@@ -8524,6 +8605,10 @@ button, input {
         text-decoration: none;
         white-space: nowrap;
         width: 100%; }
+        #modelSpareParts .otherSparePartsBlock .otherSpareParts__item a:hover .innerText {
+          color: #efb428; }
+          #modelSpareParts .otherSparePartsBlock .otherSpareParts__item a:hover .innerText::before {
+            width: 100%; }
         #modelSpareParts .otherSparePartsBlock .otherSpareParts__item a figure {
           display: flex;
           align-items: center;
@@ -8555,13 +8640,17 @@ button, input {
           width: 0; }
       #modelSpareParts .otherSparePartsBlock .otherSpareParts__item-bold a {
         font-weight: bold; }
-  @media screen and (max-width: 1000px) {
+  #modelSpareParts .otherSparePartsBlock .widgetsArea .widget {
+    border: none;
+    margin-top: 58px;
+    min-height: initial;
+    padding-top: 0;
+    padding-bottom: 0; }
+  @media screen and (max-width: 1170px) {
     #modelSpareParts .otherSparePartsBlock {
       flex-direction: column; }
       #modelSpareParts .otherSparePartsBlock__contentArea {
-        margin-right: 0;
-        margin-bottom: 30px;
-        width: 100%; }
+        margin-bottom: 30px; }
       #modelSpareParts .otherSparePartsBlock .widgetsArea {
         display: flex;
         align-items: flex-start;
@@ -8570,8 +8659,150 @@ button, input {
         #modelSpareParts .otherSparePartsBlock .widgetsArea .widget {
           flex-basis: auto;
           width: 50%;
+          margin-top: 0; } }
+
+#model .reviewsBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 60px; }
+  #model .reviewsBlock .contentArea__reviews {
+    margin-bottom: 30px; }
+    #model .reviewsBlock .contentArea__reviews:last-child {
+      margin-bottom: 0; }
+    #model .reviewsBlock .contentArea__reviews .review {
+      margin-bottom: 30px; }
+      #model .reviewsBlock .contentArea__reviews .review:last-child {
+        margin-bottom: 0; }
+  #model .reviewsBlock .contentArea__pagination {
+    margin-bottom: 30px; }
+  #model .reviewsBlock .widgetsArea .widget {
+    margin-bottom: 30px; }
+    #model .reviewsBlock .widgetsArea .widget:last-child {
+      margin-bottom: 0; }
+  @media screen and (max-width: 1170px) {
+    #model .reviewsBlock {
+      flex-direction: column; }
+      #model .reviewsBlock .contentArea {
+        margin-bottom: 30px;
+        width: 100%; }
+      #model .reviewsBlock .widgetsArea {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%; }
+        #model .reviewsBlock .widgetsArea .widget {
+          flex-basis: auto;
+          width: 50%;
+          margin-right: 15px; }
+          #model .reviewsBlock .widgetsArea .widget:last-child {
+            margin-right: 0; } }
+
+#model .otherSparePartsBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 60px; }
+  #model .otherSparePartsBlock__contentArea {
+    overflow: hidden;
+    width: 100%; }
+  #model .otherSparePartsBlock .otherSpareParts {
+    background: #f6f6f6;
+    border-radius: 3px;
+    padding: 30px 30px 20px 30px;
+    margin-right: 30px;
+    max-width: 100%; }
+    #model .otherSparePartsBlock .otherSpareParts .listWrap {
+      height: 315px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: height .3s; }
+    #model .otherSparePartsBlock .otherSpareParts__items {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap; }
+    #model .otherSparePartsBlock .otherSpareParts__item {
+      margin-right: 20px;
+      overflow: hidden;
+      position: relative;
+      width: calc((100% - 20px * (3 - 1)) / 3); }
+      #model .otherSparePartsBlock .otherSpareParts__item:nth-child(3n) {
+        margin-right: 0; }
+      #model .otherSparePartsBlock .otherSpareParts__item::after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 20px; }
+      #model .otherSparePartsBlock .otherSpareParts__item a {
+        color: #2c333d;
+        display: inline-block;
+        font-size: 16px;
+        padding: 5px 0;
+        text-decoration: none;
+        white-space: nowrap;
+        width: 100%; }
+        #model .otherSparePartsBlock .otherSpareParts__item a:hover .innerText {
+          color: #efb428; }
+          #model .otherSparePartsBlock .otherSpareParts__item a:hover .innerText::before {
+            width: 100%; }
+        #model .otherSparePartsBlock .otherSpareParts__item a figure {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+        #model .otherSparePartsBlock .otherSpareParts__item a span {
+          display: inline-block; }
+      #model .otherSparePartsBlock .otherSpareParts__item .innerIcon {
+        margin-right: 10px;
+        height: 30px;
+        width: 30px;
+        min-width: 30px; }
+        #model .otherSparePartsBlock .otherSpareParts__item .innerIcon img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          object-position: center; }
+      #model .otherSparePartsBlock .otherSpareParts__item .innerText {
+        position: relative;
+        transition: color .3s; }
+        #model .otherSparePartsBlock .otherSpareParts__item .innerText::before {
+          background: #efb428;
+          bottom: -3px;
+          content: '';
+          display: block;
+          height: 1px;
+          left: 0;
+          position: absolute;
+          transition: width .3s;
+          width: 0; }
+      #model .otherSparePartsBlock .otherSpareParts__item-bold a {
+        font-weight: bold; }
+  #model .otherSparePartsBlock .widgetsArea .widget {
+    margin-top: 58px; }
+  @media screen and (max-width: 1170px) {
+    #model .otherSparePartsBlock {
+      flex-direction: column; }
+      #model .otherSparePartsBlock__contentArea {
+        margin-bottom: 30px; }
+      #model .otherSparePartsBlock .otherSpareParts {
+        margin-right: 0; }
+      #model .otherSparePartsBlock .widgetsArea {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%; }
+        #model .otherSparePartsBlock .widgetsArea .widget {
+          flex-basis: auto;
+          width: 50%;
+          margin-top: 0;
           margin-right: 30px; }
-          #modelSpareParts .otherSparePartsBlock .widgetsArea .widget:last-child {
+          #model .otherSparePartsBlock .widgetsArea .widget:last-child {
             margin-right: 0; }
-          #modelSpareParts .otherSparePartsBlock .widgetsArea .widget-rating {
-            margin-top: 0; } }
+          #model .otherSparePartsBlock .widgetsArea .widget .widgetContent .favoriteManufacture .favoriteManufactureElements {
+            max-height: 376px; }
+          #model .otherSparePartsBlock .widgetsArea .widget-favoriteManufacture {
+            height: 470px; } }
