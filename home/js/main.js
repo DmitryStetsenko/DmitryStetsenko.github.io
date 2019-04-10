@@ -75,6 +75,11 @@ $(function () {
     responceReplaceWidget(); // responceReplaceWidget JQ
     // ===========================================================
 
+    // car-brand page function -----------------------------------
+    toggleSparePartsList(); // toggleSparePartsList JQ
+    responceCarBrandPage(); // responceCarBrandPage JQ
+    // ===========================================================
+
 
     ////////////// function for responsive //////////////
 
@@ -708,6 +713,71 @@ $(function () {
             });
         }
     } // responceReplaceWidget JQ
+    // ===========================================================
+
+    // car-brand page function -----------------------------------
+    function toggleSparePartsList() {
+        const popularModels = $('#popularModels');
+        const sparePartsContainerHeight = 104;
+        let isShow = false;
+        if ( popularModels.length ) {
+            const showAllBtn = popularModels.find('.showMoreBtn-showAll');
+            showAllBtn.click(function(){
+                let currentList = $(this).parent();
+                let currentListItems = currentList.find('.innerContent__item');
+                const sparePartsContainer = currentList.find('.innerContent');
+                const sparePartsList = sparePartsContainer.find('.innerContent__list');
+                let sparePartsListHeight;
+
+                if ( !isShow) {
+                    isShow = !isShow;
+                    if ( currentListItems.length > 3 ) {
+                        for ( let i = 2; i < currentListItems.length; i++) {
+                            currentListItems.eq(i).removeClass('innerContent__item-hide');
+                        }
+                        setTimeout(function() {
+                            sparePartsListHeight = sparePartsList.innerHeight();
+                            sparePartsContainer.css('max-height',sparePartsListHeight);
+                        }, 100);
+                    }
+                } else {
+                    isShow = !isShow;
+                    sparePartsContainer.css('max-height',sparePartsContainerHeight);
+                    if ( currentListItems.length > 3 ) {
+                        setTimeout(function() {
+                            for ( let i = 3; i < currentListItems.length; i++) {
+                                currentListItems.eq(i).addClass('innerContent__item-hide');
+                            }
+                        }, 300);
+                    }
+                }
+            });
+        }
+    } // toggleSparePartsList JQ
+    function responceCarBrandPage() {
+        const carBrandPageReviewBlock = $('#carBrandPageReviewBlock');
+        const filterWidget = $('.widget-filter');
+        const activityTapeWidget = $('.widget-activityTape');
+        let responceTempBlock;
+        if ( carBrandPageReviewBlock.length ) {
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                carBrandPageReviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                responceTempBlock = $('#responceTempBlock');
+                responceTempBlock.append(filterWidget);
+                responceTempBlock.append(activityTapeWidget);
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    responceTempBlock = $('#responceTempBlock');
+                    responceTempBlock.append(filterWidget);
+                    responceTempBlock.append(activityTapeWidget);
+                } else {
+                    carBrandPageReviewBlock.find('.widgetsArea').prepend(activityTapeWidget);
+                    carBrandPageReviewBlock.find('.widgetsArea').prepend(filterWidget);
+                }
+            });
+        }
+    } // responceCarBrandPage JQ
     // ===========================================================
 
 // secondary functions -------------------------------------------

@@ -472,6 +472,21 @@ button, input {
       border-color: $btnHoverColor;
     } // hover
   } // -replyReview
+  &-showAll {
+    border-bottom: 1px solid $colorLinkAside;
+    color: $colorLinkAside;
+    position: relative;
+    &::before {
+      @include makeUnderlineHeight($colorYellow, 1px, -1px);
+    } // before
+    &:hover {
+      border-color: $colorYellow;
+      color: $colorYellow;
+      &::before {
+        width: 100%;
+      } // before
+    } // hover
+  } // -showAll
 } // showMoreBtn
 
 .iconBtn {
