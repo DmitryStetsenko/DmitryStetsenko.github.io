@@ -719,10 +719,13 @@ $(function () {
     function toggleSparePartsList() {
         const popularModels = $('#popularModels');
         const sparePartsContainerHeight = 104;
-        let isShow = false;
         if ( popularModels.length ) {
-            const showAllBtn = popularModels.find('.showMoreBtn-showAll');
+            const showAllBtn = popularModels.find('.showMoreBtn');
             showAllBtn.click(function(){
+                const currentBtn = $(this);
+                let isShow = $(this).attr('data-show');
+                isShow = ( isShow === 'true' );
+                console.log(isShow);
                 let currentList = $(this).parent();
                 let currentListItems = currentList.find('.innerContent__item');
                 const sparePartsContainer = currentList.find('.innerContent');
@@ -731,6 +734,7 @@ $(function () {
 
                 if ( !isShow) {
                     isShow = !isShow;
+                    currentBtn.attr('data-show', isShow);
                     if ( currentListItems.length > 3 ) {
                         for ( let i = 2; i < currentListItems.length; i++) {
                             currentListItems.eq(i).removeClass('innerContent__item-hide');
@@ -742,6 +746,7 @@ $(function () {
                     }
                 } else {
                     isShow = !isShow;
+                    currentBtn.attr('data-show', isShow);
                     sparePartsContainer.css('max-height',sparePartsContainerHeight);
                     if ( currentListItems.length > 3 ) {
                         setTimeout(function() {

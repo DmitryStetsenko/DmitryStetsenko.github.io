@@ -53,6 +53,10 @@ window.onload = function () {
     responceReplaceWidgetInterestingTheme(); // responceReplaceWidgetInterestingTheme JQ
     // ===========================================================
 
+    // car-brand page function -----------------------------------
+    toggleSparePartsList(); // toggleSparePartsList JQ
+    // ===========================================================
+
     // mobile -----------------------------------------
     sparePartsToggle ();
     brandsToggle ();
@@ -598,6 +602,52 @@ window.onload = function () {
             });
         }
     } // responceReplaceWidgetInterestingTheme JQ
+    // ===========================================================
+
+    // car-brand page function -----------------------------------
+    function toggleSparePartsList() {
+        const popularModels = $('#popularModels');
+        const sparePartsContainerHeight = 104;
+        if ( popularModels.length ) {
+            const showAllBtn = popularModels.find('.showMoreBtn');
+            showAllBtn.click(function(){
+                const currentBtn = $(this);
+                let isShow = $(this).attr('data-show');
+                isShow = ( isShow === 'true' );
+                console.log(isShow);
+                let currentList = $(this).parent();
+                let currentListItems = currentList.find('.innerContent__item');
+                const sparePartsContainer = currentList.find('.innerContent');
+                const sparePartsList = sparePartsContainer.find('.innerContent__list');
+                let sparePartsListHeight;
+
+                if ( !isShow) {
+                    isShow = !isShow;
+                    currentBtn.attr('data-show', isShow);
+                    if ( currentListItems.length > 3 ) {
+                        for ( let i = 2; i < currentListItems.length; i++) {
+                            currentListItems.eq(i).removeClass('innerContent__item-hide');
+                        }
+                        setTimeout(function() {
+                            sparePartsListHeight = sparePartsList.innerHeight();
+                            sparePartsContainer.css('max-height',sparePartsListHeight);
+                        }, 100);
+                    }
+                } else {
+                    isShow = !isShow;
+                    currentBtn.attr('data-show', isShow);
+                    sparePartsContainer.css('max-height',sparePartsContainerHeight);
+                    if ( currentListItems.length > 3 ) {
+                        setTimeout(function() {
+                            for ( let i = 3; i < currentListItems.length; i++) {
+                                currentListItems.eq(i).addClass('innerContent__item-hide');
+                            }
+                        }, 300);
+                    }
+                }
+            });
+        }
+    } // toggleSparePartsList JQ
     // ===========================================================
 
     // mobile ---------------------------------------------------

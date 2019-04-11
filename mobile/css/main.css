@@ -7112,3 +7112,71 @@ button, input {
           width: 0; }
       #model .otherSparePartsBlock .otherSpareParts__item-bold a {
         font-weight: bold; }
+
+#carBrand .popularModelsBlock {
+  margin-bottom: 45px; }
+  #carBrand .popularModelsBlock .popularModels {
+    background: #f6f6f6;
+    padding: 30px; }
+    #carBrand .popularModelsBlock .popularModels__items {
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-start;
+      flex-wrap: wrap; }
+    #carBrand .popularModelsBlock .popularModels__item {
+      margin-right: 30px;
+      margin-bottom: 40px;
+      width: calc((100% - (30px * (2 - 1) )) / 2); }
+      #carBrand .popularModelsBlock .popularModels__item:nth-child(2n) {
+        margin-right: 0; }
+      #carBrand .popularModelsBlock .popularModels__item:nth-last-child(1), #carBrand .popularModelsBlock .popularModels__item:nth-last-child(2) {
+        margin-bottom: 0; }
+      #carBrand .popularModelsBlock .popularModels__item .innerTitle {
+        border-bottom: 1px solid #2c333d;
+        color: #2c333d;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color .3s; }
+        #carBrand .popularModelsBlock .popularModels__item .innerTitle:hover {
+          color: #efb428; }
+          #carBrand .popularModelsBlock .popularModels__item .innerTitle:hover::before {
+            width: 100%; }
+        #carBrand .popularModelsBlock .popularModels__item .innerTitle::before {
+          background: #efb428;
+          bottom: -1px;
+          content: '';
+          display: block;
+          height: 1px;
+          left: 0;
+          position: absolute;
+          transition: width .3s;
+          width: 0; }
+      #carBrand .popularModelsBlock .popularModels__item .innerContent {
+        overflow: hidden;
+        max-height: 104px;
+        transition: max-height .5s; }
+        #carBrand .popularModelsBlock .popularModels__item .innerContent__item a {
+          color: #2c333d;
+          display: inline-block;
+          font-size: 15px;
+          padding: 10px 0;
+          text-decoration: none;
+          transition: color .2s;
+          white-space: nowrap; }
+          #carBrand .popularModelsBlock .popularModels__item .innerContent__item a:hover {
+            color: #efb428; }
+          #carBrand .popularModelsBlock .popularModels__item .innerContent__item a::after {
+            content: '>';
+            display: inline-block;
+            font-family: "Segoe Print", Arial, sans-serif;
+            margin-left: 10px;
+            transform: rotate(2deg); }
+        #carBrand .popularModelsBlock .popularModels__item .innerContent__item-hide {
+          display: none; }
+      #carBrand .popularModelsBlock .popularModels__item .showMoreBtn {
+        margin-top: 10px; }
