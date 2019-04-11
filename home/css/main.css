@@ -7499,8 +7499,8 @@ button, input {
         min-width: 115px;
         width: 115px; }
       #allBrandsPage .ratingsBlock .header__colTitle-averageRating {
-        min-width: 115px;
-        width: 115px; }
+        min-width: 120px;
+        width: 120px; }
     #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell {
       display: flex;
       align-items: center;
@@ -7539,8 +7539,8 @@ button, input {
         #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
           margin-right: 5px; }
       #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
-        min-width: 115px;
-        width: 115px; }
+        min-width: 120px;
+        width: 120px; }
         #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
           margin: 0;
           display: flex;
