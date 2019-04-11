@@ -57,15 +57,17 @@
 
   // ratings block --------------------------
   .ratingsBlock {
-    $sellWidth: 150px;
+    $sellWidth: 120px;
     $sellPadding: 20px;
-    $sellNameWidth: 320px;
+    $sellNameWidth: 250px;
     $sellReviewWidth: $sellWidth;
     $sellManufacturerWidth: $sellWidth;
     $sellVoteWidth: $sellWidth;
     $allRatingsHeaderRowHeight: 65px;
     $allRatingsRowHeight: 65px;
     $sellBtnWidth: 50%;
+    $sellCountrySiteWidth: 200px;
+    $sellAverageRatingWidth: 200px;
     // icons
     $iconWidth: 60px;
     $iconHeight: 45px;
@@ -85,6 +87,9 @@
         height: $allRatingsHeaderRowHeight;
         font-size: 13px;
         flex-basis: auto;
+        padding: 0 $sellPadding;
+        min-width: $sellWidth;
+        width: $sellWidth;
         &-name {
           min-width: $sellNameWidth + 10px;
           width: $sellNameWidth + 10px;
@@ -103,6 +108,14 @@
         &-addReview {
           width: $sellBtnWidth;
         } // page
+        &-countrySite {
+          min-width: $sellCountrySiteWidth;
+          width: $sellCountrySiteWidth;
+        } // countrySite
+        &-averageRating {
+          min-width: $sellAverageRatingWidth;
+          width: $sellAverageRatingWidth;
+        } // countrySite
       } // __colTitle
     } // header
     &__content {
@@ -140,6 +153,9 @@
             border-right: 1px solid $colorLightGray;
             flex-basis: auto;
             height: 100%;
+            padding: 0 $sellPadding;
+            min-width: $sellWidth;
+            width: $sellWidth;
             &:last-child {
               border-right: none;
             } // last-child
@@ -192,6 +208,7 @@
               color: $colorDarkGray;
               justify-content: flex-start;
               text-decoration: none;
+              padding: 0;
               min-width: $sellNameWidth;
               width: $sellNameWidth;
               &:hover {
@@ -239,6 +256,60 @@
                 white-space: nowrap;
               } // a
             } // -addReview
+            &-countrySite {
+              text-decoration: none;
+              color: $colorLinkAside;
+              font-size: 14px;
+              min-width: $sellCountrySiteWidth;
+              transition: color .3s;
+              width: $sellCountrySiteWidth;
+              &:hover {
+                color: $colorYellow;
+                .innerText {
+                  &::before {
+                    width: 100%;
+                  } // before
+                } // innerText
+              } // hover
+              .imgFlag {
+                margin-right: 15px;
+              } // imgFlag
+              .innerText {
+                display: inline-block;
+                max-width: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 3px 0;
+                position: relative;
+                &::before {
+                  @include makeUnderlineHeight($colorYellow, 1px, 1px);
+                } // before
+              } // innerText
+            } // -countrySite
+            &-averageRating {
+              min-width: $sellAverageRatingWidth;
+              width: $sellAverageRatingWidth;
+              .ratingsBlock {
+                margin: 0;
+                @include flex(center, center);
+                &__item {
+                  font-size: 20px;
+                  margin-right: 10px;
+                  &:last-child {
+                    margin-right: 0;
+                  } // last-child
+                  .starsIconBlock {
+                    @include flex(center, flex-start);
+                    .starsIcon {
+                      margin-right: 3px;
+                      &:last-child {
+                        margin-right: 0;
+                      } // last-child
+                    } // starsIcon
+                  } // starsIconBlock
+                } // item
+              } // ratingsBlock
+            } // countrySite
           } // itemSell
         } // __item
       } // ratingList
@@ -250,13 +321,13 @@
             .itemSell {
               &__icon {
                 border-radius: $mainBorderRadius;
-                border: 1px solid $colorBgLightGray;
                 background: white;
-                overflow: hidden;
-                margin-right: 15px;
-                padding: 10px;
-                width: 60px;
+                border: 1px solid $colorBgLightGray;
                 height: 100%;
+                overflow: hidden;
+                padding: 10px;
+                margin-right: 15px;
+                width: 60px;
                 img {
                   object-fit: contain;
                   object-position: center center;
@@ -264,91 +335,6 @@
                   width: 100%;
                 } // img
               } // __icon
-              &__text {
-                font-size: 16px;
-                position: relative;
-                transition: color .3s;
-                width: 230px;
-                overflow: hidden;
-                &::before {
-                  @include makeUnderline($colorYellow, -1px);
-                } // before
-              } // __text
-              &__mainValue {
-                color: $colorDarkGray;
-                font-size: 20px;
-                &::after {
-                  content: attr(data-growth);
-                  font-size: 16px;
-                  margin-left: 5px;
-                } // after
-                &-review {
-                  &::after {
-                    color: $colorRatingGreen;
-                  } // after
-                } // -review
-                &-manufacturer {
-                  &::after {
-                    color: $colorLightGray;
-                  } // after
-                } // -manufacturer
-                &-vote {
-                  &::after {
-                    color: $colorRatingGreen;
-                  } // after
-                } // -vote
-              } // __mainValue
-              &-name {
-                color: $colorDarkGray;
-                justify-content: flex-start;
-                text-decoration: none;
-                min-width: $sellNameWidth;
-                width: $sellNameWidth;
-                &:hover {
-                  .itemSell {
-                    &__text {
-                      color: $colorYellow;
-                      &::before {
-                        width: 100%;
-                      } // before
-                    } // __text
-                  } // itemSell
-                } // hover
-              } // &-name
-              &-review {
-                min-width: $sellWidth;
-                width: $sellReviewWidth;
-              } // -review
-              &-manufacturer {
-                min-width: $sellWidth;
-                width: $sellManufacturerWidth;
-              } // -manufacturer
-              &-rating {
-                flex-basis: auto;
-                padding: 0 $sellPadding;
-                min-width: initial;
-                width: $sellBtnWidth;
-                a {
-                  font-size: 14px;
-                  min-width: $sellBtnWidth;
-                  text-decoration: none;
-                  width: 100%;
-                  white-space: nowrap;
-                } // a
-              } // -rating
-              &-addReview {
-                flex-basis: auto;
-                padding: 0 $sellPadding;
-                min-width: initial;
-                width: $sellBtnWidth;
-                a {
-                  font-size: 14px;
-                  min-width: $sellBtnWidth;
-                  text-decoration: none;
-                  width: 100%;
-                  white-space: nowrap;
-                } // a
-              } // -addReview
             } // itemSell
           } // __item
         } // ratingList
