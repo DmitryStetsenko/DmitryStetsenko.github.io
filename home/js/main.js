@@ -766,7 +766,10 @@ $(function () {
         let responceTempBlock;
         if ( carBrandPageReviewBlock.length ) {
             if ( window.matchMedia('(max-width: 1170px)').matches ) {
-                carBrandPageReviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                responceTempBlock = $('#responceTempBlock');
+                if (!responceTempBlock.length){
+                    carBrandPageReviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                }
                 responceTempBlock = $('#responceTempBlock');
                 responceTempBlock.append(filterWidget);
                 responceTempBlock.append(activityTapeWidget);
@@ -774,11 +777,18 @@ $(function () {
             window.addEventListener('resize', function(){
                 if (window.matchMedia('(max-width: 1170px)').matches) {
                     responceTempBlock = $('#responceTempBlock');
+                    if (!responceTempBlock.length){
+                        carBrandPageReviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                    }
+                    responceTempBlock = $('#responceTempBlock');
                     responceTempBlock.append(filterWidget);
                     responceTempBlock.append(activityTapeWidget);
                 } else {
                     carBrandPageReviewBlock.find('.widgetsArea').prepend(activityTapeWidget);
                     carBrandPageReviewBlock.find('.widgetsArea').prepend(filterWidget);
+                    if ( responceTempBlock ) {
+                        responceTempBlock.remove();
+                    }
                 }
             });
         }
