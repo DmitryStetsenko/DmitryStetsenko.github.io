@@ -353,8 +353,8 @@
     // @MEDIA -----------------------------------
     @media screen and ( max-width: 1140px ) {
       $sellWidth: 10vw;
-      $sellPadding: 10px;
-      $sellNameWidth: 16vw;
+      $sellPadding: 20px;
+      $sellNameWidth: 18vw;
       $sellReviewWidth: $sellWidth;
       $sellManufacturerWidth: $sellWidth;
       $sellVoteWidth: $sellWidth;
@@ -401,6 +401,91 @@
           } // countrySite
         } // __colTitle
       } // header
+      &__content {
+        .showRatingBlock {
+
+        } // showRatingBlock
+        .ratingList {
+          &__item {
+            .itemSell {
+              @include flex(center, center);
+              padding: 0 $sellPadding;
+              min-width: $sellWidth;
+              width: $sellWidth;
+              &-name {
+                min-width: $sellNameWidth;
+                width: $sellNameWidth;
+                &:hover {
+                  .itemSell {
+                    &__text {
+                      color: $colorYellow;
+                      &::before {
+                        width: 100%;
+                      } // before
+                    } // __text
+                  } // itemSell
+                } // hover
+              } // &-name
+              &-review {
+                min-width: $sellWidth;
+                width: $sellReviewWidth;
+              } // -review
+              &-manufacturer {
+                min-width: $sellWidth;
+                width: $sellManufacturerWidth;
+              } // -manufacturer
+              &-rating {
+                padding: 0 $sellPadding;
+                width: $sellBtnWidth;
+                a {
+                  min-width: $sellBtnWidth;
+                } // a
+              } // -rating
+              &-addReview {
+                padding: 0 $sellPadding;
+                width: $sellBtnWidth;
+                a {
+                  min-width: $sellBtnWidth;
+                } // a
+              } // -addReview
+              &-countrySite {
+                color: $colorLinkAside;
+                font-size: 12px;
+                min-width: $sellCountrySiteWidth;
+                width: $sellCountrySiteWidth;
+                .imgFlag {
+                  margin-right: 5px;
+                } // imgFlag
+              } // -countrySite
+              &-averageRating {
+                min-width: $sellAverageRatingWidth;
+                width: $sellAverageRatingWidth;
+                .ratingsBlock {
+                  margin: 0;
+                  @include flex(center, center);
+                  flex-direction: column;
+                  &__item {
+                    margin-right: 0;
+                    &:last-child {
+                      margin-bottom: 5px;
+                      order: -1;
+                    } // last-child
+                    .starsIconBlock {
+                      @include flex(center, flex-start);
+                      .starsIcon {
+                        margin-right: 3px;
+                        &:last-child {
+                          margin-right: 0;
+                        } // last-child
+                      } // starsIcon
+                    } // starsIconBlock
+                  } // item
+                } // ratingsBlock
+              } // countrySite
+            } // itemSell
+          } // __item
+        } // ratingList
+      } // __content
     } // 1140
     @media screen and ( max-width: 900px ) {
       $sellWidth: 10vw;

@@ -7309,12 +7309,12 @@ button, input {
     #allBrandsPage .ratingsBlock .header__colTitle {
       color: #8a939f;
       height: 65px;
-      padding: 0 10px;
+      padding: 0 20px;
       min-width: 10vw;
       width: 10vw; }
       #allBrandsPage .ratingsBlock .header__colTitle-name {
-        min-width: 16vw;
-        width: 16vw; }
+        min-width: 18vw;
+        width: 18vw; }
       #allBrandsPage .ratingsBlock .header__colTitle-review {
         min-width: 10vw;
         width: 10vw; }
@@ -7330,7 +7330,66 @@ button, input {
         width: 15vw; }
       #allBrandsPage .ratingsBlock .header__colTitle-averageRating {
         min-width: 15vw;
-        width: 15vw; } }
+        width: 15vw; }
+    #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      min-width: 10vw;
+      width: 10vw; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        min-width: 18vw;
+        width: 18vw; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+        padding: 0 20px;
+        width: 50%; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+          min-width: 50%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        padding: 0 20px;
+        width: 50%; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          min-width: 50%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite {
+        color: #4991bf;
+        font-size: 12px;
+        min-width: 15vw;
+        width: 15vw; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
+          margin-right: 5px; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
+        min-width: 15vw;
+        width: 15vw; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item {
+            margin-right: 0; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item:last-child {
+              margin-bottom: 5px;
+              order: -1; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start; }
+              #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon {
+                margin-right: 3px; }
+                #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
+                  margin-right: 0; } }
   @media screen and (max-width: 900px) {
     #allBrandsPage .ratingsBlock .header__colTitle {
       color: #8a939f;
