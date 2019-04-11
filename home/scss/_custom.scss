@@ -362,9 +362,11 @@ button, input {
     box-shadow: unset;
     color: white;
     height: 30px;
+    padding: 10px;
     .innerIcon {
       display: block;
       margin-right: 10px;
+      min-width: $iconSize;
       width: $iconSize;
       svg {
         fill: $colorYellow;

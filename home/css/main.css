@@ -451,10 +451,12 @@ button, input {
     background: #464f5b;
     box-shadow: unset;
     color: white;
-    height: 30px; }
+    height: 30px;
+    padding: 10px; }
     .mainBtn-darkStyle .innerIcon {
       display: block;
       margin-right: 10px;
+      min-width: 15px;
       width: 15px; }
       .mainBtn-darkStyle .innerIcon svg {
         fill: #efb428; }
@@ -7075,7 +7077,9 @@ button, input {
       #allBrandsPage .mainContent .searchBlock__input .mainBtn-search .innerText {
         display: none; }
       #allBrandsPage .mainContent .searchBlock__input .mainBtn-search .cssIcon {
-        margin-right: 3px; } }
+        margin-right: 3px; }
+    #allBrandsPage .mainContent .searchBlock .sparePartsFilter .filterBtn {
+      padding: 0 15px; } }
 
 #allBrandsPage .ratingsBlock {
   margin-bottom: 60px; }
@@ -7283,6 +7287,8 @@ button, input {
                 margin-right: 3px; }
                 #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
                   margin-right: 0; }
+  #allBrandsPage .ratingsBlock-brandsAll .ratingsBlock__mainContent {
+    width: initial; }
   #allBrandsPage .ratingsBlock-brandsAll .ratingsBlock__content .ratingList__item .itemSell__icon {
     border-radius: 3px;
     background: white;
@@ -7291,6 +7297,7 @@ button, input {
     overflow: hidden;
     padding: 10px;
     margin-right: 15px;
+    min-width: 60px;
     width: 60px; }
     #allBrandsPage .ratingsBlock-brandsAll .ratingsBlock__content .ratingList__item .itemSell__icon img {
       object-fit: contain;
@@ -7298,24 +7305,388 @@ button, input {
       height: 100%;
       width: 100%; }
   @media screen and (max-width: 1140px) {
-    #allBrandsPage .ratingsBlock__contentScrollBox {
-      overflow-x: scroll;
-      /* Track */
-      /* Handle */
-      /* Handle on hover */ }
-      #allBrandsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar {
-        width: 10px;
-        height: 10px; }
-      #allBrandsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-track {
+    #allBrandsPage .ratingsBlock {
+      margin-bottom: 60px; }
+      #allBrandsPage .ratingsBlock .header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        #allBrandsPage .ratingsBlock .header__colTitle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #8a939f;
+          height: 65px;
+          padding: 0 10px;
+          min-width: 10vw;
+          width: 10vw; }
+          #allBrandsPage .ratingsBlock .header__colTitle-name {
+            min-width: 16vw;
+            width: 16vw; }
+          #allBrandsPage .ratingsBlock .header__colTitle-review {
+            min-width: 10vw;
+            width: 10vw; }
+          #allBrandsPage .ratingsBlock .header__colTitle-manufacturer {
+            min-width: 10vw;
+            width: 10vw; }
+          #allBrandsPage .ratingsBlock .header__colTitle-rating {
+            width: 50%; }
+          #allBrandsPage .ratingsBlock .header__colTitle-addReview {
+            width: 50%; }
+          #allBrandsPage .ratingsBlock .header__colTitle-countrySite {
+            min-width: 15vw;
+            width: 15vw; }
+          #allBrandsPage .ratingsBlock .header__colTitle-averageRating {
+            min-width: 15vw;
+            width: 15vw; }
+      #allBrandsPage .ratingsBlock__content .ratingList li {
+        border: 1px solid transparent;
+        height: 65px;
+        padding: 10px;
+        transition: border-color .3s; }
+        #allBrandsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
+          background: #f6f6f6; }
+          #allBrandsPage .ratingsBlock__content .ratingList li:nth-child(odd) .itemSell__text::after {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 30px; }
+        #allBrandsPage .ratingsBlock__content .ratingList li:hover {
+          cursor: pointer;
+          border-color: #efb428; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #2c333d;
+        height: 100%;
+        text-decoration: none; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-right: 1px solid #c1c1c1;
+          flex-basis: auto;
+          height: 100%;
+          padding: 0 10px;
+          min-width: 10vw;
+          width: 10vw; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell:last-child {
+            border-right: none; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__icon {
+            border-radius: 3px;
+            overflow: hidden;
+            margin-right: 15px;
+            width: 60px; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__icon img {
+              width: 60px;
+              object-fit: cover;
+              object-position: center; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__text {
+            font-size: 16px;
+            position: relative;
+            transition: color .3s;
+            width: 230px;
+            overflow: hidden; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
+              background: #efb428;
+              bottom: -1px;
+              content: '';
+              display: block;
+              height: 1px;
+              left: 0;
+              position: absolute;
+              transition: width .3s;
+              width: 0; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
+            color: #2c333d;
+            font-size: 20px; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
+              content: attr(data-growth);
+              font-size: 16px;
+              margin-left: 5px; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
+              color: #7eae3e; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
+              color: #c1c1c1; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
+              color: #7eae3e; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+            color: #2c333d;
+            justify-content: flex-start;
+            text-decoration: none;
+            padding: 0;
+            min-width: 16vw;
+            width: 16vw; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+              color: #efb428; }
+              #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+                width: 100%; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+            min-width: 10vw;
+            width: 10vw; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+            min-width: 10vw;
+            width: 10vw; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+            flex-basis: auto;
+            padding: 0 10px;
+            min-width: initial;
+            width: 50%; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+              font-size: 14px;
+              min-width: 50%;
+              text-decoration: none;
+              width: 100%;
+              white-space: nowrap; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+            flex-basis: auto;
+            padding: 0 10px;
+            min-width: initial;
+            width: 50%; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+              font-size: 14px;
+              min-width: 50%;
+              text-decoration: none;
+              width: 100%;
+              white-space: nowrap; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite {
+            text-decoration: none;
+            color: #4991bf;
+            font-size: 14px;
+            min-width: 15vw;
+            transition: color .3s;
+            width: 15vw; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite:hover {
+              color: #efb428; }
+              #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite:hover .innerText::before {
+                width: 100%; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
+              margin-right: 15px; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .innerText {
+              display: inline-block;
+              max-width: 100px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              padding: 3px 0;
+              position: relative; }
+              #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .innerText::before {
+                background: #efb428;
+                bottom: 1px;
+                content: '';
+                display: block;
+                height: 1px;
+                left: 0;
+                position: absolute;
+                transition: width .3s;
+                width: 0; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
+            min-width: 15vw;
+            width: 15vw; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
+              margin: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+              #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item {
+                font-size: 20px;
+                margin-right: 10px; }
+                #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item:last-child {
+                  margin-right: 0; }
+                #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock {
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start; }
+                  #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon {
+                    margin-right: 3px; }
+                    #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
+                      margin-right: 0; }
+      #allBrandsPage .ratingsBlock-brandsAll .ratingsBlock__mainContent {
+        width: initial; }
+      #allBrandsPage .ratingsBlock-brandsAll .ratingsBlock__content .ratingList__item .itemSell__icon {
         border-radius: 3px;
-        background: #e8e8e8; }
-      #allBrandsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-thumb {
-        background: #efb428;
-        border-radius: 10px; }
-      #allBrandsPage .ratingsBlock__contentScrollBox::-webkit-scrollbar-thumb:hover {
-        background: #555; }
-    #allBrandsPage .ratingsBlock__mainContent {
-      margin-bottom: 10px; } }
+        background: white;
+        border: 1px solid #f6f6f6;
+        height: 100%;
+        overflow: hidden;
+        padding: 10px;
+        margin-right: 15px;
+        width: 60px; }
+        #allBrandsPage .ratingsBlock-brandsAll .ratingsBlock__content .ratingList__item .itemSell__icon img {
+          object-fit: contain;
+          object-position: center center;
+          height: 100%;
+          width: 100%; } }
+  @media screen and (max-width: 900px) {
+    #allBrandsPage .ratingsBlock .header__colTitle {
+      color: #8a939f;
+      height: 65px;
+      padding: 0 10px;
+      min-width: 10vw;
+      width: 10vw; }
+      #allBrandsPage .ratingsBlock .header__colTitle-name {
+        min-width: 18vw;
+        width: 18vw; }
+      #allBrandsPage .ratingsBlock .header__colTitle-review {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsPage .ratingsBlock .header__colTitle-manufacturer {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsPage .ratingsBlock .header__colTitle-rating {
+        width: 50%; }
+      #allBrandsPage .ratingsBlock .header__colTitle-addReview {
+        width: 50%; }
+      #allBrandsPage .ratingsBlock .header__colTitle-countrySite {
+        min-width: 15vw;
+        width: 15vw; }
+      #allBrandsPage .ratingsBlock .header__colTitle-averageRating {
+        min-width: 15vw;
+        width: 15vw; }
+    #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      min-width: 10vw;
+      width: 10vw; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        min-width: 18vw;
+        width: 18vw; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+        padding: 0 10px;
+        width: 50%; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+          min-width: 50%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        padding: 0 10px;
+        width: 50%; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          min-width: 50%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite {
+        color: #4991bf;
+        font-size: 12px;
+        min-width: 15vw;
+        width: 15vw; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
+          margin-right: 5px; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
+        min-width: 15vw;
+        width: 15vw; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item:last-child {
+            margin-bottom: 5px;
+            order: -1; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon {
+              margin-right: 3px; }
+              #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
+                margin-right: 0; } }
+  @media screen and (max-width: 768px) {
+    #allBrandsPage .ratingsBlock .header__colTitle {
+      color: #8a939f;
+      height: 65px;
+      padding: 0 10px;
+      min-width: 75px;
+      width: 75px; }
+      #allBrandsPage .ratingsBlock .header__colTitle-name {
+        min-width: 140px;
+        width: 140px; }
+      #allBrandsPage .ratingsBlock .header__colTitle-review {
+        min-width: 75px;
+        width: 75px; }
+      #allBrandsPage .ratingsBlock .header__colTitle-manufacturer {
+        min-width: 75px;
+        width: 75px; }
+      #allBrandsPage .ratingsBlock .header__colTitle-rating {
+        width: 50%; }
+      #allBrandsPage .ratingsBlock .header__colTitle-addReview {
+        width: 50%; }
+      #allBrandsPage .ratingsBlock .header__colTitle-countrySite {
+        min-width: 115px;
+        width: 115px; }
+      #allBrandsPage .ratingsBlock .header__colTitle-averageRating {
+        min-width: 115px;
+        width: 115px; }
+    #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      min-width: 75px;
+      width: 75px; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        min-width: 140px;
+        width: 140px; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 75px;
+        width: 75px; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 75px;
+        width: 75px; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+        padding: 0 10px;
+        width: 50%; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+          min-width: 50%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        padding: 0 10px;
+        width: 50%; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          min-width: 50%; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite {
+        color: #4991bf;
+        font-size: 12px;
+        min-width: 115px;
+        width: 115px; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
+          margin-right: 5px; }
+      #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
+        min-width: 115px;
+        width: 115px; }
+        #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item:last-child {
+            margin-bottom: 5px;
+            order: -1; }
+          #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon {
+              margin-right: 3px; }
+              #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
+                margin-right: 0; } }
 
 #brandsSparePartsPage .pageHeaderBlock {
   display: flex;
