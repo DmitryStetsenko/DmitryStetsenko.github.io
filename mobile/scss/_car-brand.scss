@@ -12,18 +12,20 @@
   .popularModelsBlock {
     margin-bottom: $outerBlockMargin;
     .popularModels {
+      $gutter: 15px;
       $blockWidth: 100%;
       $itemsInRow: 2;
-      $itemWidth: calc((#{$blockWidth} - (#{$gutterX2} * (#{$itemsInRow} - 1) )) / #{$itemsInRow});
+      $itemWidth: calc((#{$blockWidth} - (#{$gutter} * (#{$itemsInRow} - 1) )) / #{$itemsInRow});
       $itemPadding: 10px;
+      border-radius: $mainBorderRadius;
       background: $colorBgLightGray;
-      padding: 30px;
+      padding: 15px;
       &__items {
         @include flex(stretch, flex-start);
         flex-wrap: wrap;
       } // __items
       &__item {
-        margin-right: $gutterX2;
+        margin-right: $gutter;
         margin-bottom: 40px;
         width: $itemWidth;
         &:nth-child(#{$itemsInRow}n){
@@ -37,7 +39,7 @@
           color: $colorDarkGray;
           display: inline-block;
           font-weight: bold;
-          font-size: 20px;
+          font-size: 18px;
           margin-bottom: $itemPadding;
           position: relative;
           text-transform: uppercase;
@@ -64,7 +66,7 @@
             a {
               color: $colorDarkGray;
               display: inline-block;
-              font-size: 15px;
+              font-size: 14px;
               padding: $itemPadding 0;
               text-decoration: none;
               transition: color .2s;
@@ -76,7 +78,7 @@
                 content: '>';
                 display: inline-block;
                 font-family: "Segoe Print", Arial, sans-serif;
-                margin-left: 10px;
+                margin-left: 5px;
                 transform: rotate(2deg);
               } // after
             } // a
