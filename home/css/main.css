@@ -1037,6 +1037,14 @@ button, input {
     height: 100%;
     flex-direction: column;
     justify-content: center; }
+    .userAssessment-comparisonPage .ratingsBlock__item-stars .starsIconBlock {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .userAssessment-comparisonPage .ratingsBlock__item-stars .starsIconBlock__icon:last-child {
+        margin-right: 1px; }
+      .userAssessment-comparisonPage .ratingsBlock__item-stars .starsIconBlock__value {
+        margin-left: 10px; }
 
 .sliderBox {
   position: relative;

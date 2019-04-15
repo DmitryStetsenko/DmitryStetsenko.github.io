@@ -1174,6 +1174,23 @@ button, input {
     height: 100%;
     flex-direction: column;
     justify-content: center;
+    .ratingsBlock {
+      &__item {
+        &-stars {
+          .starsIconBlock {
+            @include flex(center, center);
+            &__icon {
+              &:last-child {
+                margin-right: 1px;
+              } // last-child
+            } // icon
+            &__value {
+              margin-left: 10px;
+            } // __value
+          } // starsIconBlock
+        } // -stars
+      } // ____item
+    } // ratingsBlock
   } // -comparisonPage
 } // userAssessment
 
