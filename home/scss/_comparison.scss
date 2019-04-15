@@ -18,7 +18,14 @@
           border-radius: $mainBorderRadius;
           border: 1px solid $colorInputBorder;
           padding: 45px;
+          position: relative;
+          transition: border .2s, box-shadow .2s;
+          &:hover {
+            border-color: $colorYellow;
+            box-shadow: inset 0 0 0 1px $colorYellow;
+          } // hover
           .innerImg {
+            display: block;
             margin: 0 auto;
             height: $imgHeight;
             width: $imgWidth;
@@ -32,6 +39,10 @@
             padding: 0;
             width: 165px;
             min-width: 165px;
+            &:hover {
+              border-color: $colorInputBorder;
+              box-shadow: unset;
+            } // hover
           } // separator
         } // __item
         &__separator {
@@ -62,7 +73,7 @@
           position: relative;
           width: 100%;
           &:nth-child(odd) {
-            background: $colorBgLightGray;
+            background: $colorBorderLightGray;
           } // nth-child(odd)
           &:last-child {
             padding-right: 0;
@@ -71,9 +82,25 @@
           .ratingCount {
             @include flex(center, flex-end);
             height: 100%;
+            &:hover {
+              cursor: pointer;
+              .ratingCount__text {
+                color: $colorYellow;
+                &::before {
+                  width: 100%;
+                } // before
+              } // __text
+            } // hover
             &__text {
               border-bottom: 1px solid $colorDarkGray;
+              color: $colorDarkGray;
               margin-right: 20px;
+              position: relative;
+              text-decoration: none;
+              transition: color .3s;
+              &::before {
+                @include makeUnderlineHeight($colorYellow, 1px, -1px);
+              } // before
             } // text
             .ratingCircleDynamic {
               $circleSize: 36px;
@@ -100,7 +127,7 @@
                     stroke-dasharray: 114px;
                     transition: stroke-dashoffset 1s;
                     &.static {
-                      stroke: $colorBgLightGray;
+                      stroke: #cdcdcd;
                     } // dynamic
                   } // path
                 } // svgRatingCircle
@@ -137,13 +164,49 @@
             left: 15px;
             transform: translateY(-50%);
             text-align: center;
+            transition: background .3s;
             height: $blockSize;
             width: $blockSize;
+            &:hover {
+              cursor: pointer;
+              color: white;
+              background: $colorYellow;
+              .ownAssessment__icon {
+                .starsIcon {
+                  &-yellow {
+                    $starsIconColor: white;
+                    svg {
+                      stroke: $starsIconColor;
+                    } // svg
+                    &Fill {
+                      svg {
+                        fill: $starsIconColor;
+                        stroke: $starsIconColor;
+                      } // svg
+                    } // -fill
+                  } // yellow
+                  &-fat {
+                    svg {
+                      stroke: white;
+                      &:last-child {
+                        fill: $colorYellow;
+                      } // last-child
+                    } // svg
+                  } // fat
+                  &:hover {
+                    transform: scale(1);
+                  } // hover
+                } // starsIcon
+              } // __icon
+            } // hover
             &__icon {
               display: inline-block;
               margin: 0 auto 3px;
               .starsIcon {
                 // styles in _custom.scss
+                &:hover {
+                  transform: scale(1);
+                } // hover
               } // starsIcon
             } // __icon
           } // ownAssessment
@@ -166,6 +229,20 @@
               max-width: 70px;
               padding: 0 5px;
               margin-right: 10px;
+              &:hover {
+                a {
+                  color: $colorYellow;
+                } // a
+              } // hover
+              a {
+                color: $colorCountTxt;
+                font-size: 13px;
+                text-decoration: none;
+                transition: color .3s;
+              } // a
+              span {
+                display: block;
+              } // span
               &:last-child {
                 margin-right: 30px;
               } // last-child
@@ -179,8 +256,6 @@
                 } // img
               } // iinerIcon
               .innerText {
-                color: $colorCountTxt;
-                font-size: 13px;
                 text-align: center;
               } // innerText
               &-growth {
@@ -360,14 +435,24 @@
         &__item {
           @include flex(center, center);
           background: $colorDarkGray;
+          border: 1px solid transparent;
           flex-direction: column;
           height: $rowHeight;
           min-width: $headerWidth;
+          transition: border-color .3s, box-shadow .3s;
           width: $headerWidth;
+          &:hover {
+            cursor: default;
+            box-shadow: inset 0 0 0 1px $colorYellow;
+            border-color: $colorYellow;
+          } // hover
           &:nth-child(even) {
             background: $colorGray;
             border-top: 1px solid $colorBgLightGray;
             border-bottom: 1px solid $colorBgLightGray;
+            &:hover {
+              border-color: $colorYellow;
+            } // hover
           } // nth-child(odd)
           &:last-child {
             border-bottom: 1px solid $colorGray;
@@ -439,6 +524,14 @@
           margin-right: 8px;
           min-width: $iconSize;
           width: $iconSize;
+          &:hover {
+            a {
+              svg {
+                fill: $colorDarkGray;
+                transform: rotateY(360deg);
+              } // svg
+            } // a
+          } // hover
           a {
             @include flex(center, center);
             height: 100%;
@@ -447,6 +540,7 @@
               $iconSize: 60%;
               @include imgFit(contain, center);
               fill: white;
+              transition: fill .3s, transform .5s;
               width: $iconSize;
               height: $iconSize;
             } // svg

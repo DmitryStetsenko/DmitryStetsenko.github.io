@@ -1041,7 +1041,6 @@ button, input {
 
 .userAssessment {
   @include flex(center, flex-start);
-  flex-direction: column;
   &__item {
     .ratingsBlock {
       $titleFontSize: 14px;
@@ -1171,8 +1170,9 @@ button, input {
     } // -average
   } // __ratings
   &-comparisonPage {
-    height: 100%;
     align-items: flex-end;
+    height: 100%;
+    flex-direction: column;
     justify-content: center;
   } // -comparisonPage
 } // userAssessment
