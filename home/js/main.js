@@ -878,8 +878,8 @@ $(function () {
                     responceTempBlock.append(activityTapeWidget);
                     responceTempBlock.append(filterWidget);
                 } else {
-                    carBrandPageReviewBlock.find('.widgetsArea').prepend(filterWidget);
                     carBrandPageReviewBlock.find('.widgetsArea').prepend(activityTapeWidget);
+                    carBrandPageReviewBlock.find('.widgetsArea').prepend(filterWidget);
                     if ( responceTempBlock ) {
                         responceTempBlock.remove();
                     }
