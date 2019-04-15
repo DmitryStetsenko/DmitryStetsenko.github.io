@@ -131,9 +131,9 @@ button, input {
         font-size: 13px; }
         .userFilter__content .filterOptions__item:hover {
           cursor: default;
-          background: #e2e2e2; }
+          background: #f6f6f6; }
         .userFilter__content .filterOptions__item-selected {
-          background: #e2e2e2; }
+          background: #f6f6f6; }
   .userFilter-selected {
     border: 1px solid #c1c7d0; }
     .userFilter-selected .userFilter__header .innerText {
@@ -357,10 +357,10 @@ button, input {
       color: white;
       background: #efb428; }
     .mainBtn-showAllDisabled {
-      background: #e2e2e2;
-      border-color: #e2e2e2; }
+      background: #f6f6f6;
+      border-color: #f6f6f6; }
       .mainBtn-showAllDisabled:hover {
-        background-color: #e2e2e2;
+        background-color: #f6f6f6;
         cursor: default;
         color: #464f5b; }
   .mainBtn-showAllNoFullWidth {
@@ -380,10 +380,10 @@ button, input {
       color: white;
       background: #efb428; }
     .mainBtn-showAllNoFullWidthDisabled {
-      background: #e2e2e2;
-      border-color: #e2e2e2; }
+      background: #f6f6f6;
+      border-color: #f6f6f6; }
       .mainBtn-showAllNoFullWidthDisabled:hover {
-        background-color: #e2e2e2;
+        background-color: #f6f6f6;
         cursor: default;
         color: #464f5b; }
   .mainBtn-popUpadditionalBlock {
@@ -721,7 +721,7 @@ button, input {
       stroke-dasharray: 114px;
       transition: stroke-dashoffset 1s; }
       .ratingCircle svg path.static {
-        stroke: #e2e2e2; }
+        stroke: #f6f6f6; }
   .ratingCircle-green svg path.dynamic {
     stroke: #7eae3e; }
   .ratingCircle-yellow svg path.dynamic {
@@ -1693,7 +1693,7 @@ button, input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #e2e2e2;
+  background: #f6f6f6;
   border-radius: 3px;
   border: 1px solid #e8e8e8;
   padding: 25px 30px;
@@ -1886,7 +1886,7 @@ button, input {
     .popUpWindowBlock .popUpWindow__content .progressBarBlock {
       margin-bottom: 20px; }
       .popUpWindowBlock .popUpWindow__content .progressBarBlock__progressBar {
-        background: #e2e2e2;
+        background: #f6f6f6;
         height: 20px;
         position: relative;
         width: 100%; }
@@ -1911,7 +1911,7 @@ button, input {
       color: white;
       margin-right: 10px; }
     .popUpWindowBlock .popUpWindow__content .additionalBlock__form {
-      background: #e2e2e2;
+      background: #f6f6f6;
       padding: 20px; }
       .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo {
         margin-bottom: 20px; }
@@ -2086,7 +2086,7 @@ button, input {
         min-width: 30px;
         width: 30px; }
       .widget .widgetContent .ratingList .ratingListElement__item-brandImg {
-        background: #e2e2e2;
+        background: #f6f6f6;
         border-right: none;
         justify-content: flex-start;
         overflow: hidden;
@@ -2098,7 +2098,7 @@ button, input {
           height: 100%;
           width: auto; }
       .widget .widgetContent .ratingList .ratingListElement__item-brandText {
-        background: #e2e2e2;
+        background: #f6f6f6;
         justify-content: flex-start;
         min-width: 80px;
         overflow: hidden;
@@ -2107,7 +2107,7 @@ button, input {
         width: 80px;
         white-space: nowrap; }
         .widget .widgetContent .ratingList .ratingListElement__item-brandText::after {
-          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #e2e2e2 80%);
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 80%);
           content: '';
           display: block;
           height: 100%;
@@ -2141,7 +2141,7 @@ button, input {
               stroke-dasharray: 114px;
               transition: stroke-dashoffset 1s; }
               .widget .widgetContent .ratingList .ratingListElement__item-rating > .svgWrap .svgRatingCircle > path.static {
-                stroke: #e2e2e2; }
+                stroke: #f6f6f6; }
   .widget .widgetContent .ratingSpareParts .ratingSparePartsContentTitle {
     align-items: center;
     color: #2c333d;
@@ -2460,7 +2460,7 @@ button, input {
         overflow: hidden;
         position: relative; }
         .widget .widgetContent .activityTape .event__headerNameDate::after {
-          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #e2e2e2 70%);
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 70%);
           content: '';
           display: block;
           height: 100%;
@@ -2544,7 +2544,7 @@ button, input {
   .widget-filter {
     min-height: initial; }
   .widget-activityTape {
-    background: #e2e2e2;
+    background: #f6f6f6;
     height: 440px;
     overflow: hidden; }
     .widget-activityTape .widget__header .headerTitle:after {
@@ -2982,7 +2982,7 @@ button, input {
           .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-description {
             max-width: 475px; }
           .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty {
-            background: #e2e2e2; }
+            background: #f6f6f6; }
             .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a {
               display: block;
               padding: 11px 0;
@@ -3395,9 +3395,9 @@ button, input {
       .ratingTableBlock .tableRating__row:hover .brandRatingInfo {
         border-color: #efb428; }
       .ratingTableBlock .tableRating__row:nth-child(odd) {
-        background: #e2e2e2; }
+        background: #f6f6f6; }
       .ratingTableBlock .tableRating__row-loading {
-        background: #e2e2e2; }
+        background: #f6f6f6; }
         .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__manufacturer .brandIcon {
           opacity: 1; }
         .ratingTableBlock .tableRating__row-loading:hover .brandRatingInfo__manufacturer .brandName {
@@ -3662,7 +3662,7 @@ button, input {
             stroke-dasharray: 114px;
             transition: stroke-dashoffset 1s; }
             .ratingTableBlock .brandRatingInfo__rating > .svgWrap .svgRatingCircle > path.static {
-              stroke: #e2e2e2; }
+              stroke: #f6f6f6; }
       .ratingTableBlock .brandRatingInfo__rating span {
         display: flex;
         align-items: center;
@@ -4227,10 +4227,10 @@ button, input {
   text-overflow: ellipsis; }
   .mySelecter .selecter-item:hover, .mySelecter .selecter-item.selected:hover {
     color: #2c333d;
-    background-color: #e2e2e2; }
+    background-color: #f6f6f6; }
   .mySelecter .selecter-item.selected {
     color: #2c333d;
-    background-color: #e2e2e2; }
+    background-color: #f6f6f6; }
 
 .mySelecter.open .selecter-selected, .mySelecter.focus .selecter-selected {
   background-color: white; }
@@ -4592,7 +4592,7 @@ button, input {
         min-width: 30px;
         width: 30px; }
       .spareParts .sparePartsElement__item-brandImg {
-        background: #e2e2e2;
+        background: #f6f6f6;
         border-right: none;
         justify-content: flex-start;
         overflow: hidden;
@@ -4604,7 +4604,7 @@ button, input {
           height: 100%;
           width: auto; }
       .spareParts .sparePartsElement__item-brandText {
-        background: #e2e2e2;
+        background: #f6f6f6;
         justify-content: flex-start;
         min-width: 80px;
         overflow: hidden;
@@ -4613,7 +4613,7 @@ button, input {
         width: 80px;
         white-space: nowrap; }
         .spareParts .sparePartsElement__item-brandText::after {
-          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #e2e2e2 80%);
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 80%);
           content: '';
           display: block;
           height: 100%;
@@ -4647,7 +4647,7 @@ button, input {
               stroke-dasharray: 114px;
               transition: stroke-dashoffset 1s; }
               .spareParts .sparePartsElement__item-rating > .svgWrap .svgRatingCircle > path.static {
-                stroke: #e2e2e2; }
+                stroke: #f6f6f6; }
 
 .reviewCountBlock {
   display: flex;
@@ -4827,7 +4827,7 @@ button, input {
         min-width: 30px;
         width: 30px; }
       .brands .brandsListElement__item-brandImg {
-        background: #e2e2e2;
+        background: #f6f6f6;
         justify-content: center;
         overflow: hidden;
         width: 170px;
@@ -4839,7 +4839,7 @@ button, input {
           height: 100%;
           width: auto; }
       .brands .brandsListElement__item-brandBlock {
-        background: #e2e2e2;
+        background: #f6f6f6;
         flex-direction: column;
         justify-content: center;
         min-width: 170px;
@@ -4873,7 +4873,7 @@ button, input {
           width: auto; }
       .brands .brandsListElement__item-brandTop {
         align-items: flex-start;
-        background: #e2e2e2;
+        background: #f6f6f6;
         color: #2c333d;
         flex-direction: column;
         justify-content: center;
@@ -4916,7 +4916,7 @@ button, input {
           width: auto; }
       .brands .brandsListElement__item-brandNew {
         align-items: flex-start;
-        background: #e2e2e2;
+        background: #f6f6f6;
         color: #2c333d;
         flex-direction: column;
         justify-content: center;
@@ -5117,7 +5117,7 @@ button, input {
         top: 5px;
         width: 100%; }
       .cars .carItem__elem-rating {
-        background: #e2e2e2;
+        background: #f6f6f6;
         color: #6f7786;
         border-radius: 3px;
         margin-left: 5px;
@@ -5236,7 +5236,7 @@ button, input {
       margin-bottom: 30px; }
   .comparisonBlock__content {
     border-radius: 3px;
-    background: #e2e2e2;
+    background: #f6f6f6;
     overflow: hidden;
     padding: 15px; }
 
@@ -5568,7 +5568,7 @@ button, input {
     justify-content: flex-start; }
     #ratingsPage .bestSpareParts__content .selectBrand {
       border-radius: 3px;
-      background: #e2e2e2;
+      background: #f6f6f6;
       font-size: 18px;
       margin-right: 30px;
       padding: 20px 30px;
@@ -5757,7 +5757,7 @@ button, input {
           min-width: 30px;
           width: 30px; }
         #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-brandImg {
-          background: #e2e2e2;
+          background: #f6f6f6;
           border-right: none;
           justify-content: flex-start;
           overflow: hidden;
@@ -5769,7 +5769,7 @@ button, input {
             height: 100%;
             width: auto; }
         #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-brandText {
-          background: #e2e2e2;
+          background: #f6f6f6;
           justify-content: flex-start;
           min-width: 120px;
           overflow: hidden;
@@ -5802,7 +5802,7 @@ button, input {
                 stroke-dasharray: 114px;
                 transition: stroke-dashoffset 1s; }
                 #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-rating > .svgWrap .svgRatingCircle > path.static {
-                  stroke: #e2e2e2; }
+                  stroke: #f6f6f6; }
           #ratingsPage .bestSpareParts__content .rating .sparePartsElement__item-rating span {
             align-items: center;
             background: url(../img/rating_circle.svg) no-repeat center/36px 36px;
@@ -5881,9 +5881,9 @@ button, input {
     padding: 10px;
     transition: border-color .3s; }
     #allRatingsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
-      background: #e2e2e2; }
+      background: #f6f6f6; }
       #allRatingsPage .ratingsBlock__content .ratingList li:nth-child(odd) .itemSell__text::after {
-        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #e2e2e2 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
         content: '';
         display: block;
         height: 100%;
@@ -6133,7 +6133,7 @@ button, input {
         #sparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-description {
           max-width: 475px; }
         #sparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty {
-          background: #e2e2e2; }
+          background: #f6f6f6; }
           #sparePartsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a {
             display: block;
             padding: 11px 0;
@@ -6263,7 +6263,7 @@ button, input {
 #sparePartsPage .manufacturer {
   margin-bottom: 60px; }
   #sparePartsPage .manufacturer__content {
-    background: #e2e2e2;
+    background: #f6f6f6;
     border-radius: 3px;
     padding: 20px 20px 25px 20px;
     width: 100%; }
@@ -6492,7 +6492,7 @@ button, input {
     justify-content: flex-start; }
   #sparePartsPage .comparisonBlock__content {
     border-radius: 3px;
-    background: #e2e2e2;
+    background: #f6f6f6;
     margin-right: 30px;
     overflow: hidden;
     padding: 15px;
@@ -6835,9 +6835,9 @@ button, input {
     padding: 10px;
     transition: border-color .3s; }
     #allSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
-      background: #e2e2e2; }
+      background: #f6f6f6; }
       #allSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) .itemSell__text::after {
-        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #e2e2e2 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
         content: '';
         display: block;
         height: 100%;
@@ -6963,7 +6963,7 @@ button, input {
 #brandsPage .manufacturer {
   margin-bottom: 60px; }
   #brandsPage .manufacturer__content {
-    background: #e2e2e2;
+    background: #f6f6f6;
     border-radius: 3px;
     padding: 20px 20px 25px 20px;
     width: 100%; }
@@ -7198,7 +7198,7 @@ button, input {
     justify-content: flex-start; }
   #brandsPage .comparisonBlock__content {
     border-radius: 3px;
-    background: #e2e2e2;
+    background: #f6f6f6;
     margin-right: 30px;
     overflow: hidden;
     padding: 15px;
@@ -7552,9 +7552,9 @@ button, input {
     padding: 10px 0;
     transition: border-color .3s; }
     #allBrandsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
-      background: #e2e2e2; }
+      background: #f6f6f6; }
       #allBrandsPage .ratingsBlock__content .ratingList li:nth-child(odd) .itemSell__text::after {
-        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #e2e2e2 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
         content: '';
         display: block;
         height: 100%;
@@ -7717,7 +7717,7 @@ button, input {
   #allBrandsPage .ratingsBlock-brandsAll .ratingsBlock__content .ratingList__item .itemSell__icon {
     border-radius: 3px;
     background: white;
-    border: 1px solid #e2e2e2;
+    border: 1px solid #f6f6f6;
     height: 100%;
     overflow: hidden;
     padding: 10px;
@@ -7986,7 +7986,7 @@ button, input {
 #brandsSparePartsPage .manufacturer {
   margin-bottom: 60px; }
   #brandsSparePartsPage .manufacturer__content {
-    background: #e2e2e2;
+    background: #f6f6f6;
     border-radius: 3px;
     padding: 20px 20px 25px 20px;
     width: 100%; }
@@ -8221,7 +8221,7 @@ button, input {
     justify-content: flex-start; }
   #brandsSparePartsPage .comparisonBlock__content {
     border-radius: 3px;
-    background: #e2e2e2;
+    background: #f6f6f6;
     margin-right: 30px;
     overflow: hidden;
     padding: 15px;
@@ -8370,7 +8370,7 @@ button, input {
 #brandsSparePartsPage .popularSpareParts {
   margin-bottom: 60px; }
   #brandsSparePartsPage .popularSpareParts__content {
-    background: #e2e2e2;
+    background: #f6f6f6;
     border-radius: 3px;
     padding: 20px 20px 25px 20px;
     width: 100%; }
@@ -8768,7 +8768,7 @@ button, input {
     overflow: hidden;
     width: 100%; }
   #modelSpareParts .otherSparePartsBlock .otherSpareParts {
-    background: #e2e2e2;
+    background: #f6f6f6;
     border-radius: 3px;
     padding: 30px 30px 20px 30px;
     width: 100%; }
@@ -8790,7 +8790,7 @@ button, input {
       #modelSpareParts .otherSparePartsBlock .otherSpareParts__item:nth-child(3n) {
         margin-right: 0; }
       #modelSpareParts .otherSparePartsBlock .otherSpareParts__item::after {
-        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #e2e2e2 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
         content: '';
         display: block;
         height: 100%;
@@ -8908,7 +8908,7 @@ button, input {
     overflow: hidden;
     width: 100%; }
   #model .otherSparePartsBlock .otherSpareParts {
-    background: #e2e2e2;
+    background: #f6f6f6;
     border-radius: 3px;
     padding: 30px 30px 20px 30px;
     margin-right: 30px;
@@ -8931,7 +8931,7 @@ button, input {
       #model .otherSparePartsBlock .otherSpareParts__item:nth-child(3n) {
         margin-right: 0; }
       #model .otherSparePartsBlock .otherSpareParts__item::after {
-        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #e2e2e2 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
         content: '';
         display: block;
         height: 100%;
@@ -9058,7 +9058,7 @@ button, input {
 #carBrand .popularModelsBlock {
   margin-bottom: 60px; }
   #carBrand .popularModelsBlock .popularModels {
-    background: #e2e2e2;
+    background: #f6f6f6;
     padding: 30px; }
     #carBrand .popularModelsBlock .popularModels__items {
       display: flex;
@@ -9200,10 +9200,11 @@ button, input {
       position: relative;
       width: 100%; }
       #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item:nth-child(odd) {
-        background: #e8e8e8; }
+        background: #f6f6f6; }
       #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item:last-child {
         padding-right: 0;
-        border-bottom: 1px solid #464f5b; }
+        border-bottom: 1px solid #464f5b;
+        height: 105px; }
       #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount {
         display: flex;
         align-items: center;
@@ -9347,18 +9348,22 @@ button, input {
               object-fit: contain;
               object-position: center; }
           #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item .innerText {
+            height: 35px;
+            line-height: .9;
+            overflow: hidden;
             text-align: center; }
           #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item-growth {
             border-radius: 3px;
             border: 2px solid #efb428;
             height: 28px;
-            line-height: 26px;
             min-width: 28px;
             padding: 0;
             text-align: center;
             width: 28px; }
             #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item-growth .innerText {
-              color: #efb428; }
+              color: #efb428;
+              height: 100%;
+              line-height: 26px; }
     #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item {
       padding-right: 0;
       padding-left: 30px; }
@@ -9466,12 +9471,13 @@ button, input {
         border-color: #efb428; }
       #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item:nth-child(even) {
         background: #464f5b;
-        border-top: 1px solid #e2e2e2;
-        border-bottom: 1px solid #e2e2e2; }
+        border-top: 1px solid #f6f6f6;
+        border-bottom: 1px solid #f6f6f6; }
         #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item:nth-child(even):hover {
           border-color: #efb428; }
       #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item:last-child {
-        border-bottom: 1px solid #464f5b; }
+        border-bottom: 1px solid #464f5b;
+        height: 105px; }
       #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item .innerIcon {
         background-image: url(../img/comparison_sprite.png);
         margin-bottom: 12px;
@@ -9575,7 +9581,7 @@ button, input {
   margin-bottom: 30px; }
   #comparisonPage .comparisonBlock__content {
     border-radius: 3px;
-    background: #e2e2e2;
+    background: #f6f6f6;
     padding: 15px;
     width: 100%; }
 

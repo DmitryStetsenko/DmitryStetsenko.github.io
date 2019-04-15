@@ -73,11 +73,12 @@
           position: relative;
           width: 100%;
           &:nth-child(odd) {
-            background: $colorBorderLightGray;
+            background: $colorBgLightGray;
           } // nth-child(odd)
           &:last-child {
             padding-right: 0;
             border-bottom: 1px solid $colorGray;
+            height: $rowHeight + 15px;
           } // last-child
           .ratingCount {
             @include flex(center, flex-end);
@@ -256,20 +257,25 @@
                 } // img
               } // iinerIcon
               .innerText {
+                height: 35px;
+                line-height: .9;
+                overflow: hidden;
                 text-align: center;
+                //max-height: 26px;
               } // innerText
               &-growth {
                 $itemSize: 28px;
                 border-radius: $mainBorderRadius;
                 border: 2px solid $colorYellow;
                 height: $itemSize;
-                line-height: $itemSize - 2px;
                 min-width: $itemSize;
                 padding: 0;
                 text-align: center;
                 width: $itemSize;
                 .innerText {
                   color: $colorYellow;
+                  height: 100%;
+                  line-height: $itemSize - 2px;
                 } // innerText
               } // -growth
             } // __item
@@ -456,6 +462,7 @@
           } // nth-child(odd)
           &:last-child {
             border-bottom: 1px solid $colorGray;
+            height: $rowHeight + 15px;
           } // last-child
           .innerIcon {
             background-image: url(../img/comparison_sprite.png);
