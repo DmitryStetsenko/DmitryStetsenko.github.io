@@ -9577,6 +9577,20 @@ button, input {
   #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item-responceHide {
     display: none; } }
 
+@media screen and (max-width: 1170px) {
+  #comparisonPage .widgetsArea {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+    min-width: 100%;
+    width: 100%; }
+  #comparisonPage .widget {
+    width: 50%;
+    margin-right: 30px; }
+    #comparisonPage .widget:last-child {
+      margin-right: 0; } }
+
 #comparisonPage .comparisonBlock {
   margin-bottom: 30px; }
   #comparisonPage .comparisonBlock__content {
