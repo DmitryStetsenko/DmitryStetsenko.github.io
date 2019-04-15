@@ -7,7 +7,6 @@
 @mixin textStroke($strokeColor) {
   text-shadow: 1px 1px 0 $strokeColor, -1px -1px 0 $strokeColor;
 }
-
 @mixin banTxtSelect () {
   // Для эксплорера
   -ms-user-select: none;
@@ -16,6 +15,10 @@
   // Для Сафари и Хрома
   -webkit-user-select: none;
 } // banTxtSelect
+@mixin textAlignCenter ($align, $lineHeight) {
+  text-align: $align;
+  line-height: $lineHeight;
+} // textAlignCenter
 
 // draw triangle
 @mixin drawTriangleTop($pWidth, $pHeight, $tColor) {

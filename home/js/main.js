@@ -80,6 +80,9 @@ $(function () {
     responceCarBrandPage(); // responceCarBrandPage JQ
     // ===========================================================
 
+    // comparison page -------------------------------------------
+    ratingCircleDynamic(); // ratingCircleDynamic JQ
+    // ===========================================================
 
     ////////////// function for responsive //////////////
 
@@ -191,21 +194,40 @@ $(function () {
 
     function showReviewDiagram() {
         let reviewDiagramBlock = $('.reviewDiagramBlock');
-        reviewDiagramBlock.each(function () {
-            let greenZone = $(this).find('.reviewDiagramBlock__item-green'),
-                yellowZone = $(this).find('.reviewDiagramBlock__item-yellow'),
-                redZone = $(this).find('.reviewDiagramBlock__item-red');
-            let greenZoneValue = parseInt(greenZone.text()),
-                yellowZoneValue = parseInt(yellowZone.text()),
-                redZoneValue = parseInt(redZone.text());
-            let summValue = greenZoneValue + yellowZoneValue + redZoneValue;
-            let greenZoneValuePercent = parseInt(100 * greenZoneValue / summValue),
-                yellowZoneValuePercent = parseInt(100 * yellowZoneValue / summValue),
-                redZoneValuePercent = parseInt(100 * redZoneValue / summValue);
-            greenZone.css('width', greenZoneValuePercent + '%');
-            yellowZone.css('width', yellowZoneValuePercent + '%');
-            redZone.css('width', redZoneValuePercent + '%');
-        });
+        if ( reviewDiagramBlock.length) {
+            reviewDiagramBlock.each(function () {
+                let greenZone = $(this).find('.reviewDiagramBlock__item-green'),
+                    yellowZone = $(this).find('.reviewDiagramBlock__item-yellow'),
+                    redZone = $(this).find('.reviewDiagramBlock__item-red');
+                let greenZoneValue = parseInt(greenZone.text()),
+                    yellowZoneValue = parseInt(yellowZone.text()),
+                    redZoneValue = parseInt(redZone.text());
+                let maxValue = Math.max( greenZoneValue,
+                                         yellowZoneValue,
+                                         redZoneValue
+                                        );
+
+                let summValue = greenZoneValue + yellowZoneValue + redZoneValue;
+                let greenZoneValuePercent,
+                    yellowZoneValuePercent,
+                    redZoneValuePercent;
+
+                if ( reviewDiagramBlock.hasClass('reviewDiagramBlock-comparisonPage') ) {
+                    greenZoneValuePercent = parseInt( greenZoneValue * 100 / maxValue );
+                    yellowZoneValuePercent = parseInt( yellowZoneValue * 100 / maxValue );
+                    redZoneValuePercent = parseInt( redZoneValue * 100 / maxValue );
+                } else {
+                    greenZoneValuePercent = parseInt(100 * greenZoneValue / summValue);
+                    yellowZoneValuePercent = parseInt(100 * yellowZoneValue / summValue);
+                    redZoneValuePercent = parseInt(100 * redZoneValue / summValue);
+                }
+
+
+                greenZone.css('width', greenZoneValuePercent + '%');
+                yellowZone.css('width', yellowZoneValuePercent + '%');
+                redZone.css('width', redZoneValuePercent + '%');
+            });
+        }
     } // showReviewDiagram JQ
 
     function showAllCars() {
@@ -793,6 +815,43 @@ $(function () {
             });
         }
     } // responceCarBrandPage JQ
+    // ===========================================================
+
+    // comparison page -------------------------------------------
+    function ratingCircleDynamic() {
+        let sparePartsElements = $('.ratingCircleDynamic');
+        if ( sparePartsElements.length ) {
+            sparePartsElements.each(function () {
+                let currentRatingElem = $(this);
+                let spanRatingElement = currentRatingElem.find('span');
+                let currentRating = parseInt(currentRatingElem.attr('data-count'));
+                let persentValue = parseInt(RATING_STROKE_LENGTH - RATING_STROKE_LENGTH * currentRating / 100);
+                let svg = currentRatingElem.find('path:last-child');
+                for (let i = 0; i <= currentRating; i++) {
+                    setTimeout(() => {
+                        spanRatingElement.text(i);
+                    }, i * 7);
+                }
+
+                svg.css('strokeDashoffset', persentValue);
+                switch (true) {
+                    case ( currentRating < 34 ) : {
+                        svg.css('stroke', RATING_COLOR_RED);
+                        break;
+                    }
+                    case ( currentRating >= 34 && currentRating < 67 ) : {
+                        svg.css('stroke', RATING_COLOR_YELLOW);
+                        break;
+                    }
+
+                    case ( currentRating >= 67 && currentRating <= 100 ) : {
+                        svg.css('stroke', RATING_COLOR_GREEN);
+                        break;
+                    }
+                }
+            });
+        }
+    } // ratingCircleDynamic JQ
     // ===========================================================
 
 // secondary functions -------------------------------------------
