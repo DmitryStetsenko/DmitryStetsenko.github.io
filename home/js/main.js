@@ -782,8 +782,8 @@ $(function () {
             });
         }
     } // toggleSparePartsList JQ
-    function responceComparisonPage() {
-        const carBrandPageReviewBlock = $('#comparisonPageReviewBlock');
+    function responceCarBrandPage() {
+        const carBrandPageReviewBlock = $('#carBrandPageReviewBlock');
         const filterWidget = $('.widget-filter');
         const activityTapeWidget = $('.widget-activityTape');
         let responceTempBlock;
@@ -815,7 +815,7 @@ $(function () {
                 }
             });
         }
-    } // responceComparisonPage JQ
+    } // responceCarBrandPage JQ
     // ===========================================================
 
     // comparison page -------------------------------------------
@@ -853,8 +853,8 @@ $(function () {
             });
         }
     } // ratingCircleDynamic JQ
-    function responceCarBrandPage() {
-        const carBrandPageReviewBlock = $('#carBrandPageReviewBlock');
+    function responceComparisonPage() {
+        const carBrandPageReviewBlock = $('#comparisonPageReviewBlock');
         const filterWidget = $('.widget-filter');
         const activityTapeWidget = $('.widget-activityTape');
         let responceTempBlock;
@@ -865,8 +865,8 @@ $(function () {
                     carBrandPageReviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
                 }
                 responceTempBlock = $('#responceTempBlock');
-                responceTempBlock.append(filterWidget);
                 responceTempBlock.append(activityTapeWidget);
+                responceTempBlock.append(filterWidget);
             }
             window.addEventListener('resize', function(){
                 if (window.matchMedia('(max-width: 1170px)').matches) {
@@ -875,18 +875,18 @@ $(function () {
                         carBrandPageReviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
                     }
                     responceTempBlock = $('#responceTempBlock');
-                    responceTempBlock.append(filterWidget);
                     responceTempBlock.append(activityTapeWidget);
+                    responceTempBlock.append(filterWidget);
                 } else {
-                    carBrandPageReviewBlock.find('.widgetsArea').prepend(activityTapeWidget);
                     carBrandPageReviewBlock.find('.widgetsArea').prepend(filterWidget);
+                    carBrandPageReviewBlock.find('.widgetsArea').prepend(activityTapeWidget);
                     if ( responceTempBlock ) {
                         responceTempBlock.remove();
                     }
                 }
             });
         }
-    } // responceCarBrandPage JQ
+    } // responceComparisonPage JQ
     // ===========================================================
 
 // secondary functions -------------------------------------------
