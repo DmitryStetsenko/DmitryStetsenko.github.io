@@ -8,7 +8,6 @@
   text-shadow:
           -0   -1px 1px $strokeColor,
 }
-
 @mixin banTxtSelect () {
   // Для эксплорера
   -ms-user-select: none;
@@ -17,6 +16,10 @@
   // Для Сафари и Хрома
   -webkit-user-select: none;
 } // banTxtSelect
+@mixin textAlignCenter ($align, $lineHeight) {
+  text-align: $align;
+  line-height: $lineHeight;
+} // textAlignCenter
 
 // draw triangle
 @mixin drawTriangleTop($pWidth, $pHeight, $tColor) {
@@ -194,3 +197,4 @@
   object-fit: $size;
   object-position: $position;
 }
+

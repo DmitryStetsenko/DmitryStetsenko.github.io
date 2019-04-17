@@ -522,7 +522,8 @@ button, input {
     box-shadow: unset;
     background: white;
     color: #2c333d;
-    font-size: 13px; }
+    font-size: 13px;
+    white-space: nowrap; }
     .mainBtn-showAll::before {
       display: none; }
     .mainBtn-showAll:hover {
@@ -827,6 +828,22 @@ button, input {
     stroke: #e73e4e; }
   .starsIcon-red.Fill svg {
     fill: #e73e4e; }
+  .starsIcon-fat {
+    display: block;
+    position: relative;
+    width: 17px; }
+    .starsIcon-fat svg {
+      display: block;
+      stroke-width: 3px; }
+      .starsIcon-fat svg:last-child {
+        width: calc( 17px * 70 / 100);
+        position: absolute;
+        fill: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-47%, -47%); }
+      .starsIcon-fat svg.fill {
+        fill: #e73e4e; }
 
 .ratingCircle {
   border-radius: 50%;
@@ -1010,17 +1027,19 @@ button, input {
 
 .reviewDiagramBlock {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
   height: 30px;
   min-width: 115px;
   width: 115px; }
   .reviewDiagramBlock__item {
-    align-items: center;
-    color: white;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     font-size: 14px;
     font-weight: 400;
-    justify-content: center;
+    height: 100%;
     min-width: 20px;
     transition: width .5s; }
     .reviewDiagramBlock__item-green {
@@ -1039,6 +1058,281 @@ button, input {
     .reviewDiagramBlock-brandsSparePartsPage .reviewDiagramBlock__item {
       min-width: 40px;
       transition: transform .2s; }
+      .reviewDiagramBlock-brandsSparePartsPage .reviewDiagramBlock__item:hover {
+        cursor: pointer;
+        transform: scale(1.1); }
+  .reviewDiagramBlock-comparisonPage {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    margin-left: auto;
+    min-width: initial;
+    width: 100%; }
+    .reviewDiagramBlock-comparisonPage .reviewDiagramBlock__item {
+      height: 20px; }
+
+.userVoting .voteValue {
+  text-align: center;
+  margin-bottom: 3px; }
+
+.userVoting .voteRatio {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .userVoting .voteRatio__review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: auto;
+    width: 50%;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    font-size: inherit;
+    min-width: 50%;
+    padding: 5px 5px 5px 9px;
+    transition: background .2s, transform .2s; }
+    .userVoting .voteRatio__review:hover {
+      cursor: pointer; }
+    .userVoting .voteRatio__review .voteRatioValue {
+      margin-right: 5px; }
+    .userVoting .voteRatio__review .voteRatioIcon {
+      width: 14px;
+      min-width: 14px; }
+    .userVoting .voteRatio__review-positive {
+      border-color: #7eae3e;
+      margin-right: 5px; }
+      .userVoting .voteRatio__review-positive .voteRatioIcon svg {
+        fill: #7eae3e; }
+      .userVoting .voteRatio__review-positive:hover {
+        background: #7eae3e;
+        border-color: #7eae3e;
+        box-shadow: 0 2px 0 #638831;
+        color: white;
+        transform: translateY(-2px); }
+        .userVoting .voteRatio__review-positive:hover .voteRatioIcon svg {
+          fill: white; }
+    .userVoting .voteRatio__review-negative {
+      border-color: #e73e4e; }
+      .userVoting .voteRatio__review-negative .voteRatioIcon svg {
+        fill: #e73e4e;
+        transform: rotate(180deg); }
+      .userVoting .voteRatio__review-negative:hover {
+        background: #e73e4e;
+        border-color: #e73e4e;
+        box-shadow: 0 2px 0 #d71b2d;
+        color: white;
+        transform: translateY(-2px); }
+        .userVoting .voteRatio__review-negative:hover .voteRatioIcon svg {
+          fill: white; }
+
+.userVoting-comparisonPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  height: 100%; }
+  .userVoting-comparisonPage .voteValue {
+    font-size: 18px;
+    margin-bottom: 10px;
+    order: 2; }
+  .userVoting-comparisonPage .voteRatio {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .userVoting-comparisonPage .voteRatio__review {
+      font-size: 10px;
+      padding: 3px; }
+      .userVoting-comparisonPage .voteRatio__review .voteRatioIcon {
+        width: 10px;
+        min-width: 10px; }
+      .userVoting-comparisonPage .voteRatio__review-positive {
+        border-color: #7eae3e;
+        margin-right: 5px; }
+        .userVoting-comparisonPage .voteRatio__review-positive .voteRatioIcon svg {
+          fill: #7eae3e; }
+        .userVoting-comparisonPage .voteRatio__review-positive:hover {
+          background: #7eae3e;
+          border-color: #7eae3e;
+          box-shadow: 0 2px 0 #638831;
+          color: white;
+          transform: translateY(-2px); }
+          .userVoting-comparisonPage .voteRatio__review-positive:hover .voteRatioIcon svg {
+            fill: white; }
+      .userVoting-comparisonPage .voteRatio__review-negative {
+        border-color: #e73e4e; }
+        .userVoting-comparisonPage .voteRatio__review-negative .voteRatioIcon svg {
+          fill: #e73e4e;
+          transform: rotate(180deg); }
+        .userVoting-comparisonPage .voteRatio__review-negative:hover {
+          background: #e73e4e;
+          border-color: #e73e4e;
+          box-shadow: 0 2px 0 #d71b2d;
+          color: white;
+          transform: translateY(-2px); }
+          .userVoting-comparisonPage .voteRatio__review-negative:hover .voteRatioIcon svg {
+            fill: white; }
+
+.userAssessment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .userAssessment__item .ratingsBlock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 5px; }
+    .userAssessment__item .ratingsBlock:last-child {
+      margin-bottom: 0; }
+    .userAssessment__item .ratingsBlock__item {
+      margin-right: 5px; }
+      .userAssessment__item .ratingsBlock__item:last-child {
+        margin-right: 0; }
+      .userAssessment__item .ratingsBlock__item-title {
+        color: #2c333d;
+        font-size: 14px;
+        white-space: nowrap; }
+      .userAssessment__item .ratingsBlock__item-stars .starsIconBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon {
+          display: block;
+          margin-right: 1px;
+          height: 12px;
+          width: 12px; }
+          .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon:last-child {
+            margin-right: 0; }
+          .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon svg {
+            display: block;
+            fill: transparent;
+            stroke-width: 3px;
+            stroke: #7eae3e; }
+            .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon svg.fill {
+              fill: #7eae3e; }
+          .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillGreen svg {
+            fill: #7eae3e !important;
+            stroke: #7eae3e !important; }
+          .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillYellow svg {
+            fill: #efb428 !important;
+            stroke: #efb428 !important; }
+          .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillRed svg {
+            fill: #e73e4e !important;
+            stroke: #e73e4e !important; }
+          .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeGreen svg {
+            fill: transparent !important;
+            stroke: #7eae3e !important; }
+          .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeYellow svg {
+            fill: transparent !important;
+            stroke: #efb428 !important; }
+          .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeRed svg {
+            fill: transparent !important;
+            stroke: #e73e4e !important; }
+        .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__value {
+          margin-left: 10px; }
+      .userAssessment__item .ratingsBlock__item-rating {
+        color: #2c333d;
+        font-size: 14px; }
+  .userAssessment__item-average {
+    margin: 25px 0; }
+    .userAssessment__item-average .ratingsBlock {
+      align-items: flex-start;
+      justify-content: center; }
+      .userAssessment__item-average .ratingsBlock__item-title {
+        color: #2c333d;
+        font-size: 20px;
+        margin-bottom: 5px; }
+        .userAssessment__item-average .ratingsBlock__item-title::after {
+          content: attr(data-value);
+          margin-left: 6px; }
+      .userAssessment__item-average .ratingsBlock__item-stars {
+        margin-right: 8px; }
+        .userAssessment__item-average .ratingsBlock__item-stars .starsIconBlock__icon {
+          height: 20px;
+          width: 20px; }
+      .userAssessment__item-average .ratingsBlock__item-rating {
+        color: #2c333d;
+        font-size: 20px; }
+  .userAssessment-comparisonPage {
+    height: 100%;
+    justify-content: flex-end; }
+    .userAssessment-comparisonPage .userAssessment__item .ratingsBlock {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin-bottom: 5px; }
+      .userAssessment-comparisonPage .userAssessment__item .ratingsBlock:last-child {
+        margin-bottom: 0; }
+      .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item:last-child {
+        margin-right: 0; }
+      .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-title {
+        color: #2c333d;
+        font-size: 11px;
+        margin-right: 0;
+        white-space: nowrap; }
+      .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon {
+          display: block;
+          margin-right: 1px;
+          height: 12px;
+          width: 12px; }
+          .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon:last-child {
+            margin-right: 0; }
+          .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon svg {
+            fill: transparent;
+            stroke-width: 3px;
+            stroke: #7eae3e; }
+            .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon svg.fill {
+              fill: #7eae3e; }
+          .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillGreen svg {
+            fill: #7eae3e !important;
+            stroke: #7eae3e !important; }
+          .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillYellow svg {
+            fill: #efb428 !important;
+            stroke: #efb428 !important; }
+          .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillRed svg {
+            fill: #e73e4e !important;
+            stroke: #e73e4e !important; }
+          .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeGreen svg {
+            fill: transparent !important;
+            stroke: #7eae3e !important; }
+          .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeYellow svg {
+            fill: transparent !important;
+            stroke: #efb428 !important; }
+          .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeRed svg {
+            fill: transparent !important;
+            stroke: #e73e4e !important; }
+        .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__value {
+          font-size: 12px;
+          margin-left: 5px; }
+      .userAssessment-comparisonPage .userAssessment__item .ratingsBlock__item-rating {
+        color: #2c333d;
+        font-size: 11px; }
+    .userAssessment-comparisonPage .userAssessment__item-average {
+      margin: 0; }
+      .userAssessment-comparisonPage .userAssessment__item-average .ratingsBlock {
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column-reverse; }
+        .userAssessment-comparisonPage .userAssessment__item-average .ratingsBlock__item-title {
+          color: #2c333d;
+          font-size: 18px;
+          margin-bottom: 5px; }
+          .userAssessment-comparisonPage .userAssessment__item-average .ratingsBlock__item-title::after {
+            content: attr(data-value);
+            margin-left: 0; }
+        .userAssessment-comparisonPage .userAssessment__item-average .ratingsBlock__item-stars {
+          margin-right: 0; }
+          .userAssessment-comparisonPage .userAssessment__item-average .ratingsBlock__item-stars .starsIconBlock__icon {
+            height: 17px;
+            width: 17px; }
+        .userAssessment-comparisonPage .userAssessment__item-average .ratingsBlock__item-rating {
+          color: #2c333d;
+          font-size: 18px; }
 
 .sliderBox {
   position: relative;
@@ -3415,6 +3709,11 @@ button, input {
           justify-content: center; }
           .pageHeaderBlock-sparePartsBrands .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem {
             padding: 0 15px; } }
+  .pageHeaderBlock-comparisonPage {
+    align-items: center;
+    margin-bottom: 0; }
+    .pageHeaderBlock-comparisonPage .blockTitle {
+      text-align: center; }
 
 .ratingTableBlock {
   margin-bottom: 45px; }
@@ -6122,416 +6421,6 @@ button, input {
             width: 100%;
             white-space: nowrap; }
 
-#brandsPage .pageHeaderBlock {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-bottom: 45px; }
-  #brandsPage .pageHeaderBlock .blockTitle {
-    color: #2c333d; }
-  #brandsPage .pageHeaderBlock__thumbnail {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 20px; }
-    #brandsPage .pageHeaderBlock__thumbnail .innerImage {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 3px;
-      border: 1px solid #e8e8e8;
-      height: 70px;
-      min-width: 70px;
-      margin-right: 15px;
-      padding: 10px;
-      width: 70px; }
-  #brandsPage .pageHeaderBlock__content {
-    width: 100%; }
-    #brandsPage .pageHeaderBlock__content .headerBlockContent {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: column; }
-      #brandsPage .pageHeaderBlock__content .headerBlockContent__item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #e8e8e8;
-        flex-shrink: 1;
-        max-height: 87px;
-        position: relative;
-        padding: 15px 0;
-        width: 100%; }
-        #brandsPage .pageHeaderBlock__content .headerBlockContent__item:last-child {
-          border-bottom: none; }
-        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle {
-          color: #8a939f;
-          font-size: 14px;
-          position: relative;
-          text-align: center; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText {
-            position: relative; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText-link {
-              color: #8a939f;
-              text-decoration: none; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .innerText-link::before {
-                background: #c1c1c1;
-                bottom: -1px;
-                content: '';
-                display: block;
-                height: 1px;
-                left: 0;
-                position: absolute;
-                transition: width .3s;
-                width: 0;
-                width: 100%; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .additInfo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border-radius: 50%;
-            border: 1px solid #8a939f;
-            color: #8a939f;
-            font-size: 10px;
-            position: absolute;
-            right: -15px;
-            top: -5px;
-            height: 14px;
-            width: 14px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle .additInfo:hover {
-              border-color: #efb428;
-              color: #efb428;
-              cursor: pointer; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-description {
-            color: #2c333d;
-            font-weight: bold;
-            margin-bottom: 10px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #464f5b;
-            border-radius: 3px 3px 0 0;
-            margin-bottom: 0;
-            padding: 5px 0;
-            width: 100%; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon {
-              width: 15px;
-              margin-right: 8px; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerIcon svg {
-                fill: #efb428; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle-bestProperty .innerTxt {
-              color: white;
-              font-size: 14px; }
-        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          flex-basis: auto;
-          width: 50%;
-          padding-left: 15px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__value {
-              color: #2c333d;
-              font-size: 20px;
-              margin-right: 5px;
-              text-decoration: none; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__icon {
-              width: 15px; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .assessment__icon svg {
-                fill: #efb428; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .imgFlag {
-            margin-right: 5px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            color: #2c333d;
-            font-size: 20px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data::after {
-              content: attr(data-growth);
-              font-size: 16px;
-              margin-left: 5px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-country {
-              font-size: 14px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-positiveGrowth::after {
-              content: attr(data-growth);
-              color: #7eae3e;
-              font-size: 14px;
-              margin-left: 5px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-positiveGrowth svg {
-              width: 20px;
-              fill: #7eae3e; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-negativeGrowth::after {
-              content: attr(data-growth);
-              color: #e73e4e;
-              font-size: 14px;
-              margin-left: 5px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-negativeGrowth svg {
-              transform: scale(1, -1);
-              width: 20px;
-              fill: #e73e4e; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-manufacturer::after {
-              color: #c1c1c1; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-review::after {
-              color: #7eae3e; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-vote::after {
-              color: #7eae3e; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional {
-              color: #c1c1c1;
-              font-size: 16px; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional .innerSeparator {
-                margin: 0 5px; }
-                #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data-additional .innerSeparator-plus {
-                  margin: 0 0 0 5px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__text {
-            color: #2c333d;
-            font-size: 13px;
-            line-height: 17px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-description {
-            max-width: 475px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty {
-            background: #f6f6f6;
-            flex-direction: column;
-            padding-left: 0;
-            width: 100%; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a {
-              border-bottom: 1px solid #e8e8e8;
-              display: block;
-              padding: 11px 0;
-              position: relative;
-              text-decoration: none;
-              width: 100%; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty a:last-child {
-                border-bottom: none; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem {
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-              color: #2c333d;
-              width: auto; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__title {
-                flex-basis: auto;
-                width: 50%;
-                font-size: 13px;
-                padding: 0 15px; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                flex-basis: auto;
-                width: 50%; }
-                #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandName {
-                  font-size: 16px;
-                  margin-right: 10px;
-                  max-width: 80px;
-                  overflow: hidden;
-                  position: relative;
-                  white-space: nowrap;
-                  width: 85px; }
-                  #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandName::after {
-                    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
-                    content: '';
-                    display: block;
-                    height: 100%;
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    width: 20px; }
-                #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating {
-                  display: flex;
-                  align-items: center;
-                  justify-content: center; }
-                  #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__value {
-                    font-size: 20px;
-                    margin-right: 5px; }
-                  #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon {
-                    transition: transform .3s;
-                    width: 12px; }
-                    #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.topRating {
-                      fill: #7eae3e; }
-                    #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.middleRating {
-                      fill: #efb428; }
-                    #brandsPage .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent-bestProperty .propItem__rating .brandRating__starIcon svg.lowRating {
-                      fill: #e73e4e; }
-        #brandsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          color: white;
-          flex-direction: column-reverse;
-          position: absolute;
-          left: 0;
-          top: 5px;
-          transform: translateY(-100%);
-          width: 300px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo::before {
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 10px solid #464f5b;
-            content: '';
-            display: block;
-            transform: translateY(-1px); }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item .showAdditInfo__innerText {
-            background: #464f5b;
-            border-radius: 3px;
-            font-size: 14px;
-            line-height: 1.2;
-            padding: 10px; }
-        #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site {
-          flex-grow: 1;
-          text-decoration: none; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover {
-            cursor: pointer; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle .innerText {
-              color: #efb428; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle .innerText::before {
-                width: 100%; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle .additInfo {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              background: white;
-              border-radius: 50%;
-              border: 1px solid #8a939f;
-              color: #8a939f;
-              font-size: 10px;
-              position: absolute;
-              right: -15px;
-              top: -5px;
-              height: 14px;
-              width: 14px; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle .additInfo:hover {
-                border-color: #efb428;
-                color: #efb428;
-                cursor: pointer; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-description {
-              color: #2c333d;
-              font-weight: bold;
-              margin-bottom: 10px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-bestProperty {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              background: #464f5b;
-              margin-bottom: 0;
-              padding: 5px 0; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-bestProperty .innerIcon {
-                width: 15px;
-                margin-right: 8px; }
-                #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-bestProperty .innerIcon svg {
-                  fill: #efb428; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerBlockTitle-bestProperty .innerTxt {
-                color: white;
-                font-size: 14px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site:hover .innerText {
-              color: #efb428 !important; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle {
-            margin-bottom: 20px;
-            color: #8a939f;
-            font-size: 14px;
-            position: relative;
-            text-align: center; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle .innerText {
-              position: relative;
-              color: #8a939f;
-              white-space: nowrap; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle .innerText::before {
-                background: #efb428;
-                bottom: -1px;
-                content: '';
-                display: block;
-                height: 1px;
-                left: 0;
-                position: absolute;
-                transition: width .3s;
-                width: 0; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle .additInfo {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              background: white;
-              border-radius: 50%;
-              border: 1px solid #8a939f;
-              color: #8a939f;
-              font-size: 10px;
-              position: absolute;
-              right: -15px;
-              top: -5px;
-              height: 14px;
-              width: 14px; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle .additInfo:hover {
-                border-color: #efb428;
-                color: #efb428;
-                cursor: pointer; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-description {
-              color: #2c333d;
-              font-weight: bold;
-              margin-bottom: 10px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-bestProperty {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              background: #464f5b;
-              margin-bottom: 0;
-              padding: 5px 0; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-bestProperty .innerIcon {
-                width: 15px;
-                margin-right: 8px; }
-                #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-bestProperty .innerIcon svg {
-                  fill: #efb428; }
-              #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockTitle-bestProperty .innerTxt {
-                color: white;
-                font-size: 14px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockContent__data .innerText {
-            color: #2c333d;
-            font-size: 16px;
-            max-width: 120px;
-            overflow: hidden;
-            position: relative;
-            text-decoration: none; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockContent__data .innerText::before {
-              background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
-              content: '';
-              display: block;
-              height: 100%;
-              position: absolute;
-              right: 0;
-              top: 0;
-              width: 40px; }
-          #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockContent__data .innerIcon {
-            background: #efb428;
-            border-radius: 3px;
-            color: white;
-            font-size: 12px;
-            height: 12px;
-            margin-left: 5px;
-            position: relative;
-            width: 12px; }
-            #brandsPage .pageHeaderBlock__content .headerBlockContent__item-site .innerBlockContent__data .innerIcon::before {
-              content: '\27A0';
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%) rotate(-45deg); }
-        #brandsPage .pageHeaderBlock__content .headerBlockContent__item-noBorder {
-          border-bottom: none; }
-        #brandsPage .pageHeaderBlock__content .headerBlockContent__item-bestProperty {
-          flex-direction: column;
-          justify-content: center;
-          border-radius: 3px 3px 0 0;
-          flex-shrink: 1;
-          max-height: initial;
-          padding: 0; }
-
 #brandsPage .manufacturer {
   margin-bottom: 45px; }
   #brandsPage .manufacturer .blockHeader {
@@ -7416,3 +7305,372 @@ button, input {
           display: none; }
       #carBrand .popularModelsBlock .popularModels__item .showMoreBtn {
         margin-top: 10px; }
+
+#comparisonPage .mainComparisonBlock {
+  margin-bottom: 45px; }
+  #comparisonPage .mainComparisonBlock__header {
+    margin-bottom: 20px; }
+    #comparisonPage .mainComparisonBlock__header .comparisonPair {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      #comparisonPage .mainComparisonBlock__header .comparisonPair__item {
+        flex-basis: auto;
+        width: 50%;
+        border-radius: 3px;
+        border: 1px solid #c1c7d0;
+        padding: 10px;
+        position: relative;
+        transition: border .2s, box-shadow .2s; }
+        #comparisonPage .mainComparisonBlock__header .comparisonPair__item:hover {
+          border-color: #efb428;
+          box-shadow: inset 0 0 0 1px #efb428; }
+        #comparisonPage .mainComparisonBlock__header .comparisonPair__item .innerImg {
+          display: block;
+          margin: 0 auto;
+          height: 25px;
+          width: 75px; }
+          #comparisonPage .mainComparisonBlock__header .comparisonPair__item .innerImg img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center; }
+        #comparisonPage .mainComparisonBlock__header .comparisonPair__item-separator {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          padding: 0;
+          width: 90px;
+          min-width: 90px; }
+          #comparisonPage .mainComparisonBlock__header .comparisonPair__item-separator:hover {
+            border-color: #c1c7d0;
+            box-shadow: unset; }
+      #comparisonPage .mainComparisonBlock__header .comparisonPair__separator {
+        text-align: center;
+        line-height: 43px;
+        border-radius: 50%;
+        background: #efb428;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        height: 45px;
+        min-width: 45px;
+        width: 45px; }
+  #comparisonPage .mainComparisonBlock__main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px; }
+    #comparisonPage .mainComparisonBlock__main .brandRatingInfo {
+      flex-basis: auto;
+      width: 50%; }
+      #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item {
+        border-radius: 3px 0 0 3px;
+        height: 90px;
+        padding-right: 15px;
+        position: relative;
+        width: 100%; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item:nth-child(odd) {
+          background: #f6f6f6; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item:last-child {
+          padding-right: 0;
+          border-bottom: 1px solid #464f5b;
+          height: 105px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item:first-child {
+          padding-right: 0; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column-reverse;
+          height: 100%; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount__text {
+            color: #2c333d;
+            font-size: 12px;
+            position: relative;
+            margin-top: 10px;
+            text-decoration: none; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount .ratingCircleDynamic {
+            font-size: 13px;
+            font-weight: bold;
+            height: 36px;
+            min-width: 36px;
+            position: relative;
+            text-align: center;
+            width: 36px; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount .ratingCircleDynamic > .svgWrap {
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); }
+              #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount .ratingCircleDynamic > .svgWrap .svgRatingCircle {
+                height: auto;
+                width: 100%; }
+                #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount .ratingCircleDynamic > .svgWrap .svgRatingCircle > path {
+                  fill: transparent;
+                  stroke-width: 3;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-dasharray: 114px;
+                  transition: stroke-dashoffset 1s; }
+                  #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount .ratingCircleDynamic > .svgWrap .svgRatingCircle > path.static {
+                    stroke: #cdcdcd; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ratingCount .ratingCircleDynamic > span {
+              line-height: 36px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .votingBlock {
+          height: 100%; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .diagramInfoBlock {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          height: 100%; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .diagramInfoBlock__finalValue {
+            font-size: 18px;
+            margin-left: 10px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-direction: column;
+          height: 100%;
+          padding-top: 5px; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__title {
+            color: #2c333d;
+            font-size: 10px;
+            margin-bottom: 10px; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding: 0 20px;
+            position: relative;
+            width: 100%; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item {
+            margin-bottom: 5px; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item a {
+              color: #6f7786;
+              font-size: 11px;
+              text-decoration: none;
+              transition: color .3s; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item span {
+              display: block; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item .innerText {
+              text-align: center; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item-growth {
+              display: inline-block;
+              padding: 0;
+              position: absolute;
+              top: 50%;
+              right: 5px;
+              margin: 0;
+              transform: translateY(-50%); }
+              #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item .ownerSelection__item-growth .innerText {
+                color: #efb428;
+                font-size: 13px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo__item-diagramRating {
+          padding-left: 15px; }
+      #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item {
+        padding-right: 0;
+        padding-left: 10px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item:last-child {
+          padding-left: 0; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .ratingCount {
+          flex-direction: column-reverse; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .ratingCount__text {
+            margin-bottom: 10px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .votingBlock .userVoting-comparisonPage {
+          flex-direction: column-reverse; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .votingBlock .userVoting-comparisonPage .voteValue {
+            margin-left: 0;
+            margin-right: 20px;
+            order: 1; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .votingBlock .userVoting-comparisonPage .voteRatio {
+            flex-direction: row-reverse; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .votingBlock .userVoting-comparisonPage .voteRatio__review-positive {
+              margin-right: 0;
+              margin-left: 5px; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .votingBlock .userVoting-comparisonPage .voteRatio__review-negative {
+              border-color: #e73e4e; }
+              #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .votingBlock .userVoting-comparisonPage .voteRatio__review-negative .voteRatioIcon svg {
+                fill: #e73e4e;
+                transform: rotate(180deg); }
+              #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .votingBlock .userVoting-comparisonPage .voteRatio__review-negative:hover {
+                background: #e73e4e;
+                border-color: #e73e4e;
+                box-shadow: 0 2px 0 #d71b2d;
+                color: white;
+                transform: translateY(-2px); }
+                #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .votingBlock .userVoting-comparisonPage .voteRatio__review-negative:hover .voteRatioIcon svg {
+                  fill: white; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .diagramInfoBlock {
+          justify-content: flex-start; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .diagramInfoBlock .reviewDiagramBlock {
+            align-items: flex-start; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .diagramInfoBlock .reviewDiagramBlock-comparisonPage {
+              margin-left: initial; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .diagramInfoBlock__finalValue {
+            margin-left: 0;
+            margin-right: 15px;
+            order: -1; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment {
+          flex-direction: column; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item .ratingsBlock {
+            align-items: flex-start;
+            flex-direction: column; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item .ratingsBlock__item {
+              margin-right: 0; }
+              #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item .ratingsBlock__item-stars .starsIconBlock {
+                flex-direction: row-reverse; }
+                #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__value {
+                  margin-left: 0;
+                  margin-right: 5px; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item-average .ratingsBlock {
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column-reverse; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item-average .ratingsBlock__item-title {
+              color: #2c333d;
+              font-size: 18px;
+              margin-bottom: 5px; }
+              #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item-average .ratingsBlock__item-title::after {
+                content: attr(data-value);
+                margin-left: 6px; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item-average .ratingsBlock__item-stars {
+              margin-right: 0;
+              margin-left: 0; }
+              #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item-average .ratingsBlock__item-stars .starsIconBlock__icon {
+                height: 17px;
+                width: 17px; }
+            #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment__item-average .ratingsBlock__item-rating {
+              color: #2c333d;
+              font-size: 18px; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .userAssessment-comparisonPage {
+            align-items: flex-start;
+            justify-content: center; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .ownAssessment {
+          top: 50%;
+          left: initial;
+          right: 15px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .ownerSelection__list {
+          flex-direction: column; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item .ownerSelection__item:last-child {
+          margin-right: 0; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingInfo-reverse .brandRatingInfo__item-diagramRating {
+          padding-right: 15px; }
+    #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams {
+      color: white;
+      font-size: 15px; }
+      #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #2c333d;
+        border: 1px solid transparent;
+        flex-direction: column;
+        height: 90px;
+        min-width: 90px;
+        transition: border-color .3s, box-shadow .3s;
+        width: 90px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item:hover {
+          cursor: default;
+          box-shadow: inset 0 0 0 1px #efb428;
+          border-color: #efb428; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item:nth-child(even) {
+          background: #464f5b;
+          border-top: 1px solid #f6f6f6;
+          border-bottom: 1px solid #f6f6f6; }
+          #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item:nth-child(even):hover {
+            border-color: #efb428; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item:last-child {
+          border-bottom: 1px solid #464f5b;
+          height: 105px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item .innerIcon {
+          background-image: url(../img/comparison_sprite.png);
+          margin-bottom: 12px;
+          height: 31px;
+          width: 40px; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item-rating .innerIcon {
+          background-position: 0, 0; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item-vote .innerIcon {
+          background-position: -40px, 0; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item-review .innerIcon {
+          background-position: -80px, 0; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item-averageRating .innerIcon {
+          background-position: -120px, 0; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item-properties .innerIcon {
+          background-position: -160px, 0; }
+        #comparisonPage .mainComparisonBlock__main .brandRatingCompareParams__item-car .innerIcon {
+          background-position: -200px, 0; }
+  #comparisonPage .mainComparisonBlock__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 90px; }
+    #comparisonPage .mainComparisonBlock__footer .addCodeBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      border: 2px solid #efb428;
+      margin-bottom: 20px;
+      padding: 0 20px; }
+      #comparisonPage .mainComparisonBlock__footer .addCodeBtn span {
+        font-family: "Segoe Print", sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        margin-right: 5px; }
+    #comparisonPage .mainComparisonBlock__footer .socialIcons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      #comparisonPage .mainComparisonBlock__footer .socialIcons__item {
+        background: #efb428;
+        border-radius: 50%;
+        height: 30px;
+        margin-right: 8px;
+        min-width: 30px;
+        width: 30px; }
+        #comparisonPage .mainComparisonBlock__footer .socialIcons__item:hover a svg {
+          fill: #2c333d;
+          transform: rotateY(360deg); }
+        #comparisonPage .mainComparisonBlock__footer .socialIcons__item a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          width: 100%; }
+          #comparisonPage .mainComparisonBlock__footer .socialIcons__item a svg {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+            fill: white;
+            transition: fill .3s, transform .5s;
+            width: 60%;
+            height: 60%; }
+        #comparisonPage .mainComparisonBlock__footer .socialIcons__item-vk a svg {
+          width: 70%;
+          height: 70%; }
+        #comparisonPage .mainComparisonBlock__footer .socialIcons__item-title {
+          background: white;
+          border-radius: unset;
+          height: initial;
+          margin-right: 15px;
+          width: initial; }
+
+#comparisonPage .reviewsBlock .contentArea .blockHeader {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; }
+  #comparisonPage .reviewsBlock .contentArea .blockHeader .blockTitle {
+    margin-bottom: 20px; }
+  #comparisonPage .reviewsBlock .contentArea .blockHeader__filterBtn {
+    width: 100%; }
+    #comparisonPage .reviewsBlock .contentArea .blockHeader__filterBtn .filterBtn {
+      flex-basis: auto;
+      width: 33%; }

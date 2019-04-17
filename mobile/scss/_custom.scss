@@ -221,6 +221,7 @@ button, input {
     background: white;
     color: $colorDarkGray;
     font-size: 13px;
+    white-space: nowrap;
     &::before {
       display: none;
     } // before
@@ -641,6 +642,28 @@ button, input {
       } // svg
     } // -fill
   } // red
+  &-fat {
+    $starIconWidth: 17px;
+    $starIconInnerWidth: calc( #{$starIconWidth} * 70 / 100 );
+    display: block;
+    position: relative;
+    width: $starIconWidth;
+    svg {
+      display: block;
+      stroke-width: 3px;
+      &:last-child {
+        width: $starIconInnerWidth;
+        position: absolute;
+        fill: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-47%, -47%);
+      } // last-child
+      &.fill {
+        fill: $starsIconColor;
+      } // -fill
+    } // svg
+  } // fat
 } // startIcon
 
 .ratingCircle {
@@ -884,19 +907,18 @@ button, input {
 } // shevronIcon
 
 .reviewDiagramBlock {
-  display: flex;
-  justify-content: center;
   $reviewDiagramWidth: 115px;
-  height: 30px;
+  $reviewDiagramHeight: 30px;
+  @include flex(center, flex-start);
+  height: $reviewDiagramHeight;
   min-width: $reviewDiagramWidth;
   width: $reviewDiagramWidth;
   &__item {
-    align-items: center;
+    @include flex(center, center);
     color: white;
-    display: flex;
     font-size: 14px;
     font-weight: 400;
-    justify-content: center;
+    height: 100%;
     min-width: 20px;
     transition: width .5s;
     &-green {
@@ -920,9 +942,432 @@ button, input {
     .reviewDiagramBlock__item {
       min-width: 40px;
       transition: transform .2s;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      } // hover
     } // reviewDiagramBlock__item
   } // brandsSparePartsPage
+  &-comparisonPage {
+    $reviewDiagramWidth: 100%;
+    $reviewDiagramHeight: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    margin-left: auto;
+    min-width: initial;
+    width: $reviewDiagramWidth;
+    .reviewDiagramBlock__item {
+      height: $reviewDiagramHeight;
+    } // reviewDiagramBlock__item
+  } // -comparisonPage
 } // reviewDiagramBlock
+
+.userVoting {
+  .voteValue {
+    text-align: center;
+    margin-bottom: 3px;
+  }
+  .voteRatio {
+    @include flex(center, center);
+    &__review {
+      $voteRatioIconSize: 14px;
+      @include flex(center, center);
+      @include widthPercent(50%);
+      border-radius: $mainBorderRadius;
+      border: 1px solid transparent;
+      font-size: inherit;
+      min-width: 50%;
+      padding: 5px 5px 5px 9px;
+      transition: background .2s, transform .2s;
+      &:hover {
+        cursor: pointer;
+      } // hover
+      .voteRatioValue {
+        margin-right: 5px;
+      } // voteRatioValue
+      .voteRatioIcon {
+        width: 14px;
+        min-width: 14px;
+      } // voteRatioIcon
+      &-positive {
+        border-color: $colorRatingGreen;
+        margin-right: 5px;
+        .voteRatioIcon {
+          svg {
+            fill: $colorRatingGreen;
+          } // svg
+        } // voteRatioIcon
+        &:hover {
+          background: $colorRatingGreen;
+          border-color: $colorRatingGreen;
+          box-shadow: 0 2px 0 darken($colorRatingGreen, 10);
+          color: white;
+          transform: translateY(-2px);
+          .voteRatioIcon {
+            svg {
+              fill: white;
+            } // svg
+          } // voteRatioIcon
+        } // hover
+      } // positive
+      &-negative {
+        border-color: $colorRatingRed;
+        .voteRatioIcon {
+          svg {
+            fill: $colorRatingRed;
+            transform: rotate(180deg);
+          } // svg
+        } // voteRatioIcon
+        &:hover {
+          background: $colorRatingRed;
+          border-color: $colorRatingRed;
+          box-shadow: 0 2px 0 darken($colorRatingRed, 10);
+          color: white;
+          transform: translateY(-2px);
+          .voteRatioIcon {
+            svg {
+              fill: white;
+            } // svg
+          } // voteRatioIcon
+        } // hover
+      } // positive
+    } // __review
+  } // voteRatio
+  &-comparisonPage {
+    @include flex(center, center);
+    flex-direction: column-reverse;
+    height: 100%;
+    .voteValue {
+      font-size: 18px;
+      margin-bottom: 10px;
+      order: 2;
+    } // voteValue
+    .voteRatio {
+      @include flex(center, center);
+      &__review {
+        $voteRatioIconSize: 10px;
+        font-size: 10px;
+        padding: 3px;
+        .voteRatioIcon {
+          width: $voteRatioIconSize;
+          min-width: $voteRatioIconSize;
+        } // voteRatioIcon
+        &-positive {
+          border-color: $colorRatingGreen;
+          margin-right: 5px;
+          .voteRatioIcon {
+            svg {
+              fill: $colorRatingGreen;
+            } // svg
+          } // voteRatioIcon
+          &:hover {
+            background: $colorRatingGreen;
+            border-color: $colorRatingGreen;
+            box-shadow: 0 2px 0 darken($colorRatingGreen, 10);
+            color: white;
+            transform: translateY(-2px);
+            .voteRatioIcon {
+              svg {
+                fill: white;
+              } // svg
+            } // voteRatioIcon
+          } // hover
+        } // positive
+        &-negative {
+          border-color: $colorRatingRed;
+          .voteRatioIcon {
+            svg {
+              fill: $colorRatingRed;
+              transform: rotate(180deg);
+            } // svg
+          } // voteRatioIcon
+          &:hover {
+            background: $colorRatingRed;
+            border-color: $colorRatingRed;
+            box-shadow: 0 2px 0 darken($colorRatingRed, 10);
+            color: white;
+            transform: translateY(-2px);
+            .voteRatioIcon {
+              svg {
+                fill: white;
+              } // svg
+            } // voteRatioIcon
+          } // hover
+        } // positive
+      } // __review
+    } // voteRatio
+  } // -comparisonPage
+} // userVoting
+
+.userAssessment {
+  @include flex(center, flex-start);
+  &__item {
+    .ratingsBlock {
+      $titleFontSize: 14px;
+      $titleColor: $colorDarkGray;
+      $ratingFontSize: 12px;
+      $ratingColor: $colorDarkGray;
+      $starsIconSize: 12px;
+
+      @include flex(center, flex-end);
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      } // last-child
+      &__item {
+        margin-right: 5px;
+        &:last-child {
+          margin-right: 0;
+        } // last-child
+        &-title {
+          color: $titleColor;
+          font-size: $titleFontSize;
+          white-space: nowrap;
+        } // -title
+        &-stars {
+          .starsIconBlock {
+            @include flex(center, center);
+            &__icon {
+              display: block;
+              margin-right: 1px;
+              height: $starsIconSize;
+              width: $starsIconSize;
+              &:last-child {
+                margin-right: 0;
+              } // last-child
+              svg {
+                display: block;
+                fill: transparent;
+                stroke-width: 3px;
+                stroke: $colorRatingGreen;
+                &.fill {
+                  fill: $colorRatingGreen;
+                } // -fill
+              } // starsIcon
+              &-fillGreen {
+                svg {
+                  fill: $colorRatingGreen !important;
+                  stroke: $colorRatingGreen !important;
+                } // svg
+              } // -fillGreen
+              &-fillYellow {
+                svg {
+                  fill: $colorRatingYellow !important;
+                  stroke: $colorRatingYellow !important;
+                } // svg
+              } // -fillYellow
+              &-fillRed {
+                svg {
+                  fill: $colorRatingRed !important;
+                  stroke: $colorRatingRed !important;
+                } // svg
+              } // -fillRed
+              &-strokeGreen {
+                svg {
+                  fill: transparent !important;
+                  stroke: $colorRatingGreen !important;
+                } // svg
+              } // -strokeGreen
+              &-strokeYellow {
+                svg {
+                  fill: transparent !important;
+                  stroke: $colorRatingYellow !important;
+                } // svg
+              } // -strokeYellow
+              &-strokeRed {
+                svg {
+                  fill: transparent !important;
+                  stroke: $colorRatingRed !important;
+                } // svg
+              } // -strokeRed
+            } // icon
+            &__value {
+              margin-left: 10px;
+            } // __value
+          } // starsIconBlock
+        } // -stars
+        &-rating {
+          color: $titleColor;
+          font-size: $titleFontSize;
+        } // rating
+      } // ____item
+    } // ratingsBlock
+    &-average {
+      margin: 25px 0;
+      .ratingsBlock {
+        $titleFontSize: 20px;
+        $titleColor: $colorDarkGray;
+        $ratingFontSize: 20px;
+        $ratingColor: $colorDarkGray;
+        $starsIconSize: 20px;
+
+        align-items: flex-start;
+        justify-content: center;
+        &__item{
+          &-title {
+            color: $titleColor;
+            font-size: $titleFontSize;
+            margin-bottom: 5px;
+            &::after {
+              content: attr(data-value);
+              margin-left: 6px;
+            } // after
+          } // -title
+          &-stars {
+            margin-right: 8px;
+            .starsIconBlock {
+              &__icon {
+                height: $starsIconSize;
+                width: $starsIconSize;
+              } // __icon
+            } // starsIconBlock
+          } // stars
+          &-rating {
+            color: $titleColor;
+            font-size: $titleFontSize;
+          } // -rating
+        } // __item
+      } // ratingBlock
+    } // -average
+  } // __ratings
+  &-comparisonPage {
+    height: 100%;
+    justify-content: flex-end;
+    .userAssessment__item {
+      .ratingsBlock {
+        $titleFontSize: 11px;
+        $titleColor: $colorDarkGray;
+        $ratingFontSize: 12px;
+        $ratingColor: $colorDarkGray;
+        $starsIconSize: 12px;
+
+        @include flex(flex-end, flex-start);
+        flex-direction: column;
+        margin-bottom: 5px;
+        &:last-child {
+          margin-bottom: 0;
+        } // last-child
+        &__item {
+          &:last-child {
+            margin-right: 0;
+          } // last-child
+          &-title {
+            color: $titleColor;
+            font-size: $titleFontSize;
+            margin-right: 0;
+            white-space: nowrap;
+          } // -title
+          &-stars {
+            .starsIconBlock {
+              @include flex(center, center);
+              &__icon {
+                display: block;
+                margin-right: 1px;
+                height: $starsIconSize;
+                width: $starsIconSize;
+                &:last-child {
+                  margin-right: 0;
+                } // last-child
+                svg {
+                  fill: transparent;
+                  stroke-width: 3px;
+                  stroke: $colorRatingGreen;
+                  &.fill {
+                    fill: $colorRatingGreen;
+                  } // -fill
+                } // starsIcon
+                &-fillGreen {
+                  svg {
+                    fill: $colorRatingGreen !important;
+                    stroke: $colorRatingGreen !important;
+                  } // svg
+                } // -fillGreen
+                &-fillYellow {
+                  svg {
+                    fill: $colorRatingYellow !important;
+                    stroke: $colorRatingYellow !important;
+                  } // svg
+                } // -fillYellow
+                &-fillRed {
+                  svg {
+                    fill: $colorRatingRed !important;
+                    stroke: $colorRatingRed !important;
+                  } // svg
+                } // -fillRed
+                &-strokeGreen {
+                  svg {
+                    fill: transparent !important;
+                    stroke: $colorRatingGreen !important;
+                  } // svg
+                } // -strokeGreen
+                &-strokeYellow {
+                  svg {
+                    fill: transparent !important;
+                    stroke: $colorRatingYellow !important;
+                  } // svg
+                } // -strokeYellow
+                &-strokeRed {
+                  svg {
+                    fill: transparent !important;
+                    stroke: $colorRatingRed !important;
+                  } // svg
+                } // -strokeRed
+              } // icon
+              &__value {
+                font-size: $ratingFontSize;
+                margin-left: 5px;
+              } // __value
+            } // starsIconBlock
+          } // -stars
+          &-rating {
+            color: $titleColor;
+            font-size: $titleFontSize;
+          } // rating
+        } // ____item
+      } // ratingsBlock
+      &-average {
+        margin: 0;
+        .ratingsBlock {
+          $titleFontSize: 18px;
+          $titleColor: $colorDarkGray;
+          $ratingFontSize: 18px;
+          $ratingColor: $colorDarkGray;
+          $starsIconSize: 17px;
+
+          align-items: flex-end;
+          justify-content: center;
+          flex-direction: column-reverse;
+          &__item{
+            &-title {
+              color: $titleColor;
+              font-size: $titleFontSize;
+              margin-bottom: 5px;
+              &::after {
+                content: attr(data-value);
+                margin-left: 0;
+              } // after
+            } // -title
+            &-stars {
+              margin-right: 0;
+              .starsIconBlock {
+                &__icon {
+                  height: $starsIconSize;
+                  width: $starsIconSize;
+                } // __icon
+              } // starsIconBlock
+            } // stars
+            &-rating {
+              color: $titleColor;
+              font-size: $titleFontSize;
+            } // -rating
+          } // __item
+        } // ratingBlock
+      } // -average
+    } // __ratings
+  } // -comparisonPage
+} // userAssessment
 
 // sliders styles
 .sliderBox {
@@ -3927,6 +4372,13 @@ button, input {
     // ====================================
 
   } // -sparePartsBrands
+  &-comparisonPage {
+    align-items: center;
+    margin-bottom: 0;
+    & .blockTitle {
+      text-align: center;
+    } // blockTitle
+  } // -comparisonPage
 } // pageHeaderBlock
 // ===========================================
 
