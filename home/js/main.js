@@ -61,9 +61,9 @@ $(function () {
     showMoreManufacturer(); // JQ
     replacePageHeaderBlockImgOfResponsive(); // JQ
     manufacturerBlockResponsive(); // JQ
-    comparisonBlockResponsive(); // JQ
     initFilter(); // JQ
     reviewShowMoreBtn(); // JQ
+    responceReplaceTopWidgetSparePartsPage() // JQ;
     // ==========================================================
 
     // rating & spareParts page function ------------------------
@@ -73,6 +73,7 @@ $(function () {
     // model-spareParts page function ----------------------------
     otherSparePartsToggle(); // otherSparePartsToggle JQ
     responceReplaceWidgetInterestingTheme(); // responceReplaceWidgetInterestingTheme JQ
+    responceReplaceTopWidgetModelSparePartsPage(); // responceReplaceTopWidgetModelSparePartsPage JQ
     // ===========================================================
 
     // model page function ---------------------------------------
@@ -91,6 +92,10 @@ $(function () {
 
     // brands-spareparts page ------------------------------------
     responceReplaceTopWidget(); // responceCarBrandPage JQ
+    // ===========================================================
+
+    // brands page -----------------------------------------------
+    responceReplaceTopWidgetBrandsPage(); // responceReplaceTopWidgetBrandsPage JQ
     // ===========================================================
 
     ////////////// function for responsive //////////////
@@ -679,40 +684,6 @@ $(function () {
             });
         }
     } // manufacturerBlockResponsive JQ
-    function comparisonBlockResponsive() {
-        // replace widget filter from review block
-        const comparisonBlock = $('#sparePartsPageComparisonBlock');
-        if (comparisonBlock.length) {
-            const reviewBlock = $('#sparePartsPageReviewBlock');
-            const widgetsAreaComparisonBlock = comparisonBlock.find('.widgetsArea');
-            const widgetsAreaReviewBlock = reviewBlock.find('.widgetsArea');
-            let widgetFilter = widgetsAreaReviewBlock.find('.widget-filter');
-
-            let isReplace = false;
-            if (!isReplace) {
-                if (window.matchMedia('(max-width: 1170px)').matches) {
-                    isReplace = true;
-                    widgetsAreaComparisonBlock.append(widgetFilter);
-                }
-            } else if (window.matchMedia('(min-width: 1170px)').matches) {
-                isReplace = false;
-                widgetFilter = widgetsAreaComparisonBlock.find('.widget-filter');
-                widgetsAreaReviewBlock.prepend(widgetFilter);
-            }
-            $(window).resize(function () {
-                if (!isReplace) {
-                    if (window.matchMedia('(max-width: 1170px)').matches) {
-                        isReplace = true;
-                        widgetsAreaComparisonBlock.append(widgetFilter);
-                    }
-                } else if (window.matchMedia('(min-width: 1170px)').matches) {
-                    isReplace = false;
-                    widgetFilter = widgetsAreaComparisonBlock.find('.widget-filter');
-                    widgetsAreaReviewBlock.prepend(widgetFilter);
-                }
-            });
-        }
-    } // manufacturerBlockResponsive JQ
     function reviewShowMoreBtn() {
         const reviewBlock = $('.review');
         if (reviewBlock.length) {
@@ -756,6 +727,42 @@ $(function () {
         const widgetFilterCarGeneration = new UserFilter('userFilterCarGeneration', 'Выберите поколение авто');
         widgetFilterCarGeneration.init();
     } // initFilter JQ
+    function responceReplaceTopWidgetSparePartsPage() {
+        const sparePartsPage = $('#sparePartsPage');
+        const reviewBlock = $('.reviewsBlock');
+        const filterWidget = $('.widget-filter');
+        const activityTapeWidget = $('.widget-activityTape');
+        let responceTempBlock;
+
+        if ( sparePartsPage.length ) {
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                responceTempBlock = $('#responceTempBlock');
+                if (!responceTempBlock.length){
+                    reviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                }
+                responceTempBlock = $('#responceTempBlock');
+                responceTempBlock.append(filterWidget);
+                responceTempBlock.append(activityTapeWidget);
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    responceTempBlock = $('#responceTempBlock');
+                    if (!responceTempBlock.length){
+                        reviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                    }
+                    responceTempBlock = $('#responceTempBlock');
+                    responceTempBlock.append(filterWidget);
+                    responceTempBlock.append(activityTapeWidget);
+                } else {
+                    reviewBlock.find('.widgetsArea').prepend(filterWidget);
+                    reviewBlock.find('.widgetsArea').append(activityTapeWidget);
+                    if ( responceTempBlock ) {
+                        responceTempBlock.remove();
+                    }
+                }
+            });
+        }
+    } // responceCarBrandPage JQ
     // ==========================================================
 
     // rating & spareParts page function ------------------------
@@ -811,11 +818,11 @@ $(function () {
             const widgetInterestingTopics = reviewBlockWidgetsArea.find('.widget-interestingTopics');
             const otherSparePartsBlockWidgetsArea = otherSparePartsBlock.find('.widgetsArea');
 
-            if ( window.matchMedia('(max-width: 1000px)').matches ) {
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
                 otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
             }
             window.addEventListener('resize', function(){
-                if (window.matchMedia('(max-width: 1000px)').matches) {
+                if (window.matchMedia('(max-width: 1170px)').matches) {
                     otherSparePartsBlockWidgetsArea.append(widgetInterestingTopics);
                 } else {
                     reviewBlockWidgetsArea.append(widgetInterestingTopics);
@@ -823,6 +830,42 @@ $(function () {
             });
         }
     } // responceReplaceWidgetInterestingTheme JQ
+    function responceReplaceTopWidgetModelSparePartsPage() {
+        const modelSpareParts = $('#modelSpareParts');
+        const reviewBlock = $('.reviewsBlock');
+        const filterWidget = $('.widget-filter');
+        const activityTapeWidget = $('.widget-activityTape');
+        let responceTempBlock;
+
+        if ( modelSpareParts.length ) {
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                responceTempBlock = $('#responceTempBlock');
+                if (!responceTempBlock.length){
+                    reviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                }
+                responceTempBlock = $('#responceTempBlock');
+                responceTempBlock.append(filterWidget);
+                responceTempBlock.append(activityTapeWidget);
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    responceTempBlock = $('#responceTempBlock');
+                    if (!responceTempBlock.length){
+                        reviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                    }
+                    responceTempBlock = $('#responceTempBlock');
+                    responceTempBlock.append(filterWidget);
+                    responceTempBlock.append(activityTapeWidget);
+                } else {
+                    reviewBlock.find('.widgetsArea').prepend(filterWidget);
+                    reviewBlock.find('.widgetsArea').append(activityTapeWidget);
+                    if ( responceTempBlock ) {
+                        responceTempBlock.remove();
+                    }
+                }
+            });
+        }
+    } // responceReplaceTopWidgetModelSparePartsPage JQ
     // ===========================================================
 
     // model page function ---------------------------------------
@@ -1040,6 +1083,45 @@ $(function () {
             });
         }
     } // responceCarBrandPage JQ
+    // ===========================================================
+
+    // brands page -----------------------------------------------
+    function responceReplaceTopWidgetBrandsPage() {
+        const sparePartsPage = $('#brandsPage');
+        const reviewBlock = $('.reviewsBlock');
+        const filterWidget = $('.widget-filter');
+        const activityTapeWidget = $('.widget-activityTape');
+        let responceTempBlock;
+
+        if ( sparePartsPage.length ) {
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                responceTempBlock = $('#responceTempBlock');
+                if (!responceTempBlock.length){
+                    reviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                }
+                responceTempBlock = $('#responceTempBlock');
+                responceTempBlock.append(filterWidget);
+                responceTempBlock.append(activityTapeWidget);
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    responceTempBlock = $('#responceTempBlock');
+                    if (!responceTempBlock.length){
+                        reviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                    }
+                    responceTempBlock = $('#responceTempBlock');
+                    responceTempBlock.append(filterWidget);
+                    responceTempBlock.append(activityTapeWidget);
+                } else {
+                    reviewBlock.find('.widgetsArea').prepend(filterWidget);
+                    reviewBlock.find('.widgetsArea').append(activityTapeWidget);
+                    if ( responceTempBlock ) {
+                        responceTempBlock.remove();
+                    }
+                }
+            });
+        }
+    } // responceReplaceTopWidgetBrandsPage JQ
     // ===========================================================
 
 // secondary functions -------------------------------------------

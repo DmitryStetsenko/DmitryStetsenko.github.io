@@ -2569,12 +2569,13 @@ button, input {
             width: $ratingListElementCountWidth;
           } // __count
           &-brandImg {
+            @include widthPercent(50%);
             background: $colorBgLightGray;
             border-right: none;
             justify-content: flex-start;
             overflow: hidden;
             padding-left: 7px;
-            width: 100%;
+            //width: 100%;
             .imgWrap {
               height: 17px;
             } // imgWrap
@@ -2585,6 +2586,7 @@ button, input {
           } // __brandImg
           &-brandText {
             $ratingListElementBrandTextWidth: 80px;
+            @include widthPercent(50%);
 
             background: $colorBgLightGray;
             justify-content: flex-start;
@@ -2592,7 +2594,7 @@ button, input {
             overflow: hidden;
             padding-left: 7px;
             position: relative;
-            width: $ratingListElementBrandTextWidth;
+            //width: $ratingListElementBrandTextWidth;
             white-space: nowrap;
             &::after {
               @include gradientBorderColor($colorBgLightGray, 20px, 80%);
@@ -3110,9 +3112,11 @@ button, input {
   &-filter {
     min-height: initial;
     .widget__header {
-      &:hover {
-        cursor: pointer;
-      } // hover
+      @media screen and ( max-width: 1170px ) {
+        &:hover {
+          cursor: pointer;
+        } // hover
+      } // 1170
       .headerTitle {
         @include flex(center, space-between);
         max-width: initial;
@@ -3185,9 +3189,11 @@ button, input {
     height: $maxHeight;
     overflow: hidden;
     .widget__header {
-      &:hover {
-        cursor: pointer;
-      } // hover
+      @media screen and ( max-width: 1170px ) {
+        &:hover {
+          cursor: pointer;
+        } // hover
+      } // 1170
       .headerTitle {
         @include flex(center, space-between);
         width: 100%;

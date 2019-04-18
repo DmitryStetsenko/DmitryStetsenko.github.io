@@ -884,7 +884,26 @@
     } // comparisonBlockItems
   } // 1170
   // ==================================
+  // ===========================================
 
+  // widgets area ------------------------------
+  // @MEDIA -----------------------
+  @media screen and ( max-width: 1170px ) {
+    .widgetsArea {
+      @include flex(flex-start, flex-start);
+      margin-bottom: $outerBlockMargin;
+      min-width: 100%;
+      width: 100%;
+    } // widgerArea
+    .widget {
+      width: 50%;
+      margin-right: $gutterX2;
+      &:last-child {
+        margin-right: 0;
+      } // last-child
+    } // widget
+  }
+  // ==============================
   // ===========================================
 
   // reviewsBlock ------------------------------

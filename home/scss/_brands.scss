@@ -577,7 +577,26 @@
     } // comparisonBlockItems
   } // 1170
   // ==================================
+  // ===========================================
 
+  // widgets area ------------------------------
+  // @MEDIA -----------------------
+  @media screen and ( max-width: 1170px ) {
+    #responceTempBlock {
+      @include flex(flex-start, flex-start);
+      margin-bottom: $outerBlockMargin;
+      min-width: 100%;
+      width: 100%;
+    } // widgerArea
+    .widget {
+      width: 50%;
+      margin-right: $gutterX2;
+      &:last-child {
+        margin-right: 0;
+      } // last-child
+    } // widget
+  }
+  // ==============================
   // ===========================================
 
   // reviewsBlock ------------------------------
@@ -618,21 +637,17 @@
       .contentArea {
         margin-bottom: 30px;
         width: 100%;
-      } // contentArea
+      }
+      // contentArea
       .widgetsArea {
-        @include flex(flex-start, center);
         width: 100%;
         .widget {
-          @include widthPercent(50%);
-          margin-right: 15px;
-          &:last-child {
-            margin-right: 0;
-          } // last-child
-          .widgetContent {
-          } // widgetContent
-        } // widget
-      } // widgetArea
-    } // 1170
+          width: 100%;
+        }
+        // widget
+      }
+      // widgetsArea
+    }
     // ==================================
 
   } // reviewBlock;

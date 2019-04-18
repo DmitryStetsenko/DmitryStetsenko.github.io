@@ -2098,25 +2098,27 @@ button, input {
         min-width: 30px;
         width: 30px; }
       .widget .widgetContent .ratingList .ratingListElement__item-brandImg {
+        flex-basis: auto;
+        width: 50%;
         background: #f6f6f6;
         border-right: none;
         justify-content: flex-start;
         overflow: hidden;
-        padding-left: 7px;
-        width: 100%; }
+        padding-left: 7px; }
         .widget .widgetContent .ratingList .ratingListElement__item-brandImg .imgWrap {
           height: 17px; }
         .widget .widgetContent .ratingList .ratingListElement__item-brandImg img {
           height: 100%;
           width: auto; }
       .widget .widgetContent .ratingList .ratingListElement__item-brandText {
+        flex-basis: auto;
+        width: 50%;
         background: #f6f6f6;
         justify-content: flex-start;
         min-width: 80px;
         overflow: hidden;
         padding-left: 7px;
         position: relative;
-        width: 80px;
         white-space: nowrap; }
         .widget .widgetContent .ratingList .ratingListElement__item-brandText::after {
           background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 80%);
@@ -2555,8 +2557,9 @@ button, input {
     padding-right: 10px; }
   .widget-filter {
     min-height: initial; }
-    .widget-filter .widget__header:hover {
-      cursor: pointer; }
+    @media screen and (max-width: 1170px) {
+      .widget-filter .widget__header:hover {
+        cursor: pointer; } }
     .widget-filter .widget__header .headerTitle {
       display: flex;
       align-items: center;
@@ -2598,8 +2601,9 @@ button, input {
     background: #f6f6f6;
     height: 440px;
     overflow: hidden; }
-    .widget-activityTape .widget__header:hover {
-      cursor: pointer; }
+    @media screen and (max-width: 1170px) {
+      .widget-activityTape .widget__header:hover {
+        cursor: pointer; } }
     .widget-activityTape .widget__header .headerTitle {
       display: flex;
       align-items: center;
@@ -6817,6 +6821,20 @@ button, input {
           transform: rotateX(360deg) translate(-50%, -50%);
           box-shadow: 2px 2px 5px #00000045; } }
 
+@media screen and (max-width: 1170px) {
+  #sparePartsPage .widgetsArea {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+    min-width: 100%;
+    width: 100%; }
+  #sparePartsPage .widget {
+    width: 50%;
+    margin-right: 30px; }
+    #sparePartsPage .widget:last-child {
+      margin-right: 0; } }
+
 #sparePartsPage .reviewsBlock {
   display: flex;
   align-items: flex-start;
@@ -7523,6 +7541,20 @@ button, input {
           transform: rotateX(360deg) translate(-50%, -50%);
           box-shadow: 2px 2px 5px #00000045; } }
 
+@media screen and (max-width: 1170px) {
+  #brandsPage #responceTempBlock {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+    min-width: 100%;
+    width: 100%; }
+  #brandsPage .widget {
+    width: 50%;
+    margin-right: 30px; }
+    #brandsPage .widget:last-child {
+      margin-right: 0; } }
+
 #brandsPage .reviewsBlock {
   display: flex;
   align-items: flex-start;
@@ -7549,16 +7581,9 @@ button, input {
         margin-bottom: 30px;
         width: 100%; }
       #brandsPage .reviewsBlock .widgetsArea {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
         width: 100%; }
         #brandsPage .reviewsBlock .widgetsArea .widget {
-          flex-basis: auto;
-          width: 50%;
-          margin-right: 15px; }
-          #brandsPage .reviewsBlock .widgetsArea .widget:last-child {
-            margin-right: 0; } }
+          width: 100%; } }
 
 #allBrandsPage .mainContent .searchBlock {
   display: flex;
@@ -8823,6 +8848,20 @@ button, input {
           transform: rotateX(360deg) translate(-50%, -50%);
           box-shadow: 2px 2px 5px #00000045; } }
 
+@media screen and (max-width: 1170px) {
+  #modelSpareParts #responceTempBlock {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+    min-width: 100%;
+    width: 100%; }
+  #modelSpareParts .widget {
+    width: 50%;
+    margin-right: 30px; }
+    #modelSpareParts .widget:last-child {
+      margin-right: 0; } }
+
 #modelSpareParts .reviewsBlock {
   display: flex;
   align-items: flex-start;
@@ -8961,7 +9000,9 @@ button, input {
         #modelSpareParts .otherSparePartsBlock .widgetsArea .widget {
           flex-basis: auto;
           width: 50%;
-          margin-top: 0; } }
+          margin-top: 0; }
+          #modelSpareParts .otherSparePartsBlock .widgetsArea .widget-rating {
+            padding: 0; } }
 
 #model .reviewsBlock {
   display: flex;
