@@ -3,6 +3,26 @@
   // styles in _custom.scss
   // ===========================================
 
+  // widgets area ------------------------------
+  // @MEDIA -----------------------
+  @media screen and ( max-width: 1170px ) {
+    .widgetsArea {
+      @include flex(flex-start, flex-start);
+      margin-bottom: $outerBlockMargin;
+      min-width: 100%;
+      width: 100%;
+    } // widgerArea
+    .widget {
+      width: 50%;
+      margin-right: $gutterX2;
+      &:last-child {
+        margin-right: 0;
+      } // last-child
+    } // widget
+  }
+  // ==============================
+  // ===========================================
+
   // manufacturerBlock -------------------------
   .manufacturer {
     margin-bottom: $outerBlockMargin;
@@ -456,13 +476,7 @@
         @include flex(flex-start, center);
         width: 100%;
         .widget {
-          @include widthPercent(50%);
-          margin-right: 15px;
-          &:last-child {
-            margin-right: 0;
-          } // last-child
-          .widgetContent {
-          } // widgetContent
+          width: 100%;
         } // widget
       } // widgetArea
     } // 1170

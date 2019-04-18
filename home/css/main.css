@@ -1032,6 +1032,8 @@ button, input {
       .userAssessment__item-average .ratingsBlock__item-rating {
         color: #2c333d;
         font-size: 20px; }
+  .userAssessment-brandsSpareParts {
+    flex-direction: column; }
   .userAssessment-comparisonPage {
     align-items: flex-end;
     height: 100%;
@@ -2551,6 +2553,26 @@ button, input {
     padding-right: 10px; }
   .widget-filter {
     min-height: initial; }
+  .widget-filterClosed {
+    background: #efb428;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 20px;
+    transition: height .3s; }
+    .widget-filterClosed .widget__header .headerIcon svg {
+      width: 100%;
+      height: auto; }
+      .widget-filterClosed .widget__header .headerIcon svg path {
+        fill: white;
+        fill-rule: evenodd;
+        stroke: white;
+        transition: fill .3s, stroke .3s; }
+    .widget-filterClosed .widget__header .headerTitle:after {
+      display: none; }
+    .widget-filterClosed .widget__header .headerTitle__text {
+      color: white;
+      transition: color .3s; }
   .widget-activityTape {
     background: #f6f6f6;
     height: 440px;
@@ -2559,6 +2581,26 @@ button, input {
       display: none; }
     .widget-activityTape .activityTape {
       max-height: calc(440px * 0.8); }
+  .widget-activityTapeClosed {
+    background: #efb428;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 20px;
+    transition: height .3s; }
+    .widget-activityTapeClosed .widget__header .headerIcon svg {
+      width: 100%;
+      height: auto; }
+      .widget-activityTapeClosed .widget__header .headerIcon svg path {
+        fill: white;
+        fill-rule: evenodd;
+        stroke: white;
+        transition: fill .3s, stroke .3s; }
+    .widget-activityTapeClosed .widget__header .headerTitle:after {
+      display: none; }
+    .widget-activityTapeClosed .widget__header .headerTitle__text {
+      color: white;
+      transition: color .3s; }
   .widget-interestingTopics {
     border: none;
     height: initial;
@@ -7991,6 +8033,20 @@ button, input {
               #allBrandsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
                 margin-right: 0; } }
 
+@media screen and (max-width: 1170px) {
+  #brandsSparePartsPage .widgetsArea {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+    min-width: 100%;
+    width: 100%; }
+  #brandsSparePartsPage .widget {
+    width: 50%;
+    margin-right: 30px; }
+    #brandsSparePartsPage .widget:last-child {
+      margin-right: 0; } }
+
 #brandsSparePartsPage .manufacturer {
   margin-bottom: 60px; }
   #brandsSparePartsPage .manufacturer__content {
@@ -8369,11 +8425,7 @@ button, input {
         justify-content: center;
         width: 100%; }
         #brandsSparePartsPage .reviewsBlock .widgetsArea .widget {
-          flex-basis: auto;
-          width: 50%;
-          margin-right: 15px; }
-          #brandsSparePartsPage .reviewsBlock .widgetsArea .widget:last-child {
-            margin-right: 0; } }
+          width: 100%; } }
 
 #brandsSparePartsPage .popularSpareParts {
   margin-bottom: 60px; }
@@ -9781,3 +9833,246 @@ button, input {
           margin-right: 15px; }
           #comparisonPage .reviewsBlock .widgetsArea .widget:last-child {
             margin-right: 0; } }
+
+#comparisonAll .comparisonBlock {
+  margin-bottom: 30px; }
+  #comparisonAll .comparisonBlock__mainContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; }
+  #comparisonAll .comparisonBlock__content {
+    padding: 0;
+    background: white;
+    margin-right: 30px;
+    width: calc((calc((1170px / 12) - 30px) * 8) + 30px * 7); }
+
+#comparisonAll .comparisonBlockItems {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  border-radius: 3px;
+  background: #f6f6f6;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 100%; }
+  #comparisonAll .comparisonBlockItems .comparisonBlockItem {
+    color: #2c333d;
+    max-width: calc( 100% / 3 - 7.5px * 2);
+    min-width: calc( 100% / 3 - 7.5px * 2);
+    margin: 7.5px;
+    text-decoration: none; }
+    #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands {
+      background: white;
+      border-radius: 3px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      position: relative;
+      perspective: 1000px; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands::before, #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands::after {
+        content: '';
+        position: absolute;
+        transition: transform .3s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands::before {
+        border-top: 1px solid #efb428;
+        border-bottom: 1px solid #efb428;
+        transform: scale(0, 1); }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands::after {
+        border-right: 1px solid #efb428;
+        border-left: 1px solid #efb428;
+        transform: scale(1, 0); }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 70px; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock__img {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 30px;
+          width: 120px; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top {
+          position: relative; }
+          #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::before, #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            transition: transform .3s; }
+          #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::before {
+            background: #c1c1c1;
+            height: 1px;
+            width: 100%; }
+          #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::after {
+            background: #efb428;
+            transform: scale(0);
+            height: 1px;
+            width: 100%; }
+          #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top > div {
+            margin-bottom: 15px; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-bottom > div {
+          margin-top: 15px; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .blockSeparator {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background: #efb428;
+        border-radius: 50%;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: rotateX(0) translate(-50%, -50%);
+        transform-origin: top;
+        transition: transform 1s;
+        height: 41px;
+        width: 41px; }
+    #comparisonAll .comparisonBlockItems .comparisonBlockItem__description {
+      font-size: 16px;
+      line-height: 18px;
+      transition: color .3s; }
+    #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover {
+      cursor: pointer; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands::before, #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands::after {
+        transform: scale(1, 1); }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::before, #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::after {
+        transform: scale(0.7); }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__description {
+        color: #efb428;
+        text-decoration: underline; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .blockSeparator {
+        transform: rotateX(360deg) translate(-50%, -50%);
+        box-shadow: 2px 2px 5px #00000045; }
+
+@media screen and (max-width: 1170px) {
+  #comparisonAll .comparisonBlock {
+    margin-bottom: 30px; }
+    #comparisonAll .comparisonBlock__mainContent {
+      flex-direction: column; }
+    #comparisonAll .comparisonBlock__content {
+      margin-right: 0;
+      margin-bottom: 30px;
+      overflow: hidden;
+      padding: 15px;
+      width: 100%; }
+    #comparisonAll .comparisonBlock .widgetsArea {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%; }
+      #comparisonAll .comparisonBlock .widgetsArea .widget {
+        flex-basis: auto;
+        width: 50%;
+        margin-right: 15px; }
+        #comparisonAll .comparisonBlock .widgetsArea .widget:last-child {
+          margin-right: 0; }
+  #comparisonAll .comparisonBlockItems {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 100%; }
+    #comparisonAll .comparisonBlockItems .comparisonBlockItem {
+      color: #2c333d;
+      max-width: calc( 100% / 3 - 7.5px * 2);
+      min-width: calc( 100% / 3 - 7.5px * 2);
+      margin: 7.5px;
+      text-decoration: none; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands {
+        background: white;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        position: relative;
+        perspective: 1000px; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands::before, #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands::after {
+          content: '';
+          position: absolute;
+          transition: transform .3s;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands::before {
+          border-top: 1px solid #efb428;
+          border-bottom: 1px solid #efb428;
+          transform: scale(0, 1); }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands::after {
+          border-right: 1px solid #efb428;
+          border-left: 1px solid #efb428;
+          transform: scale(1, 0); }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          height: 70px; }
+          #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock__img {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 30px;
+            width: 120px; }
+          #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top {
+            position: relative; }
+            #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::before, #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::after {
+              content: '';
+              display: block;
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              transition: transform .3s; }
+            #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::before {
+              background: #c1c1c1;
+              height: 1px;
+              width: 100%; }
+            #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top::after {
+              background: #efb428;
+              transform: scale(0);
+              height: 1px;
+              width: 100%; }
+            #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top > div {
+              margin-bottom: 15px; }
+          #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-bottom > div {
+            margin-top: 15px; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .blockSeparator {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          background: #efb428;
+          border-radius: 50%;
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: rotateX(0) translate(-50%, -50%);
+          transform-origin: top;
+          transition: transform 1s;
+          height: 41px;
+          width: 41px; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__description {
+        font-size: 16px;
+        line-height: 18px;
+        transition: color .3s; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover {
+        cursor: pointer; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands::before, #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands::after {
+          transform: scale(1, 1); }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::before, #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__brands .brandsBlock-top::after {
+          transform: scale(0.7); }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .comparisonBlockItem__description {
+          color: #efb428;
+          text-decoration: underline; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem:hover .blockSeparator {
+          transform: rotateX(360deg) translate(-50%, -50%);
+          box-shadow: 2px 2px 5px #00000045; } }

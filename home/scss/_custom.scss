@@ -1169,6 +1169,9 @@ button, input {
       } // ratingBlock
     } // -average
   } // __ratings
+  &-brandsSpareParts {
+    flex-direction: column;
+  } // -brandsSpareParts
   &-comparisonPage {
     align-items: flex-end;
     height: 100%;
@@ -2076,7 +2079,6 @@ button, input {
     } // innerTextBlock
   } // __description
   &__userAction {
-
   } // __userAction
 } // postYourReview
 // =============================================
@@ -3106,6 +3108,41 @@ button, input {
   &-filter {
     min-height: initial;
   } // filter
+  &-filterClosed {
+    $bgColor: $colorYellow;
+    $iconColor: white;
+    $titleColor: white;
+
+    background: $bgColor;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 20px;
+    transition: height .3s;
+    .widget__header {
+      .headerIcon {
+        svg {
+          width: 100%;
+          height: auto;
+          path {
+            fill: $iconColor;
+            fill-rule: evenodd;
+            stroke: $iconColor;
+            transition: fill .3s, stroke .3s;
+          } // path
+        } // svg
+      } // headerIcon
+      .headerTitle {
+        &:after {
+          display: none;
+        } // after
+        &__text {
+          color: $titleColor;
+          transition: color .3s;
+        } // __text
+      } // headerTitle
+    } // __header
+  } // filterClosed
   &-activityTape {
     $widgetBackground: $colorBgLightGray;
     // event block
@@ -3126,6 +3163,41 @@ button, input {
     .activityTape {
       max-height: $maxHeightEventBlock;
     } // activityTape
+  } // -activityTape
+  &-activityTapeClosed {
+    $bgColor: $colorYellow;
+    $iconColor: white;
+    $titleColor: white;
+
+    background: $bgColor;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 20px;
+    transition: height .3s;
+    .widget__header {
+      .headerIcon {
+        svg {
+          width: 100%;
+          height: auto;
+          path {
+            fill: $iconColor;
+            fill-rule: evenodd;
+            stroke: $iconColor;
+            transition: fill .3s, stroke .3s;
+          } // path
+        } // svg
+      } // headerIcon
+      .headerTitle {
+        &:after {
+          display: none;
+        } // after
+        &__text {
+          color: $titleColor;
+          transition: color .3s;
+        } // __text
+      } // headerTitle
+    } // __header
   } // -activityTape
   &-interestingTopics {
     border: none;

@@ -44,6 +44,10 @@ $(function () {
 
     closePopUpWindow();
 
+    toggleWidgetFilter ();
+
+    toggleWidgetActivityTape ();
+
     // rating page functions ----------------------------
     showAdditInfo('.additInfo', '.headerBlockContent__item');
     tableHeaderClick();
@@ -83,6 +87,10 @@ $(function () {
     // comparison page -------------------------------------------
     ratingCircleDynamic(); // ratingCircleDynamic JQ
     responceComparisonPage(); // responceComparisonPage JQ
+    // ===========================================================
+
+    // brands-spareparts page ------------------------------------
+    responceReplaceTopWidget(); // responceCarBrandPage JQ
     // ===========================================================
 
     ////////////// function for responsive //////////////
@@ -372,6 +380,108 @@ $(function () {
         //     fleXenv.fleXcrollMain(scrollContainer);
         // }
     } // initCustomScrollBar
+
+    function toggleWidgetFilter () {
+        let widgetFilter = $('.widget-filter');
+        let isOpen = false;
+        const ADDIT_HEIGHT = 114;
+        const HEIGHT_BTN = 60;
+        if ( widgetFilter.length ) {
+            let filterHeader = widgetFilter.find('.widget__header');
+            let shevronIcon = widgetFilter.find('.shevronIcon');
+            let widgetContent = widgetFilter.find('.widgetContent');
+            let widgetContentHeight = widgetContent.innerHeight();
+
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                widgetFilter.addClass('widget-filterClosed');
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    if ( !widgetFilter.hasClass('widget-filterClosed') ) {
+                        widgetFilter.addClass('widget-filterClosed');
+                    }
+                    widgetFilter.removeAttr('style');
+                } else {
+                    widgetFilter.removeAttr('style');
+                    widgetFilter.removeClass('widget-filterClosed');
+                }
+            });
+
+            filterHeader.click(function(){
+                if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                    if ( !isOpen ) {
+                        widgetFilter.removeClass('widget-filterClosed');
+                        shevronIcon.addClass('shevronIcon-top');
+                        widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                        setTimeout(function(){
+                            // widgetFilter.innerHeight( 'initial');
+                        }, 100);
+                        isOpen = !isOpen;
+                    } else {
+                        widgetFilter.removeAttr('style');
+                        widgetFilter.addClass('widget-filterClosed');
+                        shevronIcon.removeClass('shevronIcon-top');
+                        widgetContentHeight = widgetContent.innerHeight();
+                        widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                        widgetFilter.innerHeight( HEIGHT_BTN );
+                        isOpen = !isOpen;
+                    }
+                }
+            });
+
+        }
+    } // toggleWidgetActivityTape JQ
+
+    function toggleWidgetActivityTape () {
+        let widgetFilter = $('.widget-activityTape');
+        let isOpen = false;
+        const ADDIT_HEIGHT = 114;
+        const HEIGHT_BTN = 60;
+        if ( widgetFilter.length ) {
+            let filterHeader = widgetFilter.find('.widget__header');
+            let shevronIcon = widgetFilter.find('.shevronIcon');
+            let widgetContent = widgetFilter.find('.widgetContent');
+            let widgetContentHeight = widgetContent.innerHeight();
+
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                widgetFilter.addClass('widget-activityTapeClosed');
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    if ( !widgetFilter.hasClass('widget-activityTapeClosed') ) {
+                        widgetFilter.addClass('widget-activityTapeClosed');
+                    }
+                    widgetFilter.removeAttr('style');
+                } else {
+                    widgetFilter.removeAttr('style');
+                    widgetFilter.removeClass('widget-activityTapeClosed');
+                }
+            });
+
+            filterHeader.click(function(){
+                if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                    if ( !isOpen ) {
+                        widgetFilter.removeClass('widget-activityTapeClosed');
+                        shevronIcon.addClass('shevronIcon-top');
+                        widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                        setTimeout(function(){
+                            // widgetFilter.innerHeight( 'initial');
+                        }, 100);
+                        isOpen = !isOpen;
+                    } else {
+                        widgetFilter.removeAttr('style');
+                        widgetFilter.addClass('widget-activityTapeClosed');
+                        shevronIcon.removeClass('shevronIcon-top');
+                        widgetContentHeight = widgetContent.innerHeight();
+                        widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                        widgetFilter.innerHeight( HEIGHT_BTN );
+                        isOpen = !isOpen;
+                    }
+                }
+            });
+
+        }
+    } // toggleWidgetActivityTape JQ
 
     // rating page functions ------------------------------------
     function showAdditInfo(additInfoBtnSelector, additInfoParentBlockSelector) {
@@ -887,6 +997,49 @@ $(function () {
             });
         }
     } // responceComparisonPage JQ
+    // ===========================================================
+
+    // brands-spareparts page ------------------------------------
+    function responceReplaceTopWidget() {
+        const reviewBlock = $('#reviewBlock');
+        const comparisonBlock = $('#comparisonBlock');
+        const filterWidget = $('.widget-filter');
+        const activityTapeWidget = $('.widget-activityTape');
+        const interestingTopicsWidget = $('.widget-interestingTopics');
+        let responceTempBlock;
+        
+        if ( reviewBlock.length ) {
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                responceTempBlock = $('#responceTempBlock');
+                if (!responceTempBlock.length){
+                    reviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                }
+                responceTempBlock = $('#responceTempBlock');
+                responceTempBlock.append(filterWidget);
+                responceTempBlock.append(activityTapeWidget);
+                comparisonBlock.find('.widgetsArea').append(interestingTopicsWidget);
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    responceTempBlock = $('#responceTempBlock');
+                    if (!responceTempBlock.length){
+                        reviewBlock.before('<aside class="widgetsArea" id="responceTempBlock"></aside>');
+                    }
+                    responceTempBlock = $('#responceTempBlock');
+                    responceTempBlock.append(filterWidget);
+                    responceTempBlock.append(activityTapeWidget);
+                    comparisonBlock.find('.widgetsArea').append(interestingTopicsWidget);
+                } else {
+                    reviewBlock.find('.widgetsArea').prepend(filterWidget);
+                    reviewBlock.find('.widgetsArea').append(activityTapeWidget);
+                    reviewBlock.find('.widgetsArea').append(interestingTopicsWidget);
+                    if ( responceTempBlock ) {
+                        responceTempBlock.remove();
+                    }
+                }
+            });
+        }
+    } // responceCarBrandPage JQ
     // ===========================================================
 
 // secondary functions -------------------------------------------
