@@ -829,6 +829,8 @@ button, input {
 
 .shevronIcon {
   display: block;
+  position: relative;
+  z-index: 2;
   &__icon {
     display: block;
     position: relative;
@@ -880,10 +882,10 @@ button, input {
     } // span
   } // -footerMenu
   &-bottom {
-    transform: rotate(-90deg);
+    transform: translateX(-50%) rotate(-90deg);
   } // -bottom
   &-top {
-    transform: rotate(90deg);
+    transform: translateX(-50%) rotate(90deg);
   } // -bottom
   &-smallTop {
     transform: rotate(90deg) scale(.5);
@@ -3107,6 +3109,34 @@ button, input {
   } // -favoriteManufacture
   &-filter {
     min-height: initial;
+    .widget__header {
+      &:hover {
+        cursor: pointer;
+      } // hover
+      .headerTitle {
+        @include flex(center, space-between);
+        max-width: initial;
+        & > .shevronIcon {
+          transition: transform .3s;
+          &-bottom {
+            transform: translateX(-50%) rotate(-90deg);
+            .shevronIcon__icon {
+              span {
+                background: white;
+              } // span
+            } // _icon
+          } // -bottom
+          &-top {
+            transform: translateX(-50%) rotate(90deg);
+            .shevronIcon__icon {
+              span {
+                background: $colorDarkGray;
+              } // span
+            } // _icon
+          } // -bottom
+        } // shevronIcon
+      } // headerTitle
+    } // __header
   } // filter
   &-filterClosed {
     $bgColor: $colorYellow;
@@ -3117,9 +3147,10 @@ button, input {
     min-height: initial;
     height: 60px;
     overflow: hidden;
-    padding: 20px;
+    padding: 0;
     transition: height .3s;
     .widget__header {
+      padding: 20px;
       .headerIcon {
         svg {
           width: 100%;
@@ -3154,10 +3185,35 @@ button, input {
     height: $maxHeight;
     overflow: hidden;
     .widget__header {
+      &:hover {
+        cursor: pointer;
+      } // hover
       .headerTitle {
+        @include flex(center, space-between);
+        width: 100%;
+        max-width: initial;
         &:after {
           display: none;
         } // after
+        & > .shevronIcon {
+          transition: transform .3s;
+          &-bottom {
+            transform: translateX(-50%) rotate(-90deg);
+            .shevronIcon__icon {
+              span {
+                background: white;
+              } // span
+            } // _icon
+          } // -bottom
+          &-top {
+            transform: translateX(-50%) rotate(90deg);
+            .shevronIcon__icon {
+              span {
+                background: $colorDarkGray;
+              } // span
+            } // _icon
+          } // -bottom
+        } // shevronIcon
       } // headerTitle
     } // __header
     .activityTape {
@@ -3173,9 +3229,10 @@ button, input {
     min-height: initial;
     height: 60px;
     overflow: hidden;
-    padding: 20px;
+    padding: 0;
     transition: height .3s;
     .widget__header {
+      padding: 20px;
       .headerIcon {
         svg {
           width: 100%;

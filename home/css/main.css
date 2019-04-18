@@ -787,7 +787,9 @@ button, input {
     color: white; }
 
 .shevronIcon {
-  display: block; }
+  display: block;
+  position: relative;
+  z-index: 2; }
   .shevronIcon__icon {
     display: block;
     position: relative;
@@ -830,9 +832,9 @@ button, input {
     .shevronIcon-footerMenu span {
       background: #efb428; }
   .shevronIcon-bottom {
-    transform: rotate(-90deg); }
+    transform: translateX(-50%) rotate(-90deg); }
   .shevronIcon-top {
-    transform: rotate(90deg); }
+    transform: translateX(-50%) rotate(90deg); }
   .shevronIcon-smallTop {
     transform: rotate(90deg) scale(0.5); }
   .shevronIcon-smallBottom {
@@ -2553,32 +2555,69 @@ button, input {
     padding-right: 10px; }
   .widget-filter {
     min-height: initial; }
+    .widget-filter .widget__header:hover {
+      cursor: pointer; }
+    .widget-filter .widget__header .headerTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: initial; }
+      .widget-filter .widget__header .headerTitle > .shevronIcon {
+        transition: transform .3s; }
+        .widget-filter .widget__header .headerTitle > .shevronIcon-bottom {
+          transform: translateX(-50%) rotate(-90deg); }
+          .widget-filter .widget__header .headerTitle > .shevronIcon-bottom .shevronIcon__icon span {
+            background: white; }
+        .widget-filter .widget__header .headerTitle > .shevronIcon-top {
+          transform: translateX(-50%) rotate(90deg); }
+          .widget-filter .widget__header .headerTitle > .shevronIcon-top .shevronIcon__icon span {
+            background: #2c333d; }
   .widget-filterClosed {
     background: #efb428;
     min-height: initial;
     height: 60px;
     overflow: hidden;
-    padding: 20px;
+    padding: 0;
     transition: height .3s; }
-    .widget-filterClosed .widget__header .headerIcon svg {
-      width: 100%;
-      height: auto; }
-      .widget-filterClosed .widget__header .headerIcon svg path {
-        fill: white;
-        fill-rule: evenodd;
-        stroke: white;
-        transition: fill .3s, stroke .3s; }
-    .widget-filterClosed .widget__header .headerTitle:after {
-      display: none; }
-    .widget-filterClosed .widget__header .headerTitle__text {
-      color: white;
-      transition: color .3s; }
+    .widget-filterClosed .widget__header {
+      padding: 20px; }
+      .widget-filterClosed .widget__header .headerIcon svg {
+        width: 100%;
+        height: auto; }
+        .widget-filterClosed .widget__header .headerIcon svg path {
+          fill: white;
+          fill-rule: evenodd;
+          stroke: white;
+          transition: fill .3s, stroke .3s; }
+      .widget-filterClosed .widget__header .headerTitle:after {
+        display: none; }
+      .widget-filterClosed .widget__header .headerTitle__text {
+        color: white;
+        transition: color .3s; }
   .widget-activityTape {
     background: #f6f6f6;
     height: 440px;
     overflow: hidden; }
-    .widget-activityTape .widget__header .headerTitle:after {
-      display: none; }
+    .widget-activityTape .widget__header:hover {
+      cursor: pointer; }
+    .widget-activityTape .widget__header .headerTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: initial; }
+      .widget-activityTape .widget__header .headerTitle:after {
+        display: none; }
+      .widget-activityTape .widget__header .headerTitle > .shevronIcon {
+        transition: transform .3s; }
+        .widget-activityTape .widget__header .headerTitle > .shevronIcon-bottom {
+          transform: translateX(-50%) rotate(-90deg); }
+          .widget-activityTape .widget__header .headerTitle > .shevronIcon-bottom .shevronIcon__icon span {
+            background: white; }
+        .widget-activityTape .widget__header .headerTitle > .shevronIcon-top {
+          transform: translateX(-50%) rotate(90deg); }
+          .widget-activityTape .widget__header .headerTitle > .shevronIcon-top .shevronIcon__icon span {
+            background: #2c333d; }
     .widget-activityTape .activityTape {
       max-height: calc(440px * 0.8); }
   .widget-activityTapeClosed {
@@ -2586,21 +2625,23 @@ button, input {
     min-height: initial;
     height: 60px;
     overflow: hidden;
-    padding: 20px;
+    padding: 0;
     transition: height .3s; }
-    .widget-activityTapeClosed .widget__header .headerIcon svg {
-      width: 100%;
-      height: auto; }
-      .widget-activityTapeClosed .widget__header .headerIcon svg path {
-        fill: white;
-        fill-rule: evenodd;
-        stroke: white;
-        transition: fill .3s, stroke .3s; }
-    .widget-activityTapeClosed .widget__header .headerTitle:after {
-      display: none; }
-    .widget-activityTapeClosed .widget__header .headerTitle__text {
-      color: white;
-      transition: color .3s; }
+    .widget-activityTapeClosed .widget__header {
+      padding: 20px; }
+      .widget-activityTapeClosed .widget__header .headerIcon svg {
+        width: 100%;
+        height: auto; }
+        .widget-activityTapeClosed .widget__header .headerIcon svg path {
+          fill: white;
+          fill-rule: evenodd;
+          stroke: white;
+          transition: fill .3s, stroke .3s; }
+      .widget-activityTapeClosed .widget__header .headerTitle:after {
+        display: none; }
+      .widget-activityTapeClosed .widget__header .headerTitle__text {
+        color: white;
+        transition: color .3s; }
   .widget-interestingTopics {
     border: none;
     height: initial;
