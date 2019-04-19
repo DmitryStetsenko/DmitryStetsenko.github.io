@@ -12,6 +12,10 @@ window.onload = function () {
     const COL_3_WIDTH = ( COL_WIDTH * 3 ) + ( GUTTER_X2 * 2 );
     const COL_4_WIDTH = ( COL_WIDTH * 4 ) + ( GUTTER_X2 * 3 );
 
+    // common function ----------------
+    stylesSelect();
+    // ===============================
+
     initCustomScrollBar ();
 
     menuOpened ();
@@ -65,6 +69,19 @@ window.onload = function () {
     sparePartsToggle ();
     brandsToggle ();
     // -------------------------------------------------
+
+
+    // common function ----------------
+    function stylesSelect() {
+        $('select').selecter({
+            // callback    : function ( value, index ) {
+            //     filterEvent1 = value;
+            //     show_event(weekEventsData, filterEvent1, filterEvent2);
+            // },
+            customClass: 'mySelecter'
+        });
+    } //
+    // ===============================
 
     function menuOpened () {
         const topToggleMenu = document.querySelector('.iconBtn-toggleMenu');

@@ -1,0 +1,363 @@
+/* 
+ * Selecter v3.2.3 - 2014-10-24 
+ * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
+ * http://formstone.it/selecter/ 
+ * 
+ * Copyright 2014 Ben Plum; MIT Licensed 
+ */
+
+
+.selecter {
+  position: relative;
+  display: block;
+  //margin: 10px 0;
+  z-index: 1;
+  /*max-width: 30%;*/
+}
+.selecter:focus {
+  box-shadow: none;
+  outline: none;
+}
+.selecter,
+.selecter * {
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+}
+.selecter,
+.selecter *,
+.selecter *:before,
+.selecter *:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+.selecter-element {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+.selecter-element,
+.selecter-element:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+.no-opacity .selecter-element {
+  left: -999999px;
+}
+.selecter-selected {
+  position: relative;
+  background: $callback_l;
+  border: 1px solid #c886e3;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px 10px;
+  text-overflow: clip;
+  z-index: 2;
+  line-height: 1em;
+  //border-radius: 3px;
+}
+.selecter-selected:after {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  bottom: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #c886e3;
+  content: '';
+  display: block;
+  margin: auto 0;
+}
+.selecter-selected:hover {
+  color: #fff;
+  border: 1px solid #eed3fa;
+}
+.selecter.disabled .selecter-selected:hover {
+  color: #fff;
+}
+.selecter-options {
+  width: 100%;
+  max-height: 260px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #c886e3;
+  //border-width: 0 1px 1px;
+  border-top: 1px solid transparent;
+  background-color: $callback_l;
+  display: none;
+  margin: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 0;
+  z-index: 50;
+  //border-radius: 0 0 3px 3px;
+  //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.selecter-options:hover {
+  border: 1px solid #eed3fa;
+}
+.selecter-options.scroller {
+  position: absolute;
+}
+.no-opacity .selecter-options {
+  width: auto;
+}
+.selecter-group {
+  border-bottom: 1px solid rgba(200, 134, 227, 0);
+  color: #cd9de1;
+  display: block;
+  font-size: 1px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+.selecter-item {
+  width: 100%;
+  background: $callback_l;
+  //border-bottom: 1px solid #c886e3;
+  color: #cd9de1;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+.selecter-item.placeholder {
+  display: none;
+}
+.selecter-item.selected {
+  background: $callback_l;
+}
+.selecter-item.disabled {
+  color: #faff51;
+  cursor: default;
+}
+.selecter-item:first-child {
+  border-radius: 0;
+}
+.selecter-item:last-child {
+  border-bottom: 0;
+  border-radius: 0 0 2px 2px;
+}
+.selecter-item:hover,
+.selecter-item.selected:hover {
+  color: #cd9de1;
+  background-color: #eed3fa;
+}
+.selecter-item.disabled,
+.selecter-item.disabled:hover {
+  color: red;
+  background-color: green;
+}
+.selecter.open {
+  z-index: 3;
+}
+.selecter.open .selecter-selected {
+  z-index: 51;
+  //border-radius: 3px 3px 0 0;
+}
+.selecter.open .selecter-selected,
+.selecter.focus .selecter-selected {
+  background-color: $callback_l;
+  //box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.selecter.cover .selecter-options {
+  border-width: 1px;
+  top: 0;
+  //border-radius: 3px;
+}
+.selecter.cover .selecter-options .selecter-item.first {
+  //border-radius: 3px 3px 0 0;
+}
+.selecter.cover.open .selecter-selected {
+  z-index: 49;
+  //border-radius: 3px 3px 0 0;
+}
+.selecter.bottom .selecter-options {
+  top: auto;
+  bottom: 100%;
+  border-width: 1px 1px 0;
+}
+.selecter.bottom .selecter-item:last-child {
+  border: none;
+}
+.selecter.bottom.open .selecter-selected {
+  //border-radius: 0 0 3px 3px;
+}
+.selecter.bottom.open .selecter-options {
+  //border-radius: 3px 3px 0 0;
+}
+.selecter.bottom .cover .selecter-options {
+  top: auto;
+  bottom: 0;
+}
+.selecter.bottom .cover.open .selecter-selected {
+  //border-radius: 3px;
+}
+.selecter.bottom .cover.open .selecter-options {
+  //border-radius: 3px;
+}
+.selecter.multiple .selecter-options {
+  width: 100%;
+  position: static;
+  border-width: 1px;
+  display: block;
+  //border-radius: 3px;
+  box-shadow: none;
+}
+.selecter.disabled .selecter-selected {
+  background: #ff00c4;
+  border-color: #cccccc;
+  color: #cccccc;
+  cursor: default;
+}
+.selecter.disabled .selecter-options {
+  background: #ffbc03;
+  border-color: #cccccc;
+}
+.selecter.disabled .selecter-group,
+.selecter.disabled .selecter-item {
+  border-color: #cccccc;
+  color: #cccccc;
+  cursor: default;
+}
+.selecter.disabled .selecter-item.selected,
+.selecter.disabled .selecter-item.selected:hover {
+  background: #fafafa;
+}
+.selecter.disabled .selecter-item,
+.selecter.disabled .selecter-item:hover {
+  color: #cccccc;
+  background-color: #ffffff;
+}
+.selecter-options.scroller {
+  overflow: hidden;
+}
+.selecter-options.scroller .scroller-content {
+  max-height: 260px;
+  padding: 0;
+}
+
+.mySelecter {
+  // font
+  $fontColor: $colorDarkGray;
+  $fontSize: 13px;
+  // border
+  $borderColor: $colorInputBorder;
+  $borderRadius: 3px;
+  // option
+  $itemColor: $colorDarkGray;
+  $itemFontSize: 13px;
+  $itemBgColor: $colorBgLightGray;
+
+  & .selecter {
+    &-selected {
+      position: relative;
+      background: white;
+      border-radius: $borderRadius;
+      border: 1px solid $borderColor;
+      color: $fontColor;
+      cursor: pointer;
+      display: block;
+      font-size: $fontSize;
+      margin: 0;
+      overflow: hidden;
+      padding: 10px;
+      text-overflow: clip;
+      z-index: 2;
+      line-height: 1em;
+      //border-radius: 3px;
+      &:after {
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        bottom: 0;
+        // triangle
+        //border-left: 5px solid transparent;
+        //border-right: 5px solid transparent;
+        //border-top: 5px solid $borderColor;
+        // shevron
+        border: none;
+        content: '>';
+        font-family: 'Segoe Script', sans-serif;
+        font-size: 10px;
+        transform: rotate(94deg) scaleY(1.5) translateX(-3px);
+        // ----------------------
+        display: block;
+        margin: auto 0;
+      } // after
+    } // -selected
+    &-options {
+      width: 100%;
+      max-height: 260px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border: 1px solid $borderColor;
+      border-top: 1px solid transparent;
+      background-color: white;
+      display: none;
+      margin: 0;
+      overflow: auto;
+      overflow-x: hidden;
+      padding: 0;
+      z-index: 50;
+    } // -options
+    &-item {
+      width: 100%;
+      background: white;
+      color: $itemColor;
+      cursor: pointer;
+      display: block;
+      font-size: $itemFontSize;
+      margin: 0;
+      overflow: hidden;
+      padding: 10px 15px;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      &:hover, &.selected:hover {
+        color: $itemColor;
+        background-color: $itemBgColor;
+      } // &:hover, &.selected:hover
+      &.selected {
+        color: $itemColor;
+        background-color: $itemBgColor;
+      } // selected
+    } // item
+  } // selecter
+  &.open, &.focus {
+    & .selecter {
+      &-selected {
+        background-color: white;
+      } // -selected
+    } // .selecter
+  } // open, focus
+
+  // @MEDIA ---------------------------------------
+  @media screen and (max-width: 740px) {
+    .selecter {
+      max-width: 100%;
+    } // selecter
+  } // 740
+  // ===============================================
+
+} // mySelecter
+
+
+

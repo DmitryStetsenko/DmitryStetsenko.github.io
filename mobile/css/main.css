@@ -570,7 +570,7 @@ button, input {
     border: 1px solid #efb428;
     box-shadow: none;
     color: #2c333d;
-    height: 30px;
+    height: 35px;
     font-size: 13px;
     padding: 0;
     width: 100%; }
@@ -2807,6 +2807,27 @@ button, input {
         width: 120px; }
     .widget .widgetContent .interestingTopics .topic__description {
       font-size: 18px; }
+  .widget .widgetContent .comparisonWidget__block {
+    margin-bottom: 20px; }
+    .widget .widgetContent .comparisonWidget__block:last-child {
+      margin-bottom: 0; }
+  .widget .widgetContent .comparisonWidget__content {
+    width: 100%; }
+  .widget .widgetContent .comparisonWidget .manufactureSelect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%; }
+    .widget .widgetContent .comparisonWidget .manufactureSelect__item {
+      flex-basis: auto;
+      width: 50%; }
+    .widget .widgetContent .comparisonWidget .manufactureSelect__vs {
+      color: #efb428;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0 8px;
+      transform: translateY(100%); }
   .widget-rating .widget__header:hover .headerTitle__text {
     transform: translateX(-15%); }
   .widget-ratingSpareParts {
@@ -2908,6 +2929,14 @@ button, input {
             width: 100%; }
       .widget-interestingTopics .widget__header .headerTitle::after {
         display: none; }
+  .widget-comparison {
+    height: initial;
+    min-height: initial; }
+    .widget-comparison .widget__header {
+      width: 100%; }
+      .widget-comparison .widget__header .headerTitle {
+        max-width: initial;
+        width: 100%; }
 
 .scrollwrapper, .mcontentwrapper {
   height: calc(440px * 0.8) !important; }
@@ -4116,6 +4145,303 @@ button, input {
     width: initial; }
   .ratingTableBlock-persentRating .brandRatingInfo__rating {
     font-size: 10px; }
+
+/* 
+ * Selecter v3.2.3 - 2014-10-24 
+ * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
+ * http://formstone.it/selecter/ 
+ * 
+ * Copyright 2014 Ben Plum; MIT Licensed 
+ */
+.selecter {
+  position: relative;
+  display: block;
+  z-index: 1;
+  /*max-width: 30%;*/ }
+
+.selecter:focus {
+  box-shadow: none;
+  outline: none; }
+
+.selecter,
+.selecter * {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important; }
+
+.selecter,
+.selecter *,
+.selecter *:before,
+.selecter *:after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.selecter-element {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  z-index: -1; }
+
+.selecter-element,
+.selecter-element:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent; }
+
+.no-opacity .selecter-element {
+  left: -999999px; }
+
+.selecter-selected {
+  position: relative;
+  background: red;
+  border: 1px solid #c886e3;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px 10px;
+  text-overflow: clip;
+  z-index: 2;
+  line-height: 1em; }
+
+.selecter-selected:after {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  bottom: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #c886e3;
+  content: '';
+  display: block;
+  margin: auto 0; }
+
+.selecter-selected:hover {
+  color: #fff;
+  border: 1px solid #eed3fa; }
+
+.selecter.disabled .selecter-selected:hover {
+  color: #fff; }
+
+.selecter-options {
+  width: 100%;
+  max-height: 260px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #c886e3;
+  border-top: 1px solid transparent;
+  background-color: red;
+  display: none;
+  margin: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 0;
+  z-index: 50; }
+
+.selecter-options:hover {
+  border: 1px solid #eed3fa; }
+
+.selecter-options.scroller {
+  position: absolute; }
+
+.no-opacity .selecter-options {
+  width: auto; }
+
+.selecter-group {
+  border-bottom: 1px solid rgba(200, 134, 227, 0);
+  color: #cd9de1;
+  display: block;
+  font-size: 1px;
+  padding: 10px 15px;
+  text-transform: uppercase; }
+
+.selecter-item {
+  width: 100%;
+  background: red;
+  color: #cd9de1;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-overflow: ellipsis; }
+
+.selecter-item.placeholder {
+  display: none; }
+
+.selecter-item.selected {
+  background: red; }
+
+.selecter-item.disabled {
+  color: #faff51;
+  cursor: default; }
+
+.selecter-item:first-child {
+  border-radius: 0; }
+
+.selecter-item:last-child {
+  border-bottom: 0;
+  border-radius: 0 0 2px 2px; }
+
+.selecter-item:hover,
+.selecter-item.selected:hover {
+  color: #cd9de1;
+  background-color: #eed3fa; }
+
+.selecter-item.disabled,
+.selecter-item.disabled:hover {
+  color: red;
+  background-color: green; }
+
+.selecter.open {
+  z-index: 3; }
+
+.selecter.open .selecter-selected {
+  z-index: 51; }
+
+.selecter.open .selecter-selected,
+.selecter.focus .selecter-selected {
+  background-color: red; }
+
+.selecter.cover .selecter-options {
+  border-width: 1px;
+  top: 0; }
+
+.selecter.cover.open .selecter-selected {
+  z-index: 49; }
+
+.selecter.bottom .selecter-options {
+  top: auto;
+  bottom: 100%;
+  border-width: 1px 1px 0; }
+
+.selecter.bottom .selecter-item:last-child {
+  border: none; }
+
+.selecter.bottom .cover .selecter-options {
+  top: auto;
+  bottom: 0; }
+
+.selecter.multiple .selecter-options {
+  width: 100%;
+  position: static;
+  border-width: 1px;
+  display: block;
+  box-shadow: none; }
+
+.selecter.disabled .selecter-selected {
+  background: #ff00c4;
+  border-color: #cccccc;
+  color: #cccccc;
+  cursor: default; }
+
+.selecter.disabled .selecter-options {
+  background: #ffbc03;
+  border-color: #cccccc; }
+
+.selecter.disabled .selecter-group,
+.selecter.disabled .selecter-item {
+  border-color: #cccccc;
+  color: #cccccc;
+  cursor: default; }
+
+.selecter.disabled .selecter-item.selected,
+.selecter.disabled .selecter-item.selected:hover {
+  background: #fafafa; }
+
+.selecter.disabled .selecter-item,
+.selecter.disabled .selecter-item:hover {
+  color: #cccccc;
+  background-color: #ffffff; }
+
+.selecter-options.scroller {
+  overflow: hidden; }
+
+.selecter-options.scroller .scroller-content {
+  max-height: 260px;
+  padding: 0; }
+
+.mySelecter .selecter-selected {
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #c1c7d0;
+  color: #2c333d;
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px;
+  text-overflow: clip;
+  z-index: 2;
+  line-height: 1em; }
+  .mySelecter .selecter-selected:after {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+    border: none;
+    content: '>';
+    font-family: 'Segoe Script', sans-serif;
+    font-size: 10px;
+    transform: rotate(94deg) scaleY(1.5) translateX(-3px);
+    display: block;
+    margin: auto 0; }
+
+.mySelecter .selecter-options {
+  width: 100%;
+  max-height: 260px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #c1c7d0;
+  border-top: 1px solid transparent;
+  background-color: white;
+  display: none;
+  margin: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 0;
+  z-index: 50; }
+
+.mySelecter .selecter-item {
+  width: 100%;
+  background: white;
+  color: #2c333d;
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-overflow: ellipsis; }
+  .mySelecter .selecter-item:hover, .mySelecter .selecter-item.selected:hover {
+    color: #2c333d;
+    background-color: #f6f6f6; }
+  .mySelecter .selecter-item.selected {
+    color: #2c333d;
+    background-color: #f6f6f6; }
+
+.mySelecter.open .selecter-selected, .mySelecter.focus .selecter-selected {
+  background-color: white; }
+
+@media screen and (max-width: 740px) {
+  .mySelecter .selecter {
+    max-width: 100%; } }
 
 .siteHeaderSection {
   background: #2c333d;
@@ -7674,3 +8000,81 @@ button, input {
     #comparisonPage .reviewsBlock .contentArea .blockHeader__filterBtn .filterBtn {
       flex-basis: auto;
       width: 33%; }
+
+#comparisonAll .widget {
+  padding: 15px; }
+
+#comparisonAll .label {
+  font-size: 13px; }
+
+#comparisonAll .comparisonBlock {
+  margin-bottom: 30px; }
+  #comparisonAll .comparisonBlock .blockHeader {
+    justify-content: center; }
+  #comparisonAll .comparisonBlock__content {
+    padding: 0;
+    background: white;
+    width: 100%; }
+
+#comparisonAll .comparisonBlockItems {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  border-radius: 3px;
+  background: #f6f6f6;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 7.5px;
+  width: 100%; }
+  #comparisonAll .comparisonBlockItems .comparisonBlockItem {
+    color: #2c333d;
+    max-width: calc( 100% / 2 - 7.5px * 2);
+    min-width: calc( 100% / 2 - 7.5px * 2);
+    margin: 7.5px;
+    padding: 0;
+    text-decoration: none; }
+    #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands {
+      background: white;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      position: relative;
+      perspective: 1000px; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 40px; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock__img {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 20px;
+          width: 75px; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top {
+          position: relative; }
+          #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-top > div {
+            margin-bottom: 7px; }
+        #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .brandsBlock-bottom > div {
+          margin-top: 7px; }
+      #comparisonAll .comparisonBlockItems .comparisonBlockItem__brands .blockSeparator {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background: #efb428;
+        border-radius: 50%;
+        color: white;
+        font-size: 9px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: rotateX(0) translate(-50%, -50%);
+        transition: unset;
+        transform-origin: top;
+        height: 22px;
+        width: 22px; }
+    #comparisonAll .comparisonBlockItems .comparisonBlockItem__description {
+      font-size: 13px;
+      line-height: 16px;
+      transition: color .3s; }

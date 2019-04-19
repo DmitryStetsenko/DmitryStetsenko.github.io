@@ -3,6 +3,7 @@
 @import "mixin";
 @import "animate";
 @import "custom";
+@import "selecter";
 
 
 // header ---------------------------------
@@ -1600,6 +1601,10 @@
 
 // comparison page --------------------------
 @import "comparison";
+// ==========================================
+
+// comparison-all page ----------------------
+@import "comparison-all";
 // ==========================================
 
 

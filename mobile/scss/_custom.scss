@@ -282,7 +282,7 @@ button, input {
     border: 1px solid $colorRatingYellow;
     box-shadow: none;
     color: $colorDarkGray;
-    height: 30px;
+    height: 35px;
     font-size: 13px;
     padding: 0;
     width: 100%;
@@ -3237,6 +3237,32 @@ button, input {
 
       } // topic
     } // interestingTopic
+    .comparisonWidget {
+      &__block {
+        margin-bottom: $blockTitleMarginBottom;
+        &:last-child {
+          margin-bottom: 0;
+        } // last-child
+      } // block
+      &__content {
+        width: 100%;
+      } // content
+      .manufactureSelect {
+        @include flex(center, space-between);
+        margin-bottom: $blockTitleMarginBottom;
+        width: 100%;
+        &__item {
+          @include widthPercent(50%);
+        } // __item
+        &__vs {
+          color: $colorYellow;
+          font-size: 15px;
+          font-weight: bold;
+          margin: 0 8px;
+          transform: translateY(100%);
+        } // vs
+      } // .manufactureSelect
+    } // comparisonWidger
   } // widgetContent
   &-rating {
     .widget__header {
@@ -3392,6 +3418,17 @@ button, input {
     .interestingTopics {
     } // activityTape
   } // -interestingTopics
+  &-comparison {
+    height: initial;
+    min-height: initial;
+    .widget__header {
+      width: 100%;
+      .headerTitle {
+        max-width: initial;
+        width: 100%;
+      } // headerTitle
+    } // __header
+  } // -comparison
 } // widget
 // ===============================================
 
@@ -3436,6 +3473,7 @@ button, input {
 
 //////////////////////////////////////////////
 
+// pageHeaderBlock ---------------------------
 .pageHeaderBlock {
   @include flex(flex-start, flex-start);
   flex-direction: column;
@@ -4957,5 +4995,5 @@ button, input {
 } // ratingTableBlock
 // ===========================================
 
-// pageHeaderBlock ---------------------------
+
 
