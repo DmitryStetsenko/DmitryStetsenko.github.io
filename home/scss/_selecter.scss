@@ -348,11 +348,16 @@
       } // -selected
     } // .selecter
   } // open, focus
+
+  // @MEDIA ---------------------------------------
+  @media screen and (max-width: 740px) {
+    .selecter {
+      max-width: 100%;
+    } // selecter
+  } // 740
+  // ===============================================
+
 } // mySelecter
 
-@media screen and (max-width: 740px) {
-  .selecter {
-    max-width: 100%;
-  }
-}
+
 

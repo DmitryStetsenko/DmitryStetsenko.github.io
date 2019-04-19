@@ -107,7 +107,7 @@ $(function () {
     /////////////////////////////////////////////////////
 
     // -------------------------------------------------
-    // common funtion ----------------
+    // common function ----------------
     function stylesSelect() {
         $('select').selecter({
             // callback    : function ( value, index ) {
