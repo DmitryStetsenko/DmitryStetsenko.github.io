@@ -16,7 +16,7 @@ $(function () {
 
     // common function
 
-    // stylesSelect();
+    stylesSelect();
 
     initCustomScrollBar();
 
@@ -88,6 +88,10 @@ $(function () {
     // comparison page -------------------------------------------
     ratingCircleDynamic(); // ratingCircleDynamic JQ
     responceComparisonPage(); // responceComparisonPage JQ
+    // ===========================================================
+
+    // comparison-all page ---------------------------------------
+    responceComparisonAllPage(); // responceComparisonAllPage JQ
     // ===========================================================
 
     // brands-spareparts page ------------------------------------
@@ -1040,6 +1044,28 @@ $(function () {
             });
         }
     } // responceComparisonPage JQ
+
+    // ===========================================================
+
+    // comparison-all page ---------------------------------------
+    function responceComparisonAllPage() {
+        const comparisonAll = $('#comparisonAll');
+        const comparisonBlock = $('#sparePartsPageComparisonBlock');
+        const comparisonBlockMainContent = $('.comparisonBlock__mainContent');
+        const widgetsBlock = $('.widgetsArea');
+        if ( comparisonAll.length ) {
+            if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                comparisonBlock.before(widgetsBlock);
+            }
+            window.addEventListener('resize', function(){
+                if (window.matchMedia('(max-width: 1170px)').matches) {
+                    comparisonBlock.before(widgetsBlock);
+                } else {
+                    comparisonBlockMainContent.append(widgetsBlock);
+                }
+            });
+        }
+    } // responceComparisonAllPage JQ
     // ===========================================================
 
     // brands-spareparts page ------------------------------------

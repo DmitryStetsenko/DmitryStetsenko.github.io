@@ -257,7 +257,7 @@
   $fontColor: $colorDarkGray;
   $fontSize: 13px;
   // border
-  $borderColor: $colorGray;
+  $borderColor: $colorInputBorder;
   $borderRadius: 3px;
   // option
   $itemColor: $colorDarkGray;
@@ -276,7 +276,7 @@
       font-size: $fontSize;
       margin: 0;
       overflow: hidden;
-      padding: 7px 10px;
+      padding: 10px;
       text-overflow: clip;
       z-index: 2;
       line-height: 1em;
@@ -295,9 +295,9 @@
         // shevron
         border: none;
         content: '>';
-        font-family: Arial, sans-serif;
+        font-family: 'Segoe Script', sans-serif;
         font-size: 10px;
-        transform: rotate(90deg) scaleY(1.5) translateX(-3px);
+        transform: rotate(94deg) scaleY(1.5) translateX(-3px);
         // ----------------------
         display: block;
         margin: auto 0;

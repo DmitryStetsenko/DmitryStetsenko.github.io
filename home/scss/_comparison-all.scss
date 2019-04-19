@@ -158,6 +158,52 @@
 
   // @MEDIA ---------------------------
   @media screen and ( max-width: 1170px ) {
+    .widgetsArea {
+      @include flex(flex-start, center);
+      margin-bottom: $outerBlockMargin;
+      width: 100%;
+      .widget {
+        &__header {
+          margin-bottom: auto;
+        } // __header
+        .widgetContent {
+          .comparisonWidget {
+            @include flex(stretch, space-between);
+            &__block {
+              @include flex(flex-start, flex-start);
+              flex-direction: column;
+              @include widthPercent(50%);
+              margin-right: $gutterX2;
+              margin-bottom: 0;
+              &:last-child {
+                margin-right: 0;
+              } // last-child
+            } // block
+            &__content {
+              .mainBtn {
+                &-widgetBtn {
+                  order: -1;
+                } // -widgetBtn
+              } // mainBtn
+            } // content
+            .manufactureSelect {
+              @include flex(center, space-between);
+              margin-bottom: $blockTitleMarginBottom;
+              &__item {
+                @include widthPercent(50%);
+              } // __item
+              &__vs {
+                color: $colorYellow;
+                font-size: 15px;
+                font-weight: bold;
+                margin: 0 8px;
+                transform: translateY(100%);
+              } // vs
+            } // .manufactureSelect
+          } // comparisonWidger
+        } // widgetContent
+      } // widget
+    } // widgetArea
     .comparisonBlock {
       margin-bottom: 30px;
       &__mainContent {
@@ -170,19 +216,6 @@
         padding: 15px;
         width: 100%;
       } // __content
-      .widgetsArea {
-        @include flex(flex-start, center);
-        width: 100%;
-        .widget {
-          @include widthPercent(50%);
-          margin-right: 15px;
-          &:last-child {
-            margin-right: 0;
-          } // last-child
-          .widgetContent {
-          } // widgetContent
-        } // widget
-      } // widgetArea
     } // comparisonBlock
     .comparisonBlockItems {
       $blockWidth: 100%;
