@@ -442,53 +442,56 @@ $(function () {
     } // toggleWidgetActivityTape JQ
 
     function toggleWidgetActivityTape () {
-        let widgetFilter = $('.widget-activityTape');
-        let isOpen = false;
-        const ADDIT_HEIGHT = 114;
-        const HEIGHT_BTN = 60;
-        if ( widgetFilter.length ) {
-            let filterHeader = widgetFilter.find('.widget__header');
-            let shevronIcon = widgetFilter.find('.shevronIcon');
-            let widgetContent = widgetFilter.find('.widgetContent');
-            let widgetContentHeight = widgetContent.innerHeight();
+        let mainPage = $('#mainPage');
+        if ( !mainPage.length ) {
+            let widgetFilter = $('.widget-activityTape');
+            let isOpen = false;
+            const ADDIT_HEIGHT = 114;
+            const HEIGHT_BTN = 60;
+            if ( widgetFilter.length ) {
+                let filterHeader = widgetFilter.find('.widget__header');
+                let shevronIcon = widgetFilter.find('.shevronIcon');
+                let widgetContent = widgetFilter.find('.widgetContent');
+                let widgetContentHeight = widgetContent.innerHeight();
 
-            if ( window.matchMedia('(max-width: 1170px)').matches ) {
-                widgetFilter.addClass('widget-activityTapeClosed');
-            }
-            window.addEventListener('resize', function(){
-                if (window.matchMedia('(max-width: 1170px)').matches) {
-                    if ( !widgetFilter.hasClass('widget-activityTapeClosed') ) {
-                        widgetFilter.addClass('widget-activityTapeClosed');
-                    }
-                    widgetFilter.removeAttr('style');
-                } else {
-                    widgetFilter.removeAttr('style');
-                    widgetFilter.removeClass('widget-activityTapeClosed');
-                }
-            });
-
-            filterHeader.click(function(){
                 if ( window.matchMedia('(max-width: 1170px)').matches ) {
-                    if ( !isOpen ) {
-                        widgetFilter.removeClass('widget-activityTapeClosed');
-                        shevronIcon.addClass('shevronIcon-top');
-                        widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
-                        setTimeout(function(){
-                            // widgetFilter.innerHeight( 'initial');
-                        }, 100);
-                        isOpen = !isOpen;
+                    widgetFilter.addClass('widget-activityTapeClosed');
+                }
+                window.addEventListener('resize', function(){
+                    if (window.matchMedia('(max-width: 1170px)').matches) {
+                        if ( !widgetFilter.hasClass('widget-activityTapeClosed') ) {
+                            widgetFilter.addClass('widget-activityTapeClosed');
+                        }
+                        widgetFilter.removeAttr('style');
                     } else {
                         widgetFilter.removeAttr('style');
-                        widgetFilter.addClass('widget-activityTapeClosed');
-                        shevronIcon.removeClass('shevronIcon-top');
-                        widgetContentHeight = widgetContent.innerHeight();
-                        widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
-                        widgetFilter.innerHeight( HEIGHT_BTN );
-                        isOpen = !isOpen;
+                        widgetFilter.removeClass('widget-activityTapeClosed');
                     }
-                }
-            });
+                });
 
+                filterHeader.click(function(){
+                    if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                        if ( !isOpen ) {
+                            widgetFilter.removeClass('widget-activityTapeClosed');
+                            shevronIcon.addClass('shevronIcon-top');
+                            widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                            setTimeout(function(){
+                                // widgetFilter.innerHeight( 'initial');
+                            }, 100);
+                            isOpen = !isOpen;
+                        } else {
+                            widgetFilter.removeAttr('style');
+                            widgetFilter.addClass('widget-activityTapeClosed');
+                            shevronIcon.removeClass('shevronIcon-top');
+                            widgetContentHeight = widgetContent.innerHeight();
+                            widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                            widgetFilter.innerHeight( HEIGHT_BTN );
+                            isOpen = !isOpen;
+                        }
+                    }
+                });
+
+            }
         }
     } // toggleWidgetActivityTape JQ
 
