@@ -198,3 +198,10 @@
   object-position: $position;
 }
 
+@mixin shevronRight() {
+  content: '>';
+  font-family: "Segoe Script", sans-serif;
+  font-size: 14px;
+  transform: rotate(10deg);
+}
+

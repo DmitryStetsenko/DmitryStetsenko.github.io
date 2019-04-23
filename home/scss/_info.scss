@@ -1,0 +1,74 @@
+#infoPage {
+
+  // info --------------------------------------------
+  .info {
+    @include flex(flex-start, flex-start);
+    margin-bottom: $outerBlockMargin;
+    .manageButton {
+      &__item {
+        @include flex(center, space-between);
+        border-radius: $mainBorderRadius;
+        border: 1px solid $colorBorderLightGray;
+        color: $colorDarkGray;
+        height: 35px;
+        margin-bottom: 5px;
+        padding: 0 20px;
+        width: 100%;
+        white-space: nowrap;
+        &:hover {
+          cursor: pointer;
+          background: $colorYellow;
+          border-color: $colorYellow;
+          color: white;
+        } // hover
+        &:last-child {
+          margin-bottom: 0;
+        } // last-child
+        &::after {
+          @include shevronRight();
+          margin-left: 30px;
+        } // after
+        &-active {
+          cursor: pointer;
+          background: $colorYellow;
+          border-color: $colorYellow;
+          color: white;
+        } // -active
+      } // __item
+    } // manageButton
+    &__manage {
+      margin-right: $gutterX2;
+      min-width: $col4Width;
+    } // __manage
+    &__contentsBlock {
+      overflow: hidden;
+      width: 100%;
+    } // __contentsBlock
+    &__content {
+      .blockInfo {
+        &__item {
+          line-height: 22px;
+          margin-bottom: $blockTitleMarginBottom;
+          &:last-child {
+            margin-bottom: 0;
+          } // last-child
+        } // __item
+      } // blockInfo
+      &-hidden {
+        display: none;
+      } // hidden
+    } // __content
+
+    // @MEDIA -------------------------
+    @media screen and ( max-width: 900px ) {
+      &__manage {
+        margin-right: $gutterX2;
+        min-width: initial;
+      } // __manage
+    } // 900
+    // ================================
+
+  } // info
+  // =================================================
+
+} // infoPage

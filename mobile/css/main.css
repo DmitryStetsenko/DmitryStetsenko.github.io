@@ -8078,3 +8078,47 @@ button, input {
       font-size: 13px;
       line-height: 16px;
       transition: color .3s; }
+
+#infoPage .blockHeader {
+  justify-content: center; }
+
+#infoPage .info {
+  margin-bottom: 45px; }
+  #infoPage .info .manageButton__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 3px;
+    border: 1px solid #e8e8e8;
+    color: #2c333d;
+    height: 35px;
+    margin-bottom: 5px;
+    padding: 0 20px;
+    width: 100%;
+    white-space: nowrap; }
+    #infoPage .info .manageButton__item:last-child {
+      margin-bottom: 0; }
+    #infoPage .info .manageButton__item::after {
+      content: '>';
+      font-family: "Segoe Script", sans-serif;
+      font-size: 14px;
+      transform: rotate(10deg);
+      margin-left: 30px; }
+    #infoPage .info .manageButton__item-active {
+      cursor: pointer;
+      background: #efb428;
+      border-color: #efb428;
+      color: white; }
+  #infoPage .info__manage {
+    margin-bottom: 20px;
+    width: 100%; }
+  #infoPage .info__contentsBlock {
+    overflow: hidden;
+    width: 100%; }
+  #infoPage .info__content .blockInfo__item {
+    line-height: 22px;
+    margin-bottom: 20px; }
+    #infoPage .info__content .blockInfo__item:last-child {
+      margin-bottom: 0; }
+  #infoPage .info__content-hidden {
+    display: none; }

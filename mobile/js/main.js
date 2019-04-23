@@ -65,6 +65,10 @@ window.onload = function () {
     ratingCircleDynamic(); // ratingCircleDynamic JQ
     // ===========================================================
 
+    // info page -------------------------------------------------
+    info(); // info JQ
+    // ===========================================================
+
     // mobile -----------------------------------------
     sparePartsToggle ();
     brandsToggle ();
@@ -724,6 +728,53 @@ window.onload = function () {
             });
         }
     } // ratingCircleDynamic JQ
+    // ===========================================================
+
+    // info page -------------------------------------------------
+    function info() {
+        const infoPage = $('#infoPage');
+        if ( infoPage.length ) {
+            const button = $('.manageButton__item');
+            const contentBlock = $('.info__contentBlock');
+            const content = $('.info__content');
+            let visibleContentCount = 0;
+
+            button.click(function(){
+                let currentCount = $(this).attr('data-count');
+                button.removeClass('manageButton__item-active');
+                $(this).addClass('manageButton__item-active');
+
+                if ( visibleContentCount != currentCount  ) {
+                    content.eq(visibleContentCount).css({
+                        'transition' : 'transform .5s, opacity .5s',
+                        'transform': 'translateX(100%)',
+                        'opacity': '0'
+                    });
+                    content.eq(currentCount).css({
+                        'transform': 'translateX(-100%)',
+                        'opacity': '0'
+                    });
+
+                    setTimeout(function() {
+                        content.eq(visibleContentCount).addClass('info__content-hidden');
+                        content.eq(visibleContentCount).removeAttr('style');
+                        content.eq(currentCount).removeClass('info__content-hidden');
+                        setTimeout(function(){
+                            content.eq(currentCount).css({
+                                'transition' : 'transform .2s, opacity .2s',
+                                'transform': 'translateX(0)',
+                                'opacity': '1'
+                            });
+                            setTimeout(function(){
+                                content.eq(currentCount).removeAttr('style');
+                                visibleContentCount = currentCount;
+                            },200);
+                        },50);
+                    }, 300);
+                }
+            });
+        }
+    } // info JQ
     // ===========================================================
 
     // mobile ---------------------------------------------------
