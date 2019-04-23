@@ -64,6 +64,7 @@ $(function () {
     initFilter(); // JQ
     reviewShowMoreBtn(); // JQ
     responceReplaceTopWidgetSparePartsPage() // JQ;
+    toggleWidgetRating(); // JQ
     // ==========================================================
 
     // rating & spareParts page function ------------------------
@@ -103,7 +104,7 @@ $(function () {
     // ===========================================================
 
     // info page -------------------------------------------------
-    info(); // info JQ
+    // info(); // info JQ
     // ===========================================================
 
     ////////////// function for responsive //////////////
@@ -446,8 +447,9 @@ $(function () {
     } // toggleWidgetActivityTape JQ
 
     function toggleWidgetActivityTape () {
-        let mainPage = $('#mainPage');
-        if ( !mainPage.length ) {
+        let mainPage = $('#mainPage'),
+            sparePartsPage = $('#sparePartsPage');
+        if ( !mainPage.length || !sparePartsPage.length ) {
             let widgetFilter = $('.widget-activityTape');
             let isOpen = false;
             const ADDIT_HEIGHT = 114;
@@ -498,6 +500,61 @@ $(function () {
             }
         }
     } // toggleWidgetActivityTape JQ
+
+    function toggleWidgetRating () {
+        let sparePartsPage = $('#sparePartsPage');
+        if ( sparePartsPage.length ) {
+            let widgetRating = $('.widget-rating');
+            let isOpen = false;
+            const ADDIT_HEIGHT = 114;
+            const HEIGHT_BTN = 60;
+            if ( widgetRating.length ) {
+                let filterHeader = widgetRating.find('.ratingListContentTitle');
+                let shevronIcon = widgetRating.find('.shevronIcon');
+                let widgetContent = widgetRating.find('.widgetContent');
+                let widgetContentHeight = widgetContent.innerHeight();
+
+                if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                    widgetRating.addClass('widget-ratingClosed');
+                }
+                window.addEventListener('resize', function(){
+                    if (window.matchMedia('(max-width: 1170px)').matches) {
+                        if ( !widgetRating.hasClass('widget-ratingClosed') ) {
+                            widgetRating.addClass('widget-ratingClosed');
+                        }
+                        widgetRating.removeAttr('style');
+                    } else {
+                        widgetRating.removeAttr('style');
+                        widgetRating.removeClass('widget-ratingClosed');
+                    }
+                });
+
+                filterHeader.click(function(e){
+                    if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                        e.preventDefault();
+                        if ( !isOpen ) {
+                            widgetRating.removeClass('widget-ratingClosed');
+                            shevronIcon.addClass('shevronIcon-top');
+                            widgetRating.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                            setTimeout(function(){
+                                // widgetRating.innerHeight( 'initial');
+                            }, 100);
+                            isOpen = !isOpen;
+                        } else {
+                            widgetRating.removeAttr('style');
+                            widgetRating.addClass('widget-ratingClosed');
+                            shevronIcon.removeClass('shevronIcon-top');
+                            widgetContentHeight = widgetContent.innerHeight();
+                            widgetRating.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                            widgetRating.innerHeight( HEIGHT_BTN );
+                            isOpen = !isOpen;
+                        }
+                    }
+                });
+
+            }
+        }
+    } // toggleWidgetRating
 
     // rating page functions ------------------------------------
     function showAdditInfo(additInfoBtnSelector, additInfoParentBlockSelector) {
@@ -1158,50 +1215,50 @@ $(function () {
     // ===========================================================
 
     // info page -------------------------------------------------
-    function info() {
-        const infoPage = $('#infoPage');
-        if ( infoPage.length ) {
-            const button = $('.manageButton__item');
-            const contentBlock = $('.info__contentBlock');
-            const content = $('.info__content');
-            let visibleContentCount = 0;
-
-            button.click(function(){
-                let currentCount = $(this).attr('data-count');
-                button.removeClass('manageButton__item-active');
-                $(this).addClass('manageButton__item-active');
-
-                if ( visibleContentCount != currentCount  ) {
-                    content.eq(visibleContentCount).css({
-                        'transition' : 'transform .5s, opacity .5s',
-                        'transform': 'translateX(100%)',
-                        'opacity': '0'
-                    });
-                    content.eq(currentCount).css({
-                        'transform': 'translateX(-100%)',
-                        'opacity': '0'
-                    });
-
-                    setTimeout(function() {
-                        content.eq(visibleContentCount).addClass('info__content-hidden');
-                        content.eq(visibleContentCount).removeAttr('style');
-                        content.eq(currentCount).removeClass('info__content-hidden');
-                        setTimeout(function(){
-                            content.eq(currentCount).css({
-                                'transition' : 'transform .2s, opacity .2s',
-                                'transform': 'translateX(0)',
-                                'opacity': '1'
-                            });
-                            setTimeout(function(){
-                                content.eq(currentCount).removeAttr('style');
-                                visibleContentCount = currentCount;
-                            },200);
-                        },50);
-                    }, 300);
-                }
-            });
-        }
-    } // info JQ
+    // function info() {
+    //     const infoPage = $('#infoPage');
+    //     if ( infoPage.length ) {
+    //         const button = $('.manageButton__item');
+    //         const contentBlock = $('.info__contentBlock');
+    //         const content = $('.info__content');
+    //         let visibleContentCount = 0;
+    //
+    //         button.click(function(){
+    //             let currentCount = $(this).attr('data-count');
+    //             button.removeClass('manageButton__item-active');
+    //             $(this).addClass('manageButton__item-active');
+    //
+    //             if ( visibleContentCount != currentCount  ) {
+    //                 content.eq(visibleContentCount).css({
+    //                     'transition' : 'transform .5s, opacity .5s',
+    //                     'transform': 'translateX(100%)',
+    //                     'opacity': '0'
+    //                 });
+    //                 content.eq(currentCount).css({
+    //                     'transform': 'translateX(-100%)',
+    //                     'opacity': '0'
+    //                 });
+    //
+    //                 setTimeout(function() {
+    //                     content.eq(visibleContentCount).addClass('info__content-hidden');
+    //                     content.eq(visibleContentCount).removeAttr('style');
+    //                     content.eq(currentCount).removeClass('info__content-hidden');
+    //                     setTimeout(function(){
+    //                         content.eq(currentCount).css({
+    //                             'transition' : 'transform .2s, opacity .2s',
+    //                             'transform': 'translateX(0)',
+    //                             'opacity': '1'
+    //                         });
+    //                         setTimeout(function(){
+    //                             content.eq(currentCount).removeAttr('style');
+    //                             visibleContentCount = currentCount;
+    //                         },200);
+    //                     },50);
+    //                 }, 300);
+    //             }
+    //         });
+    //     }
+    // } // info JQ
     // ===========================================================
 
 // secondary functions -------------------------------------------

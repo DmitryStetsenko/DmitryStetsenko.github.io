@@ -3127,6 +3127,42 @@ button, input {
       } // hover
     } // __header
   } // -rating
+  &-ratingClosed {
+    $bgColor: $colorYellow;
+    $iconColor: white;
+    $titleColor: white;
+
+    background: $bgColor;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 0;
+    transition: height .3s;
+    .widget__header {
+      padding: 20px;
+      .headerIcon {
+        svg {
+          width: 100%;
+          height: auto;
+          path {
+            fill: $iconColor;
+            fill-rule: evenodd;
+            stroke: $iconColor;
+            transition: fill .3s, stroke .3s;
+          } // path
+        } // svg
+      } // headerIcon
+      .headerTitle {
+        &:after {
+          display: none;
+        } // after
+        &__text {
+          color: $titleColor;
+          transition: color .3s;
+        } // __text
+      } // headerTitle
+    } // __header
+  } // -rating
   &-favoriteManufacture {
     $maxHeight: 410px;
 

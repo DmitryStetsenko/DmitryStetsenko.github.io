@@ -2571,6 +2571,28 @@ button, input {
       transform: translateY(100%); }
   .widget-rating .widget__header:hover .headerTitle__text {
     transform: translateX(-15%); }
+  .widget-ratingClosed {
+    background: #efb428;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 0;
+    transition: height .3s; }
+    .widget-ratingClosed .widget__header {
+      padding: 20px; }
+      .widget-ratingClosed .widget__header .headerIcon svg {
+        width: 100%;
+        height: auto; }
+        .widget-ratingClosed .widget__header .headerIcon svg path {
+          fill: white;
+          fill-rule: evenodd;
+          stroke: white;
+          transition: fill .3s, stroke .3s; }
+      .widget-ratingClosed .widget__header .headerTitle:after {
+        display: none; }
+      .widget-ratingClosed .widget__header .headerTitle__text {
+        color: white;
+        transition: color .3s; }
   .widget-favoriteManufacture {
     height: 410px;
     min-height: initial;
@@ -10134,7 +10156,7 @@ button, input {
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: 60px; }
-  #infoPage .info .manageButton__item {
+  #infoPage .info .manageButton__item a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10144,39 +10166,37 @@ button, input {
     height: 35px;
     margin-bottom: 5px;
     padding: 0 20px;
+    text-decoration: none;
     width: 100%;
     white-space: nowrap; }
-    #infoPage .info .manageButton__item:hover {
+    #infoPage .info .manageButton__item a:hover {
       cursor: pointer;
       background: #efb428;
       border-color: #efb428;
       color: white; }
-    #infoPage .info .manageButton__item:last-child {
-      margin-bottom: 0; }
-    #infoPage .info .manageButton__item::after {
+    #infoPage .info .manageButton__item a::after {
       content: '>';
       font-family: "Segoe Script", sans-serif;
       font-size: 14px;
       transform: rotate(10deg);
       margin-left: 30px; }
-    #infoPage .info .manageButton__item-active {
-      cursor: pointer;
-      background: #efb428;
-      border-color: #efb428;
-      color: white; }
+  #infoPage .info .manageButton__item:last-child {
+    margin-bottom: 0; }
+  #infoPage .info .manageButton__item-active a {
+    cursor: pointer;
+    background: #efb428;
+    border-color: #efb428;
+    color: white; }
   #infoPage .info__manage {
     margin-right: 30px;
     min-width: calc((calc((1170px / 12) - 30px) * 4) + 30px * 3); }
   #infoPage .info__contentsBlock {
-    overflow: hidden;
     width: 100%; }
-  #infoPage .info__content .blockInfo__item {
-    line-height: 22px;
-    margin-bottom: 30px; }
-    #infoPage .info__content .blockInfo__item:last-child {
-      margin-bottom: 0; }
-  #infoPage .info__content-hidden {
-    display: none; }
+    #infoPage .info__contentsBlock .blockInfo__item {
+      line-height: 22px;
+      margin-bottom: 30px; }
+      #infoPage .info__contentsBlock .blockInfo__item:last-child {
+        margin-bottom: 0; }
   @media screen and (max-width: 900px) {
     #infoPage .info__manage {
       margin-right: 30px;
