@@ -2578,26 +2578,76 @@ button, input {
     overflow: hidden;
     padding: 0;
     transition: height .3s; }
-    .widget-ratingClosed .widget__header {
-      padding: 20px; }
-      .widget-ratingClosed .widget__header .headerIcon svg {
-        width: 100%;
-        height: auto; }
-        .widget-ratingClosed .widget__header .headerIcon svg path {
-          fill: white;
-          fill-rule: evenodd;
-          stroke: white;
-          transition: fill .3s, stroke .3s; }
-      .widget-ratingClosed .widget__header .headerTitle:after {
-        display: none; }
-      .widget-ratingClosed .widget__header .headerTitle__text {
-        color: white;
-        transition: color .3s; }
+    .widget-ratingClosed .widgetContent .ratingList .ratingListContentTitle {
+      color: white;
+      height: 60px;
+      padding: 15px; }
+      .widget-ratingClosed .widgetContent .ratingList .ratingListContentTitle__img svg path {
+        stroke: white; }
+      .widget-ratingClosed .widgetContent .ratingList .ratingListContentTitle__text {
+        color: white; }
+      .widget-ratingClosed .widgetContent .ratingList .ratingListContentTitle:hover {
+        cursor: pointer; }
+        .widget-ratingClosed .widgetContent .ratingList .ratingListContentTitle:hover .ratingListContentTitle__text {
+          color: white; }
+          .widget-ratingClosed .widgetContent .ratingList .ratingListContentTitle:hover .ratingListContentTitle__text span::after {
+            width: 0; }
+      .widget-ratingClosed .widgetContent .ratingList .ratingListContentTitle:after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #efb428 80%); }
+  .widget-ratingSpareParts {
+    padding: 10px 30px 30px; }
+    .widget-ratingSpareParts .ratingSpareParts .ratingSparePartsContentTitle {
+      margin-bottom: 10px; }
+  .widget-ratingSparePartsClosed {
+    background: #efb428;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 0;
+    transition: height .3s; }
+    .widget-ratingSparePartsClosed .widgetContent .ratingSpareParts .ratingSparePartsContentTitle {
+      color: white;
+      height: 60px;
+      padding: 15px; }
+      .widget-ratingSparePartsClosed .widgetContent .ratingSpareParts .ratingSparePartsContentTitle__img svg path {
+        stroke: white; }
+      .widget-ratingSparePartsClosed .widgetContent .ratingSpareParts .ratingSparePartsContentTitle__text {
+        color: white; }
+      .widget-ratingSparePartsClosed .widgetContent .ratingSpareParts .ratingSparePartsContentTitle:hover {
+        cursor: pointer; }
+        .widget-ratingSparePartsClosed .widgetContent .ratingSpareParts .ratingSparePartsContentTitle:hover .ratingSparePartsContentTitle__text {
+          color: white; }
+          .widget-ratingSparePartsClosed .widgetContent .ratingSpareParts .ratingSparePartsContentTitle:hover .ratingSparePartsContentTitle__text span::after {
+            width: 0; }
+      .widget-ratingSparePartsClosed .widgetContent .ratingSpareParts .ratingSparePartsContentTitle:after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #efb428 80%); }
   .widget-favoriteManufacture {
     height: 410px;
     min-height: initial;
     overflow: hidden;
     padding-right: 10px; }
+  .widget-favoriteManufactureClosed {
+    background: #efb428;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 0;
+    transition: height .3s; }
+    .widget-favoriteManufactureClosed .widgetContent .favoriteManufacture .favoriteManufactureContentTitle {
+      color: white;
+      padding: 15px; }
+      .widget-favoriteManufactureClosed .widgetContent .favoriteManufacture .favoriteManufactureContentTitle__img svg path {
+        stroke: white; }
+      .widget-favoriteManufactureClosed .widgetContent .favoriteManufacture .favoriteManufactureContentTitle__text {
+        color: white; }
+      .widget-favoriteManufactureClosed .widgetContent .favoriteManufacture .favoriteManufactureContentTitle:hover {
+        cursor: pointer; }
+        .widget-favoriteManufactureClosed .widgetContent .favoriteManufacture .favoriteManufactureContentTitle:hover .favoriteManufactureContentTitle__text {
+          color: white; }
+          .widget-favoriteManufactureClosed .widgetContent .favoriteManufacture .favoriteManufactureContentTitle:hover .favoriteManufactureContentTitle__text span::after {
+            width: 0; }
+      .widget-favoriteManufactureClosed .widgetContent .favoriteManufacture .favoriteManufactureContentTitle:after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #efb428 80%); }
   .widget-filter {
     min-height: initial; }
     @media screen and (max-width: 1170px) {
@@ -6915,7 +6965,8 @@ button, input {
         #sparePartsPage .reviewsBlock .widgetsArea .widget {
           flex-basis: auto;
           width: 50%;
-          margin-right: 15px; }
+          margin-right: 15px;
+          width: 100%; }
           #sparePartsPage .reviewsBlock .widgetsArea .widget:last-child {
             margin-right: 0; } }
 
@@ -9080,11 +9131,13 @@ button, input {
         display: flex;
         align-items: flex-start;
         justify-content: center;
+        flex-wrap: wrap;
         width: 100%; }
         #model .reviewsBlock .widgetsArea .widget {
           flex-basis: auto;
           width: 50%;
-          margin-right: 15px; }
+          margin-right: 15px;
+          width: 100%; }
           #model .reviewsBlock .widgetsArea .widget:last-child {
             margin-right: 0; } }
 
@@ -9193,9 +9246,7 @@ button, input {
           #model .otherSparePartsBlock .widgetsArea .widget:last-child {
             margin-right: 0; }
           #model .otherSparePartsBlock .widgetsArea .widget .widgetContent .favoriteManufacture .favoriteManufactureElements {
-            max-height: 376px; }
-          #model .otherSparePartsBlock .widgetsArea .widget-favoriteManufacture {
-            height: 470px; } }
+            max-height: 376px; } }
 
 @media screen and (max-width: 1170px) {
   #carBrand .widgetsArea {

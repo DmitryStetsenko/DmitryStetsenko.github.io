@@ -49,10 +49,12 @@
       } // contentArea
       .widgetsArea {
         @include flex(flex-start, center);
+        flex-wrap: wrap;
         width: 100%;
         .widget {
           @include widthPercent(50%);
           margin-right: 15px;
+          width: 100%;
           &:last-child {
             margin-right: 0;
           } // last-child
@@ -190,7 +192,7 @@
           } // widgetContent
           &-favoriteManufacture {
             $maxHeight: 470px;
-            height: $maxHeight;
+            //height: $maxHeight;
           } // -favoriteManufacture
         } // widget
       } // widgetsArea

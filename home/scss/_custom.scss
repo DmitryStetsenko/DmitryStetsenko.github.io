@@ -2899,6 +2899,7 @@ button, input {
             } // span
           } // ratingListContentTitle__text
         } // hover
+
       } // favoriteManufactureContentTitle
       .favoriteManufactureElements {
         @include customScroll();
@@ -3138,31 +3139,97 @@ button, input {
     overflow: hidden;
     padding: 0;
     transition: height .3s;
-    .widget__header {
-      padding: 20px;
-      .headerIcon {
-        svg {
-          width: 100%;
-          height: auto;
-          path {
-            fill: $iconColor;
-            fill-rule: evenodd;
-            stroke: $iconColor;
-            transition: fill .3s, stroke .3s;
-          } // path
-        } // svg
-      } // headerIcon
-      .headerTitle {
-        &:after {
-          display: none;
-        } // after
-        &__text {
-          color: $titleColor;
-          transition: color .3s;
-        } // __text
-      } // headerTitle
-    } // __header
-  } // -rating
+    .widgetContent {
+      .ratingList {
+        .ratingListContentTitle {
+          color: white;
+          height: 60px;
+          padding: 15px;
+          &__img {
+            svg {
+              path {
+                stroke: white;
+              } // path
+            } // img
+          } // img
+          &__text {
+            color: white;
+          } // __text
+          &:hover {
+            cursor: pointer;
+            .ratingListContentTitle__text {
+              color: white;
+              span {
+                &::after {
+                  width: 0;
+                } // after
+              } // span
+            } // ratingListContentTitle__text
+          } // hover
+          &:after {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0,
+                    #efb428 80%);
+          } // after
+        } // favoriteManufactureContentTitle
+      } // favoriteManufacture
+    } // widgetContent
+  } // -ratingClosed
+  &-ratingSpareParts {
+    padding: 10px 30px 30px;
+    .ratingSpareParts {
+      .ratingSparePartsContentTitle {
+        margin-bottom: 10px;
+      } // ratingSparePartsContentTitle
+    } // ratingSrapreParts
+  } // -ratingSpareParts
+  &-ratingSparePartsClosed {
+    $bgColor: $colorYellow;
+    $iconColor: white;
+    $titleColor: white;
+
+    background: $bgColor;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 0;
+    transition: height .3s;
+    .widgetContent {
+      .ratingSpareParts {
+        .ratingSparePartsContentTitle {
+          color: white;
+          height: 60px;
+          padding: 15px;
+          &__img {
+            svg {
+              path {
+                stroke: white;
+              } // path
+            } // img
+          } // img
+          &__text {
+            color: white;
+          } // __text
+          &:hover {
+            cursor: pointer;
+            .ratingSparePartsContentTitle__text {
+              color: white;
+              span {
+                &::after {
+                  width: 0;
+                } // after
+              } // span
+            } // ratingListContentTitle__text
+          } // hover
+          &:after {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0,
+                    #efb428 80%);
+          } // after
+        } // favoriteManufactureContentTitle
+      } // favoriteManufacture
+    } // widgetContent
+  } // -ratingSparePartsClosed
   &-favoriteManufacture {
     $maxHeight: 410px;
 
@@ -3171,6 +3238,52 @@ button, input {
     overflow: hidden;
     padding-right: 10px;
   } // -favoriteManufacture
+  &-favoriteManufactureClosed {
+    $bgColor: $colorYellow;
+    $iconColor: white;
+    $titleColor: white;
+
+    background: $bgColor;
+    min-height: initial;
+    height: 60px;
+    overflow: hidden;
+    padding: 0;
+    transition: height .3s;
+    .widgetContent {
+      .favoriteManufacture {
+        .favoriteManufactureContentTitle {
+          color: white;
+          padding: 15px;
+          &__img {
+            svg {
+              path {
+                stroke: white;
+              } // path
+            } // img
+          } // img
+          &__text {
+            color: white;
+          } // __text
+          &:hover {
+            cursor: pointer;
+            .favoriteManufactureContentTitle__text {
+              color: white;
+              span {
+                &::after {
+                  width: 0;
+                } // after
+              } // span
+            } // ratingListContentTitle__text
+          } // hover
+          &:after {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0,
+                    #efb428 80%);
+          } // after
+        } // favoriteManufactureContentTitle
+      } // favoriteManufacture
+    } // widgetContent
+  } // -favoriteManufactureClosed
   &-filter {
     min-height: initial;
     .widget__header {

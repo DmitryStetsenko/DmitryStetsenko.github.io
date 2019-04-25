@@ -44,9 +44,13 @@ $(function () {
 
     closePopUpWindow();
 
-    toggleWidgetFilter ();
+    toggleWidgetFilter();
 
-    toggleWidgetActivityTape ();
+    toggleWidgetActivityTape();
+
+    toggleWidgetRatingSpareparts();
+
+    toggleWidgetFavoriteManufacture();
 
     // rating page functions ----------------------------
     showAdditInfo('.additInfo', '.headerBlockContent__item');
@@ -389,7 +393,7 @@ $(function () {
     } // showAllFooterMenuItems
 
     function initCustomScrollBar() {
-        // const scrollContainer = document.querySelector('.activityTape');
+        // const scrollContainer = document.querySelector('.ratingSpareParts');
         // if (scrollContainer) {
         //     fleXenv.fleXcrollMain(scrollContainer);
         // }
@@ -448,50 +452,55 @@ $(function () {
 
     function toggleWidgetActivityTape () {
         let mainPage = $('#mainPage'),
-            sparePartsPage = $('#sparePartsPage');
-        if ( !mainPage.length || !sparePartsPage.length ) {
-            let widgetFilter = $('.widget-activityTape');
+            sparePartsPage = $('#sparePartsPage'),
+            brandsPage = $('#brandsPage'),
+            modelPage = $('#model');
+        if ( !mainPage.length &&
+             !sparePartsPage.length &&
+             !brandsPage.length &&
+             !modelPage.length ) {
+            let widgetActivityTape = $('.widget-activityTape');
             let isOpen = false;
             const ADDIT_HEIGHT = 114;
             const HEIGHT_BTN = 60;
-            if ( widgetFilter.length ) {
-                let filterHeader = widgetFilter.find('.widget__header');
-                let shevronIcon = widgetFilter.find('.shevronIcon');
-                let widgetContent = widgetFilter.find('.widgetContent');
+            if ( widgetActivityTape.length ) {
+                let filterHeader = widgetActivityTape.find('.widget__header');
+                let shevronIcon = widgetActivityTape.find('.shevronIcon');
+                let widgetContent = widgetActivityTape.find('.widgetContent');
                 let widgetContentHeight = widgetContent.innerHeight();
 
                 if ( window.matchMedia('(max-width: 1170px)').matches ) {
-                    widgetFilter.addClass('widget-activityTapeClosed');
+                    widgetActivityTape.addClass('widget-activityTapeClosed');
                 }
                 window.addEventListener('resize', function(){
                     if (window.matchMedia('(max-width: 1170px)').matches) {
-                        if ( !widgetFilter.hasClass('widget-activityTapeClosed') ) {
-                            widgetFilter.addClass('widget-activityTapeClosed');
+                        if ( !widgetActivityTape.hasClass('widget-activityTapeClosed') ) {
+                            widgetActivityTape.addClass('widget-activityTapeClosed');
                         }
-                        widgetFilter.removeAttr('style');
+                        widgetActivityTape.removeAttr('style');
                     } else {
-                        widgetFilter.removeAttr('style');
-                        widgetFilter.removeClass('widget-activityTapeClosed');
+                        widgetActivityTape.removeAttr('style');
+                        widgetActivityTape.removeClass('widget-activityTapeClosed');
                     }
                 });
 
                 filterHeader.click(function(){
                     if ( window.matchMedia('(max-width: 1170px)').matches ) {
                         if ( !isOpen ) {
-                            widgetFilter.removeClass('widget-activityTapeClosed');
+                            widgetActivityTape.removeClass('widget-activityTapeClosed');
                             shevronIcon.addClass('shevronIcon-top');
-                            widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                            widgetActivityTape.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
                             setTimeout(function(){
-                                // widgetFilter.innerHeight( 'initial');
+                                // widgetActivityTape.innerHeight( 'initial');
                             }, 100);
                             isOpen = !isOpen;
                         } else {
-                            widgetFilter.removeAttr('style');
-                            widgetFilter.addClass('widget-activityTapeClosed');
+                            widgetActivityTape.removeAttr('style');
+                            widgetActivityTape.addClass('widget-activityTapeClosed');
                             shevronIcon.removeClass('shevronIcon-top');
                             widgetContentHeight = widgetContent.innerHeight();
-                            widgetFilter.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
-                            widgetFilter.innerHeight( HEIGHT_BTN );
+                            widgetActivityTape.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                            widgetActivityTape.innerHeight( HEIGHT_BTN );
                             isOpen = !isOpen;
                         }
                     }
@@ -547,6 +556,116 @@ $(function () {
                             widgetContentHeight = widgetContent.innerHeight();
                             widgetRating.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
                             widgetRating.innerHeight( HEIGHT_BTN );
+                            isOpen = !isOpen;
+                        }
+                    }
+                });
+
+            }
+        }
+    } // toggleWidgetRating
+    
+    function toggleWidgetRatingSpareparts () {
+        let brandsPage = $('#brandsPage');
+        if ( brandsPage.length ) {
+            let widgetRatingSpareParts = $('.widget-ratingSpareParts');
+            let isOpen = false;
+            const ADDIT_HEIGHT = 114;
+            const HEIGHT_BTN = 60;
+            if ( widgetRatingSpareParts.length ) {
+                let filterHeader = widgetRatingSpareParts.find('.ratingSparePartsContentTitle');
+                let shevronIcon = widgetRatingSpareParts.find('.shevronIcon');
+                let widgetContent = widgetRatingSpareParts.find('.widgetContent');
+                let widgetContentHeight = widgetContent.innerHeight();
+
+                if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                    widgetRatingSpareParts.addClass('widget-ratingSparePartsClosed');
+                }
+                window.addEventListener('resize', function(){
+                    if (window.matchMedia('(max-width: 1170px)').matches) {
+                        if ( !widgetRatingSpareParts.hasClass('widget-ratingSparePartsClosed') ) {
+                            widgetRatingSpareParts.addClass('widget-ratingSparePartsClosed');
+                        }
+                        widgetRatingSpareParts.removeAttr('style');
+                    } else {
+                        widgetRatingSpareParts.removeAttr('style');
+                        widgetRatingSpareParts.removeClass('widget-ratingSparePartsClosed');
+                    }
+                });
+
+                filterHeader.click(function(e){
+                    if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                        e.preventDefault();
+                        if ( !isOpen ) {
+                            widgetRatingSpareParts.removeClass('widget-ratingSparePartsClosed');
+                            shevronIcon.addClass('shevronIcon-top');
+                            widgetRatingSpareParts.innerHeight( widgetContentHeight);
+                            setTimeout(function(){
+                                // widgetRatingSpareParts.innerHeight( 'initial');
+                            }, 100);
+                            isOpen = !isOpen;
+                        } else {
+                            widgetRatingSpareParts.removeAttr('style');
+                            widgetRatingSpareParts.addClass('widget-ratingSparePartsClosed');
+                            shevronIcon.removeClass('shevronIcon-top');
+                            widgetContentHeight = widgetContent.innerHeight();
+                            widgetRatingSpareParts.innerHeight( widgetContentHeight);
+                            widgetRatingSpareParts.innerHeight( HEIGHT_BTN );
+                            isOpen = !isOpen;
+                        }
+                    }
+                });
+
+            }
+        }
+    } // toggleWidgetRating
+
+    function toggleWidgetFavoriteManufacture () {
+        let modelPage = $('#model');
+        if ( modelPage.length ) {
+            let widgetFavoriteManufacture = $('.widget-favoriteManufacture');
+            let isOpen = false;
+            const ADDIT_HEIGHT = 114;
+            const HEIGHT_BTN = 60;
+            if ( widgetFavoriteManufacture.length ) {
+                let filterHeader = widgetFavoriteManufacture.find('.favoriteManufactureContentTitle');
+                let shevronIcon = widgetFavoriteManufacture.find('.shevronIcon');
+                let widgetContent = widgetFavoriteManufacture.find('.widgetContent');
+                let widgetContentHeight = widgetContent.innerHeight();
+
+                if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                    widgetFavoriteManufacture.addClass('widget-favoriteManufactureClosed');
+                }
+                window.addEventListener('resize', function(){
+                    if (window.matchMedia('(max-width: 1170px)').matches) {
+                        if ( !widgetFavoriteManufacture.hasClass('widget-favoriteManufactureClosed') ) {
+                            widgetFavoriteManufacture.addClass('widget-favoriteManufactureClosed');
+                        }
+                        widgetFavoriteManufacture.removeAttr('style');
+                    } else {
+                        widgetFavoriteManufacture.removeAttr('style');
+                        widgetFavoriteManufacture.removeClass('widget-favoriteManufactureClosed');
+                    }
+                });
+
+                filterHeader.click(function(e){
+                    if ( window.matchMedia('(max-width: 1170px)').matches ) {
+                        e.preventDefault();
+                        if ( !isOpen ) {
+                            widgetFavoriteManufacture.removeClass('widget-favoriteManufactureClosed');
+                            shevronIcon.addClass('shevronIcon-top');
+                            widgetFavoriteManufacture.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                            setTimeout(function(){
+                                // widgetFavoriteManufacture.innerHeight( 'initial');
+                            }, 100);
+                            isOpen = !isOpen;
+                        } else {
+                            widgetFavoriteManufacture.removeAttr('style');
+                            widgetFavoriteManufacture.addClass('widget-favoriteManufactureClosed');
+                            shevronIcon.removeClass('shevronIcon-top');
+                            widgetContentHeight = widgetContent.innerHeight();
+                            widgetFavoriteManufacture.innerHeight( widgetContentHeight + ADDIT_HEIGHT);
+                            widgetFavoriteManufacture.innerHeight( HEIGHT_BTN );
                             isOpen = !isOpen;
                         }
                     }
@@ -798,8 +917,9 @@ $(function () {
     function responceReplaceTopWidgetSparePartsPage() {
         const sparePartsPage = $('#sparePartsPage');
         const reviewBlock = $('.reviewsBlock');
+        const comparisonBlock = $('#sparePartsPageComparisonBlock');
         const filterWidget = $('.widget-filter');
-        const activityTapeWidget = $('.widget-activityTape');
+        const ratingWidget = $('.widget-rating');
         let responceTempBlock;
 
         if ( sparePartsPage.length ) {
@@ -810,7 +930,7 @@ $(function () {
                 }
                 responceTempBlock = $('#responceTempBlock');
                 responceTempBlock.append(filterWidget);
-                responceTempBlock.append(activityTapeWidget);
+                responceTempBlock.append(ratingWidget);
             }
             window.addEventListener('resize', function(){
                 if (window.matchMedia('(max-width: 1170px)').matches) {
@@ -820,10 +940,10 @@ $(function () {
                     }
                     responceTempBlock = $('#responceTempBlock');
                     responceTempBlock.append(filterWidget);
-                    responceTempBlock.append(activityTapeWidget);
+                    responceTempBlock.append(ratingWidget);
                 } else {
                     reviewBlock.find('.widgetsArea').prepend(filterWidget);
-                    reviewBlock.find('.widgetsArea').append(activityTapeWidget);
+                    comparisonBlock.find('.widgetsArea').append(ratingWidget);
                     if ( responceTempBlock ) {
                         responceTempBlock.remove();
                     }
@@ -902,7 +1022,7 @@ $(function () {
         const modelSpareParts = $('#modelSpareParts');
         const reviewBlock = $('.reviewsBlock');
         const filterWidget = $('.widget-filter');
-        const activityTapeWidget = $('.widget-activityTape');
+        const ratingSparePartsWidget = $('.widget-ratingSpareParts');
         let responceTempBlock;
 
         if ( modelSpareParts.length ) {
@@ -913,7 +1033,7 @@ $(function () {
                 }
                 responceTempBlock = $('#responceTempBlock');
                 responceTempBlock.append(filterWidget);
-                responceTempBlock.append(activityTapeWidget);
+                responceTempBlock.append(ratingSparePartsWidget);
             }
             window.addEventListener('resize', function(){
                 if (window.matchMedia('(max-width: 1170px)').matches) {
@@ -923,10 +1043,10 @@ $(function () {
                     }
                     responceTempBlock = $('#responceTempBlock');
                     responceTempBlock.append(filterWidget);
-                    responceTempBlock.append(activityTapeWidget);
+                    responceTempBlock.append(ratingSparePartsWidget);
                 } else {
                     reviewBlock.find('.widgetsArea').prepend(filterWidget);
-                    reviewBlock.find('.widgetsArea').append(activityTapeWidget);
+                    reviewBlock.find('.widgetsArea').append(ratingSparePartsWidget);
                     if ( responceTempBlock ) {
                         responceTempBlock.remove();
                     }
@@ -1177,13 +1297,14 @@ $(function () {
 
     // brands page -----------------------------------------------
     function responceReplaceTopWidgetBrandsPage() {
-        const sparePartsPage = $('#brandsPage');
+        const brandsPage = $('#brandsPage');
         const reviewBlock = $('.reviewsBlock');
         const filterWidget = $('.widget-filter');
-        const activityTapeWidget = $('.widget-activityTape');
+        const ratingSparePartsWidget = $('.widget-ratingSpareParts');
+        const comparisonBlock = $('#sparePartsPageComparisonBlock');
         let responceTempBlock;
 
-        if ( sparePartsPage.length ) {
+        if ( brandsPage.length ) {
             if ( window.matchMedia('(max-width: 1170px)').matches ) {
                 responceTempBlock = $('#responceTempBlock');
                 if (!responceTempBlock.length){
@@ -1191,7 +1312,7 @@ $(function () {
                 }
                 responceTempBlock = $('#responceTempBlock');
                 responceTempBlock.append(filterWidget);
-                responceTempBlock.append(activityTapeWidget);
+                responceTempBlock.append(ratingSparePartsWidget);
             }
             window.addEventListener('resize', function(){
                 if (window.matchMedia('(max-width: 1170px)').matches) {
@@ -1201,10 +1322,10 @@ $(function () {
                     }
                     responceTempBlock = $('#responceTempBlock');
                     responceTempBlock.append(filterWidget);
-                    responceTempBlock.append(activityTapeWidget);
+                    responceTempBlock.append(ratingSparePartsWidget);
                 } else {
                     reviewBlock.find('.widgetsArea').prepend(filterWidget);
-                    reviewBlock.find('.widgetsArea').append(activityTapeWidget);
+                    comparisonBlock.find('.widgetsArea').append(ratingSparePartsWidget);
                     if ( responceTempBlock ) {
                         responceTempBlock.remove();
                     }
@@ -1212,6 +1333,7 @@ $(function () {
             });
         }
     } // responceReplaceTopWidgetBrandsPage JQ
+
     // ===========================================================
 
     // info page -------------------------------------------------
