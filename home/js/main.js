@@ -1022,7 +1022,7 @@ $(function () {
         const modelSpareParts = $('#modelSpareParts');
         const reviewBlock = $('.reviewsBlock');
         const filterWidget = $('.widget-filter');
-        const ratingSparePartsWidget = $('.widget-ratingSpareParts');
+        const activityTapeWidget = $('.widget-activityTape');
         let responceTempBlock;
 
         if ( modelSpareParts.length ) {
@@ -1033,7 +1033,7 @@ $(function () {
                 }
                 responceTempBlock = $('#responceTempBlock');
                 responceTempBlock.append(filterWidget);
-                responceTempBlock.append(ratingSparePartsWidget);
+                responceTempBlock.append(activityTapeWidget);
             }
             window.addEventListener('resize', function(){
                 if (window.matchMedia('(max-width: 1170px)').matches) {
@@ -1043,10 +1043,10 @@ $(function () {
                     }
                     responceTempBlock = $('#responceTempBlock');
                     responceTempBlock.append(filterWidget);
-                    responceTempBlock.append(ratingSparePartsWidget);
+                    responceTempBlock.append(activityTapeWidget);
                 } else {
                     reviewBlock.find('.widgetsArea').prepend(filterWidget);
-                    reviewBlock.find('.widgetsArea').append(ratingSparePartsWidget);
+                    reviewBlock.find('.widgetsArea').append(activityTapeWidget);
                     if ( responceTempBlock ) {
                         responceTempBlock.remove();
                     }

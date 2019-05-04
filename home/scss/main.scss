@@ -12,6 +12,16 @@
   margin-bottom: $mainHeaderMarginBottom;
   padding: $headerPadding;
   width: 100%;
+  &-userPage {
+    .siteHeader {
+      .headerUserAction {
+        display: none;
+      } // headerUserAction
+      &__userInfo {
+
+      } // __userInfo
+    } // siteHeader
+  } // -userPage
 } // siteHeader
 
 .siteHeader {
@@ -24,6 +34,38 @@
   &__logo {
     width: 200px;
   } // __logo
+  &__userInfo {
+    .userInfo {
+      @include flex(center, flex-start);
+      &__notification {
+        $iconSize: 15px;
+        margin-right: 30px;
+        position: relative;
+        width: 16px;
+        &::before {
+          display: block;
+          background: $colorRatingRed;
+          border-radius: 50%;
+          border: 2px solid $colorDarkGray;
+          content: '4';
+          color: white;
+          font-size: 10px;
+          line-height: $iconSize;
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: $iconSize;
+          min-width: $iconSize;
+          transform: translate(60%, -30%);
+          text-align: center;
+          width: $iconSize;
+        } // before
+      } // __notification
+      &__avatar {
+        width: 35px;
+      } // __avatar
+    } // userInfo
+  } // __userInfo
 } // siteHeader
 
 .searchBlock {
@@ -221,6 +263,10 @@
     width: 1px;
   } // __separate
 } // headerUserAction
+
+.userInfo {
+
+} // userInfo
 // MEDIA --------------------------
 @media only screen and ( max-width: 1000px ) {
   .siteHeaderSection {
@@ -1796,5 +1842,9 @@
 
 // Info Page --------------------------------
 @import "info";
+// ==========================================
+
+// User Page --------------------------------
+@import "user";
 // ==========================================
 
