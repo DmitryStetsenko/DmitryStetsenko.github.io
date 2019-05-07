@@ -494,7 +494,7 @@ button, input {
     left: -40px;
     width: 30px; }
   .contactsBtn:hover::before {
-    left: 120%; }
+    animation: highlightBtn .3s linear; }
   .contactsBtn .innerIcon {
     margin-right: 15px;
     width: 15px; }
@@ -1819,6 +1819,7 @@ button, input {
           padding-left: 60px;
           position: relative; }
   .review__userVotes {
+    background: white;
     border: 1px solid #e8e8e8;
     padding: 20px 30px 30px 30px; }
     .review__userVotes .reviewComments__title {
@@ -3462,7 +3463,8 @@ button, input {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            margin-bottom: 10px; }
+            margin-bottom: 10px;
+            text-decoration: none; }
             .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item:last-child {
               margin-bottom: 0; }
             .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item .ratingValue {
@@ -4347,6 +4349,12 @@ button, input {
         top: 0;
         width: 40px; } }
 
+@keyframes highlightBtn {
+  from {
+    left: -10%; }
+  to {
+    left: 120%; } }
+
 @keyframes bounce {
   from,
   20%,
@@ -4838,27 +4846,60 @@ button, input {
     align-items: center;
     justify-content: flex-start; }
     .siteHeader__userInfo .userInfo__notification {
-      margin-right: 30px;
-      position: relative;
-      width: 16px; }
-      .siteHeader__userInfo .userInfo__notification::before {
-        display: block;
-        background: #e73e4e;
-        border-radius: 50%;
-        border: 2px solid #2c333d;
-        content: '4';
-        color: white;
-        font-size: 10px;
-        line-height: 15px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 15px;
-        min-width: 15px;
-        transform: translate(60%, -30%);
-        text-align: center;
-        width: 15px; }
+      position: relative; }
+      .siteHeader__userInfo .userInfo__notificationBtn {
+        margin-right: 30px;
+        position: relative;
+        width: 16px; }
+        .siteHeader__userInfo .userInfo__notificationBtn:hover {
+          cursor: pointer; }
+        .siteHeader__userInfo .userInfo__notificationBtn::before {
+          display: block;
+          background: #e73e4e;
+          border-radius: 50%;
+          border: 2px solid #2c333d;
+          content: '4';
+          color: white;
+          font-size: 10px;
+          line-height: 15px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 15px;
+          min-width: 15px;
+          transform: translate(60%, -30%);
+          text-align: center;
+          width: 15px; }
+    .siteHeader__userInfo .userInfo__notifPopUp {
+      display: none;
+      top: 30px;
+      right: -40px;
+      position: absolute;
+      width: 375px;
+      z-index: 10; }
+      .siteHeader__userInfo .userInfo__notifPopUp .trianglePlace {
+        height: 10px;
+        position: relative;
+        margin-bottom: -1px; }
+        .siteHeader__userInfo .userInfo__notifPopUp .trianglePlace::before {
+          width: 0;
+          height: 0;
+          border-left: 8.5px solid transparent;
+          border-right: 8.5px solid transparent;
+          border-bottom: 10px solid white;
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 69px; }
+      .siteHeader__userInfo .userInfo__notifPopUp .review__userVotes {
+        border-radius: 3px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.21); }
+        .siteHeader__userInfo .userInfo__notifPopUp .review__userVotes .reviewComments {
+          margin-bottom: 30px; }
     .siteHeader__userInfo .userInfo__avatar {
+      display: block;
+      text-decoration: none;
       width: 35px; }
 
 .searchBlock__form {

@@ -401,7 +401,7 @@ button, input {
   } // before
   &:hover {
     &::before {
-      left: 120%;
+      animation: highlightBtn .3s linear;
     } // before
   } // hover
   .innerIcon {
@@ -2195,6 +2195,7 @@ button, input {
     } // reviewComment
   } // __userCommments
   &__userVotes {
+    background: white;
     border: 1px solid $borderColor;
     padding: $paddingContent;
     .reviewComments {
@@ -4346,6 +4347,7 @@ button, input {
             &__item {
               @include flex(center, flex-start);
               margin-bottom: 10px;
+              text-decoration: none;
               &:last-child {
                 margin-bottom: 0;
               } // last-child

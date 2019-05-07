@@ -107,6 +107,9 @@ $(function () {
     responceReplaceTopWidgetBrandsPage(); // responceReplaceTopWidgetBrandsPage JQ
     // ===========================================================
 
+    // userInfo page ---------------------------------------------
+    showPopUpUserNotification(); // JQ showPopUpUserNotification
+
     // info page -------------------------------------------------
     // info(); // info JQ
     // ===========================================================
@@ -149,7 +152,7 @@ $(function () {
 
         topToggleMenu.on('click', function () {
             topMenu.slideToggle();
-            clickPastWindow('topMenu', function () {
+            clickPastWindow(topMenu, function () {
                 topMenu.slideUp();
             });
         });
@@ -1333,7 +1336,22 @@ $(function () {
             });
         }
     } // responceReplaceTopWidgetBrandsPage JQ
+    // ===========================================================
 
+    // userInfo page ---------------------------------------------
+    function showPopUpUserNotification () {
+        const notifBtn = $('#btnUserNotification');
+        if ( notifBtn.length ) {
+            const notifPopUp = $('.userInfo__notifPopUp');
+            notifBtn.click(function() {
+                notifPopUp.slideToggle();
+
+                clickPastWindow(notifPopUp, function(){
+                    notifPopUp.slideUp();
+                });
+            });
+        }
+    } // JQ showPopUpUserNotification
     // ===========================================================
 
     // info page -------------------------------------------------
@@ -1557,16 +1575,17 @@ $(function () {
         }, 1);
     } // scrollTo
 
-    function clickPastWindow(id, callback) {
-        const targetWindow = document.querySelector('#' + id);
-        document.addEventListener('mouseup', function (e) {
-            if (!targetWindow.contains(e.target)) {
-                if (callback) {
-                    callback();
+    function clickPastWindow(windowObj,callback) {
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+            var isModalWindowImg = $('div').is('.imgFullScr');
+            if (!windowObj.is(e.target) // если клик был не по нашему блоку
+                && windowObj.has(e.target).length === 0) { // и не по его дочерним элементам
+                if (!isModalWindowImg) {
+                    callback(); // скрываем его
                 }
             }
         });
-    } // clickPastWindow
+    }
 
     function showPopUpWindow(id) {
         const popUpWindowBlock = $(id);
@@ -1581,7 +1600,6 @@ $(function () {
             popUpWindowBlock.hide(300);
         });
     } // closePopUpWindow JQ
-
 
 // sliders -------------------------------------------------------
     function sliderSpareParts() {

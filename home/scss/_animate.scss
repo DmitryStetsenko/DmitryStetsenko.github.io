@@ -1,3 +1,11 @@
+@keyframes highlightBtn {
+  from {
+    left: -10%;
+  }
+  to {
+    left: 120%;
+  }
+}
 @keyframes bounce {
   from,
   20%,
