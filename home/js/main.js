@@ -1345,7 +1345,11 @@ $(function () {
             const notifPopUp = $('.userInfo__notifPopUp');
             notifBtn.click(function() {
                 notifPopUp.slideToggle();
-
+                setTimeout(function(){
+                    if ( !notifBtn.hasClass('userInfo__notificationBtn-noNew') ) {
+                        notifBtn.addClass('userInfo__notificationBtn-noNew');
+                    }
+                }, 1000);
                 clickPastWindow(notifPopUp, function(){
                     notifPopUp.slideUp();
                 });

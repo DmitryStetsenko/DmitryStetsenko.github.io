@@ -62,9 +62,15 @@
             height: $iconSize;
             min-width: $iconSize;
             transform: translate(60%, -30%);
+            transition: opacity .3s;
             text-align: center;
             width: $iconSize;
           } // before
+          &-noNew {
+            &::before {
+              opacity: 0;
+            } // before
+          } // noNew
         } // Btn
       } // __notification
       &__notifPopUp {

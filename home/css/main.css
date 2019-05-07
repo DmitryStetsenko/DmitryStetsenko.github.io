@@ -4868,8 +4868,11 @@ button, input {
           height: 15px;
           min-width: 15px;
           transform: translate(60%, -30%);
+          transition: opacity .3s;
           text-align: center;
           width: 15px; }
+        .siteHeader__userInfo .userInfo__notificationBtn-noNew::before {
+          opacity: 0; }
     .siteHeader__userInfo .userInfo__notifPopUp {
       display: none;
       top: 30px;
