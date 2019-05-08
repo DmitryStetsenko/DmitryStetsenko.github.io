@@ -30,6 +30,7 @@ $colorBorderLightGray: #e8e8e8;
 // wrapper
 $wrapperMaxWidth: 1170px;
 $wrapperPadding: 0 15px;
+$gutter: 15px;
 $gutterX2: 15px * 2;
 $colWidth: calc((#{$wrapperMaxWidth} / 12) - #{$gutterX2});
 

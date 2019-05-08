@@ -386,7 +386,7 @@ button, input {
 } // mainBtn
 
 .contactsBtn {
-  $iconWidth: 15px;
+  $iconWidth: 10px;
   $btnHeihgt: 40px;
   @include flex(center, center);
   border-radius: $mainBorderRadius;
@@ -450,6 +450,51 @@ button, input {
       width: 15px;
     } // innerIcon
   } // -ok
+
+  // @MEDIA ------------------------------
+  @media screen and ( max-width: 1170px ) { // 1170
+    $iconWidth: 15px;
+    $btnHeihgt: 30px;
+    font-size: 11px;
+    height: $btnHeihgt;
+    .innerIcon {
+      margin-right: 10px;
+      width: $iconWidth;
+      svg {
+        fill: white;
+      } // svg
+    } // innerIcon
+    .innerText {
+
+    } // innerText
+    &-vk {
+      .innerIcon {
+        width: 15px;
+      } // innerIcon
+    } // -vk
+    &-youtube {
+      .innerIcon {
+        width: 10px;
+      } // innerIcon
+    } // -youtube
+    &-faceBook {
+      .innerIcon {
+        width: 15px;
+      } // innerIcon
+    } // -faceBook
+    &-drom {
+      .innerIcon {
+        width: 7px;
+      } // innerIcon
+    } // -drom
+    &-ok {
+      .innerIcon {
+        width: 15px;
+      } // innerIcon
+    } // -ok
+  } // 1170
+  // =====================================
+
 } // contactsBtn
 
 .filterBtn {
@@ -1034,10 +1079,22 @@ button, input {
     flex-direction: column;
     height: initial;
     width: 100%;
+    min-width: 60px;
     .reviewDiagramBlock__item {
       height: 25px;
       min-width: 25px;
     } // reviewDiagramBlock__item
+
+    // @MEDIA  -----------------------
+    @media screen and ( max-width: 1170px ) {
+      .reviewDiagramBlock__item {
+        font-size: 9px;
+        height: 15px;
+        min-width: 15px;
+      } // reviewDiagramBlock__item
+    } // 1170
+    // ===============================
+
   } // userInfo
 } // reviewDiagramBlock
 
@@ -4353,6 +4410,7 @@ button, input {
               } // last-child
               .ratingValue {
                 @include flex(center, flex-start);
+                color: $colorDarkGray;
                 margin-right: 10px;
                 .innerText {
                   font-size: 20px;
@@ -4360,7 +4418,7 @@ button, input {
                 } // innerText
               } // ratingValue
               .ratingDescription {
-                font-size: 14px;
+                font-size: 12px;
                 margin-bottom: 0;
                 .innerText {
                   color: $colorDarkGray;
@@ -4936,6 +4994,18 @@ button, input {
     &__content {
       .headerBlockContent {
         $asidePadding: 15px;
+        &__item {
+          .innerBlockContent {
+            .totalRespondents {
+              color: $colorColName;
+              margin-top: 0;
+              text-align: center;
+              span {
+                font-weight: bold;
+              } // span
+            } // totalRespondents
+          } // innerBlockContent
+        } // __item
         &-brands {
           .headerBlockContent__item {
             padding-left: $asidePadding;
@@ -4944,6 +5014,80 @@ button, input {
         } // brands
       } // headerBlockContent
     } // __content
+    &-userInfo {
+      .pageHeaderBlock__content {
+        .headerBlockContent {
+          &__item {
+            flex: 1;
+            max-height: initial;
+            padding: 0 10px;
+            &:first-child {
+              padding-left: 0;
+            } // first-child
+            &:last-child {
+              padding-right: 0;
+            } // last-child
+            .innerBlockContent {
+              .totalRespondents {
+                color: $colorDarkGray;
+                font-size: 13px;
+                margin-right: 5px;
+                span {
+                  display: block;
+                  font-size: 20px;
+                  font-weight: normal;
+                  margin-bottom: 5px;
+                } // span
+              } // totalRespondents
+              .diagramBlock {
+                @include flex(center, flex-start);
+                margin-top: 0;
+              } // diagramBlock
+              .lastRatings {
+                &__item {
+                  @include flex(center, flex-start);
+                  .ratingValue {
+                    @include flex(center, flex-start);
+                    color: $colorDarkGray;
+                    margin-right: 3px;
+                    .innerText {
+                      font-size: 20px;
+                      margin-right: 3px;
+                    } // innerText
+                  } // ratingValue
+                  .ratingDescription {
+                    font-size: 12px;
+                    margin-bottom: 0;
+                    .innerText {
+                      color: $colorDarkGray;
+                      white-space: nowrap;
+                    } // innerText
+                  } // ratingDescription
+                  &-positive {
+                    .ratingDescription {
+                      .innerText {
+                        &:first-child {
+                          color: $colorRatingGreen;
+                        } // first-child
+                      } // innerText
+                    } // ratingDescription
+                  } // -positive
+                  &-negative {
+                    .ratingDescription {
+                      .innerText {
+                        &:first-child {
+                          color: $colorRatingRed;
+                        } // first-child
+                      } // innerText
+                    } // ratingDescription
+                  } // -negative
+                } // __item
+              } // lastRatings
+            } // innerBlockContent
+          } // __item
+        } // .headerBlockContent
+      } // pageHeaderBlock__content
+    } // -userInfo
   } // 1200
   @media screen and ( max-width: 1000px ) {
     align-items: flex-start;
