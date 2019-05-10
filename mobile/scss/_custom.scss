@@ -99,6 +99,13 @@ button, input {
       width: 100%;
     } // __titleBlock
   } // -center
+  &-column {
+    align-items: flex-start;
+    flex-direction: column;
+    .blockTitle {
+      margin-bottom: 15px;
+    } // blockTitle
+  } // -column
 } // blockHwader
 
 .mainBtn {

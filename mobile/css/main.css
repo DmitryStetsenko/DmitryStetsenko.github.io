@@ -421,6 +421,11 @@ button, input {
     justify-content: center !important;
     text-align: center;
     width: 100%; }
+  .blockHeader-column {
+    align-items: flex-start;
+    flex-direction: column; }
+    .blockHeader-column .blockTitle {
+      margin-bottom: 15px; }
 
 .mainBtn {
   display: flex;
