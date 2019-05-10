@@ -263,7 +263,7 @@
           &__item {
             @include flex(center, flex-start);
             height: $rowHeight;
-            padding: 0 25px;
+            padding: 0 15px;
             width: 100%;
             &:nth-child(even) {
               background: $colorBgLightGray;
@@ -295,21 +295,18 @@
             } // innerIcon
           } // photo
           &__info {
-            @include flex(center, space-between);
+            @include flex(flex-start, center);
             border-bottom: 1px solid $colorBorderLightGray;
+            flex-direction: column;
             height: 100%;
             width: 100%;
             .infoItem {
-              &:first-child {
-                width: 60%;
-              } // first-child
               &:last-child {
-                width: 40%;
                 .innerText {
                   color: $colorColName;
                   display: block;
                   font-size: 13px;
-                  text-align: right;
+                  text-align: left;
                   width: 100%;
                 } // innerText
               } // last-child
@@ -321,6 +318,7 @@
                 } // title
                 &__description {
                   font-size: 13px;
+                  margin-bottom: 5px;
                 } // __description
               } // innerText
               .progressBar {
@@ -442,56 +440,8 @@
       .userProgress {
         &__item {
           .progressName {
-            $rowHeight: 90px;
             &__info {
-              @include flex(center, space-between);
-              align-items: flex-start;
-              border-bottom: 1px solid $colorBorderLightGray;
-              flex-direction: column;
-              justify-content: center;
-              height: 100%;
-              width: 100%;
               .infoItem {
-                &:first-child {
-                  width: initial;
-                } // first-child
-                &:last-child {
-                  width: initial;
-                  .innerText {
-                    text-align: left;
-                  } // innerText
-                } // last-child
-                .innerText {
-                  &__title {
-                  } // title
-                  &__description {
-                    margin-bottom: 5px;
-                  } // __description
-                } // innerText
-                .progressBar {
-                  @include flex(center, center);
-                  background: $colorCountBg;
-                  color: white;
-                  font-size: 12px;
-                  height: 18px;
-                  position: relative;
-                  margin-left: auto;
-                  width: 170px;
-                  &::before {
-                    background: $colorRatingGreen;
-                    content: '';
-                    position: absolute;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    width: 70%;
-                    z-index: 1;
-                  } // before
-                  span {
-                    position: relative;
-                    z-index: 2;
-                  } // span
-                } // progressBar
               } // infoItem
             } // info
           } // progressName
