@@ -28,6 +28,83 @@
   &__logo {
     width: 148px;
   } // __logo
+  &__userInfo {
+    .userInfo {
+      @include flex(center, flex-start);
+      &__notification {
+        position: relative;
+        &Btn {
+          $iconSize: 15px;
+          margin-right: 10px;
+          position: relative;
+          width: 16px;
+          &:hover {
+            cursor: pointer;
+          } // hover
+          &::before {
+            display: block;
+            background: $colorRatingRed;
+            border-radius: 50%;
+            border: 2px solid $colorDarkGray;
+            content: '4';
+            color: white;
+            font-size: 10px;
+            line-height: $iconSize;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: $iconSize;
+            min-width: $iconSize;
+            transform: translate(60%, -30%);
+            transition: opacity .3s;
+            text-align: center;
+            width: $iconSize;
+          } // before
+          &-noNew {
+            &::before {
+              opacity: 0;
+            } // before
+          } // noNew
+        } // Btn
+      } // __notification
+      &__notifPopUp {
+        display: none;
+        top: 25px;
+        right: -65px;
+        position: absolute;
+        width: 95vw;
+        z-index: 10;
+        .trianglePlace {
+          height: 10px;
+          position: relative;
+          margin-bottom: -1px;
+          &::before {
+            @include drawTriangleTop(17, 10, white);
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 75px;
+          } // before
+        } // trianglePlace
+        .review {
+          &__userVotes {
+            border-radius: $mainBorderRadius;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.21);
+            .reviewComments {
+              margin-bottom: $blockTitleMarginBottom;
+
+            } // reviewComments
+          } // userVotes
+        } // review
+      } // __notifPopUp
+      &__avatar {
+        display: block;
+        text-decoration: none;
+        width: 30px;
+      } // __avatar
+    } // userInfo
+  } // __userInfo
 } // siteHeader
 .searchBlock {
   &__form {
@@ -1611,4 +1688,6 @@
 @import "info";
 // ==========================================
 
-
+// user -------------------------------------
+@import "user";
+// ==========================================

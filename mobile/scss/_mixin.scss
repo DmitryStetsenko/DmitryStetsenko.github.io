@@ -205,3 +205,16 @@
   transform: rotate(10deg);
 }
 
+@mixin highlight() {
+  background: rgba(255, 255, 255, 0.26);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transform: skewX(-20deg);
+  transition: left .5s;
+  top: 0;
+  left: -40px;
+  width: 30px;
+} // highlight
+

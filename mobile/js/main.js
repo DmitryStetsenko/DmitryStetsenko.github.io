@@ -65,6 +65,10 @@ window.onload = function () {
     ratingCircleDynamic(); // ratingCircleDynamic JQ
     // ===========================================================
 
+    // userInfo page ---------------------------------------------
+    showPopUpUserNotification (); // JQ showPopUpUserNotification
+    // ===========================================================
+
     // mobile -----------------------------------------
     sparePartsToggle ();
     brandsToggle ();
@@ -726,6 +730,26 @@ window.onload = function () {
     } // ratingCircleDynamic JQ
     // ===========================================================
 
+    // userInfo page ---------------------------------------------
+    function showPopUpUserNotification () {
+        const notifBtn = $('#btnUserNotification');
+        if ( notifBtn.length ) {
+            const notifPopUp = $('.userInfo__notifPopUp');
+            notifBtn.click(function() {
+                notifPopUp.slideToggle();
+                setTimeout(function(){
+                    if ( !notifBtn.hasClass('userInfo__notificationBtn-noNew') ) {
+                        notifBtn.addClass('userInfo__notificationBtn-noNew');
+                    }
+                }, 1000);
+                clickPastWindow(notifPopUp, function(){
+                    notifPopUp.slideUp();
+                });
+            });
+        }
+    } // JQ showPopUpUserNotification
+    // ===========================================================
+
     // mobile ---------------------------------------------------
     function sparePartsToggle () {
         let sparePartsTitle = document.querySelectorAll('.sparePartsContentTitle');
@@ -955,15 +979,18 @@ window.onload = function () {
         return false;
     } // closeTopMenu
 
-    function clickPastWindow(id,callback) {
-        const targetWindow = document.querySelector('#' + id);
-        document.addEventListener('mouseup',function (e){
-            if ( !targetWindow.contains(e.target) ) {
-                if (callback) {
-                    callback();
+    function clickPastWindow(windowObj,callback) {
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+            var isModalWindowImg = $('div').is('.imgFullScr');
+            if (!windowObj.is(e.target) // если клик был не по нашему блоку
+                && windowObj.has(e.target).length === 0) { // и не по его дочерним элементам
+                if (!isModalWindowImg) {
+                    callback(); // скрываем его
                 }
             }
         });
-    } // clickPastWindow
+    } // JQ clickPastWindow
+
+
 
 };

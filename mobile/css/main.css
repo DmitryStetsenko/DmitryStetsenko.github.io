@@ -771,6 +771,79 @@ button, input {
         .iconBtn .cssIcon__part-line:last-child {
           margin-bottom: 0; }
 
+.contactsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none; }
+  .contactsBtn::before {
+    background: rgba(255, 255, 255, 0.26);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transform: skewX(-20deg);
+    transition: left .5s;
+    top: 0;
+    left: -40px;
+    width: 30px; }
+  .contactsBtn:hover::before {
+    animation: highlightBtn .3s linear; }
+  .contactsBtn .innerIcon {
+    margin-right: 10px;
+    width: 10px; }
+    .contactsBtn .innerIcon svg {
+      fill: white; }
+  .contactsBtn-twitter {
+    background: #25b5eb; }
+  .contactsBtn-vk {
+    background: #4991bf; }
+    .contactsBtn-vk .innerIcon {
+      width: 20px; }
+  .contactsBtn-drive {
+    background: #fe434b; }
+  .contactsBtn-youtube {
+    background: #ff0000; }
+    .contactsBtn-youtube .innerIcon {
+      width: 10px; }
+  .contactsBtn-faceBook {
+    background: #147ec2; }
+    .contactsBtn-faceBook .innerIcon {
+      width: 15px; }
+  .contactsBtn-drom {
+    background: #d61c1c; }
+    .contactsBtn-drom .innerIcon {
+      width: 10px; }
+  .contactsBtn-ok {
+    background: #ff821b; }
+    .contactsBtn-ok .innerIcon {
+      width: 15px; }
+  @media screen and (max-width: 1170px) {
+    .contactsBtn {
+      font-size: 11px;
+      height: 30px; }
+      .contactsBtn .innerIcon {
+        margin-right: 10px;
+        width: 15px; }
+        .contactsBtn .innerIcon svg {
+          fill: white; }
+      .contactsBtn-vk .innerIcon {
+        width: 15px; }
+      .contactsBtn-youtube .innerIcon {
+        width: 10px; }
+      .contactsBtn-faceBook .innerIcon {
+        width: 15px; }
+      .contactsBtn-drom .innerIcon {
+        width: 7px; }
+      .contactsBtn-ok .innerIcon {
+        width: 15px; } }
+
 .closeBtn__icon {
   border-radius: 50%;
   border: 1px solid transparent;
@@ -822,11 +895,13 @@ button, input {
     fill: #7eae3e; }
   .starsIcon-yellow svg {
     stroke: #efb428; }
-  .starsIcon-yellow.Fill svg {
+  .starsIcon-yellowFill svg {
+    stroke: #efb428;
     fill: #efb428; }
   .starsIcon-red svg {
     stroke: #e73e4e; }
-  .starsIcon-red.Fill svg {
+  .starsIcon-redFill svg {
+    stroke: #e73e4e;
     fill: #e73e4e; }
   .starsIcon-fat {
     display: block;
@@ -844,6 +919,8 @@ button, input {
         transform: translate(-47%, -47%); }
       .starsIcon-fat svg.fill {
         fill: #e73e4e; }
+  .starsIcon-big {
+    width: 16px; }
 
 .ratingCircle {
   border-radius: 50%;
@@ -1071,6 +1148,16 @@ button, input {
     width: 100%; }
     .reviewDiagramBlock-comparisonPage .reviewDiagramBlock__item {
       height: 20px; }
+  .reviewDiagramBlock-userInfo {
+    align-items: flex-start;
+    flex-direction: column;
+    height: initial;
+    width: 100%;
+    min-width: 60px; }
+    .reviewDiagramBlock-userInfo .reviewDiagramBlock__item {
+      font-size: 9px;
+      height: 15px;
+      min-width: 15px; }
 
 .userVoting .voteValue {
   text-align: center;
@@ -1463,6 +1550,7 @@ button, input {
       overflow: hidden;
       position: relative;
       transition: box-shadow .3s;
+      min-width: 45px;
       width: 45px; }
       .review .userInfo__photo img {
         object-fit: cover;
@@ -1957,6 +2045,258 @@ button, input {
         overflow: hidden; }
   .review-noComments .review__comments {
     display: none; }
+  .review__userComments {
+    border: 1px solid #e8e8e8;
+    padding: 20px 15px; }
+    .review__userComments .reviewComments__title {
+      margin-bottom: 20px; }
+    .review__userComments .reviewComments__content .usersComments {
+      margin-bottom: 20px; }
+      .review__userComments .reviewComments__content .usersComments:last-child {
+        margin-bottom: 0; }
+      .review__userComments .reviewComments__content .usersComments__item {
+        margin-bottom: 20px; }
+        .review__userComments .reviewComments__content .usersComments__item:last-child {
+          margin-bottom: 0; }
+        .review__userComments .reviewComments__content .usersComments__item .innerIcon {
+          position: absolute;
+          top: 0;
+          left: 15px;
+          width: 20px; }
+        .review__userComments .reviewComments__content .usersComments__item .innerTitle {
+          color: #2c333d;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 15px; }
+          .review__userComments .reviewComments__content .usersComments__item .innerTitle span {
+            color: #6f7786;
+            font-weight: normal;
+            font-size: 15px; }
+        .review__userComments .reviewComments__content .usersComments__item .infoBlock__btn {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          .review__userComments .reviewComments__content .usersComments__item .infoBlock__btn button {
+            margin-right: 20px; }
+            .review__userComments .reviewComments__content .usersComments__item .infoBlock__btn button:last-child {
+              margin-right: 0; }
+        .review__userComments .reviewComments__content .usersComments__item .infoBlock-comment .userComment {
+          font-size: 15px;
+          line-height: 18px;
+          margin-bottom: 5px; }
+        .review__userComments .reviewComments__content .usersComments__item-comment {
+          padding-left: 60px;
+          position: relative; }
+  .review__userVotes {
+    background: white;
+    border: 1px solid #e8e8e8;
+    padding: 20px 15px; }
+    .review__userVotes .reviewComments__title {
+      margin-bottom: 20px; }
+    .review__userVotes .reviewComments__content .usersComments {
+      margin-bottom: 20px; }
+      .review__userVotes .reviewComments__content .usersComments:last-child {
+        margin-bottom: 0; }
+      .review__userVotes .reviewComments__content .usersComments__item {
+        border-bottom: 1px solid #e8e8e8;
+        margin-bottom: 0;
+        padding-bottom: 25px;
+        padding-top: 25px; }
+        .review__userVotes .reviewComments__content .usersComments__item:first-child {
+          padding-top: 0; }
+        .review__userVotes .reviewComments__content .usersComments__item:last-child {
+          border: none;
+          padding-bottom: 0; }
+        .review__userVotes .reviewComments__content .usersComments__item .userProfileLink {
+          text-decoration: none; }
+          .review__userVotes .reviewComments__content .usersComments__item .userProfileLink:hover .userInfo__photo {
+            box-shadow: unset; }
+          .review__userVotes .reviewComments__content .usersComments__item .userProfileLink:hover .userInfo__name .innerText {
+            color: #2c333d; }
+            .review__userVotes .reviewComments__content .usersComments__item .userProfileLink:hover .userInfo__name .innerText::before {
+              width: 0; }
+        .review__userVotes .reviewComments__content .usersComments__item .userInfo {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerText {
+            display: block;
+            font-weight: normal;
+            line-height: 1.2; }
+            .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerText span {
+              font-weight: bold; }
+            .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerText a {
+              border-bottom: 1px solid #4991bf;
+              color: #4991bf;
+              padding-bottom: 1px;
+              position: relative;
+              text-decoration: none;
+              transition: color .3s; }
+              .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerText a:hover {
+                color: #efb428; }
+                .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerText a:hover::before {
+                  width: 100%; }
+              .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerText a::before {
+                background: #efb428;
+                bottom: -1px;
+                content: '';
+                display: block;
+                height: 1px;
+                left: 0;
+                position: absolute;
+                transition: width .3s;
+                width: 0; }
+          .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerTime {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerTime__growth {
+              margin-right: 5px;
+              width: 13px; }
+              .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerTime__growth-positive {
+                fill: #7eae3e; }
+              .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerTime__growth-negative {
+                fill: #e73e4e;
+                transform: rotate(180deg); }
+            .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerTime button {
+              margin-left: 15px; }
+            .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerTime-positive .innerTime__growth-negative {
+              display: none; }
+            .review__userVotes .reviewComments__content .usersComments__item .userInfo__name .innerTime-negative .innerTime__growth-positive {
+              display: none; }
+        .review__userVotes .reviewComments__content .usersComments__item .innerIcon {
+          position: absolute;
+          top: 0;
+          left: 15px;
+          width: 20px; }
+        .review__userVotes .reviewComments__content .usersComments__item .innerTitle {
+          color: #2c333d;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 15px; }
+          .review__userVotes .reviewComments__content .usersComments__item .innerTitle span {
+            color: #6f7786;
+            font-weight: normal;
+            font-size: 15px; }
+        .review__userVotes .reviewComments__content .usersComments__item .infoBlock__btn {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          .review__userVotes .reviewComments__content .usersComments__item .infoBlock__btn button {
+            margin-right: 20px; }
+            .review__userVotes .reviewComments__content .usersComments__item .infoBlock__btn button:last-child {
+              margin-right: 0; }
+        .review__userVotes .reviewComments__content .usersComments__item .infoBlock-comment .userComment {
+          font-size: 15px;
+          line-height: 18px;
+          margin-bottom: 5px; }
+        .review__userVotes .reviewComments__content .usersComments__item-comment {
+          padding-left: 60px;
+          position: relative; }
+  .review__userNotification {
+    border: 1px solid #e8e8e8;
+    padding: 20px 15px;
+    margin-bottom: 20px; }
+    .review__userNotification:last-child {
+      margin-bottom: 0; }
+    .review__userNotification .reviewComments__title {
+      margin-bottom: 20px; }
+    .review__userNotification .reviewComments__content .usersComments {
+      margin-bottom: 20px; }
+      .review__userNotification .reviewComments__content .usersComments:last-child {
+        margin-bottom: 0; }
+      .review__userNotification .reviewComments__content .usersComments__item {
+        margin-bottom: 30px; }
+        .review__userNotification .reviewComments__content .usersComments__item:last-child {
+          margin-bottom: 0; }
+        .review__userNotification .reviewComments__content .usersComments__item .userProfileLink {
+          text-decoration: none; }
+          .review__userNotification .reviewComments__content .usersComments__item .userProfileLink:hover .userInfo__photo {
+            box-shadow: unset; }
+          .review__userNotification .reviewComments__content .usersComments__item .userProfileLink:hover .userInfo__name .innerText {
+            color: #2c333d; }
+            .review__userNotification .reviewComments__content .usersComments__item .userProfileLink:hover .userInfo__name .innerText::before {
+              width: 0; }
+        .review__userNotification .reviewComments__content .usersComments__item .userInfo {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerText {
+            display: block;
+            font-weight: normal;
+            line-height: 1.2; }
+            .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerText span {
+              font-weight: bold; }
+            .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerText a {
+              border-bottom: 1px solid #4991bf;
+              color: #4991bf;
+              padding-bottom: 1px;
+              position: relative;
+              text-decoration: none;
+              transition: color .3s; }
+              .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerText a:hover {
+                color: #efb428; }
+                .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerText a:hover::before {
+                  width: 100%; }
+              .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerText a::before {
+                background: #efb428;
+                bottom: -1px;
+                content: '';
+                display: block;
+                height: 1px;
+                left: 0;
+                position: absolute;
+                transition: width .3s;
+                width: 0; }
+          .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerTime {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerTime__growth {
+              margin-right: 5px;
+              width: 13px; }
+              .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerTime__growth-positive {
+                fill: #7eae3e; }
+              .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerTime__growth-negative {
+                fill: #e73e4e;
+                transform: rotate(180deg); }
+            .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerTime button {
+              margin-left: 15px; }
+            .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerTime-positive .innerTime__growth-negative {
+              display: none; }
+            .review__userNotification .reviewComments__content .usersComments__item .userInfo__name .innerTime-negative .innerTime__growth-positive {
+              display: none; }
+        .review__userNotification .reviewComments__content .usersComments__item .innerIcon {
+          position: absolute;
+          top: 0;
+          left: 15px;
+          width: 20px; }
+        .review__userNotification .reviewComments__content .usersComments__item .innerTitle {
+          color: #2c333d;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 15px; }
+          .review__userNotification .reviewComments__content .usersComments__item .innerTitle span {
+            color: #6f7786;
+            font-weight: normal;
+            font-size: 15px; }
+        .review__userNotification .reviewComments__content .usersComments__item .infoBlock__btn {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          .review__userNotification .reviewComments__content .usersComments__item .infoBlock__btn button {
+            margin-right: 20px; }
+            .review__userNotification .reviewComments__content .usersComments__item .infoBlock__btn button:last-child {
+              margin-right: 0; }
+        .review__userNotification .reviewComments__content .usersComments__item .infoBlock-comment .userComment {
+          font-size: 15px;
+          line-height: 18px;
+          margin-bottom: 5px; }
+        .review__userNotification .reviewComments__content .usersComments__item-comment {
+          padding-left: 60px;
+          position: relative; }
+  .review-noBorder {
+    border: none; }
 
 .postYourReview {
   display: flex;
@@ -3368,6 +3708,31 @@ button, input {
                 fill: #7eae3e; }
             .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .brandSparePartsInfoBlock__ratingTotal .innerText {
               margin: 0 15px; }
+          .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none; }
+            .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item:last-child {
+              margin-bottom: 0; }
+            .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item .ratingValue {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              color: #2c333d;
+              margin-right: 10px; }
+              .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item .ratingValue .innerText {
+                font-size: 20px;
+                margin-right: 5px; }
+            .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item .ratingDescription {
+              font-size: 12px;
+              margin-bottom: 0; }
+              .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item .ratingDescription .innerText {
+                color: #2c333d;
+                white-space: nowrap; }
+            .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item-positive .ratingDescription .innerText:first-child {
+              color: #7eae3e; }
+            .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .lastRatings__item-negative .ratingDescription .innerText:first-child {
+              color: #e73e4e; }
           .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent__data {
             display: flex;
             align-items: center;
@@ -3743,6 +4108,111 @@ button, input {
     margin-bottom: 0; }
     .pageHeaderBlock-comparisonPage .blockTitle {
       text-align: center; }
+  .pageHeaderBlock-userInfo {
+    margin-bottom: initial; }
+    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent {
+      align-items: stretch; }
+      .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item {
+        max-height: initial; }
+        .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockTitle {
+          padding-left: 15px; }
+        .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent {
+          padding: 0; }
+          .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column; }
+            .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              margin-bottom: 5px; }
+              .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock:last-child {
+                margin-bottom: 0; }
+              .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item {
+                margin-right: 5px; }
+                .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item:last-child {
+                  margin-right: 0; }
+                .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-title {
+                  color: #2c333d;
+                  font-size: 14px;
+                  white-space: nowrap; }
+                .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center; }
+                  .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon {
+                    display: block;
+                    margin-right: 1px;
+                    height: 12px;
+                    width: 12px; }
+                    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon:last-child {
+                      margin-right: 0; }
+                    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon svg {
+                      fill: transparent;
+                      stroke-width: 3px;
+                      stroke: #7eae3e; }
+                      .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon svg.fill {
+                        fill: #7eae3e; }
+                    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillGreen svg {
+                      fill: #7eae3e !important;
+                      stroke: #7eae3e !important; }
+                    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillYellow svg {
+                      fill: #efb428 !important;
+                      stroke: #efb428 !important; }
+                    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-fillRed svg {
+                      fill: #e73e4e !important;
+                      stroke: #e73e4e !important; }
+                    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeGreen svg {
+                      fill: transparent !important;
+                      stroke: #7eae3e !important; }
+                    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeYellow svg {
+                      fill: transparent !important;
+                      stroke: #efb428 !important; }
+                    .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__icon-strokeRed svg {
+                      fill: transparent !important;
+                      stroke: #e73e4e !important; }
+                  .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-stars .starsIconBlock__value {
+                    margin-left: 10px; }
+                .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item .ratingsBlock__item-rating {
+                  color: #2c333d;
+                  font-size: 14px; }
+            .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average {
+              margin: initial; }
+              .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock {
+                align-items: flex-start;
+                justify-content: center; }
+                .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-title {
+                  color: #2c333d;
+                  font-size: 20px;
+                  margin-bottom: 5px; }
+                  .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-title::after {
+                    content: attr(data-value);
+                    margin-left: 6px; }
+                .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-stars {
+                  margin-right: 8px; }
+                  .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-stars .starsIconBlock__icon {
+                    height: 16px;
+                    width: 16px; }
+                .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .userAssessment__item-average .ratingsBlock__item-rating {
+                  color: #2c333d;
+                  font-size: 20px; }
+          .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .totalRespondents {
+            color: #2c333d;
+            font-size: 13px;
+            margin-right: 15px;
+            margin-top: 0; }
+            .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .totalRespondents span {
+              display: block;
+              font-size: 20px;
+              font-weight: normal;
+              margin-bottom: 5px; }
+          .pageHeaderBlock-userInfo .pageHeaderBlock__content .headerBlockContent__item .innerBlockContent .diagramBlock {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 0; }
 
 .ratingTableBlock {
   margin-bottom: 45px; }
@@ -4461,6 +4931,70 @@ button, input {
 
 .siteHeader__logo {
   width: 148px; }
+
+.siteHeader__userInfo .userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .siteHeader__userInfo .userInfo__notification {
+    position: relative; }
+    .siteHeader__userInfo .userInfo__notificationBtn {
+      margin-right: 10px;
+      position: relative;
+      width: 16px; }
+      .siteHeader__userInfo .userInfo__notificationBtn:hover {
+        cursor: pointer; }
+      .siteHeader__userInfo .userInfo__notificationBtn::before {
+        display: block;
+        background: #e73e4e;
+        border-radius: 50%;
+        border: 2px solid #2c333d;
+        content: '4';
+        color: white;
+        font-size: 10px;
+        line-height: 15px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 15px;
+        min-width: 15px;
+        transform: translate(60%, -30%);
+        transition: opacity .3s;
+        text-align: center;
+        width: 15px; }
+      .siteHeader__userInfo .userInfo__notificationBtn-noNew::before {
+        opacity: 0; }
+  .siteHeader__userInfo .userInfo__notifPopUp {
+    display: none;
+    top: 25px;
+    right: -65px;
+    position: absolute;
+    width: 95vw;
+    z-index: 10; }
+    .siteHeader__userInfo .userInfo__notifPopUp .trianglePlace {
+      height: 10px;
+      position: relative;
+      margin-bottom: -1px; }
+      .siteHeader__userInfo .userInfo__notifPopUp .trianglePlace::before {
+        width: 0;
+        height: 0;
+        border-left: 8.5px solid transparent;
+        border-right: 8.5px solid transparent;
+        border-bottom: 10px solid white;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 75px; }
+    .siteHeader__userInfo .userInfo__notifPopUp .review__userVotes {
+      border-radius: 3px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.21); }
+      .siteHeader__userInfo .userInfo__notifPopUp .review__userVotes .reviewComments {
+        margin-bottom: 20px; }
+  .siteHeader__userInfo .userInfo__avatar {
+    display: block;
+    text-decoration: none;
+    width: 30px; }
 
 .searchBlock__form input {
   background: #464f5b;
@@ -8125,3 +8659,387 @@ button, input {
       margin-bottom: 20px; }
       #infoPage .info__contentsBlock .blockInfo__item:last-child {
         margin-bottom: 0; }
+
+#userPage .userInfoBlock {
+  margin-bottom: 45px; }
+  #userPage .userInfoBlock .userManage {
+    border-radius: 3px;
+    border: 1px solid #e8e8e8;
+    padding: 20px; }
+    #userPage .userInfoBlock .userManage__detail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 15px; }
+    #userPage .userInfoBlock .userManage__photo {
+      border-radius: 3px;
+      background: #f6f6f6;
+      height: 110px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      position: relative;
+      width: 110px; }
+      #userPage .userInfoBlock .userManage__photo img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%); }
+    #userPage .userInfoBlock .userManage__info {
+      text-align: center; }
+      #userPage .userInfoBlock .userManage__info .name {
+        margin-bottom: 5px; }
+      #userPage .userInfoBlock .userManage__info .registerDate {
+        color: #6f7786;
+        font-size: 13px; }
+    #userPage .userInfoBlock .userManage__userAction {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #userPage .userInfoBlock .userManage__userAction .serviceBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        color: #2c333d;
+        height: 35px;
+        font-size: 15px;
+        margin-right: 15px;
+        padding: 5px 15px;
+        transition: transform .3s, box-shadow .3s; }
+        #userPage .userInfoBlock .userManage__userAction .serviceBtn:hover {
+          cursor: pointer;
+          transform: translateY(-3px); }
+        #userPage .userInfoBlock .userManage__userAction .serviceBtn:last-child {
+          margin-right: 0; }
+        #userPage .userInfoBlock .userManage__userAction .serviceBtn .innerIcon svg {
+          fill-rule: evenodd; }
+        #userPage .userInfoBlock .userManage__userAction .serviceBtn-settings {
+          background: #e8e8e8; }
+          #userPage .userInfoBlock .userManage__userAction .serviceBtn-settings:hover {
+            background: #dbdbdb;
+            box-shadow: 0 3px 0 0 #959595; }
+          #userPage .userInfoBlock .userManage__userAction .serviceBtn-settings .innerIcon {
+            margin-right: 10px;
+            width: 12px; }
+            #userPage .userInfoBlock .userManage__userAction .serviceBtn-settings .innerIcon svg {
+              fill: #6f7786; }
+        #userPage .userInfoBlock .userManage__userAction .serviceBtn-exit {
+          background: #fea1a5; }
+          #userPage .userInfoBlock .userManage__userAction .serviceBtn-exit:hover {
+            background: #fe888d;
+            box-shadow: 0 3px 0 0 #ba7676; }
+          #userPage .userInfoBlock .userManage__userAction .serviceBtn-exit .innerIcon {
+            margin-right: 10px;
+            width: 12px; }
+            #userPage .userInfoBlock .userManage__userAction .serviceBtn-exit .innerIcon svg {
+              fill: #6f7786; }
+  #userPage .userInfoBlock .userInfoDetail__userProgress {
+    background: #f6f6f6;
+    border-radius: 3px;
+    padding: 20px 15px; }
+  #userPage .userInfoBlock .userInfoDetail .userProgressBlock__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px; }
+    #userPage .userInfoBlock .userInfoDetail .userProgressBlock__title .innerIcon {
+      margin-right: 10px;
+      min-width: 15px;
+      width: 15px; }
+      #userPage .userInfoBlock .userInfoDetail .userProgressBlock__title .innerIcon svg {
+        fill: #efb428; }
+    #userPage .userInfoBlock .userInfoDetail .userProgressBlock__title .innerText {
+      font-size: 15px; }
+  #userPage .userInfoBlock .userInfoDetail .userProgressBlock__growth {
+    border: 2px solid #efb428;
+    border-radius: 3px;
+    color: #efb428;
+    font-size: 13px;
+    margin-left: auto;
+    padding: 7px 6px 7px 3px;
+    text-decoration: none; }
+  #userPage .userInfoBlock .userInfoDetail .userProgressBlock__progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; }
+  #userPage .userInfoBlock .userInfoDetail .userProgressBlock__item {
+    height: 35px;
+    margin-right: 10px;
+    text-decoration: none;
+    text-align: center;
+    width: 45px; }
+    #userPage .userInfoBlock .userInfoDetail .userProgressBlock__item:last-child {
+      margin-right: 0; }
+    #userPage .userInfoBlock .userInfoDetail .userProgressBlock__item img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 5px; }
+    #userPage .userInfoBlock .userInfoDetail .userProgressBlock__item .innerText {
+      color: #6f7786;
+      font-size: 14px; }
+
+#userPage .info {
+  margin-bottom: 45px; }
+  #userPage .info .manageButton {
+    margin-bottom: 20px; }
+    #userPage .info .manageButton__item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 3px;
+      border: 1px solid #e8e8e8;
+      color: #2c333d;
+      height: 35px;
+      margin-bottom: 5px;
+      padding: 0 20px;
+      text-decoration: none;
+      width: 100%;
+      white-space: nowrap; }
+      #userPage .info .manageButton__item a:hover {
+        cursor: pointer;
+        background: #efb428;
+        border-color: #efb428;
+        color: white; }
+      #userPage .info .manageButton__item a::after {
+        content: '>';
+        font-family: "Segoe Script", sans-serif;
+        font-size: 14px;
+        transform: rotate(10deg);
+        margin-left: 15px; }
+      #userPage .info .manageButton__item a span {
+        margin-left: auto; }
+    #userPage .info .manageButton__item:last-child {
+      margin-bottom: 0; }
+    #userPage .info .manageButton__item-active a {
+      cursor: pointer;
+      background: #efb428;
+      border-color: #efb428;
+      color: white; }
+  #userPage .info__manage {
+    margin-bottom: 45px; }
+  #userPage .info .contacts {
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    padding: 20px 15px; }
+  #userPage .info .contactsSocial {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap; }
+    #userPage .info .contactsSocial__item {
+      margin-right: 5px;
+      width: calc( (100% - 5px)  / 2); }
+      #userPage .info .contactsSocial__item:first-child {
+        margin-bottom: 5px; }
+      #userPage .info .contactsSocial__item:nth-child(even) {
+        margin-right: 0;
+        margin-bottom: 0; }
+  #userPage .info__contentsBlock {
+    width: 100%; }
+    #userPage .info__contentsBlock .blockInfo__item {
+      line-height: 22px;
+      margin-bottom: 20px; }
+      #userPage .info__contentsBlock .blockInfo__item:last-child {
+        margin-bottom: 0; }
+  #userPage .info .reviewsBlock {
+    margin-bottom: 45px; }
+    #userPage .info .reviewsBlock .contentArea {
+      width: 100%; }
+  #userPage .info .review {
+    margin-bottom: 45px; }
+    #userPage .info .review-noMarginBottom {
+      margin-bottom: 0; }
+  #userPage .info .userProgress {
+    margin-bottom: 45px; }
+    #userPage .info .userProgress__item {
+      border: 1px solid #e8e8e8;
+      border-radius: 3px;
+      margin-bottom: 20px; }
+      #userPage .info .userProgress__item:last-child {
+        margin-bottom: 0; }
+      #userPage .info .userProgress__item .progressName__item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 90px;
+        padding: 0 25px;
+        width: 100%; }
+        #userPage .info .userProgress__item .progressName__item:nth-child(even) {
+          background: #f6f6f6; }
+        #userPage .info .userProgress__item .progressName__item:last-child .progressName__photo {
+          border: none; }
+        #userPage .info .userProgress__item .progressName__item:last-child .progressName__info {
+          border: none; }
+      #userPage .info .userProgress__item .progressName__photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #e8e8e8;
+        height: 100%; }
+        #userPage .info .userProgress__item .progressName__photo .innerIcon {
+          border-radius: 3px;
+          margin-right: 20px;
+          overflow: hidden;
+          height: 45px;
+          min-width: 45px;
+          width: 45px; }
+          #userPage .info .userProgress__item .progressName__photo .innerIcon img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center; }
+      #userPage .info .userProgress__item .progressName__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e8e8e8;
+        height: 100%;
+        width: 100%; }
+        #userPage .info .userProgress__item .progressName__info .infoItem:first-child {
+          width: 60%; }
+        #userPage .info .userProgress__item .progressName__info .infoItem:last-child {
+          width: 40%; }
+          #userPage .info .userProgress__item .progressName__info .infoItem:last-child .innerText {
+            color: #8a939f;
+            display: block;
+            font-size: 13px;
+            text-align: right;
+            width: 100%; }
+        #userPage .info .userProgress__item .progressName__info .infoItem .innerText__title {
+          font-size: 15px;
+          font-weight: bold;
+          margin-bottom: 5px; }
+        #userPage .info .userProgress__item .progressName__info .infoItem .innerText__description {
+          font-size: 13px; }
+        #userPage .info .userProgress__item .progressName__info .infoItem .progressBar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #e9e9e9;
+          color: white;
+          font-size: 12px;
+          height: 18px;
+          position: relative;
+          margin-left: auto;
+          width: 170px; }
+          #userPage .info .userProgress__item .progressName__info .infoItem .progressBar::before {
+            background: #7eae3e;
+            content: '';
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            width: 70%;
+            z-index: 1; }
+          #userPage .info .userProgress__item .progressName__info .infoItem .progressBar span {
+            position: relative;
+            z-index: 2; }
+  #userPage .info .userSettingsBlock__content {
+    border: 1px solid #e8e8e8;
+    margin-bottom: 20px; }
+  #userPage .info .userSettingsBlock__item {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 20px 15px; }
+    #userPage .info .userSettingsBlock__item:last-child {
+      border: none; }
+    #userPage .info .userSettingsBlock__item .innerTitle {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px; }
+    #userPage .info .userSettingsBlock__item .innerContent__input {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 20px; }
+      #userPage .info .userSettingsBlock__item .innerContent__input:last-child {
+        margin-bottom: 20px; }
+      #userPage .info .userSettingsBlock__item .innerContent__input span {
+        width: 90px; }
+      #userPage .info .userSettingsBlock__item .innerContent__input input {
+        width: 100%; }
+      #userPage .info .userSettingsBlock__item .innerContent__input .mySelecter {
+        width: 100%; }
+        #userPage .info .userSettingsBlock__item .innerContent__input .mySelecter span {
+          width: 100%; }
+    #userPage .info .userSettingsBlock__item .innerContent .socialBtnBlock {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%; }
+      #userPage .info .userSettingsBlock__item .innerContent .socialBtnBlock__item {
+        margin-right: 5px;
+        width: calc( (100% - 5px) / 2); }
+        #userPage .info .userSettingsBlock__item .innerContent .socialBtnBlock__item:nth-child(2n) {
+          margin-right: 0;
+          margin-bottom: 5px; }
+        #userPage .info .userSettingsBlock__item .innerContent .socialBtnBlock__item:last-child {
+          margin-bottom: 0; }
+    #userPage .info .userSettingsBlock__item-car .innerContent__input {
+      display: block;
+      margin-bottom: 0; }
+      #userPage .info .userSettingsBlock__item-car .innerContent__input:last-child {
+        margin-bottom: 0; }
+      #userPage .info .userSettingsBlock__item-car .innerContent__input span {
+        display: block;
+        width: initial; }
+        #userPage .info .userSettingsBlock__item-car .innerContent__input span:first-child {
+          margin-bottom: 10px; }
+      #userPage .info .userSettingsBlock__item-car .innerContent__input input {
+        width: 100%; }
+      #userPage .info .userSettingsBlock__item-car .innerContent__input .mySelecter {
+        width: 100%; }
+        #userPage .info .userSettingsBlock__item-car .innerContent__input .mySelecter span {
+          width: 100%; }
+  @media screen and (max-width: 1170px) {
+    #userPage .info .userProgress__item .progressName__info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid #e8e8e8;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 100%; }
+      #userPage .info .userProgress__item .progressName__info .infoItem:first-child {
+        width: initial; }
+      #userPage .info .userProgress__item .progressName__info .infoItem:last-child {
+        width: initial; }
+        #userPage .info .userProgress__item .progressName__info .infoItem:last-child .innerText {
+          text-align: left; }
+      #userPage .info .userProgress__item .progressName__info .infoItem .innerText__description {
+        margin-bottom: 5px; }
+      #userPage .info .userProgress__item .progressName__info .infoItem .progressBar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e9e9e9;
+        color: white;
+        font-size: 12px;
+        height: 18px;
+        position: relative;
+        margin-left: auto;
+        width: 170px; }
+        #userPage .info .userProgress__item .progressName__info .infoItem .progressBar::before {
+          background: #7eae3e;
+          content: '';
+          position: absolute;
+          height: 100%;
+          top: 0;
+          left: 0;
+          width: 70%;
+          z-index: 1; }
+        #userPage .info .userProgress__item .progressName__info .infoItem .progressBar span {
+          position: relative;
+          z-index: 2; } }
