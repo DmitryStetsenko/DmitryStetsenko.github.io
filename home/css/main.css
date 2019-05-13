@@ -4604,302 +4604,617 @@ button, input {
   to {
     background-position: 60px 30px; } }
 
-/* 
- * Selecter v3.2.3 - 2014-10-24 
- * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
- * http://formstone.it/selecter/ 
- * 
- * Copyright 2014 Ben Plum; MIT Licensed 
- */
-.selecter {
+.jq-checkbox,
+.jq-radio {
   position: relative;
-  display: block;
-  z-index: 1;
-  /*max-width: 30%;*/ }
-
-.selecter:focus {
-  box-shadow: none;
-  outline: none; }
-
-.selecter,
-.selecter * {
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important; }
-
-.selecter,
-.selecter *,
-.selecter *:before,
-.selecter *:after {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.selecter-element {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  opacity: 0;
-  z-index: -1; }
-
-.selecter-element,
-.selecter-element:focus {
-  outline: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  -webkit-tap-highlight-color: transparent; }
-
-.no-opacity .selecter-element {
-  left: -999999px; }
-
-.selecter-selected {
-  position: relative;
-  background: red;
-  border: 1px solid #c886e3;
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  font-size: 16px;
-  margin: 0;
+  display: inline-block;
   overflow: hidden;
-  padding: 10px 10px;
-  text-overflow: clip;
-  z-index: 2;
-  line-height: 1em; }
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
-.selecter-selected:after {
-  height: 0;
-  width: 0;
+.jq-checkbox input,
+.jq-radio input {
+  position: absolute;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+  opacity: 0; }
+
+.jq-file {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; }
+
+.jq-file input {
   position: absolute;
   top: 0;
-  right: 15px;
-  bottom: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #c886e3;
-  content: '';
-  display: block;
-  margin: auto 0; }
-
-.selecter-selected:hover {
-  color: #fff;
-  border: 1px solid #eed3fa; }
-
-.selecter.disabled .selecter-selected:hover {
-  color: #fff; }
-
-.selecter-options {
-  width: 100%;
-  max-height: 260px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  border: 1px solid #c886e3;
-  border-top: 1px solid transparent;
-  background-color: red;
-  display: none;
+  right: 0;
+  height: auto;
   margin: 0;
-  overflow: auto;
-  overflow-x: hidden;
   padding: 0;
-  z-index: 50; }
+  opacity: 0;
+  font-size: 100px;
+  line-height: 1em; }
 
-.selecter-options:hover {
-  border: 1px solid #eed3fa; }
-
-.selecter-options.scroller {
-  position: absolute; }
-
-.no-opacity .selecter-options {
-  width: auto; }
-
-.selecter-group {
-  border-bottom: 1px solid rgba(200, 134, 227, 0);
-  color: #cd9de1;
-  display: block;
-  font-size: 1px;
-  padding: 10px 15px;
-  text-transform: uppercase; }
-
-.selecter-item {
-  width: 100%;
-  background: red;
-  color: #cd9de1;
-  cursor: pointer;
-  display: block;
-  font-size: 16px;
-  margin: 0;
+.jq-file__name {
   overflow: hidden;
-  padding: 10px 15px;
-  text-decoration: none;
+  white-space: nowrap;
   text-overflow: ellipsis; }
 
-.selecter-item.placeholder {
-  display: none; }
+.jq-selectbox,
+.jq-select-multiple {
+  position: relative;
+  display: inline-block; }
 
-.selecter-item.selected {
-  background: red; }
+.jq-selectbox select,
+.jq-select-multiple select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0; }
 
-.selecter-item.disabled {
-  color: #faff51;
-  cursor: default; }
+.jq-selectbox li,
+.jq-select-multiple li {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap; }
 
-.selecter-item:first-child {
-  border-radius: 0; }
+.jq-selectbox {
+  z-index: 10; }
 
-.selecter-item:last-child {
-  border-bottom: 0;
-  border-radius: 0 0 2px 2px; }
+.jq-selectbox__select {
+  position: relative; }
 
-.selecter-item:hover,
-.selecter-item.selected:hover {
-  color: #cd9de1;
-  background-color: #eed3fa; }
+.jq-selectbox__select-text {
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
-.selecter-item.disabled,
-.selecter-item.disabled:hover {
-  color: red;
-  background-color: green; }
+.jq-selectbox__dropdown {
+  position: absolute; }
 
-.selecter.open {
-  z-index: 3; }
+.jq-selectbox__search input {
+  -webkit-appearance: textfield; }
 
-.selecter.open .selecter-selected {
-  z-index: 51; }
+.jq-selectbox__search input::-webkit-search-cancel-button,
+.jq-selectbox__search input::-webkit-search-decoration {
+  -webkit-appearance: none; }
 
-.selecter.open .selecter-selected,
-.selecter.focus .selecter-selected {
-  background-color: red; }
+.jq-selectbox__dropdown ul {
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+  list-style: none;
+  -webkit-overflow-scrolling: touch; }
 
-.selecter.cover .selecter-options {
-  border-width: 1px;
-  top: 0; }
+.jq-select-multiple ul {
+  position: relative;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
 
-.selecter.cover.open .selecter-selected {
-  z-index: 49; }
+.jq-number {
+  display: inline-block; }
 
-.selecter.bottom .selecter-options {
-  top: auto;
-  bottom: 100%;
-  border-width: 1px 1px 0; }
+.jq-number__field input {
+  -moz-appearance: textfield;
+  text-align: left;
+  /* для Opera Presto */ }
 
-.selecter.bottom .selecter-item:last-child {
-  border: none; }
+.jq-number__field input::-webkit-inner-spin-button,
+.jq-number__field input::-webkit-outer-spin-button {
+  margin: 0;
+  /* в каких-то браузерах присутствует отступ */
+  -webkit-appearance: none; }
 
-.selecter.bottom .cover .selecter-options {
+.jq-checkbox,
+.jq-radio {
+  vertical-align: -4px;
+  width: 16px;
+  height: 16px;
+  margin: 0 4px 0 0;
+  border: 1px solid #C3C3C3;
+  background: linear-gradient(#FFF, #E6E6E6);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05), inset -1px -1px #FFF, inset 1px -1px #FFF;
+  cursor: pointer; }
+
+.jq-checkbox.focused,
+.jq-radio.focused {
+  border: 1px solid #08C; }
+
+.jq-checkbox.disabled,
+.jq-radio.disabled {
+  opacity: .55; }
+
+.jq-checkbox {
+  border-radius: 3px; }
+
+.jq-checkbox.checked .jq-checkbox__div {
+  width: 8px;
+  height: 4px;
+  margin: 3px 0 0 3px;
+  border-bottom: 2px solid #666;
+  border-left: 2px solid #666;
+  -webkit-transform: rotate(-50deg);
+  transform: rotate(-50deg); }
+
+.jq-radio {
+  border-radius: 50%; }
+
+.jq-radio.checked .jq-radio__div {
+  width: 10px;
+  height: 10px;
+  margin: 3px 0 0 3px;
+  border-radius: 50%;
+  background: #777;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.7); }
+
+.jq-file {
+  width: 270px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+
+.jq-file input {
+  cursor: pointer; }
+
+.jq-file__name {
+  box-sizing: border-box;
+  width: 100%;
+  height: 34px;
+  padding: 0 80px 0 10px;
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: inset 1px 1px #F1F1F1;
+  font: 14px/32px Arial, sans-serif;
+  color: #333; }
+
+.jq-file__browse {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  padding: 0 10px;
+  border-left: 1px solid #CCC;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(#FFF, #E6E6E6);
+  box-shadow: inset 1px -1px #F1F1F1, inset -1px 0 #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1);
+  font: 14px/32px Arial, sans-serif;
+  color: #333;
+  text-shadow: 1px 1px #FFF; }
+
+.jq-file:hover .jq-file__browse {
+  background: linear-gradient(#F6F6F6, #E6E6E6); }
+
+.jq-file:active .jq-file__browse {
+  background: #F5F5F5;
+  box-shadow: inset 1px 1px 3px #DDD; }
+
+.jq-file.focused .jq-file__name {
+  border: 1px solid #5794BF; }
+
+.jq-file.disabled,
+.jq-file.disabled .jq-file__name,
+.jq-file.disabled .jq-file__browse {
+  border-color: #CCC;
+  background: #F5F5F5;
+  box-shadow: none;
+  color: #888; }
+
+.jq-number {
+  position: relative;
+  vertical-align: middle;
+  padding: 0 36px 0 0; }
+
+.jq-number__field {
+  width: 100px;
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1); }
+
+.jq-number__field:hover {
+  border-color: #B3B3B3; }
+
+.jq-number__field input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 9px;
+  border: none;
+  outline: none;
+  background: none;
+  font: 14px Arial, sans-serif;
+  color: #333; }
+
+.jq-number__spin {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 14px;
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-radius: 4px;
+  background: linear-gradient(#FFF, #E6E6E6);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px -1px #F1F1F1, inset -1px 0 #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-shadow: 1px 1px #FFF;
+  cursor: pointer; }
+
+.jq-number__spin.minus {
   top: auto;
   bottom: 0; }
 
-.selecter.multiple .selecter-options {
-  width: 100%;
-  position: static;
-  border-width: 1px;
+.jq-number__spin:hover {
+  background: linear-gradient(#F6F6F6, #E6E6E6); }
+
+.jq-number__spin:active {
+  background: #F5F5F5;
+  box-shadow: inset 1px 1px 3px #DDD; }
+
+.jq-number__spin:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 11px;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #999;
+  border-left: 5px solid transparent; }
+
+.jq-number__spin.minus:after {
+  top: 5px;
+  border-top: 5px solid #999;
+  border-right: 5px solid transparent;
+  border-bottom: none;
+  border-left: 5px solid transparent; }
+
+.jq-number__spin.minus:hover:after {
+  border-top-color: #000; }
+
+.jq-number__spin.plus:hover:after {
+  border-bottom-color: #000; }
+
+.jq-number.focused .jq-number__field {
+  border: 1px solid #5794BF; }
+
+.jq-number.disabled .jq-number__field,
+.jq-number.disabled .jq-number__spin {
+  border-color: #CCC;
+  background: #F5F5F5;
+  box-shadow: none;
+  color: #888; }
+
+.jq-number.disabled .jq-number__spin:after {
+  border-bottom-color: #AAA; }
+
+.jq-number.disabled .jq-number__spin.minus:after {
+  border-top-color: #AAA; }
+
+.jq-selectbox {
+  vertical-align: middle;
+  cursor: pointer; }
+
+.jq-selectbox__select {
+  height: 32px;
+  padding: 0 45px 0 10px;
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-radius: 4px;
+  background: linear-gradient(#FFF, #E6E6E6);
+  box-shadow: inset 1px -1px #F1F1F1, inset -1px 0 #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1);
+  font: 14px/32px Arial, sans-serif;
+  color: #333;
+  text-shadow: 1px 1px #FFF; }
+
+.jq-selectbox__select:hover {
+  background: linear-gradient(#F6F6F6, #E6E6E6); }
+
+.jq-selectbox__select:active {
+  background: #F5F5F5;
+  box-shadow: inset 1px 1px 3px #DDD; }
+
+.jq-selectbox.focused .jq-selectbox__select {
+  border: 1px solid #5794BF; }
+
+.jq-selectbox.disabled .jq-selectbox__select {
+  border-color: #CCC;
+  background: #F5F5F5;
+  box-shadow: none;
+  color: #888; }
+
+.jq-selectbox__select-text {
   display: block;
-  box-shadow: none; }
+  width: 100%; }
 
-.selecter.disabled .selecter-selected {
-  background: #ff00c4;
-  border-color: #cccccc;
-  color: #cccccc;
-  cursor: default; }
+.jq-selectbox .placeholder {
+  color: #888; }
 
-.selecter.disabled .selecter-options {
-  background: #ffbc03;
-  border-color: #cccccc; }
+.jq-selectbox__trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34px;
+  height: 100%;
+  border-left: 1px solid #CCC; }
 
-.selecter.disabled .selecter-group,
-.selecter.disabled .selecter-item {
-  border-color: #cccccc;
-  color: #cccccc;
-  cursor: default; }
+.jq-selectbox__trigger-arrow {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid #999;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent; }
 
-.selecter.disabled .selecter-item.selected,
-.selecter.disabled .selecter-item.selected:hover {
-  background: #fafafa; }
+.jq-selectbox:hover .jq-selectbox__trigger-arrow {
+  border-top-color: #000; }
 
-.selecter.disabled .selecter-item,
-.selecter.disabled .selecter-item:hover {
-  color: #cccccc;
-  background-color: #ffffff; }
+.jq-selectbox.disabled .jq-selectbox__trigger-arrow {
+  border-top-color: #AAA; }
 
-.selecter-options.scroller {
-  overflow: hidden; }
+.jq-selectbox__dropdown {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 0;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font: 14px/18px Arial, sans-serif; }
 
-.selecter-options.scroller .scroller-content {
-  max-height: 260px;
+.jq-selectbox__search {
+  margin: 5px; }
+
+.jq-selectbox__search input {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 5px 27px 6px 8px;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  outline: none;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAO1JREFUeNqU078LAXEYx/FzYfNzk5TJaFNKYjFYSQZ/hvwBsvg1UCY2xT9gM8hukQGThWRjkcFw3pdnujhfT736Xn2fPvfc3fd07V0OFDDFAnM0ENYsZRiGLSc9OpqIYIA9fMhhjCrW2h9VlMlcH/aymMGtOqEugX08PwQucUZKdTozMIqdTc9WepQD7wjY9ARx+ydwhfyXfS+S0qMcOEQJGcueB3VccFINdMgal6NzkmPjRwJXxDBB7/2RDdtAp6wb+dpphHDASG5QQ0V6u2aoSqBZD/lDrNWRJynLK2qpBn4rc6K2XB9/Nb8EGABtf1thzY6X2AAAAABJRU5ErkJggg==") no-repeat 100% 50%;
+  box-shadow: inset 1px 1px #F1F1F1;
+  color: #333; }
+
+.jq-selectbox__not-found {
+  margin: 5px;
+  padding: 5px 8px 6px;
+  background: #F0F0F0;
+  font-size: 13px; }
+
+.jq-selectbox ul {
+  margin: 0;
   padding: 0; }
 
-.mySelecter .selecter-selected {
-  position: relative;
-  background: white;
-  border-radius: 3px;
-  border: 1px solid #c1c7d0;
-  color: #2c333d;
-  cursor: pointer;
-  display: block;
-  font-size: 13px;
-  margin: 0;
-  overflow: hidden;
-  padding: 10px;
-  text-overflow: clip;
-  z-index: 2;
-  line-height: 1em; }
-  .mySelecter .selecter-selected:after {
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 0;
-    right: 5px;
-    bottom: 0;
-    border: none;
-    content: '>';
-    font-family: 'Segoe Script', sans-serif;
-    font-size: 10px;
-    transform: rotate(94deg) scaleY(1.5) translateX(-3px);
-    display: block;
-    margin: auto 0; }
+.jq-selectbox li {
+  min-height: 18px;
+  padding: 5px 10px 6px;
+  color: #231F20; }
 
-.mySelecter .selecter-options {
-  width: 100%;
-  max-height: 260px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  border: 1px solid #c1c7d0;
-  border-top: 1px solid transparent;
-  background-color: white;
-  display: none;
+.jq-selectbox li.selected {
+  background-color: #A3ABB1;
+  color: #FFF; }
+
+.jq-selectbox li:hover {
+  background-color: #08C;
+  color: #FFF; }
+
+.jq-selectbox li.disabled {
+  color: #AAA; }
+
+.jq-selectbox li.disabled:hover {
+  background: none; }
+
+.jq-selectbox li.optgroup {
+  font-weight: bold; }
+
+.jq-selectbox li.optgroup:hover {
+  background: none;
+  color: #231F20;
+  cursor: default; }
+
+.jq-selectbox li.option {
+  padding-left: 25px; }
+
+.jq-select-multiple {
+  box-sizing: border-box;
+  padding: 1px;
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: inset 1px 1px #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1);
+  font: 14px/18px Arial, sans-serif;
+  color: #333;
+  cursor: default; }
+
+.jq-select-multiple.focused {
+  border: 1px solid #5794BF; }
+
+.jq-select-multiple.disabled {
+  border-color: #CCC;
+  background: #F5F5F5;
+  box-shadow: none;
+  color: #888; }
+
+.jq-select-multiple ul {
   margin: 0;
-  overflow: auto;
-  overflow-x: hidden;
+  padding: 0; }
+
+.jq-select-multiple li {
+  padding: 3px 9px 4px;
+  list-style: none; }
+
+.jq-select-multiple li:first-child {
+  border-radius: 3px 3px 0 0; }
+
+.jq-select-multiple li:last-child {
+  border-radius: 0 0 3px 3px; }
+
+.jq-select-multiple li.selected {
+  background: #08C;
+  color: #FFF; }
+
+.jq-select-multiple li.disabled {
+  color: #AAA; }
+
+.jq-select-multiple li.optgroup {
+  font-weight: bold; }
+
+.jq-select-multiple li.option {
+  padding-left: 25px; }
+
+.jq-select-multiple.disabled li.selected,
+.jq-select-multiple li.selected.disabled {
+  background: #CCC;
+  color: #FFF; }
+
+input[type='email'].styler,
+input[type='password'].styler,
+input[type='search'].styler,
+input[type='tel'].styler,
+input[type='text'].styler,
+input[type='url'].styler,
+textarea.styler {
+  padding: 8px 9px;
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1);
+  font: 14px Arial, sans-serif;
+  color: #333; }
+
+input[type='search'].styler {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+textarea.styler {
+  overflow: auto; }
+
+input[type='email'].styler:hover,
+input[type='password'].styler:hover,
+input[type='search'].styler:hover,
+input[type='tel'].styler:hover,
+input[type='text'].styler:hover,
+input[type='url'].styler:hover,
+textarea.styler:hover {
+  border-color: #B3B3B3; }
+
+input[type='email'].styler:hover:focus,
+input[type='password'].styler:hover:focus,
+input[type='search'].styler:hover:focus,
+input[type='tel'].styler:hover:focus,
+input[type='text'].styler:hover:focus,
+input[type='url'].styler:hover:focus,
+textarea.styler:hover:focus {
+  border-color: #CCC;
+  border-top-color: #B3B3B3;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
+
+button.styler,
+input[type='button'].styler,
+input[type='submit'].styler,
+input[type='reset'].styler {
+  overflow: visible;
+  padding: 8px 11px;
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-radius: 4px;
+  outline: none;
+  background: linear-gradient(#FFF, #E6E6E6);
+  box-shadow: inset 1px -1px #F1F1F1, inset -1px 0 #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1);
+  font: 14px Arial, sans-serif;
+  color: #333;
+  text-shadow: 1px 1px #FFF;
+  cursor: pointer; }
+
+button.styler.styler::-moz-focus-inner,
+input[type='button'].styler.styler::-moz-focus-inner,
+input[type='submit'].styler.styler::-moz-focus-inner,
+input[type='reset'].styler.styler::-moz-focus-inner {
   padding: 0;
-  z-index: 50; }
+  border: 0; }
 
-.mySelecter .selecter-item {
-  width: 100%;
-  background: white;
+button.styler:not([disabled]):hover,
+input[type='button'].styler:not([disabled]):hover,
+input[type='submit'].styler:not([disabled]):hover,
+input[type='reset'].styler:not([disabled]):hover,
+input[type='reset'].styler:hover {
+  background: linear-gradient(#F6F6F6, #E6E6E6); }
+
+button.styler:active,
+input[type='button'].styler:active,
+input[type='submit'].styler:active,
+input[type='reset'].styler:active {
+  background: #F5F5F5;
+  box-shadow: inset 1px 1px 3px #DDD; }
+
+button.styler[disabled],
+input[type='button'].styler[disabled],
+input[type='submit'].styler[disabled] {
+  border-color: #CCC;
+  background: #F5F5F5;
+  box-shadow: none;
+  color: #888; }
+
+.jq-selectbox {
   color: #2c333d;
-  cursor: pointer;
-  display: block;
-  font-size: 13px;
-  margin: 0;
-  overflow: hidden;
-  padding: 10px 15px;
-  text-decoration: none;
-  text-overflow: ellipsis; }
-  .mySelecter .selecter-item:hover, .mySelecter .selecter-item.selected:hover {
-    color: #2c333d;
-    background-color: #f6f6f6; }
-  .mySelecter .selecter-item.selected {
-    color: #2c333d;
-    background-color: #f6f6f6; }
-
-.mySelecter.open .selecter-selected, .mySelecter.focus .selecter-selected {
-  background-color: white; }
-
-@media screen and (max-width: 740px) {
-  .mySelecter .selecter {
-    max-width: 100%; } }
+  font-size: 13px; }
+  .jq-selectbox ul {
+    background-color: white; }
+    .jq-selectbox ul li {
+      width: 100%;
+      background: white;
+      color: #2c333d;
+      cursor: pointer;
+      display: block;
+      font-size: 13px;
+      margin: 0;
+      overflow: hidden;
+      padding: 10px 15px;
+      text-decoration: none;
+      text-overflow: ellipsis; }
+      .jq-selectbox ul li:hover, .jq-selectbox ul li.selected:hover {
+        color: #2c333d;
+        background-color: #f6f6f6; }
+  .jq-selectbox__select {
+    background: white;
+    box-shadow: unset; }
+    .jq-selectbox__select:hover {
+      box-shadow: unset;
+      background: white; }
+  .jq-selectbox__trigger {
+    box-shadow: unset;
+    border-left: none; }
+  .jq-selectbox.opened {
+    background-color: white; }
+  .jq-selectbox.focused .jq-selectbox__select {
+    border-color: #ccc; }
+  @media screen and (max-width: 740px) {
+    .jq-selectbox .selecter {
+      max-width: 100%; } }
 
 .siteHeaderSection {
   background: #2c333d;
@@ -8214,41 +8529,41 @@ button, input {
         #brandsPage .reviewsBlock .widgetsArea .widget {
           width: 100%; } }
 
-#allBrandsPage .mainContent .searchBlock {
+#allBrandsPage.mainContent .searchBlock {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 30px; }
-  #allBrandsPage .mainContent .searchBlock .label-searchBlock {
+  #allBrandsPage.mainContent .searchBlock .label-searchBlock {
     margin-bottom: 0; }
-  #allBrandsPage .mainContent .searchBlock__title {
+  #allBrandsPage.mainContent .searchBlock__title {
     display: block;
     margin-bottom: 15px; }
-  #allBrandsPage .mainContent .searchBlock__input {
+  #allBrandsPage.mainContent .searchBlock__input {
     display: flex;
     align-items: center;
     justify-content: flex-start; }
-    #allBrandsPage .mainContent .searchBlock__input > input {
+    #allBrandsPage.mainContent .searchBlock__input > input {
       margin-right: 20px;
       width: 400px; }
-  #allBrandsPage .mainContent .searchBlock .sparePartsFilter {
+  #allBrandsPage.mainContent .searchBlock .sparePartsFilter {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-left: auto; }
-    #allBrandsPage .mainContent .searchBlock .sparePartsFilter .filterBtn {
+    #allBrandsPage.mainContent .searchBlock .sparePartsFilter .filterBtn {
       height: 30px; }
   @media screen and (max-width: 1000px) {
-    #allBrandsPage .mainContent .searchBlock__input > input {
+    #allBrandsPage.mainContent .searchBlock__input > input {
       margin-right: 10px; }
-    #allBrandsPage .mainContent .searchBlock__input .mainBtn-search {
+    #allBrandsPage.mainContent .searchBlock__input .mainBtn-search {
       margin-right: 10px;
       padding: 0 8px; }
-      #allBrandsPage .mainContent .searchBlock__input .mainBtn-search .innerText {
+      #allBrandsPage.mainContent .searchBlock__input .mainBtn-search .innerText {
         display: none; }
-      #allBrandsPage .mainContent .searchBlock__input .mainBtn-search .cssIcon {
+      #allBrandsPage.mainContent .searchBlock__input .mainBtn-search .cssIcon {
         margin-right: 3px; }
-    #allBrandsPage .mainContent .searchBlock .sparePartsFilter .filterBtn {
+    #allBrandsPage.mainContent .searchBlock .sparePartsFilter .filterBtn {
       padding: 0 15px; } }
 
 #allBrandsPage .ratingsBlock {
@@ -11581,3 +11896,517 @@ button, input {
             margin-bottom: 15px; }
           #userPage .info .userSettingsBlock__item .innerContent .socialBtnBlock__item:last-child {
             margin-bottom: 0; } }
+
+#allBrandsSparePartsPage.mainContent .searchBlock {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px; }
+  #allBrandsSparePartsPage.mainContent .searchBlock .label-searchBlock {
+    margin-bottom: 0; }
+  #allBrandsSparePartsPage.mainContent .searchBlock__title {
+    display: block;
+    margin-bottom: 15px; }
+  #allBrandsSparePartsPage.mainContent .searchBlock__input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    #allBrandsSparePartsPage.mainContent .searchBlock__input > input {
+      margin-right: 20px;
+      width: 400px; }
+  #allBrandsSparePartsPage.mainContent .searchBlock .sparePartsFilter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto; }
+    #allBrandsSparePartsPage.mainContent .searchBlock .sparePartsFilter .filterBtn {
+      height: 30px; }
+  @media screen and (max-width: 1000px) {
+    #allBrandsSparePartsPage.mainContent .searchBlock__input > input {
+      margin-right: 10px; }
+    #allBrandsSparePartsPage.mainContent .searchBlock__input .mainBtn-search {
+      margin-right: 10px;
+      padding: 0 8px; }
+      #allBrandsSparePartsPage.mainContent .searchBlock__input .mainBtn-search .innerText {
+        display: none; }
+      #allBrandsSparePartsPage.mainContent .searchBlock__input .mainBtn-search .cssIcon {
+        margin-right: 3px; }
+    #allBrandsSparePartsPage.mainContent .searchBlock .sparePartsFilter .filterBtn {
+      padding: 0 15px; } }
+
+#allBrandsSparePartsPage .ratingsBlock {
+  margin-bottom: 60px; }
+  #allBrandsSparePartsPage .ratingsBlock__contentScrollBox {
+    margin-bottom: 40px; }
+  #allBrandsSparePartsPage .ratingsBlock__mainContent {
+    width: 1140px; }
+  #allBrandsSparePartsPage .ratingsBlock .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    #allBrandsSparePartsPage .ratingsBlock .header__colTitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a939f;
+      height: 65px;
+      font-size: 13px;
+      flex-basis: auto;
+      padding: 0 20px;
+      min-width: 120px;
+      width: 120px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-name {
+        min-width: 260px;
+        width: 260px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-review {
+        min-width: 120px;
+        width: 120px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-manufacturer {
+        min-width: 120px;
+        width: 120px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-rating {
+        width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-addReview {
+        width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-countrySite {
+        min-width: 200px;
+        width: 200px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-averageRating {
+        min-width: 200px;
+        width: 200px; }
+  #allBrandsSparePartsPage .ratingsBlock__content .ratingList li {
+    border: 1px solid transparent;
+    height: 65px;
+    padding: 10px 0;
+    transition: border-color .3s; }
+    #allBrandsSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
+      background: #f6f6f6; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) .itemSell__text::after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30px; }
+    #allBrandsSparePartsPage .ratingsBlock__content .ratingList li:hover {
+      cursor: pointer;
+      border-color: #efb428; }
+  #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #2c333d;
+    height: 100%;
+    text-decoration: none; }
+    #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #c1c1c1;
+      flex-basis: auto;
+      height: 100%;
+      padding: 0 20px;
+      min-width: 120px;
+      width: 120px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell:last-child {
+        border-right: none; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__icon {
+        border-radius: 3px;
+        overflow: hidden;
+        margin-right: 15px;
+        width: 60px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__icon img {
+          width: 60px;
+          object-fit: cover;
+          object-position: center; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__text {
+        font-size: 16px;
+        position: relative;
+        transition: color .3s;
+        width: 230px;
+        overflow: hidden; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
+          background: #efb428;
+          bottom: -1px;
+          content: '';
+          display: block;
+          height: 1px;
+          left: 0;
+          position: absolute;
+          transition: width .3s;
+          width: 0; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
+        color: #2c333d;
+        font-size: 20px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
+          content: attr(data-growth);
+          font-size: 16px;
+          margin-left: 5px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
+          color: #7eae3e; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
+          color: #c1c1c1; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
+          color: #7eae3e; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        color: #2c333d;
+        justify-content: flex-start;
+        text-decoration: none;
+        padding: 0;
+        min-width: 250px;
+        width: 250px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 120px;
+        width: 120px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 120px;
+        width: 120px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+        flex-basis: auto;
+        padding: 0 20px;
+        min-width: initial;
+        width: 50%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+          font-size: 14px;
+          min-width: 50%;
+          text-decoration: none;
+          width: 100%;
+          white-space: nowrap; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        flex-basis: auto;
+        padding: 0 20px;
+        min-width: initial;
+        width: 50%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          font-size: 14px;
+          min-width: 50%;
+          text-decoration: none;
+          width: 100%;
+          white-space: nowrap; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite {
+        text-decoration: none;
+        color: #4991bf;
+        font-size: 14px;
+        min-width: 200px;
+        transition: color .3s;
+        width: 200px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite:hover {
+          color: #efb428; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite:hover .innerText::before {
+            width: 100%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
+          margin-right: 15px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .innerText {
+          display: inline-block;
+          max-width: 100px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 3px 0;
+          position: relative; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .innerText::before {
+            background: #efb428;
+            bottom: 1px;
+            content: '';
+            display: block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transition: width .3s;
+            width: 0; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
+        min-width: 200px;
+        width: 200px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item {
+            font-size: 20px;
+            margin-right: 10px; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item:last-child {
+              margin-right: 0; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon {
+                margin-right: 3px; }
+                #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
+                  margin-right: 0; }
+  #allBrandsSparePartsPage .ratingsBlock-brandsAll .ratingsBlock__mainContent {
+    width: initial; }
+  #allBrandsSparePartsPage .ratingsBlock-brandsAll .ratingsBlock__content .ratingList__item .itemSell__icon {
+    border-radius: 3px;
+    background: white;
+    border: 1px solid #f6f6f6;
+    height: 100%;
+    overflow: hidden;
+    padding: 10px;
+    margin-right: 15px;
+    min-width: 60px;
+    width: 60px; }
+    #allBrandsSparePartsPage .ratingsBlock-brandsAll .ratingsBlock__content .ratingList__item .itemSell__icon img {
+      object-fit: contain;
+      object-position: center center;
+      height: 100%;
+      width: 100%; }
+  @media screen and (max-width: 1140px) {
+    #allBrandsSparePartsPage .ratingsBlock .header__colTitle {
+      color: #8a939f;
+      height: 65px;
+      padding: 0 20px;
+      min-width: 10vw;
+      width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-name {
+        min-width: 18vw;
+        width: 18vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-review {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-manufacturer {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-rating {
+        width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-addReview {
+        width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-countrySite {
+        min-width: 15vw;
+        width: 15vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-averageRating {
+        min-width: 15vw;
+        width: 15vw; }
+    #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      min-width: 10vw;
+      width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        min-width: 18vw;
+        width: 18vw; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+        padding: 0 20px;
+        width: 50%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+          min-width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        padding: 0 20px;
+        width: 50%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          min-width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite {
+        color: #4991bf;
+        font-size: 12px;
+        min-width: 15vw;
+        width: 15vw; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
+          margin-right: 5px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
+        min-width: 15vw;
+        width: 15vw; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item {
+            margin-right: 0; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item:last-child {
+              margin-bottom: 5px;
+              order: -1; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon {
+                margin-right: 3px; }
+                #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
+                  margin-right: 0; } }
+  @media screen and (max-width: 900px) {
+    #allBrandsSparePartsPage .ratingsBlock .header__colTitle {
+      color: #8a939f;
+      height: 65px;
+      padding: 0 10px;
+      min-width: 10vw;
+      width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-name {
+        min-width: 18vw;
+        width: 18vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-review {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-manufacturer {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-rating {
+        width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-addReview {
+        width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-countrySite {
+        min-width: 15vw;
+        width: 15vw; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-averageRating {
+        min-width: 15vw;
+        width: 15vw; }
+    #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      min-width: 10vw;
+      width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        min-width: 18vw;
+        width: 18vw; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 10vw;
+        width: 10vw; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+        padding: 0 10px;
+        width: 50%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+          min-width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        padding: 0 10px;
+        width: 50%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          min-width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite {
+        color: #4991bf;
+        font-size: 12px;
+        min-width: 15vw;
+        width: 15vw; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
+          margin-right: 5px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
+        min-width: 15vw;
+        width: 15vw; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item {
+            margin-right: 0; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item:last-child {
+              margin-bottom: 5px;
+              order: -1; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon {
+                margin-right: 3px; }
+                #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
+                  margin-right: 0; } }
+  @media screen and (max-width: 768px) {
+    #allBrandsSparePartsPage .ratingsBlock .header__colTitle {
+      color: #8a939f;
+      height: 65px;
+      padding: 0 10px;
+      min-width: 75px;
+      width: 75px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-name {
+        min-width: 140px;
+        width: 140px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-review {
+        min-width: 75px;
+        width: 75px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-manufacturer {
+        min-width: 75px;
+        width: 75px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-rating {
+        width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-addReview {
+        width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-countrySite {
+        min-width: 115px;
+        width: 115px; }
+      #allBrandsSparePartsPage .ratingsBlock .header__colTitle-averageRating {
+        min-width: 120px;
+        width: 120px; }
+    #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      min-width: 75px;
+      width: 75px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+        min-width: 140px;
+        width: 140px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+          color: #efb428; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+            width: 100%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+        min-width: 75px;
+        width: 75px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+        min-width: 75px;
+        width: 75px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+        padding: 0 10px;
+        width: 50%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+          min-width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+        padding: 0 10px;
+        width: 50%; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+          min-width: 50%; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite {
+        color: #4991bf;
+        font-size: 12px;
+        min-width: 115px;
+        width: 115px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-countrySite .imgFlag {
+          margin-right: 5px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating {
+        min-width: 120px;
+        width: 120px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item:last-child {
+            margin-bottom: 5px;
+            order: -1; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon {
+              margin-right: 3px; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-averageRating .ratingsBlock__item .starsIconBlock .starsIcon:last-child {
+                margin-right: 0; } }

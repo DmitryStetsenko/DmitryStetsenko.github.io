@@ -120,16 +120,24 @@ $(function () {
 
     // -------------------------------------------------
     // common function ----------------
+
+    // function stylesSelect() {
+    //     $('select').selecter({
+    //         // callback    : function ( value, index ) {
+    //         //     filterEvent1 = value;
+    //         //     show_event(weekEventsData, filterEvent1, filterEvent2);
+    //         // },
+    //         customClass: 'mySelecter'
+    //     });
+    // } //
+    // // ===============================
     function stylesSelect() {
-        $('select').selecter({
-            // callback    : function ( value, index ) {
-            //     filterEvent1 = value;
-            //     show_event(weekEventsData, filterEvent1, filterEvent2);
-            // },
-            customClass: 'mySelecter'
-        });
-    } //
-    // ===============================
+        let select = $('select');
+        if ( select.length ) {
+            $(select).styler();
+        }
+    } // JQ styleSelect
+
     function headerSearch() {
         const searchBtn = $('.iconBtn-search');
         const searchInput = $('#headerFormSearch');
@@ -740,14 +748,14 @@ $(function () {
 
     // spare-parts function -------------------------------------
     function scrollToReviewBlock() {
-        const link = document.querySelector('#scrollToReviewBlock');
-        if (link) {
-            link.onclick = function (e) {
+        const link = $('#scrollToReviewBlock');
+        if (link.length) {
+            link.click( function (e) {
                 e.preventDefault();
-                scrollTo('#sparePartsPageReviewBlock');
-            };
+                scrollTo('.reviewsBlock');
+            });
         }
-    } // scrollToReviewBlock
+    } // JQ scrollToReviewBlock
     function showRatingSpareParts() {
         let sparePartsElements = document.querySelectorAll('.ratingListElement');
         if (sparePartsElements) {
@@ -1559,24 +1567,13 @@ $(function () {
         }
     }
 
-    function scrollTo(idElement, speed = 50) {
-        const scrollElement = document.querySelector(idElement);
-        let posElem = scrollElement.getBoundingClientRect().top + pageYOffset;
-        let currentPos = pageYOffset;
-        let scr = setInterval(function () {
-            if (currentPos > posElem) {
-                currentPos -= speed;
-                if (currentPos < posElem) {
-                    clearInterval(scr);
-                }
-            } else {
-                currentPos += speed;
-                if (currentPos > posElem - speed) {
-                    clearInterval(scr);
-                }
-            }
-            window.scrollTo(0, currentPos);
-        }, 1);
+    function scrollTo(id) {
+        let myOffSet = 0;
+        // if ( id === '#contactUs' ) {
+        //     myOffSet = -50;
+        // }
+        $('html, body').animate({scrollTop: $(id).offset().top - myOffSet}, 1000);
+        return false;
     } // scrollTo
 
     function clickPastWindow(windowObj,callback) {

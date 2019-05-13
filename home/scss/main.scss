@@ -3,7 +3,9 @@
 @import "mixin";
 @import "custom";
 @import "animate";
-@import "selecter";
+@import "jquery.formstyler";
+@import "jquery.formstyler.theme";
+@import "select-styles";
 
 // header ---------------------------------
 
@@ -18,7 +20,6 @@
         display: none;
       } // headerUserAction
       &__userInfo {
-
       } // __userInfo
     } // siteHeader
   } // -userPage
@@ -1888,5 +1889,9 @@
 
 // User Page --------------------------------
 @import "user";
+// ==========================================
+
+// all brands + spareParts page -------------
+@import "brands-spare-parts-all";
 // ==========================================
 

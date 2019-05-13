@@ -77,13 +77,10 @@ window.onload = function () {
 
     // common function ----------------
     function stylesSelect() {
-        $('select').selecter({
-            // callback    : function ( value, index ) {
-            //     filterEvent1 = value;
-            //     show_event(weekEventsData, filterEvent1, filterEvent2);
-            // },
-            customClass: 'mySelecter'
-        });
+        let select = $('select');
+        if ( select.length ) {
+            $(select).styler();
+        }
     } //
     // ===============================
 
