@@ -9317,3 +9317,215 @@ input[type='submit'].styler[disabled] {
         width: 100%; }
         #userPage .info .userSettingsBlock__item-car .innerContent__input .mySelecter span {
           width: 100%; }
+
+#allBrandsSparePartsPage {
+  color: red; }
+  #allBrandsSparePartsPage.mainContent .searchBlock {
+    margin-bottom: 20px; }
+    #allBrandsSparePartsPage.mainContent .searchBlock .label-searchBlock {
+      margin-bottom: 20px; }
+    #allBrandsSparePartsPage.mainContent .searchBlock__title {
+      display: block;
+      margin-bottom: 10px; }
+    #allBrandsSparePartsPage.mainContent .searchBlock__input {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      #allBrandsSparePartsPage.mainContent .searchBlock__input > input {
+        margin-right: 10px;
+        max-width: 400px; }
+    #allBrandsSparePartsPage.mainContent .searchBlock .sparePartsFilter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%; }
+      #allBrandsSparePartsPage.mainContent .searchBlock .sparePartsFilter .filterBtn {
+        flex-basis: auto;
+        width: calc( 100% / 3); }
+  #allBrandsSparePartsPage .ratingsBlock {
+    font-size: 14px;
+    margin-bottom: 45px; }
+    #allBrandsSparePartsPage .ratingsBlock__content {
+      margin-bottom: 40px; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList li {
+        border: 1px solid transparent;
+        height: initial;
+        padding: 0 10px;
+        transition: border-color .3s; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) {
+          background: #f6f6f6; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList li:nth-child(odd) .itemSell__text::after {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #f6f6f6 100%);
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 30px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList li:nth-child(even) .itemSell__text::after {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, white 100%);
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 30px; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList li:hover {
+          cursor: pointer;
+          border-color: #efb428; }
+      #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        color: #2c333d;
+        height: 100%;
+        margin-bottom: 20px;
+        text-decoration: none; }
+        #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          border-bottom: 1px solid #c1c1c1;
+          flex-basis: auto;
+          height: 50px;
+          width: 100%; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell:last-child {
+            border-right: none; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__title {
+            color: #8a939f;
+            min-width: 120px;
+            width: 120px; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__text {
+            font-size: 14px;
+            position: relative;
+            transition: color .3s;
+            width: 230px;
+            overflow: hidden; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__text::before {
+              background: #efb428;
+              bottom: -1px;
+              content: '';
+              display: block;
+              height: 1px;
+              left: 0;
+              position: absolute;
+              transition: width .3s;
+              width: 0; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue {
+            color: #2c333d;
+            font-size: 20px; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue::after {
+              content: attr(data-growth);
+              font-size: 16px;
+              margin-left: 5px; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-review::after {
+              color: #7eae3e; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-manufacturer::after {
+              color: #c1c1c1; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell__mainValue-vote::after {
+              color: #7eae3e; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name {
+            color: #2c333d;
+            justify-content: flex-start;
+            text-decoration: none;
+            min-width: 100%;
+            width: 100%;
+            white-space: nowrap; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text {
+              color: #efb428; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-name:hover .itemSell__text::before {
+                width: 100%; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-review {
+            min-width: 100%;
+            width: 100%; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-manufacturer {
+            min-width: 100%;
+            width: 100%; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating {
+            height: initial;
+            border-bottom: none;
+            margin: 10px 0;
+            padding: 0 20px;
+            min-width: 100%;
+            width: 100%; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-rating a {
+              font-size: 14px;
+              min-width: 100%;
+              text-decoration: none;
+              width: 100%;
+              white-space: nowrap; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview {
+            align-items: center;
+            border-bottom: none;
+            padding: 0 20px;
+            min-width: 100%;
+            width: 100%; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-addReview a {
+              font-size: 14px;
+              min-width: 100%;
+              text-decoration: none;
+              width: 100%;
+              white-space: nowrap; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-logo .logoImg {
+            width: 60px; }
+          #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount:hover {
+              cursor: pointer; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount:hover .ratingCount__text {
+                color: #efb428; }
+                #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount:hover .ratingCount__text::before {
+                  width: 100%; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount__text {
+              border-bottom: 1px solid #2c333d;
+              color: #2c333d;
+              position: relative;
+              text-decoration: none;
+              transition: color .3s; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount__text::before {
+                background: #efb428;
+                bottom: -1px;
+                content: '';
+                display: block;
+                height: 1px;
+                left: 0;
+                position: absolute;
+                transition: width .3s;
+                width: 0; }
+            #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount .ratingCircleDynamic {
+              font-size: 13px;
+              font-weight: bold;
+              height: 36px;
+              margin-right: 10px;
+              min-width: 36px;
+              order: -1;
+              position: relative;
+              text-align: center;
+              width: 36px; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount .ratingCircleDynamic > .svgWrap {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); }
+                #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount .ratingCircleDynamic > .svgWrap .svgRatingCircle {
+                  height: auto;
+                  width: 100%; }
+                  #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount .ratingCircleDynamic > .svgWrap .svgRatingCircle > path {
+                    fill: transparent;
+                    stroke-width: 3;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-dasharray: 114px;
+                    transition: stroke-dashoffset 1s; }
+                    #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount .ratingCircleDynamic > .svgWrap .svgRatingCircle > path.static {
+                      stroke: #cdcdcd; }
+              #allBrandsSparePartsPage .ratingsBlock__content .ratingList__item .itemSell-ratingCount .ratingCount .ratingCircleDynamic > span {
+                line-height: 36px; }
