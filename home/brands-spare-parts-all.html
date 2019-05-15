@@ -176,17 +176,17 @@
                 <!-- /.sparePartsFilter -->
             </section>
             <!-- /.searchBlock -->
-            <section class="ratingsBlock ratingsBlock-brandsAll">
+            <section class="ratingsBlock ratingsBlock-brandsSparepartsAll">
                 <div class="ratingsBlock__contentScrollBox">
                     <div class="ratingsBlock__mainContent">
                         <div class="header">
                             <div class="header__colTitle header__colTitle-name">Название</div>
                             <!-- /.header__colTitle-name -->
+                            <div class="header__colTitle header__colTitle-logo">Логотип</div>
+                            <!-- /.header__colTitle-review -->
                             <div class="header__colTitle header__colTitle-review">Отзывы</div>
                             <!-- /.header__colTitle-review -->
-                            <div class="header__colTitle header__colTitle-review">Запчасти</div>
-                            <!-- /.header__colTitle-review -->
-                            <div class="header__colTitle header__colTitle-averageRating">Средняя оценка</div>
+                            <div class="header__colTitle header__colTitle-ratingCount">Рейтинг</div>
                             <!-- /.header__colTitle-review -->
                             <div class="header__colTitle header__colTitle-addReview">Добавление отзыва</div>
                             <!-- /.header__colTitle-addReview -->
@@ -198,17 +198,17 @@
                                     <li class="ratingList__item">
                                         <a href="#"  class="itemSell itemSell-name">
                                             <div class="itemSell__icon">
-                                                <img src="img/brands/ngk_logo.png" alt="ngk spare plug">
+                                                <img src="img/spare_parts_all/ngk_spark_plug.jpg" alt="ngk spare plug">
                                             </div>
                                             <!-- /.itemSell__icon-brakePads -->
-                                            <div class="itemSell__text">NGK</div>
+                                            <div class="itemSell__text">Свечи зажигания NGK</div>
                                             <!-- /.itemSell__text -->
                                         </a>
                                         <!-- /.itemSell-name -->
-                                        <div class="itemSell itemSell-review">
-                                                <span class="itemSell__mainValue itemSell__mainValue-review"
-                                                      data-growth="+5">254</span>
-                                            <!--/.itemSell__mainValue-review-->
+                                        <div class="itemSell itemSell-logo">
+                                            <div class="logoImg">
+                                                <img src="img/brands/valeo_logo.png" alt="brands logo">
+                                            </div>
                                         </div>
                                         <!-- /.itemSell-review -->
                                         <div class="itemSell itemSell-review">
@@ -217,48 +217,27 @@
                                             <!--/.itemSell__mainValue-review-->
                                         </div>
                                         <!-- /.itemSell-review -->
-                                        <div class="itemSell itemSell-averageRating">
-                                            <div class="ratingsBlock">
-                                                <div class="ratingsBlock__item ratingsBlock__item-stars">
-                                                    <div class="starsIconBlock">
-                                                            <span class="starsIcon">
-                                                                    <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
-                                                                        <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
-                                                                    </svg>
-                                                                </span>
-                                                        <!--/.starsIconBlock__icon-->
-                                                        <span class="starsIcon">
-                                                                    <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
-                                                                        <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
-                                                                    </svg>
-                                                                </span>
-                                                        <!--/.starsIconBlock__icon-->
-                                                        <span class="starsIcon">
-                                                                    <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
-                                                                        <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
-                                                                    </svg>
-                                                                </span>
-                                                        <!--/.starsIconBlock__icon-->
-                                                        <span class="starsIcon">
-                                                                    <svg class="fill" viewBox="0 0 49.9934998 49.9976997">
-                                                                        <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
-                                                                    </svg>
-                                                                </span>
-                                                        <!--/.starsIconBlock__icon-->
-                                                        <span class="starsIcon">
-                                                                    <svg viewBox="0 0 49.9934998 49.9976997">
-                                                                        <path d="M24.997 0l8.239 15.714 16.757 3.384-11.665 13.096 2.117 17.804-15.449-7.62-15.449 7.62 2.117-17.804-11.665-13.096 16.758-3.384 8.239-15.714"/>
-                                                                    </svg>
-                                                                </span>
-                                                        <!--/.starsIconBlock__icon-->
+                                        <div class="itemSell itemSell-ratingCount">
+                                            <div class="ratingCount">
+                                                <a href="#" class="ratingCount__text">N1 в рейтинге</a>
+                                                <!-- /.ratingCount__text -->
+                                                <div class="ratingCircleDynamic"
+                                                     data-count="85">
+                                                    <div class="svgWrap">
+                                                        <svg class="svgRatingCircle" viewBox="0 0 39 39">
+                                                            <path style="stroke-dashoffset: 0;" class="static"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                            <path style="stroke-dashoffset: 114px; stroke: #7EAE3E"
+                                                                  d="M19.527 1.5c9.929.015 17.973 8.068 17.973 18 0 9.941-8.059 18-18 18s-18-8.059-18-18 8.059-18 18-18"
+                                                            />
+                                                        </svg>
                                                     </div>
-                                                    <!-- /.startsIconBlock -->
+                                                    <span>0</span>
                                                 </div>
-                                                <!-- /.ratingsBlock__item-start -->
-                                                <div class="ratingsBlock__item ratingsBlock__item-value">3.6</div>
-                                                <!-- /.ratingsBlock__item-title -->
+                                                <!-- /.ratingCircle -->
                                             </div>
-                                            <!-- /.ratingsBlock -->
+                                            <!-- /.ratingCount -->
                                         </div>
                                         <!-- /.itemSell-review -->
                                         <div class="itemSell itemSell-addReview">
