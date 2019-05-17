@@ -2086,6 +2086,38 @@ button, input {
       font-size: 13px;
       font-weight: normal; }
 
+.carInfoFilter__selectBlock {
+  margin-bottom: 20px; }
+  .carInfoFilter__selectBlock-dependedElem {
+    display: none; }
+
+.carInfoFilter__responseNature .responseNature {
+  margin-bottom: 20px; }
+  .carInfoFilter__responseNature .responseNature__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #2c333d;
+    font-size: 15px; }
+    .carInfoFilter__responseNature .responseNature__title .innerText {
+      margin-right: 10px; }
+  .carInfoFilter__responseNature .responseNature__checkBoxBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px; }
+
+.carInfoFilter-popUpRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .carInfoFilter-popUpRow .carInfoFilter__selectBlock {
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: 100%; }
+    .carInfoFilter-popUpRow .carInfoFilter__selectBlock:last-child {
+      margin-right: 0; }
+
 .popUpWindowBlock {
   display: none; }
   .popUpWindowBlock .overlay {
@@ -2273,36 +2305,38 @@ button, input {
     .popUpWindowBlock .popUpWindow__content .aboutBlock {
       color: #8a939f;
       font-size: 13px;
-      line-height: 18px;
+      line-height: 18px; }
+    .popUpWindowBlock .popUpWindow__content .additionalBlock {
       margin-bottom: 40px; }
-    .popUpWindowBlock .popUpWindow__content .additionalBlock .mainBtn-popUpadditionalBlock .innerText {
-      color: white;
-      margin-right: 10px; }
-    .popUpWindowBlock .popUpWindow__content .additionalBlock__form {
-      background: #f6f6f6;
-      padding: 20px; }
-      .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo {
-        margin-bottom: 20px; }
-        .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo:last-child {
-          margin-bottom: 0; }
-        .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start; }
-          .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock__item {
+      .popUpWindowBlock .popUpWindow__content .additionalBlock .mainBtn-popUpadditionalBlock .innerText {
+        color: white;
+        margin-right: 20px; }
+      .popUpWindowBlock .popUpWindow__content .additionalBlock__form {
+        background: white;
+        display: none;
+        padding: 20px; }
+        .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo {
+          margin-bottom: 20px; }
+          .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo:last-child {
+            margin-bottom: 0; }
+          .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock__item {
+              margin-right: 5px;
+              width: calc((100% - 10px) / 3); }
+              .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock__item:last-child {
+                margin-right: 0; }
+          .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .sparePartsInfo {
             margin-right: 5px;
-            width: calc((100% - 10px) / 3); }
-            .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .selectsBlock__item:last-child {
+            width: calc((100% - 5px) / 2); }
+            .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .sparePartsInfo:last-child {
               margin-right: 0; }
-        .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .sparePartsInfo {
-          margin-right: 5px;
-          width: calc((100% - 5px) / 2); }
-          .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo .sparePartsInfo:last-child {
-            margin-right: 0; }
-        .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo-userAction {
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start; }
+          .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo-userAction {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start; }
     .popUpWindowBlock .popUpWindow-addReview {
       width: 755px; }
 
@@ -2764,25 +2798,6 @@ button, input {
         .widget .widgetContent .favoriteManufacture .favoriteManufactureElem__content .innerText:last-child {
           color: #2c333d;
           text-transform: uppercase; }
-  .widget .widgetContent .carInfoFilter__selectBlock {
-    margin-bottom: 20px; }
-    .widget .widgetContent .carInfoFilter__selectBlock-dependedElem {
-      display: none; }
-  .widget .widgetContent .carInfoFilter__responseNature .responseNature {
-    margin-bottom: 20px; }
-    .widget .widgetContent .carInfoFilter__responseNature .responseNature__title {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      color: #2c333d;
-      font-size: 15px; }
-      .widget .widgetContent .carInfoFilter__responseNature .responseNature__title .innerText {
-        margin-right: 10px; }
-    .widget .widgetContent .carInfoFilter__responseNature .responseNature__checkBoxBlock {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 45px; }
   .widget .widgetContent .activityTape {
     /* Track */
     /* Handle */
@@ -5181,7 +5196,8 @@ input[type='submit'].styler[disabled] {
 
 .jq-selectbox {
   color: #2c333d;
-  font-size: 13px; }
+  font-size: 13px;
+  width: 100%; }
   .jq-selectbox ul {
     background-color: white; }
     .jq-selectbox ul li {

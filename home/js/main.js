@@ -110,6 +110,12 @@ $(function () {
     // userInfo page ---------------------------------------------
     showPopUpUserNotification(); // JQ showPopUpUserNotification
 
+    // popUpWindows init filter ----------------------------------
+    popUpFirstFilerInit();
+    popUpSecondFilerInit();
+    popUpAdditBlockToggle();
+    // ===========================================================
+
     // info page -------------------------------------------------
     // info(); // info JQ
     // ===========================================================
@@ -1364,6 +1370,32 @@ $(function () {
             });
         }
     } // JQ showPopUpUserNotification
+    // ===========================================================
+
+    // popUpWindow addReview -------------------------------------
+    function popUpFirstFilerInit() {
+        const widgetFilterSpareParts = new UserFilter('popUpUserFilterSpareParts', 'Выберите запчасть');
+        widgetFilterSpareParts.init();
+        const widgetFilterManufacturer = new UserFilter('popUpUserFilterManufacturer', 'Выберите производителя');
+        widgetFilterManufacturer.init();
+    }
+    function popUpSecondFilerInit() {
+        const popUpFilterCarBrand = new UserFilter('popUpUserFilterCarBrand', 'Марка авто');
+        popUpFilterCarBrand.init();
+        const popUpFilterCarModel = new UserFilter('popUpUserFilterCarModel', 'Модель авто');
+        popUpFilterCarModel.init();
+        const popUpFilterCarGeneration = new UserFilter('popUpUserFilterCarGeneration', 'Поколение авто');
+        popUpFilterCarGeneration.init();
+    }
+    function popUpAdditBlockToggle() {
+        const additBlockBtn = $('.mainBtn-popUpadditionalBlock');
+        const additBlockForm = $('#popUpAdditForm');
+
+        additBlockBtn.click(function() {
+            console.log('toggle');
+            additBlockForm.slideToggle();
+        });
+    }
     // ===========================================================
 
     // info page -------------------------------------------------

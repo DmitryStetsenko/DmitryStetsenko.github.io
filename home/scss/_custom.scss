@@ -2602,6 +2602,45 @@ button, input {
 } // postYourReview
 // =============================================
 
+// car info filter -----------------------------
+.carInfoFilter {
+  &__selectBlock {
+    margin-bottom: 20px;
+    &-dependedElem {
+      display: none;
+    } // dependedElem
+  } // __selectBlock
+  &__responseNature {
+    .responseNature {
+      margin-bottom: 20px;
+      &__title {
+        @include flex(center, flex-start);
+        color: $colorDarkGray;
+        font-size: 15px;
+        .innerText {
+          margin-right: 10px;
+        } // innerText
+      } // title
+      &__checkBoxBlock {
+        @include flex(center, space-between);
+        height: 45px;
+      } // checkBoxBlock
+    } // responseNature
+  } // responseNature
+  &-popUpRow {
+    @include flex(center, space-between);
+    .carInfoFilter__selectBlock {
+      margin-right: 10px;
+      margin-bottom: 0;
+      width: 100%;
+      &:last-child {
+        margin-right: 0;
+      } // last-child
+    } // carInfoFilter__selectBlock
+  } // -popUpRow
+} // carInfoFilter
+// =============================================
+
 // popUp windows -------------------------------
 .popUpWindowBlock {
   display: none;
@@ -2829,21 +2868,22 @@ button, input {
         color: $colorColName;
         font-size: 13px;
         line-height: 18px;
-        margin-bottom: 40px;
       } // aboutBlock
       .additionalBlock {
+        margin-bottom: 40px;
         .mainBtn {
           &-popUpadditionalBlock{
             .innerText {
               color: white;
-              margin-right: 10px;
+              margin-right: 20px;
             } // innerText
           } // -popUpadditionalBlock
         } // mainBtn
         &__form {
-          background: $colorBgLightGray;
           $outerBlocksWidth: 100%;
           $formFieldsGutter: 5px;
+          background: white;
+          display: none;
           padding: 20px;
           .carInfo {
             margin-bottom: 20px;
@@ -3463,29 +3503,6 @@ button, input {
       } // favoriteManufactureElements
     } // favoriteManufacture
     .carInfoFilter {
-      &__selectBlock {
-        margin-bottom: 20px;
-        &-dependedElem {
-          display: none;
-        } // dependedElem
-      } // __selectBlock
-      &__responseNature {
-        .responseNature {
-          margin-bottom: 20px;
-          &__title {
-            @include flex(center, flex-start);
-            color: $colorDarkGray;
-            font-size: 15px;
-            .innerText {
-              margin-right: 10px;
-            } // innerText
-          } // title
-          &__checkBoxBlock {
-            @include flex(center, space-between);
-            height: 45px;
-          } // checkBoxBlock
-        } // responseNature
-      } // responseNature
     } // carInfoFilter
     .activityTape {
       @include customScroll();

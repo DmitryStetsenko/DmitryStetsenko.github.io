@@ -3098,62 +3098,85 @@
             <div class="popUpWindow__content">
                 <div class="manufacturerBlock">
                     <div class="manufacturerBlock__selects">
-                        <div class="selectBlock">
-                            <div class="formFieldsTitle">Запчасть:</div>
-                            <!-- /.formFieldsTitle -->
-                            <div class="select">
-                                <div class="select__header">
-                                    <div class="innerText">Тормозные колодки</div>
-                                    <!-- /.innerText -->
-                                    <div class="blockIcon">
-                                        <div class="shevronIcon shevronIcon-select">
-                                            <div class="shevronIcon__icon">
-                                                <span></span>
-                                                <span></span>
+                        <div class="carInfoFilter carInfoFilter-popUpColumn">
+                            <div class="carInfoFilter__selectBlock">
+                                <p class="label">Запчасть:</p>
+                                <!-- /.formFieldsTitle -->
+                                <div class="userFilter" id="popUpUserFilterSpareParts">
+                                    <div class="userFilter__header">
+                                        <div class="innerText">Все</div>
+                                        <!-- /.innerText -->
+                                        <div class="blockIcon">
+                                            <div class="shevronIcon shevronIcon-select">
+                                                <div class="shevronIcon__icon">
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <!-- /.shevronIcon__icon -->
                                             </div>
-                                            <!-- /.shevronIcon__icon -->
                                         </div>
+                                        <!-- /.blockIcon -->
                                     </div>
-                                    <!-- /.blockIcon -->
+                                    <!-- /.userFilter__header -->
+                                    <div class="userFilter__content">
+                                        <label class="inputFilter">
+                                            <input class="input" type="text" placeholder="выберите запчасть">
+                                        </label>
+                                        <ul class="filterOptions">
+                                            <li class="filterOptions__item">Фильтры</li>
+                                            <li class="filterOptions__item">Воздушный фильтр</li>
+                                            <li class="filterOptions__item">Топливный фильтр</li>
+                                            <li class="filterOptions__item">Тормозные колодки</li>
+                                            <li class="filterOptions__item">Рулевые колодки</li>
+                                            <li class="filterOptions__item">Свечи</li>
+                                            <li class="filterOptions__item">Свечи зажигания</li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.userFilter__content -->
                                 </div>
-                                <!-- /.select__header -->
-                                <ul class="select__items">
-                                    <li class="select__item">Тормозные колодки</li>
-                                    <!--/.select__item-->
-                                </ul>
-                                <!-- /.selectItems -->
+                                <!-- /.select -->
                             </div>
-                            <!-- /.select -->
-                        </div>
-                        <!-- /.selectBlock -->
-                        <div class="selectBlock">
-                            <div class="formFieldsTitle">Запчасть:</div>
-                            <!-- /.formFieldsTitle -->
-                            <div class="select">
-                                <div class="select__header">
-                                    <div class="innerText">Тормозные колодки</div>
-                                    <!-- /.innerText -->
-                                    <div class="blockIcon">
-                                        <div class="shevronIcon shevronIcon-select">
-                                            <div class="shevronIcon__icon">
-                                                <span></span>
-                                                <span></span>
+                            <!-- /.carInfoFilter__selectBlock -->
+                            <div class="carInfoFilter__selectBlock">
+                                <p class="label">Производитель:</p>
+                                <!-- /.formFieldsTitle -->
+                                <div class="userFilter" id="popUpUserFilterManufacturer">
+                                    <div class="userFilter__header">
+                                        <div class="innerText">Все</div>
+                                        <!-- /.innerText -->
+                                        <div class="blockIcon">
+                                            <div class="shevronIcon shevronIcon-select">
+                                                <div class="shevronIcon__icon">
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <!-- /.shevronIcon__icon -->
                                             </div>
-                                            <!-- /.shevronIcon__icon -->
                                         </div>
+                                        <!-- /.blockIcon -->
                                     </div>
-                                    <!-- /.blockIcon -->
+                                    <!-- /.userFilter__header -->
+                                    <div class="userFilter__content">
+                                        <label class="inputFilter">
+                                            <input class="input" type="text" placeholder="выберите производителя">
+                                        </label>
+                                        <ul class="filterOptions">
+                                            <li class="filterOptions__item">NGK</li>
+                                            <li class="filterOptions__item">Sachs</li>
+                                            <li class="filterOptions__item">Valeo</li>
+                                            <li class="filterOptions__item">Swag</li>
+                                            <li class="filterOptions__item">KYB</li>
+                                            <li class="filterOptions__item">TRW</li>
+                                            <li class="filterOptions__item">Remsa</li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.userFilter__content -->
                                 </div>
-                                <!-- /.select__header -->
-                                <ul class="select__items">
-                                    <li class="select__item">Тормозные колодки</li>
-                                    <!--/.select__item-->
-                                </ul>
-                                <!-- /.selectItems -->
+                                <!-- /.select -->
                             </div>
-                            <!-- /.select -->
+                            <!-- /.carInfoFilter__selectBlock -->
                         </div>
-                        <!-- /.selectBlock -->
+                        <!-- /.carInfoFilter -->
                     </div>
                     <!-- /.manufacturerBlock__selects -->
                     <div class="manufacturerBlock__ratings">
@@ -3370,24 +3393,6 @@
                     <!-- /.reviewBlock__userAction -->
                 </div>
                 <!-- /.reviewBlock -->
-                <div class="progressBarBlock">
-                    <div class="progressBarBlock__title formFieldsTitle">Форма заполнена на:</div>
-                    <!-- /.progressBarBlock__title -->
-                    <div class="progressBarBlock__progressBar">
-                        <span class="progress">75/100</span>
-                        <!-- /.progress -->
-                    </div>
-                    <!-- /.progressBarBlock__progressBar -->
-                </div>
-                <!-- /.progressBar -->
-                <p class="aboutBlock">
-                    PartReview.ru - собрание отзывов об автомобильных запчастях.
-                    Рынок запчастей огромен. Кроме оригинальных запчастей есть множество
-                    аналогов. Одни качественные, другие мягко говоря, не вызывают доверия.
-                    Наш сервис призван разобраться в этом вопросе.
-                    Пользователи сами оценят какие запчасти стоит покупать, а какие нет.
-                </p>
-                <!-- /.aboutBlock -->
                 <div class="additionalBlock">
                     <button class="mainBtn mainBtn-popUpadditionalBlock">
                         <span class="innerText">Дополнительно</span>
@@ -3397,18 +3402,18 @@
                                 <span></span>
                                 <span></span>
                              </span>
-                             <!-- /.shevronIcon__icon -->
+                            <!-- /.shevronIcon__icon -->
                         </span>
                     </button>
-                    <div class="additionalBlock__form">
+                    <div class="additionalBlock__form" id="popUpAdditForm">
                         <div class="carInfo">
                             <div class="formFieldsTitle">Автомобиль:</div>
                             <!-- /.formFieldsTitle -->
-                            <div class="selectsBlock">
-                                <div class="selectsBlock__item">
-                                    <div class="select">
-                                        <div class="select__header">
-                                            <div class="innerText">Марка авто</div>
+                            <div class="carInfoFilter carInfoFilter-popUpRow">
+                                <div class="carInfoFilter__selectBlock">
+                                    <div class="userFilter" id="popUpUserFilterCarBrand">
+                                        <div class="userFilter__header">
+                                            <div class="innerText">Марка Авто</div>
                                             <!-- /.innerText -->
                                             <div class="blockIcon">
                                                 <div class="shevronIcon shevronIcon-select">
@@ -3421,19 +3426,29 @@
                                             </div>
                                             <!-- /.blockIcon -->
                                         </div>
-                                        <!-- /.select__header -->
-                                        <ul class="select__items">
-                                            <li class="select__item">Тормозные колодки</li>
-                                            <!--/.select__item-->
-                                        </ul>
-                                        <!-- /.selectItems -->
+                                        <!-- /.userFilter__header -->
+                                        <div class="userFilter__content">
+                                            <label class="inputFilter">
+                                                <input class="input" type="text" placeholder="выберите марку авто">
+                                            </label>
+                                            <ul class="filterOptions">
+                                                <li class="filterOptions__item">Фильтры</li>
+                                                <li class="filterOptions__item">Воздушный фильтр</li>
+                                                <li class="filterOptions__item">Топливный фильтр</li>
+                                                <li class="filterOptions__item">Тормозные колодки</li>
+                                                <li class="filterOptions__item">Рулевые колодки</li>
+                                                <li class="filterOptions__item">Свечи</li>
+                                                <li class="filterOptions__item">Свечи зажигания</li>
+                                            </ul>
+                                        </div>
+                                        <!-- /.userFilter__content -->
                                     </div>
                                     <!-- /.select -->
                                 </div>
-                                <!-- /.selectsBlock__item -->
-                                <div class="selectsBlock__item">
-                                    <div class="select">
-                                        <div class="select__header">
+                                <!-- /.carInfoFilter__selectBlock -->
+                                <div class="carInfoFilter__selectBlock">
+                                    <div class="userFilter" id="popUpUserFilterCarModel">
+                                        <div class="userFilter__header">
                                             <div class="innerText">Модель авто</div>
                                             <!-- /.innerText -->
                                             <div class="blockIcon">
@@ -3447,20 +3462,30 @@
                                             </div>
                                             <!-- /.blockIcon -->
                                         </div>
-                                        <!-- /.select__header -->
-                                        <ul class="select__items">
-                                            <li class="select__item">Тормозные колодки</li>
-                                            <!--/.select__item-->
-                                        </ul>
-                                        <!-- /.selectItems -->
+                                        <!-- /.userFilter__header -->
+                                        <div class="userFilter__content">
+                                            <label class="inputFilter">
+                                                <input class="input" type="text" placeholder="выберите модель авто">
+                                            </label>
+                                            <ul class="filterOptions">
+                                                <li class="filterOptions__item">Фильтры</li>
+                                                <li class="filterOptions__item">Воздушный фильтр</li>
+                                                <li class="filterOptions__item">Топливный фильтр</li>
+                                                <li class="filterOptions__item">Тормозные колодки</li>
+                                                <li class="filterOptions__item">Рулевые колодки</li>
+                                                <li class="filterOptions__item">Свечи</li>
+                                                <li class="filterOptions__item">Свечи зажигания</li>
+                                            </ul>
+                                        </div>
+                                        <!-- /.userFilter__content -->
                                     </div>
                                     <!-- /.select -->
                                 </div>
-                                <!-- /.selectsBlock__item -->
-                                <div class="selectsBlock__item">
-                                    <div class="select">
-                                        <div class="select__header">
-                                            <div class="innerText">Поколение</div>
+                                <!-- /.carInfoFilter__selectBlock -->
+                                <div class="carInfoFilter__selectBlock">
+                                    <div class="userFilter" id="popUpUserFilterCarGeneration">
+                                        <div class="userFilter__header">
+                                            <div class="innerText">Поколение авто</div>
                                             <!-- /.innerText -->
                                             <div class="blockIcon">
                                                 <div class="shevronIcon shevronIcon-select">
@@ -3473,18 +3498,28 @@
                                             </div>
                                             <!-- /.blockIcon -->
                                         </div>
-                                        <!-- /.select__header -->
-                                        <ul class="select__items">
-                                            <li class="select__item">Тормозные колодки</li>
-                                            <!--/.select__item-->
-                                        </ul>
-                                        <!-- /.selectItems -->
+                                        <!-- /.userFilter__header -->
+                                        <div class="userFilter__content">
+                                            <label class="inputFilter">
+                                                <input class="input" type="text" placeholder="выберите поколение авто">
+                                            </label>
+                                            <ul class="filterOptions">
+                                                <li class="filterOptions__item">Фильтры</li>
+                                                <li class="filterOptions__item">Воздушный фильтр</li>
+                                                <li class="filterOptions__item">Топливный фильтр</li>
+                                                <li class="filterOptions__item">Тормозные колодки</li>
+                                                <li class="filterOptions__item">Рулевые колодки</li>
+                                                <li class="filterOptions__item">Свечи</li>
+                                                <li class="filterOptions__item">Свечи зажигания</li>
+                                            </ul>
+                                        </div>
+                                        <!-- /.userFilter__content -->
                                     </div>
                                     <!-- /.select -->
                                 </div>
-                                <!-- /.selectsBlock__item -->
+                                <!-- /.carInfoFilter__selectBlock -->
                             </div>
-                            <!-- /.selectsBlock -->
+                            <!-- /.carInfoFilter -->
                         </div>
                         <!-- /.carInfo -->
                         <div class="carInfo carInfo-userAction">
@@ -3535,6 +3570,24 @@
                     <!-- /.additionalBlock__form -->
                 </div>
                 <!-- /.additionalBlock -->
+                <div class="progressBarBlock">
+                    <div class="progressBarBlock__title formFieldsTitle">Форма заполнена на:</div>
+                    <!-- /.progressBarBlock__title -->
+                    <div class="progressBarBlock__progressBar">
+                        <span class="progress">75/100</span>
+                        <!-- /.progress -->
+                    </div>
+                    <!-- /.progressBarBlock__progressBar -->
+                </div>
+                <!-- /.progressBar -->
+                <p class="aboutBlock">
+                    PartReview.ru - собрание отзывов об автомобильных запчастях.
+                    Рынок запчастей огромен. Кроме оригинальных запчастей есть множество
+                    аналогов. Одни качественные, другие мягко говоря, не вызывают доверия.
+                    Наш сервис призван разобраться в этом вопросе.
+                    Пользователи сами оценят какие запчасти стоит покупать, а какие нет.
+                </p>
+                <!-- /.aboutBlock -->
             </div>
             <!-- /.popUpWindow__content -->
             <button class="closeBtn closeBtn-addReview closeBtn-modalWindow">
@@ -3550,7 +3603,7 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/slick.js"></script>
-    <script src="js/jquery.fs.selecter.min.js"></script>
+    <script src="js/jquery.formstyler.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
