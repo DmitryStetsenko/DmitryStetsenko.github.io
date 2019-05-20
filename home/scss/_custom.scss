@@ -2627,6 +2627,23 @@ button, input {
       } // checkBoxBlock
     } // responseNature
   } // responseNature
+  &-popUp {
+    .carInfoFilter__selectBlock {
+      background: white;
+      .userFilter {
+        overflow: initial;
+        &__content {
+          background: white;
+          border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+          box-shadow: 0 1px 1px 1px $colorBorderLightGray;
+          position: absolute;
+          top: 29px;
+          width: 100%;
+          z-index: 10;
+        } // __content
+      } // userFilter
+    } // carInfoFilter__selectBlock
+  }  // popUp
   &-popUpRow {
     @include flex(center, space-between);
     .carInfoFilter__selectBlock {
@@ -2673,6 +2690,9 @@ button, input {
       text-align: center;
     } // __title
     &__content {
+      .input, .textArea {
+        background: white;
+      } // input, textarea
       .manufacturerBlock {
         @include flex(flex-start, space-between);
         margin-bottom: 20px;
@@ -2882,7 +2902,7 @@ button, input {
         &__form {
           $outerBlocksWidth: 100%;
           $formFieldsGutter: 5px;
-          background: white;
+          background: $colorBgLightGray;
           display: none;
           padding: 20px;
           .carInfo {

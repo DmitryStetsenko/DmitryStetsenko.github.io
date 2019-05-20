@@ -2107,6 +2107,19 @@ button, input {
     justify-content: space-between;
     height: 45px; }
 
+.carInfoFilter-popUp .carInfoFilter__selectBlock {
+  background: white; }
+  .carInfoFilter-popUp .carInfoFilter__selectBlock .userFilter {
+    overflow: initial; }
+    .carInfoFilter-popUp .carInfoFilter__selectBlock .userFilter__content {
+      background: white;
+      border-radius: 0 0 3px 3px;
+      box-shadow: 0 1px 1px 1px #e8e8e8;
+      position: absolute;
+      top: 29px;
+      width: 100%;
+      z-index: 10; }
+
 .carInfoFilter-popUpRow {
   display: flex;
   align-items: center;
@@ -2151,6 +2164,8 @@ button, input {
       font-weight: bold;
       margin-bottom: 30px;
       text-align: center; }
+    .popUpWindowBlock .popUpWindow__content .input, .popUpWindowBlock .popUpWindow__content .textArea {
+      background: white; }
     .popUpWindowBlock .popUpWindow__content .manufacturerBlock {
       display: flex;
       align-items: flex-start;
@@ -2312,7 +2327,7 @@ button, input {
         color: white;
         margin-right: 20px; }
       .popUpWindowBlock .popUpWindow__content .additionalBlock__form {
-        background: white;
+        background: #f6f6f6;
         display: none;
         padding: 20px; }
         .popUpWindowBlock .popUpWindow__content .additionalBlock__form .carInfo {
