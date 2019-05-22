@@ -2631,15 +2631,29 @@ button, input {
     .carInfoFilter__selectBlock {
       background: white;
       .userFilter {
+        border: none;
         overflow: initial;
+        &__header {
+          border-radius: $mainBorderRadius;
+          border: 1px solid $colorBorderLightGray;
+        } // header
         &__content {
           background: white;
           border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
-          box-shadow: 0 1px 1px 1px $colorBorderLightGray;
+          border: 1px solid $colorBorderLightGray;
           position: absolute;
-          top: 29px;
+          top: 28px;
           width: 100%;
           z-index: 10;
+          &:before {
+            background: white;
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: -2px;
+            height: 5px;
+            width: 100%;
+          } // before
         } // __content
       } // userFilter
     } // carInfoFilter__selectBlock

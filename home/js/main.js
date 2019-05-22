@@ -1390,10 +1390,20 @@ $(function () {
     function popUpAdditBlockToggle() {
         const additBlockBtn = $('.mainBtn-popUpadditionalBlock');
         const additBlockForm = $('#popUpAdditForm');
+        const shevronIcon = additBlockBtn.find('.shevronIcon');
+        let shevronTop = true;
 
         additBlockBtn.click(function() {
             console.log('toggle');
             additBlockForm.slideToggle();
+            if (shevronTop) {
+                shevronIcon.removeClass('shevronIcon-bottom');
+                shevronIcon.addClass('shevronIcon-top');
+            } else {
+                shevronIcon.removeClass('shevronIcon-top');
+                shevronIcon.addClass('shevronIcon-bottom');
+            }
+            shevronTop = !shevronTop;
         });
     }
     // ===========================================================

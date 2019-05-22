@@ -2110,15 +2110,27 @@ button, input {
 .carInfoFilter-popUp .carInfoFilter__selectBlock {
   background: white; }
   .carInfoFilter-popUp .carInfoFilter__selectBlock .userFilter {
+    border: none;
     overflow: initial; }
+    .carInfoFilter-popUp .carInfoFilter__selectBlock .userFilter__header {
+      border-radius: 3px;
+      border: 1px solid #e8e8e8; }
     .carInfoFilter-popUp .carInfoFilter__selectBlock .userFilter__content {
       background: white;
       border-radius: 0 0 3px 3px;
-      box-shadow: 0 1px 1px 1px #e8e8e8;
+      border: 1px solid #e8e8e8;
       position: absolute;
-      top: 29px;
+      top: 28px;
       width: 100%;
       z-index: 10; }
+      .carInfoFilter-popUp .carInfoFilter__selectBlock .userFilter__content:before {
+        background: white;
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: -2px;
+        height: 5px;
+        width: 100%; }
 
 .carInfoFilter-popUpRow {
   display: flex;
