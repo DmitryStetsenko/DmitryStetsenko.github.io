@@ -114,6 +114,10 @@ $(function () {
     popUpFirstFilerInit();
     popUpSecondFilerInit();
     popUpAdditBlockToggle();
+    initStarsRating('#popUpAverageRating');
+    initStarsRating('#popUpFirstLine');
+    initStarsRating('#popUpSecondLine');
+    initStarsRating('#popUpThirdLine');
     // ===========================================================
 
     // info page -------------------------------------------------
@@ -1406,6 +1410,69 @@ $(function () {
             shevronTop = !shevronTop;
         });
     }
+    function initStarsRating(id) {
+        const averageRatingBlock = $(id);
+        let rating = averageRatingBlock.find('.starsIconBlock'),
+            ratingItem = averageRatingBlock.find('.starsIconBlock__icon');
+        let ratingValue = averageRatingBlock.find('.ratingsBlock__item-rating');
+        console.log(ratingValue);
+
+        rating.click(function(e){
+            let target = e.target;
+            if(target.classList.contains('starsIconBlock__icon')){
+                removeClass(ratingItem,'current-active');
+                target.classList.add('active','current-active');
+                ratingValue.text(target.getAttribute('data-rate'));
+            }
+        });
+
+        rating.on('mouseover', function(e){
+            let target = e.target;
+            if(target.classList.contains('starsIconBlock__icon')){
+                removeClass(ratingItem,'active');
+                target.classList.add('active');
+                mouseOverActiveClass(ratingItem)
+            }
+        });
+
+        rating.on('mouseout', function() {
+            addClass(ratingItem,'active');
+            mouseOutActiveClas(ratingItem);
+        });
+
+        function removeClass(arr) {
+            for(let i = 0, iLen = arr.length; i <iLen; i ++) {
+                for(let j = 1; j < arguments.length; j ++) {
+                    ratingItem[i].classList.remove(arguments[j]);
+                }
+            }
+        }
+        function addClass(arr) {
+            for(let i = 0, iLen = arr.length; i <iLen; i ++) {
+                for(let j = 1; j < arguments.length; j ++) {
+                    ratingItem[i].classList.add(arguments[j]);
+                }
+            }
+        }
+        function mouseOverActiveClass(arr){
+            for(let i = 0, iLen = arr.length; i < iLen; i++) {
+                if(arr[i].classList.contains('active')){
+                    break;
+                }else {
+                    arr[i].classList.add('active');
+                }
+            }
+        }
+        function mouseOutActiveClas(arr){
+            for(let i = arr.length-1; i >=1; i--) {
+                if(arr[i].classList.contains('current-active')){
+                    break;
+                }else {
+                    arr[i].classList.remove('active');
+                }
+            }
+        }
+    } // starsRating
     // ===========================================================
 
     // info page -------------------------------------------------

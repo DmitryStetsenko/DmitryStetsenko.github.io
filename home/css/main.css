@@ -2226,10 +2226,14 @@ button, input {
                   margin-right: 0; }
                 .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item .starsIconBlock__icon svg {
                   fill: transparent;
+                  position: relative;
                   stroke-width: 3px;
-                  stroke: #7eae3e; }
+                  stroke: #7eae3e;
+                  z-index: -1; }
                   .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item .starsIconBlock__icon svg.fill {
                     fill: #7eae3e; }
+                .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock__item .starsIconBlock__icon.active svg {
+                  fill: #7eae3e !important; }
           .popUpWindowBlock .popUpWindow__content .manufacturerBlock__ratings .ratingsBlock-averageRating .ratingsBlock__item-title {
             color: #2c333d;
             font-size: 20px; }

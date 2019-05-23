@@ -2767,12 +2767,19 @@ button, input {
                   } // last-child
                   svg {
                     fill: transparent;
+                    position: relative;
                     stroke-width: 3px;
                     stroke: $colorRatingGreen;
+                    z-index: -1;
                     &.fill {
                       fill: $colorRatingGreen;
                     } // -fill
                   } // starsIcon
+                  &.active {
+                    svg {
+                      fill: $colorRatingGreen !important;
+                    } // starsIcon
+                  } // active
                 } // icon
               } // starsIconBlock
             } // ____item
