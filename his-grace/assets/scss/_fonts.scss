@@ -1,0 +1,43 @@
+$pathForFonts: '../fonts/';
+$fontFamily: 'AlegreyaSansSC';
+
+$fontWeight: '-Medium';
+@font-face {    /* -------- Medium ------------*/
+  font-family: $fontFamily;
+//   src: url($pathForFonts + $fontFamily + $fontWeight + ".eot");
+  src: url($pathForFonts + $fontFamily + $fontWeight + ".eot?iefix") format("embedded-opentype"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".woff") format("woff"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".woff2") format("woff2"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".svg") format("svg"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+$fontWeight: '-Regular';
+@font-face {    /* -------- Regular ------------*/
+  font-family: $fontFamily;
+//   src: url($pathForFonts + $fontFamily + $fontWeight + ".eot");
+  src: url($pathForFonts + $fontFamily + $fontWeight + ".eot?iefix") format("embedded-opentype"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".woff") format("woff"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".woff2") format("woff2"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".svg") format("svg"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+$fontFamily: 'RagnarockDemo';
+
+$fontWeight: '';
+@font-face {    
+  font-family: $fontFamily;
+//   src: url($pathForFonts + $fontFamily + $fontWeight + ".eot");
+  src: url($pathForFonts + $fontFamily + $fontWeight + ".eot?iefix") format("embedded-opentype"),
+//   url($pathForFonts + $fontFamily + $fontWeight + ".woff") format("woff"),
+//   url($pathForFonts + $fontFamily + $fontWeight + ".woff2") format("woff2"),
+//   url($pathForFonts + $fontFamily + $fontWeight + ".svg") format("svg"),
+  url($pathForFonts + $fontFamily + $fontWeight + ".ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,68 @@
+.btn {
+    $btnHeight: 55px;
+    $btnShadowOpacity: .4;
+    @include flex();
+    display: inline-flex;
+
+    border-radius: $btnHeight / 2;
+    font-family: RagnarockDemo, sans-serif;
+    font-size: 20px;
+    height: 55px;
+    padding: 0 32px;
+    text-transform: capitalize;
+
+    &-donate, &-donateInvert, &-register {
+        $btnIconSize: 30px;
+
+        font-size: 25px;
+        padding: 0 20px 0 12px;
+        &::before {
+            content: '';
+            display: block;
+            height: $btnIconSize;
+            margin-right: 20px;
+            width: $btnIconSize;
+        }
+    }
+    &-donate {
+        background: $color2;
+        box-shadow: 0 10px 8px rgba($color2, $btnShadowOpacity);
+        color: $color1;
+        &::before {
+            background: url(../img/icons/donate-btn-icon.svg) no-repeat center/cover;
+        }
+    }
+    &-donateInvert {
+        background: $color1;
+        box-shadow: 0 10px 8px rgba($color1, $btnShadowOpacity);
+        color: white;
+        &::before {
+            background: url(../img/icons/donate-invert-btn-icon.svg) no-repeat center/cover;
+        }
+    }
+    &-link {
+        background: $color2;
+        box-shadow: 0 10px 8px rgba($color2, $btnShadowOpacity);
+        color: $color1;
+    }
+    &-linkReverse {
+        background: $color1;
+        box-shadow: 0 10px 8px rgba($color1, $btnShadowOpacity);
+        color: white;
+    }
+    &-register {
+        background: $color2;
+        box-shadow: 0 10px 8px rgba($color2, $btnShadowOpacity);
+        color: $color1;
+        &::before {
+            background: url(../img/icons/register-icon.svg) no-repeat center/cover;
+        }
+    }
+    &-give {
+        background: $color2;
+        box-shadow: 0 10px 8px rgba($color2, $btnShadowOpacity);
+        color: white;
+        font-size: 30px;
+        padding: 10px 45px;
+    }
+}

@@ -1,0 +1,32 @@
+@mixin flex($jContent: center, $aItems: center) {
+	align-items: $aItems;
+	display: flex;
+	justify-content: $jContent;
+}
+
+@mixin drawTriangle($pWidth, $pHeight, $tColor, $direction) {
+	width: 0;
+	height: 0;
+	$tWidth: $pHeight + px;
+	$tHeight: $pWidth / 2 + px;
+	@if $direction == top {
+		border-left: $tHeight solid transparent;
+		border-right: $tHeight solid transparent;
+		border-bottom: $tWidth solid $tColor;
+	} 
+	@else if $direction == bottom {
+		border-left: $tHeight solid transparent;
+		border-right: $tHeight solid transparent;
+		border-top: $tWidth solid $tColor;
+	}
+	@else if $direction == left {
+		border-bottom: $tHeight solid transparent;
+		border-top: $tHeight solid transparent;
+		border-right: $tWidth solid $tColor;
+	}
+	@else if $direction == right {
+		border-bottom: $tHeight solid transparent;
+		border-top: $tHeight solid transparent;
+		border-left: $tWidth solid $tColor;
+	}
+  }
